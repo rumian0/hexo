@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ChatGPT-KEY的获取[无需手机号绑定] | 茗辰原 の 异世界</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/image/mcy.png"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.0.9"><!-- inject head--><link rel="canonical" href="http://example.com/2024/01/21/ChatGPT-KEY%E7%9A%84%E8%8E%B7%E5%8F%96[%E6%97%A0%E9%9C%80%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%BB%91%E5%AE%9A]/"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><!-- aplayer--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"><!-- swiper--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"><!-- fancybox ui--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.min.css"><!-- katex--><!-- Open Graph--><meta name="description" content="😆 **前言：最近ChatGPT官方解除了注册时的手机号绑定要求，使我们注册账号和使用变得更加容易，但Api-Key的获取还是需要手机号绑定，接下来的教程会教你如何绕过手机号的绑定获取到可以的KEY，并使用获取到的KEY来搭建自己的镜像网站【实现使用时免科学】，无限制使用ChatGPT。【教程内"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="茗辰原 の 异世界"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/image/mcy.png"><link rel="apple-touch-icon" href="/image/mcy.png" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.0.9' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+    
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+    
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+    
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+    
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+        
+                if (name && keyObj[name]) return
+        
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+        }
+    })()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2024-01-20 22:00:00',
+    lazyload: {
+        enable: true,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        sayhello: {
+            morning: "✨ Good morning. It's a new day",
+            noon: "It's time for a midday break",
+            afternoon: "Tea time. 🍵",
+            night: "early bedtime",
+            goodnight: "Good night 😴",
+        },
+        sayhello2: ["You'll make it.","You're gonna make it.","Good luck, stranger."],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'fancybox',
+    post_ai: false,
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"},"translate":{"translateDelay":0,"defaultEncoding":2}},
+    lure: {"jump":"404 Not Found","back":"ヾ(≧∇≦*)ゝ嘿嘿，上当了吧"},
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: false,
+    ai_text: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><canvas id="universe"></canvas><!-- background img--><!-- loading--><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fa-solid fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/ChatGPT/">ChatGPT<sup>1</sup></a><a href="/tags/Openai/">Openai<sup>1</sup></a><a href="/tags/%E5%BB%BA%E7%AB%99/">建站<sup>1</sup></a><a href="/tags/app/">app<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/">安卓应用<sup>1</sup></a><a href="/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/">实用推荐<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">2024/02</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">2024/01</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fa-solid fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fa-solid fa-mattress-pillow"></i></span></div><div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()"><span class="music-switch" title="音乐开关"><i class="solitude fa-solid fa-compact-disc"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/ChatGPT/">ChatGPT<sup>1</sup></a><a href="/tags/Openai/">Openai<sup>1</sup></a><a href="/tags/%E5%BB%BA%E7%AB%99/">建站<sup>1</sup></a><a href="/tags/app/">app<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/">安卓应用<sup>1</sup></a><a href="/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/">实用推荐<sup>1</sup></a></div></div></div></div><!-- keyboard--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="返回博客主页"><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">ChatGPT-KEY的获取[无需手机号绑定]</a></div></div><div id="menus"></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fa-solid fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="/img/cover/%20(1).webp" alt="ChatGPT-KEY的获取[无需手机号绑定]"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/ChatGPT/">ChatGPT</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ChatGPT/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>ChatGPT</span></a><a class="post-meta__tags" href="/tags/Openai/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Openai</span></a><a class="post-meta__tags" href="/tags/%E5%BB%BA%E7%AB%99/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>建站</span></a></div></div></div></div><h1 class="post-title">ChatGPT-KEY的获取[无需手机号绑定]</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2024-01-21 00:00:00"><i class="post-meta-icon solitude fa-solid fa-calendar-days"></i><time datetime="2024-01-20T16:00:00.000Z">2024-01-20T16:00:00.000Z</time></span><span class="post-meta-date" title="最后更新于 2024-08-21 10:02:42"><i class="post-meta-icon solitude fa-solid fa-arrow-rotate-right"></i><time datetime="2024-08-21T02:02:42.557Z">2024-08-21T02:02:42.557Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fa-solid fa-file-word" title="文章字数"></i><span class="word-count">590</span><span class="post-meta-separator"></span></span><span class="post-meta-position" title="作者IP归属地为乌鲁木齐"><i class="post-meta-icon solitude fa-solid fa-map"></i><span>乌鲁木齐</span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><aside>
+😆 **前言：最近ChatGPT官方解除了注册时的手机号绑定要求，使我们注册账号和使用变得更加容易，但Api-Key的获取还是需要手机号绑定，接下来的教程会教你如何绕过手机号的绑定获取到可以的KEY，并使用获取到的KEY来搭建自己的镜像网站【实现使用时免科学】，无限制使用ChatGPT。【教程内的网站还是需要在使用科学的前提下操作的，但部署后就不需要了。】**
+
+</aside>
+
+<p><strong>该教程所需的网站地址：</strong></p>
+<ul>
+<li><strong>1、ChatGPT官网：<a target="_blank" rel="noopener" href="https://openai.com/blog/chatgpt">Introducing ChatGPT (openai.com)</a></strong></li>
+<li><strong>2、临时邮箱网站：<a target="_blank" rel="noopener" href="https://etempmail.com/zh">主页 – Temp Mail – Free Edu &#x2F; .COM Temporary Mails (etempmail.com)</a></strong></li>
+<li><strong>3、ChatGPTNextWeb项目：<a target="_blank" rel="noopener" href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">ChatGPTNextWeb&#x2F;ChatGPT-Next-Web: A well-designed cross-platform ChatGPT UI (Web &#x2F; PWA &#x2F; Linux &#x2F; Win &#x2F; MacOS). 一键拥有你自己的跨平台 ChatGPT 应用。 (github.com)</a></strong></li>
+<li><strong>4、Vercel注册地址：<a target="_blank" rel="noopener" href="https://vercel.com/signup">Sign Up – Vercel</a></strong></li>
+<li><strong>5、Watt Toolkit【原STEAM++】：<a target="_blank" rel="noopener" href="https://steampp.net/">瓦特工具箱(Steam++官网) – Watt Toolkit (steampp.net)</a></strong></li>
+</ul>
+<p><strong>使用临时邮箱注册ChatGPT账号并获取KEY：</strong></p>
+<p><strong>1、进入ChatGPT注册页面</strong></p>
+<p>选择Log in</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/6580505dc458853aef8d407c.jpg" alt="https://pic.imgdb.cn/item/6580505dc458853aef8d407c.jpg"></p>
+<p>选择SIGN UP【注册模式】</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/658050d6c458853aef8f87a9.jpg" alt="https://pic.imgdb.cn/item/658050d6c458853aef8f87a9.jpg"></p>
+<p>进入注册模式页面</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805130c458853aef9110b7.jpg" alt="https://pic.imgdb.cn/item/65805130c458853aef9110b7.jpg"></p>
+<p><strong>2、使用临时邮箱注册我们的ChatGPT账号</strong></p>
+<p>复制临时邮箱进行注册</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/658051f4c458853aef94836f.jpg" alt="https://pic.imgdb.cn/item/658051f4c458853aef94836f.jpg"></p>
+<p>填写邮箱和密码注册</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805270c458853aef969b9a.jpg" alt="https://pic.imgdb.cn/item/65805270c458853aef969b9a.jpg"></p>
+<p>注册后需要在邮箱进行确认验证</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805300c458853aef993518.jpg" alt="https://pic.imgdb.cn/item/65805300c458853aef993518.jpg"></p>
+<p>收到官方验证邮件</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805389c458853aef9bdb3a.jpg" alt="https://pic.imgdb.cn/item/65805389c458853aef9bdb3a.jpg"></p>
+<p>进入信息填写页面</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805420c458853aef9ecc2c.jpg" alt="https://pic.imgdb.cn/item/65805420c458853aef9ecc2c.jpg"></p>
+<p>随意填写即可</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805478c458853aefa055d5.jpg" alt="https://pic.imgdb.cn/item/65805478c458853aefa055d5.jpg"></p>
+<p>根据不同需求选择模式</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/658054f1c458853aefa26229.jpg" alt="https://pic.imgdb.cn/item/658054f1c458853aefa26229.jpg"></p>
+<p><strong>3、获取ChatGPT的Api-Key【为搭建镜像网站做准备】</strong></p>
+<p>API模式进入API-keys页面</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/6580558dc458853aefa51820.jpg" alt="https://pic.imgdb.cn/item/6580558dc458853aefa51820.jpg"></p>
+<p>打开网页控制台</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805625c458853aefa7a864.jpg" alt="https://pic.imgdb.cn/item/65805625c458853aefa7a864.jpg"></p>
+<p>进行网络数据抓包</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/6580576ac458853aefad639a.jpg" alt="https://pic.imgdb.cn/item/6580576ac458853aefad639a.jpg"></p>
+<p>抓包获取到了账号的KEY【留着备用】</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/658057fec458853aefb018f5.jpg" alt="https://pic.imgdb.cn/item/658057fec458853aefb018f5.jpg"></p>
+<p><strong>4、Fork-Github的ChatGPTNextWeb项目</strong></p>
+<p>登录GitHub，Fork项目</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805893c458853aefb2a186.jpg" alt="https://pic.imgdb.cn/item/65805893c458853aefb2a186.jpg"></p>
+<p>Create fork</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805918c458853aefb4e5cc.jpg" alt="https://pic.imgdb.cn/item/65805918c458853aefb4e5cc.jpg"></p>
+<p>添加成功</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/6580597ec458853aefb6ad36.jpg" alt="https://pic.imgdb.cn/item/6580597ec458853aefb6ad36.jpg"></p>
+<p><strong>5、进入Vercel部署我们的镜像网站</strong></p>
+<p><img src= "/img/loading.avif" data-lazy-src="/ChatGPT-KEY%E7%9A%84%E8%8E%B7%E5%8F%96%5B%E6%97%A0%E9%9C%80%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%BB%91%E5%AE%9A%5D%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%90%AD%E5%BB%BA%E9%95%9C%E5%83%8F%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B%206837ccb46d4b4b2c83cf79079c30f1db/65805a32c458853aefb9d5a0.jpg" alt="65805a32c458853aefb9d5a0.jpg"></p>
+<p>选择个人项目，后输入昵称</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805a32c458853aefb9d5a0.jpg" alt="https://pic.imgdb.cn/item/65805a32c458853aefb9d5a0.jpg"></p>
+<p>使用我们之前Fork项目的Github账号注册登录</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805a8ac458853aefbb630b.jpg" alt="https://pic.imgdb.cn/item/65805a8ac458853aefbb630b.jpg"></p>
+<p>Import开始部署</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805ae5c458853aefbcf7f7.jpg" alt="https://pic.imgdb.cn/item/65805ae5c458853aefbcf7f7.jpg"></p>
+<p>点击Deploy</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805b44c458853aefbea8ae.jpg" alt="https://pic.imgdb.cn/item/65805b44c458853aefbea8ae.jpg"></p>
+<p>进入仪表盘【dashboard】</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805ba6c458853aefc045bc.jpg" alt="https://pic.imgdb.cn/item/65805ba6c458853aefc045bc.jpg"></p>
+<p>访问项目自动分配的域名</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805c70c458853aefc3d5b2.jpg" alt="https://pic.imgdb.cn/item/65805c70c458853aefc3d5b2.jpg"></p>
+<p><strong>6、Api-Key的导入设置</strong></p>
+<p><img src= "/img/loading.avif" data-lazy-src="/ChatGPT-KEY%E7%9A%84%E8%8E%B7%E5%8F%96%5B%E6%97%A0%E9%9C%80%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%BB%91%E5%AE%9A%5D%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%90%AD%E5%BB%BA%E9%95%9C%E5%83%8F%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B%206837ccb46d4b4b2c83cf79079c30f1db/65805cecc458853aefc5f203.jpg" alt="65805cecc458853aefc5f203.jpg"></p>
+<p>进入设置</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805cecc458853aefc5f203.jpg" alt="https://pic.imgdb.cn/item/65805cecc458853aefc5f203.jpg"></p>
+<p>勾选自定义接口并导入KEY</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805d74c458853aefc8477d.jpg" alt="https://pic.imgdb.cn/item/65805d74c458853aefc8477d.jpg"></p>
+<p>KEY值为之前抓包到的数据</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805dbec458853aefc992dc.jpg" alt="https://pic.imgdb.cn/item/65805dbec458853aefc992dc.jpg"></p>
+<p>导入KEY后即可开始使用</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805e3bc458853aefcba8aa.jpg" alt="https://pic.imgdb.cn/item/65805e3bc458853aefcba8aa.jpg"></p>
+<p><strong>7、项目域名无法访问问题【挂科学最好】，最廉价的方法也可以使用STEAM++进行加速。</strong></p>
+<p>勉强能用</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://pic.imgdb.cn/item/65805ef5c458853aefceca6f.jpg" alt="https://pic.imgdb.cn/item/65805ef5c458853aefceca6f.jpg"></p>
+<blockquote>
+<p>选自：<a target="_blank" rel="noopener" href="https://paperkiteblog.xyz/?p=545">https://paperkiteblog.xyz/?p=545</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" href="/about/"><img class="post-copyright__author_img_front" src="/image/mcy.png"></a><div class="post-copyright__author_name">茗辰原 の 异世界</div><div class="post-copyright__author_desc">一位17岁的少年的编程史...</div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div><div class="post-reward"><div class="reward-button" title="赞赏作者" onclick="AddRewardMask()"><i class="solitude fa-solid fa-heart"></i>赞赏作者</div><div class="reward-main"><ul class="reward-all"><span class="reward-title">听福神说，你赞助作者会超级幸福哦~ / 感谢您的赞赏</span><ul class="reward-group"><li class="reward-item"><a href="/"><img class="post-qr-code-img nolazyload" src="/image/wx.jpg" alt="WX" style="border-color: var(--efu-black)"></a><div class="post-qr-code-desc">WX</div></li><li class="reward-item"><a href="/"><img class="post-qr-code-img nolazyload" src="/image/zfb.jpg" alt="ZFB" style="border-color: var(--efu-black)"></a><div class="post-qr-code-desc">ZFB</div></li></ul><a class="reward-main-btn" href="/about/"><div class="reward-text">赞赏名单</div><div class="reward-dec">有了您的支持，财神，福神，天曲星都在往你身上撞哦~ / 由于您的支持，我才能够实现写作的价值。</div></a></ul></div></div><script>function RemoveRewardMask() {
+    let rewardMainElements = document.querySelectorAll(".reward-main");
+    let quitBoxElement = document.querySelector("#quit-box");
+
+    rewardMainElements.forEach(element => {
+        element.style.display = "none";
+    });
+
+    if (quitBoxElement) {
+        quitBoxElement.style.display = "none";
+    }
+}
+
+function AddRewardMask() {
+    let rewardMainElements = document.querySelectorAll(".reward-main");
+    let quitBoxElement = document.querySelector("#quit-box");
+
+    rewardMainElements.forEach(element => {
+        element.style.display = "flex";
+    });
+
+    if (quitBoxElement) {
+        quitBoxElement.style.display = "flex";
+    }
+}</script><div class="reward-link mode"><a class="reward-link-button" href="/atom.xml"><i class="solitude fa-solid fa-seedling"></i>订阅</a></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">茗辰原 の 异世界</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ChatGPT/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>ChatGPT<span class="tagsPageCount">1</span></span></a><a class="post-meta__tags" href="/tags/Openai/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Openai<span class="tagsPageCount">1</span></span></a><a class="post-meta__tags" href="/tags/%E5%BB%BA%E7%AB%99/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>建站<span class="tagsPageCount">1</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/02/21/%E5%B9%BB%E4%BC%91/"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">幻休</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-bg-top"><div class="is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div></div><a class="card-info-avatar" href="/about/" title="头像"><div class="avatar-img"><img src="/image/mcy.png" alt="头像"></div></a><div class="card-info__desc_group"><div class="author-info__name">茗辰原</div><div class="author-info__desc">一位17岁的少年的编程史...</div><div class="card-info__data is-center"><a href="/archives/" title="累计文章数:2"><div class="length-num">2</div><div class="headline">文章</div></a><a href="/tags/" title="标签总数:6"><div class="length-num">6</div><div class="headline">标签</div></a><a href="/categories/" title="分类总数:2"><div class="length-num">2</div><div class="headline">分类</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/rumian0" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/500391876" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fa-solid fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fa-solid fa-map"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/02/21/%E5%B9%BB%E4%BC%91/" title="幻休"><img alt="幻休" src="/img/cover/%20(2).webp"></a><div class="content"><span class="title" href="/2024/02/21/%E5%B9%BB%E4%BC%91/" title="幻休">幻休</span><span class="article-recent_post_categories" href="/2024/02/21/%E5%B9%BB%E4%BC%91/">安卓应用</span></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/21/ChatGPT-KEY%E7%9A%84%E8%8E%B7%E5%8F%96%5B%E6%97%A0%E9%9C%80%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%BB%91%E5%AE%9A%5D/" title="ChatGPT-KEY的获取[无需手机号绑定]"><img alt="ChatGPT-KEY的获取[无需手机号绑定]" src="/img/cover/%20(1).webp"></a><div class="content"><span class="title" href="/2024/01/21/ChatGPT-KEY%E7%9A%84%E8%8E%B7%E5%8F%96%5B%E6%97%A0%E9%9C%80%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%BB%91%E5%AE%9A%5D/" title="ChatGPT-KEY的获取[无需手机号绑定]">ChatGPT-KEY的获取[无需手机号绑定]</span><span class="article-recent_post_categories" href="/2024/01/21/ChatGPT-KEY%E7%9A%84%E8%8E%B7%E5%8F%96%5B%E6%97%A0%E9%9C%80%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%BB%91%E5%AE%9A%5D/">ChatGPT</span></div></div></div></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/rumian0" title="Github"><i class="solitude  fab fa-github"></i></a><a class="deal_link" href="mailto:mcy070329@qq.com" title="Mail"><i class="solitude  fa fa-envelope-open"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img src alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/500391876" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://v.douyin.com/71359503226" title="Douyin"><i class="solitude  fab fa-tiktok"></i></a></div><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 By&nbsp;<a class="footer-bar-link" href="/">茗辰原</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="Theme">Theme</a><a class="footer-bar-link" href="/atom.xml" alt="RSS">RSS</a></div></div></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fa-solid fa-arrow-rotate-right"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fa-solid fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fa-solid fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fa-solid fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude fa-regular fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fa-solid fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fa-solid fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fa-solid fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="solitude fa-solid fa-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="solitude fa-solid fa-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="solitude fa-solid fa-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="solitude fa-solid fa-clone"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-randomPost" onclick="toRandomPost()||rm.hideRightMenu()"><i class="solitude fas fa-tower-broadcast"></i><span>随机短文</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/categories/')||rm.hideRightMenu()"><i class="solitude fas fa-clone"></i><span>全部分类</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/tags/')||rm.hideRightMenu()"><i class="solitude fas fa-tags"></i><span>全部标签</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div><div class="rightMenu-item" id="menu-translate"><i class="solitude fa-solid fa-language"></i><span>轉為繁體</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src= "/img/loading.avif" data-lazy-src="/js/utils.js?v=2.0.9"></script><script src="/js/main.js?v=2.0.9"></script><script src="/js/third_party/waterfall.min.js?v=2.0.9"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="/js/third_party/universe.min.js?v=2.0.9"></script><script>dark()
+</script><script src="/js/tw_cn.js?v=2.0.9"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/19.1.3/lazyload.iife.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script><script>var meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/meting/2.0.1/Meting.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><script src="/js/right_menu.js?v=2.0.9"></script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3JQcQRmFCmfaL8vh",ck:"3JQcQRmFCmfaL8vh"})</script><div class="js-pjax"><script defer pjax src="https://cdnjs.cloudflare.com/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js"></script></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff'],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- google adsense--><!-- search--><!-- Tianli-Talk--><!-- music--><div class="needEndHide" id="nav-music" onclick="sco.musicToggle()"><div id="nav-music-hoverTips">音乐已暂停</div><meting-js id="8279486152" server="netease" type="playlist" mutex="true" preload="none" data-lrctype="0" order="random" theme="var(--efu-main)"></meting-js></div></body></html><script>const posts=["2024/02/21/幻休/","2024/01/21/ChatGPT-KEY的获取[无需手机号绑定]/"];function toRandomPost(){ pjax.loadUrl(GLOBAL_CONFIG.root+posts[Math.floor(Math.random()*posts.length)]); }</script>
