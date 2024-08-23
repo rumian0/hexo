@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-08-23T11:23:21.499Z</updated>
+  <updated>2024-08-23T12:43:40.189Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,119 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>神奇应用!什么都能搜!</title>
+    <link href="http://example.com/2024/06/23/sqyy/"/>
+    <id>http://example.com/2024/06/23/sqyy/</id>
+    <published>2024-06-22T16:00:00.000Z</published>
+    <updated>2024-08-23T12:43:40.189Z</updated>
+    
+    
+    <summary type="html">分享一款集合的神器应用，可以当软件库使用</summary>
+    
+    
+    
+    <category term="安卓应用" scheme="http://example.com/categories/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="app" scheme="http://example.com/tags/app/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>取bilibili直连</title>
+    <link href="http://example.com/2024/06/22/biibili-zhilian/"/>
+    <id>http://example.com/2024/06/22/biibili-zhilian/</id>
+    <published>2024-06-21T16:00:00.000Z</published>
+    <updated>2024-08-23T12:43:51.372Z</updated>
+    
+    
+    <summary type="html">bilibili取直连，直接放置网站上可播放。</summary>
+    
+    
+    
+    <category term="技术分享" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="建站" scheme="http://example.com/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="实用推荐" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>绝版安卓工具箱？能有多强？</title>
+    <link href="http://example.com/2024/06/17/tools-box/"/>
+    <id>http://example.com/2024/06/17/tools-box/</id>
+    <published>2024-06-16T16:00:00.000Z</published>
+    <updated>2024-08-23T12:44:14.381Z</updated>
+    
+    
+    <summary type="html">本期推荐几款我自己的用的工具箱，非常好用！</summary>
+    
+    
+    
+    <category term="安卓应用" scheme="http://example.com/categories/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="app" scheme="http://example.com/tags/app/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>神秘网站合集打开即用？</title>
+    <link href="http://example.com/2024/06/02/website-all/"/>
+    <id>http://example.com/2024/06/02/website-all/</id>
+    <published>2024-06-01T16:00:00.000Z</published>
+    <updated>2024-08-23T12:44:22.241Z</updated>
+    
+    
+    <summary type="html">91个网站合集包含各类网站</summary>
+    
+    
+    
+    <category term="学习资料" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="精选网站" scheme="http://example.com/tags/%E7%B2%BE%E9%80%89%E7%BD%91%E7%AB%99/"/>
+    
+    <category term="推荐" scheme="http://example.com/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>什么竟然还有这样的神器？</title>
+    <link href="http://example.com/2024/05/12/qianhe-tools/"/>
+    <id>http://example.com/2024/05/12/qianhe-tools/</id>
+    <published>2024-05-11T16:00:00.000Z</published>
+    <updated>2024-08-23T12:44:48.214Z</updated>
+    
+    
+    <summary type="html">安利一款电脑程序，千盒工具</summary>
+    
+    
+    
+    <category term="硬核科技" scheme="http://example.com/categories/%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="电脑软件" scheme="http://example.com/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="实用推荐" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
   
   <entry>
     <title>开往的礼物(纪念款)</title>
