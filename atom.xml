@@ -125,9 +125,9 @@
     <category term="安卓应用" scheme="http://example.com/categories/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
     
     
-    <category term="app" scheme="http://example.com/tags/app/"/>
-    
     <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="app" scheme="http://example.com/tags/app/"/>
     
   </entry>
   
@@ -192,9 +192,9 @@
     
     <category term="实用推荐" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
     
-    <category term="app" scheme="http://example.com/tags/app/"/>
-    
     <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="app" scheme="http://example.com/tags/app/"/>
     
   </entry>
   
@@ -215,9 +215,9 @@
     
     <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
-    <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
-    
     <category term="app," scheme="http://example.com/tags/app/"/>
+    
+    <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
     
     <category term="广告" scheme="http://example.com/tags/%E5%B9%BF%E5%91%8A/"/>
     
