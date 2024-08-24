@@ -4,6 +4,185 @@
   
     
     <entry>
+      <title>Untitled</title>
+      <link href="/2024/08/24/win-ddb/"/>
+      <url>/2024/08/24/win-ddb/</url>
+      
+        <content type="html"><![CDATA[<hr><p>title: 吾爱工具-窗口洞洞波<br>cover: <a href="https://view.lixingyong.com/images/2024/08/21/18.webp">https://view.lixingyong.com/images/2024/08/21/18.webp</a><br>date: 2024-07-15<br>description:  窗口洞洞波 - Win<br>tags: </p><ul><li>工具</li><li>电脑软件</li><li>计算机<br>category: </li><li>硬核科技</li></ul><hr><aside>😀 这里写文章的前言：这款软件不止我们普通用户觉得离谱，更是难为了不少开发者，把头皮薅秃都不知道它的实现原理。此软件被转载至吾爱论坛后，也是让不少网友大开眼界。<p>甚至还有大佬，专门发帖研究分析软件的技术要点，总结下来就是奇幻无比。</p><p><img src="/2024/08/24/win-ddb/640.png" alt="640.png"></p><p>就这么说，有了它就等于你学会了“穿墙术”，以后就不用为了拿取文件而来回的切换窗口~</p><p>接下来，莫理就和大家一起，揭开这款不足1MB软件背后的秘密</p></aside><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h2 id="窗口洞洞波-Win"><a href="#窗口洞洞波-Win" class="headerlink" title="窗口洞洞波 - Win"></a>窗口洞洞波 - Win</h2><p>有一说一，这名字取得挺有意思的~</p><p>肯定是因为软件工作起来就像在窗口打洞，所以就叫**<code>“窗口洞洞波”</code>**</p><p>虽然软件编写思路很烧脑，但成品使用起来还是很方便的。</p><p>运行之后没有界面，**<code>仅需按下“</code>”和“1”即可完全控制&#96;**，共有三套逻辑。</p><h1 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h1><h2 id="①-在文件管理器窗口激活"><a href="#①-在文件管理器窗口激活" class="headerlink" title="① 在文件管理器窗口激活"></a><strong>① 在文件管理器窗口激活</strong></h2><p>长按<code>键，此时如果激活的窗口是文件管理器，则会穿透文件管理器窗口，松开</code>键则停止穿透。</p><p><img src="/2024/08/24/win-ddb/640.gif" alt="640.gif"></p><h2 id="②-在非文件管理器窗口激活"><a href="#②-在非文件管理器窗口激活" class="headerlink" title="② 在非文件管理器窗口激活"></a><strong>② 在非文件管理器窗口激活</strong></h2><p>长按“&#96;&#96;&#96;”键后，会先将其他所有非文件管理器窗口<code>最小化</code>，并<code>穿透当前窗口</code>。</p><p>此时可以访问被积压在下层的文件管理器界面或者桌面文件。</p><p><img src="/2024/08/24/win-ddb/640_(1).gif" alt="640 (1).gif"></p><p>松开&#96;&#96;&#96;键则停止穿透，并且恢复刚才被最小化的窗口。</p><p>其实它的运行机制很简单。<br>因为我们需要经常“<code>拿取</code>”或“<code>运行</code>”的文件都会放在桌面或某个文件夹，所以软件要做的，就是<code>在不影响其他窗口的前提下，扫除一切障碍，让我们直达桌面或文件管理器窗口</code>进行操作。</p><h2 id="③-穿透后还需进行二次穿透"><a href="#③-穿透后还需进行二次穿透" class="headerlink" title="③ 穿透后还需进行二次穿透"></a><strong>③ 穿透后还需进行二次穿透</strong></h2><p>如果你按下“ &#96;&#96;&#96; ”键后，依然有文件管理器窗口挡住了你的桌面，只需同时按下旁边的数字“<code>1</code>”键，即可<code>二次穿透</code>。</p><p><img src="/2024/08/24/win-ddb/640_(2).gif" alt="640 (2).gif"></p><p>逻辑②和逻辑①的区别就在于当前窗口是否为文件管理器窗口，若是则隐藏，若否则不隐藏，访问桌面需二次穿透。</p><p>作者还建议我们<strong>搭配一些桌面栅栏工具</strong>使用更为方便，具体效果可看下方<code>演示图</code> 👇</p><p><img src="/2024/08/24/win-ddb/640_(3).gif" alt="640 (3).gif"></p><p>本次0.2版本不光修复了窗口还原时的顺序问题，还增加了配置文件！<br>可以通过修改<code>setting.ini</code>来改变穿洞的直径，以及添加不被最小化的应用。</p><p><img src="/2024/08/24/win-ddb/640_(1).webp" alt="640 (1).webp"></p><p><strong>不过目前来看，软件BUG还是比较多的。</strong></p><p>比如使用中<code>若弹出下方信息框</code>，则会<code>一直保存穿透模式</code>，只能在<code>托盘处</code>退出软件。</p><p><img src="/2024/08/24/win-ddb/640_(2).webp" alt="640 (2).webp"></p><p>若大家发现了其它问题，可以在原帖地址向作者反馈！</p><p>此外，窗口洞洞波作者@dog特别介绍，<strong>软件是基于ahk论坛Helgef发表的winhole 66脚本开发。</strong></p><p><img src="/2024/08/24/win-ddb/640_(3).webp" alt="640 (3).webp"></p><p><strong>winhole 66</strong>的脚本还提供了其他功能，如滚轮调整穿洞大小、更多穿洞图案、穿洞反转、以及固定穿洞等等。</p><p>想要研究学习的小伙伴，可以去ahk论坛查阅源代码~</p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><strong>小众原帖地址：<a href="https://meta.appinn.net/t/topic/55834">https://meta.appinn.net/t/topic/55834</a></strong></p><p><a href="https://meta.appinn.net/t/topic/55834">【至0.2版本】Winhole(窗口洞洞波)——洞穿当前窗口，从下层窗口或桌面拖文件给上层窗口</a></p><p><strong>窗口洞洞波V0.2下载地址：<a href="https://wwd.lanzouo.com/iDjof24acs3a">https://wwd.lanzouo.com/iDjof24acs3a</a></strong></p><p><strong>ahk论坛源代码：<a href="https://www.autohotkey.com/boards/viewtopic.php?f=6&t=30622">https://www.autohotkey.com/boards/viewtopic.php?f=6&t=30622</a></strong></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
+      <link href="/2024/07/17/wcn-rs/"/>
+      <url>/2024/07/17/wcn-rs/</url>
+      
+        <content type="html"><![CDATA[<aside>😀 这里写文章的前言：这篇文章摘抄于微信公众号！</aside><p>刷脸支付、刷脸打卡、刷脸门禁……如今人脸识别的应用越来越普及，很多人几乎每天都会刷脸，甚至在部分健身馆、游泳馆的更衣室也装上了人脸识别设备。</p><p><img src="/2024/07/17/wcn-rs/640_(1).webp" alt="640 (1).webp"></p><p><strong>而你以为识别的只是一张脸，殊不知可能上半身全照进去了！</strong></p><p>这两天，#建议大家人脸识别要穿上衣服#的话题登上热搜。不穿衣服进行人脸识别被后台审核人员看光光？网友在相关词条下对隐私泄露表示担忧。</p><p><img src="/2024/07/17/wcn-rs/640_(2).webp" alt="640 (2).webp"></p><p>博主@知名青年小新 发视频提醒，大家使用App人脸识别功能时一定要穿衣服。视频内容显示：</p><p>如果你经常在洗澡或者是上厕所的时候，进行人脸认证或者查看银行卡余额，你以为手机只会扫描到你的脸部吗？实际上后台的审核人员是能看到你整个上半身的。特别是当你没有穿衣服做各种刷脸认证的时候，简直不敢想。并且，这些视频是要一直保存在网络上的。</p><p><img src="/2024/07/17/wcn-rs/640_(3).webp" alt="640 (3).webp"></p><p>人脸识别泄露隐私的问题早有争论。</p><p>此前，教育博主@法小岛 发微博表示，摄像头采集的不仅仅是被识别者人脸部分，后台还会有审核人员看到……</p><p><img src="/2024/07/17/wcn-rs/640.jpg" alt="640.jpg"></p><p>在该博主评论区，有网友介绍，实际上就是用前置摄像头拍一张照片，只是图形界面只给你显示人脸部分。所以锁屏、解锁或者支付宝人脸支付等自动识别的都是机器判断。但是需要人工审核的就得注意点了，像银行二级账户开户人脸识别，证券App开户这种就是要人工审核的。</p><p>另一数码博主@长安数码君 也称，有从事后台审核的朋友对他说，在审核工作时：“经常会看到很多人在洗澡的时候、在和“另一半抱在一起的时候”、在没穿衣服的时候、在进行各种奇奇怪怪动作的时候进行人脸识别。”</p><p>该博主还放了一张用户看到的图片和人脸识别后台所显示图片的对比图，更加清晰详尽地展示了人脸识别后台的“真相”。</p><p><img src="/2024/07/17/wcn-rs/640.png" alt="640.png"></p><p>早在2019年，新浪新闻还报道了一则因人脸识别而破解的命案。报道称，一男子杀害女友后，借用女友的身份在网上申请小额贷款。但贷款APP要求人脸识别、对着屏幕眨眼睛，该男子只好放弃。</p><p>而此举却引起了网贷App工作人员的注意，转入人工审核时发现异常，在7秒的“活体识别”的视频中，当事人无任何反应、脖子上也有勒痕、面部有淤青。工作人员怀疑申请人被害，赶紧报了警。</p><p><img src="/2024/07/17/wcn-rs/640_(5).webp" alt="640 (5).webp"></p><p>可见，需要人脸动态识别（比如眨眼、摇头等）的APP，的确有人工审核。</p><p>并且，人脸识别其实调用的是手机的前置摄像头，而摄像头的取景并非仅仅是头部，而是涵盖了摄像头视野覆盖的所有区域。</p><p>也即是说，大家在进行人脸识别的时候，不论人脸框内还是框外，只要是在摄像头范围内的画面，全部都会被拍到。</p><p>小米手机也曾表示，人脸验证时，其实整个上半身都会被应用获取。</p><p><img src="/2024/07/17/wcn-rs/640_(4).webp" alt="640 (4).webp"></p><p>得知此事后，网友纷纷表示“社死”。</p><p>有网友称，自己经常在洗澡的时候解锁；还有人表示，会在蹲厕所时进行人脸识别。</p><p><img src="/2024/07/17/wcn-rs/640_(5)%201.webp" alt="640 (5).webp"></p><p>而除了感到社死外，有不少网友认为这件事“很严重”“感到隐私被侵犯”。人脸识别系统后台人工审核时，平台为什么不提醒用户是可以看到摄像头全景的？</p><p>据2021年8月1日起施行的《最高人民法院关于审理使用人脸识别技术处理个人信息相关民事案件适用法律若干问题的规定》明确规定，信息处理者处理人脸信息未公开处理人脸信息的规则或者未明示处理的目的、方式、范围，人民法院应当认定属于侵害自然人人格权益的行为。</p><p>所以，若App未明示人脸识别范围，或已涉及侵害用户权益。</p><p>不过，大家也不必过于惊慌。</p><p>曾有专业人士介绍，现在提供人脸识别技术的头部企业和大企业采用的都是隐私计算技术，只会向客户提供脱敏特征码用于比对，不会将图像送到后台。</p><p>一般而言，大公司、银行、政府、公安等在人脸识别的应用上会更规范。对于网络上盛传的后台人工审核时能看到图片的情况，有专家表示这种操作是“不合规”的。</p><p>此外，很多网友担心后台会存储自己的照片信息。</p><p>对此，某手机厂商曾表示，面容ID数据不会离开设备，也永远不会备份到iCloud或其他任意位置。</p><p>更早前，腾讯游戏针对“人脸识别”等一系列问题作出解答，称人脸识别会严格遵照主管部门规定，最大限度保障用户隐私安全。用于验证的用户身份信息不会被记录、存储，或用于除公安权威数据平台数据源验证以外的任何其他用途。相关数据均通过加密处理，在与公安权威数据平台数据源比对的验证过程中，全程均为机器识别，没有人工参与。</p><p><img src="/2024/07/17/wcn-rs/640_(6).webp" alt="640 (6).webp"></p><p>实际上，业内人士表示一般的企业都不会在后台存储用户的原始图像。单从存储和传输等方面的成本上看，对公司而言，把原始图像送往后台也是不合算的做法。</p><p>而如果一些企业需要通过大量的人像数据来进行AI和机器学习的训练，有存储用户原始图像的需求，那么他们往往只会存储头部的图像。因为过于复杂的背景和其他的图像信息会对机器学习的算法进行干扰，反而会造成人脸识别算法的不准确。</p><p>需要注意的是，相关法规明确，使用人脸识别技术，不应过度索取个人信息。</p><p>2023年8月，国家网信办公开发布《人脸识别技术应用安全管理规定（试行）（征求意见稿）》（以下简称“征求意见稿”）提到，使用人脸识别技术必须遵循“最少使用”和“最小存储”。</p><p>其中，“最少使用”，即只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，方可使用人脸识别技术处理人脸信息。实现相同目的或者达到同等业务要求，存在其他非生物特征识别技术方案的，应当优先选择非生物特征识别技术方案；</p><p>“最小存储”，即除法定条件或者取得个人单独同意外，人脸识别技术使用者不得保存人脸原始图像、图片、视频，经过匿名化处理的人脸信息除外。使用人脸识别技术处理人脸信息应当尽量避免采集与提供服务无关的人脸信息，无法避免的，应当及时删除或者进行匿名化处理。</p><p><img src="/2024/07/17/wcn-rs/640_(7).webp" alt="640 (7).webp"></p><p>尽管法律法规对企业有制约作用，但无法保证整个流程中无人违规，因此建议大家首先选择知名企业App，非正规App则不要使用人脸识别功能。同时，在进行人脸识别时，注意个人隐私保护，务必衣着整齐。</p><p>另外，由于人脸识别技术不同，市面上的设备种类繁多，广大用户往往无法确知敏感信息在前端的获取情况，在后端又能否真正实现加密保护或依法删除，希望有关部门能依据职责、形成合力，加强对人脸识别技术使用的监督检查，指导督促人脸识别技术使用者履行各项法定义务，及时发现安全隐患并督促限期整改，避免敏感个人信息安全风险失控蔓延。</p><p>来源：电脑报，编辑：cc</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 探究所以 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 思考 </tag>
+            
+            <tag> 探究所以 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TuneFree免费音乐下载</title>
+      <link href="/2024/07/16/TuneFree/"/>
+      <url>/2024/07/16/TuneFree/</url>
+      
+        <content type="html"><![CDATA[<aside>😀 这里写文章的前言：<p>今天给大家分享一款全平台适用的音月神器支持<strong>网页端、电脑端和安卓端</strong>，iOS用户可以直接使用网页端，话不多说，直接安排~</p></aside><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本软件来源于网络……</p><p>名称：<code>TuneFree</code></p><h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><p><strong>软件支持安卓、电脑、还有网页端，今天我们以网页端为例，软件整体界面非简洁清爽，完全免费使用！</strong></p><p><img src="/2024/07/16/TuneFree/640_(4).webp" alt="640 (4).webp"></p><p>我们点击发现，可以看到这里有着非常丰富的音月zi源，比如飙升榜、原创榜、热哥榜等等各类榜单应有尽有，我们可以随意打开在线听。</p><p><img src="/2024/07/16/TuneFree/640_(5).webp" alt="640 (5).webp"></p><p>不仅如此，软件内还有博客电tai板块，里面包含了情感、有声书、脱口秀、二次元、亲子、人文历史、娱乐、相声曲艺等非常的丰富，可以满足我们不同人群的各种需求！</p><p><img src="/2024/07/16/TuneFree/640_(6).webp" alt="640 (6).webp"></p><p>软件内的所有内容都支持免费听+下载，遇到喜欢的想下载，只需单击鼠标右键，然后点击下载即可。</p><p><img src="/2024/07/16/TuneFree/640_(7).webp" alt="640 (7).webp"></p><p>下载支持所有音质，我们当然要选最好的下载啦~</p><p><img src="/2024/07/16/TuneFree/640_(8).webp" alt="640 (8).webp"></p><p>另外，软件还有个超牛的地方，那就是它是和某yi云相通的，支持我们登录某yi云，登录后，就可以看到所有收藏喜欢的，直接听就完了~</p><p><img src="/2024/07/16/TuneFree/640_(9).webp" alt="640 (9).webp"></p><p>好了，以上就是今天分享的所有内容，如果觉得这篇文章对你有价值，记得收藏本站！</p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>全平台音月神器（安卓+电脑+iOS）<br><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">https://caiyun.139.com/m/i?005Cifoc02EhV</a></p><p><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">中国移动云盘分享</a></p><p>网页版：<br><a href="https://pt.sayqz.com/#/">https://pt.sayqz.com/#/</a></p><p><a href="https://pt.sayqz.com/#/">TuneFree</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用软件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电脑软件 </tag>
+            
+            <tag> 安卓应用 </tag>
+            
+            <tag> 音乐 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pdf修复工具</title>
+      <link href="/2024/07/16/pdf-repalr/"/>
+      <url>/2024/07/16/pdf-repalr/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>分享两款Word修复和PDF修复工具。</p><p>首先声明：我没有损坏的Word和PDF，所以不知道效果如果，大家有损坏的可以测试测试。</p><h1 id="PDF修复工具"><a href="#PDF修复工具" class="headerlink" title="PDF修复工具"></a><strong>PDF修复工具</strong></h1><p>PDF修复工具是一款安装版的软件，软件安装完成以后，把Crack文件夹下面的文件覆盖到软件所在的目录下，然后再次打开即可正常了。</p><p>选择好文件后，点下一步。</p><p><img src="/2024/07/16/pdf-repalr/640_(1).webp" alt="640 (1).webp"></p><p>然后自己命名一下修复后的文件名字。</p><p><img src="/2024/07/16/pdf-repalr/640_(2).webp" alt="640 (2).webp"></p><p>再选择输出的PDF版本，最后点完成即可。</p><p><img src="/2024/07/16/pdf-repalr/640_(3).webp" alt="640 (3).webp"></p><p>软件挺简单，但是修复效果如何暂时不得而知！</p><h1 id="Word修复工具"><a href="#Word修复工具" class="headerlink" title="Word修复工具"></a><strong>Word修复工具</strong></h1><p>我们经常会遇到Word打开时提示已经损坏的情况，这时候大家应该怎么操作呢？就我吧，直接就放弃了。不过今天之后，我会尝试用Word修复工具进行修复！</p><p>软件是安装版，全程英文，大家可以无脑进行安装</p><p><img src="/2024/07/16/pdf-repalr/640_(1)%201.webp" alt="640 (1).webp"></p><p>安装完成以后，把补丁覆盖到安美目录下打开，即可无限制使用了！</p><p>但是这个Word我测试直接用补丁可用，只是打开是英文版，选择需要修复的Word即可开始修复了。</p><p><img src="/2024/07/16/pdf-repalr/640_(2)%201.webp" alt="640 (2).webp"></p><p>最后软件就开始修复了。</p><p><img src="/2024/07/16/pdf-repalr/640_(3)%201.webp" alt="640 (3).webp"></p><p>挺简单的工具修复工具。</p><p>目前我没看过好用的修复工具，这款的效果如何不得而知，但是如果真有Word和PDF损坏的情况，我们可以尝试修复，死马当活马医嘛！</p><p>另外有类似的工具也可以给我介绍，我也想找其他更好用的！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 硬核科技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 电脑软件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>短视频视频批量下载!</title>
+      <link href="/2024/07/03/dyd/"/>
+      <url>/2024/07/03/dyd/</url>
+      
+        <content type="html"><![CDATA[<aside>😀 这里写文章的前言：特别喜欢快手的`昔昔`，真的天可爱了，早都想把她的视频下载下来，让后分享给我的伙伴们看。刚好让我找到了批量下载工具。</aside><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><strong>《DyD》</strong>是一款多功能视频图文下载器，支持某d、某k、某红书平台，并以批量的形式，快速下载某博主主页所有视频，不仅无水印，而且画质较高，是一个不错的自媒体必备工具。</p><p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-05-40.webp" alt="Snipaste_2024-07-03_22-05-40.webp"></p><h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><blockquote><p>这里我选择快手的视频进行下载</p></blockquote><p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-07-51.webp" alt="Snipaste_2024-07-03_22-07-51.webp"></p><p>之后使用网页版，找到喜欢的博主</p><p>这里就拿<code>九月</code>举例子</p><blockquote><p>为什么不拿昔昔举例子？</p></blockquote><blockquote><p>答：因为我已经下载过了 🥰   九月我也非常喜欢。</p></blockquote><p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-09-44.webp" alt="Snipaste_2024-07-03_22-09-44.webp"></p><p><strong>复制他的链接</strong>：<a href="https://www.kuaishou.com/profile/3x8yqtps4anqe2y"><code>https://www.kuaishou.com/profile/3x8yqtps4anqe2y</code></a></p><p>让后<code>粘贴</code>到上面，点击上方下载</p><p>在这之后你需要登录网页版快手，如果不登录，则只能下载20个视频。</p><p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-12-46.webp" alt="Snipaste_2024-07-03_22-12-46.webp"></p><p>注：如果碰到上方<code>白屏</code>，<code>正常</code>，<code>重新点击下载</code>即可！！</p><p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-14-59.webp" alt="Snipaste_2024-07-03_22-14-59.webp"></p><p>如此他将会自动捕捉视频，你需要做的，就是拖动进度条，拖到最底下，就可以下载全部视频啦~~</p><p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-16-13.webp" alt="Snipaste_2024-07-03_22-16-13.webp"></p><p>点击全部开始就可以等待下载啦~</p><p>之后我们打开下载的目录文件，<code>泰裤辣</code>~~</p><p>给你们下载可爱的昔昔~</p><p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-18-23.webp" alt="Snipaste_2024-07-03_22-18-23.webp"></p><p>总共167个视频，太可爱了，声音也超级好听！</p><blockquote><p>注：以上软件全部来源于网络，而且下载的视频仅供自己，不传播且会标注来源。</p></blockquote><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>123盘：<a href="https://www.123pan.com/s/pUVeVv-1jqKA.html">https://www.123pan.com/s/pUVeVv-1jqKA.html</a></p><p>七彩云：<a href="https://cloud.06dn.com/s/jKg4C4">https://cloud.06dn.com/s/jKg4C4</a></p><p>夸克盘：<a href="https://pan.quark.cn/s/e8e1178082f7">https://pan.quark.cn/s/e8e1178082f7</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 硬核科技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 电脑软件 </tag>
+            
+            <tag> 实用推 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一个图片查地址----最强Aigeospy</title>
+      <link href="/2024/07/03/geospy/"/>
+      <url>/2024/07/03/geospy/</url>
+      
+        <content type="html"><![CDATA[<aside>😀 这里写文章的前言：这个AI已经很火了，他是根据一张照片就推断出照片所在地，这个算法非常精巧，据说是一位黑客用空余时间研发的，属实震惊到我了，那跟我一起看看啦~</aside><h1 id="网址地址"><a href="#网址地址" class="headerlink" title="网址地址"></a>网址地址</h1><p>网址：</p><p><a href="https://geospy.ai/">GeoSpy AI</a></p><p>简短的介绍：</p><blockquote><p>GeoSpy 是一个 AI 驱动的照片识别工具，由波士顿的一家技术公司开发。它经过训练，可以将图像像素与 GPS 数据连接起来，仅根据照片的视觉内容来预测照片的位置。</p></blockquote><blockquote><p>使用 GeoSpy AI  探索世界是充满乐趣的，无论你是 GeoGuessr 玩家 ，还是只是对朋友照片中的位置感到好奇，GeoSpy 都可以作为辅助应用。我试了几张照片，包括网络图片、自己拍摄和在 Google 街景中截图的，其结果都令人欣喜。</p></blockquote><hr><p>无废话，直接演示</p><p><img src="/2024/07/03/geospy/Snipaste_2024-07-03_22-31-59.webp" alt="Snipaste_2024-07-03_22-31-59.webp"></p><h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p>我在 <code>Google 冰岛街景</code>中的截图 👇🏻</p><p><img src="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/143542dnj1j4j0na4zn9ml.png" alt="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/143542dnj1j4j0na4zn9ml.png"></p><p><code>识别结果：</code></p><blockquote><p>Country: IcelandExplanation: The architecture of the house in the image is similar to that of houses in Iceland. Additionally, the trees in the image are similar to those found in Iceland. （图中房屋的建筑风格与冰岛的房屋类似。 此外，图像中的树木与冰岛发现的树木相似。）Coordinates: 64.144296, -21.931054</p></blockquote><p>GeoSpy <code>识别正确</code>，还是根据<code>建筑和文字信息</code>。</p><p>再试下<code>网图</code>，如果是传播较广的，它也会提供更精确的信息，比如这张：</p><p><img src="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/144355ulhuiaohiualszd7.jpeg" alt="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/144355ulhuiaohiualszd7.jpeg"></p><p><code>识别结果：</code></p><blockquote><p>国家： 意大利 城市： 波西塔诺 说明： 该照片拍摄于意大利波西塔诺。 该镇位于阿马尔菲海岸，以其美丽的悬崖边景色、色彩缤纷的建筑和卵石海滩而闻名。 这张照片是在一家可以欣赏地中海景色的餐厅拍摄的。 波西塔诺的坐标是 40°35′N 14°29′E。</p></blockquote><p>例如下面这张随便到不能再随便的自拍，你能猜到小姐姐在哪里吗？</p><p><img src="/2024/07/03/geospy/image11.webp" alt="image11.webp"></p><p>这事交给现在的 AI 来处理，它只需要“看”一眼，就能把照片里的**<code>“底裤都给扒出来”**：</code></p><blockquote><p>美国，加利福尼亚州，旧金山机场洗手间，93 号登机口附近……</p><p>坐标：37.6189° N，122.3744° W</p><p><img src="/2024/07/03/geospy/image22.webp" alt="image22.webp"></p></blockquote><p>再如下面这张照片，AI 根据湖的特征、树木和背景中的山脉，就匹配到了<strong>玛丽湖</strong>，同样是给出了精准的坐标：</p><p><img src="/2024/07/03/geospy/image33.webp" alt="image33.webp"></p><p><strong>恐怖如斯，恐怖如斯。</strong></p><p>之前也有一位国外小哥（ID：georainbolt）凭借只需看 <strong>0.1 秒</strong>街景，就能在世界地图上快速锁定位置而在网络上蹿红。</p><p>果不其然，斯坦福计算机系学生 Andrew Gao 在尝试了 GeoSpy 之后，就开始喊话这位小哥了：</p><blockquote><p>你要失业喽~</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/bcedf9c1-7726-44e0-88b0-cde4267dbcf4.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/bcedf9c1-7726-44e0-88b0-cde4267dbcf4.png?x-bce-process=image/format,f_auto"></p><p>不过也有 GeoGuessr 的职业玩家坐不住了，站出来表示不服：</p><blockquote><p>申请一战！</p></blockquote><h2 id="人类-vs-AI"><a href="#人类-vs-AI" class="headerlink" title="人类 vs AI"></a><strong>人类 vs AI</strong></h2><p>这位挑战者，名叫做 <strong>Gavin</strong>（下文我们简称“G 哥”），是一位正在参与 GeoGuessr 2024 世界杯的职业选手。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/ec916810-7f2a-417d-924a-5e150e6d33dd.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/ec916810-7f2a-417d-924a-5e150e6d33dd.png?x-bce-process=image/format,f_auto"></p><p>G 哥把他跟 AI 在线对垒的情况上传到了网上。</p><p>规则和 GeoGuessr 一致，还是看图猜位置。</p><p>在第一轮对决中，G 哥凭借抓到了马路道边上土耳其样式柱子的细节，判断这张图可能是在土耳其附近。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/52490ab0-26da-49ea-829f-2587090e906e.gif?x-bce-process=image/format,f_png" alt="https://img.ithome.com/newsuploadfiles/2024/5/52490ab0-26da-49ea-829f-2587090e906e.gif?x-bce-process=image/format,f_png"></p><p>结果显示，这张图里的位置确实是在土耳其附近，但距离精准的位置还差 241km。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/7823f69c-5536-4ce5-a534-18244bce9ab3.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/7823f69c-5536-4ce5-a534-18244bce9ab3.png?x-bce-process=image/format,f_auto"></p><p>接下来就轮到 GeoSpy 这个 AI 选手登场了。</p><p>G 哥处理的方式是将截图“投喂”给 AI，在静候了片刻之后，GeoSpy 就给出了结果。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/64713cc8-d2d7-49bc-9a85-b22ea353f189.webp" alt="https://img.ithome.com/newsuploadfiles/2024/5/64713cc8-d2d7-49bc-9a85-b22ea353f189.webp"></p><blockquote><p>国家：土耳其</p><p>经纬度：39.998923, 32.607491</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/5a8fdb67-c889-485d-bdd5-b10e1930b337.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/5a8fdb67-c889-485d-bdd5-b10e1930b337.png?x-bce-process=image/format,f_auto"></p><p>然后 G 哥在地图中搜索这个经纬度，再跟 GeoGuessr 的“标准答案”做比较：</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/ad080e0c-8af5-4f68-8488-e6d9432169d6.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/ad080e0c-8af5-4f68-8488-e6d9432169d6.png?x-bce-process=image/format,f_auto"></p><p>第一轮的结果可以说是让 G 哥大受震惊，GeoSpy 给出的位置比他的更近…… 来看下 G 哥当时的表情：</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/122a17ea-b3db-4009-b303-18dae1d7cb34.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/122a17ea-b3db-4009-b303-18dae1d7cb34.png?x-bce-process=image/format,f_auto"></p><p>在接下来的“火拼”中，G 哥变得更加仔细，都凑近屏幕去捕捉细节了。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/1cb3b2a4-a6cd-4a7d-b8e8-611a59090a2c.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/1cb3b2a4-a6cd-4a7d-b8e8-611a59090a2c.png?x-bce-process=image/format,f_auto"></p><p>G 哥这次给出的答案是苏门答腊岛，但实际的结果却不是很理想，距离“标准答案”足足 703km。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/9f21c701-dd9d-4fff-89f8-cfd50bce4ce3.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/9f21c701-dd9d-4fff-89f8-cfd50bce4ce3.png?x-bce-process=image/format,f_auto"></p><p>到了 GeoSpy 这边，虽然大致位置都是在印度尼西亚，但这次给出的位置就没有那么准确了。</p><p>不过比起 G 哥给出的答案，距离上却还是 AI 的答案更近些，这使得 G 哥开始有点无语子……</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/92f92100-bf59-4c3d-9d76-110e2174b2c9.gif?x-bce-process=image/format,f_png" alt="https://img.ithome.com/newsuploadfiles/2024/5/92f92100-bf59-4c3d-9d76-110e2174b2c9.gif?x-bce-process=image/format,f_png"></p><p>在接下来的比试中，即便 G 哥把猜测距离压缩了 86km，但 GeoSpy 给出的结果又是更接近于“标准答案”。</p><p>G 哥此时已经开始掩面了：</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/e2b74783-3261-40d7-8604-2ae4cbe28fcc.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/e2b74783-3261-40d7-8604-2ae4cbe28fcc.png?x-bce-process=image/format,f_auto"></p><p>在最后一轮 battle 中，G 哥直接说出：</p><blockquote><p>人类必须反将 AI 一军。</p></blockquote><p>然后 G 哥把头埋得更深了，当他捕捉到图中路边有文字时，脸上露出了得意的笑容：</p><blockquote><p>这局稳了，AI 它不识字的。</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/01bbcb15-213f-451e-b970-0206b9cf6952.gif?x-bce-process=image/format,f_png" alt="https://img.ithome.com/newsuploadfiles/2024/5/01bbcb15-213f-451e-b970-0206b9cf6952.gif?x-bce-process=image/format,f_png"></p><p>G 哥的结果是，距离标准答案 134km。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/d6523a8c-60a3-4bf7-8923-257aa86f100c.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/d6523a8c-60a3-4bf7-8923-257aa86f100c.png?x-bce-process=image/format,f_auto"></p><p>不过令 G 哥万万没想到的是，GeoSpy，它！识！字！</p><blockquote><p>这张照片是在波兰拍摄的，因为建筑物上写着“Abet”，这是一家波兰公司。</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/0d030c3c-34a8-4ec9-aab9-e7d950aacf7c.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/0d030c3c-34a8-4ec9-aab9-e7d950aacf7c.png?x-bce-process=image/format,f_auto"></p><p>然而 G 哥还是觉得这把有希望，因为他发现 GeoSpy 只能定位到城市。</p><p>所以这把如果 AI 给出的坐标是“标准答案”旁边的城市“华沙”，那么 G 哥就赢了。</p><p>结果还真是……G 哥也是露出了久违的笑容，并骄傲地说：</p><blockquote><p>AI 永远不会打败人类！</p></blockquote><p>（Emmmm……G 哥，你非要这么算的话…… 也行。）</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/efd0620c-3457-40da-8548-1eb1f9b1b566.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/efd0620c-3457-40da-8548-1eb1f9b1b566.png?x-bce-process=image/format,f_auto"></p><p>G 哥在下一轮的比拼中，将地图范围缩小到了自己的老家 —— 芝加哥。</p><p>这次在自己的地盘上，G 哥的表现非常勇猛，有距离“标准答案”仅 2m 和 4m 的成绩。</p><p>不过 AI 这边也是非常精准，起码在看图描述的过程中可以精确地说出周边的地址，这也让 G 哥着实捏了一把汗。</p><p>但在地图上搜 AI 给出的坐标的时候，却比文字描述的地点远一些了，有的甚至还定位到了海上。</p><p>……</p><p>最后，G 哥在与 AI 交锋了数次之后感慨道：</p><blockquote><p>这次体验非常有趣并且让人印象深刻。</p><p>但我也害怕这样的技术在未来 5 年后会迭代到什么样的程度。</p></blockquote><p>注：以上取自<strong>IT之家</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 精选网站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>win-文件查重</title>
+      <link href="/2024/06/24/win-chachong/"/>
+      <url>/2024/06/24/win-chachong/</url>
+      
+        <content type="html"><![CDATA[<aside>😀 这里写文章的前言：<p>我们电脑上的文件，复制来粘贴去，自己肯定不知道那里可以删，可以保留的，那么，下面这款软件将会查出你重复的文件，你可以进行删除与保留。</p></aside><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>4DDiG Duplicate File Deleter是一款电脑重复文件查找的软件，软件是绿色单文件版，双击打开后会提示你升级，大家不要升级！</p><p><code>完全免费！ 大小：36.19MB</code></p><h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><p>软件打开后是英文版，在右上角设置成简体中文即可。</p><p><img src="/2024/06/24/win-chachong/640_(10).webp" alt="640 (10).webp"></p><p>设置后的软件界面是下面这样，点击选择查找的盘符，软件就开始搜索你电脑中的重复文件。</p><p><img src="/2024/06/24/win-chachong/640_(11).webp" alt="640 (11).webp"></p><p>说真的，电脑重复文件我推荐过好多款，但是像这款界面这么简洁，功能操作这么简单的还真的不少。</p><p>查找后分了<code>图片、文档、视频、音频和其他</code>这几类，需要删除哪个选择即可。</p><p><img src="/2024/06/24/win-chachong/640_(12).webp" alt="640 (12).webp"></p><p>你也可以自动选择，软件会自动帮你选出文件，选择后点右下角的【<code>移除</code>】即可。</p><p>有不少重复文件查找的软件，但是功能太强大，操作就变成非常复杂，而这款重复文件查找软件操作就简单多了！</p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>两款小工具<br>阿里云：<a href="https://www.alipan.com/s/UxzeVC2gmHR">https://www.alipan.com/s/UxzeVC2gmHR</a></p><p><a href="https://www.alipan.com/s/UxzeVC2gmHR">阿里云盘分享</a></p><p>123盘：<a href="https://www.123pan.com/s/pUVeVv-ciqKA.html">https://www.123pan.com/s/pUVeVv-ciqKA.html</a></p><p><a href="https://www.123pan.com/s/pUVeVv-ciqKA.html">两款软件官方版下载丨最新版下载丨绿色版下载丨APP下载-123云盘</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 硬核科技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 电脑软件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>神奇应用!什么都能搜!</title>
       <link href="/2024/06/23/sqyy/"/>
       <url>/2024/06/23/sqyy/</url>
@@ -49,9 +228,9 @@
       
         <tags>
             
-            <tag> 建站 </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> 建站 </tag>
             
             <tag> 实用推荐 </tag>
             
@@ -163,9 +342,9 @@
       
         <tags>
             
-            <tag> 实用推荐 </tag>
-            
             <tag> 安卓应用 </tag>
+            
+            <tag> 实用推荐 </tag>
             
             <tag> app </tag>
             
@@ -319,7 +498,7 @@
       <link href="/2024/04/10/free-yuming/"/>
       <url>/2024/04/10/free-yuming/</url>
       
-        <content type="html"><![CDATA[<h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#x6e;&#102;&#x6f;&#x40;&#102;&#114;&#101;&#101;&#x6e;&#111;&#x6d;&#x2e;&#99;&#x6f;&#109;">&#x69;&#x6e;&#102;&#x6f;&#x40;&#102;&#114;&#101;&#101;&#x6e;&#111;&#x6d;&#x2e;&#99;&#x6f;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p><p>以下整理了一些可以用的免费二级域名：</p><table><thead><tr><th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th><th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th></tr></thead><tbody><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td><td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td><td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td><td>可以申请到work.gd&#x2F;run.place等免费二级域名</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td><td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td><td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td><td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td><td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td><td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td><td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td><td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td><td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td><td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td><td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td></tr></tbody></table><p>以上信息会不定期整理修改！</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#105;&#x6e;&#x66;&#x6f;&#x40;&#102;&#x72;&#x65;&#101;&#x6e;&#111;&#x6d;&#x2e;&#99;&#x6f;&#x6d;">&#105;&#x6e;&#x66;&#x6f;&#x40;&#102;&#x72;&#x65;&#101;&#x6e;&#111;&#x6d;&#x2e;&#99;&#x6f;&#x6d;</a>说明情况后可以改为收费状态并已付费10年。</p><p>以下整理了一些可以用的免费二级域名：</p><table><thead><tr><th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th><th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th></tr></thead><tbody><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td><td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td><td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td><td>可以申请到work.gd&#x2F;run.place等免费二级域名</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td><td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td><td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td><td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td><td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td><td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td><td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td><td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td><td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td><td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td><td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td></tr></tbody></table><p>以上信息会不定期整理修改！</p>]]></content>
       
       
       <categories>
@@ -443,9 +622,9 @@
       
         <tags>
             
-            <tag> 实用推荐 </tag>
-            
             <tag> 安卓应用 </tag>
+            
+            <tag> 实用推荐 </tag>
             
         </tags>
       
@@ -472,9 +651,9 @@
             
             <tag> 工具 </tag>
             
-            <tag> 实用推荐 </tag>
-            
             <tag> 安卓应用 </tag>
+            
+            <tag> 实用推荐 </tag>
             
         </tags>
       
@@ -499,9 +678,9 @@
       
         <tags>
             
-            <tag> 实用推荐 </tag>
-            
             <tag> 安卓应用 </tag>
+            
+            <tag> 实用推荐 </tag>
             
             <tag> app </tag>
             
@@ -530,9 +709,9 @@
             
             <tag> 工具 </tag>
             
-            <tag> app, </tag>
-            
             <tag> 安卓应用 </tag>
+            
+            <tag> app, </tag>
             
             <tag> 广告 </tag>
             
