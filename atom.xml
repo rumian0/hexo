@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-08-24T02:53:23.211Z</updated>
+  <updated>2024-08-25T03:08:21.808Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,140 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>所有应用广告通杀！！</title>
+    <link href="http://example.com/2024/08/04/ab/"/>
+    <id>http://example.com/2024/08/04/ab/</id>
+    <published>2024-08-03T16:00:00.000Z</published>
+    <updated>2024-08-25T03:08:21.808Z</updated>
+    
+    
+    <summary type="html">使用MT管理器和LibChecher软件去除广告。</summary>
+    
+    
+    
+    <category term="技术分享" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="广告" scheme="http://example.com/tags/%E5%B9%BF%E5%91%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>吾爱破解！鼠标录制酷！</title>
+    <link href="http://example.com/2024/08/04/wu-muose/"/>
+    <id>http://example.com/2024/08/04/wu-muose/</id>
+    <published>2024-08-03T16:00:00.000Z</published>
+    <updated>2024-08-25T03:03:12.106Z</updated>
+    
+    
+    <summary type="html">TinyTask，它是一款鼠标键盘操作录制软件</summary>
+    
+    
+    
+    <category term="硬核科技" scheme="http://example.com/categories/%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="电脑软件" scheme="http://example.com/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="吾爱破解" scheme="http://example.com/tags/%E5%90%BE%E7%88%B1%E7%A0%B4%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="http://example.com/2024/07/24/win11-win10/"/>
+    <id>http://example.com/2024/07/24/win11-win10/</id>
+    <published>2024-07-23T16:00:00.000Z</published>
+    <updated>2024-08-25T03:08:59.014Z</updated>
+    
+    
+    <summary type="html">win11的资源管理器改为win10，速度明显变快</summary>
+    
+    
+    
+    <category term="技术分享" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="系统优化" scheme="http://example.com/tags/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="指令" scheme="http://example.com/tags/%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安卓必备啊！语音起飞！</title>
+    <link href="http://example.com/2024/07/23/an-yuyin/"/>
+    <id>http://example.com/2024/07/23/an-yuyin/</id>
+    <published>2024-07-22T16:00:00.000Z</published>
+    <updated>2024-08-25T03:09:20.326Z</updated>
+    
+    
+    <summary type="html">两款手机文字转语音工具，MulyiTTS，T2S。</summary>
+    
+    
+    
+    <category term="安卓应用" scheme="http://example.com/categories/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="文字语音" scheme="http://example.com/tags/%E6%96%87%E5%AD%97%E8%AF%AD%E9%9F%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>glary系统优化</title>
+    <link href="http://example.com/2024/07/23/glary/"/>
+    <id>http://example.com/2024/07/23/glary/</id>
+    <published>2024-07-22T16:00:00.000Z</published>
+    <updated>2024-08-25T03:09:25.768Z</updated>
+    
+    
+    <summary type="html">一款win系统优化，清理的黑科技</summary>
+    
+    
+    
+    <category term="硬核科技" scheme="http://example.com/categories/%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80/"/>
+    
+    
+    <category term="电脑软件" scheme="http://example.com/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="系统优化" scheme="http://example.com/tags/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>系统优化工具,太强了!</title>
+    <link href="http://example.com/2024/07/23/xtyh/"/>
+    <id>http://example.com/2024/07/23/xtyh/</id>
+    <published>2024-07-22T16:00:00.000Z</published>
+    <updated>2024-08-25T03:09:06.337Z</updated>
+    
+    
+    <summary type="html">一款win系统优化，清理的黑科技</summary>
+    
+    
+    
+    <category term="硬核科技" scheme="http://example.com/categories/%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80/"/>
+    
+    
+    <category term="电脑软件" scheme="http://example.com/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="系统优化" scheme="http://example.com/tags/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="推荐" scheme="http://example.com/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
   
   <entry>
     <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
@@ -325,142 +459,6 @@
     <category term="实用推荐" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
     
     <category term="推荐" scheme="http://example.com/tags/%E6%8E%A8%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开往的礼物(纪念款)</title>
-    <link href="http://example.com/2024/04/21/kw/"/>
-    <id>http://example.com/2024/04/21/kw/</id>
-    <published>2024-04-20T16:00:00.000Z</published>
-    <updated>2024-08-23T11:23:21.499Z</updated>
-    
-    
-    <summary type="html">为了记录开往的周边</summary>
-    
-    
-    
-    <category term="心情随笔" scheme="http://example.com/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="推荐" scheme="http://example.com/tags/%E6%8E%A8%E8%8D%90/"/>
-    
-    <category term="记录" scheme="http://example.com/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>爱奇艺免费了？</title>
-    <link href="http://example.com/2024/04/14/aqi/"/>
-    <id>http://example.com/2024/04/14/aqi/</id>
-    <published>2024-04-13T16:00:00.000Z</published>
-    <updated>2024-08-23T11:26:25.554Z</updated>
-    
-    
-    <summary type="html">这里总结了爱奇艺视频的解析方法。</summary>
-    
-    
-    
-    <category term="硬核科技" scheme="http://example.com/categories/%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80/"/>
-    
-    
-    <category term="实用推荐" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
-    
-    <category term="工具电脑软件" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言扫雷</title>
-    <link href="http://example.com/2024/04/10/C-saolei/"/>
-    <id>http://example.com/2024/04/10/C-saolei/</id>
-    <published>2024-04-09T16:00:00.000Z</published>
-    <updated>2024-08-22T14:02:46.020Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="编程语言" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-    <category term="C++" scheme="http://example.com/tags/C/"/>
-    
-    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>免费域名整理</title>
-    <link href="http://example.com/2024/04/10/free-yuming/"/>
-    <id>http://example.com/2024/04/10/free-yuming/</id>
-    <published>2024-04-09T16:00:00.000Z</published>
-    <updated>2024-08-23T10:51:01.202Z</updated>
-    
-    
-    <summary type="html">免费域名整理—半日闲</summary>
-    
-    
-    
-    <category term="网站建站" scheme="http://example.com/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%99/"/>
-    
-    
-    <category term="建站" scheme="http://example.com/tags/%E5%BB%BA%E7%AB%99/"/>
-    
-    <category term="实用推荐" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
-    
-    <category term="精选网站" scheme="http://example.com/tags/%E7%B2%BE%E9%80%89%E7%BD%91%E7%AB%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PDF24工具箱</title>
-    <link href="http://example.com/2024/03/23/PDF24/"/>
-    <id>http://example.com/2024/03/23/PDF24/</id>
-    <published>2024-03-22T16:00:00.000Z</published>
-    <updated>2024-08-22T14:02:40.585Z</updated>
-    
-    
-    <summary type="html">由牧羊人编写的转为PDF办公需要</summary>
-    
-    
-    
-    <category term="硬核科技" scheme="http://example.com/categories/%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80/"/>
-    
-    
-    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="电脑软件" scheme="http://example.com/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【计算机基础】关于进制</title>
-    <link href="http://example.com/2024/03/22/jingzhi/"/>
-    <id>http://example.com/2024/03/22/jingzhi/</id>
-    <published>2024-03-21T16:00:00.000Z</published>
-    <updated>2024-08-22T13:53:19.250Z</updated>
-    
-    
-    <summary type="html">学计算机，那就肯定得懂一样东西——**进制**（哪怕你没有学过，多少也会懂点）</summary>
-    
-    
-    
-    <category term="技术分享" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="计算机" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    <category term="科幻科普" scheme="http://example.com/tags/%E7%A7%91%E5%B9%BB%E7%A7%91%E6%99%AE/"/>
     
   </entry>
   
