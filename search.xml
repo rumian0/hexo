@@ -192,9 +192,9 @@
             
             <tag> 电脑软件 </tag>
             
-            <tag> 推荐 </tag>
-            
             <tag> 系统优化 </tag>
+            
+            <tag> 推荐 </tag>
             
         </tags>
       
@@ -286,33 +286,6 @@
     
     
     <entry>
-      <title>一个图片查地址----最强Aigeospy</title>
-      <link href="/2024/07/03/geospy/"/>
-      <url>/2024/07/03/geospy/</url>
-      
-        <content type="html"><![CDATA[<aside>😀 这里写文章的前言：这个AI已经很火了，他是根据一张照片就推断出照片所在地，这个算法非常精巧，据说是一位黑客用空余时间研发的，属实震惊到我了，那跟我一起看看啦~</aside><h1 id="网址地址"><a href="#网址地址" class="headerlink" title="网址地址"></a>网址地址</h1><p>网址：</p><p><a href="https://geospy.ai/">GeoSpy AI</a></p><p>简短的介绍：</p><blockquote><p>GeoSpy 是一个 AI 驱动的照片识别工具，由波士顿的一家技术公司开发。它经过训练，可以将图像像素与 GPS 数据连接起来，仅根据照片的视觉内容来预测照片的位置。</p></blockquote><blockquote><p>使用 GeoSpy AI  探索世界是充满乐趣的，无论你是 GeoGuessr 玩家 ，还是只是对朋友照片中的位置感到好奇，GeoSpy 都可以作为辅助应用。我试了几张照片，包括网络图片、自己拍摄和在 Google 街景中截图的，其结果都令人欣喜。</p></blockquote><hr><p>无废话，直接演示</p><p><img src="/2024/07/03/geospy/Snipaste_2024-07-03_22-31-59.webp" alt="Snipaste_2024-07-03_22-31-59.webp"></p><h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p>我在 <code>Google 冰岛街景</code>中的截图 👇🏻</p><p><img src="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/143542dnj1j4j0na4zn9ml.png" alt="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/143542dnj1j4j0na4zn9ml.png"></p><p><code>识别结果：</code></p><blockquote><p>Country: IcelandExplanation: The architecture of the house in the image is similar to that of houses in Iceland. Additionally, the trees in the image are similar to those found in Iceland. （图中房屋的建筑风格与冰岛的房屋类似。 此外，图像中的树木与冰岛发现的树木相似。）Coordinates: 64.144296, -21.931054</p></blockquote><p>GeoSpy <code>识别正确</code>，还是根据<code>建筑和文字信息</code>。</p><p>再试下<code>网图</code>，如果是传播较广的，它也会提供更精确的信息，比如这张：</p><p><img src="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/144355ulhuiaohiualszd7.jpeg" alt="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/144355ulhuiaohiualszd7.jpeg"></p><p><code>识别结果：</code></p><blockquote><p>国家： 意大利 城市： 波西塔诺 说明： 该照片拍摄于意大利波西塔诺。 该镇位于阿马尔菲海岸，以其美丽的悬崖边景色、色彩缤纷的建筑和卵石海滩而闻名。 这张照片是在一家可以欣赏地中海景色的餐厅拍摄的。 波西塔诺的坐标是 40°35′N 14°29′E。</p></blockquote><p>例如下面这张随便到不能再随便的自拍，你能猜到小姐姐在哪里吗？</p><p><img src="/2024/07/03/geospy/image11.webp" alt="image11.webp"></p><p>这事交给现在的 AI 来处理，它只需要“看”一眼，就能把照片里的**<code>“底裤都给扒出来”**：</code></p><blockquote><p>美国，加利福尼亚州，旧金山机场洗手间，93 号登机口附近……</p><p>坐标：37.6189° N，122.3744° W</p><p><img src="/2024/07/03/geospy/image22.webp" alt="image22.webp"></p></blockquote><p>再如下面这张照片，AI 根据湖的特征、树木和背景中的山脉，就匹配到了<strong>玛丽湖</strong>，同样是给出了精准的坐标：</p><p><img src="/2024/07/03/geospy/image33.webp" alt="image33.webp"></p><p><strong>恐怖如斯，恐怖如斯。</strong></p><p>之前也有一位国外小哥（ID：georainbolt）凭借只需看 <strong>0.1 秒</strong>街景，就能在世界地图上快速锁定位置而在网络上蹿红。</p><p>果不其然，斯坦福计算机系学生 Andrew Gao 在尝试了 GeoSpy 之后，就开始喊话这位小哥了：</p><blockquote><p>你要失业喽~</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/bcedf9c1-7726-44e0-88b0-cde4267dbcf4.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/bcedf9c1-7726-44e0-88b0-cde4267dbcf4.png?x-bce-process=image/format,f_auto"></p><p>不过也有 GeoGuessr 的职业玩家坐不住了，站出来表示不服：</p><blockquote><p>申请一战！</p></blockquote><h2 id="人类-vs-AI"><a href="#人类-vs-AI" class="headerlink" title="人类 vs AI"></a><strong>人类 vs AI</strong></h2><p>这位挑战者，名叫做 <strong>Gavin</strong>（下文我们简称“G 哥”），是一位正在参与 GeoGuessr 2024 世界杯的职业选手。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/ec916810-7f2a-417d-924a-5e150e6d33dd.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/ec916810-7f2a-417d-924a-5e150e6d33dd.png?x-bce-process=image/format,f_auto"></p><p>G 哥把他跟 AI 在线对垒的情况上传到了网上。</p><p>规则和 GeoGuessr 一致，还是看图猜位置。</p><p>在第一轮对决中，G 哥凭借抓到了马路道边上土耳其样式柱子的细节，判断这张图可能是在土耳其附近。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/52490ab0-26da-49ea-829f-2587090e906e.gif?x-bce-process=image/format,f_png" alt="https://img.ithome.com/newsuploadfiles/2024/5/52490ab0-26da-49ea-829f-2587090e906e.gif?x-bce-process=image/format,f_png"></p><p>结果显示，这张图里的位置确实是在土耳其附近，但距离精准的位置还差 241km。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/7823f69c-5536-4ce5-a534-18244bce9ab3.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/7823f69c-5536-4ce5-a534-18244bce9ab3.png?x-bce-process=image/format,f_auto"></p><p>接下来就轮到 GeoSpy 这个 AI 选手登场了。</p><p>G 哥处理的方式是将截图“投喂”给 AI，在静候了片刻之后，GeoSpy 就给出了结果。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/64713cc8-d2d7-49bc-9a85-b22ea353f189.webp" alt="https://img.ithome.com/newsuploadfiles/2024/5/64713cc8-d2d7-49bc-9a85-b22ea353f189.webp"></p><blockquote><p>国家：土耳其</p><p>经纬度：39.998923, 32.607491</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/5a8fdb67-c889-485d-bdd5-b10e1930b337.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/5a8fdb67-c889-485d-bdd5-b10e1930b337.png?x-bce-process=image/format,f_auto"></p><p>然后 G 哥在地图中搜索这个经纬度，再跟 GeoGuessr 的“标准答案”做比较：</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/ad080e0c-8af5-4f68-8488-e6d9432169d6.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/ad080e0c-8af5-4f68-8488-e6d9432169d6.png?x-bce-process=image/format,f_auto"></p><p>第一轮的结果可以说是让 G 哥大受震惊，GeoSpy 给出的位置比他的更近…… 来看下 G 哥当时的表情：</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/122a17ea-b3db-4009-b303-18dae1d7cb34.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/122a17ea-b3db-4009-b303-18dae1d7cb34.png?x-bce-process=image/format,f_auto"></p><p>在接下来的“火拼”中，G 哥变得更加仔细，都凑近屏幕去捕捉细节了。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/1cb3b2a4-a6cd-4a7d-b8e8-611a59090a2c.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/1cb3b2a4-a6cd-4a7d-b8e8-611a59090a2c.png?x-bce-process=image/format,f_auto"></p><p>G 哥这次给出的答案是苏门答腊岛，但实际的结果却不是很理想，距离“标准答案”足足 703km。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/9f21c701-dd9d-4fff-89f8-cfd50bce4ce3.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/9f21c701-dd9d-4fff-89f8-cfd50bce4ce3.png?x-bce-process=image/format,f_auto"></p><p>到了 GeoSpy 这边，虽然大致位置都是在印度尼西亚，但这次给出的位置就没有那么准确了。</p><p>不过比起 G 哥给出的答案，距离上却还是 AI 的答案更近些，这使得 G 哥开始有点无语子……</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/92f92100-bf59-4c3d-9d76-110e2174b2c9.gif?x-bce-process=image/format,f_png" alt="https://img.ithome.com/newsuploadfiles/2024/5/92f92100-bf59-4c3d-9d76-110e2174b2c9.gif?x-bce-process=image/format,f_png"></p><p>在接下来的比试中，即便 G 哥把猜测距离压缩了 86km，但 GeoSpy 给出的结果又是更接近于“标准答案”。</p><p>G 哥此时已经开始掩面了：</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/e2b74783-3261-40d7-8604-2ae4cbe28fcc.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/e2b74783-3261-40d7-8604-2ae4cbe28fcc.png?x-bce-process=image/format,f_auto"></p><p>在最后一轮 battle 中，G 哥直接说出：</p><blockquote><p>人类必须反将 AI 一军。</p></blockquote><p>然后 G 哥把头埋得更深了，当他捕捉到图中路边有文字时，脸上露出了得意的笑容：</p><blockquote><p>这局稳了，AI 它不识字的。</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/01bbcb15-213f-451e-b970-0206b9cf6952.gif?x-bce-process=image/format,f_png" alt="https://img.ithome.com/newsuploadfiles/2024/5/01bbcb15-213f-451e-b970-0206b9cf6952.gif?x-bce-process=image/format,f_png"></p><p>G 哥的结果是，距离标准答案 134km。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/d6523a8c-60a3-4bf7-8923-257aa86f100c.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/d6523a8c-60a3-4bf7-8923-257aa86f100c.png?x-bce-process=image/format,f_auto"></p><p>不过令 G 哥万万没想到的是，GeoSpy，它！识！字！</p><blockquote><p>这张照片是在波兰拍摄的，因为建筑物上写着“Abet”，这是一家波兰公司。</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/0d030c3c-34a8-4ec9-aab9-e7d950aacf7c.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/0d030c3c-34a8-4ec9-aab9-e7d950aacf7c.png?x-bce-process=image/format,f_auto"></p><p>然而 G 哥还是觉得这把有希望，因为他发现 GeoSpy 只能定位到城市。</p><p>所以这把如果 AI 给出的坐标是“标准答案”旁边的城市“华沙”，那么 G 哥就赢了。</p><p>结果还真是……G 哥也是露出了久违的笑容，并骄傲地说：</p><blockquote><p>AI 永远不会打败人类！</p></blockquote><p>（Emmmm……G 哥，你非要这么算的话…… 也行。）</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/efd0620c-3457-40da-8548-1eb1f9b1b566.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/efd0620c-3457-40da-8548-1eb1f9b1b566.png?x-bce-process=image/format,f_auto"></p><p>G 哥在下一轮的比拼中，将地图范围缩小到了自己的老家 —— 芝加哥。</p><p>这次在自己的地盘上，G 哥的表现非常勇猛，有距离“标准答案”仅 2m 和 4m 的成绩。</p><p>不过 AI 这边也是非常精准，起码在看图描述的过程中可以精确地说出周边的地址，这也让 G 哥着实捏了一把汗。</p><p>但在地图上搜 AI 给出的坐标的时候，却比文字描述的地点远一些了，有的甚至还定位到了海上。</p><p>……</p><p>最后，G 哥在与 AI 交锋了数次之后感慨道：</p><blockquote><p>这次体验非常有趣并且让人印象深刻。</p><p>但我也害怕这样的技术在未来 5 年后会迭代到什么样的程度。</p></blockquote><p>注：以上取自<strong>IT之家</strong></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术分享 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 工具 </tag>
-            
-            <tag> 精选网站 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>短视频视频批量下载!</title>
       <link href="/2024/07/03/dyd/"/>
       <url>/2024/07/03/dyd/</url>
@@ -334,6 +307,33 @@
             <tag> 电脑软件 </tag>
             
             <tag> 实用推 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一个图片查地址----最强Aigeospy</title>
+      <link href="/2024/07/03/geospy/"/>
+      <url>/2024/07/03/geospy/</url>
+      
+        <content type="html"><![CDATA[<aside>😀 这里写文章的前言：这个AI已经很火了，他是根据一张照片就推断出照片所在地，这个算法非常精巧，据说是一位黑客用空余时间研发的，属实震惊到我了，那跟我一起看看啦~</aside><h1 id="网址地址"><a href="#网址地址" class="headerlink" title="网址地址"></a>网址地址</h1><p>网址：</p><p><a href="https://geospy.ai/">GeoSpy AI</a></p><p>简短的介绍：</p><blockquote><p>GeoSpy 是一个 AI 驱动的照片识别工具，由波士顿的一家技术公司开发。它经过训练，可以将图像像素与 GPS 数据连接起来，仅根据照片的视觉内容来预测照片的位置。</p></blockquote><blockquote><p>使用 GeoSpy AI  探索世界是充满乐趣的，无论你是 GeoGuessr 玩家 ，还是只是对朋友照片中的位置感到好奇，GeoSpy 都可以作为辅助应用。我试了几张照片，包括网络图片、自己拍摄和在 Google 街景中截图的，其结果都令人欣喜。</p></blockquote><hr><p>无废话，直接演示</p><p><img src="/2024/07/03/geospy/Snipaste_2024-07-03_22-31-59.webp" alt="Snipaste_2024-07-03_22-31-59.webp"></p><h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p>我在 <code>Google 冰岛街景</code>中的截图 👇🏻</p><p><img src="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/143542dnj1j4j0na4zn9ml.png" alt="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/143542dnj1j4j0na4zn9ml.png"></p><p><code>识别结果：</code></p><blockquote><p>Country: IcelandExplanation: The architecture of the house in the image is similar to that of houses in Iceland. Additionally, the trees in the image are similar to those found in Iceland. （图中房屋的建筑风格与冰岛的房屋类似。 此外，图像中的树木与冰岛发现的树木相似。）Coordinates: 64.144296, -21.931054</p></blockquote><p>GeoSpy <code>识别正确</code>，还是根据<code>建筑和文字信息</code>。</p><p>再试下<code>网图</code>，如果是传播较广的，它也会提供更精确的信息，比如这张：</p><p><img src="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/144355ulhuiaohiualszd7.jpeg" alt="https://static-beesseek.oss-cn-hangzhou.aliyuncs.com/forum/202405/11/144355ulhuiaohiualszd7.jpeg"></p><p><code>识别结果：</code></p><blockquote><p>国家： 意大利 城市： 波西塔诺 说明： 该照片拍摄于意大利波西塔诺。 该镇位于阿马尔菲海岸，以其美丽的悬崖边景色、色彩缤纷的建筑和卵石海滩而闻名。 这张照片是在一家可以欣赏地中海景色的餐厅拍摄的。 波西塔诺的坐标是 40°35′N 14°29′E。</p></blockquote><p>例如下面这张随便到不能再随便的自拍，你能猜到小姐姐在哪里吗？</p><p><img src="/2024/07/03/geospy/image11.webp" alt="image11.webp"></p><p>这事交给现在的 AI 来处理，它只需要“看”一眼，就能把照片里的**<code>“底裤都给扒出来”**：</code></p><blockquote><p>美国，加利福尼亚州，旧金山机场洗手间，93 号登机口附近……</p><p>坐标：37.6189° N，122.3744° W</p><p><img src="/2024/07/03/geospy/image22.webp" alt="image22.webp"></p></blockquote><p>再如下面这张照片，AI 根据湖的特征、树木和背景中的山脉，就匹配到了<strong>玛丽湖</strong>，同样是给出了精准的坐标：</p><p><img src="/2024/07/03/geospy/image33.webp" alt="image33.webp"></p><p><strong>恐怖如斯，恐怖如斯。</strong></p><p>之前也有一位国外小哥（ID：georainbolt）凭借只需看 <strong>0.1 秒</strong>街景，就能在世界地图上快速锁定位置而在网络上蹿红。</p><p>果不其然，斯坦福计算机系学生 Andrew Gao 在尝试了 GeoSpy 之后，就开始喊话这位小哥了：</p><blockquote><p>你要失业喽~</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/bcedf9c1-7726-44e0-88b0-cde4267dbcf4.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/bcedf9c1-7726-44e0-88b0-cde4267dbcf4.png?x-bce-process=image/format,f_auto"></p><p>不过也有 GeoGuessr 的职业玩家坐不住了，站出来表示不服：</p><blockquote><p>申请一战！</p></blockquote><h2 id="人类-vs-AI"><a href="#人类-vs-AI" class="headerlink" title="人类 vs AI"></a><strong>人类 vs AI</strong></h2><p>这位挑战者，名叫做 <strong>Gavin</strong>（下文我们简称“G 哥”），是一位正在参与 GeoGuessr 2024 世界杯的职业选手。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/ec916810-7f2a-417d-924a-5e150e6d33dd.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/ec916810-7f2a-417d-924a-5e150e6d33dd.png?x-bce-process=image/format,f_auto"></p><p>G 哥把他跟 AI 在线对垒的情况上传到了网上。</p><p>规则和 GeoGuessr 一致，还是看图猜位置。</p><p>在第一轮对决中，G 哥凭借抓到了马路道边上土耳其样式柱子的细节，判断这张图可能是在土耳其附近。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/52490ab0-26da-49ea-829f-2587090e906e.gif?x-bce-process=image/format,f_png" alt="https://img.ithome.com/newsuploadfiles/2024/5/52490ab0-26da-49ea-829f-2587090e906e.gif?x-bce-process=image/format,f_png"></p><p>结果显示，这张图里的位置确实是在土耳其附近，但距离精准的位置还差 241km。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/7823f69c-5536-4ce5-a534-18244bce9ab3.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/7823f69c-5536-4ce5-a534-18244bce9ab3.png?x-bce-process=image/format,f_auto"></p><p>接下来就轮到 GeoSpy 这个 AI 选手登场了。</p><p>G 哥处理的方式是将截图“投喂”给 AI，在静候了片刻之后，GeoSpy 就给出了结果。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/64713cc8-d2d7-49bc-9a85-b22ea353f189.webp" alt="https://img.ithome.com/newsuploadfiles/2024/5/64713cc8-d2d7-49bc-9a85-b22ea353f189.webp"></p><blockquote><p>国家：土耳其</p><p>经纬度：39.998923, 32.607491</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/5a8fdb67-c889-485d-bdd5-b10e1930b337.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/5a8fdb67-c889-485d-bdd5-b10e1930b337.png?x-bce-process=image/format,f_auto"></p><p>然后 G 哥在地图中搜索这个经纬度，再跟 GeoGuessr 的“标准答案”做比较：</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/ad080e0c-8af5-4f68-8488-e6d9432169d6.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/ad080e0c-8af5-4f68-8488-e6d9432169d6.png?x-bce-process=image/format,f_auto"></p><p>第一轮的结果可以说是让 G 哥大受震惊，GeoSpy 给出的位置比他的更近…… 来看下 G 哥当时的表情：</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/122a17ea-b3db-4009-b303-18dae1d7cb34.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/122a17ea-b3db-4009-b303-18dae1d7cb34.png?x-bce-process=image/format,f_auto"></p><p>在接下来的“火拼”中，G 哥变得更加仔细，都凑近屏幕去捕捉细节了。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/1cb3b2a4-a6cd-4a7d-b8e8-611a59090a2c.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/1cb3b2a4-a6cd-4a7d-b8e8-611a59090a2c.png?x-bce-process=image/format,f_auto"></p><p>G 哥这次给出的答案是苏门答腊岛，但实际的结果却不是很理想，距离“标准答案”足足 703km。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/9f21c701-dd9d-4fff-89f8-cfd50bce4ce3.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/9f21c701-dd9d-4fff-89f8-cfd50bce4ce3.png?x-bce-process=image/format,f_auto"></p><p>到了 GeoSpy 这边，虽然大致位置都是在印度尼西亚，但这次给出的位置就没有那么准确了。</p><p>不过比起 G 哥给出的答案，距离上却还是 AI 的答案更近些，这使得 G 哥开始有点无语子……</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/92f92100-bf59-4c3d-9d76-110e2174b2c9.gif?x-bce-process=image/format,f_png" alt="https://img.ithome.com/newsuploadfiles/2024/5/92f92100-bf59-4c3d-9d76-110e2174b2c9.gif?x-bce-process=image/format,f_png"></p><p>在接下来的比试中，即便 G 哥把猜测距离压缩了 86km，但 GeoSpy 给出的结果又是更接近于“标准答案”。</p><p>G 哥此时已经开始掩面了：</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/e2b74783-3261-40d7-8604-2ae4cbe28fcc.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/e2b74783-3261-40d7-8604-2ae4cbe28fcc.png?x-bce-process=image/format,f_auto"></p><p>在最后一轮 battle 中，G 哥直接说出：</p><blockquote><p>人类必须反将 AI 一军。</p></blockquote><p>然后 G 哥把头埋得更深了，当他捕捉到图中路边有文字时，脸上露出了得意的笑容：</p><blockquote><p>这局稳了，AI 它不识字的。</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/01bbcb15-213f-451e-b970-0206b9cf6952.gif?x-bce-process=image/format,f_png" alt="https://img.ithome.com/newsuploadfiles/2024/5/01bbcb15-213f-451e-b970-0206b9cf6952.gif?x-bce-process=image/format,f_png"></p><p>G 哥的结果是，距离标准答案 134km。</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/d6523a8c-60a3-4bf7-8923-257aa86f100c.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/d6523a8c-60a3-4bf7-8923-257aa86f100c.png?x-bce-process=image/format,f_auto"></p><p>不过令 G 哥万万没想到的是，GeoSpy，它！识！字！</p><blockquote><p>这张照片是在波兰拍摄的，因为建筑物上写着“Abet”，这是一家波兰公司。</p></blockquote><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/0d030c3c-34a8-4ec9-aab9-e7d950aacf7c.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/0d030c3c-34a8-4ec9-aab9-e7d950aacf7c.png?x-bce-process=image/format,f_auto"></p><p>然而 G 哥还是觉得这把有希望，因为他发现 GeoSpy 只能定位到城市。</p><p>所以这把如果 AI 给出的坐标是“标准答案”旁边的城市“华沙”，那么 G 哥就赢了。</p><p>结果还真是……G 哥也是露出了久违的笑容，并骄傲地说：</p><blockquote><p>AI 永远不会打败人类！</p></blockquote><p>（Emmmm……G 哥，你非要这么算的话…… 也行。）</p><p><img src="https://img.ithome.com/newsuploadfiles/2024/5/efd0620c-3457-40da-8548-1eb1f9b1b566.png?x-bce-process=image/format,f_auto" alt="https://img.ithome.com/newsuploadfiles/2024/5/efd0620c-3457-40da-8548-1eb1f9b1b566.png?x-bce-process=image/format,f_auto"></p><p>G 哥在下一轮的比拼中，将地图范围缩小到了自己的老家 —— 芝加哥。</p><p>这次在自己的地盘上，G 哥的表现非常勇猛，有距离“标准答案”仅 2m 和 4m 的成绩。</p><p>不过 AI 这边也是非常精准，起码在看图描述的过程中可以精确地说出周边的地址，这也让 G 哥着实捏了一把汗。</p><p>但在地图上搜 AI 给出的坐标的时候，却比文字描述的地点远一些了，有的甚至还定位到了海上。</p><p>……</p><p>最后，G 哥在与 AI 交锋了数次之后感慨道：</p><blockquote><p>这次体验非常有趣并且让人印象深刻。</p><p>但我也害怕这样的技术在未来 5 年后会迭代到什么样的程度。</p></blockquote><p>注：以上取自<strong>IT之家</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 精选网站 </tag>
             
         </tags>
       
@@ -512,35 +512,6 @@
     
     
     <entry>
-      <title>什么竟然还有这样的神器？</title>
-      <link href="/2024/05/12/qianhe-tools/"/>
-      <url>/2024/05/12/qianhe-tools/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>给大家搞到了一款非常不错的在线工具箱网站，废话不多说，<strong>直接安排</strong>！！！</p><p>也是好久没更新Windows 程序了好吧，这次必须整活！！</p><h1 id="千盒工具"><a href="#千盒工具" class="headerlink" title="千盒工具"></a>千盒工具</h1><p>这是一款非常不错的在线工具箱网站，该网站<strong>不需要注册登录</strong>，打开即可直接使用，网站内包含了非常多实用的在线工具，<strong>全部都是免费的</strong>，没有任何的套路，不论大家从事任何行业，都强烈建议各位小伙伴们<strong>点赞收藏</strong>，后续肯定会用到的哦！</p><p><img src="/2024/05/12/qianhe-tools/04ebc029-63ee-42a0-ba29-006c2fb39629.png" alt="640.webp"></p><p>网站主界面<strong>如下图所示</strong>，左侧是工具分类，右侧是工具列表，<strong>目前包含了</strong>搜索工具、图片工具、示拼工具、文本工具、办公工具、导航工具、数字工具、单位换算工具以及开发工具等，覆盖了多个行业，<strong>所有工具统统免费</strong>，非常良心！</p><p><img src="/2024/05/12/qianhe-tools/640_(1).webp" alt="640(1).webp"></p><p>所有工具<strong>点击进入</strong>即可打开使用，如下图所示，这里我就<strong>随便打开</strong>一个图片文字识别工具，我们只<strong>需要上传</strong>需要识别的图片，然后<strong>点击立即识别</strong>按钮即可，识别速度快，准确率高，使用非常方便！</p><p><img src="/2024/05/12/qianhe-tools/640_(2).webp" alt="640(2).webp"></p><p>由于该网站<strong>包含的工具较多</strong>，在这里就不挨个给大家演示了，很多工具都是非常实用的，比如示拼格式转换、<strong>图片格式转换</strong>、二维码解析、<strong>图片压缩</strong>、单位换算等等，大家可以自行访问使用哦！</p><p><img src="/2024/05/12/qianhe-tools/640_(3).webp" alt="640(3).webp"></p><p>以上就是给大家介绍的 <strong>非常不错的网站。</strong></p><h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><p>链接：<a href="https://1000tool.com/">https://1000tool.com/</a></p><p><a href="https://1000tool.com/">https://1000tool.com/</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 硬核科技 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 工具 </tag>
-            
-            <tag> 电脑软件 </tag>
-            
-            <tag> 实用推荐 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>一挑四！全网SVIP无损音乐，随便下！</title>
       <link href="/2024/05/12/music_download/"/>
       <url>/2024/05/12/music_download/</url>
@@ -570,6 +541,35 @@
     
     
     <entry>
+      <title>什么竟然还有这样的神器？</title>
+      <link href="/2024/05/12/qianhe-tools/"/>
+      <url>/2024/05/12/qianhe-tools/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>给大家搞到了一款非常不错的在线工具箱网站，废话不多说，<strong>直接安排</strong>！！！</p><p>也是好久没更新Windows 程序了好吧，这次必须整活！！</p><h1 id="千盒工具"><a href="#千盒工具" class="headerlink" title="千盒工具"></a>千盒工具</h1><p>这是一款非常不错的在线工具箱网站，该网站<strong>不需要注册登录</strong>，打开即可直接使用，网站内包含了非常多实用的在线工具，<strong>全部都是免费的</strong>，没有任何的套路，不论大家从事任何行业，都强烈建议各位小伙伴们<strong>点赞收藏</strong>，后续肯定会用到的哦！</p><p><img src="/2024/05/12/qianhe-tools/04ebc029-63ee-42a0-ba29-006c2fb39629.png" alt="640.webp"></p><p>网站主界面<strong>如下图所示</strong>，左侧是工具分类，右侧是工具列表，<strong>目前包含了</strong>搜索工具、图片工具、示拼工具、文本工具、办公工具、导航工具、数字工具、单位换算工具以及开发工具等，覆盖了多个行业，<strong>所有工具统统免费</strong>，非常良心！</p><p><img src="/2024/05/12/qianhe-tools/640_(1).webp" alt="640(1).webp"></p><p>所有工具<strong>点击进入</strong>即可打开使用，如下图所示，这里我就<strong>随便打开</strong>一个图片文字识别工具，我们只<strong>需要上传</strong>需要识别的图片，然后<strong>点击立即识别</strong>按钮即可，识别速度快，准确率高，使用非常方便！</p><p><img src="/2024/05/12/qianhe-tools/640_(2).webp" alt="640(2).webp"></p><p>由于该网站<strong>包含的工具较多</strong>，在这里就不挨个给大家演示了，很多工具都是非常实用的，比如示拼格式转换、<strong>图片格式转换</strong>、二维码解析、<strong>图片压缩</strong>、单位换算等等，大家可以自行访问使用哦！</p><p><img src="/2024/05/12/qianhe-tools/640_(3).webp" alt="640(3).webp"></p><p>以上就是给大家介绍的 <strong>非常不错的网站。</strong></p><h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><p>链接：<a href="https://1000tool.com/">https://1000tool.com/</a></p><p><a href="https://1000tool.com/">https://1000tool.com/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 硬核科技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 电脑软件 </tag>
+            
+            <tag> 实用推荐 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机的基础知识</title>
       <link href="/2024/04/30/jsj-know/"/>
       <url>/2024/04/30/jsj-know/</url>
@@ -586,9 +586,9 @@
       
         <tags>
             
-            <tag> 实用推荐 </tag>
-            
             <tag> 计算机 </tag>
+            
+            <tag> 实用推荐 </tag>
             
             <tag> 推荐 </tag>
             
@@ -684,7 +684,7 @@
       <link href="/2024/04/10/free-yuming/"/>
       <url>/2024/04/10/free-yuming/</url>
       
-        <content type="html"><![CDATA[<h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#110;&#x66;&#111;&#x40;&#x66;&#114;&#x65;&#101;&#x6e;&#x6f;&#109;&#46;&#x63;&#x6f;&#109;">&#x69;&#110;&#x66;&#111;&#x40;&#x66;&#114;&#x65;&#101;&#x6e;&#x6f;&#109;&#46;&#x63;&#x6f;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p><p>以下整理了一些可以用的免费二级域名：</p><table><thead><tr><th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th><th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th></tr></thead><tbody><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td><td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td><td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td><td>可以申请到work.gd&#x2F;run.place等免费二级域名</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td><td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td><td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td><td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td><td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td><td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td><td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td><td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td><td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td><td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td><td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td></tr></tbody></table><p>以上信息会不定期整理修改！</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#110;&#102;&#111;&#64;&#102;&#x72;&#101;&#x65;&#x6e;&#111;&#x6d;&#46;&#x63;&#x6f;&#109;">&#x69;&#110;&#102;&#111;&#64;&#102;&#x72;&#101;&#x65;&#x6e;&#111;&#x6d;&#46;&#x63;&#x6f;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p><p>以下整理了一些可以用的免费二级域名：</p><table><thead><tr><th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th><th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th></tr></thead><tbody><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td><td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td><td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td><td>可以申请到work.gd&#x2F;run.place等免费二级域名</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td><td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td><td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td><td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td><td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td><td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td><td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td><td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td><td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td><td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td><td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td></tr></tbody></table><p>以上信息会不定期整理修改！</p>]]></content>
       
       
       <categories>
