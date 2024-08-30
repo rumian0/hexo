@@ -167,9 +167,9 @@
     
     <category term="电脑软件" scheme="http://example.com/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
     
-    <category term="系统优化" scheme="http://example.com/tags/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
-    
     <category term="推荐" scheme="http://example.com/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="系统优化" scheme="http://example.com/tags/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -239,6 +239,27 @@
   </entry>
   
   <entry>
+    <title>一个图片查地址----最强Aigeospy</title>
+    <link href="http://example.com/2024/07/03/geospy/"/>
+    <id>http://example.com/2024/07/03/geospy/</id>
+    <published>2024-07-02T16:00:00.000Z</published>
+    <updated>2024-08-24T03:01:28.670Z</updated>
+    
+    
+    <summary type="html">史上最强AI根据一张照片，推测你的地址，室内出外。</summary>
+    
+    
+    
+    <category term="技术分享" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="精选网站" scheme="http://example.com/tags/%E7%B2%BE%E9%80%89%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
     <title>短视频视频批量下载!</title>
     <link href="http://example.com/2024/07/03/dyd/"/>
     <id>http://example.com/2024/07/03/dyd/</id>
@@ -258,27 +279,6 @@
     <category term="电脑软件" scheme="http://example.com/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
     
     <category term="实用推" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一个图片查地址----最强Aigeospy</title>
-    <link href="http://example.com/2024/07/03/geospy/"/>
-    <id>http://example.com/2024/07/03/geospy/</id>
-    <published>2024-07-02T16:00:00.000Z</published>
-    <updated>2024-08-24T03:01:28.670Z</updated>
-    
-    
-    <summary type="html">史上最强AI根据一张照片，推测你的地址，室内出外。</summary>
-    
-    
-    
-    <category term="技术分享" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="精选网站" scheme="http://example.com/tags/%E7%B2%BE%E9%80%89%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
@@ -417,29 +417,6 @@
   </entry>
   
   <entry>
-    <title>一挑四！全网SVIP无损音乐，随便下！</title>
-    <link href="http://example.com/2024/05/12/music_download/"/>
-    <id>http://example.com/2024/05/12/music_download/</id>
-    <published>2024-05-11T16:00:00.000Z</published>
-    <updated>2024-08-23T12:47:15.692Z</updated>
-    
-    
-    <summary type="html">主推一款安卓音乐app</summary>
-    
-    
-    
-    <category term="实用软件" scheme="http://example.com/categories/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
-    
-    
-    <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
-    
-    <category term="实用推荐" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
-    
-    <category term="app" scheme="http://example.com/tags/app/"/>
-    
-  </entry>
-  
-  <entry>
     <title>什么竟然还有这样的神器？</title>
     <link href="http://example.com/2024/05/12/qianhe-tools/"/>
     <id>http://example.com/2024/05/12/qianhe-tools/</id>
@@ -459,6 +436,29 @@
     <category term="电脑软件" scheme="http://example.com/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
     
     <category term="实用推荐" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一挑四！全网SVIP无损音乐，随便下！</title>
+    <link href="http://example.com/2024/05/12/music_download/"/>
+    <id>http://example.com/2024/05/12/music_download/</id>
+    <published>2024-05-11T16:00:00.000Z</published>
+    <updated>2024-08-23T12:47:15.692Z</updated>
+    
+    
+    <summary type="html">主推一款安卓音乐app</summary>
+    
+    
+    
+    <category term="实用软件" scheme="http://example.com/categories/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+    <category term="安卓应用" scheme="http://example.com/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="实用推荐" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="app" scheme="http://example.com/tags/app/"/>
     
   </entry>
   
