@@ -108,13 +108,13 @@
   
   <entry>
     <title>吾爱破解！鼠标录制酷！</title>
-    <link href="https://h.liyy.us.kg/2024/08/04/wu-muose/"/>
-    <id>https://h.liyy.us.kg/2024/08/04/wu-muose/</id>
-    <published>2024-08-03T16:00:00.000Z</published>
-    <updated>2024-08-31T15:47:34.131Z</updated>
+    <link href="https://h.liyy.us.kg/2024/08/03/wu-muose/"/>
+    <id>https://h.liyy.us.kg/2024/08/03/wu-muose/</id>
+    <published>2024-08-02T16:00:00.000Z</published>
+    <updated>2024-08-31T16:52:32.403Z</updated>
     
     
-    <summary type="html">TinyTask，它是一款鼠标键盘操作录制软件</summary>
+    <summary type="html">它是一款鼠标键盘操作录制软件</summary>
     
     
     
@@ -253,9 +253,9 @@
     <category term="实用软件" scheme="https://h.liyy.us.kg/categories/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
     
     
-    <category term="电脑软件" scheme="https://h.liyy.us.kg/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
-    
     <category term="安卓应用" scheme="https://h.liyy.us.kg/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="电脑软件" scheme="https://h.liyy.us.kg/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
     
     <category term="音乐" scheme="https://h.liyy.us.kg/tags/%E9%9F%B3%E4%B9%90/"/>
     
@@ -287,7 +287,7 @@
     <link href="https://h.liyy.us.kg/2024/07/03/dyd/"/>
     <id>https://h.liyy.us.kg/2024/07/03/dyd/</id>
     <published>2024-07-02T16:00:00.000Z</published>
-    <updated>2024-08-24T02:30:04.848Z</updated>
+    <updated>2024-08-31T16:51:54.275Z</updated>
     
     
     <summary type="html">一款程序专门批量下载抖音，快手，小红书等视频</summary>
@@ -301,7 +301,7 @@
     
     <category term="电脑软件" scheme="https://h.liyy.us.kg/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
     
-    <category term="实用推" scheme="https://h.liyy.us.kg/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8/"/>
+    <category term="实用推荐" scheme="https://h.liyy.us.kg/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
@@ -385,9 +385,9 @@
     <category term="技术分享" scheme="https://h.liyy.us.kg/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
     
-    <category term="建站" scheme="https://h.liyy.us.kg/tags/%E5%BB%BA%E7%AB%99/"/>
-    
     <category term="工具" scheme="https://h.liyy.us.kg/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="建站" scheme="https://h.liyy.us.kg/tags/%E5%BB%BA%E7%AB%99/"/>
     
     <category term="实用推荐" scheme="https://h.liyy.us.kg/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
     
