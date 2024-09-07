@@ -6,7 +6,7 @@
   <link href="https://h.liyy.us.kg/atom.xml" rel="self"/>
   
   <link href="https://h.liyy.us.kg/"/>
-  <updated>2024-08-31T16:32:32.134Z</updated>
+  <updated>2024-09-07T12:42:49.786Z</updated>
   <id>https://h.liyy.us.kg/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ODE多功能工具箱</title>
+    <link href="https://h.liyy.us.kg/2024/09/07/ode/"/>
+    <id>https://h.liyy.us.kg/2024/09/07/ode/</id>
+    <published>2024-09-06T16:00:00.000Z</published>
+    <updated>2024-09-07T12:42:49.786Z</updated>
+    
+    
+    <summary type="html">用于解析百度网盘,让后不限速下载</summary>
+    
+    
+    
+    <category term="硬核科技" scheme="https://h.liyy.us.kg/categories/%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80/"/>
+    
+    
+    <category term="工具" scheme="https://h.liyy.us.kg/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="电脑软件" scheme="https://h.liyy.us.kg/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="百度网盘" scheme="https://h.liyy.us.kg/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo-添加音乐与视频</title>
@@ -434,29 +457,6 @@
     <category term="精选网站" scheme="https://h.liyy.us.kg/tags/%E7%B2%BE%E9%80%89%E7%BD%91%E7%AB%99/"/>
     
     <category term="推荐" scheme="https://h.liyy.us.kg/tags/%E6%8E%A8%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vercel部署Typecho 博客</title>
-    <link href="https://h.liyy.us.kg/2024/05/25/Vercel-Typecho/"/>
-    <id>https://h.liyy.us.kg/2024/05/25/Vercel-Typecho/</id>
-    <published>2024-05-24T16:00:00.000Z</published>
-    <updated>2024-08-24T03:01:17.578Z</updated>
-    
-    
-    <summary type="html">本文介绍了如何使用 Vercel 部署 Typecho 博客。</summary>
-    
-    
-    
-    <category term="网站建站" scheme="https://h.liyy.us.kg/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%99/"/>
-    
-    
-    <category term="建站" scheme="https://h.liyy.us.kg/tags/%E5%BB%BA%E7%AB%99/"/>
-    
-    <category term="网站建站" scheme="https://h.liyy.us.kg/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%99/"/>
-    
-    <category term="计算机" scheme="https://h.liyy.us.kg/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
