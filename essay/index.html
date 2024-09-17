@@ -10,7 +10,7 @@ for (let i of mdate) {
         document.documentElement.classList.add('memorial');
     }
 }
-</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@master/mainColor/heoMainColor.css"><link rel="stylesheet" href="css/links-css.css"><script defer src="https://cloud.umami.is/script.js" data-website-id="c069dfa3-2229-44e8-95a2-76986e2ca24a"></script><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet" media="only x" onload="this.onload=null;this.media='all'"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span><script>(()=>{
+</script><script src="<%- url_for(theme_js('assets/scripts/search', cache)) %>" async></script><link rel="stylesheet" href="<%- url_for(theme_css('/assets/styles/style', cache)) %>"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@master/mainColor/heoMainColor.css"><link rel="stylesheet" href="css/links-css.css"><script defer src="https://cloud.umami.is/script.js" data-website-id="c069dfa3-2229-44e8-95a2-76986e2ca24a"></script><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet" media="only x" onload="this.onload=null;this.media='all'"><script>(()=>{
         const saveToLocal = {
             set: function setWithExpiry(key, value, ttl) {
                 if (ttl === 0)
