@@ -1,1 +1,763 @@
-function _typeof2(e){return(_typeof2="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function _regeneratorRuntime(){_regeneratorRuntime=function(){return a};var l,a={},e=Object.prototype,s=e.hasOwnProperty,u=Object.defineProperty||function(e,t,n){e[t]=n.value},t="function"==typeof Symbol?Symbol:{},o=t.iterator||"@@iterator",n=t.asyncIterator||"@@asyncIterator",r=t.toStringTag||"@@toStringTag";function i(e,t,n){return Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}),e[t]}try{i({},"")}catch(l){i=function(e,t,n){return e[t]=n}}function c(e,t,n,o){var r,i,a,c,t=t&&t.prototype instanceof y?t:y,t=Object.create(t.prototype),o=new k(o||[]);return u(t,"_invoke",{value:(r=e,i=n,a=o,c=m,function(e,t){if(c===p)throw Error("Generator is already running");if(c===g){if("throw"===e)throw t;return{value:l,done:!0}}for(a.method=e,a.arg=t;;){var n=a.delegate;if(n=n&&function e(t,n){var o=n.method,r=t.iterator[o];return r===l?(n.delegate=null,"throw"===o&&t.iterator.return&&(n.method="return",n.arg=l,e(t,n),"throw"===n.method)||"return"!==o&&(n.method="throw",n.arg=new TypeError("The iterator does not provide a '"+o+"' method")),h):"throw"===(o=d(r,t.iterator,n.arg)).type?(n.method="throw",n.arg=o.arg,n.delegate=null,h):(r=o.arg)?r.done?(n[t.resultName]=r.value,n.next=t.nextLoc,"return"!==n.method&&(n.method="next",n.arg=l),n.delegate=null,h):r:(n.method="throw",n.arg=new TypeError("iterator result is not an object"),n.delegate=null,h)}(n,a)){if(n===h)continue;return n}if("next"===a.method)a.sent=a._sent=a.arg;else if("throw"===a.method){if(c===m)throw c=g,a.arg;a.dispatchException(a.arg)}else"return"===a.method&&a.abrupt("return",a.arg);if(c=p,"normal"===(n=d(r,i,a)).type){if(c=a.done?g:f,n.arg===h)continue;return{value:n.arg,done:a.done}}"throw"===n.type&&(c=g,a.method="throw",a.arg=n.arg)}})}),t}function d(e,t,n){try{return{type:"normal",arg:e.call(t,n)}}catch(e){return{type:"throw",arg:e}}}a.wrap=c;var m="suspendedStart",f="suspendedYield",p="executing",g="completed",h={};function y(){}function v(){}function b(){}i(t={},o,function(){return this});var w=Object.getPrototypeOf,x=((w=w&&w(w(A([]))))&&w!==e&&s.call(w,o)&&(t=w),b.prototype=y.prototype=Object.create(t));function L(e){["next","throw","return"].forEach(function(t){i(e,t,function(e){return this._invoke(t,e)})})}function E(a,c){var t;u(this,"_invoke",{value:function(n,o){function e(){return new c(function(e,t){!function t(e,n,o,r){var i;return"throw"!==(e=d(a[e],a,n)).type?(n=(i=e.arg).value)&&"object"==_typeof(n)&&s.call(n,"__await")?c.resolve(n.__await).then(function(e){t("next",e,o,r)},function(e){t("throw",e,o,r)}):c.resolve(n).then(function(e){i.value=e,o(i)},function(e){return t("throw",e,o,r)}):void r(e.arg)}(n,o,e,t)})}return t=t?t.then(e,e):e()}})}function _(e){var t={tryLoc:e[0]};1 in e&&(t.catchLoc=e[1]),2 in e&&(t.finallyLoc=e[2],t.afterLoc=e[3]),this.tryEntries.push(t)}function S(e){var t=e.completion||{};t.type="normal",delete t.arg,e.completion=t}function k(e){this.tryEntries=[{tryLoc:"root"}],e.forEach(_,this),this.reset(!0)}function A(t){if(t||""===t){var n,e=t[o];if(e)return e.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length))return n=-1,(e=function e(){for(;++n<t.length;)if(s.call(t,n))return e.value=t[n],e.done=!1,e;return e.value=l,e.done=!0,e}).next=e}throw new TypeError(_typeof(t)+" is not iterable")}return u(x,"constructor",{value:v.prototype=b,configurable:!0}),u(b,"constructor",{value:v,configurable:!0}),v.displayName=i(b,r,"GeneratorFunction"),a.isGeneratorFunction=function(e){return!!(e="function"==typeof e&&e.constructor)&&(e===v||"GeneratorFunction"===(e.displayName||e.name))},a.mark=function(e){return Object.setPrototypeOf?Object.setPrototypeOf(e,b):(e.__proto__=b,i(e,r,"GeneratorFunction")),e.prototype=Object.create(x),e},a.awrap=function(e){return{__await:e}},L(E.prototype),i(E.prototype,n,function(){return this}),a.AsyncIterator=E,a.async=function(e,t,n,o,r){void 0===r&&(r=Promise);var i=new E(c(e,t,n,o),r);return a.isGeneratorFunction(t)?i:i.next().then(function(e){return e.done?e.value:i.next()})},L(x),i(x,r,"Generator"),i(x,o,function(){return this}),i(x,"toString",function(){return"[object Generator]"}),a.keys=function(e){var t,n=Object(e),o=[];for(t in n)o.push(t);return o.reverse(),function e(){for(;o.length;){var t=o.pop();if(t in n)return e.value=t,e.done=!1,e}return e.done=!0,e}},a.values=A,k.prototype={constructor:k,reset:function(e){if(this.prev=0,this.next=0,this.sent=this._sent=l,this.done=!1,this.delegate=null,this.method="next",this.arg=l,this.tryEntries.forEach(S),!e)for(var t in this)"t"===t.charAt(0)&&s.call(this,t)&&!isNaN(+t.slice(1))&&(this[t]=l)},stop:function(){this.done=!0;var e=this.tryEntries[0].completion;if("throw"===e.type)throw e.arg;return this.rval},dispatchException:function(n){if(this.done)throw n;var o=this;function e(e,t){return i.type="throw",i.arg=n,o.next=e,t&&(o.method="next",o.arg=l),!!t}for(var t=this.tryEntries.length-1;0<=t;--t){var r=this.tryEntries[t],i=r.completion;if("root"===r.tryLoc)return e("end");if(r.tryLoc<=this.prev){var a=s.call(r,"catchLoc"),c=s.call(r,"finallyLoc");if(a&&c){if(this.prev<r.catchLoc)return e(r.catchLoc,!0);if(this.prev<r.finallyLoc)return e(r.finallyLoc)}else if(a){if(this.prev<r.catchLoc)return e(r.catchLoc,!0)}else{if(!c)throw Error("try statement without catch or finally");if(this.prev<r.finallyLoc)return e(r.finallyLoc)}}}},abrupt:function(e,t){for(var n=this.tryEntries.length-1;0<=n;--n){var o=this.tryEntries[n];if(o.tryLoc<=this.prev&&s.call(o,"finallyLoc")&&this.prev<o.finallyLoc){var r=o;break}}var i=(r=r&&("break"===e||"continue"===e)&&r.tryLoc<=t&&t<=r.finallyLoc?null:r)?r.completion:{};return i.type=e,i.arg=t,r?(this.method="next",this.next=r.finallyLoc,h):this.complete(i)},complete:function(e,t){if("throw"===e.type)throw e.arg;return"break"===e.type||"continue"===e.type?this.next=e.arg:"return"===e.type?(this.rval=this.arg=e.arg,this.method="return",this.next="end"):"normal"===e.type&&t&&(this.next=t),h},finish:function(e){for(var t=this.tryEntries.length-1;0<=t;--t){var n=this.tryEntries[t];if(n.finallyLoc===e)return this.complete(n.completion,n.afterLoc),S(n),h}},catch:function(e){for(var t=this.tryEntries.length-1;0<=t;--t){var n,o,r=this.tryEntries[t];if(r.tryLoc===e)return"throw"===(n=r.completion).type&&(o=n.arg,S(r)),o}throw Error("illegal catch attempt")},delegateYield:function(e,t,n){return this.delegate={iterator:A(e),resultName:t,nextLoc:n},"next"===this.method&&(this.arg=l),h}},a}function asyncGeneratorStep(e,t,n,o,r,i,a){try{var c=e[i](a),l=c.value}catch(e){return void n(e)}c.done?t(l):Promise.resolve(l).then(o,r)}function _asyncToGenerator(c){return function(){var e=this,a=arguments;return new Promise(function(t,n){var o=c.apply(e,a);function r(e){asyncGeneratorStep(o,t,n,r,i,"next",e)}function i(e){asyncGeneratorStep(o,t,n,r,i,"throw",e)}r(void 0)})}}function _toConsumableArray(e){return _arrayWithoutHoles(e)||_iterableToArray(e)||_unsupportedIterableToArray(e)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _iterableToArray(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}function _arrayWithoutHoles(e){if(Array.isArray(e))return _arrayLikeToArray(e)}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,_toPropertyKey(o.key),o)}}function _createClass(e,t,n){return t&&_defineProperties(e.prototype,t),n&&_defineProperties(e,n),Object.defineProperty(e,"prototype",{writable:!1}),e}function _toPropertyKey(e){return"symbol"==_typeof(e=_toPrimitive(e,"string"))?e:e+""}function _toPrimitive(e,t){if("object"!=_typeof(e)||!e)return e;var n=e[Symbol.toPrimitive];if(void 0===n)return("string"===t?String:Number)(e);if("object"!=_typeof(n=n.call(e,t||"default")))return n;throw new TypeError("@@toPrimitive must return a primitive value.")}function _createForOfIteratorHelper(e,t){var n,o,r,i,a="undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(a)return r=!(o=!0),{s:function(){a=a.call(e)},n:function(){var e=a.next();return o=e.done,e},e:function(e){r=!0,n=e},f:function(){try{o||null==a.return||a.return()}finally{if(r)throw n}}};if(Array.isArray(e)||(a=_unsupportedIterableToArray(e))||t&&e&&"number"==typeof e.length)return a&&(e=a),i=0,{s:t=function(){},n:function(){return i>=e.length?{done:!0}:{done:!1,value:e[i++]}},e:function(e){throw e},f:t};throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,t){var n;if(e)return"string"==typeof e?_arrayLikeToArray(e,t):"Map"===(n="Object"===(n={}.toString.call(e).slice(8,-1))&&e.constructor?e.constructor.name:n)||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?_arrayLikeToArray(e,t):void 0}function _arrayLikeToArray(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,o=Array(t);n<t;n++)o[n]=e[n];return o}function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==_typeof2(Symbol.iterator)?function(e){return _typeof2(e)}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":_typeof2(e)})(e)}var sidebarFn=function(){function e(e){utils.sidebarPaddingR(),i.style.overflow=e?"hidden":"",i.style.paddingRight="",utils[e?"fadeIn":"fadeOut"](r,.5),o.classList[e?"add":"remove"]("open")}function t(){o.classList.contains("open")&&e(!1)}var n=document.getElementById("toggle-menu"),o=document.getElementById("sidebar-menus"),r=document.getElementById("menu-mask"),i=document.body;n.addEventListener("click",function(){return e(!0)}),r.addEventListener("click",t),window.addEventListener("resize",function(){utils.isHidden(n)&&o.classList.contains("open")&&t(),sco.refreshWaterFall()})},scrollFn=function(){window.innerHeight;var o=0,r=document.getElementById("page-header"),t=utils.throttle(function(e){initThemeColor();var t=window.scrollY||document.documentElement.scrollTop,n=o<t;0<(o=t)?(n?r.classList.contains("nav-visible")&&r.classList.remove("nav-visible"):r.classList.contains("nav-visible")||r.classList.add("nav-visible"),r.classList.add("nav-fixed")):r.classList.remove("nav-fixed","nav-visible")},200);window.addEventListener("scroll",function(e){t(e),0===window.scrollY&&r.classList.remove("nav-fixed","nav-visible")})},percent=function(){var e=document.documentElement,t=document.body,n=window.pageYOffset||e.scrollTop,o=Math.max(t.scrollHeight,e.scrollHeight,t.offsetHeight,e.offsetHeight,t.clientHeight,e.clientHeight)-e.clientHeight,t=Math.round(n/o*100),r=document.querySelector("#nav-totop"),i=document.querySelector("#percent"),e=window.scrollY+e.clientHeight>=(document.getElementById("post-comment")||document.getElementById("footer")).offsetTop;r.classList.toggle("long",e||90<t),i.textContent=e||90<t?GLOBAL_CONFIG.lang.backtop:t,document.querySelectorAll(".needEndHide").forEach(function(e){return e.classList.toggle("hide",o-n<100)})},showTodayCard=function(){var e=document.getElementById("todayCard"),t=document.querySelector(".topGroup");null!=t&&t.addEventListener("mouseleave",function(){return null==e?void 0:e.classList.remove("hide")})},initObserver=function(){var e=document.getElementById("post-comment"),n=document.getElementById("pagination"),o=document.querySelector(".comment-barrage");e&&n&&new IntersectionObserver(function(e){e.forEach(function(e){var t=e.isIntersecting?"add":"remove";n.classList[t]("show-window"),GLOBAL_CONFIG.comment.commentBarrage&&(o.style.bottom=e.isIntersecting?"-200px":"0px")})}).observe(e)},addCopyright=function(){var e,n,o,r,i,a;GLOBAL_CONFIG.copyright&&(n=(e=GLOBAL_CONFIG.copyright).limit,o=e.author,r=e.link,i=e.source,a=e.info,document.body.addEventListener("copy",function(e){e.preventDefault();var t=(t=window.getSelection().toString()).length>n?"".concat(t,"\n\n").concat(o,"\n").concat(r).concat(window.location.href,"\n").concat(i,"\n").concat(a):t;e.clipboardData.setData("text",t)}))},asideStatus=function(){var e=utils.saveToLocal.get("aside-status");document.documentElement.classList.toggle("hide-aside","hide"===e)};function initThemeColor(){var e=0<(window.scrollY||document.documentElement.scrollTop)?"--efu-card-bg":PAGE_CONFIG.is_post?"--efu-main":"--efu-background";applyThemeColor(getComputedStyle(document.documentElement).getPropertyValue(e))}function applyThemeColor(e){var t=document.querySelector('meta[name="theme-color"]'),n=document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');null!=t&&t.setAttribute("content",e),null!=n&&n.setAttribute("content",e),window.matchMedia("(display-mode: standalone)").matches&&(document.body.style.backgroundColor=e)}var handleThemeChange=function(e){var t,n,o=(null==(t=window.globalFn)?void 0:t.themeChange)||{};for(n in o)o[n](e)},sco={lastSayHello:"",wasPageHidden:!1,musicPlaying:!1,scrollTo:function(e){(e=document.getElementById(e))&&(e=e.getBoundingClientRect().top+window.pageYOffset-80,window.scroll({top:e,behavior:"smooth"}))},musicToggle:function(){var e=document.querySelector("#nav-music"),t=document.querySelector("meting-js"),n=document.getElementById("consoleMusic"),o=document.querySelector("#menu-music-toggle span"),r=document.querySelector("#menu-music-toggle i");this.musicPlaying=!this.musicPlaying,e.classList.toggle("playing",this.musicPlaying),n.classList.toggle("on",this.musicPlaying),this.musicPlaying?(t.aplayer.play(),null!=(e=rm)&&e.menuItems.music[0]&&(o.textContent=GLOBAL_CONFIG.right_menu.music.stop)&&(r.className="solitude st-pause-fill")):(t.aplayer.pause(),null!=(n=rm)&&n.menuItems.music[0]&&(o.textContent=GLOBAL_CONFIG.right_menu.music.start)&&(r.className="solitude st-play-fill"))},switchCommentBarrage:function(){var e,t=document.querySelector(".comment-barrage");t&&(e="flex"===window.getComputedStyle(t).display,t.style.display=e?"none":"flex",document.querySelector("#consoleCommentBarrage").classList.toggle("on",!e),utils.saveToLocal.set("commentBarrageSwitch",!e,.2),null!=(t=rm))&&t.menuItems.barrage&&rm.barrage(e)},switchHideAside:function(){var e=document.documentElement.classList,t=document.querySelector("#consoleHideAside"),n=e.contains("hide-aside");utils.saveToLocal.set("aside-status",n?"show":"hide",1),e.toggle("hide-aside"),t.classList.toggle("on",!n)},switchKeyboard:function(){this.sco_keyboards=!this.sco_keyboards;var e=document.querySelector("#consoleKeyboard"),t=this.sco_keyboards?openKeyboard:closeKeyboard;e.classList.toggle("on",this.sco_keyboards),t(),localStorage.setItem("keyboard",this.sco_keyboards),null!=(e=document.getElementById("keyboard-tips"))&&e.classList.remove("show")},initConsoleState:function(){var e=document.querySelector("#consoleHideAside");e&&e.classList.toggle("on",document.documentElement.classList.contains("hide-aside"))},changeSayHelloText:function(){for(var e,t=GLOBAL_CONFIG.aside.sayhello2,n=document.getElementById("author-info__sayhi");(e=t[Math.floor(Math.random()*t.length)])===this.lastSayHello;);n.textContent=e,this.lastSayHello=e},switchDarkMode:function(){var e="dark"===document.documentElement.getAttribute("data-theme"),t=e?"light":"dark";document.documentElement.setAttribute("data-theme",t),utils.saveToLocal.set("theme",t,.02),utils.snackbarShow(GLOBAL_CONFIG.lang.theme[t],!1,2e3),"object"===("undefined"==typeof rm?"undefined":_typeof(rm))&&rm.mode(!e)&&rm.hideRightMenu(),handleThemeChange(t)},hideTodayCard:function(){return document.getElementById("todayCard").classList.add("hide")},toTop:function(){return utils.scrollToDest(0)},showConsole:function(){var e;return null==(e=document.getElementById("console"))?void 0:e.classList.toggle("show",!0)},hideConsole:function(){var e;return null==(e=document.getElementById("console"))?void 0:e.classList.remove("show")},refreshWaterFall:function(){var t=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&setTimeout(function(){waterfall(e.target)||e.target.classList.add("show")},300)})});document.querySelectorAll(".waterfall").forEach(function(e){return t.observe(e)})},addRuntime:function(){var e=document.getElementById("runtimeshow");e&&GLOBAL_CONFIG.runtime&&(e.innerText=utils.timeDiff(new Date(GLOBAL_CONFIG.runtime),new Date)+GLOBAL_CONFIG.lang.day)},toTalk:function(t){["#wl-edit",".el-textarea__inner","#veditor",".atk-textarea"].forEach(function(e){(e=document.querySelector(e))&&(e.dispatchEvent(new Event("input",{bubble:!0,cancelable:!0})),e.value="> "+t.replace(/\n/g,"\n> ")+"\n\n",utils.scrollToDest(utils.getEleTop(document.getElementById("post-comment")),300),e.focus(),e.setSelectionRange(-1,-1))}),utils.snackbarShow(GLOBAL_CONFIG.lang.totalk,!1,2e3)},initbbtalk:function(){document.querySelector("#bber-talk")&&new Swiper(".swiper-container",{direction:"vertical",loop:!0,autoplay:{delay:3e3,pauseOnMouseEnter:!0}})},addPhotoFigcaption:function(){document.querySelectorAll("#article-container img:not(.gallery-item img)").forEach(function(e){var t=e.getAttribute("alt");t&&e.insertAdjacentHTML("afterend",'<div class="img-alt is-center">'.concat(t,"</div>"))})},scrollToComment:function(){return utils.scrollToDest(utils.getEleTop(document.getElementById("post-comment")),300)},setTimeState:function(){var t,e,n,o,r=document.getElementById("author-info__sayhi");r&&(t=(new Date).getHours(),e=GLOBAL_CONFIG.aside.sayhello,o=(o=(()=>{var e,t=_createForOfIteratorHelper(["twikoo","WALINE_USER_META","WALINE_USER","_v_Cache_Meta","ArtalkUser"]);try{for(t.s();!(e=t.n()).done;){var n=e.value,o=localStorage.getItem(n);if(o)return JSON.parse(o)}}catch(e){t.e(e)}finally{t.f()}return null})())?o.nick||o.display_name:null,this.wasPageHidden?(n=GLOBAL_CONFIG.aside.sayhello3.back+o,this.wasPageHidden=!1):n=GLOBAL_CONFIG.aside.sayhello3.prefix+o,o=[{start:0,end:5,text:o?n:e.goodnight},{start:6,end:10,text:o?n:e.morning},{start:11,end:14,text:o?n:e.noon},{start:15,end:18,text:o?n:e.afternoon},{start:19,end:24,text:o?n:e.night}].find(function(e){return t>=e.start&&t<=e.end}),r.innerText=o.text)},tagPageActive:function(){var e=decodeURIComponent(window.location.pathname);/\/tags\/.*?\//.test(e)&&(e=e.split("/").slice(-2,-1)[0],e=document.getElementById(e))&&(document.querySelectorAll("a.select").forEach(function(e){e.classList.remove("select")}),e.classList.add("select"))},categoriesBarActive:function(){var e=document.querySelector("#category-bar"),t=decodeURIComponent(window.location.pathname),n=t===GLOBAL_CONFIG.root;e&&(e.querySelectorAll(".category-bar-item").forEach(function(e){return e.classList.remove("select")}),e=n?"category-bar-home":t.split("/").slice(-2,-1)[0],n=document.getElementById(e))&&n.classList.add("select")},scrollCategoryBarToRight:function(){var e,t=this,n=document.getElementById("category-bar-items"),o=document.getElementById("category-bar-next");n&&(e=function(){return n.scrollLeft+n.clientWidth>=n.scrollWidth-8},n.addEventListener("scroll",function(){clearTimeout(t.timeoutId),t.timeoutId=setTimeout(function(){o.style.transform=e()?"rotate(180deg)":""},150)}),e()?n.scroll({left:0,behavior:"smooth"}):n.scrollBy({left:n.clientWidth,behavior:"smooth"}))},openAllTags:function(){var e;document.querySelectorAll(".card-allinfo .card-tag-cloud").forEach(function(e){return e.classList.add("all-tags")}),null!=(e=document.getElementById("more-tags-btn"))&&e.remove()},listenToPageInputPress:function(){var t,e,n,o=document.querySelector(".toPageGroup"),r=document.getElementById("toPageText");r&&(t=document.getElementById("toPageButton"),e=document.querySelectorAll(".page-number"),n=+e[e.length-1].textContent,r&&1!=n?(r.addEventListener("keydown",function(e){13===e.keyCode&&(sco.toPage(),pjax.loadUrl(t.href))}),r.addEventListener("input",function(){t.classList.toggle("haveValue",""!==r.value&&"0"!==r.value),+r.value>n&&(r.value=n)})):o.style.display="none")},addNavBackgroundInit:function(){0!==document.documentElement.scrollTop&&document.getElementById("page-header").classList.add("nav-fixed","nav-visible")},toPage:function(){var e=document.querySelectorAll(".page-number"),e=parseInt(e[e.length-1].innerHTML),t=document.getElementById("toPageText"),t=parseInt(t.value);document.getElementById("toPageButton").href=!isNaN(t)&&t<=e&&1<t?window.location.href.replace(/\/page\/\d+\/$/,"/")+"page/"+t+"/":"/"},owoBig:function(n){var o;(o=document.getElementById("owo-big"))||((o=document.createElement("div")).id="owo-big",document.body.appendChild(o)),document.addEventListener("mouseover",function(e){var t=(e=e.target).closest(n.item);t&&e.closest(n.body)&&(e=null==(e=t.querySelector("img"))?void 0:e.src)&&(o.innerHTML='<img src="'.concat(e,'" style="max-width: 100%; height: auto;">'),o.style.display="block",e=(e=t).getBoundingClientRect(),o.style.left="".concat(e.left-o.offsetWidth/4,"px"),o.style.top="".concat(e.top,"px"))}),document.addEventListener("mouseout",function(e){e.target.closest(n.item)&&e.target.closest(n.body)&&(o.style.display="none")})},changeTimeFormat:function(e){e.forEach(function(e){var t=e.getAttribute("datetime");e.textContent=utils.diffDate(t,!0),e.style.display="inline"})},switchComments:function(){var e,t,n=document.getElementById("switch-btn");n&&(e=!1,t=document.getElementById("post-comment"),utils.addEventListenerPjax(n,"click",function(){t.classList.toggle("move"),e||"function"!=typeof loadTwoComment||(e=!0,loadTwoComment())}))}},addHighlight=function(){var e,t,i,n,r,a,c,l,s,u,o,d,m,f,p,g=GLOBAL_CONFIG.highlight;g&&(e=g.copy,t=g.expand,i=g.limit,r="prismjs"===(n=g.syntax),a=g.enable||e||t||i,c=1==!t?"closed":"",g="highlight.js"===n?document.querySelectorAll("figure.highlight"):document.querySelectorAll('pre[class*="language-"]'),a||i)&&g.length&&(l=e?'<i class="solitude fas fa-copy copy-button"></i>':"<i></i>",s=i?'<i class="solitude fas fa-angles-down"></i>':"<i></i>",u=function(e,t){return utils.snackbarShow(t,!1,2e3)},o=function(e){var t,n=e.parentNode,o=(n.classList.add("copy-true"),window.getSelection());(t=document.createRange()).selectNodeContents(n.querySelectorAll("".concat(r?"pre code":"table .code pre"))[0]),o.removeAllRanges(),o.addRange(t),document.execCommand("copy"),u(e.lastChild,GLOBAL_CONFIG.lang.copy.success),o.removeAllRanges(),n.classList.remove("copy-true")},d=function(e){return e.classList.toggle("closed")},m=function(){this.classList.toggle("expand-done")},f=function(e){(e=e.target.classList).contains("expand")?d(this):e.contains("copy-button")&&o(this)},p=function(e,t,n){var o,r=document.createDocumentFragment();a&&((o=document.createElement("div")).className="highlight-tools ".concat(c),o.innerHTML='<i class="solitude fas fa-angle-down expand"></i>'+e+l,utils.addEventListenerPjax(o,"click",f),r.appendChild(o)),i&&t.offsetHeight>i+30&&((e=document.createElement("div")).className="code-expand-btn",e.innerHTML=s,utils.addEventListenerPjax(e,"click",m),r.appendChild(e)),"hl"===n?t.insertBefore(r,t.firstChild):t.parentNode.insertBefore(r,t)},r?g.forEach(function(e){var t=e.getAttribute("data-language")||"Code",t='<div class="code-lang">'.concat(t,"</div>");utils.wrap(e,"figure",{class:"highlight"}),p(t,e)}):g.forEach(function(e){var t=e.getAttribute("class").split(" ")[1],t='<div class="code-lang">'.concat("plain"!==t&&void 0!==t?t:"Code","</div>");p(t,e,"hl")}))},toc=_createClass(function e(){_classCallCheck(this,e)},null,[{key:"init",value:function(){var e,t=document.getElementById("card-toc");t&&t.querySelector(".toc a")?((e=document.querySelectorAll(".toc a")).forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),utils.scrollToDest(utils.getEleTop(document.getElementById(decodeURI(("toc-text"===e.target.className?e.target.parentNode:e.target).hash.replace("#","")))),300)})}),this.active(e)):t.style.display="none"}},{key:"active",value:function(i){var e=document.getElementById("article-container"),a=document.getElementById("toc-content"),c=e.querySelectorAll("h1,h2,h3,h4,h5,h6"),l="";window.tocScrollFn=utils.throttle(function(){var n=window.scrollY||document.documentElement.scrollTop;if(0!==n){var o="";if(c.forEach(function(e,t){n>utils.getEleTop(e)-80&&(o=t)}),l!==o){l=o,document.querySelectorAll(".toc .active").forEach(function(e){e.classList.remove("active")});var e,t=i[l];if(t){var r=i[l].parentNode;for(t.classList.add("active"),t=t.getBoundingClientRect().top,e=a.scrollTop,t>document.documentElement.clientHeight-100&&(a.scrollTop=e+150),t<100&&(a.scrollTop=e-150);!r.matches(".toc");r=r.parentNode)r.matches("li")&&r.classList.add("active")}}}},100),window.addEventListener("scroll",tocScrollFn)}}]),tabs=_createClass(function e(){_classCallCheck(this,e)},null,[{key:"init",value:function(){this.clickFnOfTabs(),this.backToTop()}},{key:"clickFnOfTabs",value:function(){document.querySelectorAll("#article-container .tab > button").forEach(function(e){e.addEventListener("click",function(e){var t,n,o,r=this.parentNode;r.classList.contains("active")||(t=r.parentNode.nextElementSibling,(n=utils.siblings(r,".active")[0])&&n.classList.remove("active"),r.classList.add("active"),o=this.getAttribute("data-href").replace("#",""),_toConsumableArray(t.children).forEach(function(e){e.id===o?e.classList.add("active"):e.classList.remove("active")}))})})}},{key:"backToTop",value:function(){document.querySelectorAll("#article-container .tabs .tab-to-top").forEach(function(e){e.addEventListener("click",function(){utils.scrollToDest(utils.getEleTop(e.parentElement.parentElement.parentNode),300)})})}},{key:"lureAddListener",value:function(){var t;GLOBAL_CONFIG.lure&&(t=document.title,document.addEventListener("visibilitychange",function(){var e=GLOBAL_CONFIG.lure;"hidden"===document.visibilityState?document.title=e.jump:"visible"===document.visibilityState&&(document.title=e.back,setTimeout(function(){document.title=t},2e3))}))}},{key:"expireAddListener",value:function(){var e,t,n=GLOBAL_CONFIG.expire;n&&(e=(e=document.querySelectorAll(".post-meta-date time")).length?e[e.length-1]:document.querySelector(".datatime"))&&(e=Math.ceil(((new Date).getTime()-new Date(e.getAttribute("datetime")).getTime())/1e3/60/60/24),n.time>e||((t=document.createElement("div")).className="expire",t.innerHTML='<i class="solitude st-circle-exclamation-solid"></i>'.concat(n.text_prev).concat(-(n.time-e)).concat(n.text_next),document.getElementById("article-container").insertAdjacentElement("top"===n.position?"afterbegin":"beforeend",t)))}}]),Application=(window.refreshFn=function(){var e=PAGE_CONFIG,t=e.is_home,n=e.is_page,o=e.is_post,r=(d=GLOBAL_CONFIG).runtime,i=d.lazyload,a=d.lightbox,c=d.randomlink,l=d.covercolor,s=d.post_ai,u=d.lure,d=d.expire,m=(t||o?".post-meta-date time":".datatime")+", .webinfo-item time";document.body.setAttribute("data-type",e.page),sco.changeTimeFormat(document.querySelectorAll(m)),r&&sco.addRuntime(),[scrollFn,sidebarFn,sco.addPhotoFigcaption,sco.setTimeState,sco.tagPageActive,sco.categoriesBarActive,sco.listenToPageInputPress,sco.addNavBackgroundInit,sco.refreshWaterFall].forEach(function(e){return e()}),i.enable&&utils.lazyloadImg(),a&&utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img)")),c&&randomLinksList(),s&&o&&efu_ai.init(),sco.switchComments(),initObserver(),t&&(showTodayCard(),"function"==typeof updatePostsBasedOnComments)&&updatePostsBasedOnComments(),(o||n)&&(addHighlight(),tabs.init()),o&&d&&tabs.expireAddListener(),l.enable&&coverColor(),PAGE_CONFIG.toc&&toc.init(),u&&tabs.lureAddListener()},document.addEventListener("DOMContentLoaded",function(){[addCopyright,window.refreshFn,asideStatus,function(){return window.onscroll=percent},sco.initConsoleState].forEach(function(e){return e()})}),document.addEventListener("visibilitychange",function(){document.hidden&&(sco.wasPageHidden=!0)}),window.onkeydown=function(e){var t=e.keyCode;(123===t||e.ctrlKey&&e.shiftKey&&67===t)&&utils.snackbarShow(GLOBAL_CONFIG.lang.f12,!1,3e3),27===t&&sco.hideConsole()},document.addEventListener("copy",function(){utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success,!1,3e3)}),require("@waline/vercel"));module.exports=Application({postSave:function(e){return _asyncToGenerator(_regeneratorRuntime().mark(function e(){return _regeneratorRuntime().wrap(function(e){for(;;)switch(e.prev=e.next){case 0:case"end":return e.stop()}},e)}))()},mailSubjectAdmin:"{{site.name | safe}} 上有新评论了",mailTemplateAdmin:'<div style="background: url(https://tva3.sinaimg.cn/large/c56b8822ly1h62npb7s1ej201y01y0lh.jpg);padding:40px 0px 20px;margin:0px;background-color:#FFCDCE;width:100%;">\n\t<style type="text/css">@media screen and (max-width:600px){.afterimg,.beforeimg{display:none!important}}</style>\n\t<div style="border-radius: 10px 10px 10px 10px;font-size:14px;color: #555555;width: 530px;font-family:\'Century Gothic\',\'Trebuchet MS\',\'Hiragino Sans GB\',微软雅黑,\'Microsoft Yahei\',Tahoma,Helvetica,Arial,\'SimSun\',sans-serif;margin:50px auto;max-width:100%;background: ##ffffff;">\n\t\t<img class="beforeimg" style="width:530px;height:317px;pointer-events:none" src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png">\n\t\t<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg" style="width:100%;overflow:hidden;pointer-events:none;margin-top: -120px;">\n\t\t<div style="width:100%;background:#f8d1ce;color:#9d2850;background-image: -moz-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));height: 66px;background: url(https://tva2.sinaimg.cn/large/c56b8822ly1h61tb7tagcj20ii01u3yc.jpg) left top no-repeat;display: flex;justify-content: center;flex-direction: column;">\n\t\t<p style="font-size:16px;font-weight: bold;text-align:center;word-break:break-all;margin:0;">\n\t\t您在<a style="text-decoration:none;color: #9d2850;" href="{{site.url}}"target="_blank">{{site.name}}</a>上的文章有了新的评论</p>\n\t\t</div>\n\t\t<div class="formmain" style="background:#fff;width:100%;max-width:800px;margin:auto auto;overflow:hidden;margin-bottom: -155px;">\n\t\t\t<div style="margin:40px auto;width:90%;"><p><strong>{{self.nick}}</strong> 回复说：</p>\n\t\t\t<div style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:15px;color:#555555;">{{self.comment | safe}}</div>\n\t\t\t<p style="text-align:center;position: relative;z-index: 99;">您可以点击<a style="text-decoration:none;color:#cf5c83" href="{{site.postUrl}}" target="_blank">查看回复的完整內容</a></p>\n\t\t\t<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png" style="width:100%;margin:25px auto 5px auto;display:block;pointer-events:none">\n\t\t\t<p class="bottomhr" style="font-size:12px;text-align:center;color:#999">上冬十二(oragekk)博客竭诚为您服务！</p>\n\t\t\t</div>\n\t\t</div>\n\t\t<img class="afterimg" style="width:535px;height:317px;z-index:100;margin-left: -3px;"src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png">\n\t</div>\n</div>',mailSubject:"{{parent.nick}}，您在『{{site.name}}』上发表的评论收到了来自 {{self.nick}} 的回复",mailTemplate:'<div style="background: url(https://tva3.sinaimg.cn/large/c56b8822ly1h62npb7s1ej201y01y0lh.jpg);padding:40px 0px 20px;margin:0px;background-color:#FFCDCE;width:100%;">\n\t<style type="text/css">@media screen and (max-width:600px){.afterimg,.beforeimg{display:none!important}}</style>\n\t<div style="border-radius: 10px 10px 10px 10px;font-size:14px;color: #555555;width: 530px;font-family:\'Century Gothic\',\'Trebuchet MS\',\'Hiragino Sans GB\',微软雅黑,\'Microsoft Yahei\',Tahoma,Helvetica,Arial,\'SimSun\',sans-serif;margin:50px auto;max-width:100%;background: ##ffffff;">\n\t\t<img class="beforeimg" style="width:530px;height:317px;z-index:-100;pointer-events:none" src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png">\n\t\t<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg" style="width:100%;overflow:hidden;pointer-events:none;margin-top: -120px;">\n\t\t<div style="width:100%;background:#f8d1ce;color:#9d2850;background-image: -moz-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));height: 66px;background: url(https://tva2.sinaimg.cn/large/c56b8822ly1h61tb7tagcj20ii01u3yc.jpg) left top no-repeat;display: flex;justify-content: center;flex-direction: column;">\n\t\t<p style="font-size:16px;font-weight: bold;text-align:center;word-break:break-all;margin:0;">\n\t\t您在<a style="text-decoration:none;color: #9d2850;" href="{{site.url}}">『{{site.name | safe}}』</a>上的留言有新回复啦！</p>\n\t\t</div>\n\t\t<div class="formmain" style="background:#fff;width:100%;max-width:800px;margin:auto auto;overflow:hidden;margin-bottom: -155px;">\n\t\t\t<div style="margin:40px auto;width:90%;"><p>😊Hi，{{parent.nick}}，您曾在文章上发表评论：</p>\n\t\t\t<div style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:15px;color:#555555;">{{parent.comment | safe}}</div>\n\t\t\t<p><strong>{{self.nick}}</strong> 给您的回复如下：</p>\n\t\t\t<div style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:15px;color:#555555;">{{self.comment | safe}}</div>\n\t\t\t<p>您可以点击<a style="text-decoration:none; color:#cf5c83" href="{{site.postUrl}}" target="_blank"> 查看回复的完整內容 </a>，欢迎再次光临<a style="text-decoration:none; color:#cf5c83" href="{{site.url}}" target="_blank"> {{site.name}} </a>。<hr />\n\t\t\t<p style="font-size:14px;color:#b7adad;text-align:center;position: relative;z-index: 99;">本邮件为系统自动发送，请勿直接回复邮件哦，可到博文内容回复。<br />{{site.url}}</p>\n\t\t\t</p>\n\t\t\t<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png" style="width:100%;margin:25px auto 5px auto;display:block;pointer-events:none">\n\t\t\t<p class="bottomhr" style="font-size:12px;text-align:center;color:#999">上冬十二(oragekk)博客竭诚为您服务！</p>\n\t\t\t</div>\n\t\t</div>\n\t\t<img class="afterimg" style="width:535px;height:317px;z-index:100;margin-left: -3px;"src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png">\n\t</div>\n</div>'});
+const sidebarFn = () => {
+  const $toggleMenu = document.getElementById('toggle-menu');
+  const $mobileSidebarMenus = document.getElementById('sidebar-menus');
+  const $menuMask = document.getElementById('menu-mask');
+  const $body = document.body;
+
+  const toggleMobileSidebar = (isOpen) => {
+    utils.sidebarPaddingR();
+    $body.style.overflow = isOpen ? 'hidden' : '';
+    $body.style.paddingRight = isOpen ? '' : '';
+    utils[isOpen ? 'fadeIn' : 'fadeOut']($menuMask, 0.5);
+    $mobileSidebarMenus.classList[isOpen ? 'add' : 'remove']('open');
+  }
+  const closeMobileSidebar = () => {
+    if ($mobileSidebarMenus.classList.contains('open')) {
+      toggleMobileSidebar(false);
+    }
+  }
+  $toggleMenu.addEventListener('click', () => toggleMobileSidebar(true));
+  $menuMask.addEventListener('click', closeMobileSidebar);
+
+  window.addEventListener('resize', () => {
+    if (utils.isHidden($toggleMenu) && $mobileSidebarMenus.classList.contains('open')) {
+      closeMobileSidebar();
+    }
+    sco.refreshWaterFall();
+  });
+}
+const scrollFn = () => {
+  const innerHeight = window.innerHeight;
+  let initTop = 0;
+  const $header = document.getElementById('page-header');
+  const throttledScroll = utils.throttle((e) => {
+    initThemeColor();
+    const currentTop = window.scrollY || document.documentElement.scrollTop;
+    const isDown = scrollDirection(currentTop);
+    if (currentTop > 0) {
+      if (isDown) {
+        if ($header.classList.contains('nav-visible')) $header.classList.remove('nav-visible');
+      } else {
+        if (!$header.classList.contains('nav-visible')) $header.classList.add('nav-visible');
+      }
+      $header.classList.add('nav-fixed');
+    } else {
+      $header.classList.remove('nav-fixed', 'nav-visible');
+    }
+  }, 200);
+  window.addEventListener('scroll', (e) => {
+    throttledScroll(e);
+    if (window.scrollY === 0) {
+      $header.classList.remove('nav-fixed', 'nav-visible');
+    }
+  });
+
+  function scrollDirection(currentTop) {
+    const result = currentTop > initTop;
+    initTop = currentTop;
+    return result;
+  }
+}
+const percent = () => {
+  const docEl = document.documentElement;
+  const body = document.body;
+  const scrollPos = window.pageYOffset || docEl.scrollTop;
+  const totalScrollableHeight = Math.max(body.scrollHeight, docEl.scrollHeight, body.offsetHeight, docEl.offsetHeight, body.clientHeight, docEl.clientHeight) - docEl.clientHeight;
+  const scrolledPercent = Math.round((scrollPos / totalScrollableHeight) * 100);
+  const navToTop = document.querySelector("#nav-totop");
+  const percentDisplay = document.querySelector("#percent");
+  const isNearEnd = (window.scrollY + docEl.clientHeight) >= (document.getElementById("post-comment") || document.getElementById("footer")).offsetTop;
+  navToTop.classList.toggle("long", isNearEnd || scrolledPercent > 90);
+  percentDisplay.textContent = isNearEnd || scrolledPercent > 90 ? GLOBAL_CONFIG.lang.backtop : scrolledPercent;
+  document.querySelectorAll(".needEndHide").forEach(item => item.classList.toggle("hide", totalScrollableHeight - scrollPos < 100));
+}
+const showTodayCard = () => {
+  const el = document.getElementById('todayCard');
+  const topGroup = document.querySelector('.topGroup');
+  topGroup?.addEventListener('mouseleave', () => el?.classList.remove('hide'));
+}
+const initObserver = () => {
+  const commentElement = document.getElementById("post-comment");
+  const paginationElement = document.getElementById("pagination");
+  const commentBarrageElement = document.querySelector(".comment-barrage");
+  if (commentElement && paginationElement) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const action = entry.isIntersecting ? 'add' : 'remove';
+        paginationElement.classList[action]("show-window");
+        if (GLOBAL_CONFIG.comment.commentBarrage) {
+          commentBarrageElement.style.bottom = entry.isIntersecting ? "-200px" : "0px";
+        }
+      });
+    });
+    observer.observe(commentElement);
+  }
+};
+const addCopyright = () => {
+  if (!GLOBAL_CONFIG.copyright) return;
+  const {limit, author, link, source, info} = GLOBAL_CONFIG.copyright;
+  document.body.addEventListener('copy', (e) => {
+    e.preventDefault();
+    const copyText = window.getSelection().toString();
+    const text = copyText.length > limit ? `${copyText}\n\n${author}\n${link}${window.location.href}\n${source}\n${info}` : copyText;
+    e.clipboardData.setData('text', text);
+  });
+};
+const asideStatus = () => {
+  const status = utils.saveToLocal.get('aside-status');
+  document.documentElement.classList.toggle('hide-aside', status === 'hide');
+}
+
+function initThemeColor() {
+  const currentTop = window.scrollY || document.documentElement.scrollTop;
+  const themeColor = currentTop > 0 ? '--efu-card-bg' : PAGE_CONFIG.is_post ? '--efu-main' : '--efu-background';
+  applyThemeColor(getComputedStyle(document.documentElement).getPropertyValue(themeColor));
+}
+
+function applyThemeColor(color) {
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  const appleMobileWebAppMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+  themeColorMeta?.setAttribute("content", color);
+  appleMobileWebAppMeta?.setAttribute("content", color);
+  if (window.matchMedia("(display-mode: standalone)").matches) {
+    document.body.style.backgroundColor = color;
+  }
+}
+
+const handleThemeChange = mode => {
+  const themeChange = window.globalFn?.themeChange || {}
+  for (let key in themeChange) {
+    themeChange[key](mode)
+  }
+}
+const sco = {
+  lastSayHello: "",
+  wasPageHidden: false,
+  musicPlaying: false,
+  scrollTo(elementId) {
+    const targetElement = document.getElementById(elementId);
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scroll({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+    }
+  },
+  musicToggle() {
+    const $music = document.querySelector('#nav-music');
+    const $meting = document.querySelector('meting-js');
+    const $console = document.getElementById('consoleMusic');
+    const $rm_text = document.querySelector('#menu-music-toggle span');
+    const $rm_icon = document.querySelector('#menu-music-toggle i');
+    this.musicPlaying = !this.musicPlaying;
+    $music.classList.toggle("playing", this.musicPlaying);
+    $console.classList.toggle("on", this.musicPlaying);
+    if (this.musicPlaying) {
+      $meting.aplayer.play();
+      rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
+    } else {
+      $meting.aplayer.pause();
+      rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
+    }
+  },
+  switchCommentBarrage() {
+    let commentBarrageElement = document.querySelector(".comment-barrage");
+    if (!commentBarrageElement) return;
+    const isDisplayed = window.getComputedStyle(commentBarrageElement).display === "flex";
+    commentBarrageElement.style.display = isDisplayed ? "none" : "flex";
+    document.querySelector("#consoleCommentBarrage").classList.toggle("on", !isDisplayed);
+    utils.saveToLocal.set("commentBarrageSwitch", !isDisplayed, .2);
+    rm?.menuItems.barrage && rm.barrage(isDisplayed)
+  },
+  switchHideAside() {
+    const htmlClassList = document.documentElement.classList;
+    const consoleHideAside = document.querySelector("#consoleHideAside");
+    const isHideAside = htmlClassList.contains("hide-aside");
+    utils.saveToLocal.set("aside-status", isHideAside ? "show" : "hide", 1);
+    htmlClassList.toggle("hide-aside");
+    consoleHideAside.classList.toggle("on", !isHideAside);
+  },
+  switchKeyboard() {
+    this.sco_keyboards = !this.sco_keyboards;
+    const consoleKeyboard = document.querySelector("#consoleKeyboard");
+    const keyboardFunction = this.sco_keyboards ? openKeyboard : closeKeyboard;
+    consoleKeyboard.classList.toggle("on", this.sco_keyboards);
+    keyboardFunction();
+    localStorage.setItem("keyboard", this.sco_keyboards);
+    document.getElementById('keyboard-tips')?.classList.remove('show');
+  },
+  initConsoleState() {
+    const consoleHideAside = document.querySelector("#consoleHideAside");
+    if (!consoleHideAside) return;
+    consoleHideAside.classList.toggle("on", document.documentElement.classList.contains("hide-aside"));
+  },
+  changeSayHelloText() {
+    const greetings = GLOBAL_CONFIG.aside.sayhello2;
+    const greetingElement = document.getElementById("author-info__sayhi");
+    let randomGreeting;
+    do {
+      randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+    } while (randomGreeting === this.lastSayHello);
+    greetingElement.textContent = randomGreeting;
+    this.lastSayHello = randomGreeting;
+  },
+  switchDarkMode() {
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    const newMode = isDarkMode ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newMode);
+    utils.saveToLocal.set('theme', newMode, 0.02);
+    utils.snackbarShow(GLOBAL_CONFIG.lang.theme[newMode], false, 2000);
+    if (typeof rm === 'object') rm.mode(!isDarkMode) && rm.hideRightMenu();
+    handleThemeChange(newMode);
+  },
+  hideTodayCard: () => document.getElementById('todayCard').classList.add('hide'),
+  toTop: () => utils.scrollToDest(0),
+  showConsole: () => document.getElementById('console')?.classList.toggle('show', true),
+  hideConsole: () => document.getElementById('console')?.classList.remove('show'),
+  refreshWaterFall() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            waterfall(entry.target) || entry.target.classList.add('show');
+          }, 300);
+        }
+      });
+    });
+    document.querySelectorAll('.waterfall').forEach(el => observer.observe(el));
+  },
+  addRuntime() {
+    let el = document.getElementById('runtimeshow');
+    el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.day);
+  },
+  toTalk(txt) {
+    const inputs = ["#wl-edit", ".el-textarea__inner", "#veditor", ".atk-textarea"];
+    inputs.forEach(selector => {
+      const el = document.querySelector(selector);
+      if (el) {
+        el.dispatchEvent(new Event('input', {bubble: true, cancelable: true}));
+        el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n';
+        utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300);
+        el.focus();
+        el.setSelectionRange(-1, -1);
+      }
+    });
+    utils.snackbarShow(GLOBAL_CONFIG.lang.totalk, false, 2000);
+  },
+  initbbtalk() {
+    const bberTalkElement = document.querySelector('#bber-talk');
+    if (bberTalkElement) {
+      new Swiper('.swiper-container', {
+        direction: 'vertical',
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          pauseOnMouseEnter: true
+        },
+      });
+    }
+  },
+  addPhotoFigcaption() {
+    document.querySelectorAll('#article-container img:not(.gallery-item img)').forEach(image => {
+      const captionText = image.getAttribute('alt');
+      captionText && image.insertAdjacentHTML('afterend', `<div class="img-alt is-center">${captionText}</div>`);
+    });
+  },
+  scrollToComment: () => utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300),
+  setTimeState() {
+    const el = document.getElementById('author-info__sayhi');
+    if (el) {
+      const hours = new Date().getHours();
+      const lang = GLOBAL_CONFIG.aside.sayhello;
+
+      const localData = getLocalData(['twikoo', 'WALINE_USER_META', 'WALINE_USER', '_v_Cache_Meta', 'ArtalkUser']);
+
+      function getLocalData(keys) {
+        for (let key of keys) {
+          const data = localStorage.getItem(key);
+          if (data) {
+            return JSON.parse(data);
+          }
+        }
+        return null;
+      };
+      const nick = localData ? (localData.nick ? localData.nick : localData.display_name) : null;
+
+      let prefix;
+      if (this.wasPageHidden) {
+        prefix = GLOBAL_CONFIG.aside.sayhello3.back + nick;
+        this.wasPageHidden = false;
+      } else {
+        prefix = GLOBAL_CONFIG.aside.sayhello3.prefix + nick;
+      }
+
+      const greetings = [
+        {start: 0, end: 5, text: nick ? prefix : lang.goodnight},
+        {start: 6, end: 10, text: nick ? prefix : lang.morning},
+        {start: 11, end: 14, text: nick ? prefix : lang.noon},
+        {start: 15, end: 18, text: nick ? prefix : lang.afternoon},
+        {start: 19, end: 24, text: nick ? prefix : lang.night},
+      ];
+      const greeting = greetings.find(g => hours >= g.start && hours <= g.end);
+      el.innerText = greeting.text;
+    }
+  },
+  tagPageActive() {
+    const decodedPath = decodeURIComponent(window.location.pathname);
+    const isTagPage = /\/tags\/.*?\//.test(decodedPath);
+    if (isTagPage) {
+      const tag = decodedPath.split("/").slice(-2, -1)[0];
+      const tagElement = document.getElementById(tag);
+      if (tagElement) {
+        document.querySelectorAll("a.select").forEach(link => {
+          link.classList.remove("select");
+        });
+        tagElement.classList.add("select");
+      }
+    }
+  },
+  categoriesBarActive() {
+    const categoryBar = document.querySelector("#category-bar");
+    const currentPath = decodeURIComponent(window.location.pathname);
+    const isHomePage = currentPath === GLOBAL_CONFIG.root;
+    if (categoryBar) {
+      const categoryItems = categoryBar.querySelectorAll(".category-bar-item");
+      categoryItems.forEach(item => item.classList.remove("select"));
+      const activeItemId = isHomePage ? "category-bar-home" : currentPath.split("/").slice(-2, -1)[0];
+      const activeItem = document.getElementById(activeItemId);
+      if (activeItem) {
+        activeItem.classList.add("select");
+      }
+    }
+  },
+  scrollCategoryBarToRight() {
+    const scrollBar = document.getElementById("category-bar-items");
+    const nextElement = document.getElementById("category-bar-next");
+    if (scrollBar) {
+      const isScrollBarAtEnd = () => scrollBar.scrollLeft + scrollBar.clientWidth >= scrollBar.scrollWidth - 8;
+      const scroll = () => {
+        if (isScrollBarAtEnd()) {
+          scrollBar.scroll({left: 0, behavior: "smooth"});
+        } else {
+          scrollBar.scrollBy({left: scrollBar.clientWidth, behavior: "smooth"});
+        }
+      };
+      scrollBar.addEventListener("scroll", () => {
+        clearTimeout(this.timeoutId);
+        this.timeoutId = setTimeout(() => {
+          nextElement.style.transform = isScrollBarAtEnd() ? "rotate(180deg)" : "";
+        }, 150);
+      });
+      scroll();
+    }
+  },
+  openAllTags() {
+    document.querySelectorAll(".card-allinfo .card-tag-cloud").forEach(tagCloudElement => tagCloudElement.classList.add("all-tags"));
+    document.getElementById("more-tags-btn")?.remove();
+  },
+  listenToPageInputPress() {
+    const toGroup = document.querySelector(".toPageGroup")
+    const pageText = document.getElementById("toPageText");
+    if (!pageText) return;
+    const pageButton = document.getElementById("toPageButton");
+    const pageNumbers = document.querySelectorAll(".page-number");
+    const lastPageNumber = +pageNumbers[pageNumbers.length - 1].textContent;
+    if (!pageText || lastPageNumber === 1) {
+      toGroup.style.display = "none";
+      return
+    }
+    pageText.addEventListener("keydown", (event) => {
+      if (event.keyCode === 13) {
+        sco.toPage();
+        pjax.loadUrl(pageButton.href);
+      }
+    });
+    pageText.addEventListener("input", () => {
+      pageButton.classList.toggle("haveValue", pageText.value !== "" && pageText.value !== "0");
+      if (+pageText.value > lastPageNumber) {
+        pageText.value = lastPageNumber;
+      }
+    });
+  },
+  addNavBackgroundInit() {
+    const scrollTop = document.documentElement.scrollTop;
+    (scrollTop !== 0) && document.getElementById("page-header").classList.add("nav-fixed", "nav-visible");
+  },
+  toPage() {
+    const pageNumbers = document.querySelectorAll(".page-number");
+    const maxPageNumber = parseInt(pageNumbers[pageNumbers.length - 1].innerHTML);
+    const inputElement = document.getElementById("toPageText");
+    const inputPageNumber = parseInt(inputElement.value);
+    document.getElementById("toPageButton").href = (!isNaN(inputPageNumber) && inputPageNumber <= maxPageNumber && inputPageNumber > 1)
+      ? window.location.href.replace(/\/page\/\d+\/$/, "/") + "page/" + inputPageNumber + "/"
+      : '/';
+  },
+  owoBig(owoSelector) {
+    let owoBig = document.getElementById('owo-big');
+    if (!owoBig) {
+      owoBig = document.createElement('div');
+      owoBig.id = 'owo-big';
+      document.body.appendChild(owoBig);
+    }
+    const showOwoBig = event => {
+      const target = event.target;
+      const owoItem = target.closest(owoSelector.item);
+      if (owoItem && target.closest(owoSelector.body)) {
+        const imgSrc = owoItem.querySelector('img')?.src;
+        if (imgSrc) {
+          owoBig.innerHTML = `<img src="${imgSrc}" style="max-width: 100%; height: auto;">`;
+          owoBig.style.display = 'block';
+          positionOwoBig(owoItem);
+        }
+      }
+    };
+    const hideOwoBig = event => {
+      if (event.target.closest(owoSelector.item) && event.target.closest(owoSelector.body)) {
+        owoBig.style.display = 'none';
+      }
+    };
+    const positionOwoBig = owoItem => {
+      const itemRect = owoItem.getBoundingClientRect();
+      owoBig.style.left = `${itemRect.left - (owoBig.offsetWidth / 4)}px`;
+      owoBig.style.top = `${itemRect.top}px`;
+    }
+    document.addEventListener('mouseover', showOwoBig);
+    document.addEventListener('mouseout', hideOwoBig);
+  },
+  changeTimeFormat(selector) {
+    selector.forEach(item => {
+      const timeVal = item.getAttribute('datetime')
+      item.textContent = utils.diffDate(timeVal, true)
+      item.style.display = 'inline'
+    })
+  },
+  switchComments() {
+    const switchBtn = document.getElementById('switch-btn')
+    if (!switchBtn) return
+    let switchDone = false
+    const commentContainer = document.getElementById('post-comment')
+    const handleSwitchBtn = () => {
+      commentContainer.classList.toggle('move')
+      if (!switchDone && typeof loadTwoComment === 'function') {
+        switchDone = true
+        loadTwoComment()
+      }
+    }
+    utils.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn)
+  }
+};
+const addHighlight = () => {
+  const highlight = GLOBAL_CONFIG.highlight;
+  if (!highlight) return;
+  const {copy, expand, limit, syntax} = highlight;
+  const $isPrismjs = syntax === 'prismjs';
+  const $isShowTool = highlight.enable || copy || expand || limit;
+  const expandClass = !expand === true ? 'closed' : ''
+  const $syntaxHighlight = syntax === 'highlight.js' ? document.querySelectorAll('figure.highlight') : document.querySelectorAll('pre[class*="language-"]')
+  if (!(($isShowTool || limit) && $syntaxHighlight.length)) return
+  const copyEle = copy ? `<i class="solitude fas fa-copy copy-button"></i>` : '<i></i>';
+  const expandEle = `<i class="solitude fas fa-angle-down expand"></i>`;
+  const limitEle = limit ? `<i class="solitude fas fa-angles-down"></i>` : '<i></i>';
+  const alertInfo = (ele, text) => utils.snackbarShow(text, false, 2000)
+  const copyFn = (e) => {
+    const $buttonParent = e.parentNode
+    $buttonParent.classList.add('copy-true')
+    const selection = window.getSelection()
+    const range = document.createRange()
+    const preCodeSelector = $isPrismjs ? 'pre code' : 'table .code pre'
+    range.selectNodeContents($buttonParent.querySelectorAll(`${preCodeSelector}`)[0])
+    selection.removeAllRanges()
+    selection.addRange(range)
+    document.execCommand('copy')
+    alertInfo(e.lastChild, GLOBAL_CONFIG.lang.copy.success)
+    selection.removeAllRanges()
+    $buttonParent.classList.remove('copy-true')
+  }
+  const expandClose = (e) => e.classList.toggle('closed')
+  const shrinkEle = function () {
+    this.classList.toggle('expand-done')
+  }
+  const ToolsFn = function (e) {
+    const $target = e.target.classList
+    if ($target.contains('expand')) expandClose(this)
+    else if ($target.contains('copy-button')) copyFn(this)
+  }
+  const createEle = (lang, item, service) => {
+    const fragment = document.createDocumentFragment()
+    if ($isShowTool) {
+      const hlTools = document.createElement('div')
+      hlTools.className = `highlight-tools ${expandClass}`
+      hlTools.innerHTML = expandEle + lang + copyEle
+      utils.addEventListenerPjax(hlTools, 'click', ToolsFn)
+      fragment.appendChild(hlTools)
+    }
+    if (limit && item.offsetHeight > limit + 30) {
+      const ele = document.createElement('div')
+      ele.className = 'code-expand-btn'
+      ele.innerHTML = limitEle
+      utils.addEventListenerPjax(ele, 'click', shrinkEle)
+      fragment.appendChild(ele)
+    }
+    if (service === 'hl') {
+      item.insertBefore(fragment, item.firstChild)
+    } else {
+      item.parentNode.insertBefore(fragment, item)
+    }
+  }
+  if ($isPrismjs) {
+    $syntaxHighlight.forEach(item => {
+      const langName = item.getAttribute('data-language') || 'Code'
+      const highlightLangEle = `<div class="code-lang">${langName}</div>`
+      utils.wrap(item, 'figure', {
+        class: 'highlight'
+      })
+      createEle(highlightLangEle, item)
+    })
+  } else {
+    $syntaxHighlight.forEach(item => {
+      let langName = item.getAttribute('class').split(' ')[1]
+      if (langName === 'plain' || langName === undefined) langName = 'Code'
+      const highlightLangEle = `<div class="code-lang">${langName}</div>`
+      createEle(highlightLangEle, item, 'hl')
+    })
+  }
+}
+
+class toc {
+  static init() {
+    const tocContainer = document.getElementById('card-toc')
+    if (!tocContainer || !tocContainer.querySelector('.toc a')) {
+      tocContainer.style.display = 'none'
+      return
+    }
+    const el = document.querySelectorAll('.toc a')
+    el.forEach((e) => {
+      e.addEventListener('click', (event) => {
+        event.preventDefault()
+        utils.scrollToDest(utils.getEleTop(document.getElementById(decodeURI((event.target.className === 'toc-text' ? event.target.parentNode.hash : event.target.hash).replace('#', '')))), 300)
+      })
+    })
+    this.active(el)
+  }
+
+  static active(toc) {
+    const $article = document.getElementById('article-container')
+    const $tocContent = document.getElementById('toc-content')
+    const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
+    let detectItem = ''
+
+    function autoScroll(el) {
+      const activePosition = el.getBoundingClientRect().top
+      const sidebarScrollTop = $tocContent.scrollTop
+      if (activePosition > (document.documentElement.clientHeight - 100)) {
+        $tocContent.scrollTop = sidebarScrollTop + 150
+      }
+      if (activePosition < 100) {
+        $tocContent.scrollTop = sidebarScrollTop - 150
+      }
+    }
+
+    function findHeadPosition(top) {
+      if (top === 0) return false
+      let currentIndex = ''
+      list.forEach(function (ele, index) {
+        if (top > utils.getEleTop(ele) - 80) {
+          currentIndex = index
+        }
+      })
+      if (detectItem === currentIndex) return
+      detectItem = currentIndex
+      document.querySelectorAll('.toc .active').forEach((i) => {
+        i.classList.remove('active')
+      })
+      const activeitem = toc[detectItem]
+      if (activeitem) {
+        let parent = toc[detectItem].parentNode
+        activeitem.classList.add('active')
+        autoScroll(activeitem)
+        for (; !parent.matches('.toc'); parent = parent.parentNode) {
+          if (parent.matches('li')) parent.classList.add('active')
+        }
+      }
+    }
+
+    window.tocScrollFn = utils.throttle(function () {
+      const currentTop = window.scrollY || document.documentElement.scrollTop
+      findHeadPosition(currentTop)
+    }, 100)
+    window.addEventListener('scroll', tocScrollFn)
+  }
+}
+
+class tabs {
+  static init() {
+    this.clickFnOfTabs();
+    this.backToTop();
+  }
+
+  static clickFnOfTabs() {
+    document.querySelectorAll('#article-container .tab > button').forEach((item) => {
+      item.addEventListener('click', function (e) {
+        const that = this;
+        const $tabItem = that.parentNode;
+        if (!$tabItem.classList.contains('active')) {
+          const $tabContent = $tabItem.parentNode.nextElementSibling;
+          const $siblings = utils.siblings($tabItem, '.active')[0];
+          $siblings && $siblings.classList.remove('active');
+          $tabItem.classList.add('active');
+          const tabId = that.getAttribute('data-href').replace('#', '');
+          const childList = [...$tabContent.children];
+          childList.forEach((item) => {
+            if (item.id === tabId) item.classList.add('active');
+            else item.classList.remove('active');
+          });
+        }
+      });
+    });
+  }
+
+  static backToTop() {
+    document.querySelectorAll('#article-container .tabs .tab-to-top').forEach((item) => {
+      item.addEventListener('click', function () {
+        utils.scrollToDest(utils.getEleTop(item.parentElement.parentElement.parentNode), 300);
+      });
+    });
+  }
+
+  static lureAddListener() {
+    if (!GLOBAL_CONFIG.lure) return;
+    let title = document.title;
+    document.addEventListener('visibilitychange', () => {
+      const {lure} = GLOBAL_CONFIG;
+      if (document.visibilityState === 'hidden') {
+        document.title = lure.jump;
+      } else if (document.visibilityState === 'visible') {
+        document.title = lure.back;
+        setTimeout(() => {
+          document.title = title;
+        }, 2000);
+      }
+    });
+  }
+
+  static expireAddListener() {
+    const {expire} = GLOBAL_CONFIG;
+    if (!expire) return;
+    const list = document.querySelectorAll('.post-meta-date time');
+    const post_date = list.length ? list[list.length - 1] : document.querySelector('.datatime');
+    if (!post_date) return;
+    const ex = Math.ceil((new Date().getTime() - new Date(post_date.getAttribute('datetime')).getTime()) / 1000 / 60 / 60 / 24);
+    if (expire.time > ex) return;
+    const ele = document.createElement('div');
+    ele.className = 'expire';
+    ele.innerHTML = `<i class="solitude st-circle-exclamation-solid"></i>${expire.text_prev}${-(expire.time - ex)}${expire.text_next}`;
+    const articleContainer = document.getElementById('article-container');
+    articleContainer.insertAdjacentElement(expire.position === 'top' ? 'afterbegin' : 'beforeend', ele);
+  }
+}
+
+window.refreshFn = () => {
+  const {is_home, is_page, page, is_post} = PAGE_CONFIG;
+  const {runtime, lazyload, lightbox, randomlink, covercolor, post_ai, lure, expire} = GLOBAL_CONFIG;
+  const timeSelector = (is_home ? '.post-meta-date time' : is_post ? '.post-meta-date time' : '.datatime') + ', .webinfo-item time';
+  document.body.setAttribute('data-type', page);
+  sco.changeTimeFormat(document.querySelectorAll(timeSelector));
+  runtime && sco.addRuntime();
+  [scrollFn, sidebarFn, sco.addPhotoFigcaption, sco.setTimeState, sco.tagPageActive, sco.categoriesBarActive, sco.listenToPageInputPress, sco.addNavBackgroundInit, sco.refreshWaterFall].forEach(fn => fn());
+  lazyload.enable && utils.lazyloadImg();
+  lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img)"));
+  randomlink && randomLinksList();
+  post_ai && is_post && efu_ai.init();
+  sco.switchComments();
+  initObserver();
+  if (is_home) {
+    showTodayCard();
+    typeof updatePostsBasedOnComments === 'function' && updatePostsBasedOnComments()
+  }
+  if (is_post || is_page) {
+    addHighlight();
+    tabs.init();
+  }
+  if (is_post) {
+    if (expire) tabs.expireAddListener();
+  }
+  if (covercolor.enable) coverColor();
+  if (PAGE_CONFIG.toc) toc.init();
+  if (lure) tabs.lureAddListener();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  [addCopyright, window.refreshFn, asideStatus, () => window.onscroll = percent, sco.initConsoleState].forEach(fn => fn());
+});
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    sco.wasPageHidden = true;
+  }
+});
+window.onkeydown = e => {
+  const {keyCode, ctrlKey, shiftKey} = e;
+  if (keyCode === 123 || (ctrlKey && shiftKey && keyCode === 67)) {
+    utils.snackbarShow(GLOBAL_CONFIG.lang.f12, false, 3000);
+  }
+  if (keyCode === 27) {
+    sco.hideConsole();
+  }
+};
+document.addEventListener('copy', () => {
+  utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 3000);
+});
+
+// waline comment
+const Application = require('@waline/vercel');
+
+module.exports = Application({
+    async postSave(comment) {
+        // do what ever you want after save comment
+    },
+    mailSubjectAdmin: '{{site.name | safe}} 上有新评论了',
+    mailTemplateAdmin: `<div style="background: url(https://tva3.sinaimg.cn/large/c56b8822ly1h62npb7s1ej201y01y0lh.jpg);padding:40px 0px 20px;margin:0px;background-color:#FFCDCE;width:100%;">
+	<style type="text/css">@media screen and (max-width:600px){.afterimg,.beforeimg{display:none!important}}</style>
+	<div style="border-radius: 10px 10px 10px 10px;font-size:14px;color: #555555;width: 530px;font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB',微软雅黑,'Microsoft Yahei',Tahoma,Helvetica,Arial,'SimSun',sans-serif;margin:50px auto;max-width:100%;background: ##ffffff;">
+		<img class="beforeimg" style="width:530px;height:317px;pointer-events:none" src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png">
+		<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg" style="width:100%;overflow:hidden;pointer-events:none;margin-top: -120px;">
+		<div style="width:100%;background:#f8d1ce;color:#9d2850;background-image: -moz-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));height: 66px;background: url(https://tva2.sinaimg.cn/large/c56b8822ly1h61tb7tagcj20ii01u3yc.jpg) left top no-repeat;display: flex;justify-content: center;flex-direction: column;">
+		<p style="font-size:16px;font-weight: bold;text-align:center;word-break:break-all;margin:0;">
+		您在<a style="text-decoration:none;color: #9d2850;" href="{{site.url}}"target="_blank">{{site.name}}</a>上的文章有了新的评论</p>
+		</div>
+		<div class="formmain" style="background:#fff;width:100%;max-width:800px;margin:auto auto;overflow:hidden;margin-bottom: -155px;">
+			<div style="margin:40px auto;width:90%;"><p><strong>{{self.nick}}</strong> 回复说：</p>
+			<div style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:15px;color:#555555;">{{self.comment | safe}}</div>
+			<p style="text-align:center;position: relative;z-index: 99;">您可以点击<a style="text-decoration:none;color:#cf5c83" href="{{site.postUrl}}" target="_blank">查看回复的完整內容</a></p>
+			<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png" style="width:100%;margin:25px auto 5px auto;display:block;pointer-events:none">
+			<p class="bottomhr" style="font-size:12px;text-align:center;color:#999">上冬十二(oragekk)博客竭诚为您服务！</p>
+			</div>
+		</div>
+		<img class="afterimg" style="width:535px;height:317px;z-index:100;margin-left: -3px;"src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png">
+	</div>
+</div>`,
+    mailSubject: '{{parent.nick}}，您在『{{site.name}}』上发表的评论收到了来自 {{self.nick}} 的回复',
+    mailTemplate: `<div style="background: url(https://tva3.sinaimg.cn/large/c56b8822ly1h62npb7s1ej201y01y0lh.jpg);padding:40px 0px 20px;margin:0px;background-color:#FFCDCE;width:100%;">
+	<style type="text/css">@media screen and (max-width:600px){.afterimg,.beforeimg{display:none!important}}</style>
+	<div style="border-radius: 10px 10px 10px 10px;font-size:14px;color: #555555;width: 530px;font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB',微软雅黑,'Microsoft Yahei',Tahoma,Helvetica,Arial,'SimSun',sans-serif;margin:50px auto;max-width:100%;background: ##ffffff;">
+		<img class="beforeimg" style="width:530px;height:317px;z-index:-100;pointer-events:none" src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png">
+		<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg" style="width:100%;overflow:hidden;pointer-events:none;margin-top: -120px;">
+		<div style="width:100%;background:#f8d1ce;color:#9d2850;background-image: -moz-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));height: 66px;background: url(https://tva2.sinaimg.cn/large/c56b8822ly1h61tb7tagcj20ii01u3yc.jpg) left top no-repeat;display: flex;justify-content: center;flex-direction: column;">
+		<p style="font-size:16px;font-weight: bold;text-align:center;word-break:break-all;margin:0;">
+		您在<a style="text-decoration:none;color: #9d2850;" href="{{site.url}}">『{{site.name | safe}}』</a>上的留言有新回复啦！</p>
+		</div>
+		<div class="formmain" style="background:#fff;width:100%;max-width:800px;margin:auto auto;overflow:hidden;margin-bottom: -155px;">
+			<div style="margin:40px auto;width:90%;"><p>😊Hi，{{parent.nick}}，您曾在文章上发表评论：</p>
+			<div style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:15px;color:#555555;">{{parent.comment | safe}}</div>
+			<p><strong>{{self.nick}}</strong> 给您的回复如下：</p>
+			<div style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:15px;color:#555555;">{{self.comment | safe}}</div>
+			<p>您可以点击<a style="text-decoration:none; color:#cf5c83" href="{{site.postUrl}}" target="_blank"> 查看回复的完整內容 </a>，欢迎再次光临<a style="text-decoration:none; color:#cf5c83" href="{{site.url}}" target="_blank"> {{site.name}} </a>。<hr />
+			<p style="font-size:14px;color:#b7adad;text-align:center;position: relative;z-index: 99;">本邮件为系统自动发送，请勿直接回复邮件哦，可到博文内容回复。<br />{{site.url}}</p>
+			</p>
+			<img src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png" style="width:100%;margin:25px auto 5px auto;display:block;pointer-events:none">
+			<p class="bottomhr" style="font-size:12px;text-align:center;color:#999">上冬十二(oragekk)博客竭诚为您服务！</p>
+			</div>
+		</div>
+		<img class="afterimg" style="width:535px;height:317px;z-index:100;margin-left: -3px;"src="https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png">
+	</div>
+</div>`
+});
