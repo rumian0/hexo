@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>123云盘-下载工具</title>
+      <link href="/2024/09/30/123-liuliang/"/>
+      <url>/2024/09/30/123-liuliang/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="123云盘-下载工具"><a href="#123云盘-下载工具" class="headerlink" title="123云盘 下载工具"></a>123云盘 下载工具</h2><p>123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。</p><h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ul><li><strong>登录</strong>：使用用户名和密码登录 123Pan 账号。</li><li><strong>列出文件</strong>：显示当前目录下的所有文件和文件夹。</li><li><strong>下载文件</strong>：通过模拟安卓客户端协议下载文件，绕过流量限制。</li><li><strong>上传文件</strong>：将本地文件上传到 123Pan。</li><li><strong>分享文件</strong>：生成文件分享链接。</li><li><strong>删除文件</strong>：删除指定的文件或文件夹。</li><li><strong>创建文件夹</strong>：在当前目录下创建新文件夹。</li></ul><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol><li><p>确保已安装 Python 3.x。</p></li><li><p>安装所需的 Python 库：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li></ol><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>在首次运行脚本时，会自动生成一个 <code>123pan.txt</code> 文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。</p><h3 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">可以直接下载<span class="keyword">release</span>的可执行文件运行或运行python脚本。</span><br><span class="line">脚本运行：</span><br></pre></td></tr></table></figure><ol><li><p>克隆或下载本项目代码到本地。</p></li><li><p>打开终端或命令提示符，进入项目目录。</p></li><li><p>运行脚本：</p><p>使用安卓客户端协议</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python android.py</span><br></pre></td></tr></table></figure></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用web协议</span><br><span class="line">python web.py</span><br></pre></td></tr></table></figure><h2 id="123云盘-下载工具GitHub地址"><a href="#123云盘-下载工具GitHub地址" class="headerlink" title="123云盘 下载工具GitHub地址"></a>123云盘 下载工具GitHub地址</h2><p>地址：</p><a class="tag-Link" target="_blank" href="https://github.com/Bao-qing/123pan">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/Bao-qing/123pan.png);"></div>        <div class="tag-link-right">            <div class="tag-link-title">123pan</div>            <div class="tag-link-sitename">GitHub</div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a><h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>今天推荐的是一个<strong>数字网盘</strong>脚本，可以解除限制，完全免费使用！</p><p>该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要<strong>先安装Tampermonkey插件</strong>，Tampermonkey插件可以在文末关键字获取。</p><p>安装完油猴插件后，<strong>再安装脚本</strong>，方法是打开Greasy Fork中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】</p><p><img src="/2024/09/30/123-liuliang/1.webp" alt="点击安装此脚本"></p><p>再点【安装】即可完成脚本安装。</p><p><img src="/2024/09/30/123-liuliang/2.webp" alt="点击安装此脚本"></p><p><strong>脚本使用测试：</strong></p><p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p><p><strong>脚本使用测试：</strong></p><p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p><p><img src="/2024/09/30/123-liuliang/3.webp" alt="测试"></p><p>下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用1DM接管速度可达15M&#x2F;S，跑满你的带宽！</p><p><img src="/2024/09/30/123-liuliang/4.webp" alt="点击下载"></p><p>这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 硬核科技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电脑软件 </tag>
+            
+            <tag> 123网盘 </tag>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Classlsand-班级课程表</title>
       <link href="/2024/09/08/classlasland/"/>
       <url>/2024/09/08/classlasland/</url>
@@ -49,9 +78,9 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
             <tag> 电脑软件 </tag>
+            
+            <tag> 工具 </tag>
             
             <tag> 百度网盘 </tag>
             
@@ -188,9 +217,9 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
             <tag> 电脑软件 </tag>
+            
+            <tag> 工具 </tag>
             
             <tag> 吾爱破解 </tag>
             
@@ -385,9 +414,9 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
             <tag> 电脑软件 </tag>
+            
+            <tag> 工具 </tag>
             
         </tags>
       
@@ -412,9 +441,9 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
             <tag> 电脑软件 </tag>
+            
+            <tag> 工具 </tag>
             
             <tag> 实用推荐 </tag>
             
@@ -468,9 +497,9 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
             <tag> 电脑软件 </tag>
+            
+            <tag> 工具 </tag>
             
         </tags>
       
@@ -524,9 +553,9 @@
       
         <tags>
             
-            <tag> 建站 </tag>
-            
             <tag> 工具 </tag>
+            
+            <tag> 建站 </tag>
             
             <tag> 实用推荐 </tag>
             
@@ -667,9 +696,9 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
             <tag> 电脑软件 </tag>
+            
+            <tag> 工具 </tag>
             
             <tag> 实用推荐 </tag>
             
@@ -794,7 +823,7 @@
       <link href="/2024/04/10/free-yuming/"/>
       <url>/2024/04/10/free-yuming/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#105;&#110;&#x66;&#111;&#x40;&#x66;&#114;&#x65;&#101;&#110;&#x6f;&#x6d;&#46;&#x63;&#x6f;&#109;">&#105;&#110;&#x66;&#111;&#x40;&#x66;&#114;&#x65;&#101;&#110;&#x6f;&#x6d;&#46;&#x63;&#x6f;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p><p>以下整理了一些可以用的免费二级域名：</p><table><thead><tr><th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th><th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th></tr></thead><tbody><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td><td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td><td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td><td>可以申请到work.gd&#x2F;run.place等免费二级域名</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td><td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td><td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td><td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td><td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td><td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td><td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td><td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td><td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td><td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td><td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td></tr></tbody></table><p>以上信息会不定期整理修改！</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#110;&#x66;&#111;&#64;&#102;&#114;&#x65;&#x65;&#x6e;&#111;&#x6d;&#46;&#99;&#111;&#x6d;">&#x69;&#110;&#x66;&#111;&#64;&#102;&#114;&#x65;&#x65;&#x6e;&#111;&#x6d;&#46;&#99;&#111;&#x6d;</a>说明情况后可以改为收费状态并已付费10年。</p><p>以下整理了一些可以用的免费二级域名：</p><table><thead><tr><th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th><th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th></tr></thead><tbody><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td><td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td><td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td><td>可以申请到work.gd&#x2F;run.place等免费二级域名</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td><td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td><td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td><td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td><td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td><td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td><td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td><td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td><td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td><td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td></tr><tr><td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td><td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td></tr></tbody></table><p>以上信息会不定期整理修改！</p>]]></content>
       
       
       <categories>
@@ -835,9 +864,9 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
             <tag> 电脑软件 </tag>
+            
+            <tag> 工具 </tag>
             
         </tags>
       
@@ -1034,11 +1063,11 @@
       
         <tags>
             
+            <tag> 工具 </tag>
+            
             <tag> Markdown </tag>
             
             <tag> 写作 </tag>
-            
-            <tag> 工具 </tag>
             
         </tags>
       
