@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C语言扫雷</title>
+    <url>/2024/04/10/C-saolei/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>选自：PandaX Blog：<a href="https://pandax.wiki/15/">https://pandax.wiki/15/</a></p>
+<h1 id="代码设计要求"><a href="#代码设计要求" class="headerlink" title="代码设计要求"></a><strong>代码设计要求</strong></h1><ul>
+<li>Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。</li>
+<li>程序中必须通过<strong>结构体</strong>来储存必要信息。</li>
+<li>要有一定的代码规范。</li>
+</ul>
+<h1 id="程序实现要求"><a href="#程序实现要求" class="headerlink" title="程序实现要求"></a><strong>程序实现要求</strong></h1><ul>
+<li>打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。</li>
+<li>开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。</li>
+<li>首次输入 XY 坐标时，必须保证不会踩到雷。</li>
+<li>当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。</li>
+<li>当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。</li>
+<li>当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。</li>
+<li>当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。</li>
+<li>当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。</li>
+<li>游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。</li>
+<li>所有的输入选项位置要有报错的能力。</li>
+</ul>
+<h1 id="部分效果图"><a href="#部分效果图" class="headerlink" title="部分效果图"></a><strong>部分效果图</strong></h1><p><img src="https://pandax.wiki/wp-content/uploads/2023/01/1-1024x757.jpg" alt="https://pandax.wiki/wp-content/uploads/2023/01/1-1024x757.jpg"></p>
+<p><img src="https://pandax.wiki/wp-content/uploads/2023/01/2-1024x524.jpg" alt="https://pandax.wiki/wp-content/uploads/2023/01/2-1024x524.jpg"></p>
+<p><img src="https://pandax.wiki/wp-content/uploads/2023/01/3-1024x492.jpg" alt="https://pandax.wiki/wp-content/uploads/2023/01/3-1024x492.jpg"></p>
+<h1 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a><strong>代码如下</strong></h1><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS  1</span></span><br><span class="line"><span class="meta">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="meta">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="meta">#include &lt;time.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> M 9//行数</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 9//列数</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> B 10//炸弹数</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MS M + 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> NS N + 2</span></span><br><span class="line"><span class="keyword">struct</span> list &#123;</span><br><span class="line">    <span class="built_in">int</span> boom, click;<span class="comment">//boom 随机生成的雷 0不是雷1是雷</span></span><br><span class="line">    <span class="built_in">char</span> display;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">struct</span> list pri[MS][NS];</span><br><span class="line"><span class="built_in">int</span> o = <span class="number">0</span>;<span class="comment">//用于判断是否结束</span></span><br><span class="line"><span class="built_in">int</span> win = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//打印菜单</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">menu</span>(<span class="params"><span class="keyword">void</span></span>)</span> &#123;</span><br><span class="line">    printf(<span class="string">&quot;1.开始游戏\n&quot;</span>);</span><br><span class="line">    printf(<span class="string">&quot;2.退出游戏\n&quot;</span>);</span><br><span class="line">    printf(<span class="string">&quot;请选择\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">menu2</span>(<span class="params"><span class="keyword">void</span></span>)</span> &#123;</span><br><span class="line">    printf(<span class="string">&quot;1.再次尝试\n&quot;</span>);</span><br><span class="line">    printf(<span class="string">&quot;2.退出游戏\n&quot;</span>);</span><br><span class="line">    printf(<span class="string">&quot;请选择\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//随机生成雷</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">random</span>()</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> m, n;</span><br><span class="line">    srand(time(NULL));</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; B; i++) &#123;</span><br><span class="line">        <span class="built_in">int</span> m = rand() % M + <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">int</span> n = rand() % N + <span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//printf(&quot;%d %d\n&quot;, m, n);  //打印随机出现的雷，方便调试使用</span></span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (pri[m][n].boom == <span class="number">1</span>)</span><br><span class="line">            i -= <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (pri[m][n].boom == <span class="number">0</span>) &#123;</span><br><span class="line">            pri[m][n].boom = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//棋盘初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">renew</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">            pri[i + <span class="number">1</span>][j + <span class="number">1</span>].display = <span class="string">&#x27;*&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; M + <span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; N + <span class="number">2</span>; j++) &#123;</span><br><span class="line">            pri[i][j].boom = <span class="number">0</span>;</span><br><span class="line">            pri[i][j].click = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt;= M + <span class="number">2</span>; i++) &#123;</span><br><span class="line">        pri[<span class="number">0</span>][i].click = <span class="number">1</span>;</span><br><span class="line">        pri[M + <span class="number">1</span>][i].click = <span class="number">1</span>;</span><br><span class="line">        pri[i][<span class="number">0</span>].click = <span class="number">1</span>;</span><br><span class="line">        pri[i][N + <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//打印棋盘</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span>()</span> &#123;</span><br><span class="line">    <span class="comment">//打印第一行的数字</span></span><br><span class="line">    printf(<span class="string">&quot;   &quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        printf(<span class="string">&quot;%d  &quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="comment">//打印下面的</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        printf(<span class="string">&quot;%d&quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; M; j++) &#123;</span><br><span class="line">            printf(<span class="string">&quot;  %c&quot;</span>, pri[i + <span class="number">1</span>][j + <span class="number">1</span>].display);</span><br><span class="line">        &#125;</span><br><span class="line">        printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断周围雷数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scan</span>(<span class="params"><span class="built_in">int</span> m, <span class="built_in">int</span> n</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> num = pri[m - <span class="number">1</span>][n - <span class="number">1</span>].boom + pri[m - <span class="number">1</span>][n].boom + pri[m - <span class="number">1</span>][n + <span class="number">1</span>].boom + pri[m][n - <span class="number">1</span>].boom + pri[m][n + <span class="number">1</span>].boom + pri[m + <span class="number">1</span>][n - <span class="number">1</span>].boom + pri[m + <span class="number">1</span>][n].boom + pri[m + <span class="number">1</span>][n + <span class="number">1</span>].boom;</span><br><span class="line">    <span class="keyword">if</span> (num != <span class="number">0</span>) &#123;</span><br><span class="line">        pri[m][n].display = num + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">        pri[m][n].display = <span class="string">&#x27;   &#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (m &gt; <span class="number">0</span> &amp;&amp; m &lt;= M + <span class="number">1</span> &amp;&amp; n &gt; <span class="number">0</span> &amp;&amp; n &lt;= N + <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pri[m - <span class="number">1</span>][n - <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m - <span class="number">1</span>][n - <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m - <span class="number">1</span>, n - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m - <span class="number">1</span>][n].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m - <span class="number">1</span>][n].click = <span class="number">1</span>;</span><br><span class="line">                scan(m - <span class="number">1</span>, n);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m - <span class="number">1</span>][n + <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m - <span class="number">1</span>][n + <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m - <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m][n - <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m][n - <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m, n - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m][n + <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m][n + <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m, n + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m + <span class="number">1</span>][n - <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m + <span class="number">1</span>][n - <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m + <span class="number">1</span>, n - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m + <span class="number">1</span>][n].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m + <span class="number">1</span>][n].click = <span class="number">1</span>;</span><br><span class="line">                scan(m + <span class="number">1</span>, n);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m + <span class="number">1</span>][n + <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m + <span class="number">1</span>][n + <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m + <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断胜负</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">win_or_not</span>()</span> &#123;</span><br><span class="line">    win = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pri[i + <span class="number">1</span>][j + <span class="number">1</span>].click == <span class="number">1</span>)</span><br><span class="line">                win += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (win == (M * N - B)) &#123;</span><br><span class="line">        printf(<span class="string">&quot;恭喜您扫雷成功\n&quot;</span>);</span><br><span class="line">        o = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//用户输入</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span>(<span class="params"><span class="built_in">int</span>* c</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> x, y;</span><br><span class="line">    <span class="built_in">int</span> p = scanf(<span class="string">&quot;%d %d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (p == <span class="number">0</span> || p == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        rewind(stdin);</span><br><span class="line">        printf(<span class="string">&quot;输入错误，请重新输入\n&quot;</span>);</span><br><span class="line">        p = scanf(<span class="string">&quot;%d %d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">    &#125;</span><br><span class="line">    rewind(stdin);</span><br><span class="line">    <span class="comment">//判断第一次踩雷</span></span><br><span class="line">    <span class="keyword">if</span> (*c == <span class="number">1</span>) &#123;</span><br><span class="line">        *c += <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= M &amp;&amp; y &lt;= N) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pri[x][y].boom == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[x][y].click = <span class="number">1</span>;</span><br><span class="line">                scan(x, y);</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (pri[x][y].boom == <span class="number">1</span>) &#123;</span><br><span class="line">                renew();</span><br><span class="line">                random();</span><br><span class="line">                scan(x, y);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            printf(<span class="string">&quot;输入有误，请重新输入\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//剩下的次数</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= M &amp;&amp; y &lt;= N)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (pri[x][y].click == <span class="number">1</span>) &#123;</span><br><span class="line">                printf(<span class="string">&quot;此位置已经被排除\n&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (pri[x][y].boom == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[x][y].click = <span class="number">1</span>;</span><br><span class="line">                scan(x, y);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (pri[x][y].boom == <span class="number">1</span>) &#123;</span><br><span class="line">                printf(<span class="string">&quot;你踩到雷了\n&quot;</span>);</span><br><span class="line">                o = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            printf(<span class="string">&quot;输入有误，请重新输入\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">game</span>()</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> c = <span class="number">1</span>;<span class="comment">//判断是否是第一次</span></span><br><span class="line">    renew();</span><br><span class="line">    print();</span><br><span class="line">    random();</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        input(&amp;c);</span><br><span class="line">        print();</span><br><span class="line">        win_or_not();</span><br><span class="line">    &#125; <span class="keyword">while</span> (o == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">main</span>()</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> option = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>;; i++) &#123;</span><br><span class="line">        o = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">1</span>)</span><br><span class="line">            menu();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            menu2();</span><br><span class="line">        <span class="keyword">while</span> (scanf(<span class="string">&quot;%d&quot;</span>, &amp;option) == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            rewind(stdin);</span><br><span class="line">            printf(<span class="string">&quot;输入错误，请重新输入\n\n&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">1</span>)</span><br><span class="line">                menu();</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                menu2();</span><br><span class="line">        &#125;</span><br><span class="line">        rewind(stdin);</span><br><span class="line">        <span class="keyword">if</span> (option == <span class="number">1</span>)</span><br><span class="line">            game();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">2</span>) &#123;</span><br><span class="line">            printf(<span class="string">&quot;退出游戏\n&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            printf(<span class="string">&quot;输入有误，请重新输入\n\n&quot;</span>);</span><br><span class="line">            i -= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>123云盘-下载工具</title>
     <url>/2024/09/30/123-liuliang/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="123云盘-下载工具"><a href="#123云盘-下载工具" class="headerlink" title="123云盘 下载工具"></a>123云盘 下载工具</h2><p>123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。</p>
@@ -71,36 +104,86 @@
       </tags>
   </entry>
   <entry>
-    <title>C语言扫雷</title>
-    <url>/2024/04/10/C-saolei/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>选自：PandaX Blog：<a href="https://pandax.wiki/15/">https://pandax.wiki/15/</a></p>
-<h1 id="代码设计要求"><a href="#代码设计要求" class="headerlink" title="代码设计要求"></a><strong>代码设计要求</strong></h1><ul>
-<li>Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。</li>
-<li>程序中必须通过<strong>结构体</strong>来储存必要信息。</li>
-<li>要有一定的代码规范。</li>
+    <title>ChatGPT-KEY的获取[无需手机号绑定]</title>
+    <url>/2024/01/21/ChatGPT-KEY/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😆 **前言**：最近ChatGPT官方解除了注册时的手机号绑定要求，使我们注册账号和使用变得更加容易，但Api-Key的获取还是需要手机号绑定，接下来的教程会教你如何绕过手机号的绑定获取到可以的KEY，并使用获取到的KEY来搭建自己的镜像网站【实现使用时免科学】，无限制使用ChatGPT。【教程内的网站还是需要在使用科学的前提下操作的，但部署后就不需要了。】
+
+</aside>
+
+<p><strong>该教程所需的网站地址：</strong></p>
+<ul>
+<li><strong>1、ChatGPT官网：<a href="https://openai.com/blog/chatgpt">Introducing ChatGPT (openai.com)</a></strong></li>
+<li><strong>2、临时邮箱网站：<a href="https://etempmail.com/zh">主页 – Temp Mail – Free Edu &#x2F; .COM Temporary Mails (etempmail.com)</a></strong></li>
+<li><strong>3、ChatGPTNextWeb项目：<a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">ChatGPTNextWeb&#x2F;ChatGPT-Next-Web: A well-designed cross-platform ChatGPT UI (Web &#x2F; PWA &#x2F; Linux &#x2F; Win &#x2F; MacOS). 一键拥有你自己的跨平台 ChatGPT 应用。 (github.com)</a></strong></li>
+<li><strong>4、Vercel注册地址：<a href="https://vercel.com/signup">Sign Up – Vercel</a></strong></li>
+<li><strong>5、Watt Toolkit【原STEAM++】：<a href="https://steampp.net/">瓦特工具箱(Steam++官网) – Watt Toolkit (steampp.net)</a></strong></li>
 </ul>
-<h1 id="程序实现要求"><a href="#程序实现要求" class="headerlink" title="程序实现要求"></a><strong>程序实现要求</strong></h1><ul>
-<li>打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。</li>
-<li>开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。</li>
-<li>首次输入 XY 坐标时，必须保证不会踩到雷。</li>
-<li>当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。</li>
-<li>当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。</li>
-<li>当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。</li>
-<li>当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。</li>
-<li>当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。</li>
-<li>游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。</li>
-<li>所有的输入选项位置要有报错的能力。</li>
-</ul>
-<h1 id="部分效果图"><a href="#部分效果图" class="headerlink" title="部分效果图"></a><strong>部分效果图</strong></h1><p><img src="https://pandax.wiki/wp-content/uploads/2023/01/1-1024x757.jpg" alt="https://pandax.wiki/wp-content/uploads/2023/01/1-1024x757.jpg"></p>
-<p><img src="https://pandax.wiki/wp-content/uploads/2023/01/2-1024x524.jpg" alt="https://pandax.wiki/wp-content/uploads/2023/01/2-1024x524.jpg"></p>
-<p><img src="https://pandax.wiki/wp-content/uploads/2023/01/3-1024x492.jpg" alt="https://pandax.wiki/wp-content/uploads/2023/01/3-1024x492.jpg"></p>
-<h1 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a><strong>代码如下</strong></h1><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS  1</span></span><br><span class="line"><span class="meta">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="meta">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="meta">#include &lt;time.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> M 9//行数</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 9//列数</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> B 10//炸弹数</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MS M + 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> NS N + 2</span></span><br><span class="line"><span class="keyword">struct</span> list &#123;</span><br><span class="line">    <span class="built_in">int</span> boom, click;<span class="comment">//boom 随机生成的雷 0不是雷1是雷</span></span><br><span class="line">    <span class="built_in">char</span> display;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">struct</span> list pri[MS][NS];</span><br><span class="line"><span class="built_in">int</span> o = <span class="number">0</span>;<span class="comment">//用于判断是否结束</span></span><br><span class="line"><span class="built_in">int</span> win = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//打印菜单</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">menu</span>(<span class="params"><span class="keyword">void</span></span>)</span> &#123;</span><br><span class="line">    printf(<span class="string">&quot;1.开始游戏\n&quot;</span>);</span><br><span class="line">    printf(<span class="string">&quot;2.退出游戏\n&quot;</span>);</span><br><span class="line">    printf(<span class="string">&quot;请选择\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">menu2</span>(<span class="params"><span class="keyword">void</span></span>)</span> &#123;</span><br><span class="line">    printf(<span class="string">&quot;1.再次尝试\n&quot;</span>);</span><br><span class="line">    printf(<span class="string">&quot;2.退出游戏\n&quot;</span>);</span><br><span class="line">    printf(<span class="string">&quot;请选择\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//随机生成雷</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">random</span>()</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> m, n;</span><br><span class="line">    srand(time(NULL));</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; B; i++) &#123;</span><br><span class="line">        <span class="built_in">int</span> m = rand() % M + <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">int</span> n = rand() % N + <span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//printf(&quot;%d %d\n&quot;, m, n);  //打印随机出现的雷，方便调试使用</span></span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (pri[m][n].boom == <span class="number">1</span>)</span><br><span class="line">            i -= <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (pri[m][n].boom == <span class="number">0</span>) &#123;</span><br><span class="line">            pri[m][n].boom = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//棋盘初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">renew</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">            pri[i + <span class="number">1</span>][j + <span class="number">1</span>].display = <span class="string">&#x27;*&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; M + <span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; N + <span class="number">2</span>; j++) &#123;</span><br><span class="line">            pri[i][j].boom = <span class="number">0</span>;</span><br><span class="line">            pri[i][j].click = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt;= M + <span class="number">2</span>; i++) &#123;</span><br><span class="line">        pri[<span class="number">0</span>][i].click = <span class="number">1</span>;</span><br><span class="line">        pri[M + <span class="number">1</span>][i].click = <span class="number">1</span>;</span><br><span class="line">        pri[i][<span class="number">0</span>].click = <span class="number">1</span>;</span><br><span class="line">        pri[i][N + <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//打印棋盘</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span>()</span> &#123;</span><br><span class="line">    <span class="comment">//打印第一行的数字</span></span><br><span class="line">    printf(<span class="string">&quot;   &quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        printf(<span class="string">&quot;%d  &quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="comment">//打印下面的</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        printf(<span class="string">&quot;%d&quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; M; j++) &#123;</span><br><span class="line">            printf(<span class="string">&quot;  %c&quot;</span>, pri[i + <span class="number">1</span>][j + <span class="number">1</span>].display);</span><br><span class="line">        &#125;</span><br><span class="line">        printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断周围雷数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scan</span>(<span class="params"><span class="built_in">int</span> m, <span class="built_in">int</span> n</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> num = pri[m - <span class="number">1</span>][n - <span class="number">1</span>].boom + pri[m - <span class="number">1</span>][n].boom + pri[m - <span class="number">1</span>][n + <span class="number">1</span>].boom + pri[m][n - <span class="number">1</span>].boom + pri[m][n + <span class="number">1</span>].boom + pri[m + <span class="number">1</span>][n - <span class="number">1</span>].boom + pri[m + <span class="number">1</span>][n].boom + pri[m + <span class="number">1</span>][n + <span class="number">1</span>].boom;</span><br><span class="line">    <span class="keyword">if</span> (num != <span class="number">0</span>) &#123;</span><br><span class="line">        pri[m][n].display = num + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">        pri[m][n].display = <span class="string">&#x27;   &#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (m &gt; <span class="number">0</span> &amp;&amp; m &lt;= M + <span class="number">1</span> &amp;&amp; n &gt; <span class="number">0</span> &amp;&amp; n &lt;= N + <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pri[m - <span class="number">1</span>][n - <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m - <span class="number">1</span>][n - <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m - <span class="number">1</span>, n - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m - <span class="number">1</span>][n].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m - <span class="number">1</span>][n].click = <span class="number">1</span>;</span><br><span class="line">                scan(m - <span class="number">1</span>, n);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m - <span class="number">1</span>][n + <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m - <span class="number">1</span>][n + <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m - <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m][n - <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m][n - <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m, n - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m][n + <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m][n + <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m, n + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m + <span class="number">1</span>][n - <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m + <span class="number">1</span>][n - <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m + <span class="number">1</span>, n - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m + <span class="number">1</span>][n].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m + <span class="number">1</span>][n].click = <span class="number">1</span>;</span><br><span class="line">                scan(m + <span class="number">1</span>, n);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pri[m + <span class="number">1</span>][n + <span class="number">1</span>].click == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[m + <span class="number">1</span>][n + <span class="number">1</span>].click = <span class="number">1</span>;</span><br><span class="line">                scan(m + <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断胜负</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">win_or_not</span>()</span> &#123;</span><br><span class="line">    win = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pri[i + <span class="number">1</span>][j + <span class="number">1</span>].click == <span class="number">1</span>)</span><br><span class="line">                win += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (win == (M * N - B)) &#123;</span><br><span class="line">        printf(<span class="string">&quot;恭喜您扫雷成功\n&quot;</span>);</span><br><span class="line">        o = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//用户输入</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span>(<span class="params"><span class="built_in">int</span>* c</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> x, y;</span><br><span class="line">    <span class="built_in">int</span> p = scanf(<span class="string">&quot;%d %d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (p == <span class="number">0</span> || p == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        rewind(stdin);</span><br><span class="line">        printf(<span class="string">&quot;输入错误，请重新输入\n&quot;</span>);</span><br><span class="line">        p = scanf(<span class="string">&quot;%d %d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">    &#125;</span><br><span class="line">    rewind(stdin);</span><br><span class="line">    <span class="comment">//判断第一次踩雷</span></span><br><span class="line">    <span class="keyword">if</span> (*c == <span class="number">1</span>) &#123;</span><br><span class="line">        *c += <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= M &amp;&amp; y &lt;= N) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pri[x][y].boom == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[x][y].click = <span class="number">1</span>;</span><br><span class="line">                scan(x, y);</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (pri[x][y].boom == <span class="number">1</span>) &#123;</span><br><span class="line">                renew();</span><br><span class="line">                random();</span><br><span class="line">                scan(x, y);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            printf(<span class="string">&quot;输入有误，请重新输入\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//剩下的次数</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= M &amp;&amp; y &lt;= N)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (pri[x][y].click == <span class="number">1</span>) &#123;</span><br><span class="line">                printf(<span class="string">&quot;此位置已经被排除\n&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (pri[x][y].boom == <span class="number">0</span>) &#123;</span><br><span class="line">                pri[x][y].click = <span class="number">1</span>;</span><br><span class="line">                scan(x, y);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (pri[x][y].boom == <span class="number">1</span>) &#123;</span><br><span class="line">                printf(<span class="string">&quot;你踩到雷了\n&quot;</span>);</span><br><span class="line">                o = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            printf(<span class="string">&quot;输入有误，请重新输入\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">game</span>()</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> c = <span class="number">1</span>;<span class="comment">//判断是否是第一次</span></span><br><span class="line">    renew();</span><br><span class="line">    print();</span><br><span class="line">    random();</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        input(&amp;c);</span><br><span class="line">        print();</span><br><span class="line">        win_or_not();</span><br><span class="line">    &#125; <span class="keyword">while</span> (o == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">main</span>()</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> option = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>;; i++) &#123;</span><br><span class="line">        o = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">1</span>)</span><br><span class="line">            menu();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            menu2();</span><br><span class="line">        <span class="keyword">while</span> (scanf(<span class="string">&quot;%d&quot;</span>, &amp;option) == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            rewind(stdin);</span><br><span class="line">            printf(<span class="string">&quot;输入错误，请重新输入\n\n&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">1</span>)</span><br><span class="line">                menu();</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                menu2();</span><br><span class="line">        &#125;</span><br><span class="line">        rewind(stdin);</span><br><span class="line">        <span class="keyword">if</span> (option == <span class="number">1</span>)</span><br><span class="line">            game();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (option == <span class="number">2</span>) &#123;</span><br><span class="line">            printf(<span class="string">&quot;退出游戏\n&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            printf(<span class="string">&quot;输入有误，请重新输入\n\n&quot;</span>);</span><br><span class="line">            i -= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+<p><strong>使用临时邮箱注册ChatGPT账号并获取KEY：</strong></p>
+<p><strong>1、进入ChatGPT注册页面</strong></p>
+<p>选择Log in</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/c2cec3fdfc0392453cb007649794a4c27d1e2550.jpg" alt="1" title="chatgpt"></p>
+<p>选择SIGN UP【注册模式】</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272b262558818fa0ec09fac796.jpg" alt="2" title="chatgpt"></p>
+<p>进入注册模式页面</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/eac4b74543a98226d3a9cd4c9a82b9014a90eb75.jpg" alt="3" title="chatgpt"></p>
+<p><strong>2、使用临时邮箱注册我们的ChatGPT账号</strong></p>
+<p>复制临时邮箱进行注册</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/91529822720e0cf38a9ca8901a46f21fbe09aa76.jpg" alt="4" title="chatgpt"></p>
+<p>填写邮箱和密码注册</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/37d12f2eb9389b50eedb06399535e5dde7116eb1.jpg" alt="5" title="chatgpt"></p>
+<p>注册后需要在邮箱进行确认验证</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/6609c93d70cf3bc7426b2b87c100baa1cd112a76.jpg" alt="6" title="chatgpt"></p>
+<p>收到官方验证邮件</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/42a98226cffc1e1794d56a5a5a90f603738de977.jpg" alt="7" title="chatgpt"></p>
+<p>进入信息填写页面</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/b7fd5266d016092450264470c40735fae6cd345e.jpg" alt="8" title="chatgpt"></p>
+<p>随意填写即可</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272aa02458818fa0ec08fac708.jpg" alt="9" title="chatgpt"></p>
+<p>根据不同需求选择模式</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/32fa828ba61ea8d33248926f870a304e251f5877.jpg" alt="10" title="chatgpt"></p>
+<p><strong>3、获取ChatGPT的Api-Key【为搭建镜像网站做准备】</strong></p>
+<p>API模式进入API-keys页面</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/a50f4bfbfbedab641217ababe736afc379311e77.jpg" alt="11" title="chatgpt"></p>
+<p>打开网页控制台</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/d6ca7bcb0a46f21fdf51b838e6246b600c33ae70.jpg" alt="12" title="chatgpt"><br>进行网络数据抓包</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/b219ebc4b74543a9993b1ca70e178a82b90114bc.jpg" alt="13" title="chatgpt"></p>
+<p>抓包获取到了账号的KEY【留着备用】</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/b58f8c5494eef01f8873feaef0fe9925bc317d72.jpg" alt="14" title="chatgpt"><br><strong>4、Fork-Github的ChatGPTNextWeb项目</strong></p>
+<p>登录GitHub，Fork项目</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/fd039245d688d43f6bce77996d1ed21b0ef43b72.jpg" alt="15" title="chatgpt"><br>Create fork</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/cdbf6c81800a19d8757c626e23fa828ba61e465a.jpg" alt="16" title="chatgpt"><br>添加成功</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/7acb0a46f21fbe090938257f7b600c338744ad73.jpg" alt="17" title="chatgpt"><br><strong>5、进入Vercel部署我们的镜像网站</strong></p>
+<p>选择个人项目，后输入昵称</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/faedab64034f78f0e4417c9869310a55b3191c16.jpg" alt="18" title="chatgpt"><br>使用我们之前Fork项目的Github账号注册登录</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/6d81800a19d8bc3e7ba2e0a1928ba61ea8d34537.jpg" alt="19" title="chatgpt"></p>
+<p>Import开始部署</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/a8ec8a13632762d0be7a42d4b0ec08fa513dc611.jpg" alt="20" title="chatgpt"></p>
+<p>点击Deploy</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/6159252dd42a28344403d0604bb5c9ea15cebf30.jpg" alt="21" title="chatgpt"></p>
+<p>进入仪表盘【dashboard】</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/8c1001e93901213f2296a8b744e736d12f2e9530.jpg" alt="22" title="chatgpt"><br>访问项目自动分配的域名</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/4afbfbedab64034f6a91246dbfc379310a551d78.jpg" alt="23" title="chatgpt"><br><strong>6、Api-Key的导入设置</strong></p>
+<p>进入设置</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/58ee3d6d55fbb2fb1074be795f4a20a44623dc7a.jpg" alt="24" title="chatgpt"></p>
+<p>勾选自定义接口并导入KEY</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/c83d70cf3bc79f3d26a7025baaa1cd11728b2913.jpg" alt="25" title="chatgpt"></p>
+<p>KEY值为之前抓包到的数据</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/7dd98d1001e93901b8806b556bec54e737d196df.jpg" alt="26" title="chatgpt"><br>导入KEY后即可开始使用</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/bd3eb13533fa828b6ba17b88ed1f4134960a5adf.jpg" alt="27" title="chatgpt"><br><strong>7、项目域名无法访问问题【挂科学最好】，最廉价的方法也可以使用STEAM++进行加速。</strong></p>
+<p>勉强能用</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/a1ec08fa513d26971692ee3645fbb2fb4316d81c.jpg" alt="28" title="chatgpt"></p>
+<blockquote>
+<p>选自：<a href="https://paperkiteblog.xyz/?p=545">https://paperkiteblog.xyz/?p=545</a></p>
+</blockquote>
+</div>]]></content>
       <categories>
-        <category>编程语言</category>
+        <category>ChatGPT</category>
       </categories>
       <tags>
-        <tag>C++</tag>
-        <tag>编程语言</tag>
+        <tag>ChatGPT</tag>
+        <tag>Openai</tag>
+        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
@@ -216,86 +299,41 @@
       </tags>
   </entry>
   <entry>
-    <title>ChatGPT-KEY的获取[无需手机号绑定]</title>
-    <url>/2024/01/21/ChatGPT-KEY/</url>
+    <title>TuneFree免费音乐下载</title>
+    <url>/2024/07/16/TuneFree/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😆 **前言**：最近ChatGPT官方解除了注册时的手机号绑定要求，使我们注册账号和使用变得更加容易，但Api-Key的获取还是需要手机号绑定，接下来的教程会教你如何绕过手机号的绑定获取到可以的KEY，并使用获取到的KEY来搭建自己的镜像网站【实现使用时免科学】，无限制使用ChatGPT。【教程内的网站还是需要在使用科学的前提下操作的，但部署后就不需要了。】
+😀 这里写文章的前言：
 
+<p>今天给大家分享一款全平台适用的音月神器支持<strong>网页端、电脑端和安卓端</strong>，iOS用户可以直接使用网页端，话不多说，直接安排~</p>
 </aside>
 
-<p><strong>该教程所需的网站地址：</strong></p>
-<ul>
-<li><strong>1、ChatGPT官网：<a href="https://openai.com/blog/chatgpt">Introducing ChatGPT (openai.com)</a></strong></li>
-<li><strong>2、临时邮箱网站：<a href="https://etempmail.com/zh">主页 – Temp Mail – Free Edu &#x2F; .COM Temporary Mails (etempmail.com)</a></strong></li>
-<li><strong>3、ChatGPTNextWeb项目：<a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">ChatGPTNextWeb&#x2F;ChatGPT-Next-Web: A well-designed cross-platform ChatGPT UI (Web &#x2F; PWA &#x2F; Linux &#x2F; Win &#x2F; MacOS). 一键拥有你自己的跨平台 ChatGPT 应用。 (github.com)</a></strong></li>
-<li><strong>4、Vercel注册地址：<a href="https://vercel.com/signup">Sign Up – Vercel</a></strong></li>
-<li><strong>5、Watt Toolkit【原STEAM++】：<a href="https://steampp.net/">瓦特工具箱(Steam++官网) – Watt Toolkit (steampp.net)</a></strong></li>
-</ul>
-<p><strong>使用临时邮箱注册ChatGPT账号并获取KEY：</strong></p>
-<p><strong>1、进入ChatGPT注册页面</strong></p>
-<p>选择Log in</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/c2cec3fdfc0392453cb007649794a4c27d1e2550.jpg" alt="1" title="chatgpt"></p>
-<p>选择SIGN UP【注册模式】</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272b262558818fa0ec09fac796.jpg" alt="2" title="chatgpt"></p>
-<p>进入注册模式页面</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/eac4b74543a98226d3a9cd4c9a82b9014a90eb75.jpg" alt="3" title="chatgpt"></p>
-<p><strong>2、使用临时邮箱注册我们的ChatGPT账号</strong></p>
-<p>复制临时邮箱进行注册</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/91529822720e0cf38a9ca8901a46f21fbe09aa76.jpg" alt="4" title="chatgpt"></p>
-<p>填写邮箱和密码注册</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/37d12f2eb9389b50eedb06399535e5dde7116eb1.jpg" alt="5" title="chatgpt"></p>
-<p>注册后需要在邮箱进行确认验证</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/6609c93d70cf3bc7426b2b87c100baa1cd112a76.jpg" alt="6" title="chatgpt"></p>
-<p>收到官方验证邮件</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/42a98226cffc1e1794d56a5a5a90f603738de977.jpg" alt="7" title="chatgpt"></p>
-<p>进入信息填写页面</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/b7fd5266d016092450264470c40735fae6cd345e.jpg" alt="8" title="chatgpt"></p>
-<p>随意填写即可</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272aa02458818fa0ec08fac708.jpg" alt="9" title="chatgpt"></p>
-<p>根据不同需求选择模式</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/32fa828ba61ea8d33248926f870a304e251f5877.jpg" alt="10" title="chatgpt"></p>
-<p><strong>3、获取ChatGPT的Api-Key【为搭建镜像网站做准备】</strong></p>
-<p>API模式进入API-keys页面</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/a50f4bfbfbedab641217ababe736afc379311e77.jpg" alt="11" title="chatgpt"></p>
-<p>打开网页控制台</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/d6ca7bcb0a46f21fdf51b838e6246b600c33ae70.jpg" alt="12" title="chatgpt"><br>进行网络数据抓包</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/b219ebc4b74543a9993b1ca70e178a82b90114bc.jpg" alt="13" title="chatgpt"></p>
-<p>抓包获取到了账号的KEY【留着备用】</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/b58f8c5494eef01f8873feaef0fe9925bc317d72.jpg" alt="14" title="chatgpt"><br><strong>4、Fork-Github的ChatGPTNextWeb项目</strong></p>
-<p>登录GitHub，Fork项目</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/fd039245d688d43f6bce77996d1ed21b0ef43b72.jpg" alt="15" title="chatgpt"><br>Create fork</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/cdbf6c81800a19d8757c626e23fa828ba61e465a.jpg" alt="16" title="chatgpt"><br>添加成功</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/7acb0a46f21fbe090938257f7b600c338744ad73.jpg" alt="17" title="chatgpt"><br><strong>5、进入Vercel部署我们的镜像网站</strong></p>
-<p>选择个人项目，后输入昵称</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/faedab64034f78f0e4417c9869310a55b3191c16.jpg" alt="18" title="chatgpt"><br>使用我们之前Fork项目的Github账号注册登录</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/6d81800a19d8bc3e7ba2e0a1928ba61ea8d34537.jpg" alt="19" title="chatgpt"></p>
-<p>Import开始部署</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/a8ec8a13632762d0be7a42d4b0ec08fa513dc611.jpg" alt="20" title="chatgpt"></p>
-<p>点击Deploy</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/6159252dd42a28344403d0604bb5c9ea15cebf30.jpg" alt="21" title="chatgpt"></p>
-<p>进入仪表盘【dashboard】</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/8c1001e93901213f2296a8b744e736d12f2e9530.jpg" alt="22" title="chatgpt"><br>访问项目自动分配的域名</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/4afbfbedab64034f6a91246dbfc379310a551d78.jpg" alt="23" title="chatgpt"><br><strong>6、Api-Key的导入设置</strong></p>
-<p>进入设置</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/58ee3d6d55fbb2fb1074be795f4a20a44623dc7a.jpg" alt="24" title="chatgpt"></p>
-<p>勾选自定义接口并导入KEY</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/c83d70cf3bc79f3d26a7025baaa1cd11728b2913.jpg" alt="25" title="chatgpt"></p>
-<p>KEY值为之前抓包到的数据</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/7dd98d1001e93901b8806b556bec54e737d196df.jpg" alt="26" title="chatgpt"><br>导入KEY后即可开始使用</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/bd3eb13533fa828b6ba17b88ed1f4134960a5adf.jpg" alt="27" title="chatgpt"><br><strong>7、项目域名无法访问问题【挂科学最好】，最廉价的方法也可以使用STEAM++进行加速。</strong></p>
-<p>勉强能用</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/a1ec08fa513d26971692ee3645fbb2fb4316d81c.jpg" alt="28" title="chatgpt"></p>
-<blockquote>
-<p>选自：<a href="https://paperkiteblog.xyz/?p=545">https://paperkiteblog.xyz/?p=545</a></p>
-</blockquote>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本软件来源于网络……</p>
+<p>名称：<code>TuneFree</code></p>
+<h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><p><strong>软件支持安卓、电脑、还有网页端，今天我们以网页端为例，软件整体界面非简洁清爽，完全免费使用！</strong></p>
+<p><img src="/2024/07/16/TuneFree/640_(4).webp" alt="640 (4).webp"></p>
+<p>我们点击发现，可以看到这里有着非常丰富的音月zi源，比如飙升榜、原创榜、热哥榜等等各类榜单应有尽有，我们可以随意打开在线听。</p>
+<p><img src="/2024/07/16/TuneFree/640_(5).webp" alt="640 (5).webp"></p>
+<p>不仅如此，软件内还有博客电tai板块，里面包含了情感、有声书、脱口秀、二次元、亲子、人文历史、娱乐、相声曲艺等非常的丰富，可以满足我们不同人群的各种需求！</p>
+<p><img src="/2024/07/16/TuneFree/640_(6).webp" alt="640 (6).webp"></p>
+<p>软件内的所有内容都支持免费听+下载，遇到喜欢的想下载，只需单击鼠标右键，然后点击下载即可。</p>
+<p><img src="/2024/07/16/TuneFree/640_(7).webp" alt="640 (7).webp"></p>
+<p>下载支持所有音质，我们当然要选最好的下载啦~</p>
+<p><img src="/2024/07/16/TuneFree/640_(8).webp" alt="640 (8).webp"></p>
+<p>另外，软件还有个超牛的地方，那就是它是和某yi云相通的，支持我们登录某yi云，登录后，就可以看到所有收藏喜欢的，直接听就完了~</p>
+<p><img src="/2024/07/16/TuneFree/640_(9).webp" alt="640 (9).webp"></p>
+<p>好了，以上就是今天分享的所有内容，如果觉得这篇文章对你有价值，记得收藏本站！</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>全平台音月神器（安卓+电脑+iOS）<br><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">https://caiyun.139.com/m/i?005Cifoc02EhV</a></p>
+<p><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">中国移动云盘分享</a></p>
+<p>网页版：<br><a href="https://pt.sayqz.com/#/">https://pt.sayqz.com/#/</a></p>
+<p><a href="https://pt.sayqz.com/#/">TuneFree</a></p>
 </div>]]></content>
       <categories>
-        <category>ChatGPT</category>
+        <category>实用软件</category>
       </categories>
       <tags>
-        <tag>ChatGPT</tag>
-        <tag>Openai</tag>
-        <tag>建站</tag>
+        <tag>电脑软件</tag>
+        <tag>安卓应用</tag>
+        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -341,44 +379,6 @@
       <tags>
         <tag>电脑软件</tag>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TuneFree免费音乐下载</title>
-    <url>/2024/07/16/TuneFree/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-
-<p>今天给大家分享一款全平台适用的音月神器支持<strong>网页端、电脑端和安卓端</strong>，iOS用户可以直接使用网页端，话不多说，直接安排~</p>
-</aside>
-
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本软件来源于网络……</p>
-<p>名称：<code>TuneFree</code></p>
-<h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><p><strong>软件支持安卓、电脑、还有网页端，今天我们以网页端为例，软件整体界面非简洁清爽，完全免费使用！</strong></p>
-<p><img src="/2024/07/16/TuneFree/640_(4).webp" alt="640 (4).webp"></p>
-<p>我们点击发现，可以看到这里有着非常丰富的音月zi源，比如飙升榜、原创榜、热哥榜等等各类榜单应有尽有，我们可以随意打开在线听。</p>
-<p><img src="/2024/07/16/TuneFree/640_(5).webp" alt="640 (5).webp"></p>
-<p>不仅如此，软件内还有博客电tai板块，里面包含了情感、有声书、脱口秀、二次元、亲子、人文历史、娱乐、相声曲艺等非常的丰富，可以满足我们不同人群的各种需求！</p>
-<p><img src="/2024/07/16/TuneFree/640_(6).webp" alt="640 (6).webp"></p>
-<p>软件内的所有内容都支持免费听+下载，遇到喜欢的想下载，只需单击鼠标右键，然后点击下载即可。</p>
-<p><img src="/2024/07/16/TuneFree/640_(7).webp" alt="640 (7).webp"></p>
-<p>下载支持所有音质，我们当然要选最好的下载啦~</p>
-<p><img src="/2024/07/16/TuneFree/640_(8).webp" alt="640 (8).webp"></p>
-<p>另外，软件还有个超牛的地方，那就是它是和某yi云相通的，支持我们登录某yi云，登录后，就可以看到所有收藏喜欢的，直接听就完了~</p>
-<p><img src="/2024/07/16/TuneFree/640_(9).webp" alt="640 (9).webp"></p>
-<p>好了，以上就是今天分享的所有内容，如果觉得这篇文章对你有价值，记得收藏本站！</p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>全平台音月神器（安卓+电脑+iOS）<br><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">https://caiyun.139.com/m/i?005Cifoc02EhV</a></p>
-<p><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">中国移动云盘分享</a></p>
-<p>网页版：<br><a href="https://pt.sayqz.com/#/">https://pt.sayqz.com/#/</a></p>
-<p><a href="https://pt.sayqz.com/#/">TuneFree</a></p>
-</div>]]></content>
-      <categories>
-        <category>实用软件</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>安卓应用</tag>
-        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -856,6 +856,59 @@
       </tags>
   </entry>
   <entry>
+    <title>短视频视频批量下载!</title>
+    <url>/2024/07/03/dyd/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+特别喜欢快手的`昔昔`，真的天可爱了，早都想把她的视频下载下来，让后分享给我的伙伴们看。刚好让我找到了批量下载工具。
+
+</aside>
+
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><strong>《DyD》</strong>是一款多功能视频图文下载器，支持某d、某k、某红书平台，并以批量的形式，快速下载某博主主页所有视频，不仅无水印，而且画质较高，是一个不错的自媒体必备工具。</p>
+<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-05-40.webp" alt="Snipaste_2024-07-03_22-05-40.webp"></p>
+<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><blockquote>
+<p>这里我选择快手的视频进行下载</p>
+</blockquote>
+<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-07-51.webp" alt="Snipaste_2024-07-03_22-07-51.webp"></p>
+<p>之后使用网页版，找到喜欢的博主</p>
+<p>这里就拿<code>九月</code>举例子</p>
+<blockquote>
+<p>为什么不拿昔昔举例子？</p>
+</blockquote>
+<blockquote>
+<p>答：因为我已经下载过了 🥰   九月我也非常喜欢。</p>
+</blockquote>
+<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-09-44.webp" alt="Snipaste_2024-07-03_22-09-44.webp"></p>
+<p><strong>复制他的链接</strong>：<a href="https://www.kuaishou.com/profile/3x8yqtps4anqe2y"><code>https://www.kuaishou.com/profile/3x8yqtps4anqe2y</code></a></p>
+<p>让后<code>粘贴</code>到上面，点击上方下载</p>
+<p>在这之后你需要登录网页版快手，如果不登录，则只能下载20个视频。</p>
+<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-12-46.webp" alt="Snipaste_2024-07-03_22-12-46.webp"></p>
+<p>注：如果碰到上方<code>白屏</code>，<code>正常</code>，<code>重新点击下载</code>即可！！</p>
+<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-14-59.webp" alt="Snipaste_2024-07-03_22-14-59.webp"></p>
+<p>如此他将会自动捕捉视频，你需要做的，就是拖动进度条，拖到最底下，就可以下载全部视频啦~~</p>
+<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-16-13.webp" alt="Snipaste_2024-07-03_22-16-13.webp"></p>
+<p>点击全部开始就可以等待下载啦~</p>
+<p>之后我们打开下载的目录文件，<code>泰裤辣</code>~~</p>
+<p>给你们下载可爱的<strong>昔昔~</strong></p>
+<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-18-23.webp" alt="Snipaste_2024-07-03_22-18-23.webp"></p>
+<p>总共167个视频，太可爱了，声音也超级好听！</p>
+<blockquote>
+<p>注：以上软件全部来源于网络，而且下载的视频仅供自己，不传播且会标注来源。</p>
+</blockquote>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>123盘：<a href="https://www.123pan.com/s/pUVeVv-1jqKA.html">https://www.123pan.com/s/pUVeVv-1jqKA.html</a></p>
+<p>七彩云：<a href="https://cloud.06dn.com/s/jKg4C4">https://cloud.06dn.com/s/jKg4C4</a></p>
+<p>夸克盘：<a href="https://pan.quark.cn/s/e8e1178082f7">https://pan.quark.cn/s/e8e1178082f7</a></p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>工具</tag>
+        <tag>实用推荐</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Classlsand-班级课程表</title>
     <url>/2024/09/08/classlasland/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h1><p>最近总是在想,有没有一款软件,可以提醒<strong>是否下课</strong>,让后<strong>下节课是什么</strong>! </p>
@@ -938,59 +991,6 @@
         <tag>电脑软件</tag>
         <tag>实用推荐</tag>
         <tag>班级</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>短视频视频批量下载!</title>
-    <url>/2024/07/03/dyd/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-特别喜欢快手的`昔昔`，真的天可爱了，早都想把她的视频下载下来，让后分享给我的伙伴们看。刚好让我找到了批量下载工具。
-
-</aside>
-
-<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><strong>《DyD》</strong>是一款多功能视频图文下载器，支持某d、某k、某红书平台，并以批量的形式，快速下载某博主主页所有视频，不仅无水印，而且画质较高，是一个不错的自媒体必备工具。</p>
-<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-05-40.webp" alt="Snipaste_2024-07-03_22-05-40.webp"></p>
-<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><blockquote>
-<p>这里我选择快手的视频进行下载</p>
-</blockquote>
-<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-07-51.webp" alt="Snipaste_2024-07-03_22-07-51.webp"></p>
-<p>之后使用网页版，找到喜欢的博主</p>
-<p>这里就拿<code>九月</code>举例子</p>
-<blockquote>
-<p>为什么不拿昔昔举例子？</p>
-</blockquote>
-<blockquote>
-<p>答：因为我已经下载过了 🥰   九月我也非常喜欢。</p>
-</blockquote>
-<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-09-44.webp" alt="Snipaste_2024-07-03_22-09-44.webp"></p>
-<p><strong>复制他的链接</strong>：<a href="https://www.kuaishou.com/profile/3x8yqtps4anqe2y"><code>https://www.kuaishou.com/profile/3x8yqtps4anqe2y</code></a></p>
-<p>让后<code>粘贴</code>到上面，点击上方下载</p>
-<p>在这之后你需要登录网页版快手，如果不登录，则只能下载20个视频。</p>
-<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-12-46.webp" alt="Snipaste_2024-07-03_22-12-46.webp"></p>
-<p>注：如果碰到上方<code>白屏</code>，<code>正常</code>，<code>重新点击下载</code>即可！！</p>
-<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-14-59.webp" alt="Snipaste_2024-07-03_22-14-59.webp"></p>
-<p>如此他将会自动捕捉视频，你需要做的，就是拖动进度条，拖到最底下，就可以下载全部视频啦~~</p>
-<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-16-13.webp" alt="Snipaste_2024-07-03_22-16-13.webp"></p>
-<p>点击全部开始就可以等待下载啦~</p>
-<p>之后我们打开下载的目录文件，<code>泰裤辣</code>~~</p>
-<p>给你们下载可爱的<strong>昔昔~</strong></p>
-<p><img src="/2024/07/03/dyd/Snipaste_2024-07-03_22-18-23.webp" alt="Snipaste_2024-07-03_22-18-23.webp"></p>
-<p>总共167个视频，太可爱了，声音也超级好听！</p>
-<blockquote>
-<p>注：以上软件全部来源于网络，而且下载的视频仅供自己，不传播且会标注来源。</p>
-</blockquote>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>123盘：<a href="https://www.123pan.com/s/pUVeVv-1jqKA.html">https://www.123pan.com/s/pUVeVv-1jqKA.html</a></p>
-<p>七彩云：<a href="https://cloud.06dn.com/s/jKg4C4">https://cloud.06dn.com/s/jKg4C4</a></p>
-<p>夸克盘：<a href="https://pan.quark.cn/s/e8e1178082f7">https://pan.quark.cn/s/e8e1178082f7</a></p>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>工具</tag>
-        <tag>实用推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -1161,6 +1161,113 @@
       </tags>
   </entry>
   <entry>
+    <title>免费域名整理</title>
+    <url>/2024/04/10/free-yuming/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#105;&#x6e;&#x66;&#x6f;&#x40;&#102;&#114;&#101;&#x65;&#110;&#111;&#109;&#x2e;&#99;&#111;&#x6d;">&#105;&#x6e;&#x66;&#x6f;&#x40;&#102;&#114;&#101;&#x65;&#110;&#111;&#109;&#x2e;&#99;&#111;&#x6d;</a>说明情况后可以改为收费状态并已付费10年。</p>
+<p>以下整理了一些可以用的免费二级域名：</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th>
+<th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td>
+<td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td>
+<td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td>
+<td>可以申请到work.gd&#x2F;run.place等免费二级域名</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td>
+<td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td>
+<td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td>
+<td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td>
+<td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td>
+<td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td>
+<td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td>
+<td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td>
+<td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td>
+<td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td>
+<td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td>
+</tr>
+</tbody></table>
+<p>以上信息会不定期整理修改！</p>
+</div>]]></content>
+      <categories>
+        <category>网站建站</category>
+      </categories>
+      <tags>
+        <tag>建站</tag>
+        <tag>实用推荐</tag>
+        <tag>精选网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>glary系统优化</title>
+    <url>/2024/07/23/glary/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+
+<p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。</p>
+</aside>
+
+<h1 id="📝-主旨内容"><a href="#📝-主旨内容" class="headerlink" title="📝 主旨内容"></a>📝 主旨内容</h1><p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用，</p>
+<h1 id="🤗-软件使用"><a href="#🤗-软件使用" class="headerlink" title="🤗 软件使用"></a>🤗 软件使用</h1><p>软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202515_001.webp" alt="DM_20240723202515_001.webp"></p>
+<p>他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202519_001.gif" alt="DM_20240723202519_001.gif"></p>
+<p>如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202517_001.gif" alt="DM_20240723202517_001.gif"></p>
+<p>扫描结束后，会提示有多少项要修复，点击修复问题即可。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202520_001.webp" alt="DM_20240723202520_001.webp"></p>
+<p>在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202523_001.webp" alt="DM_20240723202523_001.webp"></p>
+<p><strong>总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。</strong></p>
+<h1 id="🫰下载"><a href="#🫰下载" class="headerlink" title="🫰下载"></a>🫰下载</h1><p><a href="https://www.yunpan.com/surl_y9sdXPPPCfI">360安全云盘 - 用户空间</a></p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>系统优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GKD跳过广告</title>
     <url>/2024/01/25/gkd/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -1210,34 +1317,29 @@
       </tags>
   </entry>
   <entry>
-    <title>glary系统优化</title>
-    <url>/2024/07/23/glary/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-
-<p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。</p>
-</aside>
-
-<h1 id="📝-主旨内容"><a href="#📝-主旨内容" class="headerlink" title="📝 主旨内容"></a>📝 主旨内容</h1><p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用，</p>
-<h1 id="🤗-软件使用"><a href="#🤗-软件使用" class="headerlink" title="🤗 软件使用"></a>🤗 软件使用</h1><p>软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202515_001.webp" alt="DM_20240723202515_001.webp"></p>
-<p>他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202519_001.gif" alt="DM_20240723202519_001.gif"></p>
-<p>如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202517_001.gif" alt="DM_20240723202517_001.gif"></p>
-<p>扫描结束后，会提示有多少项要修复，点击修复问题即可。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202520_001.webp" alt="DM_20240723202520_001.webp"></p>
-<p>在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202523_001.webp" alt="DM_20240723202523_001.webp"></p>
-<p><strong>总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。</strong></p>
-<h1 id="🫰下载"><a href="#🫰下载" class="headerlink" title="🫰下载"></a>🫰下载</h1><p><a href="https://www.yunpan.com/surl_y9sdXPPPCfI">360安全云盘 - 用户空间</a></p>
+    <title>幻休</title>
+    <url>/2024/02/21/huan/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>幻休是一款助眠、 冥想、放松与缓解压力的健康应用，可引导您以一-种放松且自然的方式.安然入睡，改善您的睡眠。</p>
+<p><img src="https://img.liyy.us.kg/file/d5120eabf56734ef2a502.png" alt="1"></p>
+<h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><p>因为正版的app已经收费了，所以这里出一期破解教程</p>
+<p>如果不想跟着破解，点击这里直接跳转下载我破解好的就行<br><a href="https://mcy.cloudns.org/index.php/android/132.html#cl-6">点我跳转下载</a></p>
+<h1 id="正文-破解开始"><a href="#正文-破解开始" class="headerlink" title="正文[破解开始]"></a>正文[破解开始]</h1><p>##第一步:搜索getSvipStatus()I<br>选择第1个结果点进去<br>下面看图片教程↓<br>【最后一张附带效果图】</p>
+<p>本教程需用到的赋值代码如下↓<br>第一个：const-string v0,”2088-09-13”</p>
+<h2 id="第二个：const-4-v0-0x3"><a href="#第二个：const-4-v0-0x3" class="headerlink" title="第二个：const&#x2F;4 v0, 0x3"></a>第二个：const&#x2F;4 v0, 0x3</h2><p><img src="https://img.liyy.us.kg/file/e23f14963c2ca7ef46a15.jpg" alt="220058zpvvfncr8n8nytc5.jpg" title="幻休"></p>
+<p><img src="https://img.liyy.us.kg/file/13d5c59ade916ec32ffb7.jpg" alt="215928soho6h8er20xma22.jpg" title="幻休"></p>
+<p><img src="https://img.liyy.us.kg/file/50454447aabb37dac386a.jpg" alt="215948xz3jlltlt13nuttu.jpg" title="幻休"></p>
+<p><img src="https://img.liyy.us.kg/file/6b8a45343d539fa176592.jpg" alt="220005miy8m0g8yi75wp7l.jpg" title="幻休"></p>
+<p><img src="https://img.liyy.us.kg/file/b30755de120d8955f23c0.jpg" alt="220039wpgbmpppc8l8v08p.jpg" title="幻休"></p>
+<p><img src="https://img.liyy.us.kg/file/6d8e7fae09071c8ac981d.jpg" alt="220110nu060w7i1vqw04k5.jpg" title="幻休"></p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>夸克:<a href="https://pan.quark.cn/s/b727702dc8fc">夸克下载</a><br>百度网盘:<a href="https://pan.baidu.com/s/1FFht7gZFxYIyjuspDCXQHQ">百度网盘下载 提取码:5o5f</a> <br>七牛云：<a href="https://cloud.06dn.com/s/9ZX5Hv">七牛云</a></p>
 </div>]]></content>
       <categories>
-        <category>硬核科技</category>
+        <category>安卓应用</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
-        <tag>系统优化</tag>
+        <tag>安卓应用</tag>
+        <tag>实用推荐</tag>
+        <tag>app</tag>
       </tags>
   </entry>
   <entry>
@@ -1276,32 +1378,6 @@
         <tag>hexo</tag>
         <tag>技术分享</tag>
         <tag>实用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>幻休</title>
-    <url>/2024/02/21/huan/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>幻休是一款助眠、 冥想、放松与缓解压力的健康应用，可引导您以一-种放松且自然的方式.安然入睡，改善您的睡眠。</p>
-<p><img src="https://img.liyy.us.kg/file/d5120eabf56734ef2a502.png" alt="1"></p>
-<h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><p>因为正版的app已经收费了，所以这里出一期破解教程</p>
-<p>如果不想跟着破解，点击这里直接跳转下载我破解好的就行<br><a href="https://mcy.cloudns.org/index.php/android/132.html#cl-6">点我跳转下载</a></p>
-<h1 id="正文-破解开始"><a href="#正文-破解开始" class="headerlink" title="正文[破解开始]"></a>正文[破解开始]</h1><p>##第一步:搜索getSvipStatus()I<br>选择第1个结果点进去<br>下面看图片教程↓<br>【最后一张附带效果图】</p>
-<p>本教程需用到的赋值代码如下↓<br>第一个：const-string v0,”2088-09-13”</p>
-<h2 id="第二个：const-4-v0-0x3"><a href="#第二个：const-4-v0-0x3" class="headerlink" title="第二个：const&#x2F;4 v0, 0x3"></a>第二个：const&#x2F;4 v0, 0x3</h2><p><img src="https://img.liyy.us.kg/file/e23f14963c2ca7ef46a15.jpg" alt="220058zpvvfncr8n8nytc5.jpg" title="幻休"></p>
-<p><img src="https://img.liyy.us.kg/file/13d5c59ade916ec32ffb7.jpg" alt="215928soho6h8er20xma22.jpg" title="幻休"></p>
-<p><img src="https://img.liyy.us.kg/file/50454447aabb37dac386a.jpg" alt="215948xz3jlltlt13nuttu.jpg" title="幻休"></p>
-<p><img src="https://img.liyy.us.kg/file/6b8a45343d539fa176592.jpg" alt="220005miy8m0g8yi75wp7l.jpg" title="幻休"></p>
-<p><img src="https://img.liyy.us.kg/file/b30755de120d8955f23c0.jpg" alt="220039wpgbmpppc8l8v08p.jpg" title="幻休"></p>
-<p><img src="https://img.liyy.us.kg/file/6d8e7fae09071c8ac981d.jpg" alt="220110nu060w7i1vqw04k5.jpg" title="幻休"></p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>夸克:<a href="https://pan.quark.cn/s/b727702dc8fc">夸克下载</a><br>百度网盘:<a href="https://pan.baidu.com/s/1FFht7gZFxYIyjuspDCXQHQ">百度网盘下载 提取码:5o5f</a> <br>七牛云：<a href="https://cloud.06dn.com/s/9ZX5Hv">七牛云</a></p>
-</div>]]></content>
-      <categories>
-        <category>安卓应用</category>
-      </categories>
-      <tags>
-        <tag>安卓应用</tag>
-        <tag>实用推荐</tag>
-        <tag>app</tag>
       </tags>
   </entry>
   <entry>
@@ -1849,6 +1925,46 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
+    <title>神奇应用!什么都能搜!</title>
+    <url>/2024/06/23/sqyy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+💡 分享一款收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类的神器应用。
+
+</aside>
+
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一款全新上线的安卓应用分享平台，收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类，用户可以在平台上搜索到自己想要的任何应用，直接一键高速下载。</p>
+<blockquote>
+<p>一款集合了众多应用资源的软件，挑选优质应用，所有推荐的软件经过精心筛选，还有社区广场，进行资源交流，享受简洁易懂的服务和功能模块，包括搜索、分类浏览、收藏等。</p>
+</blockquote>
+<p><img src="/2024/06/23/sqyy/640.webp" alt="640.webp"></p>
+<h1 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h1><p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
+<p><img src="/2024/06/23/sqyy/640_(1).webp" alt="640 (1).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(2).webp" alt="640 (2).webp"></p>
+<p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
+<p><img src="/2024/06/23/sqyy/640_(3).webp" alt="640 (3).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(4).webp" alt="640 (4).webp"></p>
+<p>打开应用页面，可以看见软件内的全部分类，有影S播放、音y播放、漫画、文字等娱乐分类，还有下载、存储、搜索等工具分类，一共有30多种，非常丰富。</p>
+<p><img src="/2024/06/23/sqyy/640_(5).webp" alt="640 (5).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(6).webp" alt="640 (6).webp"></p>
+<p>还有游戏的专属页面，这里全是游戏资源，有休闲益智、飞行射击、塔防游戏、冒险解密、经营策略、角色扮演等十八种，各种游戏都有。</p>
+<p><img src="/2024/06/23/sqyy/640_(6)%201.webp" alt="640 (6).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(7).webp" alt="640 (7).webp"></p>
+<p>打开广场页面，这里有多种交流板块，我们可以在这里分享软件、资源交流，有什么资源要找的，或者有什么好资源可以分享的，都可以在这里交流。</p>
+<p><img src="/2024/06/23/sqyy/640_(8).webp" alt="640 (8).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(9).webp" alt="640 (9).webp"></p>
+<h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>蓝奏云：<a href="https://www.lanzouw.com/izwpg22c1w8d">https://www.lanzouw.com/izwpg22c1w8d</a></p>
+<p><a href="https://www.lanzouw.com/izwpg22c1w8d">神奇应用.apk - 蓝奏云</a></p>
+</div>]]></content>
+      <categories>
+        <category>安卓应用</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>安卓应用</tag>
+        <tag>app</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>QQ主题全部免费使用？</title>
     <url>/2024/03/02/qqth/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -1916,46 +2032,6 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>神奇应用!什么都能搜!</title>
-    <url>/2024/06/23/sqyy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-💡 分享一款收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类的神器应用。
-
-</aside>
-
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一款全新上线的安卓应用分享平台，收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类，用户可以在平台上搜索到自己想要的任何应用，直接一键高速下载。</p>
-<blockquote>
-<p>一款集合了众多应用资源的软件，挑选优质应用，所有推荐的软件经过精心筛选，还有社区广场，进行资源交流，享受简洁易懂的服务和功能模块，包括搜索、分类浏览、收藏等。</p>
-</blockquote>
-<p><img src="/2024/06/23/sqyy/640.webp" alt="640.webp"></p>
-<h1 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h1><p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
-<p><img src="/2024/06/23/sqyy/640_(1).webp" alt="640 (1).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(2).webp" alt="640 (2).webp"></p>
-<p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
-<p><img src="/2024/06/23/sqyy/640_(3).webp" alt="640 (3).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(4).webp" alt="640 (4).webp"></p>
-<p>打开应用页面，可以看见软件内的全部分类，有影S播放、音y播放、漫画、文字等娱乐分类，还有下载、存储、搜索等工具分类，一共有30多种，非常丰富。</p>
-<p><img src="/2024/06/23/sqyy/640_(5).webp" alt="640 (5).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(6).webp" alt="640 (6).webp"></p>
-<p>还有游戏的专属页面，这里全是游戏资源，有休闲益智、飞行射击、塔防游戏、冒险解密、经营策略、角色扮演等十八种，各种游戏都有。</p>
-<p><img src="/2024/06/23/sqyy/640_(6)%201.webp" alt="640 (6).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(7).webp" alt="640 (7).webp"></p>
-<p>打开广场页面，这里有多种交流板块，我们可以在这里分享软件、资源交流，有什么资源要找的，或者有什么好资源可以分享的，都可以在这里交流。</p>
-<p><img src="/2024/06/23/sqyy/640_(8).webp" alt="640 (8).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(9).webp" alt="640 (9).webp"></p>
-<h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>蓝奏云：<a href="https://www.lanzouw.com/izwpg22c1w8d">https://www.lanzouw.com/izwpg22c1w8d</a></p>
-<p><a href="https://www.lanzouw.com/izwpg22c1w8d">神奇应用.apk - 蓝奏云</a></p>
-</div>]]></content>
-      <categories>
-        <category>安卓应用</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>安卓应用</tag>
-        <tag>app</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>绝版安卓工具箱？能有多强？</title>
     <url>/2024/06/17/tools-box/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -2002,70 +2078,6 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>工具</tag>
         <tag>安卓应用</tag>
         <tag>app</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
-    <url>/2024/07/17/wcn-rs/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-这篇文章摘抄于微信公众号！
-
-</aside>
-
-<p>刷脸支付、刷脸打卡、刷脸门禁……如今人脸识别的应用越来越普及，很多人几乎每天都会刷脸，甚至在部分健身馆、游泳馆的更衣室也装上了人脸识别设备。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(1).webp" alt="640 (1).webp"></p>
-<p><strong>而你以为识别的只是一张脸，殊不知可能上半身全照进去了！</strong></p>
-<p>这两天，#建议大家人脸识别要穿上衣服#的话题登上热搜。不穿衣服进行人脸识别被后台审核人员看光光？网友在相关词条下对隐私泄露表示担忧。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(2).webp" alt="640 (2).webp"></p>
-<p>博主@知名青年小新 发视频提醒，大家使用App人脸识别功能时一定要穿衣服。视频内容显示：</p>
-<p>如果你经常在洗澡或者是上厕所的时候，进行人脸认证或者查看银行卡余额，你以为手机只会扫描到你的脸部吗？实际上后台的审核人员是能看到你整个上半身的。特别是当你没有穿衣服做各种刷脸认证的时候，简直不敢想。并且，这些视频是要一直保存在网络上的。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(3).webp" alt="640 (3).webp"></p>
-<p>人脸识别泄露隐私的问题早有争论。</p>
-<p>此前，教育博主@法小岛 发微博表示，摄像头采集的不仅仅是被识别者人脸部分，后台还会有审核人员看到……</p>
-<p><img src="/2024/07/17/wcn-rs/640.jpg" alt="640.jpg"></p>
-<p>在该博主评论区，有网友介绍，实际上就是用前置摄像头拍一张照片，只是图形界面只给你显示人脸部分。所以锁屏、解锁或者支付宝人脸支付等自动识别的都是机器判断。但是需要人工审核的就得注意点了，像银行二级账户开户人脸识别，证券App开户这种就是要人工审核的。</p>
-<p>另一数码博主@长安数码君 也称，有从事后台审核的朋友对他说，在审核工作时：“经常会看到很多人在洗澡的时候、在和“另一半抱在一起的时候”、在没穿衣服的时候、在进行各种奇奇怪怪动作的时候进行人脸识别。”</p>
-<p>该博主还放了一张用户看到的图片和人脸识别后台所显示图片的对比图，更加清晰详尽地展示了人脸识别后台的“真相”。</p>
-<p><img src="/2024/07/17/wcn-rs/640.png" alt="640.png"></p>
-<p>早在2019年，新浪新闻还报道了一则因人脸识别而破解的命案。报道称，一男子杀害女友后，借用女友的身份在网上申请小额贷款。但贷款APP要求人脸识别、对着屏幕眨眼睛，该男子只好放弃。</p>
-<p>而此举却引起了网贷App工作人员的注意，转入人工审核时发现异常，在7秒的“活体识别”的视频中，当事人无任何反应、脖子上也有勒痕、面部有淤青。工作人员怀疑申请人被害，赶紧报了警。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(5).webp" alt="640 (5).webp"></p>
-<p>可见，需要人脸动态识别（比如眨眼、摇头等）的APP，的确有人工审核。</p>
-<p>并且，人脸识别其实调用的是手机的前置摄像头，而摄像头的取景并非仅仅是头部，而是涵盖了摄像头视野覆盖的所有区域。</p>
-<p>也即是说，大家在进行人脸识别的时候，不论人脸框内还是框外，只要是在摄像头范围内的画面，全部都会被拍到。</p>
-<p>小米手机也曾表示，人脸验证时，其实整个上半身都会被应用获取。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(4).webp" alt="640 (4).webp"></p>
-<p>得知此事后，网友纷纷表示“社死”。</p>
-<p>有网友称，自己经常在洗澡的时候解锁；还有人表示，会在蹲厕所时进行人脸识别。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(5)%201.webp" alt="640 (5).webp"></p>
-<p>而除了感到社死外，有不少网友认为这件事“很严重”“感到隐私被侵犯”。人脸识别系统后台人工审核时，平台为什么不提醒用户是可以看到摄像头全景的？</p>
-<p>据2021年8月1日起施行的《最高人民法院关于审理使用人脸识别技术处理个人信息相关民事案件适用法律若干问题的规定》明确规定，信息处理者处理人脸信息未公开处理人脸信息的规则或者未明示处理的目的、方式、范围，人民法院应当认定属于侵害自然人人格权益的行为。</p>
-<p>所以，若App未明示人脸识别范围，或已涉及侵害用户权益。</p>
-<p>不过，大家也不必过于惊慌。</p>
-<p>曾有专业人士介绍，现在提供人脸识别技术的头部企业和大企业采用的都是隐私计算技术，只会向客户提供脱敏特征码用于比对，不会将图像送到后台。</p>
-<p>一般而言，大公司、银行、政府、公安等在人脸识别的应用上会更规范。对于网络上盛传的后台人工审核时能看到图片的情况，有专家表示这种操作是“不合规”的。</p>
-<p>此外，很多网友担心后台会存储自己的照片信息。</p>
-<p>对此，某手机厂商曾表示，面容ID数据不会离开设备，也永远不会备份到iCloud或其他任意位置。</p>
-<p>更早前，腾讯游戏针对“人脸识别”等一系列问题作出解答，称人脸识别会严格遵照主管部门规定，最大限度保障用户隐私安全。用于验证的用户身份信息不会被记录、存储，或用于除公安权威数据平台数据源验证以外的任何其他用途。相关数据均通过加密处理，在与公安权威数据平台数据源比对的验证过程中，全程均为机器识别，没有人工参与。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(6).webp" alt="640 (6).webp"></p>
-<p>实际上，业内人士表示一般的企业都不会在后台存储用户的原始图像。单从存储和传输等方面的成本上看，对公司而言，把原始图像送往后台也是不合算的做法。</p>
-<p>而如果一些企业需要通过大量的人像数据来进行AI和机器学习的训练，有存储用户原始图像的需求，那么他们往往只会存储头部的图像。因为过于复杂的背景和其他的图像信息会对机器学习的算法进行干扰，反而会造成人脸识别算法的不准确。</p>
-<p>需要注意的是，相关法规明确，使用人脸识别技术，不应过度索取个人信息。</p>
-<p>2023年8月，国家网信办公开发布《人脸识别技术应用安全管理规定（试行）（征求意见稿）》（以下简称“征求意见稿”）提到，使用人脸识别技术必须遵循“最少使用”和“最小存储”。</p>
-<p>其中，“最少使用”，即只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，方可使用人脸识别技术处理人脸信息。实现相同目的或者达到同等业务要求，存在其他非生物特征识别技术方案的，应当优先选择非生物特征识别技术方案；</p>
-<p>“最小存储”，即除法定条件或者取得个人单独同意外，人脸识别技术使用者不得保存人脸原始图像、图片、视频，经过匿名化处理的人脸信息除外。使用人脸识别技术处理人脸信息应当尽量避免采集与提供服务无关的人脸信息，无法避免的，应当及时删除或者进行匿名化处理。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(7).webp" alt="640 (7).webp"></p>
-<p>尽管法律法规对企业有制约作用，但无法保证整个流程中无人违规，因此建议大家首先选择知名企业App，非正规App则不要使用人脸识别功能。同时，在进行人脸识别时，注意个人隐私保护，务必衣着整齐。</p>
-<p>另外，由于人脸识别技术不同，市面上的设备种类繁多，广大用户往往无法确知敏感信息在前端的获取情况，在后端又能否真正实现加密保护或依法删除，希望有关部门能依据职责、形成合力，加强对人脸识别技术使用的监督检查，指导督促人脸识别技术使用者履行各项法定义务，及时发现安全隐患并督促限期整改，避免敏感个人信息安全风险失控蔓延。</p>
-<p>来源：电脑报，编辑：cc</p>
-</div>]]></content>
-      <categories>
-        <category>探究所以</category>
-      </categories>
-      <tags>
-        <tag>思考</tag>
-        <tag>探究所以</tag>
       </tags>
   </entry>
   <entry>
@@ -2236,68 +2248,67 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>Free窗口音乐</title>
-    <url>/2024/10/01/win-musicfree/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="一、软件介绍"><a href="#一、软件介绍" class="headerlink" title="一、软件介绍"></a>一、软件介绍</h1><p>MusicFree是一款开源、免费、可定制化的本地音乐播放器。</p>
-<p><img src="/2024/10/01/win-musicfree/11.webp" alt="官网"></p>
-<h1 id="二、配置方法"><a href="#二、配置方法" class="headerlink" title="二、配置方法"></a>二、配置方法</h1><h3 id="MusicFree-安卓版-配置方法"><a href="#MusicFree-安卓版-配置方法" class="headerlink" title="MusicFree 安卓版 配置方法"></a>MusicFree 安卓版 配置方法</h3><ol>
-<li>点击左上角按钮</li>
-<li>点击【插件设置】</li>
-<li>点击右下角加号</li>
-<li>点击【从网络安装插件】</li>
-<li>输入插件 URL 即可（插件链接以 .json 或 .js 结尾）</li>
-<li>复制url  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><a href="https://www.tao-space.top/2024/03/29/MusicFree%E9%9F%B3%E6%BA%90%E6%8E%A5%E5%8F%A3%E6%B1%87%E6%80%BB/android.png"><img src="https://www.tao-space.top/2024/03/29/MusicFree%E9%9F%B3%E6%BA%90%E6%8E%A5%E5%8F%A3%E6%B1%87%E6%80%BB/android.png" alt="安卓配置方法"></a></p>
-<h2 id="MusicFree-PC版-配置方法"><a href="#MusicFree-PC版-配置方法" class="headerlink" title="MusicFree PC版 配置方法"></a>MusicFree PC版 配置方法</h2><ol>
-<li><p>点击主界面左侧【插件管理】</p>
-<p><img src="/2024/10/01/win-musicfree/22.webp" alt="我喜欢"><br><img src="/2024/10/01/win-musicfree/33.webp" alt="官网"></p>
-</li>
-<li><p>点击顶部【从网络安装】</p>
-<p><img src="/2024/10/01/win-musicfree/44.webp" alt="从网络安装"></p>
-</li>
-<li><p>输入插件 URL 即可（插件链接以 .json 或 .js 结尾）</p>
-<p>复制url</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><img src="/2024/10/01/win-musicfree/55.webp" alt="粘贴url"></p>
-<p><img src="/2024/10/01/win-musicfree/66.webp" alt="正在安装"></p>
-<p><img src="/2024/10/01/win-musicfree/77.webp" alt="安装后的接口"></p>
-<p>效果展示:</p>
-<p><img src="/2024/10/01/win-musicfree/88.webp" alt="效果展示"></p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>官网:</p>
-<a class="tag-Link" target="_blank" href="https://musicfree.upup.fun/">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/musicfree.upup.fun/.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">musicfree.upup.fun</div>
-            <div class="tag-link-sitename">musicfree</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+    <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
+    <url>/2024/07/17/wcn-rs/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+这篇文章摘抄于微信公众号！
 
-<p>GIthub:</p>
-<a class="tag-Link" target="_blank" href="https://github.com/maotoumao/MusicFree">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/maotoumao/MusicFree.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">github</div>
-            <div class="tag-link-sitename">OvO</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+</aside>
+
+<p>刷脸支付、刷脸打卡、刷脸门禁……如今人脸识别的应用越来越普及，很多人几乎每天都会刷脸，甚至在部分健身馆、游泳馆的更衣室也装上了人脸识别设备。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(1).webp" alt="640 (1).webp"></p>
+<p><strong>而你以为识别的只是一张脸，殊不知可能上半身全照进去了！</strong></p>
+<p>这两天，#建议大家人脸识别要穿上衣服#的话题登上热搜。不穿衣服进行人脸识别被后台审核人员看光光？网友在相关词条下对隐私泄露表示担忧。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(2).webp" alt="640 (2).webp"></p>
+<p>博主@知名青年小新 发视频提醒，大家使用App人脸识别功能时一定要穿衣服。视频内容显示：</p>
+<p>如果你经常在洗澡或者是上厕所的时候，进行人脸认证或者查看银行卡余额，你以为手机只会扫描到你的脸部吗？实际上后台的审核人员是能看到你整个上半身的。特别是当你没有穿衣服做各种刷脸认证的时候，简直不敢想。并且，这些视频是要一直保存在网络上的。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(3).webp" alt="640 (3).webp"></p>
+<p>人脸识别泄露隐私的问题早有争论。</p>
+<p>此前，教育博主@法小岛 发微博表示，摄像头采集的不仅仅是被识别者人脸部分，后台还会有审核人员看到……</p>
+<p><img src="/2024/07/17/wcn-rs/640.jpg" alt="640.jpg"></p>
+<p>在该博主评论区，有网友介绍，实际上就是用前置摄像头拍一张照片，只是图形界面只给你显示人脸部分。所以锁屏、解锁或者支付宝人脸支付等自动识别的都是机器判断。但是需要人工审核的就得注意点了，像银行二级账户开户人脸识别，证券App开户这种就是要人工审核的。</p>
+<p>另一数码博主@长安数码君 也称，有从事后台审核的朋友对他说，在审核工作时：“经常会看到很多人在洗澡的时候、在和“另一半抱在一起的时候”、在没穿衣服的时候、在进行各种奇奇怪怪动作的时候进行人脸识别。”</p>
+<p>该博主还放了一张用户看到的图片和人脸识别后台所显示图片的对比图，更加清晰详尽地展示了人脸识别后台的“真相”。</p>
+<p><img src="/2024/07/17/wcn-rs/640.png" alt="640.png"></p>
+<p>早在2019年，新浪新闻还报道了一则因人脸识别而破解的命案。报道称，一男子杀害女友后，借用女友的身份在网上申请小额贷款。但贷款APP要求人脸识别、对着屏幕眨眼睛，该男子只好放弃。</p>
+<p>而此举却引起了网贷App工作人员的注意，转入人工审核时发现异常，在7秒的“活体识别”的视频中，当事人无任何反应、脖子上也有勒痕、面部有淤青。工作人员怀疑申请人被害，赶紧报了警。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(5).webp" alt="640 (5).webp"></p>
+<p>可见，需要人脸动态识别（比如眨眼、摇头等）的APP，的确有人工审核。</p>
+<p>并且，人脸识别其实调用的是手机的前置摄像头，而摄像头的取景并非仅仅是头部，而是涵盖了摄像头视野覆盖的所有区域。</p>
+<p>也即是说，大家在进行人脸识别的时候，不论人脸框内还是框外，只要是在摄像头范围内的画面，全部都会被拍到。</p>
+<p>小米手机也曾表示，人脸验证时，其实整个上半身都会被应用获取。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(4).webp" alt="640 (4).webp"></p>
+<p>得知此事后，网友纷纷表示“社死”。</p>
+<p>有网友称，自己经常在洗澡的时候解锁；还有人表示，会在蹲厕所时进行人脸识别。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(5)%201.webp" alt="640 (5).webp"></p>
+<p>而除了感到社死外，有不少网友认为这件事“很严重”“感到隐私被侵犯”。人脸识别系统后台人工审核时，平台为什么不提醒用户是可以看到摄像头全景的？</p>
+<p>据2021年8月1日起施行的《最高人民法院关于审理使用人脸识别技术处理个人信息相关民事案件适用法律若干问题的规定》明确规定，信息处理者处理人脸信息未公开处理人脸信息的规则或者未明示处理的目的、方式、范围，人民法院应当认定属于侵害自然人人格权益的行为。</p>
+<p>所以，若App未明示人脸识别范围，或已涉及侵害用户权益。</p>
+<p>不过，大家也不必过于惊慌。</p>
+<p>曾有专业人士介绍，现在提供人脸识别技术的头部企业和大企业采用的都是隐私计算技术，只会向客户提供脱敏特征码用于比对，不会将图像送到后台。</p>
+<p>一般而言，大公司、银行、政府、公安等在人脸识别的应用上会更规范。对于网络上盛传的后台人工审核时能看到图片的情况，有专家表示这种操作是“不合规”的。</p>
+<p>此外，很多网友担心后台会存储自己的照片信息。</p>
+<p>对此，某手机厂商曾表示，面容ID数据不会离开设备，也永远不会备份到iCloud或其他任意位置。</p>
+<p>更早前，腾讯游戏针对“人脸识别”等一系列问题作出解答，称人脸识别会严格遵照主管部门规定，最大限度保障用户隐私安全。用于验证的用户身份信息不会被记录、存储，或用于除公安权威数据平台数据源验证以外的任何其他用途。相关数据均通过加密处理，在与公安权威数据平台数据源比对的验证过程中，全程均为机器识别，没有人工参与。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(6).webp" alt="640 (6).webp"></p>
+<p>实际上，业内人士表示一般的企业都不会在后台存储用户的原始图像。单从存储和传输等方面的成本上看，对公司而言，把原始图像送往后台也是不合算的做法。</p>
+<p>而如果一些企业需要通过大量的人像数据来进行AI和机器学习的训练，有存储用户原始图像的需求，那么他们往往只会存储头部的图像。因为过于复杂的背景和其他的图像信息会对机器学习的算法进行干扰，反而会造成人脸识别算法的不准确。</p>
+<p>需要注意的是，相关法规明确，使用人脸识别技术，不应过度索取个人信息。</p>
+<p>2023年8月，国家网信办公开发布《人脸识别技术应用安全管理规定（试行）（征求意见稿）》（以下简称“征求意见稿”）提到，使用人脸识别技术必须遵循“最少使用”和“最小存储”。</p>
+<p>其中，“最少使用”，即只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，方可使用人脸识别技术处理人脸信息。实现相同目的或者达到同等业务要求，存在其他非生物特征识别技术方案的，应当优先选择非生物特征识别技术方案；</p>
+<p>“最小存储”，即除法定条件或者取得个人单独同意外，人脸识别技术使用者不得保存人脸原始图像、图片、视频，经过匿名化处理的人脸信息除外。使用人脸识别技术处理人脸信息应当尽量避免采集与提供服务无关的人脸信息，无法避免的，应当及时删除或者进行匿名化处理。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(7).webp" alt="640 (7).webp"></p>
+<p>尽管法律法规对企业有制约作用，但无法保证整个流程中无人违规，因此建议大家首先选择知名企业App，非正规App则不要使用人脸识别功能。同时，在进行人脸识别时，注意个人隐私保护，务必衣着整齐。</p>
+<p>另外，由于人脸识别技术不同，市面上的设备种类繁多，广大用户往往无法确知敏感信息在前端的获取情况，在后端又能否真正实现加密保护或依法删除，希望有关部门能依据职责、形成合力，加强对人脸识别技术使用的监督检查，指导督促人脸识别技术使用者履行各项法定义务，及时发现安全隐患并督促限期整改，避免敏感个人信息安全风险失控蔓延。</p>
+<p>来源：电脑报，编辑：cc</p>
 </div>]]></content>
       <categories>
-        <category>硬核科技</category>
+        <category>探究所以</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
-        <tag>工具</tag>
-        <tag>音乐</tag>
+        <tag>思考</tag>
+        <tag>探究所以</tag>
       </tags>
   </entry>
   <entry>
@@ -2409,40 +2420,68 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>网易云永久黑胶？</title>
-    <url>/2024/03/16/wyy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-资源来自于网络，实测无毒，请放心使用
+    <title>Free窗口音乐</title>
+    <url>/2024/10/01/win-musicfree/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="一、软件介绍"><a href="#一、软件介绍" class="headerlink" title="一、软件介绍"></a>一、软件介绍</h1><p>MusicFree是一款开源、免费、可定制化的本地音乐播放器。</p>
+<p><img src="/2024/10/01/win-musicfree/11.webp" alt="官网"></p>
+<h1 id="二、配置方法"><a href="#二、配置方法" class="headerlink" title="二、配置方法"></a>二、配置方法</h1><h3 id="MusicFree-安卓版-配置方法"><a href="#MusicFree-安卓版-配置方法" class="headerlink" title="MusicFree 安卓版 配置方法"></a>MusicFree 安卓版 配置方法</h3><ol>
+<li>点击左上角按钮</li>
+<li>点击【插件设置】</li>
+<li>点击右下角加号</li>
+<li>点击【从网络安装插件】</li>
+<li>输入插件 URL 即可（插件链接以 .json 或 .js 结尾）</li>
+<li>复制url  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><a href="https://www.tao-space.top/2024/03/29/MusicFree%E9%9F%B3%E6%BA%90%E6%8E%A5%E5%8F%A3%E6%B1%87%E6%80%BB/android.png"><img src="https://www.tao-space.top/2024/03/29/MusicFree%E9%9F%B3%E6%BA%90%E6%8E%A5%E5%8F%A3%E6%B1%87%E6%80%BB/android.png" alt="安卓配置方法"></a></p>
+<h2 id="MusicFree-PC版-配置方法"><a href="#MusicFree-PC版-配置方法" class="headerlink" title="MusicFree PC版 配置方法"></a>MusicFree PC版 配置方法</h2><ol>
+<li><p>点击主界面左侧【插件管理】</p>
+<p><img src="/2024/10/01/win-musicfree/22.webp" alt="我喜欢"><br><img src="/2024/10/01/win-musicfree/33.webp" alt="官网"></p>
+</li>
+<li><p>点击顶部【从网络安装】</p>
+<p><img src="/2024/10/01/win-musicfree/44.webp" alt="从网络安装"></p>
+</li>
+<li><p>输入插件 URL 即可（插件链接以 .json 或 .js 结尾）</p>
+<p>复制url</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="/2024/10/01/win-musicfree/55.webp" alt="粘贴url"></p>
+<p><img src="/2024/10/01/win-musicfree/66.webp" alt="正在安装"></p>
+<p><img src="/2024/10/01/win-musicfree/77.webp" alt="安装后的接口"></p>
+<p>效果展示:</p>
+<p><img src="/2024/10/01/win-musicfree/88.webp" alt="效果展示"></p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>官网:</p>
+<a class="tag-Link" target="_blank" href="https://musicfree.upup.fun/">
+    <div class="tag-link-tips">引用站外地址</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/musicfree.upup.fun/.png);"></div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">musicfree.upup.fun</div>
+            <div class="tag-link-sitename">musicfree</div>
+        </div>
+        <i class="fa-solid fa-angle-right"></i>
+    </div>
+    </a>
 
-
-</aside>
-
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>ok啊，网易云就不多介绍了，大家都知道哈哈！</p>
-<p><img src="/2024/03/16/wyy/640.png" alt="640.png"></p>
-<p>解锁主要功能：</p>
-<ul>
-<li>本地黑胶</li>
-<li>解锁主题</li>
-<li>解锁音质</li>
-<li>解锁界面</li>
-<li>解锁灰色</li>
-<li>自动签到打卡</li>
-<li>美化功能</li>
-<li>等等等…</li>
-</ul>
-<h1 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h1><p><img src="/2024/03/16/wyy/show.jpg" alt="show"></p>
-<p><img src="/2024/03/16/wyy/6401.png" alt="640.png"></p>
-<p><img src="/2024/03/16/wyy/6402.png" alt="640.png"></p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>不多说，直盘下载，直接点击下载即可！</p>
-<p><a href="https://cloud.06dn.com/s/EB2MSp">https://cloud.06dn.com/s/EB2MSp</a></p>
+<p>GIthub:</p>
+<a class="tag-Link" target="_blank" href="https://github.com/maotoumao/MusicFree">
+    <div class="tag-link-tips">引用站外地址</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/maotoumao/MusicFree.png);"></div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">github</div>
+            <div class="tag-link-sitename">OvO</div>
+        </div>
+        <i class="fa-solid fa-angle-right"></i>
+    </div>
+    </a>
 </div>]]></content>
       <categories>
-        <category>安卓应用</category>
+        <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>安卓应用</tag>
-        <tag>实用推荐</tag>
+        <tag>电脑软件</tag>
+        <tag>工具</tag>
+        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -2478,79 +2517,40 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>免费域名整理</title>
-    <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#110;&#x66;&#x6f;&#x40;&#x66;&#x72;&#x65;&#101;&#110;&#111;&#109;&#46;&#99;&#x6f;&#109;">&#x69;&#110;&#x66;&#x6f;&#x40;&#x66;&#x72;&#x65;&#101;&#110;&#111;&#109;&#46;&#99;&#x6f;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p>
-<p>以下整理了一些可以用的免费二级域名：</p>
-<table>
-<thead>
-<tr>
-<th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th>
-<th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td>
-<td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td>
-<td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td>
-<td>可以申请到work.gd&#x2F;run.place等免费二级域名</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td>
-<td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td>
-<td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td>
-<td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td>
-<td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td>
-<td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td>
-<td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td>
-<td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td>
-<td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td>
-<td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td>
-<td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td>
-</tr>
-</tbody></table>
-<p>以上信息会不定期整理修改！</p>
+    <title>网易云永久黑胶？</title>
+    <url>/2024/03/16/wyy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+资源来自于网络，实测无毒，请放心使用
+
+
+</aside>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>ok啊，网易云就不多介绍了，大家都知道哈哈！</p>
+<p><img src="/2024/03/16/wyy/640.png" alt="640.png"></p>
+<p>解锁主要功能：</p>
+<ul>
+<li>本地黑胶</li>
+<li>解锁主题</li>
+<li>解锁音质</li>
+<li>解锁界面</li>
+<li>解锁灰色</li>
+<li>自动签到打卡</li>
+<li>美化功能</li>
+<li>等等等…</li>
+</ul>
+<h1 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h1><p><img src="/2024/03/16/wyy/show.jpg" alt="show"></p>
+<p><img src="/2024/03/16/wyy/6401.png" alt="640.png"></p>
+<p><img src="/2024/03/16/wyy/6402.png" alt="640.png"></p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>不多说，直盘下载，直接点击下载即可！</p>
+<p><a href="https://cloud.06dn.com/s/EB2MSp">https://cloud.06dn.com/s/EB2MSp</a></p>
 </div>]]></content>
       <categories>
-        <category>网站建站</category>
+        <category>安卓应用</category>
       </categories>
       <tags>
-        <tag>建站</tag>
+        <tag>安卓应用</tag>
         <tag>实用推荐</tag>
-        <tag>精选网站</tag>
       </tags>
   </entry>
 </search>
