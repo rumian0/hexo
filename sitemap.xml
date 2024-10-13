@@ -633,13 +633,6 @@
   </url>
   
   <url>
-    <loc>https://h.liyy.us.kg/tags/%E7%B2%BE%E9%80%89%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2024-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://h.liyy.us.kg/tags/%E5%AE%9E%E9%AA%8C/</loc>
     <lastmod>2024-10-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -648,6 +641,13 @@
   
   <url>
     <loc>https://h.liyy.us.kg/tags/%E5%BF%83%E7%90%86/</loc>
+    <lastmod>2024-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://h.liyy.us.kg/tags/%E7%B2%BE%E9%80%89%E7%BD%91%E7%AB%99/</loc>
     <lastmod>2024-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
