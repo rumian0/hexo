@@ -1034,7 +1034,7 @@
   <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#x6e;&#x66;&#x6f;&#x40;&#102;&#114;&#101;&#101;&#110;&#111;&#109;&#46;&#99;&#x6f;&#x6d;">&#x69;&#x6e;&#x66;&#x6f;&#x40;&#102;&#114;&#101;&#101;&#110;&#111;&#109;&#46;&#99;&#x6f;&#x6d;</a>说明情况后可以改为收费状态并已付费10年。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#105;&#x6e;&#x66;&#x6f;&#64;&#x66;&#114;&#101;&#x65;&#110;&#x6f;&#109;&#46;&#99;&#x6f;&#109;">&#105;&#x6e;&#x66;&#x6f;&#64;&#x66;&#114;&#101;&#x65;&#110;&#x6f;&#109;&#46;&#99;&#x6f;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p>
 <p>以下整理了一些可以用的免费二级域名：</p>
 <table>
 <thead>
@@ -2094,8 +2094,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>Untitled</title>
-    <url>/2024/10/13/suijip/</url>
+    <title>使用works制作随机图!</title>
+    <url>/2024/10/26/suijip/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><p>随机图的轮子其实网上有不少了，但基本都需要一台服务器，或者用别人提供的服务。</p>
 <p>但其实托管图片获取直链还是比较简单的，所以想着用 Cloudflare Workers 在直链中随机选一个，来搭建一个私人的随机图片服务。</p>
 <h2 id="你需要"><a href="#你需要" class="headerlink" title="你需要"></a>你需要</h2><ul>
@@ -2110,7 +2110,17 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
 
 <p><code>background_urls</code> 是一个保存直链的数组，将所有你想随机的图片加入进去即可。</p>
 <p>P.S. 没有学过 Javascript，临时拼凑而成，希望有大佬可以优化地更好。</p>
+<h1 id="我的随机图"><a href="#我的随机图" class="headerlink" title="我的随机图:"></a>我的随机图:</h1><p><img src="https://webp.liyy.us.kg/" alt="网址https://webp.liyy.us.kg/"></p>
 </div>]]></content>
+      <categories>
+        <category>实用技巧</category>
+      </categories>
+      <tags>
+        <tag>Cloudflare</tag>
+        <tag>works</tag>
+        <tag>壁纸</tag>
+        <tag>随机图</tag>
+      </tags>
   </entry>
   <entry>
     <title>绝版安卓工具箱？能有多强？</title>

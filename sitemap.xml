@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://h.liyy.us.kg/cookies/index.html</loc>
+    <loc>https://h.liyy.us.kg/2024/10/26/suijip/</loc>
     
     <lastmod>2024-10-27</lastmod>
     
@@ -29,9 +29,9 @@
   </url>
   
   <url>
-    <loc>https://h.liyy.us.kg/2024/10/13/suijip/</loc>
+    <loc>https://h.liyy.us.kg/cookies/index.html</loc>
     
-    <lastmod>2024-10-13</lastmod>
+    <lastmod>2024-10-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -788,6 +788,27 @@
   </url>
   
   <url>
+    <loc>https://h.liyy.us.kg/tags/works/</loc>
+    <lastmod>2024-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://h.liyy.us.kg/tags/%E5%A3%81%E7%BA%B8/</loc>
+    <lastmod>2024-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://h.liyy.us.kg/tags/%E9%9A%8F%E6%9C%BA%E5%9B%BE/</loc>
+    <lastmod>2024-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://h.liyy.us.kg/tags/%E6%80%9D%E8%80%83/</loc>
     <lastmod>2024-10-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -889,6 +910,13 @@
   
   <url>
     <loc>https://h.liyy.us.kg/categories/%E5%AE%9E%E9%99%85%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2024-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://h.liyy.us.kg/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2024-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
