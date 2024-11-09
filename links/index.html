@@ -171,59 +171,67 @@ setTimeout(() => {
     preloader.endLoading();
 }, 5000);</script><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fa-solid fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><div class="author-content-item-title">最新评论<a class="recent-comment-more" href="/recentcomments/" title="最近评论"><i class="solitude fa-solid fa-circle-chevron-right"></i></a></div></div><div class="console_recentcomments"><script pjax="">(async () => {
     document.querySelector('.console-card .console_recentcomments').textContent = `加载中...`
-    const emojiReg = /<img [^>]+ class="wl-emoji">/g
-    let cache = utils.saveToLocal.get('waline-recent-comments-console')
+    const emojiReg = /<img class="tk-owo-emotion" [^>]+>/g
+    let cache = utils.saveToLocal.get('twikoo-recent-comments-console')
     if (cache) {
         setHtml(document.querySelector('.console-card .console_recentcomments'), cache)
         return
     }
     let ls = []
-    await fetch('https://waline-1-y3338191.deta.app//api/comment?type=recent&count=6', {method: 'GET'}).then(async res => res.json())
-        .then(async data => {
-            console.log(data)
-            for (const i of data.data) {
-                let title = ''
-                if (i.url) {
-                    await fetch(i.url).then(res => res.text()).then(html => {
-                        const parser = new DOMParser()
-                        const doc = parser.parseFromString(html, 'text/html')
-                        title = doc.querySelector('title').innerText
-                    }).catch(() => {
-                        title = i.url
-                    })
-                }
-                if (title.indexOf('|') > 0) {
-                    title = title.split('|')[0]
-                }
-                ls.push({
-                    title: title,
-                    url: i.url,
-                    nick: i.nick,
-                    avatar: i.avatar,
-                    time: new Date(i.time),
-                    content: formatContent(i.comment)
+
+    await fetch('https://mingcy-twikoo0.hf.space', {
+        method: "POST",
+        body: JSON.stringify({
+            "event": "GET_RECENT_COMMENTS",
+            "includeReply": true,
+            "pageSize": 6
+        }),
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json()).then(async ({data}) => {
+        for (const i of data) {
+            if (i.avatar === undefined) i.avatar = '/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+            let title = ''
+            if (i.url) {
+                await fetch(i.url).then(res => res.text()).then(html => {
+                    const parser = new DOMParser()
+                    const doc = parser.parseFromString(html, 'text/html')
+                    title = doc.querySelector('title').innerText
+                }).catch(() => {
+                    title = i.url
                 })
             }
-            setHtml(document.querySelector('.console-card .console_recentcomments'), ls)
-            utils.saveToLocal.set('waline-recent-comments-console', ls, 0.2)
-        })
+            if (title.indexOf('|') > 0) {
+                title = title.split('|')[0]
+            }
+            ls.push({
+                avatar: i.avatar,
+                nick: i.nick,
+                title: title,
+                content: i.comment,
+                url: i.url + '#' + i.id,
+                time: i.created
+            })
+        }
+        setHtml(document.querySelector('.console-card .console_recentcomments'), ls)
+        utils.saveToLocal.set('twikoo-recent-comments-console', ls, 0.2)
+    });
 
     function setHtml(el, data) {
         el.innerHTML = data.map(i => `
-                            <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
-                                <div class="comment-info">
-                                    <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
-                                    <div>
-                                        <span class="comment-user">${i.nick}</span>
-                                    </div>
-                                    <time class="comment-time" datetime="${i.time}"></time>
-                                </div>
-                                <div class="comment-content">${i.content}</div>
-                                <div class="comment-title">
-                                <i class="solitude fa-solid fa-comment"></i>
-                                ${i.title}</div>
-                            </div>
-                        `).join('')
+            <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
+                <div class="comment-info">
+                    <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                    <div>
+                        <span class="comment-user">${i.nick}</span>
+                    </div>
+                    <time class="comment-time" datetime="${new Date(i.time)}"></time>
+                </div>
+                <div class="comment-content">${formatContent(i.content)}</div>
+                <div class="comment-title">
+                <i class="solitude fa-solid fa-comment"></i>
+                ${i.title}</div>
+            </div>
+        `).join('')
         if (typeof sco !== 'undefined') sco.changeTimeFormat(document.querySelectorAll('.comment-time'))
         else {
             document.addEventListener('pjax:complete', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
@@ -232,7 +240,8 @@ setTimeout(() => {
     }
 
     function formatContent(content) {
-        content = content.replace(emojiReg, '[表情]')
+        content = content.replace(emojiReg, '表情')
+        content = content.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
         content = content.replace(/<img.*?>/g, '[图片]');
         content = content.replace(/<a.*?>.*?<\/a>/g, '[链接]');
         content = content.replace(/<pre.*?>.*?<\/pre>/g, '[代码]');
@@ -257,62 +266,75 @@ setTimeout(() => {
 <p>网址: <a href="https://h.liyy.us.kg/">https://h.liyy.us.kg/</a></p>
 <p>简介: 茗辰原，一位17岁的编程史…</p>
 <p>头像: <a href="https://h.liyy.us.kg/image/mcy.png">https://h.liyy.us.kg/image/mcy.png</a></p>
-</div><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fa-solid fa-comment"></i><span> 评论</span></div></div><div class="comment-wrap"><div id="waline-wrap"></div></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/rumian0" title="Github"><i class="solitude  fab fa-github"></i></a><a class="deal_link" href="mailto:mcy070329@qq.com" title="Mail"><i class="solitude  fa fa-envelope-open"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img src="" alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/500391876" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://v.douyin.com/71359503226" title="Douyin"><i class="solitude  fab fa-tiktok"></i></a></div><div id="st-footer"><div class="footer-group"><h3 class="footer-title">导航</h3><div class="footer-links"><a class="footer-item" href="/archives/" title="归档">归档</a><a class="footer-item" href="/categories/" title="分类">分类</a><a class="footer-item" href="/tags/" title="标签">标签</a></div></div><div class="footer-group"><h3 class="footer-title">服务</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="https://v6.51.la/" title="51la统计">51la统计</a></div></div><div class="footer-group"><h3 class="footer-title">ME</h3><div class="footer-links"><a class="footer-item" href="/about/" title="关于我">关于我</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/cookies/" title="Cookies">Cookies</a><a class="footer-item" href="/privacy/" title="用户协议">用户协议</a><a class="footer-item" href="/copyright/" title="版权协议">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><h3 class="footer-title">友链</h3><button class="random-friends-btn" onclick="randomLinksList()" title="友链"><i class="solitude fa-solid fa-arrows-rotate"></i></button></div><div class="footer-links" id="friend-links-in-"></div></div></div><div class="comment-barrage needEndHide"></div><div id="footer-animal"><div class="animal-wall"></div><img class="animal entered loaded" src="https://h.liyy.us.kg/img/color.avif" onerror="this.onerror=null;this.src='/img/404.jpg';" data-lazy-src="https://h.liyy.us.kg/img/color.avif" alt="动物" data-ll-status="loaded"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 By&nbsp;<a class="footer-bar-link" href="/">茗辰原</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="Theme">Theme</a><a class="footer-bar-link" href="/atom.xml" alt="RSS">RSS</a></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/js/utils.js?v=2.0.10"></script><script src="/js/main.js?v=2.0.10"></script><script src="/js/third_party/waterfall.min.js?v=2.0.10"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/third_party/universe.min.js?v=2.0.10"></script><script>dark()
+</div><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fa-solid fa-comment"></i><span> 评论</span></div></div><div class="comment-wrap"><div id="twikoo-wrap"></div></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/rumian0" title="Github"><i class="solitude  fab fa-github"></i></a><a class="deal_link" href="mailto:mcy070329@qq.com" title="Mail"><i class="solitude  fa fa-envelope-open"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img src="" alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/500391876" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://v.douyin.com/71359503226" title="Douyin"><i class="solitude  fab fa-tiktok"></i></a></div><div id="st-footer"><div class="footer-group"><h3 class="footer-title">导航</h3><div class="footer-links"><a class="footer-item" href="/archives/" title="归档">归档</a><a class="footer-item" href="/categories/" title="分类">分类</a><a class="footer-item" href="/tags/" title="标签">标签</a></div></div><div class="footer-group"><h3 class="footer-title">服务</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="https://v6.51.la/" title="51la统计">51la统计</a></div></div><div class="footer-group"><h3 class="footer-title">ME</h3><div class="footer-links"><a class="footer-item" href="/about/" title="关于我">关于我</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/cookies/" title="Cookies">Cookies</a><a class="footer-item" href="/privacy/" title="用户协议">用户协议</a><a class="footer-item" href="/copyright/" title="版权协议">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><h3 class="footer-title">友链</h3><button class="random-friends-btn" onclick="randomLinksList()" title="友链"><i class="solitude fa-solid fa-arrows-rotate"></i></button></div><div class="footer-links" id="friend-links-in-"></div></div></div><div class="comment-barrage needEndHide"></div><div id="footer-animal"><div class="animal-wall"></div><img class="animal entered loaded" src="https://h.liyy.us.kg/img/color.avif" onerror="this.onerror=null;this.src='/img/404.jpg';" data-lazy-src="https://h.liyy.us.kg/img/color.avif" alt="动物" data-ll-status="loaded"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 By&nbsp;<a class="footer-bar-link" href="/">茗辰原</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="Theme">Theme</a><a class="footer-bar-link" href="/atom.xml" alt="RSS">RSS</a></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/js/utils.js?v=2.0.10"></script><script src="/js/main.js?v=2.0.10"></script><script src="/js/third_party/waterfall.min.js?v=2.0.10"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/third_party/universe.min.js?v=2.0.10"></script><script>dark()
 </script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script><script src="/js/third_party/efu_ai.min.js?v=2.0.10"></script><script>var meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/meting/2.0.1/Meting.min.js"></script><script src="/js/covercolor/local.js?v=2.0.10"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><script defer="" pjax="" src="/js/custom.js"></script><script defer="" pjax="" src="/js/custom.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script><script src="<%- url_for(theme_js('assets/scripts/search', cache)) %>" async=""></script><link rel="stylesheet" href="<%- url_for(theme_css('/assets/styles/style', cache)) %>"><script defer="" src="https://cloud.umami.is/script.js" data-website-id="c069dfa3-2229-44e8-95a2-76986e2ca24a"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rumian0/hexo@latest/"><link rel="stylesheet" href="https:/h.liyy.us.kg/css/twikoo.css"><div class="js-pjax"><script>(() => {
-    let walineInitFunction = window.walineFn || null
-
-    function initWaline(initFn) {
-        const walineOptions = {
-            el: '#waline-wrap',
-            serverURL: 'https://waline-1-y3338191.deta.app/',
-            pageview: true,
-            dark: 'html[data-theme="dark"]',
-            path: window.location.pathname,
-            comment: true,
-            ...null
-        }
-        const walineInstance = initFn(walineOptions)
-        utils.addGlobalFn('pjax', () => walineInstance.destroy(), 'destroyWaline')
-        GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'))
-        sco.owoBig({
-            body: '.wl-emoji-popup',
-            item: '.wl-tab-wrapper button'
+    const getCount = () => {
+        const ele = document.querySelectorAll('.twikoo-count')
+        if (!ele) return
+        twikoo.getCommentsCount({
+            envId: 'https://mingcy-twikoo0.hf.space',
+            region: '',
+            urls: [window.location.pathname],
+            includeReply: false
+        }).then(res => {
+            ele.forEach(item => item.textContent = res[0].count)
+        }).catch(err => {
+            console.error(err)
         })
     }
+    const init = () => {
+        twikoo.init(Object.assign({
+            el: '#twikoo-wrap',
+            envId: 'https://mingcy-twikoo0.hf.space',
+            region: '',
+            path: window.location.pathname,
+            onCommentLoaded: () => {
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+            }
+        }, null))
 
-    async function loadWaline() {
-        if (walineInitFunction) initWaline(walineInitFunction)
-        else {
-            await utils.getCSS('https://cdnjs.cloudflare.com/ajax/libs/waline/3.3.0/waline.min.css')
-            const {init} = await import('https://cdnjs.cloudflare.com/ajax/libs/waline/3.3.0/waline.min.js')
-            walineInitFunction = init || Waline.init
-            initWaline(walineInitFunction)
-            window.walineFn = walineInitFunction
-        }
-        true && barrageWaline()
+         && getCount()
+        sco.owoBig({
+            body: '.OwO-body',
+            item: '.OwO-items li'
+        })
+
+        true && barrageTwikoo()
     }
 
-    if (true || false) {
-        if (false) utils.loadComment(document.getElementById('waline-wrap'), loadWaline)
-        else loadWaline()
-    } else window.loadTwoComment = loadWaline
+    const loadTwikoo = () => {
+        if (typeof twikoo === 'object') setTimeout(init,0)
+        else utils.getScript('https://cdnjs.cloudflare.com/ajax/libs/twikoo/1.6.39/twikoo.all.min.js').then(init)
+    }
+
+    if ('Twikoo' === 'Twikoo' || false) {
+        if (false) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+        else loadTwikoo()
+    } else {
+        window.loadTwoComment = loadTwikoo
+    }
 })()
-</script><script>async function barrageWaline() {
-    const url = new URL('https://waline-1-y3338191.deta.app//api/comment')
-    const params = {path: window.location.pathname, sortBy: 'insertedAt_asc'}
-    Object.entries(params).forEach(([key, value]) => url.searchParams.append(key, value))
-    await fetch(url).then(async res => {
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+</script><script>async function barrageTwikoo() {
+    await fetch("https://mingcy-twikoo0.hf.space", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            event: "COMMENT_GET",
+            accessToken: "",
+            url: window.location.pathname
+        })
+    }).then(async res => {
+        if (!res.ok) throw new Error("HTTP error! status: " + res.status)
         const data = await res.json();
-        const regex = /<img [^>]*class="wl-emoji"[^>]*>/;
         const init = () => {
-            initializeCommentBarrage(data.data.data
-                .map(item => ({
-                    nick: item.nick,
-                    mailId: item.avatar,
-                    content: item.comment.replace(regex, ''),
-                    id: item.objectId
-                })))
+            initializeCommentBarrage((data.data).map(item => Object.assign({
+                content: item.comment,
+                nick: item.nick,
+                mailMd5: item.mailMd5,
+                id: item.id
+            })))
         }
         if (typeof initializeCommentBarrage === "undefined") await utils.getScript('/js/third_party/barrage.min.js?v=2.0.10').then(init)
         else init()
