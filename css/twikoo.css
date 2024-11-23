@@ -1,1 +1,291 @@
-#twikoo .tk-comments .tk-submit .tk-avatar.tk-has-avatar{display:none}#twikoo .tk-comments .tk-submit .tk-row.actions{margin-bottom:0;margin-left:0}#twikoo .tk-comments .tk-submit .tk-col .tk-meta-input,.tk-main .tk-submit .tk-col .tk-meta-input{margin-bottom:16px}.tk-row.actions button.el-button{height:32px}.tk-meta-input input{border-top-right-radius:12px;border-bottom-right-radius:12px}.tk-meta-input div{border-top-left-radius:12px;border-bottom-left-radius:12px}.tk-input.el-textarea textarea{border-radius:12px;min-height:150px!important;height:auto}@media screen and (max-width:420px){.tk-main .tk-submit .tk-row.actions button.el-button.tk-preview.el-button--default.el-button--small{display:none}}:root{--liushen-radius:12px;--liushen-card-border-width:1px}[data-theme=light]{--liushen-border-color:#e3e8f7;--liushen-card-bg:#fff;--liushen-card-border:#e3e8f7;--style-border-always:1px solid var(--liushen-card-border);--liushen-blue:#425AEF}[data-theme=dark]{--liushen-border-color:#42444a;--liushen-card-bg:#2c2c2c;--liushen-card-border:#42444a;--style-border-always:1px solid var(--liushen-card-border);--liushen-blue:#0084FF}.twikoo .tk-comments .tk-submit,.twikoo .tk-comments-container>.tk-comment{padding:20px;margin-top:0;margin-bottom:20px;border-radius:var(--liushen-radius);background:var(--liushen-card-bg);transition:.3s}.twikoo .tk-comments .tk-submit,[data-theme=light] .twikoo .tk-comments-container>.tk-comment{box-shadow:var(--card-box-shadow)}.twikoo .tk-comments .tk-submit:hover,[data-theme=light] .twikoo .tk-comments-container>.tk-comment:hover{box-shadow:var(--card-hover-box-shadow)}.twikoo .tk-comments .tk-submit,[data-theme=dark] .twikoo .tk-comments-container>.tk-comment{border-style:solid;border-width:var(--liushen-card-border-width);border-color:var(--liushen-card-border)}.twikoo .tk-extra{border-radius:var(--liushen-radius);background:var(--liushen-card-bg);padding:.4rem;margin-bottom:1rem;transition:.3s}[data-theme=light] .twikoo .tk-extra{box-shadow:var(--card-box-shadow)}[data-theme=light] .twikoo .tk-extra:hover{box-shadow:var(--card-hover-box-shadow)}[data-theme=dark] .twikoo .tk-extra{border-style:solid;border-width:var(--liushen-card-border-width);border-color:var(--liushen-card-border)}.twikoo .tk-expand{border-radius:var(--liushen-radius)}[data-theme=light] .twikoo .tk-expand{box-shadow:var(--card-box-shadow)}[data-theme=light] .twikoo .tk-expand:hover{box-shadow:var(--card-hover-box-shadow);background-color:var(--btn-bg)}[data-theme=dark] .twikoo .tk-expand:hover{background-color:var(--liushen-blue)}[data-theme=dark] .twikoo .tk-expand{border-style:solid;border-width:var(--liushen-card-border-width);border-color:var(--liushen-card-border)}@media screen and (max-width:570px){.tk-main .tk-extras{display:none}}.tk-row.actions button.el-button{border-radius:12px!important}.tk-action-link{border-radius:10px;padding:5px 10px 5px 10px;border:var(--style-border)}.tk-action-link:hover{background:var(--anzhiyu-theme);color:#fff}#body-wrap.page .el-input__inner{background:#ffffff0f}[data-theme=dark] details>summary{background:0 0!important}@media screen and (max-width:768px),(max-height:580px){.search-dialog{top:2rem!important;left:5%!important;width:90%!important;height:auto!important;border-radius:10px!important}}#recent-posts>.recent-post-item>.recent-post-info>.article-meta-wrap{bottom:15px!important}img.author-content-img.no-lightbox.entered.loaded{filter:blur(0) brightness(.8)}#catalog-list,anzhiyu.barrageContent{scrollbar-width:none}#post-firstinfo .meta-firstline span.post-meta-categories a.post-meta-categories{background:rgb(107 107 107 / 50%)!important}#post #post-info #post-firstinfo .meta-firstline .article-meta__tags{color:#888!important}@media screen and (max-width:768px){.post .layout#content-inner{background:0 0}}#article-container figure.highlight{border:var(--style-border)}#sidebar #sidebar-menus{padding-top:10px!important}#recent-posts>.recent-post-item:not(a)::before{content:"";position:absolute;top:0;left:0;width:100%;height:200%;background:linear-gradient(to right,transparent,#fff,transparent);transform:translateX(-200%);transition:transform .5s linear;z-index:1}#recent-posts>.recent-post-item:not(a):hover::before{transform:translateX(100%) skewX(-60deg)}
+/* ========================twikoo美化====================== */
+/* 隐藏评论者头像 */
+#twikoo .tk-comments .tk-submit .tk-avatar.tk-has-avatar {
+  display: none;
+}
+
+/* 下面表情和按钮那一栏的设置 */
+#twikoo .tk-comments .tk-submit .tk-row.actions{
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+/* 个人信息和文本输入之间的空位置 */
+.tk-main .tk-submit .tk-col .tk-meta-input,
+#twikoo .tk-comments .tk-submit .tk-col .tk-meta-input{
+  margin-bottom: 16px;
+}
+
+/* 直接固定高度，解决提交按钮有时高度不起作用的问题 */
+/* 解决提交按钮高度问题 */
+.tk-row.actions button.el-button {
+  height: 32px;
+}
+
+/* 圆角设置 */
+.tk-meta-input input {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.tk-meta-input div {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* 输入框样式 */
+.tk-input.el-textarea textarea {
+  border-radius: 12px;
+  min-height: 150px !important;
+  height: auto;
+}
+
+/* 宽度太窄的时候去掉预览按钮 */
+@media screen and (max-width:420px) {
+  .tk-main .tk-submit .tk-row.actions button.el-button.tk-preview.el-button--default.el-button--small{
+      display: none;
+  }
+}
+
+:root {
+--liushen-radius: 12px;
+--liushen-card-border-width: 1px;
+}
+
+/* 浅色模式颜色 */
+[data-theme=light] {
+--liushen-border-color: #e3e8f7;
+--liushen-card-bg: #fff;
+--liushen-card-border: #e3e8f7;
+--style-border-always: 1px solid var(--liushen-card-border);
+--liushen-blue: #425AEF;
+}
+
+/* 深色模式颜色 */
+[data-theme=dark] {
+--liushen-border-color: #42444a;
+--liushen-card-bg: #2c2c2c;
+--liushen-card-border: #42444a;
+--style-border-always: 1px solid var(--liushen-card-border);
+--liushen-blue: #0084FF;
+}
+
+/* 评论区评论大框 */
+.twikoo .tk-comments-container>.tk-comment,
+.twikoo .tk-comments .tk-submit {
+/* 内边距 */
+padding: 20px;
+margin-top: 0px;
+margin-bottom: 20px;
+/* 圆角 */
+border-radius: var(--liushen-radius);
+/* 背景颜色 */
+background: var(--liushen-card-bg);
+/* 变动动画时长 */
+transition: .3s;
+}
+
+/* 浅色模式评论区评论大框 */
+[data-theme=light] 
+.twikoo .tk-comments-container>.tk-comment,
+.twikoo .tk-comments .tk-submit {
+/* 阴影 */
+box-shadow: var(--card-box-shadow);
+}
+
+/* 浅色模式评论区评论大框阴影悬浮加深 */
+[data-theme=light] 
+.twikoo .tk-comments-container>.tk-comment:hover,
+.twikoo .tk-comments .tk-submit:hover {
+/* 阴影（浅色模式突出层次感） */
+box-shadow: var(--card-hover-box-shadow);
+}
+
+/* 黑暗模式评论区评论大框 */
+[data-theme=dark] 
+.twikoo .tk-comments-container>.tk-comment,
+.twikoo .tk-comments .tk-submit {
+/* 边框样式 */
+border-style: solid;
+/* 边框宽度 */
+border-width: var(--liushen-card-border-width);
+/* 边框颜色 */
+border-color: var(--liushen-card-border);
+}
+
+/* 设备信息 */
+.twikoo .tk-extra {
+/* 圆角 */
+border-radius: var(--liushen-radius);
+/* 背景颜色 */
+background: var(--liushen-card-bg);
+/* 内边距 */
+padding: 0.4rem;
+/* 底边距 */
+margin-bottom: 1rem;
+/* 变动动画时长 */
+transition: .3s;
+}
+
+/* 浅色模式设备信息 */
+[data-theme=light] .twikoo .tk-extra {
+/* 阴影 */
+box-shadow: var(--card-box-shadow);
+}
+
+/* 浅色模式设备信息阴影悬浮加深 */
+[data-theme=light] .twikoo .tk-extra:hover {
+/* 阴影 */
+box-shadow: var(--card-hover-box-shadow);
+}
+
+/* 黑暗模式设备信息 */
+[data-theme=dark] .twikoo .tk-extra {
+/* 边框样式 */
+border-style: solid;
+/* 边框宽度 */
+border-width: var(--liushen-card-border-width);
+/* 边框颜色 */
+border-color: var(--liushen-card-border);
+}
+
+/* 加载更多按钮 */
+.twikoo .tk-expand {
+/* 圆角 */
+border-radius: var(--liushen-radius);
+}
+
+/* 浅色模式加载更多按钮 */
+[data-theme=light] .twikoo .tk-expand {
+/* 阴影 */
+box-shadow: var(--card-box-shadow);
+}
+
+/* 浅色模式加载更多按钮（鼠标悬浮时） */
+[data-theme=light] .twikoo .tk-expand:hover {
+/* 阴影 */
+box-shadow: var(--card-hover-box-shadow);
+/* 背景颜色 */
+background-color: var(--btn-bg);
+}
+
+/* 黑暗模式加载更多按钮（鼠标悬浮时） */
+[data-theme=dark] .twikoo .tk-expand:hover {
+/* 背景颜色 */
+background-color: var(--liushen-blue);
+}
+
+/* 黑暗模式加载更多按钮 */
+[data-theme=dark] .twikoo .tk-expand {
+/* 边框样式 */
+border-style: solid;
+/* 边框宽度 */
+border-width: var(--liushen-card-border-width);
+/* 边框颜色 */
+border-color: var(--liushen-card-border);
+}
+
+/* 分类卡片移动端个人信息卡片只显示两个 */
+@media screen and (max-width:570px) {
+  .tk-main .tk-extras {
+      display: none;
+  }
+}
+
+/* 评论区按钮样式 */
+.tk-row.actions button.el-button {
+  border-radius: 12px !important;
+}
+
+
+/* 评论回复 */
+.tk-action-link {
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  border: var(--style-border);
+}
+
+.tk-action-link:hover {
+  background: var(--anzhiyu-theme);
+  color: #fff;
+}
+
+/* 评论后台优化 */
+#body-wrap.page .el-input__inner {  
+  background: #ffffff0f;
+}
+
+[data-theme=dark] details > summary {
+  background: none!important;  
+}
+
+/* 手机端搜索栏样式 */
+@media screen and (max-width: 768px), (max-height: 580px) {
+  .search-dialog {
+      top: 2rem!important;
+      left: 5%!important;
+      width: 90%!important;
+      height: auto!important;
+      border-radius: 10px!important;
+  }
+}
+
+/* 首页文章的标签位置 */
+#recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap {
+  bottom: 15px!important;
+}
+
+/* 优化关于界面人生图片 */
+img.author-content-img.no-lightbox.entered.loaded {
+  filter: blur(0) brightness(.8);
+}
+
+/* 轮播下面导航栏分类优化 */
+#catalog-list,
+anzhiyu.barrageContent {
+  scrollbar-width: none;
+}
+
+/* 优化文章顶部分类和标签显示异常 */
+#post-firstinfo .meta-firstline span.post-meta-categories a.post-meta-categories {
+  background: rgb(107 107 107 / 50%)!important;
+}
+
+#post #post-info #post-firstinfo .meta-firstline .article-meta__tags {
+  color: #888!important;
+}
+
+/* 优化手机端文章页面边角露底色 */
+@media screen and (max-width: 768px) {
+  .post .layout#content-inner {
+      background: transparent;
+  }
+}
+
+/* 代码块的边框显示优化 */
+#article-container figure.highlight {
+  border: var(--style-border);
+}
+
+/* 手机端nav栏 */
+#sidebar #sidebar-menus {
+  padding-top: 10px!important;
+}
+
+/* 擦亮效果 */
+#recent-posts > .recent-post-item:not(a)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(to right, transparent, white, transparent);
+  transform: translateX(-200%);
+  transition: transform 0.5s linear;
+  z-index: 1;
+}
+
+#recent-posts > .recent-post-item:not(a):hover::before {
+  transform: translateX(100%) skewX(-60deg);
+}
