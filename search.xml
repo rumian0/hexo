@@ -34,17 +34,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用web协议</span><br><span class="line">python web.py</span><br></pre></td></tr></table></figure>
 
 <h2 id="123云盘-下载工具GitHub地址"><a href="#123云盘-下载工具GitHub地址" class="headerlink" title="123云盘 下载工具GitHub地址"></a>123云盘 下载工具GitHub地址</h2><p>地址：</p>
-<a class="tag-Link" target="_blank" href="https://github.com/Bao-qing/123pan">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/Bao-qing/123pan.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">123pan</div>
-            <div class="tag-link-sitename">GitHub</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="123pan,GitHub,https://github.com/Bao-qing/123pan" title target></a>
 
 <h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>今天推荐的是一个<strong>数字网盘</strong>脚本，可以解除限制，完全免费使用！</p>
 <p>该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要<strong>先安装Tampermonkey插件</strong>，Tampermonkey插件可以在文末关键字获取。</p>
@@ -608,17 +598,7 @@
 <h4 id="本地音乐"><a href="#本地音乐" class="headerlink" title="本地音乐"></a>本地音乐</h4><p>聆听音乐既是一款在线音乐播放器，也是一款再普通不过的本地音乐播放器，一键扫描手机上的本地音乐文件，按照规则过滤掉不需要的文件，只选取有用的歌曲进行播放。</p>
 <p><img src="/2024/10/01/app-allmusic/6.webp" alt="本地音乐"></p>
 <h4 id="评价："><a href="#评价：" class="headerlink" title="评价："></a>评价：</h4><p>聆听音乐本身是一款免费的APP，不需要付费，也没有烦人的弹窗广告，但仍然有少量推广内容，还好不影响使用体验。</p>
-<h2 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h2><a class="tag-Link" target="_blank" href="https://www.123pan.com/s/6zVRVv-8TBmd.html">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/www.123pan.com/s/6zVRVv-8TBmd.html.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">123pan</div>
-            <div class="tag-link-sitename">点我点我</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a></div>]]></content>
+<h2 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h2><a href="123pan,%E7%82%B9%E6%88%91%E7%82%B9%E6%88%91,https://www.123pan.com/s/6zVRVv-8TBmd.html" title target></a></div>]]></content>
       <categories>
         <category>安卓应用</category>
       </categories>
@@ -774,32 +754,12 @@
     <title>Cloudflare上有趣的项目</title>
     <url>/2024/08/31/cf-words/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h1><p>我在逛我的朋友圈的时候,发现清羽飞扬的小站发布了他总结的Cloudflare项目,一键部署,看起来真的很不错,就自己动手操作了一下.</p>
-<a class="tag-Link" target="_blank" href="https://blog.liushen.fun">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/blog.liushen.fun.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">清羽飞扬</div>
-            <div class="tag-link-sitename">owo</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="%E6%B8%85%E7%BE%BD%E9%A3%9E%E6%89%AC,owo,https://blog.liushen.fun" title target></a>
 
 
 <p>主要有的项目有: 在线笔记  在线论坛    文件中转站</p>
 <h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><h2 id="在线笔记"><a href="#在线笔记" class="headerlink" title="在线笔记"></a>在线笔记</h2><p>这是一个基于 Cloudflare Worker、KV 和 Github Actions 实现，可以一键私有化部署的无成本在线云笔记项目，你可以记录文字，与朋友们分享，或者跨设备同步。下面是项目地址：</p>
-<a class="tag-Link" target="_blank" href="https://github.com/s0urcelab/serverless-cloud-notepad">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/s0urcelab/serverless-cloud-notepad.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">serverless-cloud-notepad</div>
-            <div class="tag-link-sitename">GitHub</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="serverless-cloud-notepad,GitHub,https://github.com/s0urcelab/serverless-cloud-notepad" title target></a>
 
 
 
@@ -811,30 +771,10 @@
 <p><strong>效果如下:</strong></p>
 <p><img src="/2024/08/31/cf-words/result.png" alt="效果"></p>
 <p><strong>链接如下:</strong></p>
-<a class="tag-Link" target="_blank" href="https://n.liyy.us.kg/">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/n.liyy.us.kg/.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">在线笔记</div>
-            <div class="tag-link-sitename">MingCY</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="%E5%9C%A8%E7%BA%BF%E7%AC%94%E8%AE%B0,MingCY,https://n.liyy.us.kg/" title target></a>
 
 <h2 id="在线论坛"><a href="#在线论坛" class="headerlink" title="在线论坛"></a>在线论坛</h2><p>项目地址如下:</p>
-<a class="tag-Link" target="_blank" href="https://github.com/minlearn/">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/minlearn/.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">locnode</div>
-            <div class="tag-link-sitename">Github</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="locnode,Github,https://github.com/minlearn/" title target></a>
 
 <p>这是想打造一个校园论坛了,只不过,这个配置还需探索,自定义的很少,不知道如何添加分类,和背景主题等</p>
 <h3 id="部署项目-1"><a href="#部署项目-1" class="headerlink" title="部署项目"></a>部署项目</h3><ol>
@@ -856,17 +796,7 @@
 <p>展示:</p>
 <p><img src="/2024/08/31/cf-words/2.webp" alt="网址页面"></p>
 <h2 id="文件中转站"><a href="#文件中转站" class="headerlink" title="文件中转站"></a>文件中转站</h2><h2 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h2><p>项目地址:</p>
-<a class="tag-Link" target="_blank" href="https://github.com/rumian0/pastebin-ui">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/rumian0/pastebin-ui.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">pastebin-ui</div>
-            <div class="tag-link-sitename">Github</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="pastebin-ui,Github,https://github.com/rumian0/pastebin-ui" title target></a>
 
 <p>其实部署起来非常简单，因为项目是分为前后端的，所以我们需要分别配置前后端：</p>
 <p>添加环境变量<strong>CF_API_TOKEN</strong></p>
@@ -899,17 +829,7 @@
 <p>每次只能<strong>写右边的黑板,<strong>可能导致</strong>左边</strong>靠窗户的同学看不到黑板</p>
 <p>所以,今天的我带来了这款软件!——<code>Classlsand</code></p>
 <h1 id="Classlsand-简介"><a href="#Classlsand-简介" class="headerlink" title="Classlsand 简介"></a>Classlsand 简介</h1><p>ClassIsland 是一款适用于班级多媒体屏幕的课表信息显示工具，可以在 Windows 屏幕上显示各种信息。<br>本应用的名字灵感源于 iOS 灵动岛（Dynamic Island）功能。</p>
-<a class="tag-Link" target="_blank" href="https://github.com/ClassIsland/ClassIsland?tab=readme-ov-file">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/ClassIsland/ClassIsland?tab=readme-ov-file.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">ClassIsland</div>
-            <div class="tag-link-sitename">GitHub</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="ClassIsland,GitHub,https://github.com/ClassIsland/ClassIsland?tab=readme-ov-file" title target></a>
 
 <h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><h3 id="课表显示"><a href="#课表显示" class="headerlink" title="课表显示"></a>课表显示</h3><ul>
 <li>显示当天的课表、当前进行课程的信息</li>
@@ -941,31 +861,11 @@
 <p><img src="/2024/09/08/classlasland/5.webp" alt="主题设置"></p>
 <p><img src="/2024/09/08/classlasland/4.webp" alt="基础设置"></p>
 <h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>可以访问官网Github: <a href="https://github.com/ClassIsland/ClassIsland?tab=readme-ov-file">点击直达</a></p>
-<a class="tag-Link" target="_blank" href="https://www.123pan.com/s/pUVeVv-ZZ6KA">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/www.123pan.com/s/pUVeVv-ZZ6KA.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">123网盘</div>
-            <div class="tag-link-sitename">oWo</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="123%E7%BD%91%E7%9B%98,oWo,https://www.123pan.com/s/pUVeVv-ZZ6KA" title target></a>
 
 <p>上方为官方版本,无内置课表</p>
 <p>此为我校,我班专属的课表,我都安排好了!</p>
-<a class="tag-Link" target="_blank" href="https://cloud.06dn.com/s/2nV8HX">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/cloud.06dn.com/s/2nV8HX.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">茗辰原网盘</div>
-            <div class="tag-link-sitename">oWo</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="%E8%8C%97%E8%BE%B0%E5%8E%9F%E7%BD%91%E7%9B%98,oWo,https://cloud.06dn.com/s/2nV8HX" title target></a>
 </div>]]></content>
       <categories>
         <category>硬核科技</category>
@@ -982,17 +882,7 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>就在我放假的时候,开开心心的打开我的电报,这个时候我发现,怎样都打不开!</p>
 <p>这时候我去检查我的节点,好家伙,买的节点全部挂了,要不就是超高延迟.</p>
 <p>要知道身为一个网络冲浪玩家,这个是绝对不允许的!!!</p>
-<h1 id="教程使用works和优选节点"><a href="#教程使用works和优选节点" class="headerlink" title="教程使用works和优选节点"></a>教程使用works和优选节点</h1><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><h3 id="1-首先前往Github"><a href="#1-首先前往Github" class="headerlink" title="1.首先前往Github"></a>1.首先前往Github</h3><a class="tag-Link" target="_blank" href="-_-">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/-_-.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">Github</div>
-            <div class="tag-link-sitename">OVO</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<h1 id="教程使用works和优选节点"><a href="#教程使用works和优选节点" class="headerlink" title="教程使用works和优选节点"></a>教程使用works和优选节点</h1><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><h3 id="1-首先前往Github"><a href="#1-首先前往Github" class="headerlink" title="1.首先前往Github"></a>1.首先前往Github</h3><a href="Github,OVO,-_-,https://github.com/yonggekkk/Cloudflare_vless_trojan" title target></a>
 
 <p><img src="/2024/10/27/cloudflare-cfff/1.webp"></p>
 <h3 id="2-Trojan和Vless二选一"><a href="#2-Trojan和Vless二选一" class="headerlink" title="2.Trojan和Vless二选一"></a>2.Trojan和Vless二选一</h3><p><img src="/2024/10/27/cloudflare-cfff/2.webp"></p>
@@ -1111,9 +1001,88 @@
       </tags>
   </entry>
   <entry>
+    <title>腹肌养成记</title>
+    <url>/2024/11/23/fjyangcheng/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>同宿舍的人说,想练腹肌!</p>
+<p>我说行,必须练,练不成誓不罢休!!</p>
+<p>下面放上一张我的腹肌照!!</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">谁信谁-------</span><br><span class="line">留给以后,这个东西先摆着!</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="总"><a href="#总" class="headerlink" title="总"></a>总</h2><p>锻炼腹肌,主要是分区的,每次练得时候肯定要一次全部练到,这才好看</p>
+<p>,分为<strong>4组</strong>,每组动作<strong>不少于15</strong>个,如果自己比较强悍,可以添加!</p>
+<h2 id="1、卷腹"><a href="#1、卷腹" class="headerlink" title="1、卷腹"></a>1、卷腹</h2><p>卷腹是腹部训练最基础的动作，我们可以以该动作作为腹肌训练的热身动作，建议组3组，每个动作做15～20次。卷腹，一定要让自己的腹部卷起来。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ec3f699e3c3c4f0e9db3b6a39de3dfb8.gif" alt="img"></p>
+<p>起始位置：双手交叉至于脑后，双膝屈曲90度左右，背部着地。</p>
+<p>动作中：呼气，发力点在于你腹部上方，感觉腹部收紧后发力将你的头部和肩部同时上提，头部在这个过程中不能屈曲，尽量保持原位不动，达到最高点之后，缓慢的将你的上身缓慢放下，直到你的双肩着地。</p>
+<p>注意：手部不要用力牵引颈部，这点很重要。</p>
+<h2 id="2-抬腿反向卷腹"><a href="#2-抬腿反向卷腹" class="headerlink" title="2.抬腿反向卷腹"></a>2.抬腿反向卷腹</h2><p>抬腿反向卷腹这个动作主要是对腹部下侧的肌群起到刺激作用。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/90daafcb60984603a73a9835eb1ed105.gif" alt="img"></p>
+<p>起始姿势：小腿平行保持与身体中线两侧，双臂水平放置于身体两侧，掌面朝下，紧贴地面（整个动作过程都要保持你的腹部发力，双手起到的只有保持平衡的作用）。</p>
+<p>动作中：呼气、使得你下腹部收缩，紧接着就是你的双腿、臀部和下背部开始上屈，达到你的最高点之后，身体开始向下(吸气)复原。</p>
+<h2 id="3-抬腿卷腹"><a href="#3-抬腿卷腹" class="headerlink" title="3.抬腿卷腹"></a>3.抬腿卷腹</h2><p>这个动作是我最喜欢的腹部训练动作之一，对整个腹部的刺激都很到位。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/88381bc7af274921a571e2797995ea37.gif" alt="img"></p>
+<p>起始姿势：抬起你的腿部形成两个90度左右角，即髋部90度，大腿与小腿90度。</p>
+<p>动作中：双手置于脑后，从腹部开始发力，发力过程中头部与胸部的距离不能靠近。整个动作切记不能用到惯性，下降的过程尽量缓慢。</p>
+<h2 id="4、青蛙首府"><a href="#4、青蛙首府" class="headerlink" title="4、青蛙首府"></a>4、青蛙首府</h2><p>青蛙卷腹这个姿势不但对于你的腹部肌肉力量、耐力是一种挑战，同样对于你的平衡和稳定也是极其重要的，对于腹部和背部的主要大肌群发展非常有好处。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7640e3b033b4bbc84341b074c243190.gif" alt="img"></p>
+<p>起始动作：如同坐姿，膝盖要求屈曲90°，躯干保持与地面45°夹角，收起双腿腾空。</p>
+<p>动作中：你需要向前伸展你的双腿使其与地面平行、与此同时双手也要平举外展直至与身体同在一个平面，之后停留片刻，然后收回。</p>
+<h2 id="5、空中自行车"><a href="#5、空中自行车" class="headerlink" title="5、空中自行车"></a>5、空中自行车</h2><p>这是一个对于柔韧性、协调性和肌肉的发力感、控制能力要求都很高的、非常流行的一种练习方法，对于腹部所有肌群的刺激都很大，可谓是全能姿势。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ab2ab632eed04055b4fea30f6001748a.gif" alt="img"></p>
+<p>俯卧位，面部朝上，膝盖屈曲90°，双手交叉放于脑后，呼气的同时拧转你的躯干，双脚、头部和一侧的大腿呈对角线运动，使得你的有膝盖触碰到对侧肘部关节，交替动作。</p>
+<h2 id="6、侧卧曲腿卷腹"><a href="#6、侧卧曲腿卷腹" class="headerlink" title="6、侧卧曲腿卷腹"></a>6、侧卧曲腿卷腹</h2><p>该方法主要针对内外斜肌群。不建议大家经常训练，因为相比于腹直肌，腹外斜肌有增强的增涨性，腹外斜肌练的太大，穿上衣服，没人知道你的腹外斜肌练的好，还是要粗。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1c4c0e85a03a45a683c918c2a6162656.gif" alt="img"></p>
+<p>起始位置是仰卧起坐的姿势，膝盖屈曲放于身体的一侧，然后上半身以腹部上方的肌群为发力起始点，卷体，扭转到与膝盖相对的另外一侧，一侧做完然后另外一侧 再做也可以左右交替进行。</p>
+<h2 id="7、完全是仰卧起坐"><a href="#7、完全是仰卧起坐" class="headerlink" title="7、完全是仰卧起坐"></a>7、完全是仰卧起坐</h2><p>该姿势对于你臀部柔韧性的要求极为苛刻，但是即使你的臀部柔韧性并不适很好，你依旧可以通过该方法，得到发展。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/2d80374dee2540df87acbd7e4fbe9732.gif" alt="img"></p>
+<p>起始位置就如同蝴蝶，膝盖屈曲的同时打开膝盖朝向地面，双脚合并，背部着地，双手放置于头顶，用你的腹部发力牵拉身上起立。适合持续不断的练习，注意背部保持正常的生理曲度不能驼背。</p>
+<h2 id="8、仰卧举腿"><a href="#8、仰卧举腿" class="headerlink" title="8、仰卧举腿"></a>8、仰卧举腿</h2><p>这是李小龙最喜欢的练功动作之一，但是确实有些困难，你需要重新构建你的核心肌群才能做到把你身体五分之四的重量，单独只靠肩部和手臂就能举起来。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/e9b47163a9bf44178623e92560f94306.gif" alt="img"></p>
+<p>躺在长凳上，屈曲手臂，抓住长凳的一端，收缩腹部举起的双腿，直到到了极限为止，接着就是你的胸部、手臂和背部肌群发力，提起整个身体，之后让身体成蹦直，缓慢放下，恢复原来的位置。</p>
+<h2 id="9、仰卧举腿提臀"><a href="#9、仰卧举腿提臀" class="headerlink" title="9、仰卧举腿提臀"></a>9、仰卧举腿提臀</h2><p>这个动作对于下腹部肌群有很好的刺激，你可以选择腿部直立或者是屈曲，但你的双手必须笔直的放于身体两侧。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/47f5a122cd7146999df7d9eb7ea03f4f.gif" alt="img"></p>
+<p>起始位置，抬起你的双腿，你的双手放于身体两侧，掌心朝下，用你下腹部的肌群发力，提起你的臀部和背部，不能依靠惯性，记得注意力始终集中于你的腹部肌群。</p>
+<h2 id="10、V字卷腹"><a href="#10、V字卷腹" class="headerlink" title="10、V字卷腹"></a>10、V字卷腹</h2><p>V字卷腹可以让你的腹部肌肉燃烧起来，同时对臀部和大腿也有很好的刺激。也是搞肌君最喜欢的腹部训练动作。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1af7df03a2a64696b81ba5606d4957c6.gif" alt="img"></p>
+<p>双腿和双臂，向着相反的方向延伸，躺在地面上，双脚跟、肩部、双手和臀部的宽度适宜，发力的部位是你的腹部，快速形成V型，你的手掌尽量句触碰脚跟，之后缓慢下降。</p>
+<h2 id="11-俄罗斯转体"><a href="#11-俄罗斯转体" class="headerlink" title="11.俄罗斯转体"></a>11.俄罗斯转体</h2><p>保持身体的平衡对于腹部两侧的刺激也是尤为必要的。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7b5448b37344607b99a9e0fc0aae35a.gif" alt="img"></p>
+<p>起始姿势见上文，主要强调一个双脚在这个练习中，其实是不能接触地面的，动作熟练之后，抬起双脚，完全是由你的核心肌群即腹部紧张来控制身体，双手合并左右转动。</p>
+<h2 id="12-仰卧交替抬腿"><a href="#12-仰卧交替抬腿" class="headerlink" title="12.仰卧交替抬腿"></a>12.仰卧交替抬腿</h2><p>保持你的背部紧贴地面，双腿伸直，使得双腿提起，保持腹部紧张，快速有频率的运动。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/b68d0119bbdf4bb789c238c0f2a8ab21.gif" alt="img"></p>
+<p>如果你觉得该动作挑战难度并不大，那么建议你在双腿频繁抬起时候，用你的双手分别接触你两侧的大腿部位。</p>
+<h2 id="13、侧平板撑首府"><a href="#13、侧平板撑首府" class="headerlink" title="13、侧平板撑首府"></a>13、侧平板撑首府</h2><p>这是传统腹部肌群训练方法一种补充，你可以想到，这样的动作对于你内外斜肌发展有多大好处。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d3e87488cc5b47b0b3840c3b97314335.gif" alt="img"></p>
+<p>起始位置是侧身躺在地面，用靠近地面一侧的手臂和外脚背支撑身体，使身体保持在一条直线上，朝上举起另一侧的手臂，接着屈曲另一侧的大腿膝关节和肘部，使其接触，必须是用你的内外斜肌控制身体的运动，之后缓慢复原，交替动作。</p>
+<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p><code>仰卧核心卷腹15个✖️4组</code></p>
+<p>平躺于垫上，双脚踩在垫上，双手放置在腿部中间位置，吐气发力，卷起身体至肩胛骨下沿离开地面，吸气下放</p>
+<p><img src="https://pic3.zhimg.com/v2-8bdbb849970a56e62d915dbfce093050_b.webp" alt="动图"></p>
+<p><code>仰卧对角交替收膝15个✖️5组</code></p>
+<p>平躺于垫上，双脚踩在垫上，双手抱住头部，吐气发力，对侧脚和对侧肘相触即可，左右交替进行</p>
+<p><img src="https://pic2.zhimg.com/v2-f718328bd73c8c0614d3fc2f294b56db_b.jpg" alt="动图封面"></p>
+<p><code>平板支撑40秒✖️5组</code></p>
+<p>俯卧于垫上，双肘撑起身体，保持肩、髋、膝、踝为一条直线，腹部收紧，臀部收紧，保持腰部不要下沉，匀速呼吸即可</p>
+<p><img src="https://pic4.zhimg.com/v2-b43839c4acee74873b2e197b4321f1d9_b.jpg" alt="动图封面"></p>
+<p><code>空中蹬车40秒✖️5组</code></p>
+<p>方法：坐于地面，两腿做蹬车状，双手扶头手肘与对册膝盖对碰，以此循环</p>
+<p><img src="https://pic3.zhimg.com/v2-68eb7ac92c20dfbc318cbf111df5f7bc_b.webp" alt="动图"></p>
+</div>]]></content>
+      <categories>
+        <category>生活方面</category>
+      </categories>
+      <tags>
+        <tag>锻炼</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#110;&#102;&#x6f;&#64;&#x66;&#x72;&#x65;&#101;&#110;&#111;&#109;&#46;&#x63;&#x6f;&#109;">&#x69;&#110;&#102;&#x6f;&#64;&#x66;&#x72;&#x65;&#101;&#110;&#111;&#109;&#46;&#x63;&#x6f;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#x6e;&#x66;&#111;&#x40;&#102;&#114;&#101;&#101;&#x6e;&#111;&#x6d;&#x2e;&#x63;&#111;&#109;">&#x69;&#x6e;&#x66;&#111;&#x40;&#102;&#114;&#101;&#101;&#x6e;&#111;&#x6d;&#x2e;&#x63;&#111;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p>
 <p>以下整理了一些可以用的免费二级域名：</p>
 <table>
 <thead>
@@ -1911,30 +1880,10 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
 <h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>这个也是非常不错的,良心推荐</p>
 <p>既不想让跟多人用,因为作者服务器不信,我怕崩了,又怕需要这个工具的人又看不到,哎!</p>
 <p>123网盘：<a href="https://www.123pan.com/s/qEbeVv-C9y63.html">https://www.123pan.com/s/qEbeVv-C9y63.html</a></p>
-<a class="tag-Link" target="_blank" href="https://www.123pan.com/s/qEbeVv-C9y63.html">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/www.123pan.com/s/qEbeVv-C9y63.html.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">123网盘</div>
-            <div class="tag-link-sitename">owo</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="123%E7%BD%91%E7%9B%98,owo,https://www.123pan.com/s/qEbeVv-C9y63.html" title target></a>
 
 <p>迅雷网盘：<a href="https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#">https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#</a></p>
-<a class="tag-Link" target="_blank" href="https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">迅雷网盘</div>
-            <div class="tag-link-sitename">owo</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a></div>]]></content>
+<a href="%E8%BF%85%E9%9B%B7%E7%BD%91%E7%9B%98,owo,https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#" title target></a></div>]]></content>
       <categories>
         <category>硬核科技</category>
       </categories>
@@ -1945,9 +1894,11 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>Untitled</title>
-    <url>/2024/11/17/office-ltsc/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h2 id="激活方法"><a href="#激活方法" class="headerlink" title="激活方法"></a>激活方法</h2><p>Office LTSC 2024 激活方法同样可以使用之前博客<a href="https://uuzi.net/activate-windows-10-11-without-key/">《无需激活码，一条安全命令轻松激活 Windows 10&#x2F;11 系统》</a>来激活，这里简单做演示，关于该方法的详细信息可以到<a href="https://uuzi.net/activate-windows-10-11-without-key/">原文查看</a>。</p>
+    <title>Office-2025激活</title>
+    <url>/2024/11/23/office-ltsc/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>在我发现我的WPS用不了之后,打算更新OFFice来使用,但是我万万没想到,竟然卡在激活上面了,故出一期新版的激活教程</p>
+<hr>
+<h2 id="激活方法"><a href="#激活方法" class="headerlink" title="激活方法"></a>激活方法</h2><p>Office LTSC 2024 激活方法同样可以使用之前博客<a href="https://uuzi.net/activate-windows-10-11-without-key/">《无需激活码，一条安全命令轻松激活 Windows 10&#x2F;11 系统》</a>来激活，这里简单做演示，关于该方法的详细信息可以到<a href="https://uuzi.net/activate-windows-10-11-without-key/">原文查看</a>。</p>
 <h3 id="使用KMS激活脚本"><a href="#使用KMS激活脚本" class="headerlink" title="使用KMS激活脚本"></a>使用KMS激活脚本</h3><ol>
 <li><strong>使用管理员身份，打开 Powershell，在 Powershell 中输入：</strong></li>
 </ol>
@@ -1973,6 +1924,13 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
 <li>如果条件允许，推荐购买正版许可。</li>
 </ul>
 </div>]]></content>
+      <categories>
+        <category>技术教学</category>
+      </categories>
+      <tags>
+        <tag>激活</tag>
+        <tag>教程</tag>
+      </tags>
   </entry>
   <entry>
     <title>pdf修复工具</title>
@@ -2037,17 +1995,7 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
     <title>获取QQ空间工具</title>
     <url>/2024/10/14/qq-histort/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一款名为恢复QQ空间内容小具”的软件，可以帮助用户<strong>查看</strong>和<strong>同步QQ空间的留言和相册</strong>。该软件支持Mac和<br>Windows系统，并提供Python的flag库进行开发。用户可以通过<strong>扫码登录</strong>和<strong>导出功能</strong>来保存和管理自己的空间内容。视频还展示了软件的操作流程和导出后的文件结构。总体而言，该工具为用户提供了方便快捷的QQ空间管理和备份功能</p>
-<h2 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h2><a class="tag-Link" target="_blank" href="https://github.com/LibraHp/GetQzonehistory?tab=readme-ov-file">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/LibraHp/GetQzonehistory?tab=readme-ov-file.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">QQ-history</div>
-            <div class="tag-link-sitename">Github</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<h2 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h2><a href="QQ-history,Github,https://github.com/LibraHp/GetQzonehistory?tab=readme-ov-file" title target></a>
 
 <h1 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h1><p>✨ 功能亮点<br>维码登录：只需扫描二维码，即可快速登录你的QQ空间，安全便捷！历史内容查看：轻松浏览你和好友的历史动态，记录那些美好的瞬间。<br>用户信息展示：显示你的QQ头像、昵称等信息，让你在使用时拥有更好的体验<br>多种列表选顶：查看说说、留言、好友、转发、图片等多种内容，一应俱全获取内容：提取并查看QQ空间中的所有历史内容，包括发布的说说、图片等<br>说说列表：查看你从最早到最新发布的所有说说内容及时间。留言列表：查看好友给你QQ空间留下的所有留言。<br>好友列表：获取并查看QQ空间中的好友信息。转发列表：查看你曾经转发的所有内容。<br>互动分析：基于好友互动的频率，展示与你互动最多的好友排行榜。<br>开放源代码：完全免费且开源，欢迎大家参与贡献和讨论！</p>
 <p>🚀使用指南<br>打开程序后，使用手机QQ扫描二维码登录。<br>登录成功后，你将进入主界面，可以选择查看不同的内容。<br>在左侧则标签页中选择想要查看的内容列表，享受你的QQ空间回忆之旅！</p>
@@ -2061,29 +2009,9 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
 <p><img src="/2024/10/14/qq-histort/4.webp"></p>
 <p><img src="/2024/10/14/qq-histort/5.webp"></p>
 <p><img src="/2024/10/14/qq-histort/6.webp"></p>
-<h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><a class="tag-Link" target="_blank" href="https://github.com/LibraHp/GetQzonehistory/releases/tag/gui-v1.0.2">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/LibraHp/GetQzonehistory/releases/tag/gui-v1.0.2.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">github</div>
-            <div class="tag-link-sitename">download</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><a href="github,download,https://github.com/LibraHp/GetQzonehistory/releases/tag/gui-v1.0.2" title target></a>
 
-<a class="tag-Link" target="_blank" href="https://pan.quark.cn/s/3a5ddbde14e2">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/pan.quark.cn/s/3a5ddbde14e2.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">夸克</div>
-            <div class="tag-link-sitename">download</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="%E5%A4%B8%E5%85%8B,download,https://pan.quark.cn/s/3a5ddbde14e2" title target></a>
 </div>]]></content>
       <categories>
         <category>实际生活</category>
@@ -2317,17 +2245,7 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
 <p>（24）肥猫：http:&#x2F;&#x2F;我不是.肥猫.love:63</p>
 <h1 id="PC版本"><a href="#PC版本" class="headerlink" title="PC版本"></a>PC版本</h1><h2 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h2><p>ZyPlayer v3.3.1 中文版 免费全网影视播放器</p>
 <p><strong>GitHub原文地址</strong>：</p>
-<a class="tag-Link" target="_blank" href="ovo">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/ovo.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">GITHUB</div>
-            <div class="tag-link-sitename">github</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="GITHUB,github,ovo,https://github.com/Hiram-Wong/ZyPlayer" title target></a>
 
 <p><strong>使用方法：</strong><br>安装软件后，依次点开设置 -&gt; 基础配置 -&gt; 其他 -&gt; 数据管理 -&gt; 一键配置 -&gt; 软件接口然后填入<strong>订阅地址</strong>，就能正常使用了。</p>
 <p><strong>专用接口源:</strong></p>
@@ -2376,17 +2294,7 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
 <p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143228ynzbo2rsyopbmrz2.jpg" alt="DM_20240105142311_020.jpg"></p>
 <p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143244rqzagtvihvqzg33d.jpg" alt="DM_20240105142311_021.jpg"></p>
 <h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><p>夸克:</p>
-<a class="tag-Link" target="_blank" href="转存">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/转存.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">夸克</div>
-            <div class="tag-link-sitename">网盘</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a></div>]]></content>
+<a href="%E5%A4%B8%E5%85%8B,%E7%BD%91%E7%9B%98,%E8%BD%AC%E5%AD%98,https://pan.quark.cn/s/4e43e04ec7be" title target></a></div>]]></content>
       <categories>
         <category>影视资源</category>
       </categories>
@@ -2659,30 +2567,10 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
 <p>效果展示:</p>
 <p><img src="/2024/10/01/win-musicfree/88.webp" alt="效果展示"></p>
 <h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>官网:</p>
-<a class="tag-Link" target="_blank" href="https://musicfree.upup.fun/">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/musicfree.upup.fun/.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">musicfree.upup.fun</div>
-            <div class="tag-link-sitename">musicfree</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="musicfree.upup.fun,musicfree,https://musicfree.upup.fun/" title target></a>
 
 <p>GIthub:</p>
-<a class="tag-Link" target="_blank" href="https://github.com/maotoumao/MusicFree">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/github.com/maotoumao/MusicFree.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">github</div>
-            <div class="tag-link-sitename">OvO</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a>
+<a href="github,OvO,https://github.com/maotoumao/MusicFree" title target></a>
 </div>]]></content>
       <categories>
         <category>硬核科技</category>
@@ -2710,17 +2598,7 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
 <p>最后关闭重新打开网易云会发现那些需要会员的歌曲前边没有会员标识了选择会员歌曲也能完整播放</p>
 <p>注:<br>想要听会员歌曲必须后台运行QtUnblockNeteaseMusic.exe这个工具，也可以直接在高级一高级<br>选项一开机自启</p>
 <p>亲测可用哦</p>
-<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><a class="tag-Link" target="_blank" href="https://www.123684.com/s/zlIyVv-nWgfd">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/www.123684.com/s/zlIyVv-nWgfd.png);"></div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">123pan</div>
-            <div class="tag-link-sitename">OvO</div>
-        </div>
-        <i class="fa-solid fa-angle-right"></i>
-    </div>
-    </a></div>]]></content>
+<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><a href="123pan,OvO,https://www.123684.com/s/zlIyVv-nWgfd" title target></a></div>]]></content>
       <categories>
         <category>实用推荐</category>
       </categories>
@@ -2799,6 +2677,82 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>电脑软件</tag>
         <tag>工具</tag>
         <tag>吾爱破解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网易云音乐脚本</title>
+    <url>/2024/11/20/wyy--2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>闲来无事,想看看有没有什么新文件更新了,这不被我发现的!<br>此为转载篇!!!</p>
+<hr>
+<h2 id="网易云音乐脚本"><a href="#网易云音乐脚本" class="headerlink" title="网易云音乐脚本"></a>网易云音乐脚本</h2><p><a href="https://update.greasyfork.org/scripts/459633/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%3A%E4%BA%91%E7%9B%98%E5%BF%AB%E4%BC%A0(%E5%90%AB%E5%91%A8%E6%9D%B0%E4%BC%A6)|%E6%AD%8C%E6%9B%B2%E4%B8%8B%E8%BD%BD%E8%BD%AC%E5%AD%98%E4%BA%91%E7%9B%98|%E4%BA%91%E7%9B%98%E5%8C%B9%E9%85%8D%E7%BA%A0%E6%AD%A3|%E9%AB%98%E9%9F%B3%E8%B4%A8%E8%AF%95%E5%90%AC.user.js">点击此处安装</a> (请确保浏览器已经安装了<a href="https://www.tampermonkey.net/">TamperMonkey</a>)</p>
+<p><a href="https://greasyfork.org/zh-CN/scripts/459633"><img src="https://camo.githubusercontent.com/b6c4fec2e3064a9e7c1f229806c8385654d9dbf39d72d8a47e471ad9902a8230/68747470733a2f2f696d672e736869656c64732e696f2f677265617379666f726b2f64742f3435393633333f6c6162656c3d677265617379666f726b253230696e7374616c6c73" alt="Greasy Fork"></a></p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>云盘快传<ul>
+<li>无需文件快速上传云盘歌曲,三分钟解锁周杰伦。</li>
+</ul>
+</li>
+<li>歌曲下载<ul>
+<li>不消耗vip下载次数,不是ncm加密文件。</li>
+<li>请将 <code>TamperMonkey</code> 插件设置中的 <code>下载模式</code> 设置为 <code>浏览器 API</code> 并将 <code>/.(mp3|flac|lrc)$/</code> 添加进<code>文件扩展名白名单</code> 以保证能正常下载。</li>
+</ul>
+</li>
+<li>歌曲转存云盘<ul>
+<li>用网易云自身音源将歌曲快速上传到云盘，不需要完整的文件下载和上传过程。</li>
+</ul>
+</li>
+<li>高音质试听：<ul>
+<li>解除网页端只能听标准音质的限制。</li>
+<li>在鼠标右键菜单中可进行优先试听音质的设置。</li>
+</ul>
+</li>
+<li>歌单页加载全部歌曲</li>
+<li>评论区显示IP属地、使用指定的IP地址发送评论</li>
+<li>歌单歌曲排序<ul>
+<li>将歌单内歌曲按发行时间、红心数、评论数进行排序。</li>
+</ul>
+</li>
+<li>限免vip歌曲下载与上传<ul>
+<li>对客户端内普通用户可免费试听的vip歌曲进行下载与上传。</li>
+</ul>
+</li>
+<li>云盘匹配纠错<ul>
+<li>云盘歌曲匹配歌词、封面和评论。</li>
+</ul>
+</li>
+<li>云盘音质提升<ul>
+<li>寻找网易云的音质比云盘文件更好的歌曲，以进行替换。只有上传成功时才删除原来低音质文件。</li>
+<li>需要是黑胶会员以获取高音质音源。</li>
+</ul>
+</li>
+<li>本地文件上传云盘<ul>
+<li>可先编辑需要在云盘显示的歌手,专辑信息再上传。</li>
+</ul>
+</li>
+<li>云盘导入导出<ul>
+<li>云盘歌曲导入另一账号。和云盘快传相同原理。</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><p>脚本安装完成后，登陆网易云音乐网页端。在右上角用户头像的 <code>我的主页</code> 中，使用云盘相关功能。在单曲、专辑、歌单（并非<code>我的音乐</code>的歌单，而是 <code>我的主页</code> 的歌单）页面使用下载、转存云盘功能。</p>
+<h3 id="问题说明"><a href="#问题说明" class="headerlink" title="问题说明"></a>问题说明</h3><ul>
+<li>云盘快传:不保证内容的准确性、完整性。部分音质为算法升频。</li>
+<li>上传失败时，浏览器控制台(F12)有输出具体错误内容。大多数时候重试一次就好了。</li>
+<li>脚本不支持ViolentMonkey插件安装，使用ViolentMonkey会导致上传报错、获取不到<code>超清母带</code>、用不了SVIP的6T空间等问题。</li>
+</ul>
+<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><a href="https://raw.githubusercontent.com/Cinvin/myuserscripts/main/screenshot/ncmHomePage.png"><img src="https://raw.githubusercontent.com/Cinvin/myuserscripts/main/screenshot/ncmHomePage.png" alt="img"></a></p>
+<p><a href="https://raw.githubusercontent.com/Cinvin/myuserscripts/main/screenshot/ncmPlaylist.png"><img src="https://raw.githubusercontent.com/Cinvin/myuserscripts/main/screenshot/ncmPlaylist.png" alt="img"></a></p>
+<p><a href="https://raw.githubusercontent.com/Cinvin/myuserscripts/main/screenshot/ncmCommentIP.png"><img src="https://raw.githubusercontent.com/Cinvin/myuserscripts/main/screenshot/ncmCommentIP.png" alt="img"></a></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>网易云音乐API来自<a href="https://gitlab.com/Binaryify/NeteaseCloudMusicApi">Binaryify&#x2F;NeteaseCloudMusicApi</a></p>
+<h2 id="咪咕音乐下载脚本"><a href="#咪咕音乐下载脚本" class="headerlink" title="咪咕音乐下载脚本"></a>咪咕音乐下载脚本</h2><p>在咪咕音乐专辑详情页添加下载链接 可无需登录下载至臻(24Bit)</p>
+<p><a href="https://greasyfork.org/scripts/453820-%E5%92%AA%E5%92%95%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD/code/%E5%92%AA%E5%92%95%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD.user.js">安装</a> (请确保浏览器已经安装了TamperMonkey)</p>
+<p><a href="https://greasyfork.org/zh-CN/scripts/453820"><img src="https://camo.githubusercontent.com/5c67e2955d5a203ab34ceb23896093ef1a319917b267118453de420f2f1c988c/68747470733a2f2f696d672e736869656c64732e696f2f677265617379666f726b2f64742f3435333832303f6c6162656c3d677265617379666f726b253230696e7374616c6c73" alt="Greasy Fork"></a></p>
+<p><a href="https://raw.githubusercontent.com/Cinvin/myuserscripts/main/screenshot/screenshot.png"><img src="https://raw.githubusercontent.com/Cinvin/myuserscripts/main/screenshot/screenshot.png" alt="img"></a></p>
+</div>]]></content>
+      <categories>
+        <category>技术教学</category>
+      </categories>
+      <tags>
+        <tag>脚本</tag>
       </tags>
   </entry>
   <entry>
