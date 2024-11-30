@@ -1,1 +1,77 @@
-function _slicedToArray(e,r){return _arrayWithHoles(e)||_iterableToArrayLimit(e,r)||_unsupportedIterableToArray(e,r)||_nonIterableRest()}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,r){var t;if(e)return"string"==typeof e?_arrayLikeToArray(e,r):"Map"===(t="Object"===(t={}.toString.call(e).slice(8,-1))&&e.constructor?e.constructor.name:t)||"Set"===t?Array.from(e):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?_arrayLikeToArray(e,r):void 0}function _arrayLikeToArray(e,r){(null==r||r>e.length)&&(r=e.length);for(var t=0,o=Array(r);t<r;t++)o[t]=e[t];return o}function _iterableToArrayLimit(e,r){var t=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null!=t){var o,n,a,l,c=[],i=!0,u=!1;try{if(a=(t=t.call(e)).next,0===r){if(Object(t)!==t)return;i=!1}else for(;!(i=(o=a.call(t)).done)&&(c.push(o.value),c.length!==r);i=!0);}catch(e){u=!0,n=e}finally{try{if(!i&&null!=t.return&&(l=t.return(),Object(l)!==l))return}finally{if(u)throw n}}return c}}function _arrayWithHoles(e){if(Array.isArray(e))return e}var coverColor=function(){var e=PAGE_CONFIG.color;e?setThemeColors(e):(e=null==(e=document.getElementById("post-cover"))?void 0:e.src)?handleApiColor(e):setDefaultThemeColors()},handleApiColor=function(e){var r=null==(r=(JSON.parse(localStorage.getItem("Solitude"))||{postcolor:{}}).postcolor[e])?void 0:r.value;r?setThemeColors(r):img2color(e)},img2color=function(r){fetch("".concat(r,"?imageAve")).then(function(e){if(e.ok)return e.json();throw new Error("Network response was not ok")}).then(function(e){e=e.RGB,e="#".concat(e.slice(2));setThemeColors(e),cacheColor(r,e)}).catch(function(e){return console.error("Error fetching color:",e)})},setThemeColors=function(e){if(!e)return setDefaultThemeColors();var r=_slicedToArray(e.match(/\w\w/g).map(function(e){return parseInt(e,16)}),3),t=r[0],o=r[1],r=r[2],e={main:e,op:"".concat(e,"23"),opDeep:"".concat(e,"dd"),none:"".concat(e,"00")};Object.entries(e).forEach(function(e){var e=_slicedToArray(e,2),r=e[0],e=e[1];document.documentElement.style.setProperty("--efu-".concat(r),e)}),adjustBrightness(t,o,r),document.getElementById("coverdiv").classList.add("loaded"),initThemeColor()},setDefaultThemeColors=function(){["--efu-theme","--efu-theme-op","--efu-theme-op-deep","--efu-theme-none"].forEach(function(e,r){document.documentElement.style.setProperty(["--efu-main","--efu-main-op","--efu-main-op-deep","--efu-main-none"][r],"var(".concat(e,")"))}),initThemeColor()},cacheColor=function(e,r){var t=JSON.parse(localStorage.getItem("Solitude"))||{postcolor:{}};t.postcolor[e]={value:r,expiration:Date.now()+coverColorConfig.time},localStorage.setItem("Solitude",JSON.stringify(t))},adjustBrightness=function(e,r,t){Math.round((299*e+587*r+114*t)/1e3)<125&&(document.querySelectorAll(".card-content").forEach(function(e){e.style.setProperty("--efu-card-bg","var(--efu-white)")}),document.querySelectorAll(".author-info__sayhi").forEach(function(e){e.style.setProperty("background","var(--efu-white-op)"),e.style.setProperty("color","var(--efu-white)")}))};
+const coverColor = () => {
+    const pageColor = PAGE_CONFIG.color;
+    if (pageColor) {
+        setThemeColors(pageColor);
+    } else {
+        const path = document.getElementById("post-cover")?.src;
+        path ? handleApiColor(path) : setDefaultThemeColors();
+    }
+}
+
+const handleApiColor = (path) => {
+    const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || { postcolor: {} };
+    const color = cacheGroup.postcolor[path]?.value;
+    if (color) {
+        setThemeColors(color);
+    } else {
+        img2color(path);
+    }
+}
+
+const img2color = (src) => {
+    fetch(`${src}?imageAve`)
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(({ RGB }) => {
+            const formattedRGB = `#${RGB.slice(2)}`;
+            setThemeColors(formattedRGB);
+            cacheColor(src, formattedRGB);
+        })
+        .catch(error => console.error('Error fetching color:', error));
+}
+
+const setThemeColors = (value) => {
+    if (!value) return setDefaultThemeColors();
+    const [r, g, b] = value.match(/\w\w/g).map(x => parseInt(x, 16));
+    const themeColors = {
+        main: value,
+        op: `${value}23`,
+        opDeep: `${value}dd`,
+        none: `${value}00`
+    };
+    Object.entries(themeColors).forEach(([key, color]) => {
+        document.documentElement.style.setProperty(`--efu-${key}`, color);
+    });
+    adjustBrightness(r, g, b);
+    document.getElementById("coverdiv").classList.add("loaded");
+    initThemeColor();
+}
+
+const setDefaultThemeColors = () => {
+    const vars = ['--efu-theme', '--efu-theme-op', '--efu-theme-op-deep', '--efu-theme-none'];
+    vars.forEach((varName, i) => {
+        document.documentElement.style.setProperty(['--efu-main', '--efu-main-op', '--efu-main-op-deep', '--efu-main-none'][i], `var(${varName})`);
+    });
+    initThemeColor();
+}
+
+const cacheColor = (src, color) => {
+    const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || { postcolor: {} };
+    cacheGroup.postcolor[src] = { value: color, expiration: Date.now() + coverColorConfig.time };
+    localStorage.setItem('Solitude', JSON.stringify(cacheGroup));
+}
+
+const adjustBrightness = (r, g, b) => {
+    const brightness = Math.round(((r * 299) + (g * 587) + (b * 114)) / 1000);
+    if (brightness < 125) {
+        document.querySelectorAll('.card-content').forEach(item => {
+            item.style.setProperty('--efu-card-bg', 'var(--efu-white)');
+        });
+        document.querySelectorAll('.author-info__sayhi').forEach(item => {
+            item.style.setProperty('background', 'var(--efu-white-op)');
+            item.style.setProperty('color', 'var(--efu-white)');
+        });
+    }
+}
