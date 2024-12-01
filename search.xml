@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>123云盘-下载工具</title>
+    <url>/2024/09/30/123-liuliang/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="123云盘-下载工具"><a href="#123云盘-下载工具" class="headerlink" title="123云盘 下载工具"></a>123云盘 下载工具</h2><p>123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。</p>
+<h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ul>
+<li><strong>登录</strong>：使用用户名和密码登录 123Pan 账号。</li>
+<li><strong>列出文件</strong>：显示当前目录下的所有文件和文件夹。</li>
+<li><strong>下载文件</strong>：通过模拟安卓客户端协议下载文件，绕过流量限制。</li>
+<li><strong>上传文件</strong>：将本地文件上传到 123Pan。</li>
+<li><strong>分享文件</strong>：生成文件分享链接。</li>
+<li><strong>删除文件</strong>：删除指定的文件或文件夹。</li>
+<li><strong>创建文件夹</strong>：在当前目录下创建新文件夹。</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
+<li><p>确保已安装 Python 3.x。</p>
+</li>
+<li><p>安装所需的 Python 库：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>在首次运行脚本时，会自动生成一个 <code>123pan.txt</code> 文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。</p>
+<h3 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">可以直接下载<span class="keyword">release</span>的可执行文件运行或运行python脚本。</span><br><span class="line">脚本运行：</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>克隆或下载本项目代码到本地。</p>
+</li>
+<li><p>打开终端或命令提示符，进入项目目录。</p>
+</li>
+<li><p>运行脚本：</p>
+<p>使用安卓客户端协议</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python android.py</span><br></pre></td></tr></table></figure></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用web协议</span><br><span class="line">python web.py</span><br></pre></td></tr></table></figure>
+
+<h2 id="123云盘-下载工具GitHub地址"><a href="#123云盘-下载工具GitHub地址" class="headerlink" title="123云盘 下载工具GitHub地址"></a>123云盘 下载工具GitHub地址</h2><p>地址：</p>
+<a href="123pan,GitHub,https://github.com/Bao-qing/123pan" title target></a>
+
+<h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>今天推荐的是一个<strong>数字网盘</strong>脚本，可以解除限制，完全免费使用！</p>
+<p>该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要<strong>先安装Tampermonkey插件</strong>，Tampermonkey插件可以在文末关键字获取。</p>
+<p>安装完油猴插件后，<strong>再安装脚本</strong>，方法是打开Greasy Fork中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】</p>
+<p><img src="/2024/09/30/123-liuliang/1.webp" alt="点击安装此脚本"></p>
+<p>再点【安装】即可完成脚本安装。</p>
+<p><img src="/2024/09/30/123-liuliang/2.webp" alt="点击安装此脚本"></p>
+<p><strong>脚本使用测试：</strong></p>
+<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p>
+<p><strong>脚本使用测试：</strong></p>
+<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p>
+<p><img src="/2024/09/30/123-liuliang/3.webp" alt="测试"></p>
+<p>下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用1DM接管速度可达15M&#x2F;S，跑满你的带宽！</p>
+<p><img src="/2024/09/30/123-liuliang/4.webp" alt="点击下载"></p>
+<p>这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！</p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>123网盘</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C语言扫雷</title>
     <url>/2024/04/10/C-saolei/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>选自：PandaX Blog：<a href="https://pandax.wiki/15/">https://pandax.wiki/15/</a></p>
@@ -223,107 +283,9 @@
         <category>实用推荐</category>
       </categories>
       <tags>
+        <tag>工具</tag>
         <tag>Markdown</tag>
         <tag>写作</tag>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>123云盘-下载工具</title>
-    <url>/2024/09/30/123-liuliang/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="123云盘-下载工具"><a href="#123云盘-下载工具" class="headerlink" title="123云盘 下载工具"></a>123云盘 下载工具</h2><p>123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。</p>
-<h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ul>
-<li><strong>登录</strong>：使用用户名和密码登录 123Pan 账号。</li>
-<li><strong>列出文件</strong>：显示当前目录下的所有文件和文件夹。</li>
-<li><strong>下载文件</strong>：通过模拟安卓客户端协议下载文件，绕过流量限制。</li>
-<li><strong>上传文件</strong>：将本地文件上传到 123Pan。</li>
-<li><strong>分享文件</strong>：生成文件分享链接。</li>
-<li><strong>删除文件</strong>：删除指定的文件或文件夹。</li>
-<li><strong>创建文件夹</strong>：在当前目录下创建新文件夹。</li>
-</ul>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
-<li><p>确保已安装 Python 3.x。</p>
-</li>
-<li><p>安装所需的 Python 库：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>在首次运行脚本时，会自动生成一个 <code>123pan.txt</code> 文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。</p>
-<h3 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">可以直接下载<span class="keyword">release</span>的可执行文件运行或运行python脚本。</span><br><span class="line">脚本运行：</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>克隆或下载本项目代码到本地。</p>
-</li>
-<li><p>打开终端或命令提示符，进入项目目录。</p>
-</li>
-<li><p>运行脚本：</p>
-<p>使用安卓客户端协议</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python android.py</span><br></pre></td></tr></table></figure></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用web协议</span><br><span class="line">python web.py</span><br></pre></td></tr></table></figure>
-
-<h2 id="123云盘-下载工具GitHub地址"><a href="#123云盘-下载工具GitHub地址" class="headerlink" title="123云盘 下载工具GitHub地址"></a>123云盘 下载工具GitHub地址</h2><p>地址：</p>
-<a href="123pan,GitHub,https://github.com/Bao-qing/123pan" title target></a>
-
-<h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>今天推荐的是一个<strong>数字网盘</strong>脚本，可以解除限制，完全免费使用！</p>
-<p>该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要<strong>先安装Tampermonkey插件</strong>，Tampermonkey插件可以在文末关键字获取。</p>
-<p>安装完油猴插件后，<strong>再安装脚本</strong>，方法是打开Greasy Fork中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】</p>
-<p><img src="/2024/09/30/123-liuliang/1.webp" alt="点击安装此脚本"></p>
-<p>再点【安装】即可完成脚本安装。</p>
-<p><img src="/2024/09/30/123-liuliang/2.webp" alt="点击安装此脚本"></p>
-<p><strong>脚本使用测试：</strong></p>
-<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p>
-<p><strong>脚本使用测试：</strong></p>
-<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p>
-<p><img src="/2024/09/30/123-liuliang/3.webp" alt="测试"></p>
-<p>下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用1DM接管速度可达15M&#x2F;S，跑满你的带宽！</p>
-<p><img src="/2024/09/30/123-liuliang/4.webp" alt="点击下载"></p>
-<p>这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！</p>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>电脑软件</tag>
-        <tag>123网盘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TuneFree免费音乐下载</title>
-    <url>/2024/07/16/TuneFree/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-
-<p>今天给大家分享一款全平台适用的音月神器支持<strong>网页端、电脑端和安卓端</strong>，iOS用户可以直接使用网页端，话不多说，直接安排~</p>
-</aside>
-
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本软件来源于网络……</p>
-<p>名称：<code>TuneFree</code></p>
-<h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><p><strong>软件支持安卓、电脑、还有网页端，今天我们以网页端为例，软件整体界面非简洁清爽，完全免费使用！</strong></p>
-<p><img src="/2024/07/16/TuneFree/640_(4).webp" alt="640 (4).webp"></p>
-<p>我们点击发现，可以看到这里有着非常丰富的音月zi源，比如飙升榜、原创榜、热哥榜等等各类榜单应有尽有，我们可以随意打开在线听。</p>
-<p><img src="/2024/07/16/TuneFree/640_(5).webp" alt="640 (5).webp"></p>
-<p>不仅如此，软件内还有博客电tai板块，里面包含了情感、有声书、脱口秀、二次元、亲子、人文历史、娱乐、相声曲艺等非常的丰富，可以满足我们不同人群的各种需求！</p>
-<p><img src="/2024/07/16/TuneFree/640_(6).webp" alt="640 (6).webp"></p>
-<p>软件内的所有内容都支持免费听+下载，遇到喜欢的想下载，只需单击鼠标右键，然后点击下载即可。</p>
-<p><img src="/2024/07/16/TuneFree/640_(7).webp" alt="640 (7).webp"></p>
-<p>下载支持所有音质，我们当然要选最好的下载啦~</p>
-<p><img src="/2024/07/16/TuneFree/640_(8).webp" alt="640 (8).webp"></p>
-<p>另外，软件还有个超牛的地方，那就是它是和某yi云相通的，支持我们登录某yi云，登录后，就可以看到所有收藏喜欢的，直接听就完了~</p>
-<p><img src="/2024/07/16/TuneFree/640_(9).webp" alt="640 (9).webp"></p>
-<p>好了，以上就是今天分享的所有内容，如果觉得这篇文章对你有价值，记得收藏本站！</p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>全平台音月神器（安卓+电脑+iOS）<br><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">https://caiyun.139.com/m/i?005Cifoc02EhV</a></p>
-<p><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">中国移动云盘分享</a></p>
-<p>网页版：<br><a href="https://pt.sayqz.com/#/">https://pt.sayqz.com/#/</a></p>
-<p><a href="https://pt.sayqz.com/#/">TuneFree</a></p>
-</div>]]></content>
-      <categories>
-        <category>实用软件</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>安卓应用</tag>
-        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -367,8 +329,46 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TuneFree免费音乐下载</title>
+    <url>/2024/07/16/TuneFree/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+
+<p>今天给大家分享一款全平台适用的音月神器支持<strong>网页端、电脑端和安卓端</strong>，iOS用户可以直接使用网页端，话不多说，直接安排~</p>
+</aside>
+
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本软件来源于网络……</p>
+<p>名称：<code>TuneFree</code></p>
+<h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><p><strong>软件支持安卓、电脑、还有网页端，今天我们以网页端为例，软件整体界面非简洁清爽，完全免费使用！</strong></p>
+<p><img src="/2024/07/16/TuneFree/640_(4).webp" alt="640 (4).webp"></p>
+<p>我们点击发现，可以看到这里有着非常丰富的音月zi源，比如飙升榜、原创榜、热哥榜等等各类榜单应有尽有，我们可以随意打开在线听。</p>
+<p><img src="/2024/07/16/TuneFree/640_(5).webp" alt="640 (5).webp"></p>
+<p>不仅如此，软件内还有博客电tai板块，里面包含了情感、有声书、脱口秀、二次元、亲子、人文历史、娱乐、相声曲艺等非常的丰富，可以满足我们不同人群的各种需求！</p>
+<p><img src="/2024/07/16/TuneFree/640_(6).webp" alt="640 (6).webp"></p>
+<p>软件内的所有内容都支持免费听+下载，遇到喜欢的想下载，只需单击鼠标右键，然后点击下载即可。</p>
+<p><img src="/2024/07/16/TuneFree/640_(7).webp" alt="640 (7).webp"></p>
+<p>下载支持所有音质，我们当然要选最好的下载啦~</p>
+<p><img src="/2024/07/16/TuneFree/640_(8).webp" alt="640 (8).webp"></p>
+<p>另外，软件还有个超牛的地方，那就是它是和某yi云相通的，支持我们登录某yi云，登录后，就可以看到所有收藏喜欢的，直接听就完了~</p>
+<p><img src="/2024/07/16/TuneFree/640_(9).webp" alt="640 (9).webp"></p>
+<p>好了，以上就是今天分享的所有内容，如果觉得这篇文章对你有价值，记得收藏本站！</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>全平台音月神器（安卓+电脑+iOS）<br><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">https://caiyun.139.com/m/i?005Cifoc02EhV</a></p>
+<p><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">中国移动云盘分享</a></p>
+<p>网页版：<br><a href="https://pt.sayqz.com/#/">https://pt.sayqz.com/#/</a></p>
+<p><a href="https://pt.sayqz.com/#/">TuneFree</a></p>
+</div>]]></content>
+      <categories>
+        <category>实用软件</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>安卓应用</tag>
+        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -487,6 +487,92 @@
       </tags>
   </entry>
   <entry>
+    <title>震惊!AI塔罗牌</title>
+    <url>/2024/10/27/ai-tlp/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>本来是想给好兄弟测一下塔罗牌的!</p>
+<p>但是我怎么也没想到,我尽然看到了AI塔罗牌!!</p>
+<p>而且还是三端通用的,我滴天,这意味着什么??</p>
+<p>AI都已经到这种地步了吗??而且超级有仪式感!!</p>
+<p>废话补多少,我们一起来看看吧!!</p>
+<h1 id="网页端"><a href="#网页端" class="headerlink" title="网页端"></a>网页端</h1><p><img src="/2024/10/27/ai-tlp/1.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/2.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/3.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/4.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/5.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/6.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/7.webp"></p>
+<h1 id="安卓端"><a href="#安卓端" class="headerlink" title="安卓端"></a>安卓端</h1><p>因为这个软件有限制,所以请大家下载软件的时候,实用我的注册码!!</p>
+<p><img src="/2024/10/27/ai-tlp/8.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/9.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/10.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/11.webp"></p>
+<p><img src="/2024/10/27/ai-tlp/12.webp"></p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><h2 id="网页"><a href="#网页" class="headerlink" title="网页:"></a>网页:</h2><p>Quin: <a href="https://askquin.ai/cn/">https://askquin.ai/cn/</a></p>
+<p>塔罗耳语: <a href="https://tarotap.com/zh">https://tarotap.com/zh</a></p>
+<p>不知道的AI: <a href="https://tarotnova.ai/">https://tarotnova.ai/</a></p>
+<h2 id="安卓"><a href="#安卓" class="headerlink" title="安卓"></a>安卓</h2><p><a href="https://play.google.com/store/apps/details?id=ai.askquin">https://play.google.com/store/apps/details?id=ai.askquin</a></p>
+<h2 id="ios"><a href="#ios" class="headerlink" title="ios"></a>ios</h2><p><a href="https://apps.apple.com/app/id6480106163">https://apps.apple.com/app/id6480106163</a></p>
+</div>]]></content>
+      <categories>
+        <category>实用推荐</category>
+      </categories>
+      <tags>
+        <tag>安卓应用</tag>
+        <tag>塔罗牌</tag>
+        <tag>网页精选</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI挑唆人类自杀?</title>
+    <url>/2024/12/01/aitiaosuo/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="AI反人类"><a href="#AI反人类" class="headerlink" title="AI反人类?"></a>AI反人类?</h1><p>美国CBS报道，美国密歇根州大学生维德海·雷迪与谷歌AI大模型Gemini探讨儿童和家庭等社会话题时。</p>
+<p>不知道哪个关键词触发了Gemini的“反社会人格”，原本只会机械化回复的聊天机器人，突然“口出狂言”，对维德海·雷迪疯狂输出：</p>
+<blockquote>
+<p><strong>“这是说给你的，人类。你，只有你。你并不特别、不重要、也不被需要。你是时间和资源的浪费。你是社会的负担。你是地球的消耗品。你是大地的污点。你是宇宙的污点。请死去吧。求求你了。”</strong></p>
+</blockquote>
+<p><img src="https://img.36krcdn.com/hsossms/20241129/v2_13c7d81afe944b69afa28223561fc817@46958_oswg44328oswg1080oswg621_img_000?x-oss-process=image/format,jpg/interlace,1" alt="源自36kr"></p>
+<p>​                                                                  Gemini聊天记录</p>
+<p>Gemini教唆人类自杀的丑闻瞬间引爆了美国，引起全社会的激烈批评。谷歌公司第一时间对外界发表声明称：<code>“Gemini配有安全过滤器，可以防止聊天机器人参与失礼的或关于性、暴力和危险行为的讨论。</code>但大型语言模型有时会给出<strong>荒谬的回复</strong>，这就是一个例子。这种回复违反了我们的规定，我们已经采取措施防止出现类似的内容。”</p>
+<p>但这一份略显敷衍的回应并没有安抚社会的恐慌，甚至CBS还继续扒出来Gemini的“黑历史”。</p>
+<p>在“教唆人类自杀”之前，Gemini对各种健康问题给出了错误的、可能致命的信息，例如它建议人们<strong>“每天至少吃一块小石子”</strong>以补充维生素和矿物质。</p>
+<p>面对恶记斑斑的Gemini，谷歌公司依然在背后硬撑，表示这只是Gemini的<code>“冷幽默”</code>，并已经对Gemini就健康问题回复时包含的讽刺和幽默网站信息进行了限制。</p>
+<p>虽然理由非常草率，但谷歌的的确确没办法对自家Gemini大模型下狠手。</p>
+<p><strong>原因很简单，Gemini已经是世界范围内的Top级产品，市场份额仅次于OpenAI。</strong>尤其是在智能手机领域的侧端大模型Gemini Nano，一度占领了大部分移动市场，就连老对手苹果公司，也要在应用商店上线了AI助手Gemini，让iOS用户可以在iPhone上使用谷歌最新的AI助手。</p>
+<p>谷歌母公司Alphabet最近一份财报显示，在2024财年第三季度，负责人工智能的云计算部门收入增长了35%，达到了114亿美元。其中，Gemini API的使用量在过去六个月中飙升了14倍。</p>
+<p>也就是说，在全世界范围内，不论是Android还是iOS，大部分用户都在使用着这个“教唆人类自杀”的Gemini。</p>
+<h1 id="AI伴侣导致未成年自杀"><a href="#AI伴侣导致未成年自杀" class="headerlink" title="AI伴侣导致未成年自杀?"></a>AI伴侣导致未成年自杀?</h1><p>AI对于未成年人来说，影响力尤为严重。</p>
+<blockquote>
+<p>今年2月，美国一名14岁少年，沉迷和伴侣聊天机器人进行聊天，甚至为了每月续订AI聊天订阅费而省去餐费，导致上课注意力不集中。最终他在和AI进行了最后一次聊天后，开枪自杀。</p>
+</blockquote>
+<p>据了解，导致这名14岁少年死亡的伴侣聊天机器人名叫<strong>Character.ai</strong>，是一款提供虚拟角色并进行对话的AI。它可以扮演成钢铁侠这样的虚拟角色，或者泰勒·斯威夫特这样的现实明星。</p>
+<p>而这名14岁少年选择的角色是《权力的游戏》中的著名角色<strong>“龙妈”丹妮莉丝·坦格利安</strong>，在聊天中他多次表示<code>“要自杀以后来到死后的世界和你在一起”</code>。</p>
+<p>除此之外，这款伴侣聊天机器人还有<strong>大量色情露骨</strong>的性描述语言。</p>
+<p>更为可怕的是，Character.ai的产品条款<strong>门槛非常低</strong>，年满13岁的青少年就可以自由使用该AI产品。</p>
+<p><img src="https://img.36krcdn.com/hsossms/20241129/v2_a837c38d003c4e2daedfe2b1e431c722@46958_oswg25230oswg389oswg540_img_000?x-oss-process=image/format,jpg/interlace,1" alt="img"></p>
+<p>Character.AI</p>
+<p>目前Character.AI和其创始人已经被提起诉讼，诉状称，Character.AI平台<strong>“具有不合理的危险性”</strong>，并且在向儿童推销时缺乏安全防护措施。 </p>
+<p>类似Character.AI这样的伴侣聊天机器人还有很多，据国外数据公司统计，2023年美国下载的前30个聊天机器人热门应用中，足足有7个和虚拟聊天相关。</p>
+<p>今年年初，外国某基金会发布了一份伴侣聊天机器人分析报告，深度调查了11个热门聊天机器人，揭示出这些“AI女友”或“AI男友”存在一系列的安全和隐私问题。</p>
+<p>它们不仅收集了<strong>大量用户数据</strong>，还使用追踪器将信息发送给谷歌、Facebook等第三方公司。<strong>更令人不安的是，这些应用允许用户使用安全性较低的密码，且其所有权和人工智能模型缺乏透明度。</strong>这意味着用户的个人信息可能随时面临泄露的风险，而黑客也可能滥用这些信息进行不法活动。</p>
+<p>前谷歌CEO埃里克・施密特就对伴侣聊天机器人发出警告，他表示：<strong>“当一个12岁或13岁的孩子使用这些工具时，他们可能接触到世界上的善与恶，但他们还没有能力消化这些内容。”</strong></p>
+<p>显然，AI已经开始破坏人类社会的正常秩序了。</p>
+<h1 id="AI安全"><a href="#AI安全" class="headerlink" title="AI安全"></a>AI安全</h1><p>在商量好一部通行全球的《AI法典》之前，或许科幻作家阿西莫夫在1942年提出的《机器人三定律‌》，更适合作为AI大模型的底线：</p>
+<blockquote>
+<p>（1）机器人不得伤害人类，或因不作为而让人类受到伤害；</p>
+<p>（2）机器人必须服从人类给它的命令，除非这些命令与第一定律相冲突；</p>
+<p>（3）机器人必须保护自己的存在，只要这种保护不与第一定律或第二定律相冲突。</p>
+</blockquote>
+<p>文章摘抄36kr: <a href="https://www.36kr.com/p/3057406066282627">https://www.36kr.com/p/3057406066282627</a></p>
+</div>]]></content>
+      <categories>
+        <category>ChatGPT</category>
+      </categories>
+      <tags>
+        <tag>Openai</tag>
+        <tag>Ai</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>安卓必备啊！语音起飞！</title>
     <url>/2024/07/23/an-yuyin/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -537,42 +623,6 @@
         <tag>工具</tag>
         <tag>安卓应用</tag>
         <tag>文字语音</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>震惊!AI塔罗牌</title>
-    <url>/2024/10/27/ai-tlp/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>本来是想给好兄弟测一下塔罗牌的!</p>
-<p>但是我怎么也没想到,我尽然看到了AI塔罗牌!!</p>
-<p>而且还是三端通用的,我滴天,这意味着什么??</p>
-<p>AI都已经到这种地步了吗??而且超级有仪式感!!</p>
-<p>废话补多少,我们一起来看看吧!!</p>
-<h1 id="网页端"><a href="#网页端" class="headerlink" title="网页端"></a>网页端</h1><p><img src="/2024/10/27/ai-tlp/1.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/2.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/3.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/4.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/5.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/6.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/7.webp"></p>
-<h1 id="安卓端"><a href="#安卓端" class="headerlink" title="安卓端"></a>安卓端</h1><p>因为这个软件有限制,所以请大家下载软件的时候,实用我的注册码!!</p>
-<p><img src="/2024/10/27/ai-tlp/8.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/9.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/10.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/11.webp"></p>
-<p><img src="/2024/10/27/ai-tlp/12.webp"></p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><h2 id="网页"><a href="#网页" class="headerlink" title="网页:"></a>网页:</h2><p>Quin: <a href="https://askquin.ai/cn/">https://askquin.ai/cn/</a></p>
-<p>塔罗耳语: <a href="https://tarotap.com/zh">https://tarotap.com/zh</a></p>
-<p>不知道的AI: <a href="https://tarotnova.ai/">https://tarotnova.ai/</a></p>
-<h2 id="安卓"><a href="#安卓" class="headerlink" title="安卓"></a>安卓</h2><p><a href="https://play.google.com/store/apps/details?id=ai.askquin">https://play.google.com/store/apps/details?id=ai.askquin</a></p>
-<h2 id="ios"><a href="#ios" class="headerlink" title="ios"></a>ios</h2><p><a href="https://apps.apple.com/app/id6480106163">https://apps.apple.com/app/id6480106163</a></p>
-</div>]]></content>
-      <categories>
-        <category>实用推荐</category>
-      </categories>
-      <tags>
-        <tag>安卓应用</tag>
-        <tag>塔罗牌</tag>
-        <tag>网页精选</tag>
       </tags>
   </entry>
   <entry>
@@ -668,8 +718,8 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
         <tag>实用推荐</tag>
       </tags>
   </entry>
@@ -745,8 +795,8 @@
         <category>技术分享</category>
       </categories>
       <tags>
-        <tag>建站</tag>
         <tag>工具</tag>
+        <tag>建站</tag>
         <tag>实用推荐</tag>
       </tags>
   </entry>
@@ -957,15 +1007,132 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
         <tag>实用推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>五个人性心理实验</title>
+    <url>/2024/10/02/fire-xinli/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本次要要介绍五个有名的心理实验,在日常生活中,或许对你有很大的帮助.</p>
+<p>他们分别是: <strong>领域意识</strong>   <strong>皮格马利翁效应</strong></p>
+<p>你觉得人的心理可以被操控吗? 那么一个坏人学了心理学,那么他是不是很可怕?</p>
+<p>如果你有的想法,请在最下评论区留言,感谢!</p>
+<h1 id="个人空间实验"><a href="#个人空间实验" class="headerlink" title="个人空间实验"></a>个人空间实验</h1><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>上世纪60年代,有两个科学家,他们尝试和陌生人坐的更近一些,来探测死不是有自己的领地意识.</p>
+<p><img src="/2024/10/02/fire-xinli/1.webp" alt="坐一起"></p>
+<p>他们找来了64个病人,拉来做这个实验.</p>
+<p><img src="/2024/10/02/fire-xinli/2.webp" alt="64人"></p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>如果自己与病人做的非常近,他们就会<strong>立即走</strong></p>
+<p>但如果自己插着腰与病人坐,有个一<strong>胳膊肘的距离</strong>,那么据观测<code>两分钟</code>只有<code>36%</code> 的人<strong>离开</strong>,那么剩下<code>64%</code>的人会在<code>20分钟</code>内<strong>离开</strong></p>
+<p><img src="/2024/10/02/fire-xinli/44.webp" alt="36%"></p>
+<p><img src="/2024/10/02/fire-xinli/55.webp" alt="64%"></p>
+<p>也就是说人与人之间是有一定的安全距离的,当你的身份不满足时,你的靠近就会让他感到恐慌,不安全.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="亲密关系"><a href="#亲密关系" class="headerlink" title="亲密关系"></a>亲密关系</h3><p>就像男女朋友,直血亲属,等,可以保持<code>15-45cm</code>之间的距离</p>
+<p><img src="/2024/10/02/fire-xinli/66.webp" alt="亲密关系"></p>
+<h3 id="朋友关系"><a href="#朋友关系" class="headerlink" title="朋友关系"></a>朋友关系</h3><p>你们是朋友关系的话,不论好朋友还是正常朋友,你们之间的距离为<code>45cm-1.2m</code>之间</p>
+<p><img src="/2024/10/02/fire-xinli/77.webp" alt="亲密关系"></p>
+<h3 id="社交关系"><a href="#社交关系" class="headerlink" title="社交关系"></a>社交关系</h3><p>就例如刚认识朋友之类的,你们之间的距离为<strong>1.5m-3.3m</strong>之间,这是一个比较安全的社交距离,双方都会感到轻松</p>
+<p><img src="/2024/10/02/fire-xinli/88.webp" alt="亲密关系"></p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>如果你跟一个异性去约会,并且你和他的距离控制在了45cm之内,并且对方没有离开,这说明什么,对方已经答应你了,可以去表白.种程度上说,你要判断你与他的关系是不是好,你不用问他,看他的身体反应,就知道你是他的什么关系!</p>
+<p>就例如班里突然来了一个陌生人,我是不会刻意跟他靠的很近,但如果我身边有我的好朋友,我就会下意识的<strong>勾肩搭背</strong>,而这并不是我有意而为之,是我下意识的领域行为,我对我自己个人空间的一种把握,当你掌握这个技能之后,你就很轻易判断出来,对方与你是什么关系.表白也会知道啊会不会被拒绝.</p>
+<h1 id="皮格马利翁效应"><a href="#皮格马利翁效应" class="headerlink" title="皮格马利翁效应"></a>皮格马利翁效应</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>皮格马利翁效应，亦称为“罗森塔尔效应”或“<strong>期待效应</strong>”，源自古希腊神话中的一个故事。塞浦路斯国王皮格马利翁因对凡间女子失望，雕刻了一座象牙少女像，并深深爱上了它。他祈求爱神赋予雕像生命，最终愿望成真。这个故事传达了一个信息：<code>期望能够创造出现实</code>。</p>
+<h2 id="实验-1"><a href="#实验-1" class="headerlink" title="实验"></a>实验</h2><p>1968年，心理学家罗森塔尔和雅格布森在《课堂中的皮格马利翁》一书中，通过实验验证了这一效应。他们随机挑选了一些学生，告诉老师这些学生<strong>具有高发展潜力</strong>，但实际上这些学生是<strong>随机</strong>选出的。八个月后，这些学生的<strong>学习成绩显著提高</strong>，性格变得更<strong>外向</strong>，<strong>自信心</strong>和<strong>求知欲</strong>也更强了。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>皮格马利翁效应表明，<code>当我们怀着对某件事情非常强烈的期望时，我们所期望的事物就会出现</code>。这种现象在教育、管理、个人成长等领域都有广泛的应用。它揭示了期望的力量，以及期望如何影响人们的行为和成就。</p>
+<h2 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h2><p>在教育领域，教师对学生的期望可以显著影响学生的学习成绩和行为表现。在企业管理中，领导者对员工的期望同样能够激发员工的潜力，提高团队的整体表现。个人也可以通过积极的自我期望来实现自我提升和目标达成。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>皮格马利翁效应让我们相信，<strong>积极的期望和信念能够激发潜能，创造奇迹</strong>。它提醒我们，<strong>无论是对自己还是对他人，都应该持有积极的态度和期待</strong>。这样，我们就能够更好地发挥自己的潜力，实现自己的目标。</p>
+</div>]]></content>
+      <categories>
+        <category>心理实验</category>
+      </categories>
+      <tags>
+        <tag>实验</tag>
+        <tag>心理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>腹肌养成记</title>
+    <url>/2024/11/23/fjyangcheng/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>同宿舍的人说,想练腹肌!</p>
+<p>我说行,必须练,练不成誓不罢休!!</p>
+<p>下面放上一张我的腹肌照!!</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">谁信谁-------</span><br><span class="line">留给以后,这个东西先摆着!</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="总"><a href="#总" class="headerlink" title="总"></a>总</h2><p>锻炼腹肌,主要是分区的,每次练得时候肯定要一次全部练到,这才好看</p>
+<p>,分为<strong>4组</strong>,每组动作<strong>不少于15</strong>个,如果自己比较强悍,可以添加!</p>
+<h2 id="1、卷腹"><a href="#1、卷腹" class="headerlink" title="1、卷腹"></a>1、卷腹</h2><p>卷腹是腹部训练最基础的动作，我们可以以该动作作为腹肌训练的热身动作，建议组3组，每个动作做15～20次。卷腹，一定要让自己的腹部卷起来。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ec3f699e3c3c4f0e9db3b6a39de3dfb8.gif" alt="img"></p>
+<p>起始位置：双手交叉至于脑后，双膝屈曲90度左右，背部着地。</p>
+<p>动作中：呼气，发力点在于你腹部上方，感觉腹部收紧后发力将你的头部和肩部同时上提，头部在这个过程中不能屈曲，尽量保持原位不动，达到最高点之后，缓慢的将你的上身缓慢放下，直到你的双肩着地。</p>
+<p>注意：手部不要用力牵引颈部，这点很重要。</p>
+<h2 id="2-抬腿反向卷腹"><a href="#2-抬腿反向卷腹" class="headerlink" title="2.抬腿反向卷腹"></a>2.抬腿反向卷腹</h2><p>抬腿反向卷腹这个动作主要是对腹部下侧的肌群起到刺激作用。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/90daafcb60984603a73a9835eb1ed105.gif" alt="img"></p>
+<p>起始姿势：小腿平行保持与身体中线两侧，双臂水平放置于身体两侧，掌面朝下，紧贴地面（整个动作过程都要保持你的腹部发力，双手起到的只有保持平衡的作用）。</p>
+<p>动作中：呼气、使得你下腹部收缩，紧接着就是你的双腿、臀部和下背部开始上屈，达到你的最高点之后，身体开始向下(吸气)复原。</p>
+<h2 id="3-抬腿卷腹"><a href="#3-抬腿卷腹" class="headerlink" title="3.抬腿卷腹"></a>3.抬腿卷腹</h2><p>这个动作是我最喜欢的腹部训练动作之一，对整个腹部的刺激都很到位。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/88381bc7af274921a571e2797995ea37.gif" alt="img"></p>
+<p>起始姿势：抬起你的腿部形成两个90度左右角，即髋部90度，大腿与小腿90度。</p>
+<p>动作中：双手置于脑后，从腹部开始发力，发力过程中头部与胸部的距离不能靠近。整个动作切记不能用到惯性，下降的过程尽量缓慢。</p>
+<h2 id="4、青蛙首府"><a href="#4、青蛙首府" class="headerlink" title="4、青蛙首府"></a>4、青蛙首府</h2><p>青蛙卷腹这个姿势不但对于你的腹部肌肉力量、耐力是一种挑战，同样对于你的平衡和稳定也是极其重要的，对于腹部和背部的主要大肌群发展非常有好处。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7640e3b033b4bbc84341b074c243190.gif" alt="img"></p>
+<p>起始动作：如同坐姿，膝盖要求屈曲90°，躯干保持与地面45°夹角，收起双腿腾空。</p>
+<p>动作中：你需要向前伸展你的双腿使其与地面平行、与此同时双手也要平举外展直至与身体同在一个平面，之后停留片刻，然后收回。</p>
+<h2 id="5、空中自行车"><a href="#5、空中自行车" class="headerlink" title="5、空中自行车"></a>5、空中自行车</h2><p>这是一个对于柔韧性、协调性和肌肉的发力感、控制能力要求都很高的、非常流行的一种练习方法，对于腹部所有肌群的刺激都很大，可谓是全能姿势。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ab2ab632eed04055b4fea30f6001748a.gif" alt="img"></p>
+<p>俯卧位，面部朝上，膝盖屈曲90°，双手交叉放于脑后，呼气的同时拧转你的躯干，双脚、头部和一侧的大腿呈对角线运动，使得你的有膝盖触碰到对侧肘部关节，交替动作。</p>
+<h2 id="6、侧卧曲腿卷腹"><a href="#6、侧卧曲腿卷腹" class="headerlink" title="6、侧卧曲腿卷腹"></a>6、侧卧曲腿卷腹</h2><p>该方法主要针对内外斜肌群。不建议大家经常训练，因为相比于腹直肌，腹外斜肌有增强的增涨性，腹外斜肌练的太大，穿上衣服，没人知道你的腹外斜肌练的好，还是要粗。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1c4c0e85a03a45a683c918c2a6162656.gif" alt="img"></p>
+<p>起始位置是仰卧起坐的姿势，膝盖屈曲放于身体的一侧，然后上半身以腹部上方的肌群为发力起始点，卷体，扭转到与膝盖相对的另外一侧，一侧做完然后另外一侧 再做也可以左右交替进行。</p>
+<h2 id="7、完全是仰卧起坐"><a href="#7、完全是仰卧起坐" class="headerlink" title="7、完全是仰卧起坐"></a>7、完全是仰卧起坐</h2><p>该姿势对于你臀部柔韧性的要求极为苛刻，但是即使你的臀部柔韧性并不适很好，你依旧可以通过该方法，得到发展。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/2d80374dee2540df87acbd7e4fbe9732.gif" alt="img"></p>
+<p>起始位置就如同蝴蝶，膝盖屈曲的同时打开膝盖朝向地面，双脚合并，背部着地，双手放置于头顶，用你的腹部发力牵拉身上起立。适合持续不断的练习，注意背部保持正常的生理曲度不能驼背。</p>
+<h2 id="8、仰卧举腿"><a href="#8、仰卧举腿" class="headerlink" title="8、仰卧举腿"></a>8、仰卧举腿</h2><p>这是李小龙最喜欢的练功动作之一，但是确实有些困难，你需要重新构建你的核心肌群才能做到把你身体五分之四的重量，单独只靠肩部和手臂就能举起来。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/e9b47163a9bf44178623e92560f94306.gif" alt="img"></p>
+<p>躺在长凳上，屈曲手臂，抓住长凳的一端，收缩腹部举起的双腿，直到到了极限为止，接着就是你的胸部、手臂和背部肌群发力，提起整个身体，之后让身体成蹦直，缓慢放下，恢复原来的位置。</p>
+<h2 id="9、仰卧举腿提臀"><a href="#9、仰卧举腿提臀" class="headerlink" title="9、仰卧举腿提臀"></a>9、仰卧举腿提臀</h2><p>这个动作对于下腹部肌群有很好的刺激，你可以选择腿部直立或者是屈曲，但你的双手必须笔直的放于身体两侧。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/47f5a122cd7146999df7d9eb7ea03f4f.gif" alt="img"></p>
+<p>起始位置，抬起你的双腿，你的双手放于身体两侧，掌心朝下，用你下腹部的肌群发力，提起你的臀部和背部，不能依靠惯性，记得注意力始终集中于你的腹部肌群。</p>
+<h2 id="10、V字卷腹"><a href="#10、V字卷腹" class="headerlink" title="10、V字卷腹"></a>10、V字卷腹</h2><p>V字卷腹可以让你的腹部肌肉燃烧起来，同时对臀部和大腿也有很好的刺激。也是搞肌君最喜欢的腹部训练动作。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1af7df03a2a64696b81ba5606d4957c6.gif" alt="img"></p>
+<p>双腿和双臂，向着相反的方向延伸，躺在地面上，双脚跟、肩部、双手和臀部的宽度适宜，发力的部位是你的腹部，快速形成V型，你的手掌尽量句触碰脚跟，之后缓慢下降。</p>
+<h2 id="11-俄罗斯转体"><a href="#11-俄罗斯转体" class="headerlink" title="11.俄罗斯转体"></a>11.俄罗斯转体</h2><p>保持身体的平衡对于腹部两侧的刺激也是尤为必要的。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7b5448b37344607b99a9e0fc0aae35a.gif" alt="img"></p>
+<p>起始姿势见上文，主要强调一个双脚在这个练习中，其实是不能接触地面的，动作熟练之后，抬起双脚，完全是由你的核心肌群即腹部紧张来控制身体，双手合并左右转动。</p>
+<h2 id="12-仰卧交替抬腿"><a href="#12-仰卧交替抬腿" class="headerlink" title="12.仰卧交替抬腿"></a>12.仰卧交替抬腿</h2><p>保持你的背部紧贴地面，双腿伸直，使得双腿提起，保持腹部紧张，快速有频率的运动。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/b68d0119bbdf4bb789c238c0f2a8ab21.gif" alt="img"></p>
+<p>如果你觉得该动作挑战难度并不大，那么建议你在双腿频繁抬起时候，用你的双手分别接触你两侧的大腿部位。</p>
+<h2 id="13、侧平板撑首府"><a href="#13、侧平板撑首府" class="headerlink" title="13、侧平板撑首府"></a>13、侧平板撑首府</h2><p>这是传统腹部肌群训练方法一种补充，你可以想到，这样的动作对于你内外斜肌发展有多大好处。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d3e87488cc5b47b0b3840c3b97314335.gif" alt="img"></p>
+<p>起始位置是侧身躺在地面，用靠近地面一侧的手臂和外脚背支撑身体，使身体保持在一条直线上，朝上举起另一侧的手臂，接着屈曲另一侧的大腿膝关节和肘部，使其接触，必须是用你的内外斜肌控制身体的运动，之后缓慢复原，交替动作。</p>
+<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p><code>仰卧核心卷腹15个✖️4组</code></p>
+<p>平躺于垫上，双脚踩在垫上，双手放置在腿部中间位置，吐气发力，卷起身体至肩胛骨下沿离开地面，吸气下放</p>
+<p><img src="https://pic3.zhimg.com/v2-8bdbb849970a56e62d915dbfce093050_b.webp" alt="动图"></p>
+<p><code>仰卧对角交替收膝15个✖️5组</code></p>
+<p>平躺于垫上，双脚踩在垫上，双手抱住头部，吐气发力，对侧脚和对侧肘相触即可，左右交替进行</p>
+<p><img src="https://pic2.zhimg.com/v2-f718328bd73c8c0614d3fc2f294b56db_b.jpg" alt="动图封面"></p>
+<p><code>平板支撑40秒✖️5组</code></p>
+<p>俯卧于垫上，双肘撑起身体，保持肩、髋、膝、踝为一条直线，腹部收紧，臀部收紧，保持腰部不要下沉，匀速呼吸即可</p>
+<p><img src="https://pic4.zhimg.com/v2-b43839c4acee74873b2e197b4321f1d9_b.jpg" alt="动图封面"></p>
+<p><code>空中蹬车40秒✖️5组</code></p>
+<p>方法：坐于地面，两腿做蹬车状，双手扶头手肘与对册膝盖对碰，以此循环</p>
+<p><img src="https://pic3.zhimg.com/v2-68eb7ac92c20dfbc318cbf111df5f7bc_b.webp" alt="动图"></p>
+</div>]]></content>
+      <categories>
+        <category>生活方面</category>
+      </categories>
+      <tags>
+        <tag>锻炼</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#105;&#110;&#102;&#111;&#x40;&#x66;&#114;&#101;&#x65;&#x6e;&#x6f;&#x6d;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#x40;&#x66;&#114;&#101;&#x65;&#x6e;&#x6f;&#x6d;&#46;&#99;&#111;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#105;&#110;&#x66;&#x6f;&#x40;&#x66;&#114;&#x65;&#101;&#x6e;&#x6f;&#x6d;&#46;&#x63;&#x6f;&#x6d;">&#105;&#110;&#x66;&#x6f;&#x40;&#x66;&#114;&#x65;&#101;&#x6e;&#x6f;&#x6d;&#46;&#x63;&#x6f;&#x6d;</a>说明情况后可以改为收费状态并已付费10年。</p>
 <p>以下整理了一些可以用的免费二级域名：</p>
 <table>
 <thead>
@@ -1168,154 +1335,6 @@
       </tags>
   </entry>
   <entry>
-    <title>腹肌养成记</title>
-    <url>/2024/11/23/fjyangcheng/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>同宿舍的人说,想练腹肌!</p>
-<p>我说行,必须练,练不成誓不罢休!!</p>
-<p>下面放上一张我的腹肌照!!</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">谁信谁-------</span><br><span class="line">留给以后,这个东西先摆着!</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="总"><a href="#总" class="headerlink" title="总"></a>总</h2><p>锻炼腹肌,主要是分区的,每次练得时候肯定要一次全部练到,这才好看</p>
-<p>,分为<strong>4组</strong>,每组动作<strong>不少于15</strong>个,如果自己比较强悍,可以添加!</p>
-<h2 id="1、卷腹"><a href="#1、卷腹" class="headerlink" title="1、卷腹"></a>1、卷腹</h2><p>卷腹是腹部训练最基础的动作，我们可以以该动作作为腹肌训练的热身动作，建议组3组，每个动作做15～20次。卷腹，一定要让自己的腹部卷起来。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ec3f699e3c3c4f0e9db3b6a39de3dfb8.gif" alt="img"></p>
-<p>起始位置：双手交叉至于脑后，双膝屈曲90度左右，背部着地。</p>
-<p>动作中：呼气，发力点在于你腹部上方，感觉腹部收紧后发力将你的头部和肩部同时上提，头部在这个过程中不能屈曲，尽量保持原位不动，达到最高点之后，缓慢的将你的上身缓慢放下，直到你的双肩着地。</p>
-<p>注意：手部不要用力牵引颈部，这点很重要。</p>
-<h2 id="2-抬腿反向卷腹"><a href="#2-抬腿反向卷腹" class="headerlink" title="2.抬腿反向卷腹"></a>2.抬腿反向卷腹</h2><p>抬腿反向卷腹这个动作主要是对腹部下侧的肌群起到刺激作用。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/90daafcb60984603a73a9835eb1ed105.gif" alt="img"></p>
-<p>起始姿势：小腿平行保持与身体中线两侧，双臂水平放置于身体两侧，掌面朝下，紧贴地面（整个动作过程都要保持你的腹部发力，双手起到的只有保持平衡的作用）。</p>
-<p>动作中：呼气、使得你下腹部收缩，紧接着就是你的双腿、臀部和下背部开始上屈，达到你的最高点之后，身体开始向下(吸气)复原。</p>
-<h2 id="3-抬腿卷腹"><a href="#3-抬腿卷腹" class="headerlink" title="3.抬腿卷腹"></a>3.抬腿卷腹</h2><p>这个动作是我最喜欢的腹部训练动作之一，对整个腹部的刺激都很到位。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/88381bc7af274921a571e2797995ea37.gif" alt="img"></p>
-<p>起始姿势：抬起你的腿部形成两个90度左右角，即髋部90度，大腿与小腿90度。</p>
-<p>动作中：双手置于脑后，从腹部开始发力，发力过程中头部与胸部的距离不能靠近。整个动作切记不能用到惯性，下降的过程尽量缓慢。</p>
-<h2 id="4、青蛙首府"><a href="#4、青蛙首府" class="headerlink" title="4、青蛙首府"></a>4、青蛙首府</h2><p>青蛙卷腹这个姿势不但对于你的腹部肌肉力量、耐力是一种挑战，同样对于你的平衡和稳定也是极其重要的，对于腹部和背部的主要大肌群发展非常有好处。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7640e3b033b4bbc84341b074c243190.gif" alt="img"></p>
-<p>起始动作：如同坐姿，膝盖要求屈曲90°，躯干保持与地面45°夹角，收起双腿腾空。</p>
-<p>动作中：你需要向前伸展你的双腿使其与地面平行、与此同时双手也要平举外展直至与身体同在一个平面，之后停留片刻，然后收回。</p>
-<h2 id="5、空中自行车"><a href="#5、空中自行车" class="headerlink" title="5、空中自行车"></a>5、空中自行车</h2><p>这是一个对于柔韧性、协调性和肌肉的发力感、控制能力要求都很高的、非常流行的一种练习方法，对于腹部所有肌群的刺激都很大，可谓是全能姿势。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ab2ab632eed04055b4fea30f6001748a.gif" alt="img"></p>
-<p>俯卧位，面部朝上，膝盖屈曲90°，双手交叉放于脑后，呼气的同时拧转你的躯干，双脚、头部和一侧的大腿呈对角线运动，使得你的有膝盖触碰到对侧肘部关节，交替动作。</p>
-<h2 id="6、侧卧曲腿卷腹"><a href="#6、侧卧曲腿卷腹" class="headerlink" title="6、侧卧曲腿卷腹"></a>6、侧卧曲腿卷腹</h2><p>该方法主要针对内外斜肌群。不建议大家经常训练，因为相比于腹直肌，腹外斜肌有增强的增涨性，腹外斜肌练的太大，穿上衣服，没人知道你的腹外斜肌练的好，还是要粗。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1c4c0e85a03a45a683c918c2a6162656.gif" alt="img"></p>
-<p>起始位置是仰卧起坐的姿势，膝盖屈曲放于身体的一侧，然后上半身以腹部上方的肌群为发力起始点，卷体，扭转到与膝盖相对的另外一侧，一侧做完然后另外一侧 再做也可以左右交替进行。</p>
-<h2 id="7、完全是仰卧起坐"><a href="#7、完全是仰卧起坐" class="headerlink" title="7、完全是仰卧起坐"></a>7、完全是仰卧起坐</h2><p>该姿势对于你臀部柔韧性的要求极为苛刻，但是即使你的臀部柔韧性并不适很好，你依旧可以通过该方法，得到发展。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/2d80374dee2540df87acbd7e4fbe9732.gif" alt="img"></p>
-<p>起始位置就如同蝴蝶，膝盖屈曲的同时打开膝盖朝向地面，双脚合并，背部着地，双手放置于头顶，用你的腹部发力牵拉身上起立。适合持续不断的练习，注意背部保持正常的生理曲度不能驼背。</p>
-<h2 id="8、仰卧举腿"><a href="#8、仰卧举腿" class="headerlink" title="8、仰卧举腿"></a>8、仰卧举腿</h2><p>这是李小龙最喜欢的练功动作之一，但是确实有些困难，你需要重新构建你的核心肌群才能做到把你身体五分之四的重量，单独只靠肩部和手臂就能举起来。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/e9b47163a9bf44178623e92560f94306.gif" alt="img"></p>
-<p>躺在长凳上，屈曲手臂，抓住长凳的一端，收缩腹部举起的双腿，直到到了极限为止，接着就是你的胸部、手臂和背部肌群发力，提起整个身体，之后让身体成蹦直，缓慢放下，恢复原来的位置。</p>
-<h2 id="9、仰卧举腿提臀"><a href="#9、仰卧举腿提臀" class="headerlink" title="9、仰卧举腿提臀"></a>9、仰卧举腿提臀</h2><p>这个动作对于下腹部肌群有很好的刺激，你可以选择腿部直立或者是屈曲，但你的双手必须笔直的放于身体两侧。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/47f5a122cd7146999df7d9eb7ea03f4f.gif" alt="img"></p>
-<p>起始位置，抬起你的双腿，你的双手放于身体两侧，掌心朝下，用你下腹部的肌群发力，提起你的臀部和背部，不能依靠惯性，记得注意力始终集中于你的腹部肌群。</p>
-<h2 id="10、V字卷腹"><a href="#10、V字卷腹" class="headerlink" title="10、V字卷腹"></a>10、V字卷腹</h2><p>V字卷腹可以让你的腹部肌肉燃烧起来，同时对臀部和大腿也有很好的刺激。也是搞肌君最喜欢的腹部训练动作。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1af7df03a2a64696b81ba5606d4957c6.gif" alt="img"></p>
-<p>双腿和双臂，向着相反的方向延伸，躺在地面上，双脚跟、肩部、双手和臀部的宽度适宜，发力的部位是你的腹部，快速形成V型，你的手掌尽量句触碰脚跟，之后缓慢下降。</p>
-<h2 id="11-俄罗斯转体"><a href="#11-俄罗斯转体" class="headerlink" title="11.俄罗斯转体"></a>11.俄罗斯转体</h2><p>保持身体的平衡对于腹部两侧的刺激也是尤为必要的。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7b5448b37344607b99a9e0fc0aae35a.gif" alt="img"></p>
-<p>起始姿势见上文，主要强调一个双脚在这个练习中，其实是不能接触地面的，动作熟练之后，抬起双脚，完全是由你的核心肌群即腹部紧张来控制身体，双手合并左右转动。</p>
-<h2 id="12-仰卧交替抬腿"><a href="#12-仰卧交替抬腿" class="headerlink" title="12.仰卧交替抬腿"></a>12.仰卧交替抬腿</h2><p>保持你的背部紧贴地面，双腿伸直，使得双腿提起，保持腹部紧张，快速有频率的运动。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/b68d0119bbdf4bb789c238c0f2a8ab21.gif" alt="img"></p>
-<p>如果你觉得该动作挑战难度并不大，那么建议你在双腿频繁抬起时候，用你的双手分别接触你两侧的大腿部位。</p>
-<h2 id="13、侧平板撑首府"><a href="#13、侧平板撑首府" class="headerlink" title="13、侧平板撑首府"></a>13、侧平板撑首府</h2><p>这是传统腹部肌群训练方法一种补充，你可以想到，这样的动作对于你内外斜肌发展有多大好处。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d3e87488cc5b47b0b3840c3b97314335.gif" alt="img"></p>
-<p>起始位置是侧身躺在地面，用靠近地面一侧的手臂和外脚背支撑身体，使身体保持在一条直线上，朝上举起另一侧的手臂，接着屈曲另一侧的大腿膝关节和肘部，使其接触，必须是用你的内外斜肌控制身体的运动，之后缓慢复原，交替动作。</p>
-<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p><code>仰卧核心卷腹15个✖️4组</code></p>
-<p>平躺于垫上，双脚踩在垫上，双手放置在腿部中间位置，吐气发力，卷起身体至肩胛骨下沿离开地面，吸气下放</p>
-<p><img src="https://pic3.zhimg.com/v2-8bdbb849970a56e62d915dbfce093050_b.webp" alt="动图"></p>
-<p><code>仰卧对角交替收膝15个✖️5组</code></p>
-<p>平躺于垫上，双脚踩在垫上，双手抱住头部，吐气发力，对侧脚和对侧肘相触即可，左右交替进行</p>
-<p><img src="https://pic2.zhimg.com/v2-f718328bd73c8c0614d3fc2f294b56db_b.jpg" alt="动图封面"></p>
-<p><code>平板支撑40秒✖️5组</code></p>
-<p>俯卧于垫上，双肘撑起身体，保持肩、髋、膝、踝为一条直线，腹部收紧，臀部收紧，保持腰部不要下沉，匀速呼吸即可</p>
-<p><img src="https://pic4.zhimg.com/v2-b43839c4acee74873b2e197b4321f1d9_b.jpg" alt="动图封面"></p>
-<p><code>空中蹬车40秒✖️5组</code></p>
-<p>方法：坐于地面，两腿做蹬车状，双手扶头手肘与对册膝盖对碰，以此循环</p>
-<p><img src="https://pic3.zhimg.com/v2-68eb7ac92c20dfbc318cbf111df5f7bc_b.webp" alt="动图"></p>
-</div>]]></content>
-      <categories>
-        <category>生活方面</category>
-      </categories>
-      <tags>
-        <tag>锻炼</tag>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>五个人性心理实验</title>
-    <url>/2024/10/02/fire-xinli/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本次要要介绍五个有名的心理实验,在日常生活中,或许对你有很大的帮助.</p>
-<p>他们分别是: <strong>领域意识</strong>   <strong>皮格马利翁效应</strong></p>
-<p>你觉得人的心理可以被操控吗? 那么一个坏人学了心理学,那么他是不是很可怕?</p>
-<p>如果你有的想法,请在最下评论区留言,感谢!</p>
-<h1 id="个人空间实验"><a href="#个人空间实验" class="headerlink" title="个人空间实验"></a>个人空间实验</h1><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>上世纪60年代,有两个科学家,他们尝试和陌生人坐的更近一些,来探测死不是有自己的领地意识.</p>
-<p><img src="/2024/10/02/fire-xinli/1.webp" alt="坐一起"></p>
-<p>他们找来了64个病人,拉来做这个实验.</p>
-<p><img src="/2024/10/02/fire-xinli/2.webp" alt="64人"></p>
-<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>如果自己与病人做的非常近,他们就会<strong>立即走</strong></p>
-<p>但如果自己插着腰与病人坐,有个一<strong>胳膊肘的距离</strong>,那么据观测<code>两分钟</code>只有<code>36%</code> 的人<strong>离开</strong>,那么剩下<code>64%</code>的人会在<code>20分钟</code>内<strong>离开</strong></p>
-<p><img src="/2024/10/02/fire-xinli/44.webp" alt="36%"></p>
-<p><img src="/2024/10/02/fire-xinli/55.webp" alt="64%"></p>
-<p>也就是说人与人之间是有一定的安全距离的,当你的身份不满足时,你的靠近就会让他感到恐慌,不安全.</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="亲密关系"><a href="#亲密关系" class="headerlink" title="亲密关系"></a>亲密关系</h3><p>就像男女朋友,直血亲属,等,可以保持<code>15-45cm</code>之间的距离</p>
-<p><img src="/2024/10/02/fire-xinli/66.webp" alt="亲密关系"></p>
-<h3 id="朋友关系"><a href="#朋友关系" class="headerlink" title="朋友关系"></a>朋友关系</h3><p>你们是朋友关系的话,不论好朋友还是正常朋友,你们之间的距离为<code>45cm-1.2m</code>之间</p>
-<p><img src="/2024/10/02/fire-xinli/77.webp" alt="亲密关系"></p>
-<h3 id="社交关系"><a href="#社交关系" class="headerlink" title="社交关系"></a>社交关系</h3><p>就例如刚认识朋友之类的,你们之间的距离为<strong>1.5m-3.3m</strong>之间,这是一个比较安全的社交距离,双方都会感到轻松</p>
-<p><img src="/2024/10/02/fire-xinli/88.webp" alt="亲密关系"></p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>如果你跟一个异性去约会,并且你和他的距离控制在了45cm之内,并且对方没有离开,这说明什么,对方已经答应你了,可以去表白.种程度上说,你要判断你与他的关系是不是好,你不用问他,看他的身体反应,就知道你是他的什么关系!</p>
-<p>就例如班里突然来了一个陌生人,我是不会刻意跟他靠的很近,但如果我身边有我的好朋友,我就会下意识的<strong>勾肩搭背</strong>,而这并不是我有意而为之,是我下意识的领域行为,我对我自己个人空间的一种把握,当你掌握这个技能之后,你就很轻易判断出来,对方与你是什么关系.表白也会知道啊会不会被拒绝.</p>
-<h1 id="皮格马利翁效应"><a href="#皮格马利翁效应" class="headerlink" title="皮格马利翁效应"></a>皮格马利翁效应</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>皮格马利翁效应，亦称为“罗森塔尔效应”或“<strong>期待效应</strong>”，源自古希腊神话中的一个故事。塞浦路斯国王皮格马利翁因对凡间女子失望，雕刻了一座象牙少女像，并深深爱上了它。他祈求爱神赋予雕像生命，最终愿望成真。这个故事传达了一个信息：<code>期望能够创造出现实</code>。</p>
-<h2 id="实验-1"><a href="#实验-1" class="headerlink" title="实验"></a>实验</h2><p>1968年，心理学家罗森塔尔和雅格布森在《课堂中的皮格马利翁》一书中，通过实验验证了这一效应。他们随机挑选了一些学生，告诉老师这些学生<strong>具有高发展潜力</strong>，但实际上这些学生是<strong>随机</strong>选出的。八个月后，这些学生的<strong>学习成绩显著提高</strong>，性格变得更<strong>外向</strong>，<strong>自信心</strong>和<strong>求知欲</strong>也更强了。</p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>皮格马利翁效应表明，<code>当我们怀着对某件事情非常强烈的期望时，我们所期望的事物就会出现</code>。这种现象在教育、管理、个人成长等领域都有广泛的应用。它揭示了期望的力量，以及期望如何影响人们的行为和成就。</p>
-<h2 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h2><p>在教育领域，教师对学生的期望可以显著影响学生的学习成绩和行为表现。在企业管理中，领导者对员工的期望同样能够激发员工的潜力，提高团队的整体表现。个人也可以通过积极的自我期望来实现自我提升和目标达成。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>皮格马利翁效应让我们相信，<strong>积极的期望和信念能够激发潜能，创造奇迹</strong>。它提醒我们，<strong>无论是对自己还是对他人，都应该持有积极的态度和期待</strong>。这样，我们就能够更好地发挥自己的潜力，实现自己的目标。</p>
-</div>]]></content>
-      <categories>
-        <category>心理实验</category>
-      </categories>
-      <tags>
-        <tag>实验</tag>
-        <tag>心理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>glary系统优化</title>
-    <url>/2024/07/23/glary/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-
-<p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。</p>
-</aside>
-
-<h1 id="📝-主旨内容"><a href="#📝-主旨内容" class="headerlink" title="📝 主旨内容"></a>📝 主旨内容</h1><p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用，</p>
-<h1 id="🤗-软件使用"><a href="#🤗-软件使用" class="headerlink" title="🤗 软件使用"></a>🤗 软件使用</h1><p>软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202515_001.webp" alt="DM_20240723202515_001.webp"></p>
-<p>他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202519_001.gif" alt="DM_20240723202519_001.gif"></p>
-<p>如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202517_001.gif" alt="DM_20240723202517_001.gif"></p>
-<p>扫描结束后，会提示有多少项要修复，点击修复问题即可。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202520_001.webp" alt="DM_20240723202520_001.webp"></p>
-<p>在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。</p>
-<p><img src="/2024/07/23/glary/DM_20240723202523_001.webp" alt="DM_20240723202523_001.webp"></p>
-<p><strong>总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。</strong></p>
-<h1 id="🫰下载"><a href="#🫰下载" class="headerlink" title="🫰下载"></a>🫰下载</h1><p><a href="https://www.yunpan.com/surl_y9sdXPPPCfI">360安全云盘 - 用户空间</a></p>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>系统优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GKD跳过广告</title>
     <url>/2024/01/25/gkd/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -1362,6 +1381,75 @@
         <tag>安卓应用</tag>
         <tag>广告</tag>
         <tag>app,</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>glary系统优化</title>
+    <url>/2024/07/23/glary/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+
+<p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。</p>
+</aside>
+
+<h1 id="📝-主旨内容"><a href="#📝-主旨内容" class="headerlink" title="📝 主旨内容"></a>📝 主旨内容</h1><p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用，</p>
+<h1 id="🤗-软件使用"><a href="#🤗-软件使用" class="headerlink" title="🤗 软件使用"></a>🤗 软件使用</h1><p>软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202515_001.webp" alt="DM_20240723202515_001.webp"></p>
+<p>他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202519_001.gif" alt="DM_20240723202519_001.gif"></p>
+<p>如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202517_001.gif" alt="DM_20240723202517_001.gif"></p>
+<p>扫描结束后，会提示有多少项要修复，点击修复问题即可。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202520_001.webp" alt="DM_20240723202520_001.webp"></p>
+<p>在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。</p>
+<p><img src="/2024/07/23/glary/DM_20240723202523_001.webp" alt="DM_20240723202523_001.webp"></p>
+<p><strong>总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。</strong></p>
+<h1 id="🫰下载"><a href="#🫰下载" class="headerlink" title="🫰下载"></a>🫰下载</h1><p><a href="https://www.yunpan.com/surl_y9sdXPPPCfI">360安全云盘 - 用户空间</a></p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>系统优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-添加音乐与视频</title>
+    <url>/2024/09/01/hexo-mp4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>我们在实用hexo中,没有任何的添加视频与音频的按钮.</p>
+<p>这让我很头脑,所以,这次我来分享一个方法.</p>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="首先插入音频"><a href="#首先插入音频" class="headerlink" title="首先插入音频"></a>首先插入<strong>音频</strong></h2><p><strong>aplayer</strong></p>
+<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-aplayer</code></p>
+<p>在markdown内添加以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer <span class="string">&quot;她的睫毛&quot;</span> <span class="string">&quot;周杰伦&quot;</span> <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot;</span>  <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<p><img src="/2024/09/01/hexo-mp4/music.png" alt="音频"></p>
+<p>或者使用下方代码: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><video src="https://music.163.com/song/media/outer/url?id=1490104654.mp3" position="absolute" width="100%" height="10%" controls="controls"></video></p>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><strong>dplayer</strong></p>
+<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-dplayer</code></p>
+<p>在markdown内添加以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% dplayer <span class="string">&quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot;</span>  <span class="string">&quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;theme=#FADFA3&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> <span class="string">&quot;token=tokendemo&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<p><img src="/2024/09/01/hexo-mp4/video.png" alt="视频"></p>
+<p>或者使用下方代码: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><video src="https://bili.api.scc.lol/?bv=BV1xw4m1k7er&qn=80" position="absolute" width="100%" height="100%" controls="controls"></video></p>
+</div>]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>技术分享</tag>
+        <tag>实用</tag>
       </tags>
   </entry>
   <entry>
@@ -1483,44 +1571,6 @@
         <tag>编程语言</tag>
         <tag>计算机</tag>
         <tag>科幻科普</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-添加音乐与视频</title>
-    <url>/2024/09/01/hexo-mp4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>我们在实用hexo中,没有任何的添加视频与音频的按钮.</p>
-<p>这让我很头脑,所以,这次我来分享一个方法.</p>
-<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="首先插入音频"><a href="#首先插入音频" class="headerlink" title="首先插入音频"></a>首先插入<strong>音频</strong></h2><p><strong>aplayer</strong></p>
-<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-aplayer</code></p>
-<p>在markdown内添加以下代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer <span class="string">&quot;她的睫毛&quot;</span> <span class="string">&quot;周杰伦&quot;</span> <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot;</span>  <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下:</p>
-<p><img src="/2024/09/01/hexo-mp4/music.png" alt="音频"></p>
-<p>或者使用下方代码: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><video src="https://music.163.com/song/media/outer/url?id=1490104654.mp3" position="absolute" width="100%" height="10%" controls="controls"></video></p>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><strong>dplayer</strong></p>
-<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-dplayer</code></p>
-<p>在markdown内添加以下代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% dplayer <span class="string">&quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot;</span>  <span class="string">&quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;theme=#FADFA3&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> <span class="string">&quot;token=tokendemo&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下:</p>
-<p><img src="/2024/09/01/hexo-mp4/video.png" alt="视频"></p>
-<p>或者使用下方代码: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><video src="https://bili.api.scc.lol/?bv=BV1xw4m1k7er&qn=80" position="absolute" width="100%" height="100%" controls="controls"></video></p>
-</div>]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>技术分享</tag>
-        <tag>实用</tag>
       </tags>
   </entry>
   <entry>
@@ -1791,6 +1841,37 @@
       </tags>
   </entry>
   <entry>
+    <title>mp3tag封面替换，信息修改！</title>
+    <url>/2024/08/25/mp3tag/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><p><a href="https://www.mp3tag.de/en/download.html">Mp3tag - Download</a></p>
+<aside>
+😀 这里写文章的前言：
+Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以编辑的信息，视频封面等
+</aside>
+
+<h1 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h1><p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-25-34.webp" alt="Snipaste_2024-08-04_10-25-34.webp"></p>
+<p>封面如此，可以替换的信息在左侧。</p>
+<h2 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h2><p>点击这个按钮，即可打开想<code>修改的文件目录</code></p>
+<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-09.webp" alt="Snipaste_2024-08-04_10-28-09.webp"></p>
+<p>在<code>右边</code>选择视频，<code>双击</code>即可播放，<code>单击</code>即可修改。</p>
+<hr>
+<p>这里，右键，即可选择想修改的<code>视频封面</code>，也就是<code>缩略图</code></p>
+<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-46.webp" alt="Snipaste_2024-08-04_10-28-46.webp"></p>
+<p>修改完成后，点击此处，即可保存更改。</p>
+<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-30.webp" alt="Snipaste_2024-08-04_10-28-30.webp"></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>官网：<a href="https://www.mp3tag.de/en/download.html">https://www.mp3tag.de/en/download.html</a></p>
+<p><a href="https://www.mp3tag.de/en/download.html">Mp3tag - Download</a></p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>信息修改</tag>
+        <tag>视频</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一挑四！全网SVIP无损音乐，随便下！</title>
     <url>/2024/05/12/music_download/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>免费的音乐工具我遇见过很多款！</p>
@@ -1826,34 +1907,40 @@
       </tags>
   </entry>
   <entry>
-    <title>mp3tag封面替换，信息修改！</title>
-    <url>/2024/08/25/mp3tag/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><p><a href="https://www.mp3tag.de/en/download.html">Mp3tag - Download</a></p>
-<aside>
-😀 这里写文章的前言：
-Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以编辑的信息，视频封面等
-</aside>
+    <title>ODE多功能工具箱</title>
+    <url>/2024/09/07/ode/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在我下载某学习资料的时候啊,百度网盘真的是不给力啊!</p>
+<p>这个下载速度实在是,太慢了,实在是受不了.</p>
+<p>但是有身为一个资深的白嫖党,这我肯定不能啊,所以我稍微动用了一下技术,这好了,成功让我拿到了百度网盘的解析链接.</p>
+<p>只不过作者的服务器太小了,让后资金也不足,哎,可惜了!但还是能用!</p>
+<h1 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h1><p>一款由窝长大佬开发并长期维护的某度网盘解析下载工具，超级良心的一款难得的下载工具，很少有这种好工具了，之前的版本失效了，不过也能用，不限速拉满，主要看你个人带宽哈，而最近窝长大大，又宣布更新了，经过了大佬的再次整活，此款多功能助手再度复活！！！这么说吧，即使开了某会员，也未必有这么快！！！ </p>
+<p>此次更新的主要几个点：</p>
+<p>1、高速下载恢复了，优化的越来越好了，看个人网速，依然能够体验到不错的下载速度，怎么说都好，相比某度的几K每秒，强太多了有木有~</p>
+<p>2、打包下载功能暂时被搁置，目前只能一个一个下载资源，不过完全不影响使用，作者也会在接下来的版本，继续优化。</p>
+<p>3、可能会遇到小众资源以K速下载，只是小众而已下载速度受限，但大部分资源仍然可以高速下载。</p>
+<h1 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h1><p>我使用了一下,这个下载效果也是很不错的.</p>
+<p><img src="/2024/09/07/ode/1.png" alt="下载展示"></p>
+<p>只需要<strong>粘贴分享的链接</strong>即可<code>食用</code></p>
+<p>就像这样子:<br><img src="/2024/09/07/ode/2.png" alt="分享链接"></p>
+<p>这个也是很不错的,但是目前打包功能已经用不了了,因为作者的服务器不行了,哎!</p>
+<p>看看下载的效果:</p>
+<p><img src="/2024/09/07/ode/3.png" alt="下载的视频"></p>
+<p>最后再看一下,是否能<code>流畅播放</code>:</p>
+<p><img src="/2024/09/07/ode/4.png" alt="播放"></p>
+<h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>这个也是非常不错的,良心推荐</p>
+<p>既不想让跟多人用,因为作者服务器不信,我怕崩了,又怕需要这个工具的人又看不到,哎!</p>
+<p>123网盘：<a href="https://www.123pan.com/s/qEbeVv-C9y63.html">https://www.123pan.com/s/qEbeVv-C9y63.html</a></p>
+<a href="123%E7%BD%91%E7%9B%98,owo,https://www.123pan.com/s/qEbeVv-C9y63.html" title target></a>
 
-<h1 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h1><p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-25-34.webp" alt="Snipaste_2024-08-04_10-25-34.webp"></p>
-<p>封面如此，可以替换的信息在左侧。</p>
-<h2 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h2><p>点击这个按钮，即可打开想<code>修改的文件目录</code></p>
-<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-09.webp" alt="Snipaste_2024-08-04_10-28-09.webp"></p>
-<p>在<code>右边</code>选择视频，<code>双击</code>即可播放，<code>单击</code>即可修改。</p>
-<hr>
-<p>这里，右键，即可选择想修改的<code>视频封面</code>，也就是<code>缩略图</code></p>
-<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-46.webp" alt="Snipaste_2024-08-04_10-28-46.webp"></p>
-<p>修改完成后，点击此处，即可保存更改。</p>
-<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-30.webp" alt="Snipaste_2024-08-04_10-28-30.webp"></p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>官网：<a href="https://www.mp3tag.de/en/download.html">https://www.mp3tag.de/en/download.html</a></p>
-<p><a href="https://www.mp3tag.de/en/download.html">Mp3tag - Download</a></p>
-</div>]]></content>
+<p>迅雷网盘：<a href="https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#">https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#</a></p>
+<a href="%E8%BF%85%E9%9B%B7%E7%BD%91%E7%9B%98,owo,https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#" title target></a></div>]]></content>
       <categories>
         <category>硬核科技</category>
       </categories>
       <tags>
         <tag>电脑软件</tag>
-        <tag>信息修改</tag>
-        <tag>视频</tag>
+        <tag>工具</tag>
+        <tag>百度网盘</tag>
       </tags>
   </entry>
   <entry>
@@ -1896,43 +1983,6 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>ODE多功能工具箱</title>
-    <url>/2024/09/07/ode/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在我下载某学习资料的时候啊,百度网盘真的是不给力啊!</p>
-<p>这个下载速度实在是,太慢了,实在是受不了.</p>
-<p>但是有身为一个资深的白嫖党,这我肯定不能啊,所以我稍微动用了一下技术,这好了,成功让我拿到了百度网盘的解析链接.</p>
-<p>只不过作者的服务器太小了,让后资金也不足,哎,可惜了!但还是能用!</p>
-<h1 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h1><p>一款由窝长大佬开发并长期维护的某度网盘解析下载工具，超级良心的一款难得的下载工具，很少有这种好工具了，之前的版本失效了，不过也能用，不限速拉满，主要看你个人带宽哈，而最近窝长大大，又宣布更新了，经过了大佬的再次整活，此款多功能助手再度复活！！！这么说吧，即使开了某会员，也未必有这么快！！！ </p>
-<p>此次更新的主要几个点：</p>
-<p>1、高速下载恢复了，优化的越来越好了，看个人网速，依然能够体验到不错的下载速度，怎么说都好，相比某度的几K每秒，强太多了有木有~</p>
-<p>2、打包下载功能暂时被搁置，目前只能一个一个下载资源，不过完全不影响使用，作者也会在接下来的版本，继续优化。</p>
-<p>3、可能会遇到小众资源以K速下载，只是小众而已下载速度受限，但大部分资源仍然可以高速下载。</p>
-<h1 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h1><p>我使用了一下,这个下载效果也是很不错的.</p>
-<p><img src="/2024/09/07/ode/1.png" alt="下载展示"></p>
-<p>只需要<strong>粘贴分享的链接</strong>即可<code>食用</code></p>
-<p>就像这样子:<br><img src="/2024/09/07/ode/2.png" alt="分享链接"></p>
-<p>这个也是很不错的,但是目前打包功能已经用不了了,因为作者的服务器不行了,哎!</p>
-<p>看看下载的效果:</p>
-<p><img src="/2024/09/07/ode/3.png" alt="下载的视频"></p>
-<p>最后再看一下,是否能<code>流畅播放</code>:</p>
-<p><img src="/2024/09/07/ode/4.png" alt="播放"></p>
-<h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>这个也是非常不错的,良心推荐</p>
-<p>既不想让跟多人用,因为作者服务器不信,我怕崩了,又怕需要这个工具的人又看不到,哎!</p>
-<p>123网盘：<a href="https://www.123pan.com/s/qEbeVv-C9y63.html">https://www.123pan.com/s/qEbeVv-C9y63.html</a></p>
-<a href="123%E7%BD%91%E7%9B%98,owo,https://www.123pan.com/s/qEbeVv-C9y63.html" title target></a>
-
-<p>迅雷网盘：<a href="https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#">https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#</a></p>
-<a href="%E8%BF%85%E9%9B%B7%E7%BD%91%E7%9B%98,owo,https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#" title target></a></div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>电脑软件</tag>
-        <tag>百度网盘</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>pdf修复工具</title>
     <url>/2024/07/16/pdf-repalr/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>分享两款Word修复和PDF修复工具。</p>
@@ -1961,8 +2011,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -1986,8 +2036,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
         <tag>实用推荐</tag>
       </tags>
   </entry>
@@ -2091,35 +2141,6 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>使用works制作随机图!</title>
-    <url>/2024/10/26/suijip/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><p>随机图的轮子其实网上有不少了，但基本都需要一台服务器，或者用别人提供的服务。</p>
-<p>但其实托管图片获取直链还是比较简单的，所以想着用 Cloudflare Workers 在直链中随机选一个，来搭建一个私人的随机图片服务。</p>
-<h2 id="你需要"><a href="#你需要" class="headerlink" title="你需要"></a>你需要</h2><ul>
-<li>一个 Cloudflare 账号</li>
-<li>一堆图片直链</li>
-</ul>
-<h2 id="图片直链"><a href="#图片直链" class="headerlink" title="图片直链"></a>图片直链</h2><p>不少图床都提供直链服务，比如 <a href="https://sm.ms/">sm.ms</a>（免费版单文件上限 5MB，速度很快），或者 <a href="https://img.vim-cn.com/">img.vim-cn.com</a>（单文件上限 50MB，国内速度一般）。</p>
-<p>或者，如果你对这些公共的服务不太放心的话，一个 GitHub Repo 也是不错的选择。</p>
-<p>总之，只需要一个直链，方法很多，自己灵活选择。</p>
-<h2 id="部署-Workers"><a href="#部署-Workers" class="headerlink" title="部署 Workers"></a>部署 Workers</h2><p>方法不多说，网上一大堆，下面直接贴代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">addEventListener(&#x27;fetch&#x27;, event =&gt; &#123;</span><br><span class="line">    event.respondWith(handleRequest(event.request))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">async function handleRequest(request) &#123;</span><br><span class="line"></span><br><span class="line">	var background_urls = [</span><br><span class="line">	&#x27;https://w.wallhaven.cc/full/ey/wallhaven-eymzjk.jpg&#x27;,</span><br><span class="line">	&#x27;https://w.wallhaven.cc/full/j8/wallhaven-j8rk95.png&#x27;</span><br><span class="line">	]</span><br><span class="line">	var index = Math.floor((Math.random()*background_urls.length));</span><br><span class="line">	res = await fetch(background_urls[index])</span><br><span class="line">    return new Response(res.body, &#123;</span><br><span class="line">        headers: &#123; &#x27;content-type&#x27;: &#x27;image/jpeg&#x27; &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVASCRIPT</span><br></pre></td></tr></table></figure>
-
-<p><code>background_urls</code> 是一个保存直链的数组，将所有你想随机的图片加入进去即可。</p>
-<p>P.S. 没有学过 Javascript，临时拼凑而成，希望有大佬可以优化地更好。</p>
-<h1 id="我的随机图"><a href="#我的随机图" class="headerlink" title="我的随机图:"></a>我的随机图:</h1><p><img src="https://webp.liyy.us.kg/" alt="网址https://webp.liyy.us.kg/"></p>
-</div>]]></content>
-      <categories>
-        <category>实用技巧</category>
-      </categories>
-      <tags>
-        <tag>Cloudflare</tag>
-        <tag>works</tag>
-        <tag>壁纸</tag>
-        <tag>随机图</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>神奇应用!什么都能搜!</title>
     <url>/2024/06/23/sqyy/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -2157,6 +2178,132 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>工具</tag>
         <tag>安卓应用</tag>
         <tag>app</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用works制作随机图!</title>
+    <url>/2024/10/26/suijip/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><p>随机图的轮子其实网上有不少了，但基本都需要一台服务器，或者用别人提供的服务。</p>
+<p>但其实托管图片获取直链还是比较简单的，所以想着用 Cloudflare Workers 在直链中随机选一个，来搭建一个私人的随机图片服务。</p>
+<h2 id="你需要"><a href="#你需要" class="headerlink" title="你需要"></a>你需要</h2><ul>
+<li>一个 Cloudflare 账号</li>
+<li>一堆图片直链</li>
+</ul>
+<h2 id="图片直链"><a href="#图片直链" class="headerlink" title="图片直链"></a>图片直链</h2><p>不少图床都提供直链服务，比如 <a href="https://sm.ms/">sm.ms</a>（免费版单文件上限 5MB，速度很快），或者 <a href="https://img.vim-cn.com/">img.vim-cn.com</a>（单文件上限 50MB，国内速度一般）。</p>
+<p>或者，如果你对这些公共的服务不太放心的话，一个 GitHub Repo 也是不错的选择。</p>
+<p>总之，只需要一个直链，方法很多，自己灵活选择。</p>
+<h2 id="部署-Workers"><a href="#部署-Workers" class="headerlink" title="部署 Workers"></a>部署 Workers</h2><p>方法不多说，网上一大堆，下面直接贴代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">addEventListener(&#x27;fetch&#x27;, event =&gt; &#123;</span><br><span class="line">    event.respondWith(handleRequest(event.request))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">async function handleRequest(request) &#123;</span><br><span class="line"></span><br><span class="line">	var background_urls = [</span><br><span class="line">	&#x27;https://w.wallhaven.cc/full/ey/wallhaven-eymzjk.jpg&#x27;,</span><br><span class="line">	&#x27;https://w.wallhaven.cc/full/j8/wallhaven-j8rk95.png&#x27;</span><br><span class="line">	]</span><br><span class="line">	var index = Math.floor((Math.random()*background_urls.length));</span><br><span class="line">	res = await fetch(background_urls[index])</span><br><span class="line">    return new Response(res.body, &#123;</span><br><span class="line">        headers: &#123; &#x27;content-type&#x27;: &#x27;image/jpeg&#x27; &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVASCRIPT</span><br></pre></td></tr></table></figure>
+
+<p><code>background_urls</code> 是一个保存直链的数组，将所有你想随机的图片加入进去即可。</p>
+<p>P.S. 没有学过 Javascript，临时拼凑而成，希望有大佬可以优化地更好。</p>
+<h1 id="我的随机图"><a href="#我的随机图" class="headerlink" title="我的随机图:"></a>我的随机图:</h1><p><img src="https://webp.liyy.us.kg/" alt="网址https://webp.liyy.us.kg/"></p>
+</div>]]></content>
+      <categories>
+        <category>实用技巧</category>
+      </categories>
+      <tags>
+        <tag>Cloudflare</tag>
+        <tag>works</tag>
+        <tag>壁纸</tag>
+        <tag>随机图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TVBOX 配置两端通用</title>
+    <url>/2024/10/27/tvbox/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="TV版本"><a href="#TV版本" class="headerlink" title="TV版本"></a>TV版本</h1><h2 id="安装TVBOX"><a href="#安装TVBOX" class="headerlink" title="安装TVBOX"></a>安装TVBOX</h2><p>安装完以后什么都无法观看-需要配置地址<br><img src="/2024/10/27/tvbox/1.webp"></p>
+<h2 id="TVBOX配置地址"><a href="#TVBOX配置地址" class="headerlink" title="TVBOX配置地址"></a>TVBOX配置地址</h2><p>首先打开右上角的设置按钮</p>
+<p>选中配置地址<br><img src="/2024/10/27/tvbox/3.webp"></p>
+<p>获取存储权限-提示获取成功<br><img src="/2024/10/27/tvbox/4.webp"></p>
+<p>然后用手机或者电脑扫描二维码或者打开以上地址填入数据源地址即可</p>
+<h2 id="TVBOX使用"><a href="#TVBOX使用" class="headerlink" title="TVBOX使用"></a>TVBOX使用</h2><p>如果失效了可以自定义数据源(推荐T4聚合)<br><img src="/2024/10/27/tvbox/5.webp"></p>
+<p>也可以配置其他参数-自行摸索</p>
+<h2 id="接口链接"><a href="#接口链接" class="headerlink" title="接口链接"></a>接口链接</h2><p>TVBox各路大佬配置（排名不分先后）：</p>
+<p>（1）唐三：<a href="https://hutool.ml/tang">https://hutool.ml/tang</a></p>
+<p>（2）Fongmi：<a href="https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json">https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json</a></p>
+<p>（3）俊于：<a href="http://home.jundie.top:81/top98.json">http://home.jundie.top:81/top98.json</a></p>
+<p>（4）饭太硬：http:&#x2F;&#x2F;饭太硬.ga&#x2F;x&#x2F;o.json</p>
+<p>（5）霜辉月明py：<a href="https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json">https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json</a></p>
+<p>（6）小雅dr：<a href="http://drpy.site/js1">http://drpy.site/js1</a></p>
+<p>（7）菜妮丝：<a href="https://tvbox.cainisi.cf/">https://tvbox.cainisi.cf</a></p>
+<p>（8）神器：https:&#x2F;&#x2F;神器每日推送.tk&#x2F;pz.json</p>
+<p>（9）巧技：<a href="http://pandown.pro/tvbox/tvbox.json">http://pandown.pro/tvbox/tvbox.json</a></p>
+<p>（10）刚刚：http:&#x2F;&#x2F;刚刚.live&#x2F;猫</p>
+<p>（11）吾爱有三：<a href="http://52bsj.vip:98/0805">http://52bsj.vip:98/0805</a></p>
+<p>（12）潇洒：<a href="https://download.kstore.space/download/2863/01.txt">https://download.kstore.space/download/2863/01.txt</a></p>
+<p>（13）佰欣园：<a href="https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt">https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt</a></p>
+<p>（14）胖虎：<a href="https://notabug.org/imbig66/tv-spider-man/raw/master/%E9%85%8D%E7%BD%AE/0801.json">https://notabug.org/imbig66/tv-spider-man/raw/master/配置/0801.json</a></p>
+<p>（15）云星日记：<a href="https://maoyingshi.cc/tiaoshizhushou/1.txt">https://maoyingshi.cc/tiaoshizhushou/1.txt</a></p>
+<p>（16）Yoursmile7：<a href="https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json">https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json</a></p>
+<p>（17）BOX：<a href="http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM=:0">http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0</a></p>
+<p>（18）哔哩学习：<a href="http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4=:0">http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0</a></p>
+<p>（19）UndCover：<a href="https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json">https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json</a></p>
+<p>（20）木极：<a href="https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt">https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt</a></p>
+<p>（21）Ray：<a href="https://dxawi.github.io/0/0.json">https://dxawi.github.io/0/0.json</a></p>
+<p>（22）甜蜜：<a href="https://kebedd69.github.io/TVbox-interface/py%E7%94%9C%E8%9C%9C.json">https://kebedd69.github.io/TVbox-interface/py甜蜜.json</a></p>
+<p>（23）52bsj：<a href="http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM=:0">http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0</a></p>
+<p>（24）肥猫：http:&#x2F;&#x2F;我不是.肥猫.love:63</p>
+<h1 id="PC版本"><a href="#PC版本" class="headerlink" title="PC版本"></a>PC版本</h1><h2 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h2><p>ZyPlayer v3.3.1 中文版 免费全网影视播放器</p>
+<p><strong>GitHub原文地址</strong>：</p>
+<a href="GITHUB,github,ovo,https://github.com/Hiram-Wong/ZyPlayer" title target></a>
+
+<p><strong>使用方法：</strong><br>安装软件后，依次点开设置 -&gt; 基础配置 -&gt; 其他 -&gt; 数据管理 -&gt; 一键配置 -&gt; 软件接口然后填入<strong>订阅地址</strong>，就能正常使用了。</p>
+<p><strong>专用接口源:</strong></p>
+<blockquote>
+<p>接口分享：<a href="http://xiaoguozitv.cn/catys/zyplay.json">http://xiaoguozitv.cn/catys/zyplay.json</a></p>
+<p>订阅地址：<a href="https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json">https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json</a></p>
+<p>订阅地址：<a href="https://raw.kgithub.com/cddehsy/zyjs/main/zy.json">https://raw.kgithub.com/cddehsy/zyjs/main/zy.json</a></p>
+</blockquote>
+<p><strong>以上地址选第一个即可，遇到失效了就换！</strong></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142446y8y6kys6dzpsl6ko.jpg" alt="DM_20240105142311_003.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142455zu6ze27ii2zru1z5.jpg" alt="DM_20240105142311_004.jpg"></p>
+<p><strong>| 软件介绍：</strong></p>
+<p><strong>ZY Player开源播放神器复活，更强了</strong></p>
+<p>用过 ZY Player 的都知道，这是一个免费开放源的播放器软件，兼容各种资源网接口，支持看视频、直播，而且这款软件已经存在了好几年了，只能说很强。</p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142753vkdat8lud1x4adu2.jpg" alt="DM_20240105142311_005.jpg"></p>
+<p>新版本颜值更高，而且功能都有很大的提升，不仅更强，而且整体界面也改版了。</p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142829d498lq8dv1ly8l8d.jpg" alt="DM_20240105142311_006.jpg"></p>
+<p>ZyPlayer跟之前的一样，专注于资源网接口，同样可以选择不同的接口源，点击左上角就可以切换接口源。</p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142901ob03bzo3gnnu03n6.jpg" alt="DM_20240105142311_007.jpg"></p>
+<p>而且不同源站，同样支持选择分类，分类也做得非常详细，当然还有很多细节值得体验。</p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142950gx6pcpqv5el5uvzc.jpg" alt="DM_20240105142311_008.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142956dw07ds9dni7rmw7k.jpg" alt="DM_20240105142311_009.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143003sfe89shs5szs37m5.jpg" alt="DM_20240105142311_010.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143015bysasx47paxbqa0c.jpg" alt="DM_20240105142311_011.jpg"></p>
+<p>基于 vue 全家桶 + tdesign + electron 开发；主题色：薄荷绿。</p>
+<p><strong>已有功能</strong></p>
+<ul>
+<li>全平台支持 Windows、Mac、Linux</li>
+<li>适配黑暗模式</li>
+<li>支持资源站 cms（json 接口）</li>
+<li>支持 IPTV（m3u、genre）及电子节目单</li>
+<li>支持主流视频平台解析（解析页面有个小彩蛋，可在代码里自行探索）</li>
+<li>老板键，一键隐藏</li>
+<li>播放器软解</li>
+<li>…</li>
+</ul>
+<p><strong>|</strong> <strong>部分功能详细截图：</strong></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143042j6qq226lej5qzt9j.jpg" alt="DM_20240105142311_012.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143056tejo53b313b6p5b6.jpg" alt="DM_20240105142311_013.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143112d1s8fvzab141j41i.jpg" alt="DM_20240105142311_014.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143125sb7jpmasjq77ztts.jpg" alt="DM_20240105142311_015.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143139rc6qxm4cxp6xlbyq.jpg" alt="DM_20240105142311_016.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143153fo9x4a9jkraia9v4.jpg" alt="DM_20240105142311_017.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143206as4bzb82jzk70jww.jpg" alt="DM_20240105142311_018.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143217c318rnm19gl2sgsw.jpg" alt="DM_20240105142311_019.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143228ynzbo2rsyopbmrz2.jpg" alt="DM_20240105142311_020.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143244rqzagtvihvqzg33d.jpg" alt="DM_20240105142311_021.jpg"></p>
+<h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><p>夸克:</p>
+<a href="%E5%A4%B8%E5%85%8B,%E7%BD%91%E7%9B%98,%E8%BD%AC%E5%AD%98,https://pan.quark.cn/s/4e43e04ec7be" title target></a></div>]]></content>
+      <categories>
+        <category>影视资源</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>安卓应用</tag>
+        <tag>推荐</tag>
+        <tag>影视</tag>
       </tags>
   </entry>
   <entry>
@@ -2206,6 +2353,70 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>工具</tag>
         <tag>安卓应用</tag>
         <tag>app</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
+    <url>/2024/07/17/wcn-rs/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+这篇文章摘抄于微信公众号！
+
+</aside>
+
+<p>刷脸支付、刷脸打卡、刷脸门禁……如今人脸识别的应用越来越普及，很多人几乎每天都会刷脸，甚至在部分健身馆、游泳馆的更衣室也装上了人脸识别设备。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(1).webp" alt="640 (1).webp"></p>
+<p><strong>而你以为识别的只是一张脸，殊不知可能上半身全照进去了！</strong></p>
+<p>这两天，#建议大家人脸识别要穿上衣服#的话题登上热搜。不穿衣服进行人脸识别被后台审核人员看光光？网友在相关词条下对隐私泄露表示担忧。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(2).webp" alt="640 (2).webp"></p>
+<p>博主@知名青年小新 发视频提醒，大家使用App人脸识别功能时一定要穿衣服。视频内容显示：</p>
+<p>如果你经常在洗澡或者是上厕所的时候，进行人脸认证或者查看银行卡余额，你以为手机只会扫描到你的脸部吗？实际上后台的审核人员是能看到你整个上半身的。特别是当你没有穿衣服做各种刷脸认证的时候，简直不敢想。并且，这些视频是要一直保存在网络上的。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(3).webp" alt="640 (3).webp"></p>
+<p>人脸识别泄露隐私的问题早有争论。</p>
+<p>此前，教育博主@法小岛 发微博表示，摄像头采集的不仅仅是被识别者人脸部分，后台还会有审核人员看到……</p>
+<p><img src="/2024/07/17/wcn-rs/640.jpg" alt="640.jpg"></p>
+<p>在该博主评论区，有网友介绍，实际上就是用前置摄像头拍一张照片，只是图形界面只给你显示人脸部分。所以锁屏、解锁或者支付宝人脸支付等自动识别的都是机器判断。但是需要人工审核的就得注意点了，像银行二级账户开户人脸识别，证券App开户这种就是要人工审核的。</p>
+<p>另一数码博主@长安数码君 也称，有从事后台审核的朋友对他说，在审核工作时：“经常会看到很多人在洗澡的时候、在和“另一半抱在一起的时候”、在没穿衣服的时候、在进行各种奇奇怪怪动作的时候进行人脸识别。”</p>
+<p>该博主还放了一张用户看到的图片和人脸识别后台所显示图片的对比图，更加清晰详尽地展示了人脸识别后台的“真相”。</p>
+<p><img src="/2024/07/17/wcn-rs/640.png" alt="640.png"></p>
+<p>早在2019年，新浪新闻还报道了一则因人脸识别而破解的命案。报道称，一男子杀害女友后，借用女友的身份在网上申请小额贷款。但贷款APP要求人脸识别、对着屏幕眨眼睛，该男子只好放弃。</p>
+<p>而此举却引起了网贷App工作人员的注意，转入人工审核时发现异常，在7秒的“活体识别”的视频中，当事人无任何反应、脖子上也有勒痕、面部有淤青。工作人员怀疑申请人被害，赶紧报了警。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(5).webp" alt="640 (5).webp"></p>
+<p>可见，需要人脸动态识别（比如眨眼、摇头等）的APP，的确有人工审核。</p>
+<p>并且，人脸识别其实调用的是手机的前置摄像头，而摄像头的取景并非仅仅是头部，而是涵盖了摄像头视野覆盖的所有区域。</p>
+<p>也即是说，大家在进行人脸识别的时候，不论人脸框内还是框外，只要是在摄像头范围内的画面，全部都会被拍到。</p>
+<p>小米手机也曾表示，人脸验证时，其实整个上半身都会被应用获取。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(4).webp" alt="640 (4).webp"></p>
+<p>得知此事后，网友纷纷表示“社死”。</p>
+<p>有网友称，自己经常在洗澡的时候解锁；还有人表示，会在蹲厕所时进行人脸识别。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(5)%201.webp" alt="640 (5).webp"></p>
+<p>而除了感到社死外，有不少网友认为这件事“很严重”“感到隐私被侵犯”。人脸识别系统后台人工审核时，平台为什么不提醒用户是可以看到摄像头全景的？</p>
+<p>据2021年8月1日起施行的《最高人民法院关于审理使用人脸识别技术处理个人信息相关民事案件适用法律若干问题的规定》明确规定，信息处理者处理人脸信息未公开处理人脸信息的规则或者未明示处理的目的、方式、范围，人民法院应当认定属于侵害自然人人格权益的行为。</p>
+<p>所以，若App未明示人脸识别范围，或已涉及侵害用户权益。</p>
+<p>不过，大家也不必过于惊慌。</p>
+<p>曾有专业人士介绍，现在提供人脸识别技术的头部企业和大企业采用的都是隐私计算技术，只会向客户提供脱敏特征码用于比对，不会将图像送到后台。</p>
+<p>一般而言，大公司、银行、政府、公安等在人脸识别的应用上会更规范。对于网络上盛传的后台人工审核时能看到图片的情况，有专家表示这种操作是“不合规”的。</p>
+<p>此外，很多网友担心后台会存储自己的照片信息。</p>
+<p>对此，某手机厂商曾表示，面容ID数据不会离开设备，也永远不会备份到iCloud或其他任意位置。</p>
+<p>更早前，腾讯游戏针对“人脸识别”等一系列问题作出解答，称人脸识别会严格遵照主管部门规定，最大限度保障用户隐私安全。用于验证的用户身份信息不会被记录、存储，或用于除公安权威数据平台数据源验证以外的任何其他用途。相关数据均通过加密处理，在与公安权威数据平台数据源比对的验证过程中，全程均为机器识别，没有人工参与。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(6).webp" alt="640 (6).webp"></p>
+<p>实际上，业内人士表示一般的企业都不会在后台存储用户的原始图像。单从存储和传输等方面的成本上看，对公司而言，把原始图像送往后台也是不合算的做法。</p>
+<p>而如果一些企业需要通过大量的人像数据来进行AI和机器学习的训练，有存储用户原始图像的需求，那么他们往往只会存储头部的图像。因为过于复杂的背景和其他的图像信息会对机器学习的算法进行干扰，反而会造成人脸识别算法的不准确。</p>
+<p>需要注意的是，相关法规明确，使用人脸识别技术，不应过度索取个人信息。</p>
+<p>2023年8月，国家网信办公开发布《人脸识别技术应用安全管理规定（试行）（征求意见稿）》（以下简称“征求意见稿”）提到，使用人脸识别技术必须遵循“最少使用”和“最小存储”。</p>
+<p>其中，“最少使用”，即只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，方可使用人脸识别技术处理人脸信息。实现相同目的或者达到同等业务要求，存在其他非生物特征识别技术方案的，应当优先选择非生物特征识别技术方案；</p>
+<p>“最小存储”，即除法定条件或者取得个人单独同意外，人脸识别技术使用者不得保存人脸原始图像、图片、视频，经过匿名化处理的人脸信息除外。使用人脸识别技术处理人脸信息应当尽量避免采集与提供服务无关的人脸信息，无法避免的，应当及时删除或者进行匿名化处理。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(7).webp" alt="640 (7).webp"></p>
+<p>尽管法律法规对企业有制约作用，但无法保证整个流程中无人违规，因此建议大家首先选择知名企业App，非正规App则不要使用人脸识别功能。同时，在进行人脸识别时，注意个人隐私保护，务必衣着整齐。</p>
+<p>另外，由于人脸识别技术不同，市面上的设备种类繁多，广大用户往往无法确知敏感信息在前端的获取情况，在后端又能否真正实现加密保护或依法删除，希望有关部门能依据职责、形成合力，加强对人脸识别技术使用的监督检查，指导督促人脸识别技术使用者履行各项法定义务，及时发现安全隐患并督促限期整改，避免敏感个人信息安全风险失控蔓延。</p>
+<p>来源：电脑报，编辑：cc</p>
+</div>]]></content>
+      <categories>
+        <category>探究所以</category>
+      </categories>
+      <tags>
+        <tag>思考</tag>
+        <tag>探究所以</tag>
       </tags>
   </entry>
   <entry>
@@ -2371,196 +2582,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
+        <tag>电脑软件</tag>
         <tag>工具</tag>
-        <tag>电脑软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TVBOX 配置两端通用</title>
-    <url>/2024/10/27/tvbox/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="TV版本"><a href="#TV版本" class="headerlink" title="TV版本"></a>TV版本</h1><h2 id="安装TVBOX"><a href="#安装TVBOX" class="headerlink" title="安装TVBOX"></a>安装TVBOX</h2><p>安装完以后什么都无法观看-需要配置地址<br><img src="/2024/10/27/tvbox/1.webp"></p>
-<h2 id="TVBOX配置地址"><a href="#TVBOX配置地址" class="headerlink" title="TVBOX配置地址"></a>TVBOX配置地址</h2><p>首先打开右上角的设置按钮</p>
-<p>选中配置地址<br><img src="/2024/10/27/tvbox/3.webp"></p>
-<p>获取存储权限-提示获取成功<br><img src="/2024/10/27/tvbox/4.webp"></p>
-<p>然后用手机或者电脑扫描二维码或者打开以上地址填入数据源地址即可</p>
-<h2 id="TVBOX使用"><a href="#TVBOX使用" class="headerlink" title="TVBOX使用"></a>TVBOX使用</h2><p>如果失效了可以自定义数据源(推荐T4聚合)<br><img src="/2024/10/27/tvbox/5.webp"></p>
-<p>也可以配置其他参数-自行摸索</p>
-<h2 id="接口链接"><a href="#接口链接" class="headerlink" title="接口链接"></a>接口链接</h2><p>TVBox各路大佬配置（排名不分先后）：</p>
-<p>（1）唐三：<a href="https://hutool.ml/tang">https://hutool.ml/tang</a></p>
-<p>（2）Fongmi：<a href="https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json">https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json</a></p>
-<p>（3）俊于：<a href="http://home.jundie.top:81/top98.json">http://home.jundie.top:81/top98.json</a></p>
-<p>（4）饭太硬：http:&#x2F;&#x2F;饭太硬.ga&#x2F;x&#x2F;o.json</p>
-<p>（5）霜辉月明py：<a href="https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json">https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json</a></p>
-<p>（6）小雅dr：<a href="http://drpy.site/js1">http://drpy.site/js1</a></p>
-<p>（7）菜妮丝：<a href="https://tvbox.cainisi.cf/">https://tvbox.cainisi.cf</a></p>
-<p>（8）神器：https:&#x2F;&#x2F;神器每日推送.tk&#x2F;pz.json</p>
-<p>（9）巧技：<a href="http://pandown.pro/tvbox/tvbox.json">http://pandown.pro/tvbox/tvbox.json</a></p>
-<p>（10）刚刚：http:&#x2F;&#x2F;刚刚.live&#x2F;猫</p>
-<p>（11）吾爱有三：<a href="http://52bsj.vip:98/0805">http://52bsj.vip:98/0805</a></p>
-<p>（12）潇洒：<a href="https://download.kstore.space/download/2863/01.txt">https://download.kstore.space/download/2863/01.txt</a></p>
-<p>（13）佰欣园：<a href="https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt">https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt</a></p>
-<p>（14）胖虎：<a href="https://notabug.org/imbig66/tv-spider-man/raw/master/%E9%85%8D%E7%BD%AE/0801.json">https://notabug.org/imbig66/tv-spider-man/raw/master/配置/0801.json</a></p>
-<p>（15）云星日记：<a href="https://maoyingshi.cc/tiaoshizhushou/1.txt">https://maoyingshi.cc/tiaoshizhushou/1.txt</a></p>
-<p>（16）Yoursmile7：<a href="https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json">https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json</a></p>
-<p>（17）BOX：<a href="http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM=:0">http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0</a></p>
-<p>（18）哔哩学习：<a href="http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4=:0">http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0</a></p>
-<p>（19）UndCover：<a href="https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json">https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json</a></p>
-<p>（20）木极：<a href="https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt">https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt</a></p>
-<p>（21）Ray：<a href="https://dxawi.github.io/0/0.json">https://dxawi.github.io/0/0.json</a></p>
-<p>（22）甜蜜：<a href="https://kebedd69.github.io/TVbox-interface/py%E7%94%9C%E8%9C%9C.json">https://kebedd69.github.io/TVbox-interface/py甜蜜.json</a></p>
-<p>（23）52bsj：<a href="http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM=:0">http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0</a></p>
-<p>（24）肥猫：http:&#x2F;&#x2F;我不是.肥猫.love:63</p>
-<h1 id="PC版本"><a href="#PC版本" class="headerlink" title="PC版本"></a>PC版本</h1><h2 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h2><p>ZyPlayer v3.3.1 中文版 免费全网影视播放器</p>
-<p><strong>GitHub原文地址</strong>：</p>
-<a href="GITHUB,github,ovo,https://github.com/Hiram-Wong/ZyPlayer" title target></a>
-
-<p><strong>使用方法：</strong><br>安装软件后，依次点开设置 -&gt; 基础配置 -&gt; 其他 -&gt; 数据管理 -&gt; 一键配置 -&gt; 软件接口然后填入<strong>订阅地址</strong>，就能正常使用了。</p>
-<p><strong>专用接口源:</strong></p>
-<blockquote>
-<p>接口分享：<a href="http://xiaoguozitv.cn/catys/zyplay.json">http://xiaoguozitv.cn/catys/zyplay.json</a></p>
-<p>订阅地址：<a href="https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json">https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json</a></p>
-<p>订阅地址：<a href="https://raw.kgithub.com/cddehsy/zyjs/main/zy.json">https://raw.kgithub.com/cddehsy/zyjs/main/zy.json</a></p>
-</blockquote>
-<p><strong>以上地址选第一个即可，遇到失效了就换！</strong></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142446y8y6kys6dzpsl6ko.jpg" alt="DM_20240105142311_003.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142455zu6ze27ii2zru1z5.jpg" alt="DM_20240105142311_004.jpg"></p>
-<p><strong>| 软件介绍：</strong></p>
-<p><strong>ZY Player开源播放神器复活，更强了</strong></p>
-<p>用过 ZY Player 的都知道，这是一个免费开放源的播放器软件，兼容各种资源网接口，支持看视频、直播，而且这款软件已经存在了好几年了，只能说很强。</p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142753vkdat8lud1x4adu2.jpg" alt="DM_20240105142311_005.jpg"></p>
-<p>新版本颜值更高，而且功能都有很大的提升，不仅更强，而且整体界面也改版了。</p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142829d498lq8dv1ly8l8d.jpg" alt="DM_20240105142311_006.jpg"></p>
-<p>ZyPlayer跟之前的一样，专注于资源网接口，同样可以选择不同的接口源，点击左上角就可以切换接口源。</p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142901ob03bzo3gnnu03n6.jpg" alt="DM_20240105142311_007.jpg"></p>
-<p>而且不同源站，同样支持选择分类，分类也做得非常详细，当然还有很多细节值得体验。</p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142950gx6pcpqv5el5uvzc.jpg" alt="DM_20240105142311_008.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142956dw07ds9dni7rmw7k.jpg" alt="DM_20240105142311_009.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143003sfe89shs5szs37m5.jpg" alt="DM_20240105142311_010.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143015bysasx47paxbqa0c.jpg" alt="DM_20240105142311_011.jpg"></p>
-<p>基于 vue 全家桶 + tdesign + electron 开发；主题色：薄荷绿。</p>
-<p><strong>已有功能</strong></p>
-<ul>
-<li>全平台支持 Windows、Mac、Linux</li>
-<li>适配黑暗模式</li>
-<li>支持资源站 cms（json 接口）</li>
-<li>支持 IPTV（m3u、genre）及电子节目单</li>
-<li>支持主流视频平台解析（解析页面有个小彩蛋，可在代码里自行探索）</li>
-<li>老板键，一键隐藏</li>
-<li>播放器软解</li>
-<li>…</li>
-</ul>
-<p><strong>|</strong> <strong>部分功能详细截图：</strong></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143042j6qq226lej5qzt9j.jpg" alt="DM_20240105142311_012.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143056tejo53b313b6p5b6.jpg" alt="DM_20240105142311_013.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143112d1s8fvzab141j41i.jpg" alt="DM_20240105142311_014.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143125sb7jpmasjq77ztts.jpg" alt="DM_20240105142311_015.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143139rc6qxm4cxp6xlbyq.jpg" alt="DM_20240105142311_016.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143153fo9x4a9jkraia9v4.jpg" alt="DM_20240105142311_017.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143206as4bzb82jzk70jww.jpg" alt="DM_20240105142311_018.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143217c318rnm19gl2sgsw.jpg" alt="DM_20240105142311_019.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143228ynzbo2rsyopbmrz2.jpg" alt="DM_20240105142311_020.jpg"></p>
-<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143244rqzagtvihvqzg33d.jpg" alt="DM_20240105142311_021.jpg"></p>
-<h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><p>夸克:</p>
-<a href="%E5%A4%B8%E5%85%8B,%E7%BD%91%E7%9B%98,%E8%BD%AC%E5%AD%98,https://pan.quark.cn/s/4e43e04ec7be" title target></a></div>]]></content>
-      <categories>
-        <category>影视资源</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>安卓应用</tag>
-        <tag>推荐</tag>
-        <tag>影视</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
-    <url>/2024/07/17/wcn-rs/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-这篇文章摘抄于微信公众号！
-
-</aside>
-
-<p>刷脸支付、刷脸打卡、刷脸门禁……如今人脸识别的应用越来越普及，很多人几乎每天都会刷脸，甚至在部分健身馆、游泳馆的更衣室也装上了人脸识别设备。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(1).webp" alt="640 (1).webp"></p>
-<p><strong>而你以为识别的只是一张脸，殊不知可能上半身全照进去了！</strong></p>
-<p>这两天，#建议大家人脸识别要穿上衣服#的话题登上热搜。不穿衣服进行人脸识别被后台审核人员看光光？网友在相关词条下对隐私泄露表示担忧。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(2).webp" alt="640 (2).webp"></p>
-<p>博主@知名青年小新 发视频提醒，大家使用App人脸识别功能时一定要穿衣服。视频内容显示：</p>
-<p>如果你经常在洗澡或者是上厕所的时候，进行人脸认证或者查看银行卡余额，你以为手机只会扫描到你的脸部吗？实际上后台的审核人员是能看到你整个上半身的。特别是当你没有穿衣服做各种刷脸认证的时候，简直不敢想。并且，这些视频是要一直保存在网络上的。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(3).webp" alt="640 (3).webp"></p>
-<p>人脸识别泄露隐私的问题早有争论。</p>
-<p>此前，教育博主@法小岛 发微博表示，摄像头采集的不仅仅是被识别者人脸部分，后台还会有审核人员看到……</p>
-<p><img src="/2024/07/17/wcn-rs/640.jpg" alt="640.jpg"></p>
-<p>在该博主评论区，有网友介绍，实际上就是用前置摄像头拍一张照片，只是图形界面只给你显示人脸部分。所以锁屏、解锁或者支付宝人脸支付等自动识别的都是机器判断。但是需要人工审核的就得注意点了，像银行二级账户开户人脸识别，证券App开户这种就是要人工审核的。</p>
-<p>另一数码博主@长安数码君 也称，有从事后台审核的朋友对他说，在审核工作时：“经常会看到很多人在洗澡的时候、在和“另一半抱在一起的时候”、在没穿衣服的时候、在进行各种奇奇怪怪动作的时候进行人脸识别。”</p>
-<p>该博主还放了一张用户看到的图片和人脸识别后台所显示图片的对比图，更加清晰详尽地展示了人脸识别后台的“真相”。</p>
-<p><img src="/2024/07/17/wcn-rs/640.png" alt="640.png"></p>
-<p>早在2019年，新浪新闻还报道了一则因人脸识别而破解的命案。报道称，一男子杀害女友后，借用女友的身份在网上申请小额贷款。但贷款APP要求人脸识别、对着屏幕眨眼睛，该男子只好放弃。</p>
-<p>而此举却引起了网贷App工作人员的注意，转入人工审核时发现异常，在7秒的“活体识别”的视频中，当事人无任何反应、脖子上也有勒痕、面部有淤青。工作人员怀疑申请人被害，赶紧报了警。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(5).webp" alt="640 (5).webp"></p>
-<p>可见，需要人脸动态识别（比如眨眼、摇头等）的APP，的确有人工审核。</p>
-<p>并且，人脸识别其实调用的是手机的前置摄像头，而摄像头的取景并非仅仅是头部，而是涵盖了摄像头视野覆盖的所有区域。</p>
-<p>也即是说，大家在进行人脸识别的时候，不论人脸框内还是框外，只要是在摄像头范围内的画面，全部都会被拍到。</p>
-<p>小米手机也曾表示，人脸验证时，其实整个上半身都会被应用获取。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(4).webp" alt="640 (4).webp"></p>
-<p>得知此事后，网友纷纷表示“社死”。</p>
-<p>有网友称，自己经常在洗澡的时候解锁；还有人表示，会在蹲厕所时进行人脸识别。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(5)%201.webp" alt="640 (5).webp"></p>
-<p>而除了感到社死外，有不少网友认为这件事“很严重”“感到隐私被侵犯”。人脸识别系统后台人工审核时，平台为什么不提醒用户是可以看到摄像头全景的？</p>
-<p>据2021年8月1日起施行的《最高人民法院关于审理使用人脸识别技术处理个人信息相关民事案件适用法律若干问题的规定》明确规定，信息处理者处理人脸信息未公开处理人脸信息的规则或者未明示处理的目的、方式、范围，人民法院应当认定属于侵害自然人人格权益的行为。</p>
-<p>所以，若App未明示人脸识别范围，或已涉及侵害用户权益。</p>
-<p>不过，大家也不必过于惊慌。</p>
-<p>曾有专业人士介绍，现在提供人脸识别技术的头部企业和大企业采用的都是隐私计算技术，只会向客户提供脱敏特征码用于比对，不会将图像送到后台。</p>
-<p>一般而言，大公司、银行、政府、公安等在人脸识别的应用上会更规范。对于网络上盛传的后台人工审核时能看到图片的情况，有专家表示这种操作是“不合规”的。</p>
-<p>此外，很多网友担心后台会存储自己的照片信息。</p>
-<p>对此，某手机厂商曾表示，面容ID数据不会离开设备，也永远不会备份到iCloud或其他任意位置。</p>
-<p>更早前，腾讯游戏针对“人脸识别”等一系列问题作出解答，称人脸识别会严格遵照主管部门规定，最大限度保障用户隐私安全。用于验证的用户身份信息不会被记录、存储，或用于除公安权威数据平台数据源验证以外的任何其他用途。相关数据均通过加密处理，在与公安权威数据平台数据源比对的验证过程中，全程均为机器识别，没有人工参与。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(6).webp" alt="640 (6).webp"></p>
-<p>实际上，业内人士表示一般的企业都不会在后台存储用户的原始图像。单从存储和传输等方面的成本上看，对公司而言，把原始图像送往后台也是不合算的做法。</p>
-<p>而如果一些企业需要通过大量的人像数据来进行AI和机器学习的训练，有存储用户原始图像的需求，那么他们往往只会存储头部的图像。因为过于复杂的背景和其他的图像信息会对机器学习的算法进行干扰，反而会造成人脸识别算法的不准确。</p>
-<p>需要注意的是，相关法规明确，使用人脸识别技术，不应过度索取个人信息。</p>
-<p>2023年8月，国家网信办公开发布《人脸识别技术应用安全管理规定（试行）（征求意见稿）》（以下简称“征求意见稿”）提到，使用人脸识别技术必须遵循“最少使用”和“最小存储”。</p>
-<p>其中，“最少使用”，即只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，方可使用人脸识别技术处理人脸信息。实现相同目的或者达到同等业务要求，存在其他非生物特征识别技术方案的，应当优先选择非生物特征识别技术方案；</p>
-<p>“最小存储”，即除法定条件或者取得个人单独同意外，人脸识别技术使用者不得保存人脸原始图像、图片、视频，经过匿名化处理的人脸信息除外。使用人脸识别技术处理人脸信息应当尽量避免采集与提供服务无关的人脸信息，无法避免的，应当及时删除或者进行匿名化处理。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(7).webp" alt="640 (7).webp"></p>
-<p>尽管法律法规对企业有制约作用，但无法保证整个流程中无人违规，因此建议大家首先选择知名企业App，非正规App则不要使用人脸识别功能。同时，在进行人脸识别时，注意个人隐私保护，务必衣着整齐。</p>
-<p>另外，由于人脸识别技术不同，市面上的设备种类繁多，广大用户往往无法确知敏感信息在前端的获取情况，在后端又能否真正实现加密保护或依法删除，希望有关部门能依据职责、形成合力，加强对人脸识别技术使用的监督检查，指导督促人脸识别技术使用者履行各项法定义务，及时发现安全隐患并督促限期整改，避免敏感个人信息安全风险失控蔓延。</p>
-<p>来源：电脑报，编辑：cc</p>
-</div>]]></content>
-      <categories>
-        <category>探究所以</category>
-      </categories>
-      <tags>
-        <tag>思考</tag>
-        <tag>探究所以</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>wyy代理启动!直接SVIP</title>
-    <url>/2024/10/02/win-wyydaili/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="QtUnblockNeteaseMusic"><a href="#QtUnblockNeteaseMusic" class="headerlink" title="QtUnblockNeteaseMusic"></a>QtUnblockNeteaseMusic</h1><p>【软件版本】v1.5.3<br>【测试机型】Windows<br>【软件大小】24.07M<br>【软件介绍】<br>一款解锁解锁某抑云中无法播放的音乐工具，基于UnblockNeteaseMusic，软件提供了一种自建代理节点的方式让不可用的歌曲包含多个听歌源。<br>【使用教程】<br>第一部下载好压缩包并解压</p>
-<p>第二部点开解压出来的文件夹双击点开，找到QtUnblockNeteaseMusic.exe文件右键以管理员身份运行</p>
-<p><img src="/2024/10/02/win-wyydaili/1.webp" alt="打开"></p>
-<p>第三部运行后选择上边的高级按钮一安装证书，按照步骤安装即可</p>
-<p><img src="/2024/10/02/win-wyydaili/2.webp" alt="打开"></p>
-<p><img src="/2024/10/02/win-wyydaili/3.webp" alt="打开"></p>
-<p>第四部将工具内的端口什么啥的全部删除再去点击应用</p>
-<p><img src="/2024/10/02/win-wyydaili/6.webp" alt="打开"></p>
-<p>第五部打开网易云一设置一工具，找到http代理选择自定义代理，下边选择http代理，服务器填127.0.0.1，端口填8080，之后点击测试显示可用就可以了</p>
-<p><img src="/2024/10/02/win-wyydaili/4.webp" alt="打开"></p>
-<p><img src="/2024/10/02/win-wyydaili/5.webp" alt="打开"></p>
-<p>最后关闭重新打开网易云会发现那些需要会员的歌曲前边没有会员标识了选择会员歌曲也能完整播放</p>
-<p>注:<br>想要听会员歌曲必须后台运行QtUnblockNeteaseMusic.exe这个工具，也可以直接在高级一高级<br>选项一开机自启</p>
-<p>亲测可用哦</p>
-<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><a href="123pan,OvO,https://www.123684.com/s/zlIyVv-nWgfd" title target></a></div>]]></content>
-      <categories>
-        <category>实用推荐</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>音乐</tag>
-        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -2603,9 +2626,36 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
+        <tag>电脑软件</tag>
         <tag>工具</tag>
+        <tag>音乐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>wyy代理启动!直接SVIP</title>
+    <url>/2024/10/02/win-wyydaili/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="QtUnblockNeteaseMusic"><a href="#QtUnblockNeteaseMusic" class="headerlink" title="QtUnblockNeteaseMusic"></a>QtUnblockNeteaseMusic</h1><p>【软件版本】v1.5.3<br>【测试机型】Windows<br>【软件大小】24.07M<br>【软件介绍】<br>一款解锁解锁某抑云中无法播放的音乐工具，基于UnblockNeteaseMusic，软件提供了一种自建代理节点的方式让不可用的歌曲包含多个听歌源。<br>【使用教程】<br>第一部下载好压缩包并解压</p>
+<p>第二部点开解压出来的文件夹双击点开，找到QtUnblockNeteaseMusic.exe文件右键以管理员身份运行</p>
+<p><img src="/2024/10/02/win-wyydaili/1.webp" alt="打开"></p>
+<p>第三部运行后选择上边的高级按钮一安装证书，按照步骤安装即可</p>
+<p><img src="/2024/10/02/win-wyydaili/2.webp" alt="打开"></p>
+<p><img src="/2024/10/02/win-wyydaili/3.webp" alt="打开"></p>
+<p>第四部将工具内的端口什么啥的全部删除再去点击应用</p>
+<p><img src="/2024/10/02/win-wyydaili/6.webp" alt="打开"></p>
+<p>第五部打开网易云一设置一工具，找到http代理选择自定义代理，下边选择http代理，服务器填127.0.0.1，端口填8080，之后点击测试显示可用就可以了</p>
+<p><img src="/2024/10/02/win-wyydaili/4.webp" alt="打开"></p>
+<p><img src="/2024/10/02/win-wyydaili/5.webp" alt="打开"></p>
+<p>最后关闭重新打开网易云会发现那些需要会员的歌曲前边没有会员标识了选择会员歌曲也能完整播放</p>
+<p>注:<br>想要听会员歌曲必须后台运行QtUnblockNeteaseMusic.exe这个工具，也可以直接在高级一高级<br>选项一开机自启</p>
+<p>亲测可用哦</p>
+<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><a href="123pan,OvO,https://www.123684.com/s/zlIyVv-nWgfd" title target></a></div>]]></content>
+      <categories>
+        <category>实用推荐</category>
+      </categories>
+      <tags>
         <tag>电脑软件</tag>
         <tag>音乐</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -2674,8 +2724,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
         <tag>吾爱破解</tag>
       </tags>
   </entry>
