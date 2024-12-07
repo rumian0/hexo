@@ -1,66 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>123云盘-下载工具</title>
-    <url>/2024/09/30/123-liuliang/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="123云盘-下载工具"><a href="#123云盘-下载工具" class="headerlink" title="123云盘 下载工具"></a>123云盘 下载工具</h2><p>123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。</p>
-<h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ul>
-<li><strong>登录</strong>：使用用户名和密码登录 123Pan 账号。</li>
-<li><strong>列出文件</strong>：显示当前目录下的所有文件和文件夹。</li>
-<li><strong>下载文件</strong>：通过模拟安卓客户端协议下载文件，绕过流量限制。</li>
-<li><strong>上传文件</strong>：将本地文件上传到 123Pan。</li>
-<li><strong>分享文件</strong>：生成文件分享链接。</li>
-<li><strong>删除文件</strong>：删除指定的文件或文件夹。</li>
-<li><strong>创建文件夹</strong>：在当前目录下创建新文件夹。</li>
-</ul>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
-<li><p>确保已安装 Python 3.x。</p>
-</li>
-<li><p>安装所需的 Python 库：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>在首次运行脚本时，会自动生成一个 <code>123pan.txt</code> 文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。</p>
-<h3 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">可以直接下载<span class="keyword">release</span>的可执行文件运行或运行python脚本。</span><br><span class="line">脚本运行：</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>克隆或下载本项目代码到本地。</p>
-</li>
-<li><p>打开终端或命令提示符，进入项目目录。</p>
-</li>
-<li><p>运行脚本：</p>
-<p>使用安卓客户端协议</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python android.py</span><br></pre></td></tr></table></figure></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用web协议</span><br><span class="line">python web.py</span><br></pre></td></tr></table></figure>
-
-<h2 id="123云盘-下载工具GitHub地址"><a href="#123云盘-下载工具GitHub地址" class="headerlink" title="123云盘 下载工具GitHub地址"></a>123云盘 下载工具GitHub地址</h2><p>地址：</p>
-<a href="123pan,GitHub,https://github.com/Bao-qing/123pan" title target></a>
-
-<h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>今天推荐的是一个<strong>数字网盘</strong>脚本，可以解除限制，完全免费使用！</p>
-<p>该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要<strong>先安装Tampermonkey插件</strong>，Tampermonkey插件可以在文末关键字获取。</p>
-<p>安装完油猴插件后，<strong>再安装脚本</strong>，方法是打开Greasy Fork中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】</p>
-<p><img src="/2024/09/30/123-liuliang/1.webp" alt="点击安装此脚本"></p>
-<p>再点【安装】即可完成脚本安装。</p>
-<p><img src="/2024/09/30/123-liuliang/2.webp" alt="点击安装此脚本"></p>
-<p><strong>脚本使用测试：</strong></p>
-<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p>
-<p><strong>脚本使用测试：</strong></p>
-<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p>
-<p><img src="/2024/09/30/123-liuliang/3.webp" alt="测试"></p>
-<p>下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用1DM接管速度可达15M&#x2F;S，跑满你的带宽！</p>
-<p><img src="/2024/09/30/123-liuliang/4.webp" alt="点击下载"></p>
-<p>这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！</p>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>123网盘</tag>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C语言扫雷</title>
     <url>/2024/04/10/C-saolei/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>选自：PandaX Blog：<a href="https://pandax.wiki/15/">https://pandax.wiki/15/</a></p>
@@ -91,89 +31,6 @@
       <tags>
         <tag>C++</tag>
         <tag>编程语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ChatGPT-KEY的获取[无需手机号绑定]</title>
-    <url>/2024/01/21/ChatGPT-KEY/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😆 **前言**：最近ChatGPT官方解除了注册时的手机号绑定要求，使我们注册账号和使用变得更加容易，但Api-Key的获取还是需要手机号绑定，接下来的教程会教你如何绕过手机号的绑定获取到可以的KEY，并使用获取到的KEY来搭建自己的镜像网站【实现使用时免科学】，无限制使用ChatGPT。【教程内的网站还是需要在使用科学的前提下操作的，但部署后就不需要了。】
-
-</aside>
-
-<p><strong>该教程所需的网站地址：</strong></p>
-<ul>
-<li><strong>1、ChatGPT官网：<a href="https://openai.com/blog/chatgpt">Introducing ChatGPT (openai.com)</a></strong></li>
-<li><strong>2、临时邮箱网站：<a href="https://etempmail.com/zh">主页 – Temp Mail – Free Edu &#x2F; .COM Temporary Mails (etempmail.com)</a></strong></li>
-<li><strong>3、ChatGPTNextWeb项目：<a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">ChatGPTNextWeb&#x2F;ChatGPT-Next-Web: A well-designed cross-platform ChatGPT UI (Web &#x2F; PWA &#x2F; Linux &#x2F; Win &#x2F; MacOS). 一键拥有你自己的跨平台 ChatGPT 应用。 (github.com)</a></strong></li>
-<li><strong>4、Vercel注册地址：<a href="https://vercel.com/signup">Sign Up – Vercel</a></strong></li>
-<li><strong>5、Watt Toolkit【原STEAM++】：<a href="https://steampp.net/">瓦特工具箱(Steam++官网) – Watt Toolkit (steampp.net)</a></strong></li>
-</ul>
-<p><strong>使用临时邮箱注册ChatGPT账号并获取KEY：</strong></p>
-<p><strong>1、进入ChatGPT注册页面</strong></p>
-<p>选择Log in</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/c2cec3fdfc0392453cb007649794a4c27d1e2550.jpg" alt="1" title="chatgpt"></p>
-<p>选择SIGN UP【注册模式】</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272b262558818fa0ec09fac796.jpg" alt="2" title="chatgpt"></p>
-<p>进入注册模式页面</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/eac4b74543a98226d3a9cd4c9a82b9014a90eb75.jpg" alt="3" title="chatgpt"></p>
-<p><strong>2、使用临时邮箱注册我们的ChatGPT账号</strong></p>
-<p>复制临时邮箱进行注册</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/91529822720e0cf38a9ca8901a46f21fbe09aa76.jpg" alt="4" title="chatgpt"></p>
-<p>填写邮箱和密码注册</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/37d12f2eb9389b50eedb06399535e5dde7116eb1.jpg" alt="5" title="chatgpt"></p>
-<p>注册后需要在邮箱进行确认验证</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/6609c93d70cf3bc7426b2b87c100baa1cd112a76.jpg" alt="6" title="chatgpt"></p>
-<p>收到官方验证邮件</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/42a98226cffc1e1794d56a5a5a90f603738de977.jpg" alt="7" title="chatgpt"></p>
-<p>进入信息填写页面</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/b7fd5266d016092450264470c40735fae6cd345e.jpg" alt="8" title="chatgpt"></p>
-<p>随意填写即可</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272aa02458818fa0ec08fac708.jpg" alt="9" title="chatgpt"></p>
-<p>根据不同需求选择模式</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/32fa828ba61ea8d33248926f870a304e251f5877.jpg" alt="10" title="chatgpt"></p>
-<p><strong>3、获取ChatGPT的Api-Key【为搭建镜像网站做准备】</strong></p>
-<p>API模式进入API-keys页面</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/a50f4bfbfbedab641217ababe736afc379311e77.jpg" alt="11" title="chatgpt"></p>
-<p>打开网页控制台</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/d6ca7bcb0a46f21fdf51b838e6246b600c33ae70.jpg" alt="12" title="chatgpt"><br>进行网络数据抓包</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/b219ebc4b74543a9993b1ca70e178a82b90114bc.jpg" alt="13" title="chatgpt"></p>
-<p>抓包获取到了账号的KEY【留着备用】</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/b58f8c5494eef01f8873feaef0fe9925bc317d72.jpg" alt="14" title="chatgpt"><br><strong>4、Fork-Github的ChatGPTNextWeb项目</strong></p>
-<p>登录GitHub，Fork项目</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/fd039245d688d43f6bce77996d1ed21b0ef43b72.jpg" alt="15" title="chatgpt"><br>Create fork</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/cdbf6c81800a19d8757c626e23fa828ba61e465a.jpg" alt="16" title="chatgpt"><br>添加成功</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/7acb0a46f21fbe090938257f7b600c338744ad73.jpg" alt="17" title="chatgpt"><br><strong>5、进入Vercel部署我们的镜像网站</strong></p>
-<p>选择个人项目，后输入昵称</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/faedab64034f78f0e4417c9869310a55b3191c16.jpg" alt="18" title="chatgpt"><br>使用我们之前Fork项目的Github账号注册登录</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/6d81800a19d8bc3e7ba2e0a1928ba61ea8d34537.jpg" alt="19" title="chatgpt"></p>
-<p>Import开始部署</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/a8ec8a13632762d0be7a42d4b0ec08fa513dc611.jpg" alt="20" title="chatgpt"></p>
-<p>点击Deploy</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/6159252dd42a28344403d0604bb5c9ea15cebf30.jpg" alt="21" title="chatgpt"></p>
-<p>进入仪表盘【dashboard】</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/8c1001e93901213f2296a8b744e736d12f2e9530.jpg" alt="22" title="chatgpt"><br>访问项目自动分配的域名</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/4afbfbedab64034f6a91246dbfc379310a551d78.jpg" alt="23" title="chatgpt"><br><strong>6、Api-Key的导入设置</strong></p>
-<p>进入设置</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/58ee3d6d55fbb2fb1074be795f4a20a44623dc7a.jpg" alt="24" title="chatgpt"></p>
-<p>勾选自定义接口并导入KEY</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/c83d70cf3bc79f3d26a7025baaa1cd11728b2913.jpg" alt="25" title="chatgpt"></p>
-<p>KEY值为之前抓包到的数据</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/7dd98d1001e93901b8806b556bec54e737d196df.jpg" alt="26" title="chatgpt"><br>导入KEY后即可开始使用</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/bd3eb13533fa828b6ba17b88ed1f4134960a5adf.jpg" alt="27" title="chatgpt"><br><strong>7、项目域名无法访问问题【挂科学最好】，最廉价的方法也可以使用STEAM++进行加速。</strong></p>
-<p>勉强能用</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/a1ec08fa513d26971692ee3645fbb2fb4316d81c.jpg" alt="28" title="chatgpt"></p>
-<blockquote>
-<p>选自：<a href="https://paperkiteblog.xyz/?p=545">https://paperkiteblog.xyz/?p=545</a></p>
-</blockquote>
-</div>]]></content>
-      <categories>
-        <category>ChatGPT</category>
-      </categories>
-      <tags>
-        <tag>ChatGPT</tag>
-        <tag>Openai</tag>
-        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
@@ -283,9 +140,190 @@
         <category>实用推荐</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>Markdown</tag>
         <tag>写作</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ChatGPT-KEY的获取[无需手机号绑定]</title>
+    <url>/2024/01/21/ChatGPT-KEY/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😆 **前言**：最近ChatGPT官方解除了注册时的手机号绑定要求，使我们注册账号和使用变得更加容易，但Api-Key的获取还是需要手机号绑定，接下来的教程会教你如何绕过手机号的绑定获取到可以的KEY，并使用获取到的KEY来搭建自己的镜像网站【实现使用时免科学】，无限制使用ChatGPT。【教程内的网站还是需要在使用科学的前提下操作的，但部署后就不需要了。】
+
+</aside>
+
+<p><strong>该教程所需的网站地址：</strong></p>
+<ul>
+<li><strong>1、ChatGPT官网：<a href="https://openai.com/blog/chatgpt">Introducing ChatGPT (openai.com)</a></strong></li>
+<li><strong>2、临时邮箱网站：<a href="https://etempmail.com/zh">主页 – Temp Mail – Free Edu &#x2F; .COM Temporary Mails (etempmail.com)</a></strong></li>
+<li><strong>3、ChatGPTNextWeb项目：<a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">ChatGPTNextWeb&#x2F;ChatGPT-Next-Web: A well-designed cross-platform ChatGPT UI (Web &#x2F; PWA &#x2F; Linux &#x2F; Win &#x2F; MacOS). 一键拥有你自己的跨平台 ChatGPT 应用。 (github.com)</a></strong></li>
+<li><strong>4、Vercel注册地址：<a href="https://vercel.com/signup">Sign Up – Vercel</a></strong></li>
+<li><strong>5、Watt Toolkit【原STEAM++】：<a href="https://steampp.net/">瓦特工具箱(Steam++官网) – Watt Toolkit (steampp.net)</a></strong></li>
+</ul>
+<p><strong>使用临时邮箱注册ChatGPT账号并获取KEY：</strong></p>
+<p><strong>1、进入ChatGPT注册页面</strong></p>
+<p>选择Log in</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/c2cec3fdfc0392453cb007649794a4c27d1e2550.jpg" alt="1" title="chatgpt"></p>
+<p>选择SIGN UP【注册模式】</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272b262558818fa0ec09fac796.jpg" alt="2" title="chatgpt"></p>
+<p>进入注册模式页面</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/eac4b74543a98226d3a9cd4c9a82b9014a90eb75.jpg" alt="3" title="chatgpt"></p>
+<p><strong>2、使用临时邮箱注册我们的ChatGPT账号</strong></p>
+<p>复制临时邮箱进行注册</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/91529822720e0cf38a9ca8901a46f21fbe09aa76.jpg" alt="4" title="chatgpt"></p>
+<p>填写邮箱和密码注册</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/37d12f2eb9389b50eedb06399535e5dde7116eb1.jpg" alt="5" title="chatgpt"></p>
+<p>注册后需要在邮箱进行确认验证</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/6609c93d70cf3bc7426b2b87c100baa1cd112a76.jpg" alt="6" title="chatgpt"></p>
+<p>收到官方验证邮件</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/42a98226cffc1e1794d56a5a5a90f603738de977.jpg" alt="7" title="chatgpt"></p>
+<p>进入信息填写页面</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/b7fd5266d016092450264470c40735fae6cd345e.jpg" alt="8" title="chatgpt"></p>
+<p>随意填写即可</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272aa02458818fa0ec08fac708.jpg" alt="9" title="chatgpt"></p>
+<p>根据不同需求选择模式</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/32fa828ba61ea8d33248926f870a304e251f5877.jpg" alt="10" title="chatgpt"></p>
+<p><strong>3、获取ChatGPT的Api-Key【为搭建镜像网站做准备】</strong></p>
+<p>API模式进入API-keys页面</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/a50f4bfbfbedab641217ababe736afc379311e77.jpg" alt="11" title="chatgpt"></p>
+<p>打开网页控制台</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/d6ca7bcb0a46f21fdf51b838e6246b600c33ae70.jpg" alt="12" title="chatgpt"><br>进行网络数据抓包</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/b219ebc4b74543a9993b1ca70e178a82b90114bc.jpg" alt="13" title="chatgpt"></p>
+<p>抓包获取到了账号的KEY【留着备用】</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/b58f8c5494eef01f8873feaef0fe9925bc317d72.jpg" alt="14" title="chatgpt"><br><strong>4、Fork-Github的ChatGPTNextWeb项目</strong></p>
+<p>登录GitHub，Fork项目</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/fd039245d688d43f6bce77996d1ed21b0ef43b72.jpg" alt="15" title="chatgpt"><br>Create fork</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/cdbf6c81800a19d8757c626e23fa828ba61e465a.jpg" alt="16" title="chatgpt"><br>添加成功</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/7acb0a46f21fbe090938257f7b600c338744ad73.jpg" alt="17" title="chatgpt"><br><strong>5、进入Vercel部署我们的镜像网站</strong></p>
+<p>选择个人项目，后输入昵称</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/faedab64034f78f0e4417c9869310a55b3191c16.jpg" alt="18" title="chatgpt"><br>使用我们之前Fork项目的Github账号注册登录</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/6d81800a19d8bc3e7ba2e0a1928ba61ea8d34537.jpg" alt="19" title="chatgpt"></p>
+<p>Import开始部署</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/a8ec8a13632762d0be7a42d4b0ec08fa513dc611.jpg" alt="20" title="chatgpt"></p>
+<p>点击Deploy</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/6159252dd42a28344403d0604bb5c9ea15cebf30.jpg" alt="21" title="chatgpt"></p>
+<p>进入仪表盘【dashboard】</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/8c1001e93901213f2296a8b744e736d12f2e9530.jpg" alt="22" title="chatgpt"><br>访问项目自动分配的域名</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/4afbfbedab64034f6a91246dbfc379310a551d78.jpg" alt="23" title="chatgpt"><br><strong>6、Api-Key的导入设置</strong></p>
+<p>进入设置</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/58ee3d6d55fbb2fb1074be795f4a20a44623dc7a.jpg" alt="24" title="chatgpt"></p>
+<p>勾选自定义接口并导入KEY</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/c83d70cf3bc79f3d26a7025baaa1cd11728b2913.jpg" alt="25" title="chatgpt"></p>
+<p>KEY值为之前抓包到的数据</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/7dd98d1001e93901b8806b556bec54e737d196df.jpg" alt="26" title="chatgpt"><br>导入KEY后即可开始使用</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/bd3eb13533fa828b6ba17b88ed1f4134960a5adf.jpg" alt="27" title="chatgpt"><br><strong>7、项目域名无法访问问题【挂科学最好】，最廉价的方法也可以使用STEAM++进行加速。</strong></p>
+<p>勉强能用</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/a1ec08fa513d26971692ee3645fbb2fb4316d81c.jpg" alt="28" title="chatgpt"></p>
+<blockquote>
+<p>选自：<a href="https://paperkiteblog.xyz/?p=545">https://paperkiteblog.xyz/?p=545</a></p>
+</blockquote>
+</div>]]></content>
+      <categories>
+        <category>ChatGPT</category>
+      </categories>
+      <tags>
+        <tag>ChatGPT</tag>
+        <tag>Openai</tag>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>123云盘-下载工具</title>
+    <url>/2024/09/30/123-liuliang/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="123云盘-下载工具"><a href="#123云盘-下载工具" class="headerlink" title="123云盘 下载工具"></a>123云盘 下载工具</h2><p>123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。</p>
+<h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ul>
+<li><strong>登录</strong>：使用用户名和密码登录 123Pan 账号。</li>
+<li><strong>列出文件</strong>：显示当前目录下的所有文件和文件夹。</li>
+<li><strong>下载文件</strong>：通过模拟安卓客户端协议下载文件，绕过流量限制。</li>
+<li><strong>上传文件</strong>：将本地文件上传到 123Pan。</li>
+<li><strong>分享文件</strong>：生成文件分享链接。</li>
+<li><strong>删除文件</strong>：删除指定的文件或文件夹。</li>
+<li><strong>创建文件夹</strong>：在当前目录下创建新文件夹。</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
+<li><p>确保已安装 Python 3.x。</p>
+</li>
+<li><p>安装所需的 Python 库：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>在首次运行脚本时，会自动生成一个 <code>123pan.txt</code> 文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。</p>
+<h3 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">可以直接下载<span class="keyword">release</span>的可执行文件运行或运行python脚本。</span><br><span class="line">脚本运行：</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>克隆或下载本项目代码到本地。</p>
+</li>
+<li><p>打开终端或命令提示符，进入项目目录。</p>
+</li>
+<li><p>运行脚本：</p>
+<p>使用安卓客户端协议</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python android.py</span><br></pre></td></tr></table></figure></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用web协议</span><br><span class="line">python web.py</span><br></pre></td></tr></table></figure>
+
+<h2 id="123云盘-下载工具GitHub地址"><a href="#123云盘-下载工具GitHub地址" class="headerlink" title="123云盘 下载工具GitHub地址"></a>123云盘 下载工具GitHub地址</h2><p>地址：</p>
+<a href="123pan,GitHub,https://github.com/Bao-qing/123pan" title target></a>
+
+<h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>今天推荐的是一个<strong>数字网盘</strong>脚本，可以解除限制，完全免费使用！</p>
+<p>该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要<strong>先安装Tampermonkey插件</strong>，Tampermonkey插件可以在文末关键字获取。</p>
+<p>安装完油猴插件后，<strong>再安装脚本</strong>，方法是打开Greasy Fork中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】</p>
+<p><img src="/2024/09/30/123-liuliang/1.webp" alt="点击安装此脚本"></p>
+<p>再点【安装】即可完成脚本安装。</p>
+<p><img src="/2024/09/30/123-liuliang/2.webp" alt="点击安装此脚本"></p>
+<p><strong>脚本使用测试：</strong></p>
+<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p>
+<p><strong>脚本使用测试：</strong></p>
+<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。</p>
+<p><img src="/2024/09/30/123-liuliang/3.webp" alt="测试"></p>
+<p>下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用1DM接管速度可达15M&#x2F;S，跑满你的带宽！</p>
+<p><img src="/2024/09/30/123-liuliang/4.webp" alt="点击下载"></p>
+<p>这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！</p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>电脑软件</tag>
+        <tag>123网盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TuneFree免费音乐下载</title>
+    <url>/2024/07/16/TuneFree/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+
+<p>今天给大家分享一款全平台适用的音月神器支持<strong>网页端、电脑端和安卓端</strong>，iOS用户可以直接使用网页端，话不多说，直接安排~</p>
+</aside>
+
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本软件来源于网络……</p>
+<p>名称：<code>TuneFree</code></p>
+<h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><p><strong>软件支持安卓、电脑、还有网页端，今天我们以网页端为例，软件整体界面非简洁清爽，完全免费使用！</strong></p>
+<p><img src="/2024/07/16/TuneFree/640_(4).webp" alt="640 (4).webp"></p>
+<p>我们点击发现，可以看到这里有着非常丰富的音月zi源，比如飙升榜、原创榜、热哥榜等等各类榜单应有尽有，我们可以随意打开在线听。</p>
+<p><img src="/2024/07/16/TuneFree/640_(5).webp" alt="640 (5).webp"></p>
+<p>不仅如此，软件内还有博客电tai板块，里面包含了情感、有声书、脱口秀、二次元、亲子、人文历史、娱乐、相声曲艺等非常的丰富，可以满足我们不同人群的各种需求！</p>
+<p><img src="/2024/07/16/TuneFree/640_(6).webp" alt="640 (6).webp"></p>
+<p>软件内的所有内容都支持免费听+下载，遇到喜欢的想下载，只需单击鼠标右键，然后点击下载即可。</p>
+<p><img src="/2024/07/16/TuneFree/640_(7).webp" alt="640 (7).webp"></p>
+<p>下载支持所有音质，我们当然要选最好的下载啦~</p>
+<p><img src="/2024/07/16/TuneFree/640_(8).webp" alt="640 (8).webp"></p>
+<p>另外，软件还有个超牛的地方，那就是它是和某yi云相通的，支持我们登录某yi云，登录后，就可以看到所有收藏喜欢的，直接听就完了~</p>
+<p><img src="/2024/07/16/TuneFree/640_(9).webp" alt="640 (9).webp"></p>
+<p>好了，以上就是今天分享的所有内容，如果觉得这篇文章对你有价值，记得收藏本站！</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>全平台音月神器（安卓+电脑+iOS）<br><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">https://caiyun.139.com/m/i?005Cifoc02EhV</a></p>
+<p><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">中国移动云盘分享</a></p>
+<p>网页版：<br><a href="https://pt.sayqz.com/#/">https://pt.sayqz.com/#/</a></p>
+<p><a href="https://pt.sayqz.com/#/">TuneFree</a></p>
+</div>]]></content>
+      <categories>
+        <category>实用软件</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>安卓应用</tag>
+        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -329,46 +367,8 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TuneFree免费音乐下载</title>
-    <url>/2024/07/16/TuneFree/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-
-<p>今天给大家分享一款全平台适用的音月神器支持<strong>网页端、电脑端和安卓端</strong>，iOS用户可以直接使用网页端，话不多说，直接安排~</p>
-</aside>
-
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>本软件来源于网络……</p>
-<p>名称：<code>TuneFree</code></p>
-<h1 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h1><p><strong>软件支持安卓、电脑、还有网页端，今天我们以网页端为例，软件整体界面非简洁清爽，完全免费使用！</strong></p>
-<p><img src="/2024/07/16/TuneFree/640_(4).webp" alt="640 (4).webp"></p>
-<p>我们点击发现，可以看到这里有着非常丰富的音月zi源，比如飙升榜、原创榜、热哥榜等等各类榜单应有尽有，我们可以随意打开在线听。</p>
-<p><img src="/2024/07/16/TuneFree/640_(5).webp" alt="640 (5).webp"></p>
-<p>不仅如此，软件内还有博客电tai板块，里面包含了情感、有声书、脱口秀、二次元、亲子、人文历史、娱乐、相声曲艺等非常的丰富，可以满足我们不同人群的各种需求！</p>
-<p><img src="/2024/07/16/TuneFree/640_(6).webp" alt="640 (6).webp"></p>
-<p>软件内的所有内容都支持免费听+下载，遇到喜欢的想下载，只需单击鼠标右键，然后点击下载即可。</p>
-<p><img src="/2024/07/16/TuneFree/640_(7).webp" alt="640 (7).webp"></p>
-<p>下载支持所有音质，我们当然要选最好的下载啦~</p>
-<p><img src="/2024/07/16/TuneFree/640_(8).webp" alt="640 (8).webp"></p>
-<p>另外，软件还有个超牛的地方，那就是它是和某yi云相通的，支持我们登录某yi云，登录后，就可以看到所有收藏喜欢的，直接听就完了~</p>
-<p><img src="/2024/07/16/TuneFree/640_(9).webp" alt="640 (9).webp"></p>
-<p>好了，以上就是今天分享的所有内容，如果觉得这篇文章对你有价值，记得收藏本站！</p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>全平台音月神器（安卓+电脑+iOS）<br><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">https://caiyun.139.com/m/i?005Cifoc02EhV</a></p>
-<p><a href="https://caiyun.139.com/m/i?005Cifoc02EhV">中国移动云盘分享</a></p>
-<p>网页版：<br><a href="https://pt.sayqz.com/#/">https://pt.sayqz.com/#/</a></p>
-<p><a href="https://pt.sayqz.com/#/">TuneFree</a></p>
-</div>]]></content>
-      <categories>
-        <category>实用软件</category>
-      </categories>
-      <tags>
         <tag>电脑软件</tag>
-        <tag>安卓应用</tag>
-        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -718,8 +718,8 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
         <tag>工具</tag>
+        <tag>电脑软件</tag>
         <tag>实用推荐</tag>
       </tags>
   </entry>
@@ -1007,8 +1007,8 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
         <tag>工具</tag>
+        <tag>电脑软件</tag>
         <tag>实用推荐</tag>
       </tags>
   </entry>
@@ -1051,88 +1051,9 @@
       </tags>
   </entry>
   <entry>
-    <title>腹肌养成记</title>
-    <url>/2024/11/23/fjyangcheng/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>同宿舍的人说,想练腹肌!</p>
-<p>我说行,必须练,练不成誓不罢休!!</p>
-<p>下面放上一张我的腹肌照!!</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">谁信谁-------</span><br><span class="line">留给以后,这个东西先摆着!</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="总"><a href="#总" class="headerlink" title="总"></a>总</h2><p>锻炼腹肌,主要是分区的,每次练得时候肯定要一次全部练到,这才好看</p>
-<p>,分为<strong>4组</strong>,每组动作<strong>不少于15</strong>个,如果自己比较强悍,可以添加!</p>
-<h2 id="1、卷腹"><a href="#1、卷腹" class="headerlink" title="1、卷腹"></a>1、卷腹</h2><p>卷腹是腹部训练最基础的动作，我们可以以该动作作为腹肌训练的热身动作，建议组3组，每个动作做15～20次。卷腹，一定要让自己的腹部卷起来。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ec3f699e3c3c4f0e9db3b6a39de3dfb8.gif" alt="img"></p>
-<p>起始位置：双手交叉至于脑后，双膝屈曲90度左右，背部着地。</p>
-<p>动作中：呼气，发力点在于你腹部上方，感觉腹部收紧后发力将你的头部和肩部同时上提，头部在这个过程中不能屈曲，尽量保持原位不动，达到最高点之后，缓慢的将你的上身缓慢放下，直到你的双肩着地。</p>
-<p>注意：手部不要用力牵引颈部，这点很重要。</p>
-<h2 id="2-抬腿反向卷腹"><a href="#2-抬腿反向卷腹" class="headerlink" title="2.抬腿反向卷腹"></a>2.抬腿反向卷腹</h2><p>抬腿反向卷腹这个动作主要是对腹部下侧的肌群起到刺激作用。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/90daafcb60984603a73a9835eb1ed105.gif" alt="img"></p>
-<p>起始姿势：小腿平行保持与身体中线两侧，双臂水平放置于身体两侧，掌面朝下，紧贴地面（整个动作过程都要保持你的腹部发力，双手起到的只有保持平衡的作用）。</p>
-<p>动作中：呼气、使得你下腹部收缩，紧接着就是你的双腿、臀部和下背部开始上屈，达到你的最高点之后，身体开始向下(吸气)复原。</p>
-<h2 id="3-抬腿卷腹"><a href="#3-抬腿卷腹" class="headerlink" title="3.抬腿卷腹"></a>3.抬腿卷腹</h2><p>这个动作是我最喜欢的腹部训练动作之一，对整个腹部的刺激都很到位。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/88381bc7af274921a571e2797995ea37.gif" alt="img"></p>
-<p>起始姿势：抬起你的腿部形成两个90度左右角，即髋部90度，大腿与小腿90度。</p>
-<p>动作中：双手置于脑后，从腹部开始发力，发力过程中头部与胸部的距离不能靠近。整个动作切记不能用到惯性，下降的过程尽量缓慢。</p>
-<h2 id="4、青蛙首府"><a href="#4、青蛙首府" class="headerlink" title="4、青蛙首府"></a>4、青蛙首府</h2><p>青蛙卷腹这个姿势不但对于你的腹部肌肉力量、耐力是一种挑战，同样对于你的平衡和稳定也是极其重要的，对于腹部和背部的主要大肌群发展非常有好处。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7640e3b033b4bbc84341b074c243190.gif" alt="img"></p>
-<p>起始动作：如同坐姿，膝盖要求屈曲90°，躯干保持与地面45°夹角，收起双腿腾空。</p>
-<p>动作中：你需要向前伸展你的双腿使其与地面平行、与此同时双手也要平举外展直至与身体同在一个平面，之后停留片刻，然后收回。</p>
-<h2 id="5、空中自行车"><a href="#5、空中自行车" class="headerlink" title="5、空中自行车"></a>5、空中自行车</h2><p>这是一个对于柔韧性、协调性和肌肉的发力感、控制能力要求都很高的、非常流行的一种练习方法，对于腹部所有肌群的刺激都很大，可谓是全能姿势。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ab2ab632eed04055b4fea30f6001748a.gif" alt="img"></p>
-<p>俯卧位，面部朝上，膝盖屈曲90°，双手交叉放于脑后，呼气的同时拧转你的躯干，双脚、头部和一侧的大腿呈对角线运动，使得你的有膝盖触碰到对侧肘部关节，交替动作。</p>
-<h2 id="6、侧卧曲腿卷腹"><a href="#6、侧卧曲腿卷腹" class="headerlink" title="6、侧卧曲腿卷腹"></a>6、侧卧曲腿卷腹</h2><p>该方法主要针对内外斜肌群。不建议大家经常训练，因为相比于腹直肌，腹外斜肌有增强的增涨性，腹外斜肌练的太大，穿上衣服，没人知道你的腹外斜肌练的好，还是要粗。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1c4c0e85a03a45a683c918c2a6162656.gif" alt="img"></p>
-<p>起始位置是仰卧起坐的姿势，膝盖屈曲放于身体的一侧，然后上半身以腹部上方的肌群为发力起始点，卷体，扭转到与膝盖相对的另外一侧，一侧做完然后另外一侧 再做也可以左右交替进行。</p>
-<h2 id="7、完全是仰卧起坐"><a href="#7、完全是仰卧起坐" class="headerlink" title="7、完全是仰卧起坐"></a>7、完全是仰卧起坐</h2><p>该姿势对于你臀部柔韧性的要求极为苛刻，但是即使你的臀部柔韧性并不适很好，你依旧可以通过该方法，得到发展。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/2d80374dee2540df87acbd7e4fbe9732.gif" alt="img"></p>
-<p>起始位置就如同蝴蝶，膝盖屈曲的同时打开膝盖朝向地面，双脚合并，背部着地，双手放置于头顶，用你的腹部发力牵拉身上起立。适合持续不断的练习，注意背部保持正常的生理曲度不能驼背。</p>
-<h2 id="8、仰卧举腿"><a href="#8、仰卧举腿" class="headerlink" title="8、仰卧举腿"></a>8、仰卧举腿</h2><p>这是李小龙最喜欢的练功动作之一，但是确实有些困难，你需要重新构建你的核心肌群才能做到把你身体五分之四的重量，单独只靠肩部和手臂就能举起来。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/e9b47163a9bf44178623e92560f94306.gif" alt="img"></p>
-<p>躺在长凳上，屈曲手臂，抓住长凳的一端，收缩腹部举起的双腿，直到到了极限为止，接着就是你的胸部、手臂和背部肌群发力，提起整个身体，之后让身体成蹦直，缓慢放下，恢复原来的位置。</p>
-<h2 id="9、仰卧举腿提臀"><a href="#9、仰卧举腿提臀" class="headerlink" title="9、仰卧举腿提臀"></a>9、仰卧举腿提臀</h2><p>这个动作对于下腹部肌群有很好的刺激，你可以选择腿部直立或者是屈曲，但你的双手必须笔直的放于身体两侧。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/47f5a122cd7146999df7d9eb7ea03f4f.gif" alt="img"></p>
-<p>起始位置，抬起你的双腿，你的双手放于身体两侧，掌心朝下，用你下腹部的肌群发力，提起你的臀部和背部，不能依靠惯性，记得注意力始终集中于你的腹部肌群。</p>
-<h2 id="10、V字卷腹"><a href="#10、V字卷腹" class="headerlink" title="10、V字卷腹"></a>10、V字卷腹</h2><p>V字卷腹可以让你的腹部肌肉燃烧起来，同时对臀部和大腿也有很好的刺激。也是搞肌君最喜欢的腹部训练动作。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1af7df03a2a64696b81ba5606d4957c6.gif" alt="img"></p>
-<p>双腿和双臂，向着相反的方向延伸，躺在地面上，双脚跟、肩部、双手和臀部的宽度适宜，发力的部位是你的腹部，快速形成V型，你的手掌尽量句触碰脚跟，之后缓慢下降。</p>
-<h2 id="11-俄罗斯转体"><a href="#11-俄罗斯转体" class="headerlink" title="11.俄罗斯转体"></a>11.俄罗斯转体</h2><p>保持身体的平衡对于腹部两侧的刺激也是尤为必要的。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7b5448b37344607b99a9e0fc0aae35a.gif" alt="img"></p>
-<p>起始姿势见上文，主要强调一个双脚在这个练习中，其实是不能接触地面的，动作熟练之后，抬起双脚，完全是由你的核心肌群即腹部紧张来控制身体，双手合并左右转动。</p>
-<h2 id="12-仰卧交替抬腿"><a href="#12-仰卧交替抬腿" class="headerlink" title="12.仰卧交替抬腿"></a>12.仰卧交替抬腿</h2><p>保持你的背部紧贴地面，双腿伸直，使得双腿提起，保持腹部紧张，快速有频率的运动。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/b68d0119bbdf4bb789c238c0f2a8ab21.gif" alt="img"></p>
-<p>如果你觉得该动作挑战难度并不大，那么建议你在双腿频繁抬起时候，用你的双手分别接触你两侧的大腿部位。</p>
-<h2 id="13、侧平板撑首府"><a href="#13、侧平板撑首府" class="headerlink" title="13、侧平板撑首府"></a>13、侧平板撑首府</h2><p>这是传统腹部肌群训练方法一种补充，你可以想到，这样的动作对于你内外斜肌发展有多大好处。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d3e87488cc5b47b0b3840c3b97314335.gif" alt="img"></p>
-<p>起始位置是侧身躺在地面，用靠近地面一侧的手臂和外脚背支撑身体，使身体保持在一条直线上，朝上举起另一侧的手臂，接着屈曲另一侧的大腿膝关节和肘部，使其接触，必须是用你的内外斜肌控制身体的运动，之后缓慢复原，交替动作。</p>
-<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p><code>仰卧核心卷腹15个✖️4组</code></p>
-<p>平躺于垫上，双脚踩在垫上，双手放置在腿部中间位置，吐气发力，卷起身体至肩胛骨下沿离开地面，吸气下放</p>
-<p><img src="https://pic3.zhimg.com/v2-8bdbb849970a56e62d915dbfce093050_b.webp" alt="动图"></p>
-<p><code>仰卧对角交替收膝15个✖️5组</code></p>
-<p>平躺于垫上，双脚踩在垫上，双手抱住头部，吐气发力，对侧脚和对侧肘相触即可，左右交替进行</p>
-<p><img src="https://pic2.zhimg.com/v2-f718328bd73c8c0614d3fc2f294b56db_b.jpg" alt="动图封面"></p>
-<p><code>平板支撑40秒✖️5组</code></p>
-<p>俯卧于垫上，双肘撑起身体，保持肩、髋、膝、踝为一条直线，腹部收紧，臀部收紧，保持腰部不要下沉，匀速呼吸即可</p>
-<p><img src="https://pic4.zhimg.com/v2-b43839c4acee74873b2e197b4321f1d9_b.jpg" alt="动图封面"></p>
-<p><code>空中蹬车40秒✖️5组</code></p>
-<p>方法：坐于地面，两腿做蹬车状，双手扶头手肘与对册膝盖对碰，以此循环</p>
-<p><img src="https://pic3.zhimg.com/v2-68eb7ac92c20dfbc318cbf111df5f7bc_b.webp" alt="动图"></p>
-</div>]]></content>
-      <categories>
-        <category>生活方面</category>
-      </categories>
-      <tags>
-        <tag>锻炼</tag>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#105;&#x6e;&#x66;&#111;&#64;&#x66;&#114;&#x65;&#x65;&#x6e;&#111;&#x6d;&#46;&#99;&#111;&#109;">&#105;&#x6e;&#x66;&#111;&#64;&#x66;&#114;&#x65;&#x65;&#x6e;&#111;&#x6d;&#46;&#99;&#111;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#110;&#x66;&#111;&#64;&#102;&#114;&#101;&#101;&#x6e;&#111;&#109;&#46;&#x63;&#x6f;&#109;">&#x69;&#110;&#x66;&#111;&#64;&#102;&#114;&#101;&#101;&#x6e;&#111;&#109;&#46;&#x63;&#x6f;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p>
 <p>以下整理了一些可以用的免费二级域名：</p>
 <table>
 <thead>
@@ -1335,6 +1256,85 @@
       </tags>
   </entry>
   <entry>
+    <title>腹肌养成记</title>
+    <url>/2024/11/23/fjyangcheng/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>同宿舍的人说,想练腹肌!</p>
+<p>我说行,必须练,练不成誓不罢休!!</p>
+<p>下面放上一张我的腹肌照!!</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">谁信谁-------</span><br><span class="line">留给以后,这个东西先摆着!</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="总"><a href="#总" class="headerlink" title="总"></a>总</h2><p>锻炼腹肌,主要是分区的,每次练得时候肯定要一次全部练到,这才好看</p>
+<p>,分为<strong>4组</strong>,每组动作<strong>不少于15</strong>个,如果自己比较强悍,可以添加!</p>
+<h2 id="1、卷腹"><a href="#1、卷腹" class="headerlink" title="1、卷腹"></a>1、卷腹</h2><p>卷腹是腹部训练最基础的动作，我们可以以该动作作为腹肌训练的热身动作，建议组3组，每个动作做15～20次。卷腹，一定要让自己的腹部卷起来。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ec3f699e3c3c4f0e9db3b6a39de3dfb8.gif" alt="img"></p>
+<p>起始位置：双手交叉至于脑后，双膝屈曲90度左右，背部着地。</p>
+<p>动作中：呼气，发力点在于你腹部上方，感觉腹部收紧后发力将你的头部和肩部同时上提，头部在这个过程中不能屈曲，尽量保持原位不动，达到最高点之后，缓慢的将你的上身缓慢放下，直到你的双肩着地。</p>
+<p>注意：手部不要用力牵引颈部，这点很重要。</p>
+<h2 id="2-抬腿反向卷腹"><a href="#2-抬腿反向卷腹" class="headerlink" title="2.抬腿反向卷腹"></a>2.抬腿反向卷腹</h2><p>抬腿反向卷腹这个动作主要是对腹部下侧的肌群起到刺激作用。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/90daafcb60984603a73a9835eb1ed105.gif" alt="img"></p>
+<p>起始姿势：小腿平行保持与身体中线两侧，双臂水平放置于身体两侧，掌面朝下，紧贴地面（整个动作过程都要保持你的腹部发力，双手起到的只有保持平衡的作用）。</p>
+<p>动作中：呼气、使得你下腹部收缩，紧接着就是你的双腿、臀部和下背部开始上屈，达到你的最高点之后，身体开始向下(吸气)复原。</p>
+<h2 id="3-抬腿卷腹"><a href="#3-抬腿卷腹" class="headerlink" title="3.抬腿卷腹"></a>3.抬腿卷腹</h2><p>这个动作是我最喜欢的腹部训练动作之一，对整个腹部的刺激都很到位。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/88381bc7af274921a571e2797995ea37.gif" alt="img"></p>
+<p>起始姿势：抬起你的腿部形成两个90度左右角，即髋部90度，大腿与小腿90度。</p>
+<p>动作中：双手置于脑后，从腹部开始发力，发力过程中头部与胸部的距离不能靠近。整个动作切记不能用到惯性，下降的过程尽量缓慢。</p>
+<h2 id="4、青蛙首府"><a href="#4、青蛙首府" class="headerlink" title="4、青蛙首府"></a>4、青蛙首府</h2><p>青蛙卷腹这个姿势不但对于你的腹部肌肉力量、耐力是一种挑战，同样对于你的平衡和稳定也是极其重要的，对于腹部和背部的主要大肌群发展非常有好处。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7640e3b033b4bbc84341b074c243190.gif" alt="img"></p>
+<p>起始动作：如同坐姿，膝盖要求屈曲90°，躯干保持与地面45°夹角，收起双腿腾空。</p>
+<p>动作中：你需要向前伸展你的双腿使其与地面平行、与此同时双手也要平举外展直至与身体同在一个平面，之后停留片刻，然后收回。</p>
+<h2 id="5、空中自行车"><a href="#5、空中自行车" class="headerlink" title="5、空中自行车"></a>5、空中自行车</h2><p>这是一个对于柔韧性、协调性和肌肉的发力感、控制能力要求都很高的、非常流行的一种练习方法，对于腹部所有肌群的刺激都很大，可谓是全能姿势。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ab2ab632eed04055b4fea30f6001748a.gif" alt="img"></p>
+<p>俯卧位，面部朝上，膝盖屈曲90°，双手交叉放于脑后，呼气的同时拧转你的躯干，双脚、头部和一侧的大腿呈对角线运动，使得你的有膝盖触碰到对侧肘部关节，交替动作。</p>
+<h2 id="6、侧卧曲腿卷腹"><a href="#6、侧卧曲腿卷腹" class="headerlink" title="6、侧卧曲腿卷腹"></a>6、侧卧曲腿卷腹</h2><p>该方法主要针对内外斜肌群。不建议大家经常训练，因为相比于腹直肌，腹外斜肌有增强的增涨性，腹外斜肌练的太大，穿上衣服，没人知道你的腹外斜肌练的好，还是要粗。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1c4c0e85a03a45a683c918c2a6162656.gif" alt="img"></p>
+<p>起始位置是仰卧起坐的姿势，膝盖屈曲放于身体的一侧，然后上半身以腹部上方的肌群为发力起始点，卷体，扭转到与膝盖相对的另外一侧，一侧做完然后另外一侧 再做也可以左右交替进行。</p>
+<h2 id="7、完全是仰卧起坐"><a href="#7、完全是仰卧起坐" class="headerlink" title="7、完全是仰卧起坐"></a>7、完全是仰卧起坐</h2><p>该姿势对于你臀部柔韧性的要求极为苛刻，但是即使你的臀部柔韧性并不适很好，你依旧可以通过该方法，得到发展。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/2d80374dee2540df87acbd7e4fbe9732.gif" alt="img"></p>
+<p>起始位置就如同蝴蝶，膝盖屈曲的同时打开膝盖朝向地面，双脚合并，背部着地，双手放置于头顶，用你的腹部发力牵拉身上起立。适合持续不断的练习，注意背部保持正常的生理曲度不能驼背。</p>
+<h2 id="8、仰卧举腿"><a href="#8、仰卧举腿" class="headerlink" title="8、仰卧举腿"></a>8、仰卧举腿</h2><p>这是李小龙最喜欢的练功动作之一，但是确实有些困难，你需要重新构建你的核心肌群才能做到把你身体五分之四的重量，单独只靠肩部和手臂就能举起来。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/e9b47163a9bf44178623e92560f94306.gif" alt="img"></p>
+<p>躺在长凳上，屈曲手臂，抓住长凳的一端，收缩腹部举起的双腿，直到到了极限为止，接着就是你的胸部、手臂和背部肌群发力，提起整个身体，之后让身体成蹦直，缓慢放下，恢复原来的位置。</p>
+<h2 id="9、仰卧举腿提臀"><a href="#9、仰卧举腿提臀" class="headerlink" title="9、仰卧举腿提臀"></a>9、仰卧举腿提臀</h2><p>这个动作对于下腹部肌群有很好的刺激，你可以选择腿部直立或者是屈曲，但你的双手必须笔直的放于身体两侧。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/47f5a122cd7146999df7d9eb7ea03f4f.gif" alt="img"></p>
+<p>起始位置，抬起你的双腿，你的双手放于身体两侧，掌心朝下，用你下腹部的肌群发力，提起你的臀部和背部，不能依靠惯性，记得注意力始终集中于你的腹部肌群。</p>
+<h2 id="10、V字卷腹"><a href="#10、V字卷腹" class="headerlink" title="10、V字卷腹"></a>10、V字卷腹</h2><p>V字卷腹可以让你的腹部肌肉燃烧起来，同时对臀部和大腿也有很好的刺激。也是搞肌君最喜欢的腹部训练动作。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1af7df03a2a64696b81ba5606d4957c6.gif" alt="img"></p>
+<p>双腿和双臂，向着相反的方向延伸，躺在地面上，双脚跟、肩部、双手和臀部的宽度适宜，发力的部位是你的腹部，快速形成V型，你的手掌尽量句触碰脚跟，之后缓慢下降。</p>
+<h2 id="11-俄罗斯转体"><a href="#11-俄罗斯转体" class="headerlink" title="11.俄罗斯转体"></a>11.俄罗斯转体</h2><p>保持身体的平衡对于腹部两侧的刺激也是尤为必要的。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7b5448b37344607b99a9e0fc0aae35a.gif" alt="img"></p>
+<p>起始姿势见上文，主要强调一个双脚在这个练习中，其实是不能接触地面的，动作熟练之后，抬起双脚，完全是由你的核心肌群即腹部紧张来控制身体，双手合并左右转动。</p>
+<h2 id="12-仰卧交替抬腿"><a href="#12-仰卧交替抬腿" class="headerlink" title="12.仰卧交替抬腿"></a>12.仰卧交替抬腿</h2><p>保持你的背部紧贴地面，双腿伸直，使得双腿提起，保持腹部紧张，快速有频率的运动。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/b68d0119bbdf4bb789c238c0f2a8ab21.gif" alt="img"></p>
+<p>如果你觉得该动作挑战难度并不大，那么建议你在双腿频繁抬起时候，用你的双手分别接触你两侧的大腿部位。</p>
+<h2 id="13、侧平板撑首府"><a href="#13、侧平板撑首府" class="headerlink" title="13、侧平板撑首府"></a>13、侧平板撑首府</h2><p>这是传统腹部肌群训练方法一种补充，你可以想到，这样的动作对于你内外斜肌发展有多大好处。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d3e87488cc5b47b0b3840c3b97314335.gif" alt="img"></p>
+<p>起始位置是侧身躺在地面，用靠近地面一侧的手臂和外脚背支撑身体，使身体保持在一条直线上，朝上举起另一侧的手臂，接着屈曲另一侧的大腿膝关节和肘部，使其接触，必须是用你的内外斜肌控制身体的运动，之后缓慢复原，交替动作。</p>
+<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p><code>仰卧核心卷腹15个✖️4组</code></p>
+<p>平躺于垫上，双脚踩在垫上，双手放置在腿部中间位置，吐气发力，卷起身体至肩胛骨下沿离开地面，吸气下放</p>
+<p><img src="https://pic3.zhimg.com/v2-8bdbb849970a56e62d915dbfce093050_b.webp" alt="动图"></p>
+<p><code>仰卧对角交替收膝15个✖️5组</code></p>
+<p>平躺于垫上，双脚踩在垫上，双手抱住头部，吐气发力，对侧脚和对侧肘相触即可，左右交替进行</p>
+<p><img src="https://pic2.zhimg.com/v2-f718328bd73c8c0614d3fc2f294b56db_b.jpg" alt="动图封面"></p>
+<p><code>平板支撑40秒✖️5组</code></p>
+<p>俯卧于垫上，双肘撑起身体，保持肩、髋、膝、踝为一条直线，腹部收紧，臀部收紧，保持腰部不要下沉，匀速呼吸即可</p>
+<p><img src="https://pic4.zhimg.com/v2-b43839c4acee74873b2e197b4321f1d9_b.jpg" alt="动图封面"></p>
+<p><code>空中蹬车40秒✖️5组</code></p>
+<p>方法：坐于地面，两腿做蹬车状，双手扶头手肘与对册膝盖对碰，以此循环</p>
+<p><img src="https://pic3.zhimg.com/v2-68eb7ac92c20dfbc318cbf111df5f7bc_b.webp" alt="动图"></p>
+</div>]]></content>
+      <categories>
+        <category>生活方面</category>
+      </categories>
+      <tags>
+        <tag>锻炼</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GKD跳过广告</title>
     <url>/2024/01/25/gkd/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -1412,44 +1412,6 @@
       <tags>
         <tag>电脑软件</tag>
         <tag>系统优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-添加音乐与视频</title>
-    <url>/2024/09/01/hexo-mp4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>我们在实用hexo中,没有任何的添加视频与音频的按钮.</p>
-<p>这让我很头脑,所以,这次我来分享一个方法.</p>
-<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="首先插入音频"><a href="#首先插入音频" class="headerlink" title="首先插入音频"></a>首先插入<strong>音频</strong></h2><p><strong>aplayer</strong></p>
-<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-aplayer</code></p>
-<p>在markdown内添加以下代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer <span class="string">&quot;她的睫毛&quot;</span> <span class="string">&quot;周杰伦&quot;</span> <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot;</span>  <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下:</p>
-<p><img src="/2024/09/01/hexo-mp4/music.png" alt="音频"></p>
-<p>或者使用下方代码: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><video src="https://music.163.com/song/media/outer/url?id=1490104654.mp3" position="absolute" width="100%" height="10%" controls="controls"></video></p>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><strong>dplayer</strong></p>
-<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-dplayer</code></p>
-<p>在markdown内添加以下代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% dplayer <span class="string">&quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot;</span>  <span class="string">&quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;theme=#FADFA3&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> <span class="string">&quot;token=tokendemo&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下:</p>
-<p><img src="/2024/09/01/hexo-mp4/video.png" alt="视频"></p>
-<p>或者使用下方代码: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><video src="https://bili.api.scc.lol/?bv=BV1xw4m1k7er&qn=80" position="absolute" width="100%" height="100%" controls="controls"></video></p>
-</div>]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>技术分享</tag>
-        <tag>实用</tag>
       </tags>
   </entry>
   <entry>
@@ -1571,6 +1533,44 @@
         <tag>编程语言</tag>
         <tag>计算机</tag>
         <tag>科幻科普</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-添加音乐与视频</title>
+    <url>/2024/09/01/hexo-mp4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>我们在实用hexo中,没有任何的添加视频与音频的按钮.</p>
+<p>这让我很头脑,所以,这次我来分享一个方法.</p>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="首先插入音频"><a href="#首先插入音频" class="headerlink" title="首先插入音频"></a>首先插入<strong>音频</strong></h2><p><strong>aplayer</strong></p>
+<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-aplayer</code></p>
+<p>在markdown内添加以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer <span class="string">&quot;她的睫毛&quot;</span> <span class="string">&quot;周杰伦&quot;</span> <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot;</span>  <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<p><img src="/2024/09/01/hexo-mp4/music.png" alt="音频"></p>
+<p>或者使用下方代码: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><video src="https://music.163.com/song/media/outer/url?id=1490104654.mp3" position="absolute" width="100%" height="10%" controls="controls"></video></p>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><strong>dplayer</strong></p>
+<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-dplayer</code></p>
+<p>在markdown内添加以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% dplayer <span class="string">&quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot;</span>  <span class="string">&quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;theme=#FADFA3&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> <span class="string">&quot;token=tokendemo&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<p><img src="/2024/09/01/hexo-mp4/video.png" alt="视频"></p>
+<p>或者使用下方代码: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><video src="https://bili.api.scc.lol/?bv=BV1xw4m1k7er&qn=80" position="absolute" width="100%" height="100%" controls="controls"></video></p>
+</div>]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>技术分享</tag>
+        <tag>实用</tag>
       </tags>
   </entry>
   <entry>
@@ -1938,9 +1938,35 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
         <tag>工具</tag>
+        <tag>电脑软件</tag>
         <tag>百度网盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么竟然还有这样的神器？</title>
+    <url>/2024/05/12/qianhe-tools/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>给大家搞到了一款非常不错的在线工具箱网站，废话不多说，<strong>直接安排</strong>！！！</p>
+<p>也是好久没更新Windows 程序了好吧，这次必须整活！！</p>
+<h1 id="千盒工具"><a href="#千盒工具" class="headerlink" title="千盒工具"></a>千盒工具</h1><p>这是一款非常不错的在线工具箱网站，该网站<strong>不需要注册登录</strong>，打开即可直接使用，网站内包含了非常多实用的在线工具，<strong>全部都是免费的</strong>，没有任何的套路，不论大家从事任何行业，都强烈建议各位小伙伴们<strong>点赞收藏</strong>，后续肯定会用到的哦！</p>
+<p><img src="/2024/05/12/qianhe-tools/04ebc029-63ee-42a0-ba29-006c2fb39629.png" alt="640.webp"></p>
+<p>网站主界面<strong>如下图所示</strong>，左侧是工具分类，右侧是工具列表，<strong>目前包含了</strong>搜索工具、图片工具、示拼工具、文本工具、办公工具、导航工具、数字工具、单位换算工具以及开发工具等，覆盖了多个行业，<strong>所有工具统统免费</strong>，非常良心！</p>
+<p><img src="/2024/05/12/qianhe-tools/640_(1).webp" alt="640(1).webp"></p>
+<p>所有工具<strong>点击进入</strong>即可打开使用，如下图所示，这里我就<strong>随便打开</strong>一个图片文字识别工具，我们只<strong>需要上传</strong>需要识别的图片，然后<strong>点击立即识别</strong>按钮即可，识别速度快，准确率高，使用非常方便！</p>
+<p><img src="/2024/05/12/qianhe-tools/640_(2).webp" alt="640(2).webp"></p>
+<p>由于该网站<strong>包含的工具较多</strong>，在这里就不挨个给大家演示了，很多工具都是非常实用的，比如示拼格式转换、<strong>图片格式转换</strong>、二维码解析、<strong>图片压缩</strong>、单位换算等等，大家可以自行访问使用哦！</p>
+<p><img src="/2024/05/12/qianhe-tools/640_(3).webp" alt="640(3).webp"></p>
+<p>以上就是给大家介绍的 <strong>非常不错的网站。</strong></p>
+<h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><p>链接：<a href="https://1000tool.com/">https://1000tool.com/</a></p>
+<p><a href="https://1000tool.com/">https://1000tool.com/</a></p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>电脑软件</tag>
+        <tag>实用推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -2011,34 +2037,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么竟然还有这样的神器？</title>
-    <url>/2024/05/12/qianhe-tools/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>给大家搞到了一款非常不错的在线工具箱网站，废话不多说，<strong>直接安排</strong>！！！</p>
-<p>也是好久没更新Windows 程序了好吧，这次必须整活！！</p>
-<h1 id="千盒工具"><a href="#千盒工具" class="headerlink" title="千盒工具"></a>千盒工具</h1><p>这是一款非常不错的在线工具箱网站，该网站<strong>不需要注册登录</strong>，打开即可直接使用，网站内包含了非常多实用的在线工具，<strong>全部都是免费的</strong>，没有任何的套路，不论大家从事任何行业，都强烈建议各位小伙伴们<strong>点赞收藏</strong>，后续肯定会用到的哦！</p>
-<p><img src="/2024/05/12/qianhe-tools/04ebc029-63ee-42a0-ba29-006c2fb39629.png" alt="640.webp"></p>
-<p>网站主界面<strong>如下图所示</strong>，左侧是工具分类，右侧是工具列表，<strong>目前包含了</strong>搜索工具、图片工具、示拼工具、文本工具、办公工具、导航工具、数字工具、单位换算工具以及开发工具等，覆盖了多个行业，<strong>所有工具统统免费</strong>，非常良心！</p>
-<p><img src="/2024/05/12/qianhe-tools/640_(1).webp" alt="640(1).webp"></p>
-<p>所有工具<strong>点击进入</strong>即可打开使用，如下图所示，这里我就<strong>随便打开</strong>一个图片文字识别工具，我们只<strong>需要上传</strong>需要识别的图片，然后<strong>点击立即识别</strong>按钮即可，识别速度快，准确率高，使用非常方便！</p>
-<p><img src="/2024/05/12/qianhe-tools/640_(2).webp" alt="640(2).webp"></p>
-<p>由于该网站<strong>包含的工具较多</strong>，在这里就不挨个给大家演示了，很多工具都是非常实用的，比如示拼格式转换、<strong>图片格式转换</strong>、二维码解析、<strong>图片压缩</strong>、单位换算等等，大家可以自行访问使用哦！</p>
-<p><img src="/2024/05/12/qianhe-tools/640_(3).webp" alt="640(3).webp"></p>
-<p>以上就是给大家介绍的 <strong>非常不错的网站。</strong></p>
-<h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><p>链接：<a href="https://1000tool.com/">https://1000tool.com/</a></p>
-<p><a href="https://1000tool.com/">https://1000tool.com/</a></p>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
         <tag>电脑软件</tag>
-        <tag>工具</tag>
-        <tag>实用推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -2071,6 +2071,46 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>实用推荐</tag>
         <tag>QQ空间</tag>
         <tag>开源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神奇应用!什么都能搜!</title>
+    <url>/2024/06/23/sqyy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+💡 分享一款收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类的神器应用。
+
+</aside>
+
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一款全新上线的安卓应用分享平台，收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类，用户可以在平台上搜索到自己想要的任何应用，直接一键高速下载。</p>
+<blockquote>
+<p>一款集合了众多应用资源的软件，挑选优质应用，所有推荐的软件经过精心筛选，还有社区广场，进行资源交流，享受简洁易懂的服务和功能模块，包括搜索、分类浏览、收藏等。</p>
+</blockquote>
+<p><img src="/2024/06/23/sqyy/640.webp" alt="640.webp"></p>
+<h1 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h1><p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
+<p><img src="/2024/06/23/sqyy/640_(1).webp" alt="640 (1).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(2).webp" alt="640 (2).webp"></p>
+<p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
+<p><img src="/2024/06/23/sqyy/640_(3).webp" alt="640 (3).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(4).webp" alt="640 (4).webp"></p>
+<p>打开应用页面，可以看见软件内的全部分类，有影S播放、音y播放、漫画、文字等娱乐分类，还有下载、存储、搜索等工具分类，一共有30多种，非常丰富。</p>
+<p><img src="/2024/06/23/sqyy/640_(5).webp" alt="640 (5).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(6).webp" alt="640 (6).webp"></p>
+<p>还有游戏的专属页面，这里全是游戏资源，有休闲益智、飞行射击、塔防游戏、冒险解密、经营策略、角色扮演等十八种，各种游戏都有。</p>
+<p><img src="/2024/06/23/sqyy/640_(6)%201.webp" alt="640 (6).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(7).webp" alt="640 (7).webp"></p>
+<p>打开广场页面，这里有多种交流板块，我们可以在这里分享软件、资源交流，有什么资源要找的，或者有什么好资源可以分享的，都可以在这里交流。</p>
+<p><img src="/2024/06/23/sqyy/640_(8).webp" alt="640 (8).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(9).webp" alt="640 (9).webp"></p>
+<h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>蓝奏云：<a href="https://www.lanzouw.com/izwpg22c1w8d">https://www.lanzouw.com/izwpg22c1w8d</a></p>
+<p><a href="https://www.lanzouw.com/izwpg22c1w8d">神奇应用.apk - 蓝奏云</a></p>
+</div>]]></content>
+      <categories>
+        <category>安卓应用</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>安卓应用</tag>
+        <tag>app</tag>
       </tags>
   </entry>
   <entry>
@@ -2141,75 +2181,6 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>神奇应用!什么都能搜!</title>
-    <url>/2024/06/23/sqyy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-💡 分享一款收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类的神器应用。
-
-</aside>
-
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一款全新上线的安卓应用分享平台，收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类，用户可以在平台上搜索到自己想要的任何应用，直接一键高速下载。</p>
-<blockquote>
-<p>一款集合了众多应用资源的软件，挑选优质应用，所有推荐的软件经过精心筛选，还有社区广场，进行资源交流，享受简洁易懂的服务和功能模块，包括搜索、分类浏览、收藏等。</p>
-</blockquote>
-<p><img src="/2024/06/23/sqyy/640.webp" alt="640.webp"></p>
-<h1 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h1><p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
-<p><img src="/2024/06/23/sqyy/640_(1).webp" alt="640 (1).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(2).webp" alt="640 (2).webp"></p>
-<p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
-<p><img src="/2024/06/23/sqyy/640_(3).webp" alt="640 (3).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(4).webp" alt="640 (4).webp"></p>
-<p>打开应用页面，可以看见软件内的全部分类，有影S播放、音y播放、漫画、文字等娱乐分类，还有下载、存储、搜索等工具分类，一共有30多种，非常丰富。</p>
-<p><img src="/2024/06/23/sqyy/640_(5).webp" alt="640 (5).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(6).webp" alt="640 (6).webp"></p>
-<p>还有游戏的专属页面，这里全是游戏资源，有休闲益智、飞行射击、塔防游戏、冒险解密、经营策略、角色扮演等十八种，各种游戏都有。</p>
-<p><img src="/2024/06/23/sqyy/640_(6)%201.webp" alt="640 (6).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(7).webp" alt="640 (7).webp"></p>
-<p>打开广场页面，这里有多种交流板块，我们可以在这里分享软件、资源交流，有什么资源要找的，或者有什么好资源可以分享的，都可以在这里交流。</p>
-<p><img src="/2024/06/23/sqyy/640_(8).webp" alt="640 (8).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(9).webp" alt="640 (9).webp"></p>
-<h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>蓝奏云：<a href="https://www.lanzouw.com/izwpg22c1w8d">https://www.lanzouw.com/izwpg22c1w8d</a></p>
-<p><a href="https://www.lanzouw.com/izwpg22c1w8d">神奇应用.apk - 蓝奏云</a></p>
-</div>]]></content>
-      <categories>
-        <category>安卓应用</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>安卓应用</tag>
-        <tag>app</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用works制作随机图!</title>
-    <url>/2024/10/26/suijip/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><p>随机图的轮子其实网上有不少了，但基本都需要一台服务器，或者用别人提供的服务。</p>
-<p>但其实托管图片获取直链还是比较简单的，所以想着用 Cloudflare Workers 在直链中随机选一个，来搭建一个私人的随机图片服务。</p>
-<h2 id="你需要"><a href="#你需要" class="headerlink" title="你需要"></a>你需要</h2><ul>
-<li>一个 Cloudflare 账号</li>
-<li>一堆图片直链</li>
-</ul>
-<h2 id="图片直链"><a href="#图片直链" class="headerlink" title="图片直链"></a>图片直链</h2><p>不少图床都提供直链服务，比如 <a href="https://sm.ms/">sm.ms</a>（免费版单文件上限 5MB，速度很快），或者 <a href="https://img.vim-cn.com/">img.vim-cn.com</a>（单文件上限 50MB，国内速度一般）。</p>
-<p>或者，如果你对这些公共的服务不太放心的话，一个 GitHub Repo 也是不错的选择。</p>
-<p>总之，只需要一个直链，方法很多，自己灵活选择。</p>
-<h2 id="部署-Workers"><a href="#部署-Workers" class="headerlink" title="部署 Workers"></a>部署 Workers</h2><p>方法不多说，网上一大堆，下面直接贴代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">addEventListener(&#x27;fetch&#x27;, event =&gt; &#123;</span><br><span class="line">    event.respondWith(handleRequest(event.request))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">async function handleRequest(request) &#123;</span><br><span class="line"></span><br><span class="line">	var background_urls = [</span><br><span class="line">	&#x27;https://w.wallhaven.cc/full/ey/wallhaven-eymzjk.jpg&#x27;,</span><br><span class="line">	&#x27;https://w.wallhaven.cc/full/j8/wallhaven-j8rk95.png&#x27;</span><br><span class="line">	]</span><br><span class="line">	var index = Math.floor((Math.random()*background_urls.length));</span><br><span class="line">	res = await fetch(background_urls[index])</span><br><span class="line">    return new Response(res.body, &#123;</span><br><span class="line">        headers: &#123; &#x27;content-type&#x27;: &#x27;image/jpeg&#x27; &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVASCRIPT</span><br></pre></td></tr></table></figure>
-
-<p><code>background_urls</code> 是一个保存直链的数组，将所有你想随机的图片加入进去即可。</p>
-<p>P.S. 没有学过 Javascript，临时拼凑而成，希望有大佬可以优化地更好。</p>
-<h1 id="我的随机图"><a href="#我的随机图" class="headerlink" title="我的随机图:"></a>我的随机图:</h1><p><img src="https://webp.liyy.us.kg/" alt="网址https://webp.liyy.us.kg/"></p>
-</div>]]></content>
-      <categories>
-        <category>实用技巧</category>
-      </categories>
-      <tags>
-        <tag>Cloudflare</tag>
-        <tag>works</tag>
-        <tag>壁纸</tag>
-        <tag>随机图</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>绝版安卓工具箱？能有多强？</title>
     <url>/2024/06/17/tools-box/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -2256,6 +2227,169 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>工具</tag>
         <tag>安卓应用</tag>
         <tag>app</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用works制作随机图!</title>
+    <url>/2024/10/26/suijip/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><p>随机图的轮子其实网上有不少了，但基本都需要一台服务器，或者用别人提供的服务。</p>
+<p>但其实托管图片获取直链还是比较简单的，所以想着用 Cloudflare Workers 在直链中随机选一个，来搭建一个私人的随机图片服务。</p>
+<h2 id="你需要"><a href="#你需要" class="headerlink" title="你需要"></a>你需要</h2><ul>
+<li>一个 Cloudflare 账号</li>
+<li>一堆图片直链</li>
+</ul>
+<h2 id="图片直链"><a href="#图片直链" class="headerlink" title="图片直链"></a>图片直链</h2><p>不少图床都提供直链服务，比如 <a href="https://sm.ms/">sm.ms</a>（免费版单文件上限 5MB，速度很快），或者 <a href="https://img.vim-cn.com/">img.vim-cn.com</a>（单文件上限 50MB，国内速度一般）。</p>
+<p>或者，如果你对这些公共的服务不太放心的话，一个 GitHub Repo 也是不错的选择。</p>
+<p>总之，只需要一个直链，方法很多，自己灵活选择。</p>
+<h2 id="部署-Workers"><a href="#部署-Workers" class="headerlink" title="部署 Workers"></a>部署 Workers</h2><p>方法不多说，网上一大堆，下面直接贴代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">addEventListener(&#x27;fetch&#x27;, event =&gt; &#123;</span><br><span class="line">    event.respondWith(handleRequest(event.request))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">async function handleRequest(request) &#123;</span><br><span class="line"></span><br><span class="line">	var background_urls = [</span><br><span class="line">	&#x27;https://w.wallhaven.cc/full/ey/wallhaven-eymzjk.jpg&#x27;,</span><br><span class="line">	&#x27;https://w.wallhaven.cc/full/j8/wallhaven-j8rk95.png&#x27;</span><br><span class="line">	]</span><br><span class="line">	var index = Math.floor((Math.random()*background_urls.length));</span><br><span class="line">	res = await fetch(background_urls[index])</span><br><span class="line">    return new Response(res.body, &#123;</span><br><span class="line">        headers: &#123; &#x27;content-type&#x27;: &#x27;image/jpeg&#x27; &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVASCRIPT</span><br></pre></td></tr></table></figure>
+
+<p><code>background_urls</code> 是一个保存直链的数组，将所有你想随机的图片加入进去即可。</p>
+<p>P.S. 没有学过 Javascript，临时拼凑而成，希望有大佬可以优化地更好。</p>
+<h1 id="我的随机图"><a href="#我的随机图" class="headerlink" title="我的随机图:"></a>我的随机图:</h1><p><img src="https://webp.liyy.us.kg/" alt="网址https://webp.liyy.us.kg/"></p>
+</div>]]></content>
+      <categories>
+        <category>实用技巧</category>
+      </categories>
+      <tags>
+        <tag>Cloudflare</tag>
+        <tag>works</tag>
+        <tag>壁纸</tag>
+        <tag>随机图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神秘网站合集打开即用？</title>
+    <url>/2024/06/02/website-all/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+这里的网站只有91个，还没来得及加完，就要去学校了，后面一定会继续更新哒，注意关注哦～
+
+</aside>
+
+<h1 id="搞学习"><a href="#搞学习" class="headerlink" title="搞学习"></a>搞学习</h1><p>CSDN：<a href="https://www.csdn.net/">https://www.csdn.net/</a></p>
+<p>TED（最优质的演讲）：<a href="https://www.ted.com/">https://www.ted.com/</a></p>
+<p>谷粉学术：<a href="https://gfsoso.99lb.net/scholar.html">https://gfsoso.99lb.net/scholar.html</a></p>
+<p>大学zi源网：<a href="http://www.dxzy163.com/">http://www.dxzy163.com/</a></p>
+<p>简答题：<a href="http://www.jiandati.com/">http://www.jiandati.com/</a></p>
+<p>网易公开课：<a href="https://open.163.com/ted/">https://open.163.com/ted/</a></p>
+<p>网易云课堂：<a href="https://study.163.com/">https://study.163.com/</a></p>
+<p>中国大学MOOC：<a href="notion://www.notion.so/www.icourse163.org">www.icourse163.org</a></p>
+<p>网易云课堂：study.163.com</p>
+<p>哔哩哔哩弹幕网：<a href="notion://www.notion.so/www.bilibili.com">www.bilibili.com</a></p>
+<p>我要自学网：<a href="notion://www.notion.so/www.51zxw.net">www.51zxw.net</a></p>
+<p>知乎：<a href="notion://www.notion.so/www.zhihu.com">www.zhihu.com</a></p>
+<p>学堂在线：<a href="notion://www.notion.so/www.xuetangx.com">www.xuetangx.com</a></p>
+<p>爱课程：<a href="notion://www.notion.so/www.icourses.cn">www.icourses.cn</a></p>
+<p>猫咪论文：<a href="https://lunwen.im/iData">https://lunwen.im/iData</a></p>
+<p>（论文搜索）：<a href="notion://www.notion.so/www.cn-ki.net">www.cn-ki.net</a></p>
+<p>文泉考试：<a href="https://www.wqkaoshi.com/">https://www.wqkaoshi.com</a></p>
+<h1 id="找书籍"><a href="#找书籍" class="headerlink" title="找书籍"></a>找书籍</h1><p>书栈网（极力推荐）：<a href="https://www.bookstack.cn/">https://www.bookstack.cn/</a></p>
+<p>码农之家（计算机电子书下载）：<a href="notion://www.notion.so/www.xz577.com">www.xz577.com</a></p>
+<p>鸠摩搜书：<a href="notion://www.notion.so/www.jiumodiary.com">www.jiumodiary.com</a></p>
+<p>云海电子图书馆：<a href="notion://www.notion.so/www.pdfbook.cn">www.pdfbook.cn</a></p>
+<p>周读（书籍搜索）：ireadweek.com</p>
+<p>知轩藏书：<a href="http://www.zxcs.me/">http://www.zxcs.me/</a></p>
+<p>脚本之家电子书下载：<a href="https://www.jb51.net/books/">https://www.jb51.net/books/</a></p>
+<p>搜书VIP-电子书搜索：<a href="http://www.soshuvip.com/all.html">http://www.soshuvip.com/all.html</a></p>
+<p>书格（在线古籍图书馆）：<a href="https://new.shuge.org/caj">https://new.shuge.org/caj</a></p>
+<p>云阅读：<a href="http://cajviewer.cnki.net/cajcloud/">http://cajviewer.cnki.net/cajcloud/</a></p>
+<p>必看网（人生必看的书籍）：<a href="https://www.biikan.com/">https://www.biikan.com/</a></p>
+<h1 id="冷知识-黑科技"><a href="#冷知识-黑科技" class="headerlink" title="冷知识 &#x2F; 黑科技"></a>冷知识 &#x2F; 黑科技</h1><p>上班摸鱼必备（假装电脑系统升级）：<a href="http://fakeupdate.net/">http://fakeupdate.net/</a></p>
+<p>PIECES 拼图（30 个 CSS 碎片进行拼图，呈现 30 种濒临灭绝的动物）：<a href="http://www.species-in-pieces.com/">http://www.species-in-pieces.com/</a></p>
+<p>图片立体像素画：<a href="https://pissang.github.io/voxelize-image/">https://pissang.github.io/voxelize-image/</a></p>
+<p>福利单词（一个不太正经的背单词网站）：<a href="http://dict.ftqq.com/">http://dict.ftqq.com</a></p>
+<p>查无此人（刷新网站，展现一张AI 生成的人脸照片）：<a href="https://thispersondoesnotexist.com/">https://thispersondoesnotexist.com/</a></p>
+<p>在线制作地图图例：<a href="https://mapchart.net/">https://mapchart.net/</a></p>
+<p>创意光线绘画：<a href="http://weavesilk.com/">http://weavesilk.com/</a></p>
+<p>星系观察：<a href="https://stellarium-web.org/">https://stellarium-web.org/</a></p>
+<p>煎蛋：<a href="http://jandan.net/">http://jandan.net/</a></p>
+<p>渣男-说话的艺术：<a href="https://lovelive.tools/">https://lovelive.tools/</a></p>
+<p>全历史：<a href="https://www.allhistory.com/">https://www.allhistory.com/</a></p>
+<p>iData：<a href="https://www.cn-ki.net/">https://www.cn-ki.net/</a></p>
+<p>术语在线：<a href="http://www.termonline.cn/">http://www.termonline.cn/</a></p>
+<p>zi源搜索</p>
+<p>DogeDoge搜索引擎：<a href="notion://www.notion.so/www.dogedoge.com">www.dogedoge.com</a></p>
+<p>秘迹搜索：<a href="https://mijisou.com/">https://mijisou.com/</a></p>
+<p>小白盘：<a href="https://www.xiaobaipan.com/">https://www.xiaobaipan.com/</a></p>
+<p>云盘精灵（zi源搜索）：<a href="notion://www.notion.so/www.yunpanjingling.com">www.yunpanjingling.com</a></p>
+<p>虫部落（zi源搜索）：<a href="notion://www.notion.so/www.chongbuluo.com">www.chongbuluo.com</a></p>
+<p>如风搜（zi源搜索）：<a href="http://www.rufengso.net/">http://www.rufengso.net/</a></p>
+<p>爱扒：<a href="https://www.zyboe.com/">https://www.zyboe.com/</a></p>
+<h1 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h1><p>奶牛快传（在线传输文件利器）：cowtransfer.com</p>
+<p>文叔叔（大文件传输，不限速）：<a href="https://www.wenshushu.cn/">https://www.wenshushu.cn/</a></p>
+<p>云端超级应用空间（PS，PPT，Excel，Ai）：<a href="https://uzer.me/">https://uzer.me/</a></p>
+<p>香当网（年终总结，个人简历，事迹材料，租赁合同，演讲稿）：<a href="https://www.xiangdang.net/">https://www.xiangdang.net/</a></p>
+<p>二维码生成：<a href="https://cli.im/">https://cli.im/</a></p>
+<p>熵数（图表制作，数据可视化）：<a href="https://dydata.io/appv2/#/pages/index/home">https://dydata.io/appv2/#/pages/index/home</a></p>
+<p>拷贝兔：<a href="https://cp.anyknew.com/">https://cp.anyknew.com/</a></p>
+<p>图片无限变放大：<a href="http://bigjpg.com/zh">http://bigjpg.com/zh</a></p>
+<p>幕布（在线大纲笔记工具）：mubu.com</p>
+<p>在线转换器（在线转换器转换任何测量单位）：<a href="https://zh.justcnw.com/">https://zh.justcnw.com/</a></p>
+<p>调查问卷制作：<a href="https://www.wenjuan.com/">https://www.wenjuan.com/</a></p>
+<p>果核剥壳（软件下载）：<a href="https://www.ghpym.com/">https://www.ghpym.com/</a></p>
+<p>软件下载：<a href="https://www.unyoo.com/">https://www.unyoo.com/</a></p>
+<p>MSDN我告诉你（windows10系统镜像下载）：<a href="https://msdn.itellyou.cn/">https://msdn.itellyou.cn/</a></p>
+<p>导航页（工具集）</p>
+<p>世界各国网址大全：<a href="http://www.world68.com/">http://www.world68.com/</a></p>
+<p>小森林导航：<a href="http://www.xsldh6.com/">http://www.xsldh6.com/</a></p>
+<p>简捷工具：<a href="http://www.shulijp.com/">http://www.shulijp.com/</a></p>
+<p>NiceTool.net 好工具网：<a href="http://www.nicetool.net/">http://www.nicetool.net/</a></p>
+<p>现实君工具箱（综合型在线工具集成网站）：<a href="http://tool.uixsj.cn/">http://tool.uixsj.cn/</a></p>
+<p>蓝调网站：<a href="http://lcoc.top/">http://lcoc.top/</a></p>
+<p>偷渡鱼：<a href="https://touduyu.com/">https://touduyu.com/</a></p>
+<p>牛导航：<a href="http://www.ziliao6.com/">http://www.ziliao6.com/</a></p>
+<p>小呆导航：<a href="https://www.webjike.com/index.html">https://www.webjike.com/index.html</a></p>
+<p>简法主页：<a href="http://www.jianfast.com/">http://www.jianfast.com/</a></p>
+<p>KIM主页：<a href="https://kim.plopco.com/">https://kim.plopco.com/</a></p>
+<p>聚BT：<a href="https://jubt.net/cn/index.html">https://jubt.net/cn/index.html</a></p>
+<p>精准云工具合集：<a href="https://jingzhunyun.com/">https://jingzhunyun.com/</a></p>
+<p>兔2工具合集：<a href="https://www.tool2.cn/">https://www.tool2.cn/</a></p>
+<p>爱资料工具（在线实用工具集合）：<a href="notion://www.notion.so/www.toolnb.com">www.toolnb.com</a></p>
+<p>工具导航：<a href="https://hao.logosc.cn/">https://hao.logosc.cn/</a></p>
+<h1 id="学设计"><a href="#学设计" class="headerlink" title="学设计"></a>学设计</h1><p>码力全开（产品&#x2F;设计师&#x2F;独立开发者的zi源库）：<a href="https://www.maliquankai.com/designnav/">https://www.maliquankai.com/designnav/</a></p>
+<p>免费音频素材：<a href="https://icons8.cn/music">https://icons8.cn/music</a></p>
+<p>新CG儿（视频素材模板，无水印+免费下载）：<a href="https://www.newcger.com/">https://www.newcger.com/</a></p>
+<p>Iconfont（阿里巴巴矢量图标库）：<a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
+<p>小图标下载：<a href="https://www.easyicon.net/">https://www.easyicon.net/</a></p>
+<p>Flight Icon：<a href="https://www.flighticon.co/">https://www.flighticon.co/</a></p>
+<p>第一字体转换器：<a href="http://www.diyiziti.com/">http://www.diyiziti.com/</a></p>
+<p>doyoudosh（平面设计）：<a href="notion://www.notion.so/www.doyoudo.com">www.doyoudo.com</a></p>
+<p>企业宣传视频在线制作：<a href="https://duomu.tv/">https://duomu.tv/</a></p>
+<p>MAKE海报设计官网：<a href="http://maka.im/">http://maka.im/</a></p>
+<p>一键海报神器：<a href="https://www.logosc.cn/photo/?utm_source=hao.logosc.cn&utm_medium=referral">https://www.logosc.cn/photo/?utm_source&#x3D;hao.logosc.cn&amp;utm_medium&#x3D;referral</a></p>
+<p>字由（字体设计）：<a href="http://www.hellofont.cn/">http://www.hellofont.cn/</a></p>
+<p>查字体网站：<a href="https://fonts.safe.360.cn/">https://fonts.safe.360.cn/</a></p>
+<p>爱给网（免费素材下载的网站，包括音效、配乐，3D、视频、游戏，平面、教程）：<a href="http://www.aigei.com/">http://www.aigei.com/</a></p>
+<p>在线视频剪辑：<a href="https://bilibili.clipchamp.com/editor">https://bilibili.clipchamp.com/editor</a></p>
+<h1 id="搞文档"><a href="#搞文档" class="headerlink" title="搞文档"></a>搞文档</h1><p>即书（在线制作PPT）：<a href="https://www.keysuper.com/">https://www.keysuper.com/</a></p>
+<p>PDF处理：<a href="https://smallpdf.com/cn">https://smallpdf.com/cn</a></p>
+<p>PDF处理：<a href="https://www.ilovepdf.com/zh-cn">https://www.ilovepdf.com/zh-cn</a></p>
+<p>PDF处理：<a href="https://www.pdfpai.com/">https://www.pdfpai.com/</a></p>
+<p>PDF处理：<a href="https://www.hipdf.cn/">https://www.hipdf.cn/</a></p>
+<p>图片压缩，PDF处理：<a href="https://docsmall.com/">https://docsmall.com/</a></p>
+<p>腾讯文档（在线协作编辑和管理文档）：docs.qq.comProcessOn（在线协作制作结构图）：<a href="notion://www.notion.so/www.processon.com">www.processon.com</a></p>
+<p>iLovePDF（在线转换PDF利器）：<a href="notion://www.notion.so/www.ilovepdf.com">www.ilovepdf.com</a></p>
+<p>PPT在线制作：<a href="https://www.woodo.cn/">https://www.woodo.cn/</a></p>
+<p>PDF24工具（pdf处理工具）：<a href="https://tools.pdf24.org/">https://tools.pdf24.org/</a></p>
+<p>enIMGBOT（在线图片处理）：<a href="notion://www.notion.so/www.imgbot.ai">www.imgbot.ai</a></p>
+<p>福昕云编辑（在线编辑PDF）：edit.foxitcloud.cn</p>
+<p>TinyPNG（在线压缩图片）：tinypng.com</p>
+<p>UZER.ME（在线使用各种大应用，在线使用CAD，MATLAB，Office三件套）：uzer.me</p>
+<p>优品PPT（模板下载）：<a href="http://www.ypppt.com/">http://www.ypppt.com/</a></p>
+<p>第一PPT（模板下载）：<a href="http://www.1ppt.com/xiazai/">http://www.1ppt.com/xiazai/</a></p>
+<p>三顿PPT导航：sandunppt.com</p>
+<h1 id="找图片"><a href="#找图片" class="headerlink" title="找图片"></a>找图片</h1><p>电脑壁纸：<a href="http://lcoc.top/bizhi/">http://lcoc.top/bizhi/</a><a href="https://unsplash.com/">https://unsplash.com/</a><a href="https://pixabay.com/">https://pixabay.com/</a><a href="https://www.pexels.com/">https://www.pexels.com/</a><a href="https://visualhunt.com/">https://visualhunt.com/</a><a href="https://www.ssyer.com/">https://www.ssyer.com/</a></p>
+<p>彼岸图网：<a href="http://pic.netbian.com/">http://pic.netbian.com/</a></p>
+<p>极像素（超高清大图）：<a href="https://www.sigoo.com/">https://www.sigoo.com/</a></p>
+<p>免费版权图片搜索：<a href="https://www.logosc.cn/so/">https://www.logosc.cn/so/</a></p>
+</div>]]></content>
+      <categories>
+        <category>学习资料</category>
+      </categories>
+      <tags>
+        <tag>精选网站</tag>
+        <tag>推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -2420,140 +2554,6 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>神秘网站合集打开即用？</title>
-    <url>/2024/06/02/website-all/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-这里的网站只有91个，还没来得及加完，就要去学校了，后面一定会继续更新哒，注意关注哦～
-
-</aside>
-
-<h1 id="搞学习"><a href="#搞学习" class="headerlink" title="搞学习"></a>搞学习</h1><p>CSDN：<a href="https://www.csdn.net/">https://www.csdn.net/</a></p>
-<p>TED（最优质的演讲）：<a href="https://www.ted.com/">https://www.ted.com/</a></p>
-<p>谷粉学术：<a href="https://gfsoso.99lb.net/scholar.html">https://gfsoso.99lb.net/scholar.html</a></p>
-<p>大学zi源网：<a href="http://www.dxzy163.com/">http://www.dxzy163.com/</a></p>
-<p>简答题：<a href="http://www.jiandati.com/">http://www.jiandati.com/</a></p>
-<p>网易公开课：<a href="https://open.163.com/ted/">https://open.163.com/ted/</a></p>
-<p>网易云课堂：<a href="https://study.163.com/">https://study.163.com/</a></p>
-<p>中国大学MOOC：<a href="notion://www.notion.so/www.icourse163.org">www.icourse163.org</a></p>
-<p>网易云课堂：study.163.com</p>
-<p>哔哩哔哩弹幕网：<a href="notion://www.notion.so/www.bilibili.com">www.bilibili.com</a></p>
-<p>我要自学网：<a href="notion://www.notion.so/www.51zxw.net">www.51zxw.net</a></p>
-<p>知乎：<a href="notion://www.notion.so/www.zhihu.com">www.zhihu.com</a></p>
-<p>学堂在线：<a href="notion://www.notion.so/www.xuetangx.com">www.xuetangx.com</a></p>
-<p>爱课程：<a href="notion://www.notion.so/www.icourses.cn">www.icourses.cn</a></p>
-<p>猫咪论文：<a href="https://lunwen.im/iData">https://lunwen.im/iData</a></p>
-<p>（论文搜索）：<a href="notion://www.notion.so/www.cn-ki.net">www.cn-ki.net</a></p>
-<p>文泉考试：<a href="https://www.wqkaoshi.com/">https://www.wqkaoshi.com</a></p>
-<h1 id="找书籍"><a href="#找书籍" class="headerlink" title="找书籍"></a>找书籍</h1><p>书栈网（极力推荐）：<a href="https://www.bookstack.cn/">https://www.bookstack.cn/</a></p>
-<p>码农之家（计算机电子书下载）：<a href="notion://www.notion.so/www.xz577.com">www.xz577.com</a></p>
-<p>鸠摩搜书：<a href="notion://www.notion.so/www.jiumodiary.com">www.jiumodiary.com</a></p>
-<p>云海电子图书馆：<a href="notion://www.notion.so/www.pdfbook.cn">www.pdfbook.cn</a></p>
-<p>周读（书籍搜索）：ireadweek.com</p>
-<p>知轩藏书：<a href="http://www.zxcs.me/">http://www.zxcs.me/</a></p>
-<p>脚本之家电子书下载：<a href="https://www.jb51.net/books/">https://www.jb51.net/books/</a></p>
-<p>搜书VIP-电子书搜索：<a href="http://www.soshuvip.com/all.html">http://www.soshuvip.com/all.html</a></p>
-<p>书格（在线古籍图书馆）：<a href="https://new.shuge.org/caj">https://new.shuge.org/caj</a></p>
-<p>云阅读：<a href="http://cajviewer.cnki.net/cajcloud/">http://cajviewer.cnki.net/cajcloud/</a></p>
-<p>必看网（人生必看的书籍）：<a href="https://www.biikan.com/">https://www.biikan.com/</a></p>
-<h1 id="冷知识-黑科技"><a href="#冷知识-黑科技" class="headerlink" title="冷知识 &#x2F; 黑科技"></a>冷知识 &#x2F; 黑科技</h1><p>上班摸鱼必备（假装电脑系统升级）：<a href="http://fakeupdate.net/">http://fakeupdate.net/</a></p>
-<p>PIECES 拼图（30 个 CSS 碎片进行拼图，呈现 30 种濒临灭绝的动物）：<a href="http://www.species-in-pieces.com/">http://www.species-in-pieces.com/</a></p>
-<p>图片立体像素画：<a href="https://pissang.github.io/voxelize-image/">https://pissang.github.io/voxelize-image/</a></p>
-<p>福利单词（一个不太正经的背单词网站）：<a href="http://dict.ftqq.com/">http://dict.ftqq.com</a></p>
-<p>查无此人（刷新网站，展现一张AI 生成的人脸照片）：<a href="https://thispersondoesnotexist.com/">https://thispersondoesnotexist.com/</a></p>
-<p>在线制作地图图例：<a href="https://mapchart.net/">https://mapchart.net/</a></p>
-<p>创意光线绘画：<a href="http://weavesilk.com/">http://weavesilk.com/</a></p>
-<p>星系观察：<a href="https://stellarium-web.org/">https://stellarium-web.org/</a></p>
-<p>煎蛋：<a href="http://jandan.net/">http://jandan.net/</a></p>
-<p>渣男-说话的艺术：<a href="https://lovelive.tools/">https://lovelive.tools/</a></p>
-<p>全历史：<a href="https://www.allhistory.com/">https://www.allhistory.com/</a></p>
-<p>iData：<a href="https://www.cn-ki.net/">https://www.cn-ki.net/</a></p>
-<p>术语在线：<a href="http://www.termonline.cn/">http://www.termonline.cn/</a></p>
-<p>zi源搜索</p>
-<p>DogeDoge搜索引擎：<a href="notion://www.notion.so/www.dogedoge.com">www.dogedoge.com</a></p>
-<p>秘迹搜索：<a href="https://mijisou.com/">https://mijisou.com/</a></p>
-<p>小白盘：<a href="https://www.xiaobaipan.com/">https://www.xiaobaipan.com/</a></p>
-<p>云盘精灵（zi源搜索）：<a href="notion://www.notion.so/www.yunpanjingling.com">www.yunpanjingling.com</a></p>
-<p>虫部落（zi源搜索）：<a href="notion://www.notion.so/www.chongbuluo.com">www.chongbuluo.com</a></p>
-<p>如风搜（zi源搜索）：<a href="http://www.rufengso.net/">http://www.rufengso.net/</a></p>
-<p>爱扒：<a href="https://www.zyboe.com/">https://www.zyboe.com/</a></p>
-<h1 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h1><p>奶牛快传（在线传输文件利器）：cowtransfer.com</p>
-<p>文叔叔（大文件传输，不限速）：<a href="https://www.wenshushu.cn/">https://www.wenshushu.cn/</a></p>
-<p>云端超级应用空间（PS，PPT，Excel，Ai）：<a href="https://uzer.me/">https://uzer.me/</a></p>
-<p>香当网（年终总结，个人简历，事迹材料，租赁合同，演讲稿）：<a href="https://www.xiangdang.net/">https://www.xiangdang.net/</a></p>
-<p>二维码生成：<a href="https://cli.im/">https://cli.im/</a></p>
-<p>熵数（图表制作，数据可视化）：<a href="https://dydata.io/appv2/#/pages/index/home">https://dydata.io/appv2/#/pages/index/home</a></p>
-<p>拷贝兔：<a href="https://cp.anyknew.com/">https://cp.anyknew.com/</a></p>
-<p>图片无限变放大：<a href="http://bigjpg.com/zh">http://bigjpg.com/zh</a></p>
-<p>幕布（在线大纲笔记工具）：mubu.com</p>
-<p>在线转换器（在线转换器转换任何测量单位）：<a href="https://zh.justcnw.com/">https://zh.justcnw.com/</a></p>
-<p>调查问卷制作：<a href="https://www.wenjuan.com/">https://www.wenjuan.com/</a></p>
-<p>果核剥壳（软件下载）：<a href="https://www.ghpym.com/">https://www.ghpym.com/</a></p>
-<p>软件下载：<a href="https://www.unyoo.com/">https://www.unyoo.com/</a></p>
-<p>MSDN我告诉你（windows10系统镜像下载）：<a href="https://msdn.itellyou.cn/">https://msdn.itellyou.cn/</a></p>
-<p>导航页（工具集）</p>
-<p>世界各国网址大全：<a href="http://www.world68.com/">http://www.world68.com/</a></p>
-<p>小森林导航：<a href="http://www.xsldh6.com/">http://www.xsldh6.com/</a></p>
-<p>简捷工具：<a href="http://www.shulijp.com/">http://www.shulijp.com/</a></p>
-<p>NiceTool.net 好工具网：<a href="http://www.nicetool.net/">http://www.nicetool.net/</a></p>
-<p>现实君工具箱（综合型在线工具集成网站）：<a href="http://tool.uixsj.cn/">http://tool.uixsj.cn/</a></p>
-<p>蓝调网站：<a href="http://lcoc.top/">http://lcoc.top/</a></p>
-<p>偷渡鱼：<a href="https://touduyu.com/">https://touduyu.com/</a></p>
-<p>牛导航：<a href="http://www.ziliao6.com/">http://www.ziliao6.com/</a></p>
-<p>小呆导航：<a href="https://www.webjike.com/index.html">https://www.webjike.com/index.html</a></p>
-<p>简法主页：<a href="http://www.jianfast.com/">http://www.jianfast.com/</a></p>
-<p>KIM主页：<a href="https://kim.plopco.com/">https://kim.plopco.com/</a></p>
-<p>聚BT：<a href="https://jubt.net/cn/index.html">https://jubt.net/cn/index.html</a></p>
-<p>精准云工具合集：<a href="https://jingzhunyun.com/">https://jingzhunyun.com/</a></p>
-<p>兔2工具合集：<a href="https://www.tool2.cn/">https://www.tool2.cn/</a></p>
-<p>爱资料工具（在线实用工具集合）：<a href="notion://www.notion.so/www.toolnb.com">www.toolnb.com</a></p>
-<p>工具导航：<a href="https://hao.logosc.cn/">https://hao.logosc.cn/</a></p>
-<h1 id="学设计"><a href="#学设计" class="headerlink" title="学设计"></a>学设计</h1><p>码力全开（产品&#x2F;设计师&#x2F;独立开发者的zi源库）：<a href="https://www.maliquankai.com/designnav/">https://www.maliquankai.com/designnav/</a></p>
-<p>免费音频素材：<a href="https://icons8.cn/music">https://icons8.cn/music</a></p>
-<p>新CG儿（视频素材模板，无水印+免费下载）：<a href="https://www.newcger.com/">https://www.newcger.com/</a></p>
-<p>Iconfont（阿里巴巴矢量图标库）：<a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
-<p>小图标下载：<a href="https://www.easyicon.net/">https://www.easyicon.net/</a></p>
-<p>Flight Icon：<a href="https://www.flighticon.co/">https://www.flighticon.co/</a></p>
-<p>第一字体转换器：<a href="http://www.diyiziti.com/">http://www.diyiziti.com/</a></p>
-<p>doyoudosh（平面设计）：<a href="notion://www.notion.so/www.doyoudo.com">www.doyoudo.com</a></p>
-<p>企业宣传视频在线制作：<a href="https://duomu.tv/">https://duomu.tv/</a></p>
-<p>MAKE海报设计官网：<a href="http://maka.im/">http://maka.im/</a></p>
-<p>一键海报神器：<a href="https://www.logosc.cn/photo/?utm_source=hao.logosc.cn&utm_medium=referral">https://www.logosc.cn/photo/?utm_source&#x3D;hao.logosc.cn&amp;utm_medium&#x3D;referral</a></p>
-<p>字由（字体设计）：<a href="http://www.hellofont.cn/">http://www.hellofont.cn/</a></p>
-<p>查字体网站：<a href="https://fonts.safe.360.cn/">https://fonts.safe.360.cn/</a></p>
-<p>爱给网（免费素材下载的网站，包括音效、配乐，3D、视频、游戏，平面、教程）：<a href="http://www.aigei.com/">http://www.aigei.com/</a></p>
-<p>在线视频剪辑：<a href="https://bilibili.clipchamp.com/editor">https://bilibili.clipchamp.com/editor</a></p>
-<h1 id="搞文档"><a href="#搞文档" class="headerlink" title="搞文档"></a>搞文档</h1><p>即书（在线制作PPT）：<a href="https://www.keysuper.com/">https://www.keysuper.com/</a></p>
-<p>PDF处理：<a href="https://smallpdf.com/cn">https://smallpdf.com/cn</a></p>
-<p>PDF处理：<a href="https://www.ilovepdf.com/zh-cn">https://www.ilovepdf.com/zh-cn</a></p>
-<p>PDF处理：<a href="https://www.pdfpai.com/">https://www.pdfpai.com/</a></p>
-<p>PDF处理：<a href="https://www.hipdf.cn/">https://www.hipdf.cn/</a></p>
-<p>图片压缩，PDF处理：<a href="https://docsmall.com/">https://docsmall.com/</a></p>
-<p>腾讯文档（在线协作编辑和管理文档）：docs.qq.comProcessOn（在线协作制作结构图）：<a href="notion://www.notion.so/www.processon.com">www.processon.com</a></p>
-<p>iLovePDF（在线转换PDF利器）：<a href="notion://www.notion.so/www.ilovepdf.com">www.ilovepdf.com</a></p>
-<p>PPT在线制作：<a href="https://www.woodo.cn/">https://www.woodo.cn/</a></p>
-<p>PDF24工具（pdf处理工具）：<a href="https://tools.pdf24.org/">https://tools.pdf24.org/</a></p>
-<p>enIMGBOT（在线图片处理）：<a href="notion://www.notion.so/www.imgbot.ai">www.imgbot.ai</a></p>
-<p>福昕云编辑（在线编辑PDF）：edit.foxitcloud.cn</p>
-<p>TinyPNG（在线压缩图片）：tinypng.com</p>
-<p>UZER.ME（在线使用各种大应用，在线使用CAD，MATLAB，Office三件套）：uzer.me</p>
-<p>优品PPT（模板下载）：<a href="http://www.ypppt.com/">http://www.ypppt.com/</a></p>
-<p>第一PPT（模板下载）：<a href="http://www.1ppt.com/xiazai/">http://www.1ppt.com/xiazai/</a></p>
-<p>三顿PPT导航：sandunppt.com</p>
-<h1 id="找图片"><a href="#找图片" class="headerlink" title="找图片"></a>找图片</h1><p>电脑壁纸：<a href="http://lcoc.top/bizhi/">http://lcoc.top/bizhi/</a><a href="https://unsplash.com/">https://unsplash.com/</a><a href="https://pixabay.com/">https://pixabay.com/</a><a href="https://www.pexels.com/">https://www.pexels.com/</a><a href="https://visualhunt.com/">https://visualhunt.com/</a><a href="https://www.ssyer.com/">https://www.ssyer.com/</a></p>
-<p>彼岸图网：<a href="http://pic.netbian.com/">http://pic.netbian.com/</a></p>
-<p>极像素（超高清大图）：<a href="https://www.sigoo.com/">https://www.sigoo.com/</a></p>
-<p>免费版权图片搜索：<a href="https://www.logosc.cn/so/">https://www.logosc.cn/so/</a></p>
-</div>]]></content>
-      <categories>
-        <category>学习资料</category>
-      </categories>
-      <tags>
-        <tag>精选网站</tag>
-        <tag>推荐</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>win-文件查重</title>
     <url>/2024/06/24/win-chachong/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -2582,8 +2582,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
         <tag>工具</tag>
+        <tag>电脑软件</tag>
       </tags>
   </entry>
   <entry>
@@ -2626,8 +2626,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
         <tag>工具</tag>
+        <tag>电脑软件</tag>
         <tag>音乐</tag>
       </tags>
   </entry>
@@ -2724,8 +2724,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
         <tag>工具</tag>
+        <tag>电脑软件</tag>
         <tag>吾爱破解</tag>
       </tags>
   </entry>
@@ -2887,7 +2887,7 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
 <p><a href="https://www.wjx.cn/vm/YDZMNJS.aspx#">https://www.wjx.cn/vm/YDZMNJS.aspx#</a> </p>
 <p><img src="https://qr.wjx.cn/handler/qrcode.ashx?chl=https://www.wjx.cn/vm/YDZMNJS.aspx&chs=120x120&nar=1&sign=f92cfd7e480498ded8682c401b57905a386aacd3" alt="图片"></p>
 </blockquote>
-<a href="%E7%82%B9%E6%88%91%E5%A1%AB%E5%86%99%E9%97%AE%E5%8D%B7,%E9%97%AE%E5%8D%B7%E6%98%9F,https://www.wjx.cn/vm/YDZMNJS.aspx#" title target></a>
+
 
 <p>网站嵌入代码:</p>
 <script type="text/javascript" src="https://www.wjx.cn/handler/jqemed.ashx?activity=YDZMNJS&width=800&source=iframe"></script>
