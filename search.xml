@@ -34,118 +34,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown 基本语法</title>
-    <url>/2024/01/22/Markdown/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h1><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出<br>HTML、PDF 以及本身的 .md<br>格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。</p>
-<p>在线体验一下</p>
-<p><a href="https://markdown.com.cn/editor/">Markdown在线编辑器</a></p>
-<h1 id="Markdown-标题语法"><a href="#Markdown-标题语法" class="headerlink" title="Markdown 标题语法"></a>Markdown 标题语法</h1><p>要创建标题，请在单词或短语前面添加井号 (#) 。#<br>的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (</p>
-<h3 id="例如：-My-Header-。"><a href="#例如：-My-Header-。" class="headerlink" title=") (例如：### My Header)。"></a>) (例如：### My Header)。</h3><p>Markdown语法</p>
-<p>HTML</p>
-<p>预览效果<br><code># Heading level 1&lt;h1&gt;Heading level 1&lt;/h1&gt;</code><br>Heading level 1<br><code>## Heading level 2&lt;h2&gt;Heading level 2&lt;/h2&gt;</code><br>Heading level 2<br><code>### Heading level 3&lt;h3&gt;Heading level 3&lt;/h3&gt;</code><br>Heading level 3<br><code>#### Heading level 4&lt;h4&gt;Heading level 4&lt;/h4&gt;</code><br>Heading level 4<br><code>##### Heading level 5&lt;h5&gt;Heading level 5&lt;/h5&gt;</code><br>Heading level 5<br><code>###### Heading level 6&lt;h6&gt;Heading level 6&lt;/h6&gt;</code><br>Heading level 6<br>最佳实践<br>不同的 Markdown 应用程序处理 #<br>和标题之间的空格方式并不一致。为了兼容考虑，请用一个空格在 #<br>和标题之间进行分隔。</p>
-<p>✅ Do this</p>
-<p>❌ Don’t do this<br><code># Here’s a Heading  #Here’s a Heading</code></p>
-<h1 id="Markdown-强调语法"><a href="#Markdown-强调语法" class="headerlink" title="Markdown 强调语法"></a>Markdown 强调语法</h1><h2 id="粗体（Bold）"><a href="#粗体（Bold）" class="headerlink" title="粗体（Bold）"></a>粗体（Bold）</h2><p>要加粗文本，请在单词或短语的前后各添加两个星号（asterisks）或下划线（underscores）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（asterisks）。</p>
-<table>
-<thead>
-<tr>
-<th>Markdown语法</th>
-<th>HTML</th>
-<th>预览效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>I just love bold</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>text.</td>
-<td>I just love <strong>bold</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>text.</td>
-<td>I just love bold text.</td>
-<td></td>
-</tr>
-<tr>
-<td>I just love bold</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>text.</td>
-<td>I just love <strong>bold</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>text.</td>
-<td>I just love bold text.</td>
-<td></td>
-</tr>
-<tr>
-<td>Loveisbold</td>
-<td>Love<strong>is</strong>bold</td>
-<td>Loveisbold</td>
-</tr>
-</tbody></table>
-<h3 id="粗体（Bold）用法最佳实践"><a href="#粗体（Bold）用法最佳实践" class="headerlink" title="粗体（Bold）用法最佳实践"></a>粗体（Bold）用法最佳实践</h3><p>Markdown<br>应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号（asterisks）。</p>
-<table>
-<thead>
-<tr>
-<th>✅  Do this</th>
-<th>❌  Don’t do this</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Loveisbold</td>
-<td>Love__is__bold</td>
-</tr>
-</tbody></table>
-<h3 id="斜体（Italic）"><a href="#斜体（Italic）" class="headerlink" title="斜体（Italic）"></a>斜体（Italic）</h3><p>要用斜体显示文本，请在单词或短语前后添加一个星号（asterisk）或下划线（underscore）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
-<hr>
-<h3 id="粗体（Bold）和斜体（Italic）"><a href="#粗体（Bold）和斜体（Italic）" class="headerlink" title="粗体（Bold）和斜体（Italic）"></a>粗体（Bold）和斜体（Italic）</h3><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
-<h1 id="Markdown-分隔线语法-要创建分隔线，请在单独一行上使用三个或多个星号"><a href="#Markdown-分隔线语法-要创建分隔线，请在单独一行上使用三个或多个星号" class="headerlink" title="Markdown 分隔线语法 要创建分隔线，请在单独一行上使用三个或多个星号"></a>Markdown 分隔线语法 要创建分隔线，请在单独一行上使用三个或多个星号</h1><p>(***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。 &#96;&#96;&#96;other</p>
-<hr>
-<hr>
-<h3 id="分隔线（Horizontal-Rule）用法最佳实践"><a href="#分隔线（Horizontal-Rule）用法最佳实践" class="headerlink" title="分隔线（Horizontal Rule）用法最佳实践"></a>分隔线（Horizontal Rule）用法最佳实践</h3><p>为了兼容性，请在分隔线的前后均添加空白行。</p>
-<table class="table table-bordered"><thead class="thead-light"><tr><th>✅&nbsp; Do this</th> <th>❌&nbsp; Don't do this</th></tr></thead> <tbody><tr><td><code class="highlighter-rouge">
-        Try to put a blank line before...<br><br>
-        ---<br><br>
-        ...and after a horizontal rule.
-        </code></td> <td><code class="highlighter-rouge">
-        Without blank lines, this would be a heading.<br>
-        ---<br>
-        Don't do this!
-        </code></td></tr></tbody></table>
-
-<h1 id="Markdown-链接语法"><a href="#Markdown-链接语法" class="headerlink" title="Markdown 链接语法"></a>Markdown 链接语法</h1><p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。<br>超链接Markdown语法代码：<a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="超链接title">超链接显示名</a><br>对应的HTML代码：<a href="超链接地址" title="超链接title">超链接显示名</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt;)。</span><br><span class="line">例子：茗辰原博客：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>渲染效果如下: 茗辰原博客：<a href="https://mcy.cloudns.org/">茗辰原博客</a> ### 给链接增加 Title<br>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt; &quot;最好的markdown教程&quot;)。</span><br><span class="line">例子：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;&quot;茗辰原，一个与众不同的异世界，等待你的探索与发现。&quot;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>渲染效果如下: 这是一个博客 <a href="%5Bhttps://mcy.cloudns.%E1%BE%97%5D(https://mcy.cloudns.xn--org/)%22,,-fn7iodic0g2l57ik3av97bfxai4ad75lgbc0x8ac80f1nh7ihga6361arvk5p4b9y3e.%22/">茗辰原博客</a>。</p>
-<h3 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h3><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://mcy.cloudns.org/&gt;</span><br><span class="line">&lt;mcy070329@qq.com&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>渲染效果如下: <a href="https://mcy.cloudns.org/">https://mcy.cloudns.org/</a> <a href="mailto:mcy070329@qq.com">mcy070329@qq.com</a> #<br>Markdown 图片语法 要添加图像，请使用感叹号 (!),<br>然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">插入图片Markdown语法代码：![图片alt](图片链接 &quot;图片title&quot;)。</span><br><span class="line"></span><br><span class="line">对应的HTML代码：&lt;img src=&quot;图片链接&quot; alt=&quot;&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&gt;&quot;</span><br><span class="line">title=&quot;mcy&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![这是图片](&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&quot;茗辰原头像&quot;&gt;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-</div>]]></content>
-      <categories>
-        <category>实用推荐</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>写作</tag>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ChatGPT-KEY的获取[无需手机号绑定]</title>
     <url>/2024/01/21/ChatGPT-KEY/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -283,9 +171,9 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
         <tag>123网盘</tag>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -324,6 +212,118 @@
         <tag>电脑软件</tag>
         <tag>安卓应用</tag>
         <tag>音乐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown 基本语法</title>
+    <url>/2024/01/22/Markdown/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h1><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出<br>HTML、PDF 以及本身的 .md<br>格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。</p>
+<p>在线体验一下</p>
+<p><a href="https://markdown.com.cn/editor/">Markdown在线编辑器</a></p>
+<h1 id="Markdown-标题语法"><a href="#Markdown-标题语法" class="headerlink" title="Markdown 标题语法"></a>Markdown 标题语法</h1><p>要创建标题，请在单词或短语前面添加井号 (#) 。#<br>的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (</p>
+<h3 id="例如：-My-Header-。"><a href="#例如：-My-Header-。" class="headerlink" title=") (例如：### My Header)。"></a>) (例如：### My Header)。</h3><p>Markdown语法</p>
+<p>HTML</p>
+<p>预览效果<br><code># Heading level 1&lt;h1&gt;Heading level 1&lt;/h1&gt;</code><br>Heading level 1<br><code>## Heading level 2&lt;h2&gt;Heading level 2&lt;/h2&gt;</code><br>Heading level 2<br><code>### Heading level 3&lt;h3&gt;Heading level 3&lt;/h3&gt;</code><br>Heading level 3<br><code>#### Heading level 4&lt;h4&gt;Heading level 4&lt;/h4&gt;</code><br>Heading level 4<br><code>##### Heading level 5&lt;h5&gt;Heading level 5&lt;/h5&gt;</code><br>Heading level 5<br><code>###### Heading level 6&lt;h6&gt;Heading level 6&lt;/h6&gt;</code><br>Heading level 6<br>最佳实践<br>不同的 Markdown 应用程序处理 #<br>和标题之间的空格方式并不一致。为了兼容考虑，请用一个空格在 #<br>和标题之间进行分隔。</p>
+<p>✅ Do this</p>
+<p>❌ Don’t do this<br><code># Here’s a Heading  #Here’s a Heading</code></p>
+<h1 id="Markdown-强调语法"><a href="#Markdown-强调语法" class="headerlink" title="Markdown 强调语法"></a>Markdown 强调语法</h1><h2 id="粗体（Bold）"><a href="#粗体（Bold）" class="headerlink" title="粗体（Bold）"></a>粗体（Bold）</h2><p>要加粗文本，请在单词或短语的前后各添加两个星号（asterisks）或下划线（underscores）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（asterisks）。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>I just love bold</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>text.</td>
+<td>I just love <strong>bold</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>text.</td>
+<td>I just love bold text.</td>
+<td></td>
+</tr>
+<tr>
+<td>I just love bold</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>text.</td>
+<td>I just love <strong>bold</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>text.</td>
+<td>I just love bold text.</td>
+<td></td>
+</tr>
+<tr>
+<td>Loveisbold</td>
+<td>Love<strong>is</strong>bold</td>
+<td>Loveisbold</td>
+</tr>
+</tbody></table>
+<h3 id="粗体（Bold）用法最佳实践"><a href="#粗体（Bold）用法最佳实践" class="headerlink" title="粗体（Bold）用法最佳实践"></a>粗体（Bold）用法最佳实践</h3><p>Markdown<br>应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号（asterisks）。</p>
+<table>
+<thead>
+<tr>
+<th>✅  Do this</th>
+<th>❌  Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Loveisbold</td>
+<td>Love__is__bold</td>
+</tr>
+</tbody></table>
+<h3 id="斜体（Italic）"><a href="#斜体（Italic）" class="headerlink" title="斜体（Italic）"></a>斜体（Italic）</h3><p>要用斜体显示文本，请在单词或短语前后添加一个星号（asterisk）或下划线（underscore）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
+<hr>
+<h3 id="粗体（Bold）和斜体（Italic）"><a href="#粗体（Bold）和斜体（Italic）" class="headerlink" title="粗体（Bold）和斜体（Italic）"></a>粗体（Bold）和斜体（Italic）</h3><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
+<h1 id="Markdown-分隔线语法-要创建分隔线，请在单独一行上使用三个或多个星号"><a href="#Markdown-分隔线语法-要创建分隔线，请在单独一行上使用三个或多个星号" class="headerlink" title="Markdown 分隔线语法 要创建分隔线，请在单独一行上使用三个或多个星号"></a>Markdown 分隔线语法 要创建分隔线，请在单独一行上使用三个或多个星号</h1><p>(***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。 &#96;&#96;&#96;other</p>
+<hr>
+<hr>
+<h3 id="分隔线（Horizontal-Rule）用法最佳实践"><a href="#分隔线（Horizontal-Rule）用法最佳实践" class="headerlink" title="分隔线（Horizontal Rule）用法最佳实践"></a>分隔线（Horizontal Rule）用法最佳实践</h3><p>为了兼容性，请在分隔线的前后均添加空白行。</p>
+<table class="table table-bordered"><thead class="thead-light"><tr><th>✅&nbsp; Do this</th> <th>❌&nbsp; Don't do this</th></tr></thead> <tbody><tr><td><code class="highlighter-rouge">
+        Try to put a blank line before...<br><br>
+        ---<br><br>
+        ...and after a horizontal rule.
+        </code></td> <td><code class="highlighter-rouge">
+        Without blank lines, this would be a heading.<br>
+        ---<br>
+        Don't do this!
+        </code></td></tr></tbody></table>
+
+<h1 id="Markdown-链接语法"><a href="#Markdown-链接语法" class="headerlink" title="Markdown 链接语法"></a>Markdown 链接语法</h1><p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。<br>超链接Markdown语法代码：<a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="超链接title">超链接显示名</a><br>对应的HTML代码：<a href="超链接地址" title="超链接title">超链接显示名</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt;)。</span><br><span class="line">例子：茗辰原博客：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下: 茗辰原博客：<a href="https://mcy.cloudns.org/">茗辰原博客</a> ### 给链接增加 Title<br>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt; &quot;最好的markdown教程&quot;)。</span><br><span class="line">例子：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;&quot;茗辰原，一个与众不同的异世界，等待你的探索与发现。&quot;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下: 这是一个博客 <a href="%5Bhttps://mcy.cloudns.%E1%BE%97%5D(https://mcy.cloudns.xn--org/)%22,,-fn7iodic0g2l57ik3av97bfxai4ad75lgbc0x8ac80f1nh7ihga6361arvk5p4b9y3e.%22/">茗辰原博客</a>。</p>
+<h3 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h3><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://mcy.cloudns.org/&gt;</span><br><span class="line">&lt;mcy070329@qq.com&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下: <a href="https://mcy.cloudns.org/">https://mcy.cloudns.org/</a> <a href="mailto:mcy070329@qq.com">mcy070329@qq.com</a> #<br>Markdown 图片语法 要添加图像，请使用感叹号 (!),<br>然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">插入图片Markdown语法代码：![图片alt](图片链接 &quot;图片title&quot;)。</span><br><span class="line"></span><br><span class="line">对应的HTML代码：&lt;img src=&quot;图片链接&quot; alt=&quot;&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&gt;&quot;</span><br><span class="line">title=&quot;mcy&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![这是图片](&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&quot;茗辰原头像&quot;&gt;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</div>]]></content>
+      <categories>
+        <category>实用推荐</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>Markdown</tag>
+        <tag>写作</tag>
       </tags>
   </entry>
   <entry>
@@ -367,8 +367,54 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>所有应用广告通杀！！</title>
+    <url>/2024/08/04/ab/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+接下分享皆为自学。
+
+</aside>
+
+<h1 id="首先使用软件LibChecher"><a href="#首先使用软件LibChecher" class="headerlink" title="首先使用软件LibChecher"></a>首先使用软件LibChecher</h1><p>打开<code>LibChecher</code>；让后扫描要去除的软件。</p>
+<p>查看有那种<code>类型的广告</code>。</p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-14-11.webp" alt="Snipaste_2024-08-04_11-14-11.webp"></p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-14-27.webp" alt="Snipaste_2024-08-04_11-14-27.webp"></p>
+<p>这里发现，有快手，有腾讯，有穿山甲的广告。如此</p>
+<h1 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h1><p>打开MT管理器</p>
+<p>还是一样先取出签名，让后打开查看。</p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-15-10.webp" alt="Snipaste_2024-08-04_11-15-10.webp"></p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-15-23.webp" alt="Snipaste_2024-08-04_11-15-23.webp"></p>
+<p>这里，去除广告的文件，相信你们能看懂那些是广告文件。</p>
+<p>打开<code>dex</code>，查看dex++</p>
+<p>打开<code>常量</code></p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-15-42.webp" alt="Snipaste_2024-08-04_11-15-42.webp"></p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-16-11.webp" alt="Snipaste_2024-08-04_11-16-11.webp"></p>
+<p>搜索<code>关键词</code>，这里举<code>腾讯广告</code>位例子，搜索<code>qq.e</code></p>
+<p>让后点击搜索，</p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-16-23.webp" alt="Snipaste_2024-08-04_11-16-23.webp"></p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-16-39.webp" alt="Snipaste_2024-08-04_11-16-39.webp"></p>
+<p>将搜索到的结果全部替换成<code>#</code></p>
+<p>就OK了，让后点击应用更改。</p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-16-53.webp" alt="Snipaste_2024-08-04_11-16-53.webp"></p>
+<p>如此，我们再试一次，这里取出快手广告，搜索<code>com.kwad</code></p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-17-19.webp" alt="Snipaste_2024-08-04_11-17-19.webp"></p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-17-31.webp" alt="Snipaste_2024-08-04_11-17-31.webp"></p>
+<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-17-43.webp" alt="Snipaste_2024-08-04_11-17-43.webp"></p>
+<p>同样的，这里就不说明了。</p>
+<h1 id="代码总结"><a href="#代码总结" class="headerlink" title="代码总结"></a>代码总结</h1><p>以下是代码:</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">腾讯:qq.<span class="property">e</span></span><br><span class="line">快手:com.<span class="property">kwad</span></span><br><span class="line">穿山甲:com.<span class="property">bytedance</span>.<span class="property">pangle</span>.<span class="property">Zeus</span>.<span class="property">hasinit</span></span><br><span class="line">头条:toutiao</span><br><span class="line">百度:com.<span class="property">bytedance</span>.<span class="property">sdk</span>.</span><br><span class="line"><span class="attr">sigmob</span>:搜索sigmob类名加完全匹配<span class="keyword">const</span>/<span class="number">4</span> vO, <span class="title class_">Ox0</span>零换<span class="number">1</span>，xml文件搜sigmob，带activity标签的全删了</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>安卓应用</tag>
+        <tag>广告</tag>
       </tags>
   </entry>
   <entry>
@@ -438,52 +484,6 @@
         <tag>建站</tag>
         <tag>网站建站</tag>
         <tag>计算机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>所有应用广告通杀！！</title>
-    <url>/2024/08/04/ab/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-接下分享皆为自学。
-
-</aside>
-
-<h1 id="首先使用软件LibChecher"><a href="#首先使用软件LibChecher" class="headerlink" title="首先使用软件LibChecher"></a>首先使用软件LibChecher</h1><p>打开<code>LibChecher</code>；让后扫描要去除的软件。</p>
-<p>查看有那种<code>类型的广告</code>。</p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-14-11.webp" alt="Snipaste_2024-08-04_11-14-11.webp"></p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-14-27.webp" alt="Snipaste_2024-08-04_11-14-27.webp"></p>
-<p>这里发现，有快手，有腾讯，有穿山甲的广告。如此</p>
-<h1 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h1><p>打开MT管理器</p>
-<p>还是一样先取出签名，让后打开查看。</p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-15-10.webp" alt="Snipaste_2024-08-04_11-15-10.webp"></p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-15-23.webp" alt="Snipaste_2024-08-04_11-15-23.webp"></p>
-<p>这里，去除广告的文件，相信你们能看懂那些是广告文件。</p>
-<p>打开<code>dex</code>，查看dex++</p>
-<p>打开<code>常量</code></p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-15-42.webp" alt="Snipaste_2024-08-04_11-15-42.webp"></p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-16-11.webp" alt="Snipaste_2024-08-04_11-16-11.webp"></p>
-<p>搜索<code>关键词</code>，这里举<code>腾讯广告</code>位例子，搜索<code>qq.e</code></p>
-<p>让后点击搜索，</p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-16-23.webp" alt="Snipaste_2024-08-04_11-16-23.webp"></p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-16-39.webp" alt="Snipaste_2024-08-04_11-16-39.webp"></p>
-<p>将搜索到的结果全部替换成<code>#</code></p>
-<p>就OK了，让后点击应用更改。</p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-16-53.webp" alt="Snipaste_2024-08-04_11-16-53.webp"></p>
-<p>如此，我们再试一次，这里取出快手广告，搜索<code>com.kwad</code></p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-17-19.webp" alt="Snipaste_2024-08-04_11-17-19.webp"></p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-17-31.webp" alt="Snipaste_2024-08-04_11-17-31.webp"></p>
-<p><img src="/2024/08/04/ab/Snipaste_2024-08-04_11-17-43.webp" alt="Snipaste_2024-08-04_11-17-43.webp"></p>
-<p>同样的，这里就不说明了。</p>
-<h1 id="代码总结"><a href="#代码总结" class="headerlink" title="代码总结"></a>代码总结</h1><p>以下是代码:</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">腾讯:qq.<span class="property">e</span></span><br><span class="line">快手:com.<span class="property">kwad</span></span><br><span class="line">穿山甲:com.<span class="property">bytedance</span>.<span class="property">pangle</span>.<span class="property">Zeus</span>.<span class="property">hasinit</span></span><br><span class="line">头条:toutiao</span><br><span class="line">百度:com.<span class="property">bytedance</span>.<span class="property">sdk</span>.</span><br><span class="line"><span class="attr">sigmob</span>:搜索sigmob类名加完全匹配<span class="keyword">const</span>/<span class="number">4</span> vO, <span class="title class_">Ox0</span>零换<span class="number">1</span>，xml文件搜sigmob，带activity标签的全删了</span><br></pre></td></tr></table></figure></div>]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>安卓应用</tag>
-        <tag>广告</tag>
       </tags>
   </entry>
   <entry>
@@ -573,6 +573,39 @@
       </tags>
   </entry>
   <entry>
+    <title>解锁全网安卓音乐</title>
+    <url>/2024/10/01/app-allmusic/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="聆听音乐"><a href="#聆听音乐" class="headerlink" title="聆听音乐"></a>聆听音乐</h1><h4 id="首页推荐"><a href="#首页推荐" class="headerlink" title="首页推荐"></a>首页推荐</h4><p>作为一款成熟的音乐软件，首页通常最普遍的内容就是音乐推荐，包括热门音乐推荐和每日推荐。</p>
+<p><img src="/2024/10/01/app-allmusic/1.webp" alt="首页推荐"></p>
+<p>推荐内容都是当前网络上用户播放量比较高的一些知名歌曲。</p>
+<h4 id="音乐搜索"><a href="#音乐搜索" class="headerlink" title="音乐搜索"></a>音乐搜索</h4><p>如果需要查找一部分自己需要的歌曲，在首页最上方有一个搜索框，搜索框输入歌曲名或者歌手名，能从多个搜索源下搜索内容。</p>
+<p><img src="/2024/10/01/app-allmusic/2.webp" alt="音乐搜索"></p>
+<p>APP 包含 4 个搜索引擎源，分别来自不同平台，在资源方面不完全相同，同一搜索词也会搜到不同内容。</p>
+<p>相当一部分歌曲除了音频之外，还能播放 MV，点击歌曲名最左侧的+，将需要播放的音乐添加至播放列表。</p>
+<h4 id="歌单分类"><a href="#歌单分类" class="headerlink" title="歌单分类"></a>歌单分类</h4><p>除了搜索关键词，还能根据类型查找不同类别的歌单，歌单分类有很多，根据语种、流派、主题、心情、场景，又能分成更多类型。</p>
+<p><img src="/2024/10/01/app-allmusic/3.webp" alt="歌单分类"></p>
+<p>歌单是一连串歌曲的合集，至少包含十几首歌曲。</p>
+<h4 id="音乐下载"><a href="#音乐下载" class="headerlink" title="音乐下载"></a>音乐下载</h4><p>大多数的音乐 APP 并不支持歌曲下载到本地，但是这款聆听音乐却能完美支持。</p>
+<p>下载的格式有多种选择，包括无损和标准，无损格式文件体积会更大，下载的本地文件就是普通的常见音频格式，可以放到其他播放器上正常播放。</p>
+<p><img src="/2024/10/01/app-allmusic/4.webp" alt="音乐下载"></p>
+<p>已经下载的歌曲会显示在“下载”导航栏处，不过下载功能并不完全不受限制，每个人每天只能下载 19 次。</p>
+<h4 id="歌单导入"><a href="#歌单导入" class="headerlink" title="歌单导入"></a>歌单导入</h4><p>针对其他 APP 上的用户，聆听音乐也支持将 QQ 音乐歌单导入其中，只需要在 QQ 音乐上分享歌单之后复制链接。</p>
+<p><img src="/2024/10/01/app-allmusic/5.webp" alt="歌单导入"></p>
+<p>粘贴进聆听音乐就可以很容易地导入 QQ 音乐上的歌单，其他平台歌单暂不支持导入。</p>
+<h4 id="本地音乐"><a href="#本地音乐" class="headerlink" title="本地音乐"></a>本地音乐</h4><p>聆听音乐既是一款在线音乐播放器，也是一款再普通不过的本地音乐播放器，一键扫描手机上的本地音乐文件，按照规则过滤掉不需要的文件，只选取有用的歌曲进行播放。</p>
+<p><img src="/2024/10/01/app-allmusic/6.webp" alt="本地音乐"></p>
+<h4 id="评价："><a href="#评价：" class="headerlink" title="评价："></a>评价：</h4><p>聆听音乐本身是一款免费的APP，不需要付费，也没有烦人的弹窗广告，但仍然有少量推广内容，还好不影响使用体验。</p>
+<h2 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h2><a href="123pan,%E7%82%B9%E6%88%91%E7%82%B9%E6%88%91,https://www.123pan.com/s/6zVRVv-8TBmd.html" title target></a></div>]]></content>
+      <categories>
+        <category>安卓应用</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>音乐</tag>
+        <tag>安卓软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>安卓必备啊！语音起飞！</title>
     <url>/2024/07/23/an-yuyin/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -623,39 +656,6 @@
         <tag>工具</tag>
         <tag>安卓应用</tag>
         <tag>文字语音</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解锁全网安卓音乐</title>
-    <url>/2024/10/01/app-allmusic/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="聆听音乐"><a href="#聆听音乐" class="headerlink" title="聆听音乐"></a>聆听音乐</h1><h4 id="首页推荐"><a href="#首页推荐" class="headerlink" title="首页推荐"></a>首页推荐</h4><p>作为一款成熟的音乐软件，首页通常最普遍的内容就是音乐推荐，包括热门音乐推荐和每日推荐。</p>
-<p><img src="/2024/10/01/app-allmusic/1.webp" alt="首页推荐"></p>
-<p>推荐内容都是当前网络上用户播放量比较高的一些知名歌曲。</p>
-<h4 id="音乐搜索"><a href="#音乐搜索" class="headerlink" title="音乐搜索"></a>音乐搜索</h4><p>如果需要查找一部分自己需要的歌曲，在首页最上方有一个搜索框，搜索框输入歌曲名或者歌手名，能从多个搜索源下搜索内容。</p>
-<p><img src="/2024/10/01/app-allmusic/2.webp" alt="音乐搜索"></p>
-<p>APP 包含 4 个搜索引擎源，分别来自不同平台，在资源方面不完全相同，同一搜索词也会搜到不同内容。</p>
-<p>相当一部分歌曲除了音频之外，还能播放 MV，点击歌曲名最左侧的+，将需要播放的音乐添加至播放列表。</p>
-<h4 id="歌单分类"><a href="#歌单分类" class="headerlink" title="歌单分类"></a>歌单分类</h4><p>除了搜索关键词，还能根据类型查找不同类别的歌单，歌单分类有很多，根据语种、流派、主题、心情、场景，又能分成更多类型。</p>
-<p><img src="/2024/10/01/app-allmusic/3.webp" alt="歌单分类"></p>
-<p>歌单是一连串歌曲的合集，至少包含十几首歌曲。</p>
-<h4 id="音乐下载"><a href="#音乐下载" class="headerlink" title="音乐下载"></a>音乐下载</h4><p>大多数的音乐 APP 并不支持歌曲下载到本地，但是这款聆听音乐却能完美支持。</p>
-<p>下载的格式有多种选择，包括无损和标准，无损格式文件体积会更大，下载的本地文件就是普通的常见音频格式，可以放到其他播放器上正常播放。</p>
-<p><img src="/2024/10/01/app-allmusic/4.webp" alt="音乐下载"></p>
-<p>已经下载的歌曲会显示在“下载”导航栏处，不过下载功能并不完全不受限制，每个人每天只能下载 19 次。</p>
-<h4 id="歌单导入"><a href="#歌单导入" class="headerlink" title="歌单导入"></a>歌单导入</h4><p>针对其他 APP 上的用户，聆听音乐也支持将 QQ 音乐歌单导入其中，只需要在 QQ 音乐上分享歌单之后复制链接。</p>
-<p><img src="/2024/10/01/app-allmusic/5.webp" alt="歌单导入"></p>
-<p>粘贴进聆听音乐就可以很容易地导入 QQ 音乐上的歌单，其他平台歌单暂不支持导入。</p>
-<h4 id="本地音乐"><a href="#本地音乐" class="headerlink" title="本地音乐"></a>本地音乐</h4><p>聆听音乐既是一款在线音乐播放器，也是一款再普通不过的本地音乐播放器，一键扫描手机上的本地音乐文件，按照规则过滤掉不需要的文件，只选取有用的歌曲进行播放。</p>
-<p><img src="/2024/10/01/app-allmusic/6.webp" alt="本地音乐"></p>
-<h4 id="评价："><a href="#评价：" class="headerlink" title="评价："></a>评价：</h4><p>聆听音乐本身是一款免费的APP，不需要付费，也没有烦人的弹窗广告，但仍然有少量推广内容，还好不影响使用体验。</p>
-<h2 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h2><a href="123pan,%E7%82%B9%E6%88%91%E7%82%B9%E6%88%91,https://www.123pan.com/s/6zVRVv-8TBmd.html" title target></a></div>]]></content>
-      <categories>
-        <category>安卓应用</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>音乐</tag>
-        <tag>安卓软件</tag>
       </tags>
   </entry>
   <entry>
@@ -718,8 +718,8 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
         <tag>实用推荐</tag>
       </tags>
   </entry>
@@ -795,8 +795,8 @@
         <category>技术分享</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>建站</tag>
+        <tag>工具</tag>
         <tag>实用推荐</tag>
       </tags>
   </entry>
@@ -1007,9 +1007,88 @@
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
         <tag>实用推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>腹肌养成记</title>
+    <url>/2024/11/23/fjyangcheng/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>同宿舍的人说,想练腹肌!</p>
+<p>我说行,必须练,练不成誓不罢休!!</p>
+<p>下面放上一张我的腹肌照!!</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">谁信谁-------</span><br><span class="line">留给以后,这个东西先摆着!</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="总"><a href="#总" class="headerlink" title="总"></a>总</h2><p>锻炼腹肌,主要是分区的,每次练得时候肯定要一次全部练到,这才好看</p>
+<p>,分为<strong>4组</strong>,每组动作<strong>不少于15</strong>个,如果自己比较强悍,可以添加!</p>
+<h2 id="1、卷腹"><a href="#1、卷腹" class="headerlink" title="1、卷腹"></a>1、卷腹</h2><p>卷腹是腹部训练最基础的动作，我们可以以该动作作为腹肌训练的热身动作，建议组3组，每个动作做15～20次。卷腹，一定要让自己的腹部卷起来。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ec3f699e3c3c4f0e9db3b6a39de3dfb8.gif" alt="img"></p>
+<p>起始位置：双手交叉至于脑后，双膝屈曲90度左右，背部着地。</p>
+<p>动作中：呼气，发力点在于你腹部上方，感觉腹部收紧后发力将你的头部和肩部同时上提，头部在这个过程中不能屈曲，尽量保持原位不动，达到最高点之后，缓慢的将你的上身缓慢放下，直到你的双肩着地。</p>
+<p>注意：手部不要用力牵引颈部，这点很重要。</p>
+<h2 id="2-抬腿反向卷腹"><a href="#2-抬腿反向卷腹" class="headerlink" title="2.抬腿反向卷腹"></a>2.抬腿反向卷腹</h2><p>抬腿反向卷腹这个动作主要是对腹部下侧的肌群起到刺激作用。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/90daafcb60984603a73a9835eb1ed105.gif" alt="img"></p>
+<p>起始姿势：小腿平行保持与身体中线两侧，双臂水平放置于身体两侧，掌面朝下，紧贴地面（整个动作过程都要保持你的腹部发力，双手起到的只有保持平衡的作用）。</p>
+<p>动作中：呼气、使得你下腹部收缩，紧接着就是你的双腿、臀部和下背部开始上屈，达到你的最高点之后，身体开始向下(吸气)复原。</p>
+<h2 id="3-抬腿卷腹"><a href="#3-抬腿卷腹" class="headerlink" title="3.抬腿卷腹"></a>3.抬腿卷腹</h2><p>这个动作是我最喜欢的腹部训练动作之一，对整个腹部的刺激都很到位。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/88381bc7af274921a571e2797995ea37.gif" alt="img"></p>
+<p>起始姿势：抬起你的腿部形成两个90度左右角，即髋部90度，大腿与小腿90度。</p>
+<p>动作中：双手置于脑后，从腹部开始发力，发力过程中头部与胸部的距离不能靠近。整个动作切记不能用到惯性，下降的过程尽量缓慢。</p>
+<h2 id="4、青蛙首府"><a href="#4、青蛙首府" class="headerlink" title="4、青蛙首府"></a>4、青蛙首府</h2><p>青蛙卷腹这个姿势不但对于你的腹部肌肉力量、耐力是一种挑战，同样对于你的平衡和稳定也是极其重要的，对于腹部和背部的主要大肌群发展非常有好处。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7640e3b033b4bbc84341b074c243190.gif" alt="img"></p>
+<p>起始动作：如同坐姿，膝盖要求屈曲90°，躯干保持与地面45°夹角，收起双腿腾空。</p>
+<p>动作中：你需要向前伸展你的双腿使其与地面平行、与此同时双手也要平举外展直至与身体同在一个平面，之后停留片刻，然后收回。</p>
+<h2 id="5、空中自行车"><a href="#5、空中自行车" class="headerlink" title="5、空中自行车"></a>5、空中自行车</h2><p>这是一个对于柔韧性、协调性和肌肉的发力感、控制能力要求都很高的、非常流行的一种练习方法，对于腹部所有肌群的刺激都很大，可谓是全能姿势。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ab2ab632eed04055b4fea30f6001748a.gif" alt="img"></p>
+<p>俯卧位，面部朝上，膝盖屈曲90°，双手交叉放于脑后，呼气的同时拧转你的躯干，双脚、头部和一侧的大腿呈对角线运动，使得你的有膝盖触碰到对侧肘部关节，交替动作。</p>
+<h2 id="6、侧卧曲腿卷腹"><a href="#6、侧卧曲腿卷腹" class="headerlink" title="6、侧卧曲腿卷腹"></a>6、侧卧曲腿卷腹</h2><p>该方法主要针对内外斜肌群。不建议大家经常训练，因为相比于腹直肌，腹外斜肌有增强的增涨性，腹外斜肌练的太大，穿上衣服，没人知道你的腹外斜肌练的好，还是要粗。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1c4c0e85a03a45a683c918c2a6162656.gif" alt="img"></p>
+<p>起始位置是仰卧起坐的姿势，膝盖屈曲放于身体的一侧，然后上半身以腹部上方的肌群为发力起始点，卷体，扭转到与膝盖相对的另外一侧，一侧做完然后另外一侧 再做也可以左右交替进行。</p>
+<h2 id="7、完全是仰卧起坐"><a href="#7、完全是仰卧起坐" class="headerlink" title="7、完全是仰卧起坐"></a>7、完全是仰卧起坐</h2><p>该姿势对于你臀部柔韧性的要求极为苛刻，但是即使你的臀部柔韧性并不适很好，你依旧可以通过该方法，得到发展。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/2d80374dee2540df87acbd7e4fbe9732.gif" alt="img"></p>
+<p>起始位置就如同蝴蝶，膝盖屈曲的同时打开膝盖朝向地面，双脚合并，背部着地，双手放置于头顶，用你的腹部发力牵拉身上起立。适合持续不断的练习，注意背部保持正常的生理曲度不能驼背。</p>
+<h2 id="8、仰卧举腿"><a href="#8、仰卧举腿" class="headerlink" title="8、仰卧举腿"></a>8、仰卧举腿</h2><p>这是李小龙最喜欢的练功动作之一，但是确实有些困难，你需要重新构建你的核心肌群才能做到把你身体五分之四的重量，单独只靠肩部和手臂就能举起来。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/e9b47163a9bf44178623e92560f94306.gif" alt="img"></p>
+<p>躺在长凳上，屈曲手臂，抓住长凳的一端，收缩腹部举起的双腿，直到到了极限为止，接着就是你的胸部、手臂和背部肌群发力，提起整个身体，之后让身体成蹦直，缓慢放下，恢复原来的位置。</p>
+<h2 id="9、仰卧举腿提臀"><a href="#9、仰卧举腿提臀" class="headerlink" title="9、仰卧举腿提臀"></a>9、仰卧举腿提臀</h2><p>这个动作对于下腹部肌群有很好的刺激，你可以选择腿部直立或者是屈曲，但你的双手必须笔直的放于身体两侧。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/47f5a122cd7146999df7d9eb7ea03f4f.gif" alt="img"></p>
+<p>起始位置，抬起你的双腿，你的双手放于身体两侧，掌心朝下，用你下腹部的肌群发力，提起你的臀部和背部，不能依靠惯性，记得注意力始终集中于你的腹部肌群。</p>
+<h2 id="10、V字卷腹"><a href="#10、V字卷腹" class="headerlink" title="10、V字卷腹"></a>10、V字卷腹</h2><p>V字卷腹可以让你的腹部肌肉燃烧起来，同时对臀部和大腿也有很好的刺激。也是搞肌君最喜欢的腹部训练动作。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1af7df03a2a64696b81ba5606d4957c6.gif" alt="img"></p>
+<p>双腿和双臂，向着相反的方向延伸，躺在地面上，双脚跟、肩部、双手和臀部的宽度适宜，发力的部位是你的腹部，快速形成V型，你的手掌尽量句触碰脚跟，之后缓慢下降。</p>
+<h2 id="11-俄罗斯转体"><a href="#11-俄罗斯转体" class="headerlink" title="11.俄罗斯转体"></a>11.俄罗斯转体</h2><p>保持身体的平衡对于腹部两侧的刺激也是尤为必要的。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7b5448b37344607b99a9e0fc0aae35a.gif" alt="img"></p>
+<p>起始姿势见上文，主要强调一个双脚在这个练习中，其实是不能接触地面的，动作熟练之后，抬起双脚，完全是由你的核心肌群即腹部紧张来控制身体，双手合并左右转动。</p>
+<h2 id="12-仰卧交替抬腿"><a href="#12-仰卧交替抬腿" class="headerlink" title="12.仰卧交替抬腿"></a>12.仰卧交替抬腿</h2><p>保持你的背部紧贴地面，双腿伸直，使得双腿提起，保持腹部紧张，快速有频率的运动。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/b68d0119bbdf4bb789c238c0f2a8ab21.gif" alt="img"></p>
+<p>如果你觉得该动作挑战难度并不大，那么建议你在双腿频繁抬起时候，用你的双手分别接触你两侧的大腿部位。</p>
+<h2 id="13、侧平板撑首府"><a href="#13、侧平板撑首府" class="headerlink" title="13、侧平板撑首府"></a>13、侧平板撑首府</h2><p>这是传统腹部肌群训练方法一种补充，你可以想到，这样的动作对于你内外斜肌发展有多大好处。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d3e87488cc5b47b0b3840c3b97314335.gif" alt="img"></p>
+<p>起始位置是侧身躺在地面，用靠近地面一侧的手臂和外脚背支撑身体，使身体保持在一条直线上，朝上举起另一侧的手臂，接着屈曲另一侧的大腿膝关节和肘部，使其接触，必须是用你的内外斜肌控制身体的运动，之后缓慢复原，交替动作。</p>
+<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p><code>仰卧核心卷腹15个✖️4组</code></p>
+<p>平躺于垫上，双脚踩在垫上，双手放置在腿部中间位置，吐气发力，卷起身体至肩胛骨下沿离开地面，吸气下放</p>
+<p><img src="https://pic3.zhimg.com/v2-8bdbb849970a56e62d915dbfce093050_b.webp" alt="动图"></p>
+<p><code>仰卧对角交替收膝15个✖️5组</code></p>
+<p>平躺于垫上，双脚踩在垫上，双手抱住头部，吐气发力，对侧脚和对侧肘相触即可，左右交替进行</p>
+<p><img src="https://pic2.zhimg.com/v2-f718328bd73c8c0614d3fc2f294b56db_b.jpg" alt="动图封面"></p>
+<p><code>平板支撑40秒✖️5组</code></p>
+<p>俯卧于垫上，双肘撑起身体，保持肩、髋、膝、踝为一条直线，腹部收紧，臀部收紧，保持腰部不要下沉，匀速呼吸即可</p>
+<p><img src="https://pic4.zhimg.com/v2-b43839c4acee74873b2e197b4321f1d9_b.jpg" alt="动图封面"></p>
+<p><code>空中蹬车40秒✖️5组</code></p>
+<p>方法：坐于地面，两腿做蹬车状，双手扶头手肘与对册膝盖对碰，以此循环</p>
+<p><img src="https://pic3.zhimg.com/v2-68eb7ac92c20dfbc318cbf111df5f7bc_b.webp" alt="动图"></p>
+</div>]]></content>
+      <categories>
+        <category>生活方面</category>
+      </categories>
+      <tags>
+        <tag>锻炼</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -1048,82 +1127,6 @@
       <tags>
         <tag>实验</tag>
         <tag>心理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>免费域名整理</title>
-    <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#110;&#x66;&#111;&#64;&#102;&#114;&#101;&#101;&#x6e;&#111;&#109;&#46;&#x63;&#x6f;&#109;">&#x69;&#110;&#x66;&#111;&#64;&#102;&#114;&#101;&#101;&#x6e;&#111;&#109;&#46;&#x63;&#x6f;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p>
-<p>以下整理了一些可以用的免费二级域名：</p>
-<table>
-<thead>
-<tr>
-<th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th>
-<th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td>
-<td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td>
-<td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td>
-<td>可以申请到work.gd&#x2F;run.place等免费二级域名</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td>
-<td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td>
-<td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td>
-<td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td>
-<td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td>
-<td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td>
-<td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td>
-<td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td>
-<td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td>
-<td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td>
-</tr>
-<tr>
-<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td>
-<td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td>
-</tr>
-</tbody></table>
-<p>以上信息会不定期整理修改！</p>
-</div>]]></content>
-      <categories>
-        <category>网站建站</category>
-      </categories>
-      <tags>
-        <tag>建站</tag>
-        <tag>实用推荐</tag>
-        <tag>精选网站</tag>
       </tags>
   </entry>
   <entry>
@@ -1256,82 +1259,79 @@
       </tags>
   </entry>
   <entry>
-    <title>腹肌养成记</title>
-    <url>/2024/11/23/fjyangcheng/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>同宿舍的人说,想练腹肌!</p>
-<p>我说行,必须练,练不成誓不罢休!!</p>
-<p>下面放上一张我的腹肌照!!</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">谁信谁-------</span><br><span class="line">留给以后,这个东西先摆着!</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="总"><a href="#总" class="headerlink" title="总"></a>总</h2><p>锻炼腹肌,主要是分区的,每次练得时候肯定要一次全部练到,这才好看</p>
-<p>,分为<strong>4组</strong>,每组动作<strong>不少于15</strong>个,如果自己比较强悍,可以添加!</p>
-<h2 id="1、卷腹"><a href="#1、卷腹" class="headerlink" title="1、卷腹"></a>1、卷腹</h2><p>卷腹是腹部训练最基础的动作，我们可以以该动作作为腹肌训练的热身动作，建议组3组，每个动作做15～20次。卷腹，一定要让自己的腹部卷起来。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ec3f699e3c3c4f0e9db3b6a39de3dfb8.gif" alt="img"></p>
-<p>起始位置：双手交叉至于脑后，双膝屈曲90度左右，背部着地。</p>
-<p>动作中：呼气，发力点在于你腹部上方，感觉腹部收紧后发力将你的头部和肩部同时上提，头部在这个过程中不能屈曲，尽量保持原位不动，达到最高点之后，缓慢的将你的上身缓慢放下，直到你的双肩着地。</p>
-<p>注意：手部不要用力牵引颈部，这点很重要。</p>
-<h2 id="2-抬腿反向卷腹"><a href="#2-抬腿反向卷腹" class="headerlink" title="2.抬腿反向卷腹"></a>2.抬腿反向卷腹</h2><p>抬腿反向卷腹这个动作主要是对腹部下侧的肌群起到刺激作用。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/90daafcb60984603a73a9835eb1ed105.gif" alt="img"></p>
-<p>起始姿势：小腿平行保持与身体中线两侧，双臂水平放置于身体两侧，掌面朝下，紧贴地面（整个动作过程都要保持你的腹部发力，双手起到的只有保持平衡的作用）。</p>
-<p>动作中：呼气、使得你下腹部收缩，紧接着就是你的双腿、臀部和下背部开始上屈，达到你的最高点之后，身体开始向下(吸气)复原。</p>
-<h2 id="3-抬腿卷腹"><a href="#3-抬腿卷腹" class="headerlink" title="3.抬腿卷腹"></a>3.抬腿卷腹</h2><p>这个动作是我最喜欢的腹部训练动作之一，对整个腹部的刺激都很到位。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/88381bc7af274921a571e2797995ea37.gif" alt="img"></p>
-<p>起始姿势：抬起你的腿部形成两个90度左右角，即髋部90度，大腿与小腿90度。</p>
-<p>动作中：双手置于脑后，从腹部开始发力，发力过程中头部与胸部的距离不能靠近。整个动作切记不能用到惯性，下降的过程尽量缓慢。</p>
-<h2 id="4、青蛙首府"><a href="#4、青蛙首府" class="headerlink" title="4、青蛙首府"></a>4、青蛙首府</h2><p>青蛙卷腹这个姿势不但对于你的腹部肌肉力量、耐力是一种挑战，同样对于你的平衡和稳定也是极其重要的，对于腹部和背部的主要大肌群发展非常有好处。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7640e3b033b4bbc84341b074c243190.gif" alt="img"></p>
-<p>起始动作：如同坐姿，膝盖要求屈曲90°，躯干保持与地面45°夹角，收起双腿腾空。</p>
-<p>动作中：你需要向前伸展你的双腿使其与地面平行、与此同时双手也要平举外展直至与身体同在一个平面，之后停留片刻，然后收回。</p>
-<h2 id="5、空中自行车"><a href="#5、空中自行车" class="headerlink" title="5、空中自行车"></a>5、空中自行车</h2><p>这是一个对于柔韧性、协调性和肌肉的发力感、控制能力要求都很高的、非常流行的一种练习方法，对于腹部所有肌群的刺激都很大，可谓是全能姿势。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/ab2ab632eed04055b4fea30f6001748a.gif" alt="img"></p>
-<p>俯卧位，面部朝上，膝盖屈曲90°，双手交叉放于脑后，呼气的同时拧转你的躯干，双脚、头部和一侧的大腿呈对角线运动，使得你的有膝盖触碰到对侧肘部关节，交替动作。</p>
-<h2 id="6、侧卧曲腿卷腹"><a href="#6、侧卧曲腿卷腹" class="headerlink" title="6、侧卧曲腿卷腹"></a>6、侧卧曲腿卷腹</h2><p>该方法主要针对内外斜肌群。不建议大家经常训练，因为相比于腹直肌，腹外斜肌有增强的增涨性，腹外斜肌练的太大，穿上衣服，没人知道你的腹外斜肌练的好，还是要粗。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1c4c0e85a03a45a683c918c2a6162656.gif" alt="img"></p>
-<p>起始位置是仰卧起坐的姿势，膝盖屈曲放于身体的一侧，然后上半身以腹部上方的肌群为发力起始点，卷体，扭转到与膝盖相对的另外一侧，一侧做完然后另外一侧 再做也可以左右交替进行。</p>
-<h2 id="7、完全是仰卧起坐"><a href="#7、完全是仰卧起坐" class="headerlink" title="7、完全是仰卧起坐"></a>7、完全是仰卧起坐</h2><p>该姿势对于你臀部柔韧性的要求极为苛刻，但是即使你的臀部柔韧性并不适很好，你依旧可以通过该方法，得到发展。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/2d80374dee2540df87acbd7e4fbe9732.gif" alt="img"></p>
-<p>起始位置就如同蝴蝶，膝盖屈曲的同时打开膝盖朝向地面，双脚合并，背部着地，双手放置于头顶，用你的腹部发力牵拉身上起立。适合持续不断的练习，注意背部保持正常的生理曲度不能驼背。</p>
-<h2 id="8、仰卧举腿"><a href="#8、仰卧举腿" class="headerlink" title="8、仰卧举腿"></a>8、仰卧举腿</h2><p>这是李小龙最喜欢的练功动作之一，但是确实有些困难，你需要重新构建你的核心肌群才能做到把你身体五分之四的重量，单独只靠肩部和手臂就能举起来。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/e9b47163a9bf44178623e92560f94306.gif" alt="img"></p>
-<p>躺在长凳上，屈曲手臂，抓住长凳的一端，收缩腹部举起的双腿，直到到了极限为止，接着就是你的胸部、手臂和背部肌群发力，提起整个身体，之后让身体成蹦直，缓慢放下，恢复原来的位置。</p>
-<h2 id="9、仰卧举腿提臀"><a href="#9、仰卧举腿提臀" class="headerlink" title="9、仰卧举腿提臀"></a>9、仰卧举腿提臀</h2><p>这个动作对于下腹部肌群有很好的刺激，你可以选择腿部直立或者是屈曲，但你的双手必须笔直的放于身体两侧。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/47f5a122cd7146999df7d9eb7ea03f4f.gif" alt="img"></p>
-<p>起始位置，抬起你的双腿，你的双手放于身体两侧，掌心朝下，用你下腹部的肌群发力，提起你的臀部和背部，不能依靠惯性，记得注意力始终集中于你的腹部肌群。</p>
-<h2 id="10、V字卷腹"><a href="#10、V字卷腹" class="headerlink" title="10、V字卷腹"></a>10、V字卷腹</h2><p>V字卷腹可以让你的腹部肌肉燃烧起来，同时对臀部和大腿也有很好的刺激。也是搞肌君最喜欢的腹部训练动作。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/1af7df03a2a64696b81ba5606d4957c6.gif" alt="img"></p>
-<p>双腿和双臂，向着相反的方向延伸，躺在地面上，双脚跟、肩部、双手和臀部的宽度适宜，发力的部位是你的腹部，快速形成V型，你的手掌尽量句触碰脚跟，之后缓慢下降。</p>
-<h2 id="11-俄罗斯转体"><a href="#11-俄罗斯转体" class="headerlink" title="11.俄罗斯转体"></a>11.俄罗斯转体</h2><p>保持身体的平衡对于腹部两侧的刺激也是尤为必要的。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d7b5448b37344607b99a9e0fc0aae35a.gif" alt="img"></p>
-<p>起始姿势见上文，主要强调一个双脚在这个练习中，其实是不能接触地面的，动作熟练之后，抬起双脚，完全是由你的核心肌群即腹部紧张来控制身体，双手合并左右转动。</p>
-<h2 id="12-仰卧交替抬腿"><a href="#12-仰卧交替抬腿" class="headerlink" title="12.仰卧交替抬腿"></a>12.仰卧交替抬腿</h2><p>保持你的背部紧贴地面，双腿伸直，使得双腿提起，保持腹部紧张，快速有频率的运动。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/b68d0119bbdf4bb789c238c0f2a8ab21.gif" alt="img"></p>
-<p>如果你觉得该动作挑战难度并不大，那么建议你在双腿频繁抬起时候，用你的双手分别接触你两侧的大腿部位。</p>
-<h2 id="13、侧平板撑首府"><a href="#13、侧平板撑首府" class="headerlink" title="13、侧平板撑首府"></a>13、侧平板撑首府</h2><p>这是传统腹部肌群训练方法一种补充，你可以想到，这样的动作对于你内外斜肌发展有多大好处。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190521/d3e87488cc5b47b0b3840c3b97314335.gif" alt="img"></p>
-<p>起始位置是侧身躺在地面，用靠近地面一侧的手臂和外脚背支撑身体，使身体保持在一条直线上，朝上举起另一侧的手臂，接着屈曲另一侧的大腿膝关节和肘部，使其接触，必须是用你的内外斜肌控制身体的运动，之后缓慢复原，交替动作。</p>
-<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p><code>仰卧核心卷腹15个✖️4组</code></p>
-<p>平躺于垫上，双脚踩在垫上，双手放置在腿部中间位置，吐气发力，卷起身体至肩胛骨下沿离开地面，吸气下放</p>
-<p><img src="https://pic3.zhimg.com/v2-8bdbb849970a56e62d915dbfce093050_b.webp" alt="动图"></p>
-<p><code>仰卧对角交替收膝15个✖️5组</code></p>
-<p>平躺于垫上，双脚踩在垫上，双手抱住头部，吐气发力，对侧脚和对侧肘相触即可，左右交替进行</p>
-<p><img src="https://pic2.zhimg.com/v2-f718328bd73c8c0614d3fc2f294b56db_b.jpg" alt="动图封面"></p>
-<p><code>平板支撑40秒✖️5组</code></p>
-<p>俯卧于垫上，双肘撑起身体，保持肩、髋、膝、踝为一条直线，腹部收紧，臀部收紧，保持腰部不要下沉，匀速呼吸即可</p>
-<p><img src="https://pic4.zhimg.com/v2-b43839c4acee74873b2e197b4321f1d9_b.jpg" alt="动图封面"></p>
-<p><code>空中蹬车40秒✖️5组</code></p>
-<p>方法：坐于地面，两腿做蹬车状，双手扶头手肘与对册膝盖对碰，以此循环</p>
-<p><img src="https://pic3.zhimg.com/v2-68eb7ac92c20dfbc318cbf111df5f7bc_b.webp" alt="动图"></p>
+    <title>免费域名整理</title>
+    <url>/2024/04/10/free-yuming/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#105;&#110;&#102;&#x6f;&#x40;&#102;&#x72;&#101;&#101;&#x6e;&#111;&#x6d;&#46;&#99;&#x6f;&#x6d;">&#105;&#110;&#102;&#x6f;&#x40;&#102;&#x72;&#101;&#101;&#x6e;&#111;&#x6d;&#46;&#99;&#x6f;&#x6d;</a>说明情况后可以改为收费状态并已付费10年。</p>
+<p>以下整理了一些可以用的免费二级域名：</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn">https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn</a></th>
+<th>可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE">https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE</a></td>
+<td>可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv</a></td>
+<td>可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8">https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8</a></td>
+<td>可以申请到work.gd&#x2F;run.place等免费二级域名</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ">https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ</a></td>
+<td>可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t</a></td>
+<td>可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M">https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M</a></td>
+<td>可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw">https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw</a></td>
+<td>可以申请到nom.za免费二级域名，需审核审，可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw</a></td>
+<td>可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0">https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0</a></td>
+<td>可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw">https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw</a></td>
+<td>可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg">https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg</a></td>
+<td>可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v">https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v</a></td>
+<td>可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析</td>
+</tr>
+<tr>
+<td><a href="https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA">https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA</a></td>
+<td>可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新）</td>
+</tr>
+</tbody></table>
+<p>以上信息会不定期整理修改！</p>
 </div>]]></content>
       <categories>
-        <category>生活方面</category>
+        <category>网站建站</category>
       </categories>
       <tags>
-        <tag>锻炼</tag>
-        <tag>生活</tag>
+        <tag>建站</tag>
+        <tag>实用推荐</tag>
+        <tag>精选网站</tag>
       </tags>
   </entry>
   <entry>
@@ -1381,6 +1381,44 @@
         <tag>安卓应用</tag>
         <tag>广告</tag>
         <tag>app,</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-添加音乐与视频</title>
+    <url>/2024/09/01/hexo-mp4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>我们在实用hexo中,没有任何的添加视频与音频的按钮.</p>
+<p>这让我很头脑,所以,这次我来分享一个方法.</p>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="首先插入音频"><a href="#首先插入音频" class="headerlink" title="首先插入音频"></a>首先插入<strong>音频</strong></h2><p><strong>aplayer</strong></p>
+<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-aplayer</code></p>
+<p>在markdown内添加以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer <span class="string">&quot;她的睫毛&quot;</span> <span class="string">&quot;周杰伦&quot;</span> <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot;</span>  <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<p><img src="/2024/09/01/hexo-mp4/music.png" alt="音频"></p>
+<p>或者使用下方代码: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><video src="https://music.163.com/song/media/outer/url?id=1490104654.mp3" position="absolute" width="100%" height="10%" controls="controls"></video></p>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><strong>dplayer</strong></p>
+<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-dplayer</code></p>
+<p>在markdown内添加以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% dplayer <span class="string">&quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot;</span>  <span class="string">&quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;theme=#FADFA3&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> <span class="string">&quot;token=tokendemo&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<p><img src="/2024/09/01/hexo-mp4/video.png" alt="视频"></p>
+<p>或者使用下方代码: </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><video src="https://bili.api.scc.lol/?bv=BV1xw4m1k7er&qn=80" position="absolute" width="100%" height="100%" controls="controls"></video></p>
+</div>]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>技术分享</tag>
+        <tag>实用</tag>
       </tags>
   </entry>
   <entry>
@@ -1438,139 +1476,6 @@
         <tag>安卓应用</tag>
         <tag>实用推荐</tag>
         <tag>app</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【计算机基础】关于进制</title>
-    <url>/2024/03/22/jingzhi/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="【计算机基础】关于进制"><a href="#【计算机基础】关于进制" class="headerlink" title="【计算机基础】关于进制"></a>【计算机基础】关于进制</h1><h3 id="进制是什么-常见的进制"><a href="#进制是什么-常见的进制" class="headerlink" title="进制是什么 &amp; 常见的进制"></a><strong>进制是什么 &amp; 常见的进制</strong></h3><p>学计算机，那就肯定得懂一样东西——<strong>进制</strong>（哪怕你没有学过，多少也会懂点）</p>
-<p>那进制是啥？</p>
-<blockquote>
-<p>进制也就是进位计数制，是人为定义的带进位的计数方法（有不带进位的计数方法，比如原始的结绳计数法，唱票时常用的“正”字计数法，以及类似的tally mark计数）。 对于任何一种进制—X进制，就表示每一位置上的数运算时都是逢X进一位。 十进制是逢十进一，<a href="https://www.rsnocsi.cn/?golink=aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlOEQlODElRTUlODUlQUQlRTglQkYlOUIlRTUlODglQjYvNDE2MjQ1Nw==">十六进制</a>是逢十六进一，<a href="https://www.rsnocsi.cn/?golink=aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTQlQkElOEMlRTglQkYlOUIlRTUlODglQjYvMzYxNDU3">二进制</a>就是逢二进一，以此类推，x进制就是逢x进位。</p>
-<p><a href="https://www.rsnocsi.cn/?golink=aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTglQkYlOUIlRTUlODglQjYvMzE3NDU3">百度百科</a></p>
-</blockquote>
-<p>进制这玩意，说白了就是我们数数的一个方式，像啥十进制（大家都知道的）就是满十进一</p>
-<p>那进制有啥呢？常见的进制有：</p>
-<ul>
-<li>十进制最常见的，对人来说最常用的</li>
-<li>二进制计算机里面用的，计算机的底层进制就是二进制，这是因为计算机是由逻辑电路组成的，而逻辑电路通常只有两个状态：开关的接通与断开，这两种状态正好可以用二进制的1和0表示。二进制是非常常见的，天生就与计算机有着紧密的关系，它正好能代表高低电平，开关的接通与断开，也与逻辑学中的真，假相吻合（布尔类型的True和False）</li>
-<li>八进制常见于计算机，经常用于简化二进制的计算，但用得也确实比较少</li>
-<li>十六进制也是计算机中经常使用的，经常用来表示存储器的地址，用得稍微比八进制多一点。八进制和十六进制只是为了简化二进制的存在的。在计算器底层中，是只能使用二进制的，但是二进制只有0和1，动不动就进位，导致二进制数的位数通常都很多，难以记录，所以经常使用八进制和十六进制来简化。</li>
-<li>为什么是十六进制和八进制来帮忙？而不是我们更加熟悉的十进制？原因很简单，十六进制的基数是16，八进制的基数是8，二进制的基数是2，十进制的基数是10。它们之中，16是2的4次方，8是2的3次方（立方），但10与2并没有什么整数次方的关系。</li>
-</ul>
-<p>上面这些呢，都是我们日常能见到的进制</p>
-<h3 id="各个进制的特点"><a href="#各个进制的特点" class="headerlink" title="各个进制的特点"></a><strong>各个进制的特点</strong></h3><h3 id="十进制的特点："><a href="#十进制的特点：" class="headerlink" title="十进制的特点："></a><strong>十进制的特点：</strong></h3><ul>
-<li><strong>简写：DEC</strong></li>
-<li><strong>特点：</strong>满十进一</li>
-<li><strong>计数 ：</strong>0、1、2、3、4、5、6、7、8、9（10、11、12…19、20…）到九了，但我们是满十进一，个位变成0，向十位进一，那下一位就是10。个位满十，向十位进一；十位满十，向百位进一……</li>
-<li><strong>单位数字：</strong>10个（0-9）</li>
-</ul>
-<h3 id="二进制的特点："><a href="#二进制的特点：" class="headerlink" title="二进制的特点："></a><strong>二进制的特点：</strong></h3><ul>
-<li><strong>简写：BIN</strong></li>
-<li><strong>特点：</strong>满二进一</li>
-<li><strong>计数：</strong>0、1（10、11、100…）到一了，但我们是满二进一，个位变成0，向十位进一，那下一位就是10。个位满二，向十位进一；十位满二，向百位进一……</li>
-<li><strong>单位数字：</strong>2个（0、1）</li>
-</ul>
-<h3 id="八进制的特点："><a href="#八进制的特点：" class="headerlink" title="八进制的特点："></a><strong>八进制的特点：</strong></h3><ul>
-<li><strong>简写：OCT</strong></li>
-<li><strong>特点：</strong>满八进一</li>
-<li><strong>计数：</strong>0、1、2、3、4、5、6、7、（10、11、12…）到七了，但我们是满八进一，个位变成0，向十位进一，那下一位就是10。个位满八，向十位进一；十位满八，向百位进一……</li>
-<li><strong>单位数字：</strong>8个（0-7）</li>
-</ul>
-<h3 id="十六进制的特点："><a href="#十六进制的特点：" class="headerlink" title="十六进制的特点："></a><strong>十六进制的特点：</strong></h3><ul>
-<li><strong>简写：HEX</strong></li>
-<li><strong>特点：</strong>满十六进一</li>
-<li><strong>计数：</strong>0、1、2、3、4、5、6、7、8、9、A、B、C、D、E、F（10、11、12……1A、1B）到9了，之后的数字不能是像10、11一样的两位数，所以之后的数字以A-F代替10-15。</li>
-<li><strong>单位数字：</strong>16个（0-F）</li>
-</ul>
-<h3 id="十进制与任意进制之间的互相转换"><a href="#十进制与任意进制之间的互相转换" class="headerlink" title="十进制与任意进制之间的互相转换"></a><strong>十进制与任意进制之间的互相转换</strong></h3><h3 id="十进制转任意进制："><a href="#十进制转任意进制：" class="headerlink" title="十进制转任意进制："></a><strong>十进制转任意进制：</strong></h3><p>十进制转任意进制通常采用除基数，倒取余的办法，具体做法就是：把要转换的数除目标进制数的基数，直到整数变为0为止（下面以43转二进制为例）</p>
-<p>43整除2，得21，余1</p>
-<p>21整除2，得10，余1</p>
-<p>10整除2，得5，余0</p>
-<p>5整除2，得2，余1</p>
-<p>2整除2，得1，余0</p>
-<p>1整除2，得0，余1</p>
-<p>把余数从下往上进行记录，得：101011</p>
-<p>即43(10) &#x3D;101011(2)</p>
-<p>其它数，其它进制同理，只是十六进制要记得用A-F替换10-15</p>
-<h3 id="任意进制转十进制："><a href="#任意进制转十进制：" class="headerlink" title="任意进制转十进制："></a><strong>任意进制转十进制：</strong></h3><p>任意进制转十进制，一般用把二进制数按权展开、再相加的办法，举个例子（101011转十进制）</p>
-<p>1<em>2^5 + 0</em>2^4 + 1<em>2^3 + 0</em>2^2 + 1<em>2^1 + 1</em>2^0</p>
-<p>&#x3D;32 + 0 + 8 + 0 + 2 + 1</p>
-<p>&#x3D;43</p>
-<p>即：101011(2) &#x3D; 43(10)</p>
-<p>其它数，其它进制同理，只是十六进制要记得先把A-F替换成相应的10-15，再参与运算</p>
-<h3 id="十进制转任意进制（小数）："><a href="#十进制转任意进制（小数）：" class="headerlink" title="十进制转任意进制（小数）："></a><strong>十进制转任意进制（小数）：</strong></h3><p>十进制小数转换成二进制小数采用 “乘2取整，顺序排列”法。下面以十进制转二进制（小数）为例：</p>
-<p>具体做法是：先将整数部分与小数部分分开，整数部分直接转换成二进制数，小数部分的转换办法是：用2乘十进制小数，可以得到积，将积的整数部分取出，再用2乘余下的小数部分，又得到一个积，再将积的整数部分取出，如此进行，直到积中的小数部分为零，或者达到所要求的精度为止。（原因是：有很多小数转换成二进制是无限小数，只能取舍，所以一般会设定一个精度，达到精度后就停止计算。）</p>
-<p>例如（5.625转为二进制）：</p>
-<p>分成5、0.625</p>
-<p>5转换成二进制是：101，先放一边</p>
-<p>0.625*2 &#x3D; 1.25，取整为1</p>
-<p>0.25*2 &#x3D; 0.5，取整为0</p>
-<p>0.5*2 &#x3D; 1，取整为1</p>
-<p>顺着取整，得101</p>
-<p>所以0.625(10) &#x3D; 0.101(2)</p>
-<p>所以5.625(10) &#x3D; 101.625(2)</p>
-<p>如果小数部分怎么乘都不为0的话，那就按之前规定的，算到精度要求为止。</p>
-<p>例如：0.56转换为二进制（保留小数点后5位）</p>
-<p>0.56*2 &#x3D; 1.12，取整为1</p>
-<p>0.12*2 &#x3D; 0.24，取整为0</p>
-<p>0.24*2 &#x3D; 0.48，取整为0</p>
-<p>0.48*2 &#x3D; 0.96，取整为0</p>
-<p>0.96*2 &#x3D; 1.92，取整为1</p>
-<p>……</p>
-<p>所以，0.56(10) ≈ 0.10001(2)</p>
-<h3 id="任意进制转十进制（小数）："><a href="#任意进制转十进制（小数）：" class="headerlink" title="任意进制转十进制（小数）："></a><strong>任意进制转十进制（小数）：</strong></h3><p>还是以二进制为例，二进制的小数转换为十进制主要是乘以2的负次方，从小数点后开始，依次乘以2的负一次方，2的负二次方，2的负三次方等。比如：0.101转换为十进制：</p>
-<p>1<em>2^-1 + 0</em>2^-2 + 1*2^-3</p>
-<p>&#x3D;½ + 0 + 1&#x2F;8</p>
-<p>&#x3D;0.625</p>
-<p>所以，0.101(2) &#x3D; 0.625(10)</p>
-<h3 id="进制转换的算法实现（Python）"><a href="#进制转换的算法实现（Python）" class="headerlink" title="进制转换的算法实现（Python）"></a><strong>进制转换的算法实现（Python）</strong></h3><p><a href="https://www.rsnocsi.cn/1679.html">Python 200行代码实现任意进制与十进制之间的互相转化-Abyss-博客</a></p>
-</div>]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>编程语言</tag>
-        <tag>计算机</tag>
-        <tag>科幻科普</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-添加音乐与视频</title>
-    <url>/2024/09/01/hexo-mp4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>我们在实用hexo中,没有任何的添加视频与音频的按钮.</p>
-<p>这让我很头脑,所以,这次我来分享一个方法.</p>
-<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="首先插入音频"><a href="#首先插入音频" class="headerlink" title="首先插入音频"></a>首先插入<strong>音频</strong></h2><p><strong>aplayer</strong></p>
-<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-aplayer</code></p>
-<p>在markdown内添加以下代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% aplayer <span class="string">&quot;她的睫毛&quot;</span> <span class="string">&quot;周杰伦&quot;</span> <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot;</span>  <span class="string">&quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下:</p>
-<p><img src="/2024/09/01/hexo-mp4/music.png" alt="音频"></p>
-<p>或者使用下方代码: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><video src="https://music.163.com/song/media/outer/url?id=1490104654.mp3" position="absolute" width="100%" height="10%" controls="controls"></video></p>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><strong>dplayer</strong></p>
-<p>在cmd页面内，使用npm安装：<br><code>npm install hexo-tag-dplayer</code></p>
-<p>在markdown内添加以下代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% dplayer <span class="string">&quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot;</span>  <span class="string">&quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;theme=#FADFA3&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> <span class="string">&quot;token=tokendemo&quot;</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下:</p>
-<p><img src="/2024/09/01/hexo-mp4/video.png" alt="视频"></p>
-<p>或者使用下方代码: </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot;</span> <span class="attr">position</span>= <span class="string">&quot;absolute&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><video src="https://bili.api.scc.lol/?bv=BV1xw4m1k7er&qn=80" position="absolute" width="100%" height="100%" controls="controls"></video></p>
-</div>]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>技术分享</tag>
-        <tag>实用</tag>
       </tags>
   </entry>
   <entry>
@@ -1796,6 +1701,101 @@
       </tags>
   </entry>
   <entry>
+    <title>【计算机基础】关于进制</title>
+    <url>/2024/03/22/jingzhi/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="【计算机基础】关于进制"><a href="#【计算机基础】关于进制" class="headerlink" title="【计算机基础】关于进制"></a>【计算机基础】关于进制</h1><h3 id="进制是什么-常见的进制"><a href="#进制是什么-常见的进制" class="headerlink" title="进制是什么 &amp; 常见的进制"></a><strong>进制是什么 &amp; 常见的进制</strong></h3><p>学计算机，那就肯定得懂一样东西——<strong>进制</strong>（哪怕你没有学过，多少也会懂点）</p>
+<p>那进制是啥？</p>
+<blockquote>
+<p>进制也就是进位计数制，是人为定义的带进位的计数方法（有不带进位的计数方法，比如原始的结绳计数法，唱票时常用的“正”字计数法，以及类似的tally mark计数）。 对于任何一种进制—X进制，就表示每一位置上的数运算时都是逢X进一位。 十进制是逢十进一，<a href="https://www.rsnocsi.cn/?golink=aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlOEQlODElRTUlODUlQUQlRTglQkYlOUIlRTUlODglQjYvNDE2MjQ1Nw==">十六进制</a>是逢十六进一，<a href="https://www.rsnocsi.cn/?golink=aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTQlQkElOEMlRTglQkYlOUIlRTUlODglQjYvMzYxNDU3">二进制</a>就是逢二进一，以此类推，x进制就是逢x进位。</p>
+<p><a href="https://www.rsnocsi.cn/?golink=aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTglQkYlOUIlRTUlODglQjYvMzE3NDU3">百度百科</a></p>
+</blockquote>
+<p>进制这玩意，说白了就是我们数数的一个方式，像啥十进制（大家都知道的）就是满十进一</p>
+<p>那进制有啥呢？常见的进制有：</p>
+<ul>
+<li>十进制最常见的，对人来说最常用的</li>
+<li>二进制计算机里面用的，计算机的底层进制就是二进制，这是因为计算机是由逻辑电路组成的，而逻辑电路通常只有两个状态：开关的接通与断开，这两种状态正好可以用二进制的1和0表示。二进制是非常常见的，天生就与计算机有着紧密的关系，它正好能代表高低电平，开关的接通与断开，也与逻辑学中的真，假相吻合（布尔类型的True和False）</li>
+<li>八进制常见于计算机，经常用于简化二进制的计算，但用得也确实比较少</li>
+<li>十六进制也是计算机中经常使用的，经常用来表示存储器的地址，用得稍微比八进制多一点。八进制和十六进制只是为了简化二进制的存在的。在计算器底层中，是只能使用二进制的，但是二进制只有0和1，动不动就进位，导致二进制数的位数通常都很多，难以记录，所以经常使用八进制和十六进制来简化。</li>
+<li>为什么是十六进制和八进制来帮忙？而不是我们更加熟悉的十进制？原因很简单，十六进制的基数是16，八进制的基数是8，二进制的基数是2，十进制的基数是10。它们之中，16是2的4次方，8是2的3次方（立方），但10与2并没有什么整数次方的关系。</li>
+</ul>
+<p>上面这些呢，都是我们日常能见到的进制</p>
+<h3 id="各个进制的特点"><a href="#各个进制的特点" class="headerlink" title="各个进制的特点"></a><strong>各个进制的特点</strong></h3><h3 id="十进制的特点："><a href="#十进制的特点：" class="headerlink" title="十进制的特点："></a><strong>十进制的特点：</strong></h3><ul>
+<li><strong>简写：DEC</strong></li>
+<li><strong>特点：</strong>满十进一</li>
+<li><strong>计数 ：</strong>0、1、2、3、4、5、6、7、8、9（10、11、12…19、20…）到九了，但我们是满十进一，个位变成0，向十位进一，那下一位就是10。个位满十，向十位进一；十位满十，向百位进一……</li>
+<li><strong>单位数字：</strong>10个（0-9）</li>
+</ul>
+<h3 id="二进制的特点："><a href="#二进制的特点：" class="headerlink" title="二进制的特点："></a><strong>二进制的特点：</strong></h3><ul>
+<li><strong>简写：BIN</strong></li>
+<li><strong>特点：</strong>满二进一</li>
+<li><strong>计数：</strong>0、1（10、11、100…）到一了，但我们是满二进一，个位变成0，向十位进一，那下一位就是10。个位满二，向十位进一；十位满二，向百位进一……</li>
+<li><strong>单位数字：</strong>2个（0、1）</li>
+</ul>
+<h3 id="八进制的特点："><a href="#八进制的特点：" class="headerlink" title="八进制的特点："></a><strong>八进制的特点：</strong></h3><ul>
+<li><strong>简写：OCT</strong></li>
+<li><strong>特点：</strong>满八进一</li>
+<li><strong>计数：</strong>0、1、2、3、4、5、6、7、（10、11、12…）到七了，但我们是满八进一，个位变成0，向十位进一，那下一位就是10。个位满八，向十位进一；十位满八，向百位进一……</li>
+<li><strong>单位数字：</strong>8个（0-7）</li>
+</ul>
+<h3 id="十六进制的特点："><a href="#十六进制的特点：" class="headerlink" title="十六进制的特点："></a><strong>十六进制的特点：</strong></h3><ul>
+<li><strong>简写：HEX</strong></li>
+<li><strong>特点：</strong>满十六进一</li>
+<li><strong>计数：</strong>0、1、2、3、4、5、6、7、8、9、A、B、C、D、E、F（10、11、12……1A、1B）到9了，之后的数字不能是像10、11一样的两位数，所以之后的数字以A-F代替10-15。</li>
+<li><strong>单位数字：</strong>16个（0-F）</li>
+</ul>
+<h3 id="十进制与任意进制之间的互相转换"><a href="#十进制与任意进制之间的互相转换" class="headerlink" title="十进制与任意进制之间的互相转换"></a><strong>十进制与任意进制之间的互相转换</strong></h3><h3 id="十进制转任意进制："><a href="#十进制转任意进制：" class="headerlink" title="十进制转任意进制："></a><strong>十进制转任意进制：</strong></h3><p>十进制转任意进制通常采用除基数，倒取余的办法，具体做法就是：把要转换的数除目标进制数的基数，直到整数变为0为止（下面以43转二进制为例）</p>
+<p>43整除2，得21，余1</p>
+<p>21整除2，得10，余1</p>
+<p>10整除2，得5，余0</p>
+<p>5整除2，得2，余1</p>
+<p>2整除2，得1，余0</p>
+<p>1整除2，得0，余1</p>
+<p>把余数从下往上进行记录，得：101011</p>
+<p>即43(10) &#x3D;101011(2)</p>
+<p>其它数，其它进制同理，只是十六进制要记得用A-F替换10-15</p>
+<h3 id="任意进制转十进制："><a href="#任意进制转十进制：" class="headerlink" title="任意进制转十进制："></a><strong>任意进制转十进制：</strong></h3><p>任意进制转十进制，一般用把二进制数按权展开、再相加的办法，举个例子（101011转十进制）</p>
+<p>1<em>2^5 + 0</em>2^4 + 1<em>2^3 + 0</em>2^2 + 1<em>2^1 + 1</em>2^0</p>
+<p>&#x3D;32 + 0 + 8 + 0 + 2 + 1</p>
+<p>&#x3D;43</p>
+<p>即：101011(2) &#x3D; 43(10)</p>
+<p>其它数，其它进制同理，只是十六进制要记得先把A-F替换成相应的10-15，再参与运算</p>
+<h3 id="十进制转任意进制（小数）："><a href="#十进制转任意进制（小数）：" class="headerlink" title="十进制转任意进制（小数）："></a><strong>十进制转任意进制（小数）：</strong></h3><p>十进制小数转换成二进制小数采用 “乘2取整，顺序排列”法。下面以十进制转二进制（小数）为例：</p>
+<p>具体做法是：先将整数部分与小数部分分开，整数部分直接转换成二进制数，小数部分的转换办法是：用2乘十进制小数，可以得到积，将积的整数部分取出，再用2乘余下的小数部分，又得到一个积，再将积的整数部分取出，如此进行，直到积中的小数部分为零，或者达到所要求的精度为止。（原因是：有很多小数转换成二进制是无限小数，只能取舍，所以一般会设定一个精度，达到精度后就停止计算。）</p>
+<p>例如（5.625转为二进制）：</p>
+<p>分成5、0.625</p>
+<p>5转换成二进制是：101，先放一边</p>
+<p>0.625*2 &#x3D; 1.25，取整为1</p>
+<p>0.25*2 &#x3D; 0.5，取整为0</p>
+<p>0.5*2 &#x3D; 1，取整为1</p>
+<p>顺着取整，得101</p>
+<p>所以0.625(10) &#x3D; 0.101(2)</p>
+<p>所以5.625(10) &#x3D; 101.625(2)</p>
+<p>如果小数部分怎么乘都不为0的话，那就按之前规定的，算到精度要求为止。</p>
+<p>例如：0.56转换为二进制（保留小数点后5位）</p>
+<p>0.56*2 &#x3D; 1.12，取整为1</p>
+<p>0.12*2 &#x3D; 0.24，取整为0</p>
+<p>0.24*2 &#x3D; 0.48，取整为0</p>
+<p>0.48*2 &#x3D; 0.96，取整为0</p>
+<p>0.96*2 &#x3D; 1.92，取整为1</p>
+<p>……</p>
+<p>所以，0.56(10) ≈ 0.10001(2)</p>
+<h3 id="任意进制转十进制（小数）："><a href="#任意进制转十进制（小数）：" class="headerlink" title="任意进制转十进制（小数）："></a><strong>任意进制转十进制（小数）：</strong></h3><p>还是以二进制为例，二进制的小数转换为十进制主要是乘以2的负次方，从小数点后开始，依次乘以2的负一次方，2的负二次方，2的负三次方等。比如：0.101转换为十进制：</p>
+<p>1<em>2^-1 + 0</em>2^-2 + 1*2^-3</p>
+<p>&#x3D;½ + 0 + 1&#x2F;8</p>
+<p>&#x3D;0.625</p>
+<p>所以，0.101(2) &#x3D; 0.625(10)</p>
+<h3 id="进制转换的算法实现（Python）"><a href="#进制转换的算法实现（Python）" class="headerlink" title="进制转换的算法实现（Python）"></a><strong>进制转换的算法实现（Python）</strong></h3><p><a href="https://www.rsnocsi.cn/1679.html">Python 200行代码实现任意进制与十进制之间的互相转化-Abyss-博客</a></p>
+</div>]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+        <tag>计算机</tag>
+        <tag>科幻科普</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>李跳跳复活版！</title>
     <url>/2024/03/16/ltt/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="李跳跳复活版！"><a href="#李跳跳复活版！" class="headerlink" title="李跳跳复活版！"></a>李跳跳复活版！</h1><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><img src="/2024/03/16/ltt/640.jpg" alt="640.jpg"></p>
@@ -1938,35 +1938,9 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
         <tag>百度网盘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么竟然还有这样的神器？</title>
-    <url>/2024/05/12/qianhe-tools/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>给大家搞到了一款非常不错的在线工具箱网站，废话不多说，<strong>直接安排</strong>！！！</p>
-<p>也是好久没更新Windows 程序了好吧，这次必须整活！！</p>
-<h1 id="千盒工具"><a href="#千盒工具" class="headerlink" title="千盒工具"></a>千盒工具</h1><p>这是一款非常不错的在线工具箱网站，该网站<strong>不需要注册登录</strong>，打开即可直接使用，网站内包含了非常多实用的在线工具，<strong>全部都是免费的</strong>，没有任何的套路，不论大家从事任何行业，都强烈建议各位小伙伴们<strong>点赞收藏</strong>，后续肯定会用到的哦！</p>
-<p><img src="/2024/05/12/qianhe-tools/04ebc029-63ee-42a0-ba29-006c2fb39629.png" alt="640.webp"></p>
-<p>网站主界面<strong>如下图所示</strong>，左侧是工具分类，右侧是工具列表，<strong>目前包含了</strong>搜索工具、图片工具、示拼工具、文本工具、办公工具、导航工具、数字工具、单位换算工具以及开发工具等，覆盖了多个行业，<strong>所有工具统统免费</strong>，非常良心！</p>
-<p><img src="/2024/05/12/qianhe-tools/640_(1).webp" alt="640(1).webp"></p>
-<p>所有工具<strong>点击进入</strong>即可打开使用，如下图所示，这里我就<strong>随便打开</strong>一个图片文字识别工具，我们只<strong>需要上传</strong>需要识别的图片，然后<strong>点击立即识别</strong>按钮即可，识别速度快，准确率高，使用非常方便！</p>
-<p><img src="/2024/05/12/qianhe-tools/640_(2).webp" alt="640(2).webp"></p>
-<p>由于该网站<strong>包含的工具较多</strong>，在这里就不挨个给大家演示了，很多工具都是非常实用的，比如示拼格式转换、<strong>图片格式转换</strong>、二维码解析、<strong>图片压缩</strong>、单位换算等等，大家可以自行访问使用哦！</p>
-<p><img src="/2024/05/12/qianhe-tools/640_(3).webp" alt="640(3).webp"></p>
-<p>以上就是给大家介绍的 <strong>非常不错的网站。</strong></p>
-<h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><p>链接：<a href="https://1000tool.com/">https://1000tool.com/</a></p>
-<p><a href="https://1000tool.com/">https://1000tool.com/</a></p>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>电脑软件</tag>
-        <tag>实用推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -2037,8 +2011,34 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么竟然还有这样的神器？</title>
+    <url>/2024/05/12/qianhe-tools/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>给大家搞到了一款非常不错的在线工具箱网站，废话不多说，<strong>直接安排</strong>！！！</p>
+<p>也是好久没更新Windows 程序了好吧，这次必须整活！！</p>
+<h1 id="千盒工具"><a href="#千盒工具" class="headerlink" title="千盒工具"></a>千盒工具</h1><p>这是一款非常不错的在线工具箱网站，该网站<strong>不需要注册登录</strong>，打开即可直接使用，网站内包含了非常多实用的在线工具，<strong>全部都是免费的</strong>，没有任何的套路，不论大家从事任何行业，都强烈建议各位小伙伴们<strong>点赞收藏</strong>，后续肯定会用到的哦！</p>
+<p><img src="/2024/05/12/qianhe-tools/04ebc029-63ee-42a0-ba29-006c2fb39629.png" alt="640.webp"></p>
+<p>网站主界面<strong>如下图所示</strong>，左侧是工具分类，右侧是工具列表，<strong>目前包含了</strong>搜索工具、图片工具、示拼工具、文本工具、办公工具、导航工具、数字工具、单位换算工具以及开发工具等，覆盖了多个行业，<strong>所有工具统统免费</strong>，非常良心！</p>
+<p><img src="/2024/05/12/qianhe-tools/640_(1).webp" alt="640(1).webp"></p>
+<p>所有工具<strong>点击进入</strong>即可打开使用，如下图所示，这里我就<strong>随便打开</strong>一个图片文字识别工具，我们只<strong>需要上传</strong>需要识别的图片，然后<strong>点击立即识别</strong>按钮即可，识别速度快，准确率高，使用非常方便！</p>
+<p><img src="/2024/05/12/qianhe-tools/640_(2).webp" alt="640(2).webp"></p>
+<p>由于该网站<strong>包含的工具较多</strong>，在这里就不挨个给大家演示了，很多工具都是非常实用的，比如示拼格式转换、<strong>图片格式转换</strong>、二维码解析、<strong>图片压缩</strong>、单位换算等等，大家可以自行访问使用哦！</p>
+<p><img src="/2024/05/12/qianhe-tools/640_(3).webp" alt="640(3).webp"></p>
+<p>以上就是给大家介绍的 <strong>非常不错的网站。</strong></p>
+<h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><p>链接：<a href="https://1000tool.com/">https://1000tool.com/</a></p>
+<p><a href="https://1000tool.com/">https://1000tool.com/</a></p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>工具</tag>
+        <tag>实用推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -2071,46 +2071,6 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>实用推荐</tag>
         <tag>QQ空间</tag>
         <tag>开源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>神奇应用!什么都能搜!</title>
-    <url>/2024/06/23/sqyy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-💡 分享一款收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类的神器应用。
-
-</aside>
-
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一款全新上线的安卓应用分享平台，收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类，用户可以在平台上搜索到自己想要的任何应用，直接一键高速下载。</p>
-<blockquote>
-<p>一款集合了众多应用资源的软件，挑选优质应用，所有推荐的软件经过精心筛选，还有社区广场，进行资源交流，享受简洁易懂的服务和功能模块，包括搜索、分类浏览、收藏等。</p>
-</blockquote>
-<p><img src="/2024/06/23/sqyy/640.webp" alt="640.webp"></p>
-<h1 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h1><p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
-<p><img src="/2024/06/23/sqyy/640_(1).webp" alt="640 (1).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(2).webp" alt="640 (2).webp"></p>
-<p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
-<p><img src="/2024/06/23/sqyy/640_(3).webp" alt="640 (3).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(4).webp" alt="640 (4).webp"></p>
-<p>打开应用页面，可以看见软件内的全部分类，有影S播放、音y播放、漫画、文字等娱乐分类，还有下载、存储、搜索等工具分类，一共有30多种，非常丰富。</p>
-<p><img src="/2024/06/23/sqyy/640_(5).webp" alt="640 (5).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(6).webp" alt="640 (6).webp"></p>
-<p>还有游戏的专属页面，这里全是游戏资源，有休闲益智、飞行射击、塔防游戏、冒险解密、经营策略、角色扮演等十八种，各种游戏都有。</p>
-<p><img src="/2024/06/23/sqyy/640_(6)%201.webp" alt="640 (6).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(7).webp" alt="640 (7).webp"></p>
-<p>打开广场页面，这里有多种交流板块，我们可以在这里分享软件、资源交流，有什么资源要找的，或者有什么好资源可以分享的，都可以在这里交流。</p>
-<p><img src="/2024/06/23/sqyy/640_(8).webp" alt="640 (8).webp"></p>
-<p><img src="/2024/06/23/sqyy/640_(9).webp" alt="640 (9).webp"></p>
-<h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>蓝奏云：<a href="https://www.lanzouw.com/izwpg22c1w8d">https://www.lanzouw.com/izwpg22c1w8d</a></p>
-<p><a href="https://www.lanzouw.com/izwpg22c1w8d">神奇应用.apk - 蓝奏云</a></p>
-</div>]]></content>
-      <categories>
-        <category>安卓应用</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>安卓应用</tag>
-        <tag>app</tag>
       </tags>
   </entry>
   <entry>
@@ -2178,6 +2138,46 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>工具</tag>
         <tag>安卓应用</tag>
         <tag>实用推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神奇应用!什么都能搜!</title>
+    <url>/2024/06/23/sqyy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+💡 分享一款收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类的神器应用。
+
+</aside>
+
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一款全新上线的安卓应用分享平台，收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类，用户可以在平台上搜索到自己想要的任何应用，直接一键高速下载。</p>
+<blockquote>
+<p>一款集合了众多应用资源的软件，挑选优质应用，所有推荐的软件经过精心筛选，还有社区广场，进行资源交流，享受简洁易懂的服务和功能模块，包括搜索、分类浏览、收藏等。</p>
+</blockquote>
+<p><img src="/2024/06/23/sqyy/640.webp" alt="640.webp"></p>
+<h1 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h1><p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
+<p><img src="/2024/06/23/sqyy/640_(1).webp" alt="640 (1).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(2).webp" alt="640 (2).webp"></p>
+<p>下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。</p>
+<p><img src="/2024/06/23/sqyy/640_(3).webp" alt="640 (3).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(4).webp" alt="640 (4).webp"></p>
+<p>打开应用页面，可以看见软件内的全部分类，有影S播放、音y播放、漫画、文字等娱乐分类，还有下载、存储、搜索等工具分类，一共有30多种，非常丰富。</p>
+<p><img src="/2024/06/23/sqyy/640_(5).webp" alt="640 (5).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(6).webp" alt="640 (6).webp"></p>
+<p>还有游戏的专属页面，这里全是游戏资源，有休闲益智、飞行射击、塔防游戏、冒险解密、经营策略、角色扮演等十八种，各种游戏都有。</p>
+<p><img src="/2024/06/23/sqyy/640_(6)%201.webp" alt="640 (6).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(7).webp" alt="640 (7).webp"></p>
+<p>打开广场页面，这里有多种交流板块，我们可以在这里分享软件、资源交流，有什么资源要找的，或者有什么好资源可以分享的，都可以在这里交流。</p>
+<p><img src="/2024/06/23/sqyy/640_(8).webp" alt="640 (8).webp"></p>
+<p><img src="/2024/06/23/sqyy/640_(9).webp" alt="640 (9).webp"></p>
+<h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>蓝奏云：<a href="https://www.lanzouw.com/izwpg22c1w8d">https://www.lanzouw.com/izwpg22c1w8d</a></p>
+<p><a href="https://www.lanzouw.com/izwpg22c1w8d">神奇应用.apk - 蓝奏云</a></p>
+</div>]]></content>
+      <categories>
+        <category>安卓应用</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>安卓应用</tag>
+        <tag>app</tag>
       </tags>
   </entry>
   <entry>
@@ -2256,6 +2256,70 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>works</tag>
         <tag>壁纸</tag>
         <tag>随机图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
+    <url>/2024/07/17/wcn-rs/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+这篇文章摘抄于微信公众号！
+
+</aside>
+
+<p>刷脸支付、刷脸打卡、刷脸门禁……如今人脸识别的应用越来越普及，很多人几乎每天都会刷脸，甚至在部分健身馆、游泳馆的更衣室也装上了人脸识别设备。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(1).webp" alt="640 (1).webp"></p>
+<p><strong>而你以为识别的只是一张脸，殊不知可能上半身全照进去了！</strong></p>
+<p>这两天，#建议大家人脸识别要穿上衣服#的话题登上热搜。不穿衣服进行人脸识别被后台审核人员看光光？网友在相关词条下对隐私泄露表示担忧。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(2).webp" alt="640 (2).webp"></p>
+<p>博主@知名青年小新 发视频提醒，大家使用App人脸识别功能时一定要穿衣服。视频内容显示：</p>
+<p>如果你经常在洗澡或者是上厕所的时候，进行人脸认证或者查看银行卡余额，你以为手机只会扫描到你的脸部吗？实际上后台的审核人员是能看到你整个上半身的。特别是当你没有穿衣服做各种刷脸认证的时候，简直不敢想。并且，这些视频是要一直保存在网络上的。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(3).webp" alt="640 (3).webp"></p>
+<p>人脸识别泄露隐私的问题早有争论。</p>
+<p>此前，教育博主@法小岛 发微博表示，摄像头采集的不仅仅是被识别者人脸部分，后台还会有审核人员看到……</p>
+<p><img src="/2024/07/17/wcn-rs/640.jpg" alt="640.jpg"></p>
+<p>在该博主评论区，有网友介绍，实际上就是用前置摄像头拍一张照片，只是图形界面只给你显示人脸部分。所以锁屏、解锁或者支付宝人脸支付等自动识别的都是机器判断。但是需要人工审核的就得注意点了，像银行二级账户开户人脸识别，证券App开户这种就是要人工审核的。</p>
+<p>另一数码博主@长安数码君 也称，有从事后台审核的朋友对他说，在审核工作时：“经常会看到很多人在洗澡的时候、在和“另一半抱在一起的时候”、在没穿衣服的时候、在进行各种奇奇怪怪动作的时候进行人脸识别。”</p>
+<p>该博主还放了一张用户看到的图片和人脸识别后台所显示图片的对比图，更加清晰详尽地展示了人脸识别后台的“真相”。</p>
+<p><img src="/2024/07/17/wcn-rs/640.png" alt="640.png"></p>
+<p>早在2019年，新浪新闻还报道了一则因人脸识别而破解的命案。报道称，一男子杀害女友后，借用女友的身份在网上申请小额贷款。但贷款APP要求人脸识别、对着屏幕眨眼睛，该男子只好放弃。</p>
+<p>而此举却引起了网贷App工作人员的注意，转入人工审核时发现异常，在7秒的“活体识别”的视频中，当事人无任何反应、脖子上也有勒痕、面部有淤青。工作人员怀疑申请人被害，赶紧报了警。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(5).webp" alt="640 (5).webp"></p>
+<p>可见，需要人脸动态识别（比如眨眼、摇头等）的APP，的确有人工审核。</p>
+<p>并且，人脸识别其实调用的是手机的前置摄像头，而摄像头的取景并非仅仅是头部，而是涵盖了摄像头视野覆盖的所有区域。</p>
+<p>也即是说，大家在进行人脸识别的时候，不论人脸框内还是框外，只要是在摄像头范围内的画面，全部都会被拍到。</p>
+<p>小米手机也曾表示，人脸验证时，其实整个上半身都会被应用获取。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(4).webp" alt="640 (4).webp"></p>
+<p>得知此事后，网友纷纷表示“社死”。</p>
+<p>有网友称，自己经常在洗澡的时候解锁；还有人表示，会在蹲厕所时进行人脸识别。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(5)%201.webp" alt="640 (5).webp"></p>
+<p>而除了感到社死外，有不少网友认为这件事“很严重”“感到隐私被侵犯”。人脸识别系统后台人工审核时，平台为什么不提醒用户是可以看到摄像头全景的？</p>
+<p>据2021年8月1日起施行的《最高人民法院关于审理使用人脸识别技术处理个人信息相关民事案件适用法律若干问题的规定》明确规定，信息处理者处理人脸信息未公开处理人脸信息的规则或者未明示处理的目的、方式、范围，人民法院应当认定属于侵害自然人人格权益的行为。</p>
+<p>所以，若App未明示人脸识别范围，或已涉及侵害用户权益。</p>
+<p>不过，大家也不必过于惊慌。</p>
+<p>曾有专业人士介绍，现在提供人脸识别技术的头部企业和大企业采用的都是隐私计算技术，只会向客户提供脱敏特征码用于比对，不会将图像送到后台。</p>
+<p>一般而言，大公司、银行、政府、公安等在人脸识别的应用上会更规范。对于网络上盛传的后台人工审核时能看到图片的情况，有专家表示这种操作是“不合规”的。</p>
+<p>此外，很多网友担心后台会存储自己的照片信息。</p>
+<p>对此，某手机厂商曾表示，面容ID数据不会离开设备，也永远不会备份到iCloud或其他任意位置。</p>
+<p>更早前，腾讯游戏针对“人脸识别”等一系列问题作出解答，称人脸识别会严格遵照主管部门规定，最大限度保障用户隐私安全。用于验证的用户身份信息不会被记录、存储，或用于除公安权威数据平台数据源验证以外的任何其他用途。相关数据均通过加密处理，在与公安权威数据平台数据源比对的验证过程中，全程均为机器识别，没有人工参与。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(6).webp" alt="640 (6).webp"></p>
+<p>实际上，业内人士表示一般的企业都不会在后台存储用户的原始图像。单从存储和传输等方面的成本上看，对公司而言，把原始图像送往后台也是不合算的做法。</p>
+<p>而如果一些企业需要通过大量的人像数据来进行AI和机器学习的训练，有存储用户原始图像的需求，那么他们往往只会存储头部的图像。因为过于复杂的背景和其他的图像信息会对机器学习的算法进行干扰，反而会造成人脸识别算法的不准确。</p>
+<p>需要注意的是，相关法规明确，使用人脸识别技术，不应过度索取个人信息。</p>
+<p>2023年8月，国家网信办公开发布《人脸识别技术应用安全管理规定（试行）（征求意见稿）》（以下简称“征求意见稿”）提到，使用人脸识别技术必须遵循“最少使用”和“最小存储”。</p>
+<p>其中，“最少使用”，即只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，方可使用人脸识别技术处理人脸信息。实现相同目的或者达到同等业务要求，存在其他非生物特征识别技术方案的，应当优先选择非生物特征识别技术方案；</p>
+<p>“最小存储”，即除法定条件或者取得个人单独同意外，人脸识别技术使用者不得保存人脸原始图像、图片、视频，经过匿名化处理的人脸信息除外。使用人脸识别技术处理人脸信息应当尽量避免采集与提供服务无关的人脸信息，无法避免的，应当及时删除或者进行匿名化处理。</p>
+<p><img src="/2024/07/17/wcn-rs/640_(7).webp" alt="640 (7).webp"></p>
+<p>尽管法律法规对企业有制约作用，但无法保证整个流程中无人违规，因此建议大家首先选择知名企业App，非正规App则不要使用人脸识别功能。同时，在进行人脸识别时，注意个人隐私保护，务必衣着整齐。</p>
+<p>另外，由于人脸识别技术不同，市面上的设备种类繁多，广大用户往往无法确知敏感信息在前端的获取情况，在后端又能否真正实现加密保护或依法删除，希望有关部门能依据职责、形成合力，加强对人脸识别技术使用的监督检查，指导督促人脸识别技术使用者履行各项法定义务，及时发现安全隐患并督促限期整改，避免敏感个人信息安全风险失控蔓延。</p>
+<p>来源：电脑报，编辑：cc</p>
+</div>]]></content>
+      <categories>
+        <category>探究所以</category>
+      </categories>
+      <tags>
+        <tag>思考</tag>
+        <tag>探究所以</tag>
       </tags>
   </entry>
   <entry>
@@ -2490,70 +2554,6 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
-    <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
-    <url>/2024/07/17/wcn-rs/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-这篇文章摘抄于微信公众号！
-
-</aside>
-
-<p>刷脸支付、刷脸打卡、刷脸门禁……如今人脸识别的应用越来越普及，很多人几乎每天都会刷脸，甚至在部分健身馆、游泳馆的更衣室也装上了人脸识别设备。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(1).webp" alt="640 (1).webp"></p>
-<p><strong>而你以为识别的只是一张脸，殊不知可能上半身全照进去了！</strong></p>
-<p>这两天，#建议大家人脸识别要穿上衣服#的话题登上热搜。不穿衣服进行人脸识别被后台审核人员看光光？网友在相关词条下对隐私泄露表示担忧。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(2).webp" alt="640 (2).webp"></p>
-<p>博主@知名青年小新 发视频提醒，大家使用App人脸识别功能时一定要穿衣服。视频内容显示：</p>
-<p>如果你经常在洗澡或者是上厕所的时候，进行人脸认证或者查看银行卡余额，你以为手机只会扫描到你的脸部吗？实际上后台的审核人员是能看到你整个上半身的。特别是当你没有穿衣服做各种刷脸认证的时候，简直不敢想。并且，这些视频是要一直保存在网络上的。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(3).webp" alt="640 (3).webp"></p>
-<p>人脸识别泄露隐私的问题早有争论。</p>
-<p>此前，教育博主@法小岛 发微博表示，摄像头采集的不仅仅是被识别者人脸部分，后台还会有审核人员看到……</p>
-<p><img src="/2024/07/17/wcn-rs/640.jpg" alt="640.jpg"></p>
-<p>在该博主评论区，有网友介绍，实际上就是用前置摄像头拍一张照片，只是图形界面只给你显示人脸部分。所以锁屏、解锁或者支付宝人脸支付等自动识别的都是机器判断。但是需要人工审核的就得注意点了，像银行二级账户开户人脸识别，证券App开户这种就是要人工审核的。</p>
-<p>另一数码博主@长安数码君 也称，有从事后台审核的朋友对他说，在审核工作时：“经常会看到很多人在洗澡的时候、在和“另一半抱在一起的时候”、在没穿衣服的时候、在进行各种奇奇怪怪动作的时候进行人脸识别。”</p>
-<p>该博主还放了一张用户看到的图片和人脸识别后台所显示图片的对比图，更加清晰详尽地展示了人脸识别后台的“真相”。</p>
-<p><img src="/2024/07/17/wcn-rs/640.png" alt="640.png"></p>
-<p>早在2019年，新浪新闻还报道了一则因人脸识别而破解的命案。报道称，一男子杀害女友后，借用女友的身份在网上申请小额贷款。但贷款APP要求人脸识别、对着屏幕眨眼睛，该男子只好放弃。</p>
-<p>而此举却引起了网贷App工作人员的注意，转入人工审核时发现异常，在7秒的“活体识别”的视频中，当事人无任何反应、脖子上也有勒痕、面部有淤青。工作人员怀疑申请人被害，赶紧报了警。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(5).webp" alt="640 (5).webp"></p>
-<p>可见，需要人脸动态识别（比如眨眼、摇头等）的APP，的确有人工审核。</p>
-<p>并且，人脸识别其实调用的是手机的前置摄像头，而摄像头的取景并非仅仅是头部，而是涵盖了摄像头视野覆盖的所有区域。</p>
-<p>也即是说，大家在进行人脸识别的时候，不论人脸框内还是框外，只要是在摄像头范围内的画面，全部都会被拍到。</p>
-<p>小米手机也曾表示，人脸验证时，其实整个上半身都会被应用获取。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(4).webp" alt="640 (4).webp"></p>
-<p>得知此事后，网友纷纷表示“社死”。</p>
-<p>有网友称，自己经常在洗澡的时候解锁；还有人表示，会在蹲厕所时进行人脸识别。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(5)%201.webp" alt="640 (5).webp"></p>
-<p>而除了感到社死外，有不少网友认为这件事“很严重”“感到隐私被侵犯”。人脸识别系统后台人工审核时，平台为什么不提醒用户是可以看到摄像头全景的？</p>
-<p>据2021年8月1日起施行的《最高人民法院关于审理使用人脸识别技术处理个人信息相关民事案件适用法律若干问题的规定》明确规定，信息处理者处理人脸信息未公开处理人脸信息的规则或者未明示处理的目的、方式、范围，人民法院应当认定属于侵害自然人人格权益的行为。</p>
-<p>所以，若App未明示人脸识别范围，或已涉及侵害用户权益。</p>
-<p>不过，大家也不必过于惊慌。</p>
-<p>曾有专业人士介绍，现在提供人脸识别技术的头部企业和大企业采用的都是隐私计算技术，只会向客户提供脱敏特征码用于比对，不会将图像送到后台。</p>
-<p>一般而言，大公司、银行、政府、公安等在人脸识别的应用上会更规范。对于网络上盛传的后台人工审核时能看到图片的情况，有专家表示这种操作是“不合规”的。</p>
-<p>此外，很多网友担心后台会存储自己的照片信息。</p>
-<p>对此，某手机厂商曾表示，面容ID数据不会离开设备，也永远不会备份到iCloud或其他任意位置。</p>
-<p>更早前，腾讯游戏针对“人脸识别”等一系列问题作出解答，称人脸识别会严格遵照主管部门规定，最大限度保障用户隐私安全。用于验证的用户身份信息不会被记录、存储，或用于除公安权威数据平台数据源验证以外的任何其他用途。相关数据均通过加密处理，在与公安权威数据平台数据源比对的验证过程中，全程均为机器识别，没有人工参与。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(6).webp" alt="640 (6).webp"></p>
-<p>实际上，业内人士表示一般的企业都不会在后台存储用户的原始图像。单从存储和传输等方面的成本上看，对公司而言，把原始图像送往后台也是不合算的做法。</p>
-<p>而如果一些企业需要通过大量的人像数据来进行AI和机器学习的训练，有存储用户原始图像的需求，那么他们往往只会存储头部的图像。因为过于复杂的背景和其他的图像信息会对机器学习的算法进行干扰，反而会造成人脸识别算法的不准确。</p>
-<p>需要注意的是，相关法规明确，使用人脸识别技术，不应过度索取个人信息。</p>
-<p>2023年8月，国家网信办公开发布《人脸识别技术应用安全管理规定（试行）（征求意见稿）》（以下简称“征求意见稿”）提到，使用人脸识别技术必须遵循“最少使用”和“最小存储”。</p>
-<p>其中，“最少使用”，即只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，方可使用人脸识别技术处理人脸信息。实现相同目的或者达到同等业务要求，存在其他非生物特征识别技术方案的，应当优先选择非生物特征识别技术方案；</p>
-<p>“最小存储”，即除法定条件或者取得个人单独同意外，人脸识别技术使用者不得保存人脸原始图像、图片、视频，经过匿名化处理的人脸信息除外。使用人脸识别技术处理人脸信息应当尽量避免采集与提供服务无关的人脸信息，无法避免的，应当及时删除或者进行匿名化处理。</p>
-<p><img src="/2024/07/17/wcn-rs/640_(7).webp" alt="640 (7).webp"></p>
-<p>尽管法律法规对企业有制约作用，但无法保证整个流程中无人违规，因此建议大家首先选择知名企业App，非正规App则不要使用人脸识别功能。同时，在进行人脸识别时，注意个人隐私保护，务必衣着整齐。</p>
-<p>另外，由于人脸识别技术不同，市面上的设备种类繁多，广大用户往往无法确知敏感信息在前端的获取情况，在后端又能否真正实现加密保护或依法删除，希望有关部门能依据职责、形成合力，加强对人脸识别技术使用的监督检查，指导督促人脸识别技术使用者履行各项法定义务，及时发现安全隐患并督促限期整改，避免敏感个人信息安全风险失控蔓延。</p>
-<p>来源：电脑报，编辑：cc</p>
-</div>]]></content>
-      <categories>
-        <category>探究所以</category>
-      </categories>
-      <tags>
-        <tag>思考</tag>
-        <tag>探究所以</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>win-文件查重</title>
     <url>/2024/06/24/win-chachong/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -2582,53 +2582,8 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Free窗口音乐</title>
-    <url>/2024/10/01/win-musicfree/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="一、软件介绍"><a href="#一、软件介绍" class="headerlink" title="一、软件介绍"></a>一、软件介绍</h1><p>MusicFree是一款开源、免费、可定制化的本地音乐播放器。</p>
-<p><img src="/2024/10/01/win-musicfree/11.webp" alt="官网"></p>
-<h1 id="二、配置方法"><a href="#二、配置方法" class="headerlink" title="二、配置方法"></a>二、配置方法</h1><h3 id="MusicFree-安卓版-配置方法"><a href="#MusicFree-安卓版-配置方法" class="headerlink" title="MusicFree 安卓版 配置方法"></a>MusicFree 安卓版 配置方法</h3><ol>
-<li>点击左上角按钮</li>
-<li>点击【插件设置】</li>
-<li>点击右下角加号</li>
-<li>点击【从网络安装插件】</li>
-<li>输入插件 URL 即可（插件链接以 .json 或 .js 结尾）</li>
-<li>复制url  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><a href="https://www.tao-space.top/2024/03/29/MusicFree%E9%9F%B3%E6%BA%90%E6%8E%A5%E5%8F%A3%E6%B1%87%E6%80%BB/android.png"><img src="https://www.tao-space.top/2024/03/29/MusicFree%E9%9F%B3%E6%BA%90%E6%8E%A5%E5%8F%A3%E6%B1%87%E6%80%BB/android.png" alt="安卓配置方法"></a></p>
-<h2 id="MusicFree-PC版-配置方法"><a href="#MusicFree-PC版-配置方法" class="headerlink" title="MusicFree PC版 配置方法"></a>MusicFree PC版 配置方法</h2><ol>
-<li><p>点击主界面左侧【插件管理】</p>
-<p><img src="/2024/10/01/win-musicfree/22.webp" alt="我喜欢"><br><img src="/2024/10/01/win-musicfree/33.webp" alt="官网"></p>
-</li>
-<li><p>点击顶部【从网络安装】</p>
-<p><img src="/2024/10/01/win-musicfree/44.webp" alt="从网络安装"></p>
-</li>
-<li><p>输入插件 URL 即可（插件链接以 .json 或 .js 结尾）</p>
-<p>复制url</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><img src="/2024/10/01/win-musicfree/55.webp" alt="粘贴url"></p>
-<p><img src="/2024/10/01/win-musicfree/66.webp" alt="正在安装"></p>
-<p><img src="/2024/10/01/win-musicfree/77.webp" alt="安装后的接口"></p>
-<p>效果展示:</p>
-<p><img src="/2024/10/01/win-musicfree/88.webp" alt="效果展示"></p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>官网:</p>
-<a href="musicfree.upup.fun,musicfree,https://musicfree.upup.fun/" title target></a>
-
-<p>GIthub:</p>
-<a href="github,OvO,https://github.com/maotoumao/MusicFree" title target></a>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
         <tag>工具</tag>
-        <tag>电脑软件</tag>
-        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -2724,9 +2679,54 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>工具</tag>
         <tag>电脑软件</tag>
+        <tag>工具</tag>
         <tag>吾爱破解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Free窗口音乐</title>
+    <url>/2024/10/01/win-musicfree/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="一、软件介绍"><a href="#一、软件介绍" class="headerlink" title="一、软件介绍"></a>一、软件介绍</h1><p>MusicFree是一款开源、免费、可定制化的本地音乐播放器。</p>
+<p><img src="/2024/10/01/win-musicfree/11.webp" alt="官网"></p>
+<h1 id="二、配置方法"><a href="#二、配置方法" class="headerlink" title="二、配置方法"></a>二、配置方法</h1><h3 id="MusicFree-安卓版-配置方法"><a href="#MusicFree-安卓版-配置方法" class="headerlink" title="MusicFree 安卓版 配置方法"></a>MusicFree 安卓版 配置方法</h3><ol>
+<li>点击左上角按钮</li>
+<li>点击【插件设置】</li>
+<li>点击右下角加号</li>
+<li>点击【从网络安装插件】</li>
+<li>输入插件 URL 即可（插件链接以 .json 或 .js 结尾）</li>
+<li>复制url  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><a href="https://www.tao-space.top/2024/03/29/MusicFree%E9%9F%B3%E6%BA%90%E6%8E%A5%E5%8F%A3%E6%B1%87%E6%80%BB/android.png"><img src="https://www.tao-space.top/2024/03/29/MusicFree%E9%9F%B3%E6%BA%90%E6%8E%A5%E5%8F%A3%E6%B1%87%E6%80%BB/android.png" alt="安卓配置方法"></a></p>
+<h2 id="MusicFree-PC版-配置方法"><a href="#MusicFree-PC版-配置方法" class="headerlink" title="MusicFree PC版 配置方法"></a>MusicFree PC版 配置方法</h2><ol>
+<li><p>点击主界面左侧【插件管理】</p>
+<p><img src="/2024/10/01/win-musicfree/22.webp" alt="我喜欢"><br><img src="/2024/10/01/win-musicfree/33.webp" alt="官网"></p>
+</li>
+<li><p>点击顶部【从网络安装】</p>
+<p><img src="/2024/10/01/win-musicfree/44.webp" alt="从网络安装"></p>
+</li>
+<li><p>输入插件 URL 即可（插件链接以 .json 或 .js 结尾）</p>
+<p>复制url</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="/2024/10/01/win-musicfree/55.webp" alt="粘贴url"></p>
+<p><img src="/2024/10/01/win-musicfree/66.webp" alt="正在安装"></p>
+<p><img src="/2024/10/01/win-musicfree/77.webp" alt="安装后的接口"></p>
+<p>效果展示:</p>
+<p><img src="/2024/10/01/win-musicfree/88.webp" alt="效果展示"></p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>官网:</p>
+<a href="musicfree.upup.fun,musicfree,https://musicfree.upup.fun/" title target></a>
+
+<p>GIthub:</p>
+<a href="github,OvO,https://github.com/maotoumao/MusicFree" title target></a>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>工具</tag>
+        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
