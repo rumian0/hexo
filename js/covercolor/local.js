@@ -1,1 +1,83 @@
-function _toConsumableArray(e){return _arrayWithoutHoles(e)||_iterableToArray(e)||_unsupportedIterableToArray(e)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _iterableToArray(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}function _arrayWithoutHoles(e){if(Array.isArray(e))return _arrayLikeToArray(e)}function _slicedToArray(e,r){return _arrayWithHoles(e)||_iterableToArrayLimit(e,r)||_unsupportedIterableToArray(e,r)||_nonIterableRest()}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,r){var t;if(e)return"string"==typeof e?_arrayLikeToArray(e,r):"Map"===(t="Object"===(t={}.toString.call(e).slice(8,-1))&&e.constructor?e.constructor.name:t)||"Set"===t?Array.from(e):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?_arrayLikeToArray(e,r):void 0}function _arrayLikeToArray(e,r){(null==r||r>e.length)&&(r=e.length);for(var t=0,o=Array(r);t<r;t++)o[t]=e[t];return o}function _iterableToArrayLimit(e,r){var t=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null!=t){var o,n,a,l,i=[],u=!0,s=!1;try{if(a=(t=t.call(e)).next,0===r){if(Object(t)!==t)return;u=!1}else for(;!(u=(o=a.call(t)).done)&&(i.push(o.value),i.length!==r);u=!0);}catch(e){s=!0,n=e}finally{try{if(!u&&null!=t.return&&(l=t.return(),Object(l)!==l))return}finally{if(s)throw n}}return i}}function _arrayWithHoles(e){if(Array.isArray(e))return e}var coverColor=function(){var e=PAGE_CONFIG.color||(null==(e=document.getElementById("post-cover"))?void 0:e.src);if(e)return localColor(e);setDefaultThemeColors()},setDefaultThemeColors=function(){Object.entries({"--efu-main":"var(--efu-theme)","--efu-main-op":"var(--efu-theme-op)","--efu-main-op-deep":"var(--efu-theme-op-deep)","--efu-main-none":"var(--efu-theme-none)"}).forEach(function(e){var e=_slicedToArray(e,2),r=e[0];document.documentElement.style.setProperty(r,e[1])}),initThemeColor()},localColor=function(e){var r=new ColorThief,t=new Image;t.crossOrigin="Anonymous",t.onload=function(){return _setThemeColors.apply(void 0,[rgbToHex(r.getColor(t))].concat(_toConsumableArray(r.getColor(t))))},t.onerror=function(){return console.error("Image Error")},t.src=e},rgbToHex=function(e){e=_slicedToArray(e,3);return"#"+[e[0],e[1],e[2]].map(function(e){return Math.floor(.8*e).toString(16).padStart(2,"0")}).join("")},_setThemeColors=function(e){var r=1<arguments.length&&void 0!==arguments[1]?arguments[1]:null,t=2<arguments.length&&void 0!==arguments[2]?arguments[2]:null,o=3<arguments.length&&void 0!==arguments[3]?arguments[3]:null;if(!e)return setDefaultThemeColors();Object.entries({"--efu-main":e,"--efu-main-op":e+"23","--efu-main-op-deep":e+"dd","--efu-main-none":e+"00"}).forEach(function(e){var e=_slicedToArray(e,2),r=e[0];document.documentElement.style.setProperty(r,e[1])}),r&&t&&o&&Math.round((299*parseInt(r)+587*parseInt(t)+114*parseInt(o))/1e3)<125&&(adjustCardStyles(),e=LightenDarkenColor(e,50),_setThemeColors(e)),document.getElementById("coverdiv").classList.add("loaded"),initThemeColor()};function LightenDarkenColor(e,r){"#"===e[0]&&(e=e.slice(1))}var adjustCardStyles=function(){var e=document.getElementsByClassName("card-content"),e=(Array.from(e).forEach(function(e){e.style.setProperty("--efu-card-bg","var(--efu-white)")}),document.getElementsByClassName("author-info__sayhi"));Array.from(e).forEach(function(e){e.style.setProperty("background","var(--efu-white-op)"),e.style.setProperty("color","var(--efu-white)")})};
+const coverColor = () => {
+    const pageColor = PAGE_CONFIG.color || document.getElementById("post-cover")?.src;
+    if (pageColor) {
+        return localColor(pageColor);
+    }
+    setDefaultThemeColors();
+}
+
+const setDefaultThemeColors = () => {
+    const themeVars = {
+        '--efu-main': 'var(--efu-theme)',
+        '--efu-main-op': 'var(--efu-theme-op)',
+        '--efu-main-op-deep': 'var(--efu-theme-op-deep)',
+        '--efu-main-none': 'var(--efu-theme-none)'
+    };
+    Object.entries(themeVars).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(key, value);
+    });
+    initThemeColor();
+}
+
+const localColor = path => {
+    const colorThief = new ColorThief();
+    const img = new Image();
+    img.crossOrigin = "Anonymous";
+    img.onload = () => setThemeColors(rgbToHex(colorThief.getColor(img)), ...colorThief.getColor(img));
+    img.onerror = () => console.error('Image Error');
+    img.src = path;
+}
+
+const rgbToHex = ([r, g, b]) => {
+    return '#' + [r, g, b].map(x => {
+        const component = Math.floor(x * 0.8);
+        return component.toString(16).padStart(2, '0');
+    }).join('');
+}
+
+const setThemeColors = (value, r = null, g = null, b = null) => {
+    if (!value) return setDefaultThemeColors();
+
+    const themeColors = {
+        '--efu-main': value,
+        '--efu-main-op': value + '23',
+        '--efu-main-op-deep': value + 'dd',
+        '--efu-main-none': value + '00'
+    };
+    Object.entries(themeColors).forEach(([key, color]) => {
+        document.documentElement.style.setProperty(key, color);
+    });
+
+    if (r && g && b) {
+        const brightness = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) / 1000);
+        if (brightness < 125) {
+            adjustCardStyles();
+            value = LightenDarkenColor(value, 50);
+            setThemeColors(value);
+        }
+    }
+
+    document.getElementById("coverdiv").classList.add("loaded");
+    initThemeColor();
+}
+
+function LightenDarkenColor(col, amt) {
+    var usePound = false;
+    if (col[0] === "#") {
+        col = col.slice(1);
+        usePound = true;
+    }
+}
+
+const adjustCardStyles = () => {
+    const cardContents = document.getElementsByClassName('card-content');
+    Array.from(cardContents).forEach(item => {
+        item.style.setProperty('--efu-card-bg', 'var(--efu-white)');
+    });
+
+    const authorInfo = document.getElementsByClassName('author-info__sayhi');
+    Array.from(authorInfo).forEach(item => {
+        item.style.setProperty('background', 'var(--efu-white-op)');
+        item.style.setProperty('color', 'var(--efu-white)');
+    });
+}
