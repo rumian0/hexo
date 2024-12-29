@@ -94,6 +94,89 @@
       </tags>
   </entry>
   <entry>
+    <title>ChatGPT-KEY的获取[无需手机号绑定]</title>
+    <url>/2024/01/21/ChatGPT-KEY/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😆 **前言**：最近ChatGPT官方解除了注册时的手机号绑定要求，使我们注册账号和使用变得更加容易，但Api-Key的获取还是需要手机号绑定，接下来的教程会教你如何绕过手机号的绑定获取到可以的KEY，并使用获取到的KEY来搭建自己的镜像网站【实现使用时免科学】，无限制使用ChatGPT。【教程内的网站还是需要在使用科学的前提下操作的，但部署后就不需要了。】
+
+</aside>
+
+<p><strong>该教程所需的网站地址：</strong></p>
+<ul>
+<li><strong>1、ChatGPT官网：<a href="https://openai.com/blog/chatgpt">Introducing ChatGPT (openai.com)</a></strong></li>
+<li><strong>2、临时邮箱网站：<a href="https://etempmail.com/zh">主页 – Temp Mail – Free Edu &#x2F; .COM Temporary Mails (etempmail.com)</a></strong></li>
+<li><strong>3、ChatGPTNextWeb项目：<a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">ChatGPTNextWeb&#x2F;ChatGPT-Next-Web: A well-designed cross-platform ChatGPT UI (Web &#x2F; PWA &#x2F; Linux &#x2F; Win &#x2F; MacOS). 一键拥有你自己的跨平台 ChatGPT 应用。 (github.com)</a></strong></li>
+<li><strong>4、Vercel注册地址：<a href="https://vercel.com/signup">Sign Up – Vercel</a></strong></li>
+<li><strong>5、Watt Toolkit【原STEAM++】：<a href="https://steampp.net/">瓦特工具箱(Steam++官网) – Watt Toolkit (steampp.net)</a></strong></li>
+</ul>
+<p><strong>使用临时邮箱注册ChatGPT账号并获取KEY：</strong></p>
+<p><strong>1、进入ChatGPT注册页面</strong></p>
+<p>选择Log in</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/c2cec3fdfc0392453cb007649794a4c27d1e2550.jpg" alt="1" title="chatgpt"></p>
+<p>选择SIGN UP【注册模式】</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272b262558818fa0ec09fac796.jpg" alt="2" title="chatgpt"></p>
+<p>进入注册模式页面</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/eac4b74543a98226d3a9cd4c9a82b9014a90eb75.jpg" alt="3" title="chatgpt"></p>
+<p><strong>2、使用临时邮箱注册我们的ChatGPT账号</strong></p>
+<p>复制临时邮箱进行注册</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/91529822720e0cf38a9ca8901a46f21fbe09aa76.jpg" alt="4" title="chatgpt"></p>
+<p>填写邮箱和密码注册</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/37d12f2eb9389b50eedb06399535e5dde7116eb1.jpg" alt="5" title="chatgpt"></p>
+<p>注册后需要在邮箱进行确认验证</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/6609c93d70cf3bc7426b2b87c100baa1cd112a76.jpg" alt="6" title="chatgpt"></p>
+<p>收到官方验证邮件</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/42a98226cffc1e1794d56a5a5a90f603738de977.jpg" alt="7" title="chatgpt"></p>
+<p>进入信息填写页面</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/b7fd5266d016092450264470c40735fae6cd345e.jpg" alt="8" title="chatgpt"></p>
+<p>随意填写即可</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272aa02458818fa0ec08fac708.jpg" alt="9" title="chatgpt"></p>
+<p>根据不同需求选择模式</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/32fa828ba61ea8d33248926f870a304e251f5877.jpg" alt="10" title="chatgpt"></p>
+<p><strong>3、获取ChatGPT的Api-Key【为搭建镜像网站做准备】</strong></p>
+<p>API模式进入API-keys页面</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/a50f4bfbfbedab641217ababe736afc379311e77.jpg" alt="11" title="chatgpt"></p>
+<p>打开网页控制台</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/d6ca7bcb0a46f21fdf51b838e6246b600c33ae70.jpg" alt="12" title="chatgpt"><br>进行网络数据抓包</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/b219ebc4b74543a9993b1ca70e178a82b90114bc.jpg" alt="13" title="chatgpt"></p>
+<p>抓包获取到了账号的KEY【留着备用】</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/b58f8c5494eef01f8873feaef0fe9925bc317d72.jpg" alt="14" title="chatgpt"><br><strong>4、Fork-Github的ChatGPTNextWeb项目</strong></p>
+<p>登录GitHub，Fork项目</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/fd039245d688d43f6bce77996d1ed21b0ef43b72.jpg" alt="15" title="chatgpt"><br>Create fork</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/cdbf6c81800a19d8757c626e23fa828ba61e465a.jpg" alt="16" title="chatgpt"><br>添加成功</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/7acb0a46f21fbe090938257f7b600c338744ad73.jpg" alt="17" title="chatgpt"><br><strong>5、进入Vercel部署我们的镜像网站</strong></p>
+<p>选择个人项目，后输入昵称</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/faedab64034f78f0e4417c9869310a55b3191c16.jpg" alt="18" title="chatgpt"><br>使用我们之前Fork项目的Github账号注册登录</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/6d81800a19d8bc3e7ba2e0a1928ba61ea8d34537.jpg" alt="19" title="chatgpt"></p>
+<p>Import开始部署</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/a8ec8a13632762d0be7a42d4b0ec08fa513dc611.jpg" alt="20" title="chatgpt"></p>
+<p>点击Deploy</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/6159252dd42a28344403d0604bb5c9ea15cebf30.jpg" alt="21" title="chatgpt"></p>
+<p>进入仪表盘【dashboard】</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/8c1001e93901213f2296a8b744e736d12f2e9530.jpg" alt="22" title="chatgpt"><br>访问项目自动分配的域名</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/4afbfbedab64034f6a91246dbfc379310a551d78.jpg" alt="23" title="chatgpt"><br><strong>6、Api-Key的导入设置</strong></p>
+<p>进入设置</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/58ee3d6d55fbb2fb1074be795f4a20a44623dc7a.jpg" alt="24" title="chatgpt"></p>
+<p>勾选自定义接口并导入KEY</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/c83d70cf3bc79f3d26a7025baaa1cd11728b2913.jpg" alt="25" title="chatgpt"></p>
+<p>KEY值为之前抓包到的数据</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/7dd98d1001e93901b8806b556bec54e737d196df.jpg" alt="26" title="chatgpt"><br>导入KEY后即可开始使用</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/bd3eb13533fa828b6ba17b88ed1f4134960a5adf.jpg" alt="27" title="chatgpt"><br><strong>7、项目域名无法访问问题【挂科学最好】，最廉价的方法也可以使用STEAM++进行加速。</strong></p>
+<p>勉强能用</p>
+<p><img src="https://wkphoto.cdn.bcebos.com/a1ec08fa513d26971692ee3645fbb2fb4316d81c.jpg" alt="28" title="chatgpt"></p>
+<blockquote>
+<p>选自：<a href="https://paperkiteblog.xyz/?p=545">https://paperkiteblog.xyz/?p=545</a></p>
+</blockquote>
+</div>]]></content>
+      <categories>
+        <category>ChatGPT</category>
+      </categories>
+      <tags>
+        <tag>ChatGPT</tag>
+        <tag>Openai</tag>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown 基本语法</title>
     <url>/2024/01/22/Markdown/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h1><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出<br>HTML、PDF 以及本身的 .md<br>格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。</p>
@@ -203,89 +286,6 @@
         <tag>工具</tag>
         <tag>Markdown</tag>
         <tag>写作</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ChatGPT-KEY的获取[无需手机号绑定]</title>
-    <url>/2024/01/21/ChatGPT-KEY/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😆 **前言**：最近ChatGPT官方解除了注册时的手机号绑定要求，使我们注册账号和使用变得更加容易，但Api-Key的获取还是需要手机号绑定，接下来的教程会教你如何绕过手机号的绑定获取到可以的KEY，并使用获取到的KEY来搭建自己的镜像网站【实现使用时免科学】，无限制使用ChatGPT。【教程内的网站还是需要在使用科学的前提下操作的，但部署后就不需要了。】
-
-</aside>
-
-<p><strong>该教程所需的网站地址：</strong></p>
-<ul>
-<li><strong>1、ChatGPT官网：<a href="https://openai.com/blog/chatgpt">Introducing ChatGPT (openai.com)</a></strong></li>
-<li><strong>2、临时邮箱网站：<a href="https://etempmail.com/zh">主页 – Temp Mail – Free Edu &#x2F; .COM Temporary Mails (etempmail.com)</a></strong></li>
-<li><strong>3、ChatGPTNextWeb项目：<a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">ChatGPTNextWeb&#x2F;ChatGPT-Next-Web: A well-designed cross-platform ChatGPT UI (Web &#x2F; PWA &#x2F; Linux &#x2F; Win &#x2F; MacOS). 一键拥有你自己的跨平台 ChatGPT 应用。 (github.com)</a></strong></li>
-<li><strong>4、Vercel注册地址：<a href="https://vercel.com/signup">Sign Up – Vercel</a></strong></li>
-<li><strong>5、Watt Toolkit【原STEAM++】：<a href="https://steampp.net/">瓦特工具箱(Steam++官网) – Watt Toolkit (steampp.net)</a></strong></li>
-</ul>
-<p><strong>使用临时邮箱注册ChatGPT账号并获取KEY：</strong></p>
-<p><strong>1、进入ChatGPT注册页面</strong></p>
-<p>选择Log in</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/c2cec3fdfc0392453cb007649794a4c27d1e2550.jpg" alt="1" title="chatgpt"></p>
-<p>选择SIGN UP【注册模式】</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272b262558818fa0ec09fac796.jpg" alt="2" title="chatgpt"></p>
-<p>进入注册模式页面</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/eac4b74543a98226d3a9cd4c9a82b9014a90eb75.jpg" alt="3" title="chatgpt"></p>
-<p><strong>2、使用临时邮箱注册我们的ChatGPT账号</strong></p>
-<p>复制临时邮箱进行注册</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/91529822720e0cf38a9ca8901a46f21fbe09aa76.jpg" alt="4" title="chatgpt"></p>
-<p>填写邮箱和密码注册</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/37d12f2eb9389b50eedb06399535e5dde7116eb1.jpg" alt="5" title="chatgpt"></p>
-<p>注册后需要在邮箱进行确认验证</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/6609c93d70cf3bc7426b2b87c100baa1cd112a76.jpg" alt="6" title="chatgpt"></p>
-<p>收到官方验证邮件</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/42a98226cffc1e1794d56a5a5a90f603738de977.jpg" alt="7" title="chatgpt"></p>
-<p>进入信息填写页面</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/b7fd5266d016092450264470c40735fae6cd345e.jpg" alt="8" title="chatgpt"></p>
-<p>随意填写即可</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/10dfa9ec8a1363272aa02458818fa0ec08fac708.jpg" alt="9" title="chatgpt"></p>
-<p>根据不同需求选择模式</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/32fa828ba61ea8d33248926f870a304e251f5877.jpg" alt="10" title="chatgpt"></p>
-<p><strong>3、获取ChatGPT的Api-Key【为搭建镜像网站做准备】</strong></p>
-<p>API模式进入API-keys页面</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/a50f4bfbfbedab641217ababe736afc379311e77.jpg" alt="11" title="chatgpt"></p>
-<p>打开网页控制台</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/d6ca7bcb0a46f21fdf51b838e6246b600c33ae70.jpg" alt="12" title="chatgpt"><br>进行网络数据抓包</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/b219ebc4b74543a9993b1ca70e178a82b90114bc.jpg" alt="13" title="chatgpt"></p>
-<p>抓包获取到了账号的KEY【留着备用】</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/b58f8c5494eef01f8873feaef0fe9925bc317d72.jpg" alt="14" title="chatgpt"><br><strong>4、Fork-Github的ChatGPTNextWeb项目</strong></p>
-<p>登录GitHub，Fork项目</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/fd039245d688d43f6bce77996d1ed21b0ef43b72.jpg" alt="15" title="chatgpt"><br>Create fork</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/cdbf6c81800a19d8757c626e23fa828ba61e465a.jpg" alt="16" title="chatgpt"><br>添加成功</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/7acb0a46f21fbe090938257f7b600c338744ad73.jpg" alt="17" title="chatgpt"><br><strong>5、进入Vercel部署我们的镜像网站</strong></p>
-<p>选择个人项目，后输入昵称</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/faedab64034f78f0e4417c9869310a55b3191c16.jpg" alt="18" title="chatgpt"><br>使用我们之前Fork项目的Github账号注册登录</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/6d81800a19d8bc3e7ba2e0a1928ba61ea8d34537.jpg" alt="19" title="chatgpt"></p>
-<p>Import开始部署</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/a8ec8a13632762d0be7a42d4b0ec08fa513dc611.jpg" alt="20" title="chatgpt"></p>
-<p>点击Deploy</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/6159252dd42a28344403d0604bb5c9ea15cebf30.jpg" alt="21" title="chatgpt"></p>
-<p>进入仪表盘【dashboard】</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/8c1001e93901213f2296a8b744e736d12f2e9530.jpg" alt="22" title="chatgpt"><br>访问项目自动分配的域名</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/4afbfbedab64034f6a91246dbfc379310a551d78.jpg" alt="23" title="chatgpt"><br><strong>6、Api-Key的导入设置</strong></p>
-<p>进入设置</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/58ee3d6d55fbb2fb1074be795f4a20a44623dc7a.jpg" alt="24" title="chatgpt"></p>
-<p>勾选自定义接口并导入KEY</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/c83d70cf3bc79f3d26a7025baaa1cd11728b2913.jpg" alt="25" title="chatgpt"></p>
-<p>KEY值为之前抓包到的数据</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/7dd98d1001e93901b8806b556bec54e737d196df.jpg" alt="26" title="chatgpt"><br>导入KEY后即可开始使用</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/bd3eb13533fa828b6ba17b88ed1f4134960a5adf.jpg" alt="27" title="chatgpt"><br><strong>7、项目域名无法访问问题【挂科学最好】，最廉价的方法也可以使用STEAM++进行加速。</strong></p>
-<p>勉强能用</p>
-<p><img src="https://wkphoto.cdn.bcebos.com/a1ec08fa513d26971692ee3645fbb2fb4316d81c.jpg" alt="28" title="chatgpt"></p>
-<blockquote>
-<p>选自：<a href="https://paperkiteblog.xyz/?p=545">https://paperkiteblog.xyz/?p=545</a></p>
-</blockquote>
-</div>]]></content>
-      <categories>
-        <category>ChatGPT</category>
-      </categories>
-      <tags>
-        <tag>ChatGPT</tag>
-        <tag>Openai</tag>
-        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
@@ -659,6 +659,71 @@
       </tags>
   </entry>
   <entry>
+    <title>爱奇艺免费了？</title>
+    <url>/2024/04/14/aqi/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 爱奇艺前言：话说我们平时一定会追剧或看电影对吧？但想什么主流的视频平台都有个充会员功能，但是吧，我们兜比脸还干净，这时候该怎么愉快的追剧呢？请看下文！
+
+</aside>
+
+<h1 id="方法总结"><a href="#方法总结" class="headerlink" title="方法总结"></a>方法总结</h1><ul>
+<li>下载爱奇艺视频qsv格式文件再进行解密</li>
+<li>使用解析网站进行解析</li>
+<li>使用获取内部m3u8的方式解析</li>
+<li>使用别的影视网址平替</li>
+</ul>
+<h1 id="方法一：qsv格式文件，进行解密"><a href="#方法一：qsv格式文件，进行解密" class="headerlink" title="方法一：qsv格式文件，进行解密"></a>方法一：qsv格式文件，进行解密</h1><p>注：不建议使用</p>
+<h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><p>这个不用多说吧，点击爱奇艺的下载按钮就行了！</p>
+<h2 id="网址转换"><a href="#网址转换" class="headerlink" title="网址转换"></a>网址转换</h2><p><img src="/2024/04/14/aqi/img1.png" alt="img"></p>
+<p>如图所示，可以进行QSV的转换，但是要么速度慢要么收费，不建议使用</p>
+<p>上方网址：<a href="https://www.media.io/zh/convert/qsv-to-mp4.html">https://www.media.io/zh/convert/qsv-to-mp4.html</a></p>
+<hr>
+<h1 id="方法二：解析网站"><a href="#方法二：解析网站" class="headerlink" title="方法二：解析网站"></a>方法二：解析网站</h1><p>我们都知道啊，每个播放视频都是从后天服务器传输视频给你的，但是后天数据都是加密的，我们只需要替换掉就可以，简简单单啦！</p>
+<p>注：建议使用电脑</p>
+<h2 id="打开网站"><a href="#打开网站" class="headerlink" title="打开网站"></a>打开网站</h2><p>爱奇艺：</p>
+<p><a href="https://www.iqiyi.com/">爱奇艺视频,视频,视频网站,高清视频,电影,电视剧,动漫,综艺,音乐</a></p>
+<h2 id="复制网址"><a href="#复制网址" class="headerlink" title="复制网址"></a>复制网址</h2><p><img src="/2024/04/14/aqi/img2.png" alt="img"></p>
+<p>看到了吧，上方的网址复制</p>
+<p>如果你仔细看就会发现，我的视频上面有一个绿色的小三角，合适我内置的插件，可以获取到内置的播放地址，后面再说！</p>
+<h2 id="在打开解析网址"><a href="#在打开解析网址" class="headerlink" title="在打开解析网址"></a>在打开解析网址</h2><p><img src="/2024/04/14/aqi/img3.png" alt="img"></p>
+<h2 id="立即享受，看就完了"><a href="#立即享受，看就完了" class="headerlink" title="立即享受，看就完了"></a>立即享受，看就完了</h2><p><img src="/2024/04/14/aqi/img4.png" alt="img"></p>
+<p>类似的网站还有很多，这里来源于网络，请自测（不自动更新）</p>
+<ul>
+<li><strong>酉灿：</strong><a href="https://vip.superso.top/">https://vip.superso.top/</a></li>
+<li>夜雨聆风：<a href="https://vip.yeyulingfeng.com/">https://vip.yeyulingfeng.com/</a></li>
+<li>理想智能云：<a href="http://movie.imyjs.cn/">http://movie.imyjs.cn/</a></li>
+<li>Agoni：<a href="https://www.agoni.top/video/index.html">https://www.agoni.top/video/index.html</a></li>
+</ul>
+<h1 id="方法三：获取m3u8播放链接"><a href="#方法三：获取m3u8播放链接" class="headerlink" title="方法三：获取m3u8播放链接"></a>方法三：获取m3u8播放链接</h1><p><img src="/2024/04/14/aqi/img5.png" alt="img"></p>
+<p>这里使用猫爪，抓取ts格式文件，让后每一个ts就是一个小分段，每个视频都由许多ts组成，要不然视频一次性加载太慢了，1个小时多，分为多个ts就可以边看别加载，不会卡顿</p>
+<p><img src="/2024/04/14/aqi/img6.png" alt="img"></p>
+<p>点击我的小三角就会看到url，这里就是当前视频的播放源，让后使用m3u8播放器进行播放就可以了</p>
+<p><img src="/2024/04/14/aqi/img7.png" alt="img"></p>
+<p>一样的，复制粘贴即可</p>
+<p>这里推荐的网址m3u8播放网址</p>
+<ul>
+<li><a href="https://anym3u8player.com/cn/">https://anym3u8player.com/cn/</a></li>
+<li><a href="http://tool.liumingye.cn/m3u8/">http://tool.liumingye.cn/m3u8/</a></li>
+<li><a href="http://tool.pfan.cn/m3u8">http://tool.pfan.cn/m3u8</a></li>
+<li><a href="https://www.zhanid.com/tool/m3u8.html">https://www.zhanid.com/tool/m3u8.html</a></li>
+</ul>
+<h1 id="影视平台-推荐指数🤩🤩🤩🤩🤩🤩"><a href="#影视平台-推荐指数🤩🤩🤩🤩🤩🤩" class="headerlink" title="影视平台(推荐指数🤩🤩🤩🤩🤩🤩)"></a>影视平台(推荐指数🤩🤩🤩🤩🤩🤩)</h1><h2 id="首推：猫影"><a href="#首推：猫影" class="headerlink" title="首推：猫影"></a>首推：<a href="https://ymck.pro/">猫影</a></h2><p><img src="/2024/04/14/aqi/img8.png" alt="img"></p>
+<p><strong>作为我第一大影视集合，有这超多的资源，丰富的网址，任你选择</strong></p>
+<p><img src="/2024/04/14/aqi/img9.png" alt="img"></p>
+<p>想看什么就直接搜什么，之后就会为你选出最佳的影视平台，跳转到别的网址去观看，播放速度秒了！</p>
+<p>想看什么直接搜！</p>
+<p>BY：茗辰原</p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>工具</tag>
+        <tag>实用推荐</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>取bilibili直连</title>
     <url>/2024/06/22/biibili-zhilian/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -732,71 +797,6 @@
       <tags>
         <tag>工具</tag>
         <tag>建站</tag>
-        <tag>实用推荐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爱奇艺免费了？</title>
-    <url>/2024/04/14/aqi/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 爱奇艺前言：话说我们平时一定会追剧或看电影对吧？但想什么主流的视频平台都有个充会员功能，但是吧，我们兜比脸还干净，这时候该怎么愉快的追剧呢？请看下文！
-
-</aside>
-
-<h1 id="方法总结"><a href="#方法总结" class="headerlink" title="方法总结"></a>方法总结</h1><ul>
-<li>下载爱奇艺视频qsv格式文件再进行解密</li>
-<li>使用解析网站进行解析</li>
-<li>使用获取内部m3u8的方式解析</li>
-<li>使用别的影视网址平替</li>
-</ul>
-<h1 id="方法一：qsv格式文件，进行解密"><a href="#方法一：qsv格式文件，进行解密" class="headerlink" title="方法一：qsv格式文件，进行解密"></a>方法一：qsv格式文件，进行解密</h1><p>注：不建议使用</p>
-<h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><p>这个不用多说吧，点击爱奇艺的下载按钮就行了！</p>
-<h2 id="网址转换"><a href="#网址转换" class="headerlink" title="网址转换"></a>网址转换</h2><p><img src="/2024/04/14/aqi/img1.png" alt="img"></p>
-<p>如图所示，可以进行QSV的转换，但是要么速度慢要么收费，不建议使用</p>
-<p>上方网址：<a href="https://www.media.io/zh/convert/qsv-to-mp4.html">https://www.media.io/zh/convert/qsv-to-mp4.html</a></p>
-<hr>
-<h1 id="方法二：解析网站"><a href="#方法二：解析网站" class="headerlink" title="方法二：解析网站"></a>方法二：解析网站</h1><p>我们都知道啊，每个播放视频都是从后天服务器传输视频给你的，但是后天数据都是加密的，我们只需要替换掉就可以，简简单单啦！</p>
-<p>注：建议使用电脑</p>
-<h2 id="打开网站"><a href="#打开网站" class="headerlink" title="打开网站"></a>打开网站</h2><p>爱奇艺：</p>
-<p><a href="https://www.iqiyi.com/">爱奇艺视频,视频,视频网站,高清视频,电影,电视剧,动漫,综艺,音乐</a></p>
-<h2 id="复制网址"><a href="#复制网址" class="headerlink" title="复制网址"></a>复制网址</h2><p><img src="/2024/04/14/aqi/img2.png" alt="img"></p>
-<p>看到了吧，上方的网址复制</p>
-<p>如果你仔细看就会发现，我的视频上面有一个绿色的小三角，合适我内置的插件，可以获取到内置的播放地址，后面再说！</p>
-<h2 id="在打开解析网址"><a href="#在打开解析网址" class="headerlink" title="在打开解析网址"></a>在打开解析网址</h2><p><img src="/2024/04/14/aqi/img3.png" alt="img"></p>
-<h2 id="立即享受，看就完了"><a href="#立即享受，看就完了" class="headerlink" title="立即享受，看就完了"></a>立即享受，看就完了</h2><p><img src="/2024/04/14/aqi/img4.png" alt="img"></p>
-<p>类似的网站还有很多，这里来源于网络，请自测（不自动更新）</p>
-<ul>
-<li><strong>酉灿：</strong><a href="https://vip.superso.top/">https://vip.superso.top/</a></li>
-<li>夜雨聆风：<a href="https://vip.yeyulingfeng.com/">https://vip.yeyulingfeng.com/</a></li>
-<li>理想智能云：<a href="http://movie.imyjs.cn/">http://movie.imyjs.cn/</a></li>
-<li>Agoni：<a href="https://www.agoni.top/video/index.html">https://www.agoni.top/video/index.html</a></li>
-</ul>
-<h1 id="方法三：获取m3u8播放链接"><a href="#方法三：获取m3u8播放链接" class="headerlink" title="方法三：获取m3u8播放链接"></a>方法三：获取m3u8播放链接</h1><p><img src="/2024/04/14/aqi/img5.png" alt="img"></p>
-<p>这里使用猫爪，抓取ts格式文件，让后每一个ts就是一个小分段，每个视频都由许多ts组成，要不然视频一次性加载太慢了，1个小时多，分为多个ts就可以边看别加载，不会卡顿</p>
-<p><img src="/2024/04/14/aqi/img6.png" alt="img"></p>
-<p>点击我的小三角就会看到url，这里就是当前视频的播放源，让后使用m3u8播放器进行播放就可以了</p>
-<p><img src="/2024/04/14/aqi/img7.png" alt="img"></p>
-<p>一样的，复制粘贴即可</p>
-<p>这里推荐的网址m3u8播放网址</p>
-<ul>
-<li><a href="https://anym3u8player.com/cn/">https://anym3u8player.com/cn/</a></li>
-<li><a href="http://tool.liumingye.cn/m3u8/">http://tool.liumingye.cn/m3u8/</a></li>
-<li><a href="http://tool.pfan.cn/m3u8">http://tool.pfan.cn/m3u8</a></li>
-<li><a href="https://www.zhanid.com/tool/m3u8.html">https://www.zhanid.com/tool/m3u8.html</a></li>
-</ul>
-<h1 id="影视平台-推荐指数🤩🤩🤩🤩🤩🤩"><a href="#影视平台-推荐指数🤩🤩🤩🤩🤩🤩" class="headerlink" title="影视平台(推荐指数🤩🤩🤩🤩🤩🤩)"></a>影视平台(推荐指数🤩🤩🤩🤩🤩🤩)</h1><h2 id="首推：猫影"><a href="#首推：猫影" class="headerlink" title="首推：猫影"></a>首推：<a href="https://ymck.pro/">猫影</a></h2><p><img src="/2024/04/14/aqi/img8.png" alt="img"></p>
-<p><strong>作为我第一大影视集合，有这超多的资源，丰富的网址，任你选择</strong></p>
-<p><img src="/2024/04/14/aqi/img9.png" alt="img"></p>
-<p>想看什么就直接搜什么，之后就会为你选出最佳的影视平台，跳转到别的网址去观看，播放速度秒了！</p>
-<p>想看什么直接搜！</p>
-<p>BY：茗辰原</p>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>工具</tag>
         <tag>实用推荐</tag>
       </tags>
   </entry>
@@ -1132,7 +1132,7 @@
   <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#x69;&#110;&#x66;&#111;&#64;&#102;&#x72;&#101;&#x65;&#110;&#111;&#109;&#46;&#99;&#x6f;&#x6d;">&#x69;&#110;&#x66;&#111;&#64;&#102;&#x72;&#101;&#x65;&#110;&#111;&#109;&#46;&#99;&#x6f;&#x6d;</a>说明情况后可以改为收费状态并已付费10年。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="免费域名整理"><a href="#免费域名整理" class="headerlink" title="免费域名整理"></a><strong>免费域名整理</strong></h1><p>自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到<a href="mailto:&#105;&#110;&#x66;&#111;&#64;&#102;&#114;&#101;&#101;&#110;&#111;&#109;&#x2e;&#x63;&#111;&#109;">&#105;&#110;&#x66;&#111;&#64;&#102;&#114;&#101;&#101;&#110;&#111;&#109;&#x2e;&#x63;&#111;&#109;</a>说明情况后可以改为收费状态并已付费10年。</p>
 <p>以下整理了一些可以用的免费二级域名：</p>
 <table>
 <thead>
@@ -1574,6 +1574,44 @@
       </tags>
   </entry>
   <entry>
+    <title>开往的礼物(纪念款)</title>
+    <url>/2024/04/21/kw/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+就在昨天购买了开往的周边真的太开心了。
+
+</aside>
+
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>想必每个玩网络的人都知道开往吧。</p>
+<p><strong>开往</strong>的生日是 <strong>2020 年 3 月 12 日</strong>，取自<strong>开</strong>放的<strong>网</strong>络，是一个友链接力项目。</p>
+<p>开往的 logo 是代表“世界”的星环 + 代表“穿梭”的列车 —— 相信你听到“开往”这个词最多的时候一定是在列车上，“由 xx 开往 xx 的列车……”。</p>
+<p><img src="https://www.travellings.cn/assets/logo-index.gif" alt="https://www.travellings.cn/assets/logo-index.gif"></p>
+<p>每当有人访问加入开往的网页时，点击“开往“会<strong>随机跳转</strong>到另一个加入开往的网页。之后，再次点击网页上的”开往“或<strong>后退网页</strong>，将继续随机跳转到另一个加入开往的网页。</p>
+<p>加入开往的网页越多，友链接力的规模越大，分享流量的规模也越大。</p>
+<p>目前已有 1k+ 人关注开往， 1k+ 成员加入过开往。</p>
+<p><a href="https://img.shields.io/github/stars/travellings-link/travellings?style=social">https://img.shields.io/github/stars/travellings-link/travellings?style=social</a></p>
+<p>这个看起来难道不有趣吗？</p>
+<h1 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h1><p>就在上周洛寒兮准备了开往的周边，心想我来到开往也有3个月多之久了，喜欢开往也有3年了，一开始就被他的原理所吸引，与每一次点击之后的未知性，真的超级有趣。</p>
+<p>那时的我看到别人网站上挂着开往的标识，太酷了啊。我想什么时候我也才能成为一份子呢？</p>
+<p>这不，我现在终于成为了一份子，真的很感激，很激动，文章每次都是很认真写完才会发布，就希望有更多的人看到我，能帮助到别人。</p>
+<p>哈哈，来看我的周边！！</p>
+<p><img src="/2024/04/21/kw/show1.jpg" alt="zhifu.bmp"></p>
+<p>这是在爱发电上买的，一挂出，我放学回来就买了，真的很爱开往~</p>
+<p><img src="/2024/04/21/kw/zhifu.png" alt="show.jpg"></p>
+<p>你看这个，谁能不爱呢？</p>
+<p><img src="/2024/04/21/kw/sho.png" alt="sho.png"></p>
+<p>茗辰原 の 异世界，也是你的一世界！在这里可以畅所欲谈，哈哈，期待与你的下一次相遇~</p>
+<p><img src="/2024/04/21/kw/show2.webp" alt="show2.webp"></p>
+</div>]]></content>
+      <categories>
+        <category>心情随笔</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机的基础知识</title>
     <url>/2024/04/30/jsj-know/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -1758,41 +1796,34 @@
       </tags>
   </entry>
   <entry>
-    <title>开往的礼物(纪念款)</title>
-    <url>/2024/04/21/kw/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+    <title>mp3tag封面替换，信息修改！</title>
+    <url>/2024/08/25/mp3tag/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><p><a href="https://www.mp3tag.de/en/download.html">Mp3tag - Download</a></p>
+<aside>
 😀 这里写文章的前言：
-就在昨天购买了开往的周边真的太开心了。
-
+Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以编辑的信息，视频封面等
 </aside>
 
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>想必每个玩网络的人都知道开往吧。</p>
-<p><strong>开往</strong>的生日是 <strong>2020 年 3 月 12 日</strong>，取自<strong>开</strong>放的<strong>网</strong>络，是一个友链接力项目。</p>
-<p>开往的 logo 是代表“世界”的星环 + 代表“穿梭”的列车 —— 相信你听到“开往”这个词最多的时候一定是在列车上，“由 xx 开往 xx 的列车……”。</p>
-<p><img src="https://www.travellings.cn/assets/logo-index.gif" alt="https://www.travellings.cn/assets/logo-index.gif"></p>
-<p>每当有人访问加入开往的网页时，点击“开往“会<strong>随机跳转</strong>到另一个加入开往的网页。之后，再次点击网页上的”开往“或<strong>后退网页</strong>，将继续随机跳转到另一个加入开往的网页。</p>
-<p>加入开往的网页越多，友链接力的规模越大，分享流量的规模也越大。</p>
-<p>目前已有 1k+ 人关注开往， 1k+ 成员加入过开往。</p>
-<p><a href="https://img.shields.io/github/stars/travellings-link/travellings?style=social">https://img.shields.io/github/stars/travellings-link/travellings?style=social</a></p>
-<p>这个看起来难道不有趣吗？</p>
-<h1 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h1><p>就在上周洛寒兮准备了开往的周边，心想我来到开往也有3个月多之久了，喜欢开往也有3年了，一开始就被他的原理所吸引，与每一次点击之后的未知性，真的超级有趣。</p>
-<p>那时的我看到别人网站上挂着开往的标识，太酷了啊。我想什么时候我也才能成为一份子呢？</p>
-<p>这不，我现在终于成为了一份子，真的很感激，很激动，文章每次都是很认真写完才会发布，就希望有更多的人看到我，能帮助到别人。</p>
-<p>哈哈，来看我的周边！！</p>
-<p><img src="/2024/04/21/kw/show1.jpg" alt="zhifu.bmp"></p>
-<p>这是在爱发电上买的，一挂出，我放学回来就买了，真的很爱开往~</p>
-<p><img src="/2024/04/21/kw/zhifu.png" alt="show.jpg"></p>
-<p>你看这个，谁能不爱呢？</p>
-<p><img src="/2024/04/21/kw/sho.png" alt="sho.png"></p>
-<p>茗辰原 の 异世界，也是你的一世界！在这里可以畅所欲谈，哈哈，期待与你的下一次相遇~</p>
-<p><img src="/2024/04/21/kw/show2.webp" alt="show2.webp"></p>
+<h1 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h1><p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-25-34.webp" alt="Snipaste_2024-08-04_10-25-34.webp"></p>
+<p>封面如此，可以替换的信息在左侧。</p>
+<h2 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h2><p>点击这个按钮，即可打开想<code>修改的文件目录</code></p>
+<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-09.webp" alt="Snipaste_2024-08-04_10-28-09.webp"></p>
+<p>在<code>右边</code>选择视频，<code>双击</code>即可播放，<code>单击</code>即可修改。</p>
+<hr>
+<p>这里，右键，即可选择想修改的<code>视频封面</code>，也就是<code>缩略图</code></p>
+<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-46.webp" alt="Snipaste_2024-08-04_10-28-46.webp"></p>
+<p>修改完成后，点击此处，即可保存更改。</p>
+<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-30.webp" alt="Snipaste_2024-08-04_10-28-30.webp"></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>官网：<a href="https://www.mp3tag.de/en/download.html">https://www.mp3tag.de/en/download.html</a></p>
+<p><a href="https://www.mp3tag.de/en/download.html">Mp3tag - Download</a></p>
 </div>]]></content>
       <categories>
-        <category>心情随笔</category>
+        <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>推荐</tag>
-        <tag>记录</tag>
+        <tag>电脑软件</tag>
+        <tag>信息修改</tag>
+        <tag>视频</tag>
       </tags>
   </entry>
   <entry>
@@ -1838,37 +1869,6 @@
       <tags>
         <tag>安卓应用</tag>
         <tag>app</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mp3tag封面替换，信息修改！</title>
-    <url>/2024/08/25/mp3tag/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><p><a href="https://www.mp3tag.de/en/download.html">Mp3tag - Download</a></p>
-<aside>
-😀 这里写文章的前言：
-Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以编辑的信息，视频封面等
-</aside>
-
-<h1 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h1><p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-25-34.webp" alt="Snipaste_2024-08-04_10-25-34.webp"></p>
-<p>封面如此，可以替换的信息在左侧。</p>
-<h2 id="软件使用"><a href="#软件使用" class="headerlink" title="软件使用"></a>软件使用</h2><p>点击这个按钮，即可打开想<code>修改的文件目录</code></p>
-<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-09.webp" alt="Snipaste_2024-08-04_10-28-09.webp"></p>
-<p>在<code>右边</code>选择视频，<code>双击</code>即可播放，<code>单击</code>即可修改。</p>
-<hr>
-<p>这里，右键，即可选择想修改的<code>视频封面</code>，也就是<code>缩略图</code></p>
-<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-46.webp" alt="Snipaste_2024-08-04_10-28-46.webp"></p>
-<p>修改完成后，点击此处，即可保存更改。</p>
-<p><img src="/2024/08/25/mp3tag/Snipaste_2024-08-04_10-28-30.webp" alt="Snipaste_2024-08-04_10-28-30.webp"></p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>官网：<a href="https://www.mp3tag.de/en/download.html">https://www.mp3tag.de/en/download.html</a></p>
-<p><a href="https://www.mp3tag.de/en/download.html">Mp3tag - Download</a></p>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>信息修改</tag>
-        <tag>视频</tag>
       </tags>
   </entry>
   <entry>
@@ -2016,6 +2016,32 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
+    <title>强迫性思维😣</title>
+    <url>/2024/12/28/obsessive-thinking/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="茗起"><a href="#茗起" class="headerlink" title="茗起"></a>茗起</h1><p>你说放假了我刷个视频怎么了,这一刷不要紧,给我整出个强迫性思维症(简称强迫症)<br>我起初说我绝对没有,但当我看了详细的表现之后,我发现!什么玩意!我咋全占了?<br>我还以为之前看完恐怖片,就无时无刻感觉有异形生物,或者丧失什么的,全都是因为我胆子小的问题,如今看来好像不是了……</p>
+<h1 id="强迫性思维😣"><a href="#强迫性思维😣" class="headerlink" title="强迫性思维😣"></a>强迫性思维😣</h1><p>你是否有过这样的经历，脑海中总会<code>反复出现一些念头，怎么赶也赶不走</code>，让你焦虑又困扰？这可能就是<code>强迫性思维</code>在作祟啦。今天就来和大家深入聊聊这个常见却又容易被忽视的心理现象。</p>
+<h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><p>强迫性思维可不是什么小烦恼，它实实在在地影响着人们的生活。简单来说，强迫性思维就是患者的脑海里会不停地冒出一些自己无法控制的念头，这些念头就像 “牛皮糖” 一样，黏上了就甩不掉。它可不光折腾人的心理，还会在社交场合、日常生活里搞出不少 “幺蛾子”，让人苦不堪言，生活质量大打折扣。</p>
+<h2 id="二、强迫性思维的特征"><a href="#二、强迫性思维的特征" class="headerlink" title="二、强迫性思维的特征"></a>二、强迫性思维的特征</h2><p><strong>重复性：</strong>简直像个复读机一样，相同的念头一遍又一遍地在脑袋里循环播放，患者想摆脱却无能为力，刚把这个想法按下，没过一会儿它又冒出来了。<br>控制感缺失：**那种无力感，就好比风筝断了线，患者完全掌控不了这些念头何时出现、何时消失，只能眼睁睁看着它们 “兴风作浪”。<br><strong>焦虑与困扰：</strong>一旦这些念头来袭，焦虑情绪立刻如影随形，心里像揣了只小兔子，七上八下的，给患者带来极大的精神折磨。<br><strong>时间消耗：</strong>为了应对这些恼人的念头，患者常常大把大把地浪费时间，本来可以用来享受生活、学习进步的时光，都耗费在和它们的 “斗争” 中了。</p>
+<blockquote>
+<p>就像我,每次我的家长开车带我出去,我就会觉得可能发生<strong>车祸</strong>;如果站在高处往下看,我就会想我会不会<strong>掉下去</strong>,是头先着地还是身体,会不会吓到人,吃糖的时候会不会突然出来史莱姆…<br>有没有你在洗头的时候,眼睛是睁不开的,但这时候脑袋就突然浮现出,恐怖片里的画面,让你将你噶了?如果你非要睁开眼睛,洗发水又会进入你的眼睛,非常痛苦!<br>而且你还驱散不掉,当你拼命的想要转移注意力,却发现怎么也转移不掉,他就是会出现!<br>这种情况非常影响心情,心情一下就变得非常复杂!很那说清……</p>
+</blockquote>
+<h2 id="三、强迫性思维的表现"><a href="#三、强迫性思维的表现" class="headerlink" title="三、强迫性思维的表现"></a>三、强迫性思维的表现</h2><p><strong>强迫性怀疑：</strong>出门总担心门没锁好，电器没关好，一遍又一遍地回去检查，有时候明明已经确认过多次，可心里就是不踏实，非得反复核实。<br><strong>强迫性洗涤：</strong>手稍微碰了点东西，就觉得脏得不行，反复洗手，洗得皮肤发红、起皮也停不下来；看到个物件，也要里里外外擦好几遍，试图洗掉内心的不安。<br><strong>强迫性计数：</strong>走路要数步数，爬楼梯要数台阶，非得数到一个自认为 “完美” 的数字，仿佛只有这样才能获得心理上的慰藉，找到平衡感。<br><strong>强迫性仪式行为：</strong>每天起床必须按照固定的顺序穿衣服、洗漱，稍微打乱一点顺序就浑身不自在，焦虑爆棚，只有完成这套仪式，才能稍微缓解内心的焦虑。</p>
+<blockquote>
+<p>以上我非常有抵触,要知道我们学校住宿需要经常锁门,让后我每次走之前都要专门把钥匙带上,好多次都是,我明明已经把钥匙戴上了,但是我刚走出大门口,又回去看了看不在,我拿走了才放心,有人问,为什么不检查自己的口袋?你说的对,但我当时记得是没带!所以我口袋里就不可能出现!<br>在宿舍我每天必须先洗漱才能叠被子,而在家必须先洗脸才刷牙!就是步骤相反的?</p>
+</blockquote>
+<h2 id="四、治疗与管理"><a href="#四、治疗与管理" class="headerlink" title="四、治疗与管理"></a>四、治疗与管理</h2><p><strong>认知行为治疗（CBT）：</strong>这可是个 “思维改造神器”。在治疗过程中，治疗师会引导患者仔细剖析日常出现的强迫思维情境，比如患者总是害怕犯错而反复检查文件，治疗师就会和患者一起追溯这种恐惧的根源，可能源于小时候一次因小失误被严厉批评的经历。然后帮助患者认识到当下反复检查的行为其实是过度反应，逐步训练患者用理性思维去取代这种不合理的害怕犯错的思维，像是告诉自己 “我已经认真做过了，出现小失误也不会有灾难性后果”，从而让大脑重回正轨。<br><strong>暴露与反应阻止（ERP）：</strong>听起来有点 “残忍”，但却很有效。把患者直接丢进引发强迫性思维的情境里，就像对于有强迫性洗涤症状的患者，让他们去接触一些自认为 “脏” 的日常物品，刚开始肯定害怕、焦虑，心都提到嗓子眼了，但要求患者在此时一定不能去洗手或清洁，强忍着焦虑感待在这个情境中，随着不断地适应，慢慢就发现不立刻清洁也没什么大不了，对这些情境的恐惧就会逐渐消散，焦虑感也就随之减少啦。<br><strong>药物治疗：</strong>别怕，有些抗抑郁药和抗焦虑药就像是 “心灵创可贴”。像选择性 5 - 羟色胺再摄取抑制剂（SSRI）这一类药物，它能调节大脑中的神经递质水平，就好比给混乱的神经信号 “交通” 重新梳理秩序，让紧绷的神经松弛下来，缓解强迫症状带来的焦虑、抑郁等不良情绪，为康复助力。不过药物的使用务必在专业医生的指导下进行哦。<br><strong>自我管理：</strong>自己动手，丰衣足食！放松训练做起来，找个安静舒适的地方坐下或躺下，闭上眼睛，慢慢地深呼吸，将注意力集中在呼吸的感觉上，感受腹部的起伏，让身心的紧绷感随着每一次呼气慢慢散去；冥想也很有帮助，专注于当下的念头，不做评判地观察它们，当杂念出现又飘走，不被其牵着走，减轻强迫性思维的影响。还可以试试正念练习，比如吃饭的时候就专注于食物的口感、味道，走路时感受脚步与地面接触的感觉，让自己扎根于当下，摆脱强迫思维的纠缠。</p>
+<h2 id="五、结论"><a href="#五、结论" class="headerlink" title="五、结论"></a>五、结论</h2><p>总而言之，强迫性思维虽然讨厌，但它绝不是什么 “不治之症”。只要我们及时发现，积极采取治疗和管理措施，患者完全能够夺回生活的主导权，重新拥抱高质量的生活🌈。我现在才发现,所以我现在准备接受心理和精神治疗,这个实在是太烦了!</p>
+</div>]]></content>
+      <categories>
+        <category>生活方面</category>
+      </categories>
+      <tags>
+        <tag>心理</tag>
+        <tag>生活</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>什么竟然还有这样的神器？</title>
     <url>/2024/05/12/qianhe-tools/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>给大家搞到了一款非常不错的在线工具箱网站，废话不多说，<strong>直接安排</strong>！！！</p>
@@ -2138,6 +2164,26 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
         <tag>工具</tag>
         <tag>安卓应用</tag>
         <tag>实用推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>奋进青年奖状!</title>
+    <url>/2024/12/21/riji12-09/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><h1 id="茗起"><a href="#茗起" class="headerlink" title="茗起"></a>茗起</h1><p>这期文章想做很久了,最近实在是太忙了,所以没有时间做,如今抽出来了一些时间,等着做不如早点做!<br>这是我在国家微信公众号上参加的活动,只需要答题就可以获得.<br>原本这个东西是给大学生们,积累学分用的,我当时没看到,后来看了政府文件才知道的.<br>不过这个东西的确非常的帅!<br>现在举行的时保护环境的一个奖状,如果有人想要的话,请看末尾,扫码参加活动!</p>
+<h1 id="茗叙"><a href="#茗叙" class="headerlink" title="茗叙"></a>茗叙</h1><p>奖状如下:非常的帅!!<br><img src="/2024/12/21/riji12-09/1.webp" alt="奖状"></p>
+<p>还有一个勋章!!</p>
+<p><img src="/2024/12/21/riji12-09/2.webp" alt="奖状"></p>
+<p><img src="/2024/12/21/riji12-09/3.webp" alt="奖状"></p>
+<p><video src="/2024/12/21/riji12-09/4.mp4" position="absolute" width="100%" height="100%" controls="controls"></video></p>
+<h1 id="如何参加活动"><a href="#如何参加活动" class="headerlink" title="如何参加活动?"></a>如何参加活动?</h1><p>扫描我的二维码</p>
+<p><img src="/2024/12/21/riji12-09/6.webp" alt="参加活动"><img src="/2024/12/21/riji12-09/5.webp" alt="参加活动"></p>
+</div>]]></content>
+      <categories>
+        <category>生活方面</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -2806,6 +2852,38 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       </tags>
   </entry>
   <entry>
+    <title>系统优化工具,太强了!</title>
+    <url>/2024/07/23/xtyh/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
+😀 这里写文章的前言：
+**《系统优化》**电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。
+
+</aside>
+
+<h1 id="📝-主旨内容"><a href="#📝-主旨内容" class="headerlink" title="📝 主旨内容"></a>📝 主旨内容</h1><p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用，</p>
+<h1 id="🤗-软件使用"><a href="#🤗-软件使用" class="headerlink" title="🤗 软件使用"></a>🤗 软件使用</h1><p>软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。</p>
+<p><img src="/2024/07/23/xtyh/DM_20240723202515_001.webp" alt="DM_20240723202515_001.webp"></p>
+<p>他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。</p>
+<p><img src="/2024/07/23/xtyh/DM_20240723202519_001.gif" alt="DM_20240723202519_001.gif"></p>
+<p>如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。</p>
+<p><img src="/2024/07/23/xtyh/DM_20240723202517_001.gif" alt="DM_20240723202517_001.gif"></p>
+<p>扫描结束后，会提示有多少项要修复，点击修复问题即可。</p>
+<p><img src="/2024/07/23/xtyh/DM_20240723202520_001.webp" alt="DM_20240723202520_001.webp"></p>
+<p>在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。</p>
+<p><img src="/2024/07/23/xtyh/DM_20240723202523_001.webp" alt="DM_20240723202523_001.webp"></p>
+<p><strong>总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。</strong></p>
+<h1 id="🫰下载"><a href="#🫰下载" class="headerlink" title="🫰下载"></a>🫰下载</h1><p><a href="https://www.yunpan.com/surl_y9sdXPPPCfI">360安全云盘 - 用户空间</a></p>
+</div>]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>系统优化</tag>
+        <tag>推荐</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网易云永久黑胶？</title>
     <url>/2024/03/16/wyy/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
@@ -2840,38 +2918,6 @@ Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以�
       <tags>
         <tag>安卓应用</tag>
         <tag>实用推荐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>系统优化工具,太强了!</title>
-    <url>/2024/07/23/xtyh/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="postchat_postcontent"><aside>
-😀 这里写文章的前言：
-**《系统优化》**电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。
-
-</aside>
-
-<h1 id="📝-主旨内容"><a href="#📝-主旨内容" class="headerlink" title="📝 主旨内容"></a>📝 主旨内容</h1><p><strong>《系统优化》</strong>电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用，</p>
-<h1 id="🤗-软件使用"><a href="#🤗-软件使用" class="headerlink" title="🤗 软件使用"></a>🤗 软件使用</h1><p>软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。</p>
-<p><img src="/2024/07/23/xtyh/DM_20240723202515_001.webp" alt="DM_20240723202515_001.webp"></p>
-<p>他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。</p>
-<p><img src="/2024/07/23/xtyh/DM_20240723202519_001.gif" alt="DM_20240723202519_001.gif"></p>
-<p>如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。</p>
-<p><img src="/2024/07/23/xtyh/DM_20240723202517_001.gif" alt="DM_20240723202517_001.gif"></p>
-<p>扫描结束后，会提示有多少项要修复，点击修复问题即可。</p>
-<p><img src="/2024/07/23/xtyh/DM_20240723202520_001.webp" alt="DM_20240723202520_001.webp"></p>
-<p>在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。</p>
-<p><img src="/2024/07/23/xtyh/DM_20240723202523_001.webp" alt="DM_20240723202523_001.webp"></p>
-<p><strong>总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。</strong></p>
-<h1 id="🫰下载"><a href="#🫰下载" class="headerlink" title="🫰下载"></a>🫰下载</h1><p><a href="https://www.yunpan.com/surl_y9sdXPPPCfI">360安全云盘 - 用户空间</a></p>
-</div>]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>系统优化</tag>
-        <tag>推荐</tag>
       </tags>
   </entry>
   <entry>
