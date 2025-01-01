@@ -1,1 +1,309 @@
-function _typeof(t){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function _createForOfIteratorHelper(t,e){var r,n,o,a,i="undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(i)return o=!(n=!0),{s:function(){i=i.call(t)},n:function(){var t=i.next();return n=t.done,t},e:function(t){o=!0,r=t},f:function(){try{n||null==i.return||i.return()}finally{if(o)throw r}}};if(Array.isArray(t)||(i=_unsupportedIterableToArray(t))||e&&t&&"number"==typeof t.length)return i&&(t=i),a=0,{s:e=function(){},n:function(){return a>=t.length?{done:!0}:{done:!1,value:t[a++]}},e:function(t){throw t},f:e};throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(t,e){var r;if(t)return"string"==typeof t?_arrayLikeToArray(t,e):"Map"===(r="Object"===(r={}.toString.call(t).slice(8,-1))&&t.constructor?t.constructor.name:r)||"Set"===r?Array.from(t):"Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r)?_arrayLikeToArray(t,e):void 0}function _arrayLikeToArray(t,e){(null==e||e>t.length)&&(e=t.length);for(var r=0,n=Array(e);r<e;r++)n[r]=t[r];return n}function _regeneratorRuntime(){_regeneratorRuntime=function(){return i};var u,i={},t=Object.prototype,s=t.hasOwnProperty,l=Object.defineProperty||function(t,e,r){t[e]=r.value},e="function"==typeof Symbol?Symbol:{},n=e.iterator||"@@iterator",r=e.asyncIterator||"@@asyncIterator",o=e.toStringTag||"@@toStringTag";function a(t,e,r){return Object.defineProperty(t,e,{value:r,enumerable:!0,configurable:!0,writable:!0}),t[e]}try{a({},"")}catch(u){a=function(t,e,r){return t[e]=r}}function c(t,e,r,n){var o,a,i,c,e=e&&e.prototype instanceof g?e:g,e=Object.create(e.prototype),n=new C(n||[]);return l(e,"_invoke",{value:(o=t,a=r,i=n,c=p,function(t,e){if(c===y)throw Error("Generator is already running");if(c===d){if("throw"===t)throw e;return{value:u,done:!0}}for(i.method=t,i.arg=e;;){var r=i.delegate;if(r){r=function t(e,r){var n=r.method,o=e.iterator[n];if(o===u)return r.delegate=null,"throw"===n&&e.iterator.return&&(r.method="return",r.arg=u,t(e,r),"throw"===r.method)||"return"!==n&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+n+"' method")),m;n=f(o,e.iterator,r.arg);if("throw"===n.type)return r.method="throw",r.arg=n.arg,r.delegate=null,m;o=n.arg;return o?o.done?(r[e.resultName]=o.value,r.next=e.nextLoc,"return"!==r.method&&(r.method="next",r.arg=u),r.delegate=null,m):o:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,m)}(r,i);if(r){if(r===m)continue;return r}}if("next"===i.method)i.sent=i._sent=i.arg;else if("throw"===i.method){if(c===p)throw c=d,i.arg;i.dispatchException(i.arg)}else"return"===i.method&&i.abrupt("return",i.arg);c=y;r=f(o,a,i);if("normal"===r.type){if(c=i.done?d:h,r.arg===m)continue;return{value:r.arg,done:i.done}}"throw"===r.type&&(c=d,i.method="throw",i.arg=r.arg)}})}),e}function f(t,e,r){try{return{type:"normal",arg:t.call(e,r)}}catch(t){return{type:"throw",arg:t}}}i.wrap=c;var p="suspendedStart",h="suspendedYield",y="executing",d="completed",m={};function g(){}function v(){}function b(){}var e={},x=(a(e,n,function(){return this}),Object.getPrototypeOf),x=x&&x(x(L([]))),S=(x&&x!==t&&s.call(x,n)&&(e=x),b.prototype=g.prototype=Object.create(e));function w(t){["next","throw","return"].forEach(function(e){a(t,e,function(t){return this._invoke(e,t)})})}function k(i,c){var e;l(this,"_invoke",{value:function(r,n){function t(){return new c(function(t,e){!function e(t,r,n,o){var a,t=f(i[t],i,r);if("throw"!==t.type)return(r=(a=t.arg).value)&&"object"==_typeof(r)&&s.call(r,"__await")?c.resolve(r.__await).then(function(t){e("next",t,n,o)},function(t){e("throw",t,n,o)}):c.resolve(r).then(function(t){a.value=t,n(a)},function(t){return e("throw",t,n,o)});o(t.arg)}(r,n,t,e)})}return e=e?e.then(t,t):t()}})}function E(t){var e={tryLoc:t[0]};1 in t&&(e.catchLoc=t[1]),2 in t&&(e.finallyLoc=t[2],e.afterLoc=t[3]),this.tryEntries.push(e)}function _(t){var e=t.completion||{};e.type="normal",delete e.arg,t.completion=e}function C(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(E,this),this.reset(!0)}function L(e){if(e||""===e){var r,t=e[n];if(t)return t.call(e);if("function"==typeof e.next)return e;if(!isNaN(e.length))return r=-1,(t=function t(){for(;++r<e.length;)if(s.call(e,r))return t.value=e[r],t.done=!1,t;return t.value=u,t.done=!0,t}).next=t}throw new TypeError(_typeof(e)+" is not iterable")}return l(S,"constructor",{value:v.prototype=b,configurable:!0}),l(b,"constructor",{value:v,configurable:!0}),v.displayName=a(b,o,"GeneratorFunction"),i.isGeneratorFunction=function(t){t="function"==typeof t&&t.constructor;return!!t&&(t===v||"GeneratorFunction"===(t.displayName||t.name))},i.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,b):(t.__proto__=b,a(t,o,"GeneratorFunction")),t.prototype=Object.create(S),t},i.awrap=function(t){return{__await:t}},w(k.prototype),a(k.prototype,r,function(){return this}),i.AsyncIterator=k,i.async=function(t,e,r,n,o){void 0===o&&(o=Promise);var a=new k(c(t,e,r,n),o);return i.isGeneratorFunction(e)?a:a.next().then(function(t){return t.done?t.value:a.next()})},w(S),a(S,o,"Generator"),a(S,n,function(){return this}),a(S,"toString",function(){return"[object Generator]"}),i.keys=function(t){var e,r=Object(t),n=[];for(e in r)n.push(e);return n.reverse(),function t(){for(;n.length;){var e=n.pop();if(e in r)return t.value=e,t.done=!1,t}return t.done=!0,t}},i.values=L,C.prototype={constructor:C,reset:function(t){if(this.prev=0,this.next=0,this.sent=this._sent=u,this.done=!1,this.delegate=null,this.method="next",this.arg=u,this.tryEntries.forEach(_),!t)for(var e in this)"t"===e.charAt(0)&&s.call(this,e)&&!isNaN(+e.slice(1))&&(this[e]=u)},stop:function(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function(r){if(this.done)throw r;var n=this;function t(t,e){return a.type="throw",a.arg=r,n.next=t,e&&(n.method="next",n.arg=u),!!e}for(var e=this.tryEntries.length-1;0<=e;--e){var o=this.tryEntries[e],a=o.completion;if("root"===o.tryLoc)return t("end");if(o.tryLoc<=this.prev){var i=s.call(o,"catchLoc"),c=s.call(o,"finallyLoc");if(i&&c){if(this.prev<o.catchLoc)return t(o.catchLoc,!0);if(this.prev<o.finallyLoc)return t(o.finallyLoc)}else if(i){if(this.prev<o.catchLoc)return t(o.catchLoc,!0)}else{if(!c)throw Error("try statement without catch or finally");if(this.prev<o.finallyLoc)return t(o.finallyLoc)}}}},abrupt:function(t,e){for(var r=this.tryEntries.length-1;0<=r;--r){var n=this.tryEntries[r];if(n.tryLoc<=this.prev&&s.call(n,"finallyLoc")&&this.prev<n.finallyLoc){var o=n;break}}var a=(o=o&&("break"===t||"continue"===t)&&o.tryLoc<=e&&e<=o.finallyLoc?null:o)?o.completion:{};return a.type=t,a.arg=e,o?(this.method="next",this.next=o.finallyLoc,m):this.complete(a)},complete:function(t,e){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&e&&(this.next=e),m},finish:function(t){for(var e=this.tryEntries.length-1;0<=e;--e){var r=this.tryEntries[e];if(r.finallyLoc===t)return this.complete(r.completion,r.afterLoc),_(r),m}},catch:function(t){for(var e=this.tryEntries.length-1;0<=e;--e){var r,n,o=this.tryEntries[e];if(o.tryLoc===t)return"throw"===(r=o.completion).type&&(n=r.arg,_(o)),n}throw Error("illegal catch attempt")},delegateYield:function(t,e,r){return this.delegate={iterator:L(t),resultName:e,nextLoc:r},"next"===this.method&&(this.arg=u),m}},i}function asyncGeneratorStep(t,e,r,n,o,a,i){try{var c=t[a](i),u=c.value}catch(t){return void r(t)}c.done?e(u):Promise.resolve(u).then(n,o)}function _asyncToGenerator(c){return function(){var t=this,i=arguments;return new Promise(function(e,r){var n=c.apply(t,i);function o(t){asyncGeneratorStep(n,e,r,o,a,"next",t)}function a(t){asyncGeneratorStep(n,e,r,o,a,"throw",t)}o(void 0)})}}var summaryData=new DataProxy("",[]),config={summaryElConfig:{appendBeforeEl:"#post #article-container",buttons:[{text:"重新生成",bgColor:"rgba(12,107,166,0.7)",onClick:(()=>{var t=_asyncToGenerator(_regeneratorRuntime().mark(function t(){var e,r;return _regeneratorRuntime().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:e=getPostContent(config.postContentConfig),config.sparkConfig.stream?(getSummaryFromSparkStream(e,config.sparkConfig,summaryData),t.next=9):t.next=5;break;case 5:return t.next=7,getSummaryFromSpark(e,config.sparkConfig);case 7:r=t.sent,summaryData.setValue(r);case 9:case"end":return t.stop()}},t)}));return function(){return t.apply(this,arguments)}})()},{text:"介绍自己",bgColor:"rgba(40,167,69,0.7)",onClick:function(){aiIntroduce(config.sparkConfig,summaryData)}}]},postContentConfig:{titleEl:"h1",headEl:"h1,h2,h3,h4,h5,h6",contentEl:"#post #article-container"},sparkConfig:{apiUrl:"https://post.mingcy.cn",apiPassword:"ybvJAsWJCrNeecSwpAxM:BUoQEXFsjaAqzZZUiYMf",model:"lite",stream:!0},urlValidList:["posts"],urlBlacklist:["e8598403","a15ff462","b4c68f75","9e7fad42","d7252e66","17241f42","e8b927d9"]};function init(t){return _init.apply(this,arguments)}function _init(){return(_init=_asyncToGenerator(_regeneratorRuntime().mark(function t(e){var r,n,o;return _regeneratorRuntime().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:if(r=window.location.href,!e.urlValidList.some(function(t){return r.includes(t)})||e.urlBlacklist.some(function(t){return r.includes(t)}))return t.abrupt("return",!1);t.next=3;break;case 3:o=createSummaryEl(e.summaryElConfig),n=getPostContent(e.postContentConfig),summaryData.addEl(o),e.sparkConfig.stream?(getSummaryFromSparkStream(n,e.sparkConfig,summaryData),t.next=14):t.next=10;break;case 10:return t.next=12,getSummaryFromSpark(n,e.sparkConfig);case 12:o=t.sent,summaryData.setValue(o);case 14:return t.abrupt("return",!0);case 15:case"end":return t.stop()}},t)}))).apply(this,arguments)}function aiIntroduce(t,e){chatWithSparkStream(t.apiUrl,getSparkFetchOptions(t,"你是一个智能摘要生成工具，专注于从给定的文章内容中提取并总结关键信息。你的任务是简洁明了地介绍自己的功能和目的，不要换行，不要超过200字，不需要提出建议和缺少的东西，请用中文回答。"),e)}function getSparkFetchOptions(t,e){return{method:"POST",headers:{Authorization:"Bearer ".concat(t.apiPassword),"Content-Type":"application/json"},body:JSON.stringify({model:t.model,messages:[{role:"user",content:e}],stream:t.stream})}}function getSparkSummaryFetchOptions(t,e){return getSparkFetchOptions(e,"你是一个摘要生成工具，你需要解释我发送给你的内容，不要换行，不要超过200字，只需要介绍文章的内容，不需要提出建议和缺少的东西，请用中文回答。文章标题为：".concat(t.title,"，小结标题为").concat(t.heads.join("\t"),"内容为：").concat(t.content))}function getSummaryFromSparkStream(t,e,r){chatWithSparkStream(e.apiUrl,getSparkSummaryFetchOptions(t,e),r)}function chatWithSparkStream(t,e,u){fetch(t,e).then(function(t){if(!t.ok)throw new Error("讯飞响应错误！");var e=t.body.getReader(),i=new TextDecoder,c="";!function a(){e.read().then(function(t){var e=t.done,t=t.value;if(!e){var r,n=_createForOfIteratorHelper((null==(e=t?i.decode(t,{stream:!0}):"")?void 0:e.split("\n"))||[]);try{for(n.s();!(r=n.n()).done;){var o=r.value.replace(/^(data: \[DONE\])|(data:)/,"");o&&(c+=JSON.parse(o).choices[0].delta.content,u.setValue(c))}}catch(t){n.e(t)}finally{n.f()}a()}}).catch(function(t){console.error("读取流失败:",t)})}()}).catch(function(t){console.error("请求失败:",t)})}function getSummaryFromSpark(t,e){return _getSummaryFromSpark.apply(this,arguments)}function _getSummaryFromSpark(){return(_getSummaryFromSpark=_asyncToGenerator(_regeneratorRuntime().mark(function t(e,r){var n;return _regeneratorRuntime().wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.prev=0,t.next=3,fetch(r.apiUrl,getSparkSummaryFetchOptions(e,r));case 3:return n=t.sent,t.next=6,n.json();case 6:return n=t.sent,t.abrupt("return",n.choices[0].message.content);case 10:throw t.prev=10,t.t0=t.catch(0),t.t0;case 13:case"end":return t.stop()}},t,null,[[0,10]])}))).apply(this,arguments)}function getPostContent(t){var e=t.titleEl?document.querySelector(t.titleEl).textContent:document.title,r=document.querySelectorAll(t.headEl||"h1,h2,h3,h4,h5,h6");return{title:e,heads:Array.from(r).map(function(t){return t.textContent}),content:document.querySelector(t.contentEl||"#post #article-container").textContent}}function createSummaryEl(t){var r,e=document.querySelector(t.appendBeforeEl||"#post #article-container"),n=document.createElement("div"),o=(n.style.border="1px solid #ccc",n.style.padding="5px 16px 0 16px",n.style.marginBottom="8px",n.style.borderRadius="8px",n.style.backgroundColor="rgba(247, 247, 249, 0.5)",n.style.boxShadow="0 2px 4px rgba(0, 0, 0, 0.1)",n.style.fontFamily="Arial, sans-serif",document.createElement("span")),o=(o.innerText="茗辰原 post摘要",o.style.fontSize="13px",o.style.fontWeight="600",o.style.marginBottom="12px",o.style.color="#333",n.appendChild(o),document.createElement("p"));return o.style.minHeight="80px",o.style.margin="5px 0",o.style.padding="5px",o.style.fontSize="14px",n.style.border="1px solid #ccc",o.style.backgroundColor="rgba(255,255,255,0.5)",o.style.borderRadius="8px",o.style.color="#666",o.style.lineHeight="1.6",n.appendChild(o),Array.isArray(t.buttons)&&0<t.buttons.length&&(r=document.createElement("div"),t.buttons.forEach(function(t){var e=document.createElement("button");e.innerText=t.text||"按钮",e.style.padding="5px",e.style.margin="0 5px 5px 0",e.style.fontSize="12px",e.style.color="#fff",e.style.backgroundColor=t.bgColor||"rgba(0,123,255,0.7)",e.style.border="none",e.style.borderRadius="4px",e.style.cursor="pointer",e.addEventListener("click",t.onClick),r.appendChild(e)}),n.appendChild(r)),e.insertBefore(n,e.firstChild),o}function DataProxy(t,e){this.value=t||[],this.els=e||[],this.setValue=function(t){var e=this;this.value=t,this.els.forEach(function(t){t.innerText=e.value})},this.getValue=function(){return this.value},this.addEl=function(t){this.els.push(t),t.innerText=this.value},this.removeEl=function(t){this.els.splice(this.els.indexOf(t),1)};var r,n=_createForOfIteratorHelper(this.els);try{for(n.s();!(r=n.n()).done;)r.value.innerText=this.value}catch(t){n.e(t)}finally{n.f()}}init(config).then(function(t){t&&console.log("%cSpark-Lite-Post-AI InsectMk摘要工具测试版:%chttps://mingcy.cn%c","border:1px solid transparent;background:linear-gradient(45deg, #ff7e5f, #feb47b);border-right:0;border-radius:5px 0 0 5px;padding: 5px 10px;color:white;font-weight:bold;margin:10px 0;","border:1px solid transparent;background:linear-gradient(45deg, #fbc2eb, #a6c1ee);border-left:0;border-radius:0 5px 5px 0;padding: 5px 10px;color:white;font-weight:bold;","")});
+const summaryData = new DataProxy('', [])//响应式对象
+const config = {//配置
+    summaryElConfig: { // 盒子参数
+        appendBeforeEl: '#post #article-container', // 需要添加在哪个DIV的前面
+        buttons: [{
+            text: '重新生成', // 按钮文字
+            bgColor: 'rgba(12,107,166,0.7)', // 按钮背景色
+            onClick: async () => {// 按钮点击事件
+                // 获取博文内容
+                const postContent = getPostContent(config.postContentConfig)
+                // 发送请求获取摘要
+                if (config.sparkConfig.stream) {//是否流式
+                    getSummaryFromSparkStream(postContent, config.sparkConfig, summaryData)
+                } else {
+                    const summary =  await getSummaryFromSpark(postContent, config.sparkConfig)
+                    summaryData.setValue(summary)
+                }
+            }
+        }, {
+            text: '介绍自己', // 按钮文字
+            bgColor: 'rgba(40,167,69,0.7)', // 按钮背景色
+            onClick: () => {// 按钮点击事件
+                aiIntroduce(config.sparkConfig, summaryData)
+            }
+        }, ],
+    },
+    postContentConfig: { // 文章参数
+        titleEl: 'h1', // 标题元素
+        headEl: 'h1,h2,h3,h4,h5,h6', // 文章内容目录元素
+        contentEl: '#post #article-container', // 文章内容元素
+    },
+    sparkConfig: { // 讯飞星火配置
+        /*官方地址 https://spark-api-open.xf-yun.com/v1/chat/completions
+        * Worker地址 https://post.mingcy.cn */
+        apiUrl: 'https://spark-api-open.xf-yun.com/v1/chat/completions',
+        apiPassword: 'ybvJAsWJCrNeecSwpAxM:BUoQEXFsjaAqzZZUiYMf',//API密钥
+        model: 'lite',//模型
+        stream: true,//是否流式传输
+    },
+    urlValidList: [//在什么页面有效
+        'posts',//文章页面
+    ],
+    urlBlacklist: [//摘要黑名单URL关键字（覆盖有效设置）
+        // 求生之路日志
+        'e8598403',
+    ],
+}
+init(config).then((flag) => {// 初始化
+    if (flag) {
+        console.log(`%cSpark-Lite-Post-AI InsectMk摘要工具测试版:%chttps://mingcy.cn%c`,
+            `border:1px solid transparent;background:linear-gradient(45deg, #ff7e5f, #feb47b);border-right:0;border-radius:5px 0 0 5px;padding: 5px 10px;color:white;font-weight:bold;margin:10px 0;`,
+            `border:1px solid transparent;background:linear-gradient(45deg, #fbc2eb, #a6c1ee);border-left:0;border-radius:0 5px 5px 0;padding: 5px 10px;color:white;font-weight:bold;`, '');
+    }
+})
+/**
+ * 初始化函数
+ * @param config 自定义配置
+ */
+async function init(config) {
+    const href = window.location.href
+    // 跳过黑名单
+    if (!config.urlValidList.some(item => href.includes(item))//不在有效名单
+        || config.urlBlacklist.some(item => href.includes(item))) {//在黑名单
+        return false
+    }
+    // 创建摘要盒子
+    const summaryEl = createSummaryEl(config.summaryElConfig)
+    // 获取博文内容
+    const postContent = getPostContent(config.postContentConfig)
+    summaryData.addEl(summaryEl)//响应式数据，绑定元素
+    // 发送请求获取摘要
+    if (config.sparkConfig.stream) {//是否流式
+        getSummaryFromSparkStream(postContent, config.sparkConfig, summaryData)
+    } else {
+        const summary =  await getSummaryFromSpark(postContent, config.sparkConfig)
+        summaryData.setValue(summary)
+    }
+    return true
+}
+/*******************按钮功能*******************/
+/**
+ * AI自我介绍
+ * @param sparkConfig 星火配置
+ * @param summaryData 响应式对象
+ */
+function aiIntroduce(sparkConfig, summaryData) {
+    chatWithSparkStream(sparkConfig.apiUrl,
+        getSparkFetchOptions(sparkConfig, '你是一个智能摘要生成工具，专注于从给定的文章内容中提取并总结关键信息。你的任务是简洁明了地介绍自己的功能和目的，不要换行，不要超过200字，不需要提出建议和缺少的东西，请用中文回答。'),
+        summaryData)
+}
+/*******************内置库*******************/
+/**
+ * 获取讯飞接口的请求选项
+ * @param sparkConfig
+ * @param content
+ * @returns {{method: string, headers: {Authorization: string, "Content-Type": string}, body: string}}
+ */
+function getSparkFetchOptions(sparkConfig, content) {
+    return {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${sparkConfig.apiPassword}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            model: sparkConfig.model,
+            messages: [
+                {
+                    role: 'user',
+                    content: content
+                }
+            ],
+            stream: sparkConfig.stream
+        })
+    }
+}
+/**
+ * 获取讯飞接口的请求选项-摘要
+ * @param postContent
+ * @param sparkConfig
+ * @returns {{method: string, headers: {Authorization: string, "Content-Type": string}, body: string}}
+ */
+function getSparkSummaryFetchOptions(postContent, sparkConfig) {
+    return getSparkFetchOptions(sparkConfig, `你是一个摘要生成工具，你需要解释我发送给你的内容，不要换行，不要超过200字，只需要介绍文章的内容，不需要提出建议和缺少的东西，请用中文回答。文章标题为：${postContent.title}，小结标题为${postContent.heads.join('\t')}内容为：${postContent.content}`)
+}
+/**
+ * 通过讯飞星火Lite获取摘要（流式）
+ * @param postContent 文章内容
+ * @param sparkConfig 讯飞配置
+ * @param summaryData 响应式对象
+ */
+function getSummaryFromSparkStream(postContent, sparkConfig, summaryData) {
+    chatWithSparkStream(sparkConfig.apiUrl,
+        getSparkSummaryFetchOptions(postContent, sparkConfig),
+        summaryData)
+}
+/**
+ * 与讯飞对话（流式）
+ * @param apiUrl api地址
+ * @param fetchOptions fetch选项
+ * @param summaryData 响应式对象
+ */
+function chatWithSparkStream(apiUrl, fetchOptions, summaryData) {
+    fetch(apiUrl, fetchOptions).then(response => {
+        // 检查响应是否成功
+        if (!response.ok) throw new Error('讯飞响应错误！')
+        // 获取 response body 的流对象
+        const reader = response.body.getReader()
+        // 创建解码器和文本处理器
+        const decoder = new TextDecoder()
+        let summary = ''//摘要
+        // 逐步读取流数据
+        function readStream() {
+            reader.read().then(({ done, value }) => {
+                if (done) return//读取完成则结束
+                let _value = value ? decoder.decode(value, { stream: true }) : ''
+                let _data = _value?.split('\n') || []
+                for (const it of _data) {
+                    let _it = it.replace(/^(data: \[DONE\])|(data:)/, '')
+                    if (_it) {
+                        summary += JSON.parse(_it).choices[0].delta.content
+                        summaryData.setValue(summary)//更新摘要
+                    }
+                }
+                // 继续读取
+                readStream()
+            }).catch(err => {
+                console.error('读取流失败:', err)
+            })
+        }
+        readStream()//再次读取
+    }).catch(err => {
+        console.error('请求失败:', err)
+    })
+}
+/**
+ * 通过讯飞星火Lite获取摘要
+ * 参考 https://www.xfyun.cn/doc/spark/HTTP%E8%B0%83%E7%94%A8%E6%96%87%E6%A1%A3.html#_3-%E8%AF%B7%E6%B1%82%E8%AF%B4%E6%98%8E
+ * https://console.xfyun.cn/services/cbm
+ * @param postContent 文章内容
+ * @param sparkConfig 讯飞星火配置
+ * @returns {string} AI摘要
+ */
+async function getSummaryFromSpark(postContent, sparkConfig) {
+   try {
+        const response = await fetch(sparkConfig.apiUrl, getSparkSummaryFetchOptions(postContent, sparkConfig))
+        const data = await response.json()
+        return data.choices[0].message.content // 返回响应数据
+    } catch (error) {
+        throw error // 抛出错误，可以在调用函数的地方捕获
+    }
+}
+/**
+ * 获取博文内容
+ * @param postContentConfig 博文配置
+ */
+function getPostContent(postContentConfig) {
+    // 获取文章标题，默认为页面标题
+    const title = postContentConfig.titleEl ?
+        document.querySelector(postContentConfig.titleEl).textContent : document.title
+    // 获取文章内容目录标题
+    const headEls = document.querySelectorAll(postContentConfig.headEl ?
+        postContentConfig.headEl  : 'h1,h2,h3,h4,h5,h6')
+    const heads = Array.from(headEls).map(heading => heading.textContent)
+    // 获取文章内容
+    const content =
+        document.querySelector(postContentConfig.contentEl ?
+            postContentConfig.contentEl : '#post #article-container').textContent
+    return {
+        title,//标题
+        heads,//文章小结标题
+        content,//文章内容
+    }
+}
+/**
+ * 创建摘要盒子
+ * @param summaryElConfig 盒子自定义配置
+ * @param summaryElConfig.appendBeforeEl (string) 目标元素的选择器，摘要盒子将插入到该元素之前
+ * @param summaryElConfig.buttons (array) 按钮配置数组，每个元素是一个对象，包含按钮的文字和点击事件
+ * @return 最小的盒子 用于装载文本内容
+ */
+function createSummaryEl(summaryElConfig) {
+    // 获取目标元素
+    let targetEl = document.querySelector(summaryElConfig.appendBeforeEl || '#post #article-container')
+    // 创建摘要元素
+    let summaryEl = document.createElement('div')
+    // 给摘要元素添加样式
+    summaryEl.style.border = '1px solid #ccc'
+    summaryEl.style.padding = '5px 16px 0 16px'
+    summaryEl.style.marginBottom = '8px'
+    summaryEl.style.borderRadius = '8px'
+    summaryEl.style.backgroundColor = 'rgba(247, 247, 249, 0.5)'
+    summaryEl.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)'
+    summaryEl.style.fontFamily = 'Arial, sans-serif'
+    // 创建标题
+    let titleEl = document.createElement('span')
+    titleEl.innerText = '茗辰原 post摘要'
+    titleEl.style.fontSize = '13px'
+    titleEl.style.fontWeight = '600'
+    titleEl.style.marginBottom = '12px'
+    titleEl.style.color = '#333'
+    summaryEl.appendChild(titleEl)
+    // 创建摘要内容
+    let contentEl = document.createElement('p')
+    contentEl.style.minHeight = '80px'
+    contentEl.style.margin = '5px 0'
+    contentEl.style.padding = '5px'
+    contentEl.style.fontSize = '14px'
+    summaryEl.style.border = '1px solid #ccc'
+    contentEl.style.backgroundColor = 'rgba(255,255,255,0.5)'
+    contentEl.style.borderRadius = '8px'
+    contentEl.style.color = '#666'
+    contentEl.style.lineHeight = '1.6'
+    summaryEl.appendChild(contentEl)
+    // 添加自定义按钮
+    if (Array.isArray(summaryElConfig.buttons) && summaryElConfig.buttons.length > 0) {
+        let buttonContainer = document.createElement('div')
+        summaryElConfig.buttons.forEach(buttonConfig => {
+            let buttonEl = document.createElement('button')
+            buttonEl.innerText = buttonConfig.text || '按钮'
+            buttonEl.style.padding = '5px'
+            buttonEl.style.margin = '0 5px 5px 0'
+            buttonEl.style.fontSize = '12px'
+            buttonEl.style.color = '#fff'
+            buttonEl.style.backgroundColor = buttonConfig.bgColor || 'rgba(0,123,255,0.7)'
+            buttonEl.style.border = 'none'
+            buttonEl.style.borderRadius = '4px'
+            buttonEl.style.cursor = 'pointer';
+            buttonEl.addEventListener('click', buttonConfig.onClick)
+            buttonContainer.appendChild(buttonEl)
+        });
+        summaryEl.appendChild(buttonContainer)
+    }
+    // 将摘要元素添加到目标元素
+    targetEl.insertBefore(summaryEl, targetEl.firstChild);
+    return contentEl
+}
+/**
+ * 数据绑定代理
+ * @param value
+ * @param els
+ * @constructor
+ */
+function DataProxy(value, els) {
+    /*对象属性*/
+    this.value = value ? value : []
+    this.els = els ? els : []
+    /*对象方法*/
+    this.setValue = function(value) {//设置数据
+        this.value = value
+        this.els.forEach(el => {el.innerText = this.value})
+    }
+    this.getValue = function() {//获取元素
+        return this.value
+    }
+    this.addEl = function(el) {//添加一个元素绑定
+        this.els.push(el)
+        el.innerText = this.value
+    }
+    this.removeEl = function(el) {//删除一个元素绑定
+        this.els.splice(this.els.indexOf(el), 1)
+    }
+    /*初始化操作*/
+    // 给绑定元素赋值
+    for (let el of this.els) {
+        el.innerText = this.value
+    }
+}
+

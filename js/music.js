@@ -1,1 +1,103 @@
-function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,_toPropertyKey(r.key),r)}}function _createClass(e,t,n){return t&&_defineProperties(e.prototype,t),n&&_defineProperties(e,n),Object.defineProperty(e,"prototype",{writable:!1}),e}function _toPropertyKey(e){e=_toPrimitive(e,"string");return"symbol"==_typeof(e)?e:e+""}function _toPrimitive(e,t){if("object"!=_typeof(e)||!e)return e;var n=e[Symbol.toPrimitive];if(void 0===n)return("string"===t?String:Number)(e);n=n.call(e,t||"default");if("object"!=_typeof(n))return n;throw new TypeError("@@toPrimitive must return a primitive value.")}var MusicPlayer=(()=>_createClass(function e(){_classCallCheck(this,e),this.init()},[{key:"init",value:function(){document.documentElement.style.setProperty("--vh","".concat(window.innerHeight,"px")),this.getCustomPlayList(),this.addEventListeners()}},{key:"getCustomPlayList",value:function(){this.changeMusicBg(!1)}},{key:"addEventListeners",value:function(){document.addEventListener("keydown",this.handleKeydown.bind(this));var e=document.querySelector(".aplayer-list"),t=document.querySelector(".aplayer-lrc");t&&!t.dataset.clickBound&&(t.addEventListener("click",function(){e.classList.toggle("aplayer-list-hide")}),t.dataset.clickBound=!0)}},{key:"changeMusicBg",value:function(){var e=!(0<arguments.length&&void 0!==arguments[0])||arguments[0],t=document.getElementById("Music-bg"),n=document.getElementsByClassName("Music-loading")[0];e?this.updateBackgroundImage(t):this.setLoadingScreen(n,t)}},{key:"updateBackgroundImage",value:function(e){var t=document.querySelector("#Music-page .aplayer-pic"),n=new Image;n.src=this.extractValue(t.style.backgroundImage),n.onload=function(){e.style.backgroundImage=t.style.backgroundImage,e.className="show"}}},{key:"setLoadingScreen",value:function(e,t){var n=this,r=setInterval(function(){n.addEventListeners(),document.querySelector("#Music-page .aplayer-pic")&&(e.style.display="none",clearInterval(r),n.addEventListenerChangeMusicBg(),t.style.display="block")},100)}},{key:"extractValue",value:function(e){e=/url\("([^"]+)"\)/.exec(e);return e?e[1]:""}},{key:"addEventListenerChangeMusicBg",value:function(){var e=this,t=document.querySelector("#Music-page meting-js").aplayer;t.on("loadeddata",function(){return e.changeMusicBg(!0)}),t.on("timeupdate",this.lrcUpdate.bind(this))}},{key:"lrcUpdate",value:function(){var e=document.querySelector(".aplayer-lrc-contents"),t=e.querySelector("p.aplayer-lrc-current");t&&(t=Array.from(e.children).indexOf(t),e.style.transform="translateY(".concat(80*-t,"px)"))}},{key:"handleKeydown",value:function(e){var t=document.querySelector("meting-js").aplayer,n={Space:function(){return t.toggle()},ArrowRight:function(){return t.skipForward()},ArrowLeft:function(){return t.skipBack()},ArrowUp:function(){t.volume<1&&t.volume(t.volume+.1)},ArrowDown:function(){0<t.volume&&t.volume(t.volume-.1)}};n[e.code]&&(e.preventDefault(),n[e.code]())}},{key:"destroy",value:function(){document.removeEventListener("keydown",this.handleKeydown)}}]))();function initializeMusicPlayer(){var e=window.scoMusic;e&&e.destroy(),window.scoMusic=new MusicPlayer}
+class MusicPlayer {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
+        this.getCustomPlayList();
+        this.addEventListeners();
+    }
+
+    getCustomPlayList() {
+        this.changeMusicBg(false);
+    }
+
+    addEventListeners() {
+        document.addEventListener("keydown", this.handleKeydown.bind(this));
+        const aplayerList = document.querySelector(".aplayer-list");
+        const aplayerLrc = document.querySelector(".aplayer-lrc");
+        if (aplayerLrc && !aplayerLrc.dataset.clickBound) {
+            aplayerLrc.addEventListener("click", () => {
+                aplayerList.classList.toggle("aplayer-list-hide");
+            });
+            aplayerLrc.dataset.clickBound = true;
+        }
+    }
+
+    changeMusicBg(isChangeBg = true) {
+        const musicBg = document.getElementById("Music-bg");
+        const musicLoading = document.getElementsByClassName("Music-loading")[0];
+
+        isChangeBg ? this.updateBackgroundImage(musicBg) : this.setLoadingScreen(musicLoading, musicBg);
+    }
+
+    updateBackgroundImage(element) {
+        const musicCover = document.querySelector("#Music-page .aplayer-pic");
+        const img = new Image();
+        img.src = this.extractValue(musicCover.style.backgroundImage);
+        img.onload = () => {
+            element.style.backgroundImage = musicCover.style.backgroundImage;
+            element.className = 'show';
+        };
+    }
+
+    setLoadingScreen(loadingElement, backgroundElement) {
+        const timer = setInterval(() => {
+            this.addEventListeners();
+            const musicCover = document.querySelector("#Music-page .aplayer-pic");
+            if (musicCover) {
+                loadingElement.style.display = "none";
+                clearInterval(timer);
+                this.addEventListenerChangeMusicBg();
+                backgroundElement.style.display = "block";
+            }
+        }, 100);
+    }
+
+    extractValue(input) {
+        const match = /url\("([^"]+)"\)/.exec(input);
+        return match ? match[1] : '';
+    }
+
+    addEventListenerChangeMusicBg() {
+        const aplayer = document.querySelector("#Music-page meting-js").aplayer;
+        aplayer.on('loadeddata', () => this.changeMusicBg(true));
+        aplayer.on('timeupdate', this.lrcUpdate.bind(this));
+    }
+
+    lrcUpdate() {
+        const aplayerLrcContents = document.querySelector('.aplayer-lrc-contents');
+        const currentLrc = aplayerLrcContents.querySelector('p.aplayer-lrc-current');
+        if (currentLrc) {
+            const currentIndex = Array.from(aplayerLrcContents.children).indexOf(currentLrc);
+            aplayerLrcContents.style.transform = `translateY(${-currentIndex * 80}px)`;
+        }
+    }
+
+    handleKeydown(event) {
+        const aplayer = document.querySelector('meting-js').aplayer;
+        const actions = {
+            "Space": () => aplayer.toggle(),
+            "ArrowRight": () => aplayer.skipForward(),
+            "ArrowLeft": () => aplayer.skipBack(),
+            "ArrowUp": () => { if (aplayer.volume < 1) aplayer.volume(aplayer.volume + 0.1); },
+            "ArrowDown": () => { if (aplayer.volume > 0) aplayer.volume(aplayer.volume - 0.1); }
+        };
+
+        if (actions[event.code]) {
+            event.preventDefault();
+            actions[event.code]();
+        }
+    }
+
+    destroy() {
+        document.removeEventListener("keydown", this.handleKeydown);
+    }
+}
+
+function initializeMusicPlayer() {
+    const exitingMusic = window.scoMusic;
+    if (exitingMusic) exitingMusic.destroy();
+    window.scoMusic = new MusicPlayer();
+}
