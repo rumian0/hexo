@@ -10,7 +10,7 @@
 
 'use strict';
 
-var precacheConfig = [["/service-worker.js","973ea7782ed2791ce4fbf93156a01b6d"],["/workbox-53ab6fa2.js","9f94064b4db6b5be966f23fc7ebbdc16"]];
+var precacheConfig = [["/service-worker.js","b0b4a3a0a40e4abba73ab9143b8a2a0f"],["/workbox-53ab6fa2.js","9f94064b4db6b5be966f23fc7ebbdc16"]];
 var cacheName = 'sw-precache-v3--' + (self.registration ? self.registration.scope : '');
 var firstRegister = 1; // 默认1是首次安装SW， 0是SW更新
 
