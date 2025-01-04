@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C语言扫雷</title>
+    <url>/2024/04/10/C-saolei/</url>
+    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>123云盘-下载工具</title>
     <url>/2024/09/30/123-liuliang/</url>
     <content><![CDATA[方法一123云盘 下载工具123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。 功能特点 登录：使用用户名和密码登录 123Pan 账号。 列出文件：显示当前目录下的所有文件和文件夹。 下载文件：通过模拟安卓客户端协议下载文件，绕过流量限制。 上传文件：将本地文件上传到 123Pan。 分享文件：生成文件分享链接。 删除文件：删除指定的文件或文件夹。 创建文件夹：在当前目录下创建新文件夹。 使用方法环境准备 确保已安装 Python 3.x。 安装所需的 Python 库： pip install -r requirements.txt 配置文件在首次运行脚本时，会自动生成一个 123pan.txt 文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。 运行脚本可以直接下载release的可执行文件运行或运行python脚本。脚本运行： 克隆或下载本项目代码到本地。 打开终端或命令提示符，进入项目目录。 运行脚本： 使用安卓客户端协议 python android.py 使用web协议python web.py 123云盘 下载工具GitHub地址地址： 引用站外地址 123pan GitHub 方法二今天推荐的是一个数字网盘脚本，可以解除限制，完全免费使用！ 该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要先安装Tampermonkey插件，Tampermonkey插件可以在文末关键字获取。 安装完油猴插件后，再安装脚本，方法是打开Greasy Fork中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】 再点【安装】即可完成脚本安装。 脚本使用测试： 安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后没用脚本时，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。 脚本使用测试： 安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后没用脚本时，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。 下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用1DM接管速度可达15M&#x2F;S，跑满你的带宽！ 这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！]]></content>
@@ -11,18 +23,6 @@
         <tag>电脑软件</tag>
         <tag>123网盘</tag>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言扫雷</title>
-    <url>/2024/04/10/C-saolei/</url>
-    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>编程语言</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -64,6 +64,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Vercel部署Typecho 博客</title>
+    <url>/2024/05/25/Vercel-Typecho/</url>
+    <content><![CDATA[😀 这里写文章的概述： 本文介绍了如何使用 Vercel 部署 Typecho 博客。内容包括准备工作和具体操作步骤，如创建 GitHub 仓库、配置文件、上传主题等。通过 Vercel 部署项目并添加域名，实现博客部署和初始化。操作简单明了，适合初学者。文章重点强调了 Vercel 支持 PHP 部署，提供了详细的操作指南，包括代码示例和截图，让读者能够轻松完成部署过程。 前言相信很多人不知道 Vercel 可以部署 PHP，可以在 Vercel 文档 中看到确实支持 准备工作 Github 账号 Vercel 账号 Typecho 程序 数据库 自己的域名（可选，国内注册可以首年1元甚至免费）部署完成之后默认会给你的项目分配一个 vercel.app 的三级域名，但是在 2021 年 vercel.app 域名被墙，大陆地区无法访问，因此强烈建议自己准备域名 过程 创建 Github 仓库 本地解压 Typecho 程序 在根目录下新建 vercel.json 并填入以下代码 &#123; &quot;functions&quot;: &#123; &quot;api/index.php&quot;: &#123; &quot;runtime&quot;: &quot;vercel-php@0.6.0&quot; &#125; &#125;, &quot;routes&quot;: [&#123; &quot;src&quot;: &quot;/(.*)&quot;, &quot;dest&quot;: &quot;/api/index.php&quot; &#125;]&#125; 在根目录下新建 config.inc.php 并填入以下代码 &lt;?php/** * Typecho Blog Platform * * @copyright Copyright (c) 2008 Typecho team (http://www.typecho.org) * @license GNU General Public License 2.0 * @version $Id$ *//** 开启https */define(&#x27;__TYPECHO_SECURE__&#x27;,true);/** 定义根目录 */define(&#x27;__TYPECHO_ROOT_DIR__&#x27;, dirname(__FILE__));/** 定义插件目录(相对路径) */define(&#x27;__TYPECHO_PLUGIN_DIR__&#x27;, &#x27;/usr/plugins&#x27;);/** 定义模板目录(相对路径) */define(&#x27;__TYPECHO_THEME_DIR__&#x27;, &#x27;/usr/themes&#x27;);/** 后台路径(相对路径) */define(&#x27;__TYPECHO_ADMIN_DIR__&#x27;, &#x27;/admin/&#x27;);/** 设置包含路径 */@set_include_path(get_include_path() . PATH_SEPARATOR .__TYPECHO_ROOT_DIR__ . &#x27;/var&#x27; . PATH_SEPARATOR .__TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__);/** 载入API支持 */require_once &#x27;Typecho/Common.php&#x27;;/** 程序初始化 */Typecho_Common::init();/** 定义数据库参数 */$db = new Typecho_Db(&#x27;Pdo_Mysql&#x27;, &#x27;typecho_&#x27;);$db-&gt;addServer(array ( &#x27;host&#x27; =&gt; &#x27;数据库地址&#x27;, &#x27;user&#x27; =&gt; &#x27;数据库用户名&#x27;, &#x27;password&#x27; =&gt; &#x27;数据库密码&#x27;, &#x27;charset&#x27; =&gt; &#x27;utf8mb4&#x27;, &#x27;port&#x27; =&gt; &#x27;3306&#x27;, &#x27;database&#x27; =&gt; &#x27;数据库名称&#x27;, &#x27;engine&#x27; =&gt; &#x27;MyISAM&#x27;,), Typecho_Db::READ | Typecho_Db::WRITE);Typecho_Db::set($db); 在根目录下新建 /api/index.php 并填入以下代码 &lt;?php$file= __DIR__ . &#x27;/..&#x27;.$_SERVER[&quot;PHP_SELF&quot;];if(file_exists($file))&#123; return false;&#125;else&#123; require_once __DIR__ . &#x27;/../index.php&#x27;;&#125;#echo $_SERVER[&quot;PHP_SELF&quot;]; 下载一个自己心仪的主题解压放到 /usr/themes/ 目录下 将所有文件上传到第一步创建好的 GitHub 仓库里 打开 Vercel 然后通过 GitHub 快捷登录 登陆后会自动跳转 Dashboard，点击 Add new - Project Import Git Repository 选择 Continue With GitHub此时会跳转到 GitHub 批准 Vercel 访问，建议选择允许访问全部仓库，当然你也可以设置仅可访问部分仓库。 选择你的仓库 即将开始部署，在这个界面你可以设置项目名称（可以随意设置），其他项全部保持默认即可，最后点击 Deploy 部署 部署成功后会显示 Congratulation 页面 如果你有域名，直接从此界面右边“Add Domain”进入添加域名，Vercel 会自动生成 SSL 证书（开启 https）。没有的话直接右上角“Go to Dashboard”就可以看到 Vercel 为你准备的域名 打开 https://你的网址/install.php 初始化 SO easy!]]></content>
+      <categories>
+        <category>网站建站</category>
+      </categories>
+      <tags>
+        <tag>建站</tag>
+        <tag>网站建站</tag>
+        <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TuneFree免费音乐下载</title>
     <url>/2024/07/16/TuneFree/</url>
     <content><![CDATA[😀 这里写文章的前言： 今天给大家分享一款全平台适用的音月神器支持网页端、电脑端和安卓端，iOS用户可以直接使用网页端，话不多说，直接安排~ 简介本软件来源于网络…… 名称：TuneFree 使用教程软件支持安卓、电脑、还有网页端，今天我们以网页端为例，软件整体界面非简洁清爽，完全免费使用！ 我们点击发现，可以看到这里有着非常丰富的音月zi源，比如飙升榜、原创榜、热哥榜等等各类榜单应有尽有，我们可以随意打开在线听。 不仅如此，软件内还有博客电tai板块，里面包含了情感、有声书、脱口秀、二次元、亲子、人文历史、娱乐、相声曲艺等非常的丰富，可以满足我们不同人群的各种需求！ 软件内的所有内容都支持免费听+下载，遇到喜欢的想下载，只需单击鼠标右键，然后点击下载即可。 下载支持所有音质，我们当然要选最好的下载啦~ 另外，软件还有个超牛的地方，那就是它是和某yi云相通的，支持我们登录某yi云，登录后，就可以看到所有收藏喜欢的，直接听就完了~ 好了，以上就是今天分享的所有内容，如果觉得这篇文章对你有价值，记得收藏本站！ 下载全平台音月神器（安卓+电脑+iOS）https://caiyun.139.com/m/i?005Cifoc02EhV 中国移动云盘分享 网页版：https://pt.sayqz.com/#/ TuneFree]]></content>
@@ -100,19 +113,6 @@
         <tag>安卓应用</tag>
         <tag>塔罗牌</tag>
         <tag>网页精选</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vercel部署Typecho 博客</title>
-    <url>/2024/05/25/Vercel-Typecho/</url>
-    <content><![CDATA[😀 这里写文章的概述： 本文介绍了如何使用 Vercel 部署 Typecho 博客。内容包括准备工作和具体操作步骤，如创建 GitHub 仓库、配置文件、上传主题等。通过 Vercel 部署项目并添加域名，实现博客部署和初始化。操作简单明了，适合初学者。文章重点强调了 Vercel 支持 PHP 部署，提供了详细的操作指南，包括代码示例和截图，让读者能够轻松完成部署过程。 前言相信很多人不知道 Vercel 可以部署 PHP，可以在 Vercel 文档 中看到确实支持 准备工作 Github 账号 Vercel 账号 Typecho 程序 数据库 自己的域名（可选，国内注册可以首年1元甚至免费）部署完成之后默认会给你的项目分配一个 vercel.app 的三级域名，但是在 2021 年 vercel.app 域名被墙，大陆地区无法访问，因此强烈建议自己准备域名 过程 创建 Github 仓库 本地解压 Typecho 程序 在根目录下新建 vercel.json 并填入以下代码 &#123; &quot;functions&quot;: &#123; &quot;api/index.php&quot;: &#123; &quot;runtime&quot;: &quot;vercel-php@0.6.0&quot; &#125; &#125;, &quot;routes&quot;: [&#123; &quot;src&quot;: &quot;/(.*)&quot;, &quot;dest&quot;: &quot;/api/index.php&quot; &#125;]&#125; 在根目录下新建 config.inc.php 并填入以下代码 &lt;?php/** * Typecho Blog Platform * * @copyright Copyright (c) 2008 Typecho team (http://www.typecho.org) * @license GNU General Public License 2.0 * @version $Id$ *//** 开启https */define(&#x27;__TYPECHO_SECURE__&#x27;,true);/** 定义根目录 */define(&#x27;__TYPECHO_ROOT_DIR__&#x27;, dirname(__FILE__));/** 定义插件目录(相对路径) */define(&#x27;__TYPECHO_PLUGIN_DIR__&#x27;, &#x27;/usr/plugins&#x27;);/** 定义模板目录(相对路径) */define(&#x27;__TYPECHO_THEME_DIR__&#x27;, &#x27;/usr/themes&#x27;);/** 后台路径(相对路径) */define(&#x27;__TYPECHO_ADMIN_DIR__&#x27;, &#x27;/admin/&#x27;);/** 设置包含路径 */@set_include_path(get_include_path() . PATH_SEPARATOR .__TYPECHO_ROOT_DIR__ . &#x27;/var&#x27; . PATH_SEPARATOR .__TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__);/** 载入API支持 */require_once &#x27;Typecho/Common.php&#x27;;/** 程序初始化 */Typecho_Common::init();/** 定义数据库参数 */$db = new Typecho_Db(&#x27;Pdo_Mysql&#x27;, &#x27;typecho_&#x27;);$db-&gt;addServer(array ( &#x27;host&#x27; =&gt; &#x27;数据库地址&#x27;, &#x27;user&#x27; =&gt; &#x27;数据库用户名&#x27;, &#x27;password&#x27; =&gt; &#x27;数据库密码&#x27;, &#x27;charset&#x27; =&gt; &#x27;utf8mb4&#x27;, &#x27;port&#x27; =&gt; &#x27;3306&#x27;, &#x27;database&#x27; =&gt; &#x27;数据库名称&#x27;, &#x27;engine&#x27; =&gt; &#x27;MyISAM&#x27;,), Typecho_Db::READ | Typecho_Db::WRITE);Typecho_Db::set($db); 在根目录下新建 /api/index.php 并填入以下代码 &lt;?php$file= __DIR__ . &#x27;/..&#x27;.$_SERVER[&quot;PHP_SELF&quot;];if(file_exists($file))&#123; return false;&#125;else&#123; require_once __DIR__ . &#x27;/../index.php&#x27;;&#125;#echo $_SERVER[&quot;PHP_SELF&quot;]; 下载一个自己心仪的主题解压放到 /usr/themes/ 目录下 将所有文件上传到第一步创建好的 GitHub 仓库里 打开 Vercel 然后通过 GitHub 快捷登录 登陆后会自动跳转 Dashboard，点击 Add new - Project Import Git Repository 选择 Continue With GitHub此时会跳转到 GitHub 批准 Vercel 访问，建议选择允许访问全部仓库，当然你也可以设置仅可访问部分仓库。 选择你的仓库 即将开始部署，在这个界面你可以设置项目名称（可以随意设置），其他项全部保持默认即可，最后点击 Deploy 部署 部署成功后会显示 Congratulation 页面 如果你有域名，直接从此界面右边“Add Domain”进入添加域名，Vercel 会自动生成 SSL 证书（开启 https）。没有的话直接右上角“Go to Dashboard”就可以看到 Vercel 为你准备的域名 打开 https://你的网址/install.php 初始化 SO easy!]]></content>
-      <categories>
-        <category>网站建站</category>
-      </categories>
-      <tags>
-        <tag>建站</tag>
-        <tag>网站建站</tag>
-        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -245,7 +245,7 @@
   <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#x69;&#110;&#102;&#111;&#64;&#x66;&#x72;&#x65;&#x65;&#x6e;&#x6f;&#109;&#x2e;&#99;&#111;&#x6d;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
+    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#x69;&#x6e;&#x66;&#x6f;&#x40;&#102;&#x72;&#x65;&#101;&#x6e;&#111;&#109;&#46;&#99;&#111;&#109;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
       <categories>
         <category>网站建站</category>
       </categories>
@@ -282,16 +282,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo-添加音乐与视频</title>
-    <url>/2024/09/01/hexo-mp4/</url>
-    <content><![CDATA[简述我们在实用hexo中,没有任何的添加视频与音频的按钮. 这让我很头脑,所以,这次我来分享一个方法. 教程首先插入音频aplayer 在cmd页面内，使用npm安装：npm install hexo-tag-aplayer 在markdown内添加以下代码： &#123;% aplayer &quot;她的睫毛&quot; &quot;周杰伦&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot; &quot;autoplay=false&quot; %&#125; 效果如下: 或者使用下方代码: &lt;video src=&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt; 视频dplayer 在cmd页面内，使用npm安装：npm install hexo-tag-dplayer 在markdown内添加以下代码： &#123;% dplayer &quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot; &quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot; &quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;token=tokendemo&quot; %&#125; 效果如下: 或者使用下方代码: &lt;video src=&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt;]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>技术分享</tag>
-        <tag>实用</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>glary系统优化</title>
     <url>/2024/07/23/glary/</url>
     <content><![CDATA[😀 这里写文章的前言： 《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。 📝 主旨内容《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用， 🤗 软件使用软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。 他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。 如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。 扫描结束后，会提示有多少项要修复，点击修复问题即可。 在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。 总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。 🫰下载360安全云盘 - 用户空间]]></content>
@@ -301,6 +291,16 @@
       <tags>
         <tag>电脑软件</tag>
         <tag>系统优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-添加音乐与视频</title>
+    <url>/2024/09/01/hexo-mp4/</url>
+    <content><![CDATA[简述我们在实用hexo中,没有任何的添加视频与音频的按钮. 这让我很头脑,所以,这次我来分享一个方法. 教程首先插入音频aplayer 在cmd页面内，使用npm安装：npm install hexo-tag-aplayer 在markdown内添加以下代码： &#123;% aplayer &quot;她的睫毛&quot; &quot;周杰伦&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot; &quot;autoplay=false&quot; %&#125; 效果如下: 或者使用下方代码: &lt;video src=&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt; 视频dplayer 在cmd页面内，使用npm安装：npm install hexo-tag-dplayer 在markdown内添加以下代码： &#123;% dplayer &quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot; &quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot; &quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;token=tokendemo&quot; %&#125; 效果如下: 或者使用下方代码: &lt;video src=&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt;]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>技术分享</tag>
+        <tag>实用</tag>
       </tags>
   </entry>
   <entry>
@@ -367,19 +367,6 @@
       </tags>
   </entry>
   <entry>
-    <title>一挑四！全网SVIP无损音乐，随便下！</title>
-    <url>/2024/05/12/music_download/</url>
-    <content><![CDATA[前言免费的音乐工具我遇见过很多款！ 任何事物都有正反两面， 在这个被版权垄断的音乐时代，虽然不开通VIP只能试听30秒，但如果你铁了心不想要浪费钱，还是可以找到让你能够免费听歌的工具。 像歌词适配、落雪音乐这些个免费时代的先驱者，都曾受到过无数的好评，虽然现在已经被迫离我们而去，但是新的推动者一直在路上。 安利这是一款不知何时上线的免费音乐工具，目前版本仅为1.0.8。初见这款App的界面UI着实是让我惊讶一番，一点不比某些大厂的App差。 歌曲推荐功能性上十分的丰富，不仅有每日推荐、排行榜、歌单、MV，甚至还有根据你的曲风喜爱专属的个性电台。 界面上虽然有广告，但是也只仅限于阿五打上马赛克的这一小块区域，完全不影响使用。 与以往分享的App不同的是，虽然这款内置的音乐源仅为两个，但我们可以后期增加音乐源的数量。 添加自定义源的话，会有更多的搜索。 如果这两个并不能满足你，我们可以在个人中心中点击导入源，把阿五提供了两个公开整合源链接粘贴进去添加更多的音乐源。 第一张图倒数第二行 让后导入下面为你准备好的源，直接点击下载就完成！！ https://gitlab.com/acoolbook/musicfree/-/raw/main/music.jsonhttps://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json复制上面任意一个链接到音悦软件内“我的-导入源”进行导入，推荐第一个。 下载音悦及整合源（安卓）123盘：https://www.123pan.com/s/Q5O0Vv-Hj4J3.html蓝奏云：https://liuawu.lanzn.com/b009g3wwva 密码:6666 注：转载微信公众号：刘阿五，如有侵犯，立马删除]]></content>
-      <categories>
-        <category>实用软件</category>
-      </categories>
-      <tags>
-        <tag>安卓应用</tag>
-        <tag>实用推荐</tag>
-        <tag>app</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mp3tag封面替换，信息修改！</title>
     <url>/2024/10/13/mp3tag/</url>
     <content><![CDATA[Mp3tag - Download 😀 这里写文章的前言： Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以编辑的信息，视频封面等 软件介绍 封面如此，可以替换的信息在左侧。 软件使用点击这个按钮，即可打开想修改的文件目录 在右边选择视频，双击即可播放，单击即可修改。 这里，右键，即可选择想修改的视频封面，也就是缩略图 修改完成后，点击此处，即可保存更改。 下载官网：https://www.mp3tag.de/en/download.html Mp3tag - Download]]></content>
@@ -390,6 +377,19 @@
         <tag>电脑软件</tag>
         <tag>信息修改</tag>
         <tag>视频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一挑四！全网SVIP无损音乐，随便下！</title>
+    <url>/2024/05/12/music_download/</url>
+    <content><![CDATA[前言免费的音乐工具我遇见过很多款！ 任何事物都有正反两面， 在这个被版权垄断的音乐时代，虽然不开通VIP只能试听30秒，但如果你铁了心不想要浪费钱，还是可以找到让你能够免费听歌的工具。 像歌词适配、落雪音乐这些个免费时代的先驱者，都曾受到过无数的好评，虽然现在已经被迫离我们而去，但是新的推动者一直在路上。 安利这是一款不知何时上线的免费音乐工具，目前版本仅为1.0.8。初见这款App的界面UI着实是让我惊讶一番，一点不比某些大厂的App差。 歌曲推荐功能性上十分的丰富，不仅有每日推荐、排行榜、歌单、MV，甚至还有根据你的曲风喜爱专属的个性电台。 界面上虽然有广告，但是也只仅限于阿五打上马赛克的这一小块区域，完全不影响使用。 与以往分享的App不同的是，虽然这款内置的音乐源仅为两个，但我们可以后期增加音乐源的数量。 添加自定义源的话，会有更多的搜索。 如果这两个并不能满足你，我们可以在个人中心中点击导入源，把阿五提供了两个公开整合源链接粘贴进去添加更多的音乐源。 第一张图倒数第二行 让后导入下面为你准备好的源，直接点击下载就完成！！ https://gitlab.com/acoolbook/musicfree/-/raw/main/music.jsonhttps://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json复制上面任意一个链接到音悦软件内“我的-导入源”进行导入，推荐第一个。 下载音悦及整合源（安卓）123盘：https://www.123pan.com/s/Q5O0Vv-Hj4J3.html蓝奏云：https://liuawu.lanzn.com/b009g3wwva 密码:6666 注：转载微信公众号：刘阿五，如有侵犯，立马删除]]></content>
+      <categories>
+        <category>实用软件</category>
+      </categories>
+      <tags>
+        <tag>安卓应用</tag>
+        <tag>实用推荐</tag>
+        <tag>app</tag>
       </tags>
   </entry>
   <entry>
