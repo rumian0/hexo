@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mingcy.cn/2025/01/01/new/</loc>
+    
+    <lastmod>2025-01-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mingcy.cn/essay/index.html</loc>
     
     <lastmod>2025-01-04</lastmod>
@@ -733,14 +742,14 @@
   </url>
   
   <url>
-    <loc>https://mingcy.cn/tags/Ai/</loc>
+    <loc>https://mingcy.cn/tags/%E6%96%87%E5%AD%97%E8%AF%AD%E9%9F%B3/</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mingcy.cn/tags/%E6%96%87%E5%AD%97%E8%AF%AD%E9%9F%B3/</loc>
+    <loc>https://mingcy.cn/tags/Ai/</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
