@@ -5042,7 +5042,7 @@ details.toc[open] >div.body section .header+.doc_tree {
   word-break: break-all;
   text-align: justify;
   --blur-px: 100px;
-  --blur-bg: var(--leftbar-bg);
+  --blur-bg: var(--alpha60);
 }
 @supports ((-webkit-backdrop-filter: blur(var(--blur-px))) or (backdrop-filter: blur(var(--blur-px)))) {
   .l_left .leftbar-container {
