@@ -6,7 +6,7 @@
   <link href="https://mingcy.cn/atom.xml" rel="self"/>
   
   <link href="https://mingcy.cn/"/>
-  <updated>2025-01-15T07:11:32.787Z</updated>
+  <updated>2025-01-15T08:53:34.915Z</updated>
   <id>https://mingcy.cn/</id>
   
   <author>
@@ -17,11 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>海阔世界---超强的资源整合!</title>
+    <link href="https://mingcy.cn/2025/01/15/hksj/"/>
+    <id>https://mingcy.cn/2025/01/15/hksj/</id>
+    <published>2025-01-15T08:00:00.000Z</published>
+    <updated>2025-01-15T08:53:34.915Z</updated>
+    
+    
+    <summary type="html">既可以像微信一样安装小程序，也可以像浏览器一样安装各种各样插件,广告拦截,下载解析!太强了!</summary>
+    
+    
+    
+    <category term="安卓应用" scheme="https://mingcy.cn/categories/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    
+    <category term="工具" scheme="https://mingcy.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="安卓应用" scheme="https://mingcy.cn/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="实用推荐" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="app" scheme="https://mingcy.cn/tags/app/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://mingcy.cn/2025/01/03/obsessive-thinking/"/>
+    <id>https://mingcy.cn/2025/01/03/obsessive-thinking/</id>
+    <published>2025-01-03T12:29:57.875Z</published>
+    <updated>2025-01-15T09:02:09.361Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>新年快乐!</title>
     <link href="https://mingcy.cn/2025/01/01/happy/"/>
     <id>https://mingcy.cn/2025/01/01/happy/</id>
     <published>2024-12-31T17:00:00.000Z</published>
-    <updated>2025-01-15T07:11:32.787Z</updated>
+    <updated>2025-01-15T08:54:09.549Z</updated>
     
     
     <summary type="html">新年快乐!</summary>
@@ -42,7 +80,7 @@
     <link href="https://mingcy.cn/2024/12/29/yjxxx-essay/"/>
     <id>https://mingcy.cn/2024/12/29/yjxxx-essay/</id>
     <published>2024-12-29T10:00:00.000Z</published>
-    <updated>2024-12-31T11:53:26.419Z</updated>
+    <updated>2025-01-15T09:05:24.661Z</updated>
     
     
       
@@ -61,35 +99,6 @@
     <category term="班级" scheme="https://mingcy.cn/tags/%E7%8F%AD%E7%BA%A7/"/>
     
     <category term="调查" scheme="https://mingcy.cn/tags/%E8%B0%83%E6%9F%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>强迫性思维😣</title>
-    <link href="https://mingcy.cn/2024/12/28/obsessive-thinking/"/>
-    <id>https://mingcy.cn/2024/12/28/obsessive-thinking/</id>
-    <published>2024-12-28T14:00:00.000Z</published>
-    <updated>2024-12-31T11:53:20.767Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="生活方面" scheme="https://mingcy.cn/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E9%9D%A2/"/>
-    
-    
-    <category term="心理" scheme="https://mingcy.cn/tags/%E5%BF%83%E7%90%86/"/>
-    
-    <category term="生活" scheme="https://mingcy.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-    <category term="记录" scheme="https://mingcy.cn/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
@@ -125,7 +134,7 @@
     <link href="https://mingcy.cn/2024/12/01/aitiaosuo/"/>
     <id>https://mingcy.cn/2024/12/01/aitiaosuo/</id>
     <published>2024-12-01T03:00:00.000Z</published>
-    <updated>2024-12-01T04:45:45.480Z</updated>
+    <updated>2025-01-15T09:05:03.959Z</updated>
     
     
     <summary type="html">AI折磨强大了,有自主意识了?</summary>
@@ -200,7 +209,7 @@
     <link href="https://mingcy.cn/2024/11/20/wyy--2/"/>
     <id>https://mingcy.cn/2024/11/20/wyy--2/</id>
     <published>2024-11-20T10:00:00.000Z</published>
-    <updated>2024-11-24T09:44:20.124Z</updated>
+    <updated>2025-01-15T09:04:49.499Z</updated>
     
     
       
@@ -534,35 +543,6 @@
     <category term="实用推荐" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
     
     <category term="班级" scheme="https://mingcy.cn/tags/%E7%8F%AD%E7%BA%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ODE多功能工具箱</title>
-    <link href="https://mingcy.cn/2024/09/07/ode/"/>
-    <id>https://mingcy.cn/2024/09/07/ode/</id>
-    <published>2024-09-06T16:00:00.000Z</published>
-    <updated>2024-10-13T04:40:43.522Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="硬核科技" scheme="https://mingcy.cn/categories/%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80/"/>
-    
-    
-    <category term="电脑软件" scheme="https://mingcy.cn/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
-    
-    <category term="工具" scheme="https://mingcy.cn/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="百度网盘" scheme="https://mingcy.cn/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/"/>
     
   </entry>
   
