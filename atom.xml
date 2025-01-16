@@ -6,7 +6,7 @@
   <link href="https://mingcy.cn/atom.xml" rel="self"/>
   
   <link href="https://mingcy.cn/"/>
-  <updated>2025-01-15T14:48:17.285Z</updated>
+  <updated>2025-01-16T15:37:24.431Z</updated>
   <id>https://mingcy.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>三班时间碎片</title>
+    <link href="https://mingcy.cn/2025/01/16/three/"/>
+    <id>https://mingcy.cn/2025/01/16/three/</id>
+    <published>2025-01-16T14:00:00.000Z</published>
+    <updated>2025-01-16T15:37:24.431Z</updated>
+    
+    
+    <summary type="html">自己剪得视频</summary>
+    
+    
+    
+    <category term="实际生活" scheme="https://mingcy.cn/categories/%E5%AE%9E%E9%99%85%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="班级" scheme="https://mingcy.cn/tags/%E7%8F%AD%E7%BA%A7/"/>
+    
+    <category term="记录" scheme="https://mingcy.cn/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>海阔世界---超强的资源整合!</title>
@@ -530,35 +551,6 @@
     <category term="123网盘" scheme="https://mingcy.cn/tags/123%E7%BD%91%E7%9B%98/"/>
     
     <category term="工具" scheme="https://mingcy.cn/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Classlsand-班级课程表</title>
-    <link href="https://mingcy.cn/2024/09/08/classlasland/"/>
-    <id>https://mingcy.cn/2024/09/08/classlasland/</id>
-    <published>2024-09-07T16:00:00.000Z</published>
-    <updated>2024-10-13T04:40:35.886Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="硬核科技" scheme="https://mingcy.cn/categories/%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80/"/>
-    
-    
-    <category term="电脑软件" scheme="https://mingcy.cn/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
-    
-    <category term="实用推荐" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
-    
-    <category term="班级" scheme="https://mingcy.cn/tags/%E7%8F%AD%E7%BA%A7/"/>
     
   </entry>
   
