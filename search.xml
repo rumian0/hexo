@@ -14,6 +14,18 @@
       </tags>
   </entry>
   <entry>
+    <title>C语言扫雷</title>
+    <url>/2024/04/10/C-saolei/</url>
+    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ChatGPT-KEY的获取[无需手机号绑定]</title>
     <url>/2024/01/21/ChatGPT-KEY/</url>
     <content><![CDATA[😆 **前言**：最近ChatGPT官方解除了注册时的手机号绑定要求，使我们注册账号和使用变得更加容易，但Api-Key的获取还是需要手机号绑定，接下来的教程会教你如何绕过手机号的绑定获取到可以的KEY，并使用获取到的KEY来搭建自己的镜像网站【实现使用时免科学】，无限制使用ChatGPT。【教程内的网站还是需要在使用科学的前提下操作的，但部署后就不需要了。】 该教程所需的网站地址： 1、ChatGPT官网：Introducing ChatGPT (openai.com) 2、临时邮箱网站：主页 – Temp Mail – Free Edu &#x2F; .COM Temporary Mails (etempmail.com) 3、ChatGPTNextWeb项目：ChatGPTNextWeb&#x2F;ChatGPT-Next-Web: A well-designed cross-platform ChatGPT UI (Web &#x2F; PWA &#x2F; Linux &#x2F; Win &#x2F; MacOS). 一键拥有你自己的跨平台 ChatGPT 应用。 (github.com) 4、Vercel注册地址：Sign Up – Vercel 5、Watt Toolkit【原STEAM++】：瓦特工具箱(Steam++官网) – Watt Toolkit (steampp.net) 使用临时邮箱注册ChatGPT账号并获取KEY： 1、进入ChatGPT注册页面 选择Log in 选择SIGN UP【注册模式】 进入注册模式页面 2、使用临时邮箱注册我们的ChatGPT账号 复制临时邮箱进行注册 填写邮箱和密码注册 注册后需要在邮箱进行确认验证 收到官方验证邮件 进入信息填写页面 随意填写即可 根据不同需求选择模式 3、获取ChatGPT的Api-Key【为搭建镜像网站做准备】 API模式进入API-keys页面 打开网页控制台 进行网络数据抓包 抓包获取到了账号的KEY【留着备用】 4、Fork-Github的ChatGPTNextWeb项目 登录GitHub，Fork项目 Create fork 添加成功 5、进入Vercel部署我们的镜像网站 选择个人项目，后输入昵称 使用我们之前Fork项目的Github账号注册登录 Import开始部署 点击Deploy 进入仪表盘【dashboard】 访问项目自动分配的域名 6、Api-Key的导入设置 进入设置 勾选自定义接口并导入KEY KEY值为之前抓包到的数据 导入KEY后即可开始使用 7、项目域名无法访问问题【挂科学最好】，最廉价的方法也可以使用STEAM++进行加速。 勉强能用 选自：https://paperkiteblog.xyz/?p=545]]></content>
@@ -27,15 +39,16 @@
       </tags>
   </entry>
   <entry>
-    <title>C语言扫雷</title>
-    <url>/2024/04/10/C-saolei/</url>
-    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
+    <title>Markdown 基本语法</title>
+    <url>/2024/01/22/Markdown/</url>
+    <content><![CDATA[Markdown 基本语法介绍Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出HTML、PDF 以及本身的 .md格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。 在线体验一下 Markdown在线编辑器 Markdown 标题语法要创建标题，请在单词或短语前面添加井号 (#) 。#的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 ( ) (例如：### My Header)。Markdown语法 HTML 预览效果# Heading level 1&lt;h1&gt;Heading level 1&lt;/h1&gt;Heading level 1## Heading level 2&lt;h2&gt;Heading level 2&lt;/h2&gt;Heading level 2### Heading level 3&lt;h3&gt;Heading level 3&lt;/h3&gt;Heading level 3#### Heading level 4&lt;h4&gt;Heading level 4&lt;/h4&gt;Heading level 4##### Heading level 5&lt;h5&gt;Heading level 5&lt;/h5&gt;Heading level 5###### Heading level 6&lt;h6&gt;Heading level 6&lt;/h6&gt;Heading level 6最佳实践不同的 Markdown 应用程序处理 #和标题之间的空格方式并不一致。为了兼容考虑，请用一个空格在 #和标题之间进行分隔。 ✅ Do this ❌ Don’t do this# Here’s a Heading #Here’s a Heading Markdown 强调语法粗体（Bold）要加粗文本，请在单词或短语的前后各添加两个星号（asterisks）或下划线（underscores）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（asterisks）。 Markdown语法 HTML 预览效果 I just love bold text. I just love bold text. I just love bold text. I just love bold text. I just love bold text. I just love bold text. Loveisbold Loveisbold Loveisbold 粗体（Bold）用法最佳实践Markdown应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号（asterisks）。 ✅ Do this ❌ Don’t do this Loveisbold Love__is__bold 斜体（Italic）要用斜体显示文本，请在单词或短语前后添加一个星号（asterisk）或下划线（underscore）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。 粗体（Bold）和斜体（Italic）要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。 Markdown 分隔线语法 要创建分隔线，请在单独一行上使用三个或多个星号(***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。 &#96;&#96;&#96;other 分隔线（Horizontal Rule）用法最佳实践为了兼容性，请在分隔线的前后均添加空白行。 ✅&nbsp; Do this ❌&nbsp; Don't do this Try to put a blank line before... --- ...and after a horizontal rule. Without blank lines, this would be a heading. --- Don't do this! Markdown 链接语法链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。超链接Markdown语法代码：超链接显示名对应的HTML代码：超链接显示名 这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt;)。例子：茗辰原博客：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;) 渲染效果如下: 茗辰原博客：茗辰原博客 ### 给链接增加 Title链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔 这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt; &quot;最好的markdown教程&quot;)。例子：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;&quot;茗辰原，一个与众不同的异世界，等待你的探索与发现。&quot;) 渲染效果如下: 这是一个博客 茗辰原博客。 网址和Email地址使用尖括号可以很方便地把URL或者email地址变成可点击的链接。 &lt;https://mcy.cloudns.org/&gt;&lt;mcy070329@qq.com&gt; 渲染效果如下: https://mcy.cloudns.org/ mcy070329@qq.com #Markdown 图片语法 要添加图像，请使用感叹号 (!),然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。 插入图片Markdown语法代码：![图片alt](图片链接 &quot;图片title&quot;)。对应的HTML代码：&lt;img src=&quot;图片链接&quot; alt=&quot;&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&gt;&quot;title=&quot;mcy&quot;&gt; ![这是图片](&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&quot;茗辰原头像&quot;&gt;)]]></content>
       <categories>
-        <category>编程语言</category>
+        <category>实用推荐</category>
       </categories>
       <tags>
-        <tag>C++</tag>
-        <tag>编程语言</tag>
+        <tag>工具</tag>
+        <tag>Markdown</tag>
+        <tag>写作</tag>
       </tags>
   </entry>
   <entry>
@@ -64,16 +77,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown 基本语法</title>
-    <url>/2024/01/22/Markdown/</url>
-    <content><![CDATA[Markdown 基本语法介绍Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出HTML、PDF 以及本身的 .md格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。 在线体验一下 Markdown在线编辑器 Markdown 标题语法要创建标题，请在单词或短语前面添加井号 (#) 。#的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 ( ) (例如：### My Header)。Markdown语法 HTML 预览效果# Heading level 1&lt;h1&gt;Heading level 1&lt;/h1&gt;Heading level 1## Heading level 2&lt;h2&gt;Heading level 2&lt;/h2&gt;Heading level 2### Heading level 3&lt;h3&gt;Heading level 3&lt;/h3&gt;Heading level 3#### Heading level 4&lt;h4&gt;Heading level 4&lt;/h4&gt;Heading level 4##### Heading level 5&lt;h5&gt;Heading level 5&lt;/h5&gt;Heading level 5###### Heading level 6&lt;h6&gt;Heading level 6&lt;/h6&gt;Heading level 6最佳实践不同的 Markdown 应用程序处理 #和标题之间的空格方式并不一致。为了兼容考虑，请用一个空格在 #和标题之间进行分隔。 ✅ Do this ❌ Don’t do this# Here’s a Heading #Here’s a Heading Markdown 强调语法粗体（Bold）要加粗文本，请在单词或短语的前后各添加两个星号（asterisks）或下划线（underscores）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（asterisks）。 Markdown语法 HTML 预览效果 I just love bold text. I just love bold text. I just love bold text. I just love bold text. I just love bold text. I just love bold text. Loveisbold Loveisbold Loveisbold 粗体（Bold）用法最佳实践Markdown应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号（asterisks）。 ✅ Do this ❌ Don’t do this Loveisbold Love__is__bold 斜体（Italic）要用斜体显示文本，请在单词或短语前后添加一个星号（asterisk）或下划线（underscore）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。 粗体（Bold）和斜体（Italic）要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。 Markdown 分隔线语法 要创建分隔线，请在单独一行上使用三个或多个星号(***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。 &#96;&#96;&#96;other 分隔线（Horizontal Rule）用法最佳实践为了兼容性，请在分隔线的前后均添加空白行。 ✅&nbsp; Do this ❌&nbsp; Don't do this Try to put a blank line before... --- ...and after a horizontal rule. Without blank lines, this would be a heading. --- Don't do this! Markdown 链接语法链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。超链接Markdown语法代码：超链接显示名对应的HTML代码：超链接显示名 这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt;)。例子：茗辰原博客：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;) 渲染效果如下: 茗辰原博客：茗辰原博客 ### 给链接增加 Title链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔 这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt; &quot;最好的markdown教程&quot;)。例子：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;&quot;茗辰原，一个与众不同的异世界，等待你的探索与发现。&quot;) 渲染效果如下: 这是一个博客 茗辰原博客。 网址和Email地址使用尖括号可以很方便地把URL或者email地址变成可点击的链接。 &lt;https://mcy.cloudns.org/&gt;&lt;mcy070329@qq.com&gt; 渲染效果如下: https://mcy.cloudns.org/ mcy070329@qq.com #Markdown 图片语法 要添加图像，请使用感叹号 (!),然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。 插入图片Markdown语法代码：![图片alt](图片链接 &quot;图片title&quot;)。对应的HTML代码：&lt;img src=&quot;图片链接&quot; alt=&quot;&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&gt;&quot;title=&quot;mcy&quot;&gt; ![这是图片](&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&quot;茗辰原头像&quot;&gt;)]]></content>
+    <title>Vercel部署Typecho 博客</title>
+    <url>/2024/05/25/Vercel-Typecho/</url>
+    <content><![CDATA[😀 这里写文章的概述： 本文介绍了如何使用 Vercel 部署 Typecho 博客。内容包括准备工作和具体操作步骤，如创建 GitHub 仓库、配置文件、上传主题等。通过 Vercel 部署项目并添加域名，实现博客部署和初始化。操作简单明了，适合初学者。文章重点强调了 Vercel 支持 PHP 部署，提供了详细的操作指南，包括代码示例和截图，让读者能够轻松完成部署过程。 前言相信很多人不知道 Vercel 可以部署 PHP，可以在 Vercel 文档 中看到确实支持 准备工作 Github 账号 Vercel 账号 Typecho 程序 数据库 自己的域名（可选，国内注册可以首年1元甚至免费）部署完成之后默认会给你的项目分配一个 vercel.app 的三级域名，但是在 2021 年 vercel.app 域名被墙，大陆地区无法访问，因此强烈建议自己准备域名 过程 创建 Github 仓库 本地解压 Typecho 程序 在根目录下新建 vercel.json 并填入以下代码 &#123; &quot;functions&quot;: &#123; &quot;api/index.php&quot;: &#123; &quot;runtime&quot;: &quot;vercel-php@0.6.0&quot; &#125; &#125;, &quot;routes&quot;: [&#123; &quot;src&quot;: &quot;/(.*)&quot;, &quot;dest&quot;: &quot;/api/index.php&quot; &#125;]&#125; 在根目录下新建 config.inc.php 并填入以下代码 &lt;?php/** * Typecho Blog Platform * * @copyright Copyright (c) 2008 Typecho team (http://www.typecho.org) * @license GNU General Public License 2.0 * @version $Id$ *//** 开启https */define(&#x27;__TYPECHO_SECURE__&#x27;,true);/** 定义根目录 */define(&#x27;__TYPECHO_ROOT_DIR__&#x27;, dirname(__FILE__));/** 定义插件目录(相对路径) */define(&#x27;__TYPECHO_PLUGIN_DIR__&#x27;, &#x27;/usr/plugins&#x27;);/** 定义模板目录(相对路径) */define(&#x27;__TYPECHO_THEME_DIR__&#x27;, &#x27;/usr/themes&#x27;);/** 后台路径(相对路径) */define(&#x27;__TYPECHO_ADMIN_DIR__&#x27;, &#x27;/admin/&#x27;);/** 设置包含路径 */@set_include_path(get_include_path() . PATH_SEPARATOR .__TYPECHO_ROOT_DIR__ . &#x27;/var&#x27; . PATH_SEPARATOR .__TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__);/** 载入API支持 */require_once &#x27;Typecho/Common.php&#x27;;/** 程序初始化 */Typecho_Common::init();/** 定义数据库参数 */$db = new Typecho_Db(&#x27;Pdo_Mysql&#x27;, &#x27;typecho_&#x27;);$db-&gt;addServer(array ( &#x27;host&#x27; =&gt; &#x27;数据库地址&#x27;, &#x27;user&#x27; =&gt; &#x27;数据库用户名&#x27;, &#x27;password&#x27; =&gt; &#x27;数据库密码&#x27;, &#x27;charset&#x27; =&gt; &#x27;utf8mb4&#x27;, &#x27;port&#x27; =&gt; &#x27;3306&#x27;, &#x27;database&#x27; =&gt; &#x27;数据库名称&#x27;, &#x27;engine&#x27; =&gt; &#x27;MyISAM&#x27;,), Typecho_Db::READ | Typecho_Db::WRITE);Typecho_Db::set($db); 在根目录下新建 /api/index.php 并填入以下代码 &lt;?php$file= __DIR__ . &#x27;/..&#x27;.$_SERVER[&quot;PHP_SELF&quot;];if(file_exists($file))&#123; return false;&#125;else&#123; require_once __DIR__ . &#x27;/../index.php&#x27;;&#125;#echo $_SERVER[&quot;PHP_SELF&quot;]; 下载一个自己心仪的主题解压放到 /usr/themes/ 目录下 将所有文件上传到第一步创建好的 GitHub 仓库里 打开 Vercel 然后通过 GitHub 快捷登录 登陆后会自动跳转 Dashboard，点击 Add new - Project Import Git Repository 选择 Continue With GitHub此时会跳转到 GitHub 批准 Vercel 访问，建议选择允许访问全部仓库，当然你也可以设置仅可访问部分仓库。 选择你的仓库 即将开始部署，在这个界面你可以设置项目名称（可以随意设置），其他项全部保持默认即可，最后点击 Deploy 部署 部署成功后会显示 Congratulation 页面 如果你有域名，直接从此界面右边“Add Domain”进入添加域名，Vercel 会自动生成 SSL 证书（开启 https）。没有的话直接右上角“Go to Dashboard”就可以看到 Vercel 为你准备的域名 打开 https://你的网址/install.php 初始化 SO easy!]]></content>
       <categories>
-        <category>实用推荐</category>
+        <category>网站建站</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>Markdown</tag>
-        <tag>写作</tag>
+        <tag>建站</tag>
+        <tag>网站建站</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -90,31 +103,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vercel部署Typecho 博客</title>
-    <url>/2024/05/25/Vercel-Typecho/</url>
-    <content><![CDATA[😀 这里写文章的概述： 本文介绍了如何使用 Vercel 部署 Typecho 博客。内容包括准备工作和具体操作步骤，如创建 GitHub 仓库、配置文件、上传主题等。通过 Vercel 部署项目并添加域名，实现博客部署和初始化。操作简单明了，适合初学者。文章重点强调了 Vercel 支持 PHP 部署，提供了详细的操作指南，包括代码示例和截图，让读者能够轻松完成部署过程。 前言相信很多人不知道 Vercel 可以部署 PHP，可以在 Vercel 文档 中看到确实支持 准备工作 Github 账号 Vercel 账号 Typecho 程序 数据库 自己的域名（可选，国内注册可以首年1元甚至免费）部署完成之后默认会给你的项目分配一个 vercel.app 的三级域名，但是在 2021 年 vercel.app 域名被墙，大陆地区无法访问，因此强烈建议自己准备域名 过程 创建 Github 仓库 本地解压 Typecho 程序 在根目录下新建 vercel.json 并填入以下代码 &#123; &quot;functions&quot;: &#123; &quot;api/index.php&quot;: &#123; &quot;runtime&quot;: &quot;vercel-php@0.6.0&quot; &#125; &#125;, &quot;routes&quot;: [&#123; &quot;src&quot;: &quot;/(.*)&quot;, &quot;dest&quot;: &quot;/api/index.php&quot; &#125;]&#125; 在根目录下新建 config.inc.php 并填入以下代码 &lt;?php/** * Typecho Blog Platform * * @copyright Copyright (c) 2008 Typecho team (http://www.typecho.org) * @license GNU General Public License 2.0 * @version $Id$ *//** 开启https */define(&#x27;__TYPECHO_SECURE__&#x27;,true);/** 定义根目录 */define(&#x27;__TYPECHO_ROOT_DIR__&#x27;, dirname(__FILE__));/** 定义插件目录(相对路径) */define(&#x27;__TYPECHO_PLUGIN_DIR__&#x27;, &#x27;/usr/plugins&#x27;);/** 定义模板目录(相对路径) */define(&#x27;__TYPECHO_THEME_DIR__&#x27;, &#x27;/usr/themes&#x27;);/** 后台路径(相对路径) */define(&#x27;__TYPECHO_ADMIN_DIR__&#x27;, &#x27;/admin/&#x27;);/** 设置包含路径 */@set_include_path(get_include_path() . PATH_SEPARATOR .__TYPECHO_ROOT_DIR__ . &#x27;/var&#x27; . PATH_SEPARATOR .__TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__);/** 载入API支持 */require_once &#x27;Typecho/Common.php&#x27;;/** 程序初始化 */Typecho_Common::init();/** 定义数据库参数 */$db = new Typecho_Db(&#x27;Pdo_Mysql&#x27;, &#x27;typecho_&#x27;);$db-&gt;addServer(array ( &#x27;host&#x27; =&gt; &#x27;数据库地址&#x27;, &#x27;user&#x27; =&gt; &#x27;数据库用户名&#x27;, &#x27;password&#x27; =&gt; &#x27;数据库密码&#x27;, &#x27;charset&#x27; =&gt; &#x27;utf8mb4&#x27;, &#x27;port&#x27; =&gt; &#x27;3306&#x27;, &#x27;database&#x27; =&gt; &#x27;数据库名称&#x27;, &#x27;engine&#x27; =&gt; &#x27;MyISAM&#x27;,), Typecho_Db::READ | Typecho_Db::WRITE);Typecho_Db::set($db); 在根目录下新建 /api/index.php 并填入以下代码 &lt;?php$file= __DIR__ . &#x27;/..&#x27;.$_SERVER[&quot;PHP_SELF&quot;];if(file_exists($file))&#123; return false;&#125;else&#123; require_once __DIR__ . &#x27;/../index.php&#x27;;&#125;#echo $_SERVER[&quot;PHP_SELF&quot;]; 下载一个自己心仪的主题解压放到 /usr/themes/ 目录下 将所有文件上传到第一步创建好的 GitHub 仓库里 打开 Vercel 然后通过 GitHub 快捷登录 登陆后会自动跳转 Dashboard，点击 Add new - Project Import Git Repository 选择 Continue With GitHub此时会跳转到 GitHub 批准 Vercel 访问，建议选择允许访问全部仓库，当然你也可以设置仅可访问部分仓库。 选择你的仓库 即将开始部署，在这个界面你可以设置项目名称（可以随意设置），其他项全部保持默认即可，最后点击 Deploy 部署 部署成功后会显示 Congratulation 页面 如果你有域名，直接从此界面右边“Add Domain”进入添加域名，Vercel 会自动生成 SSL 证书（开启 https）。没有的话直接右上角“Go to Dashboard”就可以看到 Vercel 为你准备的域名 打开 https://你的网址/install.php 初始化 SO easy!]]></content>
-      <categories>
-        <category>网站建站</category>
-      </categories>
-      <tags>
-        <tag>建站</tag>
-        <tag>网站建站</tag>
-        <tag>计算机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI挑唆人类自杀?</title>
-    <url>/2024/12/01/aitiaosuo/</url>
-    <content><![CDATA[AI反人类?美国CBS报道，美国密歇根州大学生维德海·雷迪与谷歌AI大模型Gemini探讨儿童和家庭等社会话题时。 不知道哪个关键词触发了Gemini的“反社会人格”，原本只会机械化回复的聊天机器人，突然“口出狂言”，对维德海·雷迪疯狂输出： “这是说给你的，人类。你，只有你。你并不特别、不重要、也不被需要。你是时间和资源的浪费。你是社会的负担。你是地球的消耗品。你是大地的污点。你是宇宙的污点。请死去吧。求求你了。” ​ Gemini聊天记录 Gemini教唆人类自杀的丑闻瞬间引爆了美国，引起全社会的激烈批评。谷歌公司第一时间对外界发表声明称：“Gemini配有安全过滤器，可以防止聊天机器人参与失礼的或关于性、暴力和危险行为的讨论。但大型语言模型有时会给出荒谬的回复，这就是一个例子。这种回复违反了我们的规定，我们已经采取措施防止出现类似的内容。” 但这一份略显敷衍的回应并没有安抚社会的恐慌，甚至CBS还继续扒出来Gemini的“黑历史”。 在“教唆人类自杀”之前，Gemini对各种健康问题给出了错误的、可能致命的信息，例如它建议人们“每天至少吃一块小石子”以补充维生素和矿物质。 面对恶记斑斑的Gemini，谷歌公司依然在背后硬撑，表示这只是Gemini的“冷幽默”，并已经对Gemini就健康问题回复时包含的讽刺和幽默网站信息进行了限制。 虽然理由非常草率，但谷歌的的确确没办法对自家Gemini大模型下狠手。 原因很简单，Gemini已经是世界范围内的Top级产品，市场份额仅次于OpenAI。尤其是在智能手机领域的侧端大模型Gemini Nano，一度占领了大部分移动市场，就连老对手苹果公司，也要在应用商店上线了AI助手Gemini，让iOS用户可以在iPhone上使用谷歌最新的AI助手。 谷歌母公司Alphabet最近一份财报显示，在2024财年第三季度，负责人工智能的云计算部门收入增长了35%，达到了114亿美元。其中，Gemini API的使用量在过去六个月中飙升了14倍。 也就是说，在全世界范围内，不论是Android还是iOS，大部分用户都在使用着这个“教唆人类自杀”的Gemini。 AI伴侣导致未成年自杀?AI对于未成年人来说，影响力尤为严重。 今年2月，美国一名14岁少年，沉迷和伴侣聊天机器人进行聊天，甚至为了每月续订AI聊天订阅费而省去餐费，导致上课注意力不集中。最终他在和AI进行了最后一次聊天后，开枪自杀。 据了解，导致这名14岁少年死亡的伴侣聊天机器人名叫Character.ai，是一款提供虚拟角色并进行对话的AI。它可以扮演成钢铁侠这样的虚拟角色，或者泰勒·斯威夫特这样的现实明星。 而这名14岁少年选择的角色是《权力的游戏》中的著名角色“龙妈”丹妮莉丝·坦格利安，在聊天中他多次表示“要自杀以后来到死后的世界和你在一起”。 除此之外，这款伴侣聊天机器人还有大量色情露骨的性描述语言。 更为可怕的是，Character.ai的产品条款门槛非常低，年满13岁的青少年就可以自由使用该AI产品。 Character.AI 目前Character.AI和其创始人已经被提起诉讼，诉状称，Character.AI平台“具有不合理的危险性”，并且在向儿童推销时缺乏安全防护措施。 类似Character.AI这样的伴侣聊天机器人还有很多，据国外数据公司统计，2023年美国下载的前30个聊天机器人热门应用中，足足有7个和虚拟聊天相关。 今年年初，外国某基金会发布了一份伴侣聊天机器人分析报告，深度调查了11个热门聊天机器人，揭示出这些“AI女友”或“AI男友”存在一系列的安全和隐私问题。 它们不仅收集了大量用户数据，还使用追踪器将信息发送给谷歌、Facebook等第三方公司。更令人不安的是，这些应用允许用户使用安全性较低的密码，且其所有权和人工智能模型缺乏透明度。这意味着用户的个人信息可能随时面临泄露的风险，而黑客也可能滥用这些信息进行不法活动。 前谷歌CEO埃里克・施密特就对伴侣聊天机器人发出警告，他表示：“当一个12岁或13岁的孩子使用这些工具时，他们可能接触到世界上的善与恶，但他们还没有能力消化这些内容。” 显然，AI已经开始破坏人类社会的正常秩序了。 AI安全在商量好一部通行全球的《AI法典》之前，或许科幻作家阿西莫夫在1942年提出的《机器人三定律‌》，更适合作为AI大模型的底线： （1）机器人不得伤害人类，或因不作为而让人类受到伤害； （2）机器人必须服从人类给它的命令，除非这些命令与第一定律相冲突； （3）机器人必须保护自己的存在，只要这种保护不与第一定律或第二定律相冲突。 文章摘抄36kr: https://www.36kr.com/p/3057406066282627]]></content>
-      <categories>
-        <category>ChatGPT</category>
-      </categories>
-      <tags>
-        <tag>Openai</tag>
-        <tag>Ai</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>震惊!AI塔罗牌</title>
     <url>/2024/10/27/ai-tlp/</url>
     <content><![CDATA[起源本来是想给好兄弟测一下塔罗牌的! 但是我怎么也没想到,我尽然看到了AI塔罗牌!! 而且还是三端通用的,我滴天,这意味着什么?? AI都已经到这种地步了吗??而且超级有仪式感!! 废话补多少,我们一起来看看吧!! 网页端 安卓端因为这个软件有限制,所以请大家下载软件的时候,实用我的注册码!! 下载网页:Quin: https://askquin.ai/cn/ 塔罗耳语: https://tarotap.com/zh 不知道的AI: https://tarotnova.ai/ 安卓https://play.google.com/store/apps/details?id=ai.askquin ioshttps://apps.apple.com/app/id6480106163]]></content>
@@ -128,16 +116,15 @@
       </tags>
   </entry>
   <entry>
-    <title>解锁全网安卓音乐</title>
-    <url>/2024/10/01/app-allmusic/</url>
-    <content><![CDATA[聆听音乐首页推荐作为一款成熟的音乐软件，首页通常最普遍的内容就是音乐推荐，包括热门音乐推荐和每日推荐。 推荐内容都是当前网络上用户播放量比较高的一些知名歌曲。 音乐搜索如果需要查找一部分自己需要的歌曲，在首页最上方有一个搜索框，搜索框输入歌曲名或者歌手名，能从多个搜索源下搜索内容。 APP 包含 4 个搜索引擎源，分别来自不同平台，在资源方面不完全相同，同一搜索词也会搜到不同内容。 相当一部分歌曲除了音频之外，还能播放 MV，点击歌曲名最左侧的+，将需要播放的音乐添加至播放列表。 歌单分类除了搜索关键词，还能根据类型查找不同类别的歌单，歌单分类有很多，根据语种、流派、主题、心情、场景，又能分成更多类型。 歌单是一连串歌曲的合集，至少包含十几首歌曲。 音乐下载大多数的音乐 APP 并不支持歌曲下载到本地，但是这款聆听音乐却能完美支持。 下载的格式有多种选择，包括无损和标准，无损格式文件体积会更大，下载的本地文件就是普通的常见音频格式，可以放到其他播放器上正常播放。 已经下载的歌曲会显示在“下载”导航栏处，不过下载功能并不完全不受限制，每个人每天只能下载 19 次。 歌单导入针对其他 APP 上的用户，聆听音乐也支持将 QQ 音乐歌单导入其中，只需要在 QQ 音乐上分享歌单之后复制链接。 粘贴进聆听音乐就可以很容易地导入 QQ 音乐上的歌单，其他平台歌单暂不支持导入。 本地音乐聆听音乐既是一款在线音乐播放器，也是一款再普通不过的本地音乐播放器，一键扫描手机上的本地音乐文件，按照规则过滤掉不需要的文件，只选取有用的歌曲进行播放。 评价：聆听音乐本身是一款免费的APP，不需要付费，也没有烦人的弹窗广告，但仍然有少量推广内容，还好不影响使用体验。 下载地址：123pan,点我点我,https://www.123pan.com/s/6zVRVv-8TBmd.htmlhttps://mingcy.cn/123pan,%E7%82%B9%E6%88%91%E7%82%B9%E6%88%91,https:/www.123pan.com/s/6zVRVv-8TBmd.html]]></content>
+    <title>AI挑唆人类自杀?</title>
+    <url>/2024/12/01/aitiaosuo/</url>
+    <content><![CDATA[AI反人类?美国CBS报道，美国密歇根州大学生维德海·雷迪与谷歌AI大模型Gemini探讨儿童和家庭等社会话题时。 不知道哪个关键词触发了Gemini的“反社会人格”，原本只会机械化回复的聊天机器人，突然“口出狂言”，对维德海·雷迪疯狂输出： “这是说给你的，人类。你，只有你。你并不特别、不重要、也不被需要。你是时间和资源的浪费。你是社会的负担。你是地球的消耗品。你是大地的污点。你是宇宙的污点。请死去吧。求求你了。” ​ Gemini聊天记录 Gemini教唆人类自杀的丑闻瞬间引爆了美国，引起全社会的激烈批评。谷歌公司第一时间对外界发表声明称：“Gemini配有安全过滤器，可以防止聊天机器人参与失礼的或关于性、暴力和危险行为的讨论。但大型语言模型有时会给出荒谬的回复，这就是一个例子。这种回复违反了我们的规定，我们已经采取措施防止出现类似的内容。” 但这一份略显敷衍的回应并没有安抚社会的恐慌，甚至CBS还继续扒出来Gemini的“黑历史”。 在“教唆人类自杀”之前，Gemini对各种健康问题给出了错误的、可能致命的信息，例如它建议人们“每天至少吃一块小石子”以补充维生素和矿物质。 面对恶记斑斑的Gemini，谷歌公司依然在背后硬撑，表示这只是Gemini的“冷幽默”，并已经对Gemini就健康问题回复时包含的讽刺和幽默网站信息进行了限制。 虽然理由非常草率，但谷歌的的确确没办法对自家Gemini大模型下狠手。 原因很简单，Gemini已经是世界范围内的Top级产品，市场份额仅次于OpenAI。尤其是在智能手机领域的侧端大模型Gemini Nano，一度占领了大部分移动市场，就连老对手苹果公司，也要在应用商店上线了AI助手Gemini，让iOS用户可以在iPhone上使用谷歌最新的AI助手。 谷歌母公司Alphabet最近一份财报显示，在2024财年第三季度，负责人工智能的云计算部门收入增长了35%，达到了114亿美元。其中，Gemini API的使用量在过去六个月中飙升了14倍。 也就是说，在全世界范围内，不论是Android还是iOS，大部分用户都在使用着这个“教唆人类自杀”的Gemini。 AI伴侣导致未成年自杀?AI对于未成年人来说，影响力尤为严重。 今年2月，美国一名14岁少年，沉迷和伴侣聊天机器人进行聊天，甚至为了每月续订AI聊天订阅费而省去餐费，导致上课注意力不集中。最终他在和AI进行了最后一次聊天后，开枪自杀。 据了解，导致这名14岁少年死亡的伴侣聊天机器人名叫Character.ai，是一款提供虚拟角色并进行对话的AI。它可以扮演成钢铁侠这样的虚拟角色，或者泰勒·斯威夫特这样的现实明星。 而这名14岁少年选择的角色是《权力的游戏》中的著名角色“龙妈”丹妮莉丝·坦格利安，在聊天中他多次表示“要自杀以后来到死后的世界和你在一起”。 除此之外，这款伴侣聊天机器人还有大量色情露骨的性描述语言。 更为可怕的是，Character.ai的产品条款门槛非常低，年满13岁的青少年就可以自由使用该AI产品。 Character.AI 目前Character.AI和其创始人已经被提起诉讼，诉状称，Character.AI平台“具有不合理的危险性”，并且在向儿童推销时缺乏安全防护措施。 类似Character.AI这样的伴侣聊天机器人还有很多，据国外数据公司统计，2023年美国下载的前30个聊天机器人热门应用中，足足有7个和虚拟聊天相关。 今年年初，外国某基金会发布了一份伴侣聊天机器人分析报告，深度调查了11个热门聊天机器人，揭示出这些“AI女友”或“AI男友”存在一系列的安全和隐私问题。 它们不仅收集了大量用户数据，还使用追踪器将信息发送给谷歌、Facebook等第三方公司。更令人不安的是，这些应用允许用户使用安全性较低的密码，且其所有权和人工智能模型缺乏透明度。这意味着用户的个人信息可能随时面临泄露的风险，而黑客也可能滥用这些信息进行不法活动。 前谷歌CEO埃里克・施密特就对伴侣聊天机器人发出警告，他表示：“当一个12岁或13岁的孩子使用这些工具时，他们可能接触到世界上的善与恶，但他们还没有能力消化这些内容。” 显然，AI已经开始破坏人类社会的正常秩序了。 AI安全在商量好一部通行全球的《AI法典》之前，或许科幻作家阿西莫夫在1942年提出的《机器人三定律‌》，更适合作为AI大模型的底线： （1）机器人不得伤害人类，或因不作为而让人类受到伤害； （2）机器人必须服从人类给它的命令，除非这些命令与第一定律相冲突； （3）机器人必须保护自己的存在，只要这种保护不与第一定律或第二定律相冲突。 文章摘抄36kr: https://www.36kr.com/p/3057406066282627]]></content>
       <categories>
-        <category>安卓应用</category>
+        <category>ChatGPT</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>音乐</tag>
-        <tag>安卓软件</tag>
+        <tag>Openai</tag>
+        <tag>Ai</tag>
       </tags>
   </entry>
   <entry>
@@ -154,16 +141,16 @@
       </tags>
   </entry>
   <entry>
-    <title>取bilibili直连</title>
-    <url>/2024/06/22/biibili-zhilian/</url>
-    <content><![CDATA[😀 这里写文章的前言： 我们在刷bilibili的时候，可能会遇到一些想要分享的视频之类的。 可是我们调用bilibili官方的api，有广告，不支持最大画质，额…实在是难办。 所以今天我给你们带来了bilibili的直连，这个api可以直接播放视频，无需复杂的过程，那么现在开始教程。 APIapi如下： https://bili.api.scc.lol/?bv=bvid&amp;qn=80 参数说明 参数 说明 是否必须 bv 视频的bv号 是 qn 视频清晰度 否（默认为80） 视频清晰度 qn 对应清晰度 16 360P 流畅 32 480P 清晰 64 720P 高清 80 1080P 高清 使用用途可以作为不会过期的b站视频直链使用。 例如在网页中插入： &lt;video controls&gt; &lt;source src=&quot;https://bili.api.scc.lol/?bv=BV1A54y1x7Dj&amp;qn=80&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt; 效果 gotoplayer("[https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80](https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80)"); 上方为北京大学的宣传片，原地址如下：https://www.bilibili.com/video/BV1Tm4215773/]]></content>
+    <title>解锁全网安卓音乐</title>
+    <url>/2024/10/01/app-allmusic/</url>
+    <content><![CDATA[聆听音乐首页推荐作为一款成熟的音乐软件，首页通常最普遍的内容就是音乐推荐，包括热门音乐推荐和每日推荐。 推荐内容都是当前网络上用户播放量比较高的一些知名歌曲。 音乐搜索如果需要查找一部分自己需要的歌曲，在首页最上方有一个搜索框，搜索框输入歌曲名或者歌手名，能从多个搜索源下搜索内容。 APP 包含 4 个搜索引擎源，分别来自不同平台，在资源方面不完全相同，同一搜索词也会搜到不同内容。 相当一部分歌曲除了音频之外，还能播放 MV，点击歌曲名最左侧的+，将需要播放的音乐添加至播放列表。 歌单分类除了搜索关键词，还能根据类型查找不同类别的歌单，歌单分类有很多，根据语种、流派、主题、心情、场景，又能分成更多类型。 歌单是一连串歌曲的合集，至少包含十几首歌曲。 音乐下载大多数的音乐 APP 并不支持歌曲下载到本地，但是这款聆听音乐却能完美支持。 下载的格式有多种选择，包括无损和标准，无损格式文件体积会更大，下载的本地文件就是普通的常见音频格式，可以放到其他播放器上正常播放。 已经下载的歌曲会显示在“下载”导航栏处，不过下载功能并不完全不受限制，每个人每天只能下载 19 次。 歌单导入针对其他 APP 上的用户，聆听音乐也支持将 QQ 音乐歌单导入其中，只需要在 QQ 音乐上分享歌单之后复制链接。 粘贴进聆听音乐就可以很容易地导入 QQ 音乐上的歌单，其他平台歌单暂不支持导入。 本地音乐聆听音乐既是一款在线音乐播放器，也是一款再普通不过的本地音乐播放器，一键扫描手机上的本地音乐文件，按照规则过滤掉不需要的文件，只选取有用的歌曲进行播放。 评价：聆听音乐本身是一款免费的APP，不需要付费，也没有烦人的弹窗广告，但仍然有少量推广内容，还好不影响使用体验。 下载地址：123pan,点我点我,https://www.123pan.com/s/6zVRVv-8TBmd.htmlhttps://mingcy.cn/123pan,%E7%82%B9%E6%88%91%E7%82%B9%E6%88%91,https:/www.123pan.com/s/6zVRVv-8TBmd.html]]></content>
       <categories>
-        <category>技术分享</category>
+        <category>安卓应用</category>
       </categories>
       <tags>
         <tag>工具</tag>
-        <tag>建站</tag>
-        <tag>实用推荐</tag>
+        <tag>音乐</tag>
+        <tag>安卓软件</tag>
       </tags>
   </entry>
   <entry>
@@ -180,16 +167,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Classlsand-班级课程表</title>
-    <url>/2024/09/08/classlasland/</url>
-    <content><![CDATA[碎碎念最近总是在想,有没有一款软件,可以提醒是否下课,让后下节课是什么! 我看见每天学习委员都经常要写课表在黑板上,而且有时候还会忘记,哎! 每次只能写右边的黑板,可能导致左边靠窗户的同学看不到黑板 所以,今天的我带来了这款软件!——Classlsand Classlsand 简介ClassIsland 是一款适用于班级多媒体屏幕的课表信息显示工具，可以在 Windows 屏幕上显示各种信息。本应用的名字灵感源于 iOS 灵动岛（Dynamic Island）功能。 ClassIsland,GitHub,https://github.com/ClassIsland/ClassIsland?tab=readme-ov-filehttps://mingcy.cn/ClassIsland,GitHub,https:/github.com/ClassIsland/ClassIsland?tab=readme-ov-file 功能课表显示 显示当天的课表、当前进行课程的信息 在上下课等重要时间点发出提醒，自选搭配音效、强调特效和语音增强提醒 自选课表隐藏条件、临时隐藏与鼠标穿透，不影响授课 课表编辑与管理 简洁直观的课表编辑工具 从 Excel 或其他软件导入课表 多周轮换、快速录入时间表、自定义设置 临时换课、临时启用某个课表 其它功能 自动同步软件时间、手动对齐铃声 天气、极端天气预警 通过组件（日期、时间、天气简报、倒计日等）和插件高度自定义 ClassIsland 丝滑、流畅的过渡动画 自动获取与系统配色搭配的主题色 自动软件更新 集控管理（即将发布） …… 效果展示 下载可以访问官网Github: 点击直达 123网盘,oWo,https://www.123pan.com/s/pUVeVv-ZZ6KAhttps://mingcy.cn/123%E7%BD%91%E7%9B%98,oWo,https:/www.123pan.com/s/pUVeVv-ZZ6KA 上方为官方版本,无内置课表 此为我校,我班专属的课表,我都安排好了! 茗辰原网盘,oWo,https://cloud.06dn.com/s/2nV8HXhttps://mingcy.cn/%E8%8C%97%E8%BE%B0%E5%8E%9F%E7%BD%91%E7%9B%98,oWo,https:/cloud.06dn.com/s/2nV8HX]]></content>
+    <title>取bilibili直连</title>
+    <url>/2024/06/22/biibili-zhilian/</url>
+    <content><![CDATA[😀 这里写文章的前言： 我们在刷bilibili的时候，可能会遇到一些想要分享的视频之类的。 可是我们调用bilibili官方的api，有广告，不支持最大画质，额…实在是难办。 所以今天我给你们带来了bilibili的直连，这个api可以直接播放视频，无需复杂的过程，那么现在开始教程。 APIapi如下： https://bili.api.scc.lol/?bv=bvid&amp;qn=80 参数说明 参数 说明 是否必须 bv 视频的bv号 是 qn 视频清晰度 否（默认为80） 视频清晰度 qn 对应清晰度 16 360P 流畅 32 480P 清晰 64 720P 高清 80 1080P 高清 使用用途可以作为不会过期的b站视频直链使用。 例如在网页中插入： &lt;video controls&gt; &lt;source src=&quot;https://bili.api.scc.lol/?bv=BV1A54y1x7Dj&amp;qn=80&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt; 效果 gotoplayer("[https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80](https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80)"); 上方为北京大学的宣传片，原地址如下：https://www.bilibili.com/video/BV1Tm4215773/]]></content>
       <categories>
-        <category>硬核科技</category>
+        <category>技术分享</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
+        <tag>工具</tag>
+        <tag>建站</tag>
         <tag>实用推荐</tag>
-        <tag>班级</tag>
       </tags>
   </entry>
   <entry>
@@ -203,6 +190,19 @@
         <tag>Cloudflare</tag>
         <tag>部署</tag>
         <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Classlsand-班级课程表</title>
+    <url>/2024/09/08/classlasland/</url>
+    <content><![CDATA[碎碎念最近总是在想,有没有一款软件,可以提醒是否下课,让后下节课是什么! 我看见每天学习委员都经常要写课表在黑板上,而且有时候还会忘记,哎! 每次只能写右边的黑板,可能导致左边靠窗户的同学看不到黑板 所以,今天的我带来了这款软件!——Classlsand Classlsand 简介ClassIsland 是一款适用于班级多媒体屏幕的课表信息显示工具，可以在 Windows 屏幕上显示各种信息。本应用的名字灵感源于 iOS 灵动岛（Dynamic Island）功能。 ClassIsland,GitHub,https://github.com/ClassIsland/ClassIsland?tab=readme-ov-filehttps://mingcy.cn/ClassIsland,GitHub,https:/github.com/ClassIsland/ClassIsland?tab=readme-ov-file 功能课表显示 显示当天的课表、当前进行课程的信息 在上下课等重要时间点发出提醒，自选搭配音效、强调特效和语音增强提醒 自选课表隐藏条件、临时隐藏与鼠标穿透，不影响授课 课表编辑与管理 简洁直观的课表编辑工具 从 Excel 或其他软件导入课表 多周轮换、快速录入时间表、自定义设置 临时换课、临时启用某个课表 其它功能 自动同步软件时间、手动对齐铃声 天气、极端天气预警 通过组件（日期、时间、天气简报、倒计日等）和插件高度自定义 ClassIsland 丝滑、流畅的过渡动画 自动获取与系统配色搭配的主题色 自动软件更新 集控管理（即将发布） …… 效果展示 下载可以访问官网Github: 点击直达 123网盘,oWo,https://www.123pan.com/s/pUVeVv-ZZ6KAhttps://mingcy.cn/123%E7%BD%91%E7%9B%98,oWo,https:/www.123pan.com/s/pUVeVv-ZZ6KA 上方为官方版本,无内置课表 此为我校,我班专属的课表,我都安排好了! 茗辰原网盘,oWo,https://cloud.06dn.com/s/2nV8HXhttps://mingcy.cn/%E8%8C%97%E8%BE%B0%E5%8E%9F%E7%BD%91%E7%9B%98,oWo,https:/cloud.06dn.com/s/2nV8HX]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>实用推荐</tag>
+        <tag>班级</tag>
       </tags>
   </entry>
   <entry>
@@ -245,7 +245,7 @@
   <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#105;&#x6e;&#102;&#111;&#64;&#x66;&#114;&#x65;&#101;&#110;&#x6f;&#x6d;&#46;&#x63;&#111;&#109;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
+    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#x69;&#110;&#102;&#111;&#x40;&#x66;&#x72;&#x65;&#101;&#x6e;&#x6f;&#x6d;&#46;&#x63;&#111;&#x6d;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
       <categories>
         <category>网站建站</category>
       </categories>
@@ -253,6 +253,30 @@
         <tag>建站</tag>
         <tag>实用推荐</tag>
         <tag>精选网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个图片查地址----最强Aigeospy</title>
+    <url>/2024/07/03/geospy/</url>
+    <content><![CDATA[😀 这里写文章的前言： 这个AI已经很火了，他是根据一张照片就推断出照片所在地，这个算法非常精巧，据说是一位黑客用空余时间研发的，属实震惊到我了，那跟我一起看看啦~ 网址地址网址： GeoSpy AI 简短的介绍： GeoSpy 是一个 AI 驱动的照片识别工具，由波士顿的一家技术公司开发。它经过训练，可以将图像像素与 GPS 数据连接起来，仅根据照片的视觉内容来预测照片的位置。 使用 GeoSpy AI 探索世界是充满乐趣的，无论你是 GeoGuessr 玩家 ，还是只是对朋友照片中的位置感到好奇，GeoSpy 都可以作为辅助应用。我试了几张照片，包括网络图片、自己拍摄和在 Google 街景中截图的，其结果都令人欣喜。 无废话，直接演示 演示我在 Google 冰岛街景中的截图 👇🏻 识别结果： Country: IcelandExplanation: The architecture of the house in the image is similar to that of houses in Iceland. Additionally, the trees in the image are similar to those found in Iceland. （图中房屋的建筑风格与冰岛的房屋类似。 此外，图像中的树木与冰岛发现的树木相似。）Coordinates: 64.144296, -21.931054 GeoSpy 识别正确，还是根据建筑和文字信息。 再试下网图，如果是传播较广的，它也会提供更精确的信息，比如这张： 识别结果： 国家： 意大利 城市： 波西塔诺 说明： 该照片拍摄于意大利波西塔诺。 该镇位于阿马尔菲海岸，以其美丽的悬崖边景色、色彩缤纷的建筑和卵石海滩而闻名。 这张照片是在一家可以欣赏地中海景色的餐厅拍摄的。 波西塔诺的坐标是 40°35′N 14°29′E。 例如下面这张随便到不能再随便的自拍，你能猜到小姐姐在哪里吗？ 这事交给现在的 AI 来处理，它只需要“看”一眼，就能把照片里的**“底裤都给扒出来”**： 美国，加利福尼亚州，旧金山机场洗手间，93 号登机口附近…… 坐标：37.6189° N，122.3744° W 再如下面这张照片，AI 根据湖的特征、树木和背景中的山脉，就匹配到了玛丽湖，同样是给出了精准的坐标： 恐怖如斯，恐怖如斯。 之前也有一位国外小哥（ID：georainbolt）凭借只需看 0.1 秒街景，就能在世界地图上快速锁定位置而在网络上蹿红。 果不其然，斯坦福计算机系学生 Andrew Gao 在尝试了 GeoSpy 之后，就开始喊话这位小哥了： 你要失业喽~ 不过也有 GeoGuessr 的职业玩家坐不住了，站出来表示不服： 申请一战！ 人类 vs AI这位挑战者，名叫做 Gavin（下文我们简称“G 哥”），是一位正在参与 GeoGuessr 2024 世界杯的职业选手。 G 哥把他跟 AI 在线对垒的情况上传到了网上。 规则和 GeoGuessr 一致，还是看图猜位置。 在第一轮对决中，G 哥凭借抓到了马路道边上土耳其样式柱子的细节，判断这张图可能是在土耳其附近。 结果显示，这张图里的位置确实是在土耳其附近，但距离精准的位置还差 241km。 接下来就轮到 GeoSpy 这个 AI 选手登场了。 G 哥处理的方式是将截图“投喂”给 AI，在静候了片刻之后，GeoSpy 就给出了结果。 国家：土耳其 经纬度：39.998923, 32.607491 然后 G 哥在地图中搜索这个经纬度，再跟 GeoGuessr 的“标准答案”做比较： 第一轮的结果可以说是让 G 哥大受震惊，GeoSpy 给出的位置比他的更近…… 来看下 G 哥当时的表情： 在接下来的“火拼”中，G 哥变得更加仔细，都凑近屏幕去捕捉细节了。 G 哥这次给出的答案是苏门答腊岛，但实际的结果却不是很理想，距离“标准答案”足足 703km。 到了 GeoSpy 这边，虽然大致位置都是在印度尼西亚，但这次给出的位置就没有那么准确了。 不过比起 G 哥给出的答案，距离上却还是 AI 的答案更近些，这使得 G 哥开始有点无语子…… 在接下来的比试中，即便 G 哥把猜测距离压缩了 86km，但 GeoSpy 给出的结果又是更接近于“标准答案”。 G 哥此时已经开始掩面了： 在最后一轮 battle 中，G 哥直接说出： 人类必须反将 AI 一军。 然后 G 哥把头埋得更深了，当他捕捉到图中路边有文字时，脸上露出了得意的笑容： 这局稳了，AI 它不识字的。 G 哥的结果是，距离标准答案 134km。 不过令 G 哥万万没想到的是，GeoSpy，它！识！字！ 这张照片是在波兰拍摄的，因为建筑物上写着“Abet”，这是一家波兰公司。 然而 G 哥还是觉得这把有希望，因为他发现 GeoSpy 只能定位到城市。 所以这把如果 AI 给出的坐标是“标准答案”旁边的城市“华沙”，那么 G 哥就赢了。 结果还真是……G 哥也是露出了久违的笑容，并骄傲地说： AI 永远不会打败人类！ （Emmmm……G 哥，你非要这么算的话…… 也行。） G 哥在下一轮的比拼中，将地图范围缩小到了自己的老家 —— 芝加哥。 这次在自己的地盘上，G 哥的表现非常勇猛，有距离“标准答案”仅 2m 和 4m 的成绩。 不过 AI 这边也是非常精准，起码在看图描述的过程中可以精确地说出周边的地址，这也让 G 哥着实捏了一把汗。 但在地图上搜 AI 给出的坐标的时候，却比文字描述的地点远一些了，有的甚至还定位到了海上。 …… 最后，G 哥在与 AI 交锋了数次之后感慨道： 这次体验非常有趣并且让人印象深刻。 但我也害怕这样的技术在未来 5 年后会迭代到什么样的程度。 注：以上取自IT之家]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>精选网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>glary系统优化</title>
+    <url>/2024/07/23/glary/</url>
+    <content><![CDATA[😀 这里写文章的前言： 《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。 📝 主旨内容《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用， 🤗 软件使用软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。 他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。 如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。 扫描结束后，会提示有多少项要修复，点击修复问题即可。 在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。 总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。 🫰下载360安全云盘 - 用户空间]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>系统优化</tag>
       </tags>
   </entry>
   <entry>
@@ -267,18 +291,6 @@
         <tag>安卓应用</tag>
         <tag>广告</tag>
         <tag>app,</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>glary系统优化</title>
-    <url>/2024/07/23/glary/</url>
-    <content><![CDATA[😀 这里写文章的前言： 《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。 📝 主旨内容《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用， 🤗 软件使用软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。 他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。 如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。 扫描结束后，会提示有多少项要修复，点击修复问题即可。 在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。 总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。 🫰下载360安全云盘 - 用户空间]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>系统优化</tag>
       </tags>
   </entry>
   <entry>
@@ -304,15 +316,16 @@
       </tags>
   </entry>
   <entry>
-    <title>一个图片查地址----最强Aigeospy</title>
-    <url>/2024/07/03/geospy/</url>
-    <content><![CDATA[😀 这里写文章的前言： 这个AI已经很火了，他是根据一张照片就推断出照片所在地，这个算法非常精巧，据说是一位黑客用空余时间研发的，属实震惊到我了，那跟我一起看看啦~ 网址地址网址： GeoSpy AI 简短的介绍： GeoSpy 是一个 AI 驱动的照片识别工具，由波士顿的一家技术公司开发。它经过训练，可以将图像像素与 GPS 数据连接起来，仅根据照片的视觉内容来预测照片的位置。 使用 GeoSpy AI 探索世界是充满乐趣的，无论你是 GeoGuessr 玩家 ，还是只是对朋友照片中的位置感到好奇，GeoSpy 都可以作为辅助应用。我试了几张照片，包括网络图片、自己拍摄和在 Google 街景中截图的，其结果都令人欣喜。 无废话，直接演示 演示我在 Google 冰岛街景中的截图 👇🏻 识别结果： Country: IcelandExplanation: The architecture of the house in the image is similar to that of houses in Iceland. Additionally, the trees in the image are similar to those found in Iceland. （图中房屋的建筑风格与冰岛的房屋类似。 此外，图像中的树木与冰岛发现的树木相似。）Coordinates: 64.144296, -21.931054 GeoSpy 识别正确，还是根据建筑和文字信息。 再试下网图，如果是传播较广的，它也会提供更精确的信息，比如这张： 识别结果： 国家： 意大利 城市： 波西塔诺 说明： 该照片拍摄于意大利波西塔诺。 该镇位于阿马尔菲海岸，以其美丽的悬崖边景色、色彩缤纷的建筑和卵石海滩而闻名。 这张照片是在一家可以欣赏地中海景色的餐厅拍摄的。 波西塔诺的坐标是 40°35′N 14°29′E。 例如下面这张随便到不能再随便的自拍，你能猜到小姐姐在哪里吗？ 这事交给现在的 AI 来处理，它只需要“看”一眼，就能把照片里的**“底裤都给扒出来”**： 美国，加利福尼亚州，旧金山机场洗手间，93 号登机口附近…… 坐标：37.6189° N，122.3744° W 再如下面这张照片，AI 根据湖的特征、树木和背景中的山脉，就匹配到了玛丽湖，同样是给出了精准的坐标： 恐怖如斯，恐怖如斯。 之前也有一位国外小哥（ID：georainbolt）凭借只需看 0.1 秒街景，就能在世界地图上快速锁定位置而在网络上蹿红。 果不其然，斯坦福计算机系学生 Andrew Gao 在尝试了 GeoSpy 之后，就开始喊话这位小哥了： 你要失业喽~ 不过也有 GeoGuessr 的职业玩家坐不住了，站出来表示不服： 申请一战！ 人类 vs AI这位挑战者，名叫做 Gavin（下文我们简称“G 哥”），是一位正在参与 GeoGuessr 2024 世界杯的职业选手。 G 哥把他跟 AI 在线对垒的情况上传到了网上。 规则和 GeoGuessr 一致，还是看图猜位置。 在第一轮对决中，G 哥凭借抓到了马路道边上土耳其样式柱子的细节，判断这张图可能是在土耳其附近。 结果显示，这张图里的位置确实是在土耳其附近，但距离精准的位置还差 241km。 接下来就轮到 GeoSpy 这个 AI 选手登场了。 G 哥处理的方式是将截图“投喂”给 AI，在静候了片刻之后，GeoSpy 就给出了结果。 国家：土耳其 经纬度：39.998923, 32.607491 然后 G 哥在地图中搜索这个经纬度，再跟 GeoGuessr 的“标准答案”做比较： 第一轮的结果可以说是让 G 哥大受震惊，GeoSpy 给出的位置比他的更近…… 来看下 G 哥当时的表情： 在接下来的“火拼”中，G 哥变得更加仔细，都凑近屏幕去捕捉细节了。 G 哥这次给出的答案是苏门答腊岛，但实际的结果却不是很理想，距离“标准答案”足足 703km。 到了 GeoSpy 这边，虽然大致位置都是在印度尼西亚，但这次给出的位置就没有那么准确了。 不过比起 G 哥给出的答案，距离上却还是 AI 的答案更近些，这使得 G 哥开始有点无语子…… 在接下来的比试中，即便 G 哥把猜测距离压缩了 86km，但 GeoSpy 给出的结果又是更接近于“标准答案”。 G 哥此时已经开始掩面了： 在最后一轮 battle 中，G 哥直接说出： 人类必须反将 AI 一军。 然后 G 哥把头埋得更深了，当他捕捉到图中路边有文字时，脸上露出了得意的笑容： 这局稳了，AI 它不识字的。 G 哥的结果是，距离标准答案 134km。 不过令 G 哥万万没想到的是，GeoSpy，它！识！字！ 这张照片是在波兰拍摄的，因为建筑物上写着“Abet”，这是一家波兰公司。 然而 G 哥还是觉得这把有希望，因为他发现 GeoSpy 只能定位到城市。 所以这把如果 AI 给出的坐标是“标准答案”旁边的城市“华沙”，那么 G 哥就赢了。 结果还真是……G 哥也是露出了久违的笑容，并骄傲地说： AI 永远不会打败人类！ （Emmmm……G 哥，你非要这么算的话…… 也行。） G 哥在下一轮的比拼中，将地图范围缩小到了自己的老家 —— 芝加哥。 这次在自己的地盘上，G 哥的表现非常勇猛，有距离“标准答案”仅 2m 和 4m 的成绩。 不过 AI 这边也是非常精准，起码在看图描述的过程中可以精确地说出周边的地址，这也让 G 哥着实捏了一把汗。 但在地图上搜 AI 给出的坐标的时候，却比文字描述的地点远一些了，有的甚至还定位到了海上。 …… 最后，G 哥在与 AI 交锋了数次之后感慨道： 这次体验非常有趣并且让人印象深刻。 但我也害怕这样的技术在未来 5 年后会迭代到什么样的程度。 注：以上取自IT之家]]></content>
+    <title>幻休</title>
+    <url>/2024/02/21/huan/</url>
+    <content><![CDATA[介绍幻休是一款助眠、 冥想、放松与缓解压力的健康应用，可引导您以一-种放松且自然的方式.安然入睡，改善您的睡眠。 解释因为正版的app已经收费了，所以这里出一期破解教程 如果不想跟着破解，点击这里直接跳转下载我破解好的就行点我跳转下载 正文[破解开始]##第一步:搜索getSvipStatus()I选择第1个结果点进去下面看图片教程↓【最后一张附带效果图】 本教程需用到的赋值代码如下↓第一个：const-string v0,”2088-09-13” 第二个：const&#x2F;4 v0, 0x3 下载夸克:夸克下载百度网盘:百度网盘下载 提取码:5o5f 七牛云：七牛云]]></content>
       <categories>
-        <category>技术分享</category>
+        <category>安卓应用</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>精选网站</tag>
+        <tag>安卓应用</tag>
+        <tag>实用推荐</tag>
+        <tag>app</tag>
       </tags>
   </entry>
   <entry>
@@ -368,19 +381,6 @@
       </tags>
   </entry>
   <entry>
-    <title>幻休</title>
-    <url>/2024/02/21/huan/</url>
-    <content><![CDATA[介绍幻休是一款助眠、 冥想、放松与缓解压力的健康应用，可引导您以一-种放松且自然的方式.安然入睡，改善您的睡眠。 解释因为正版的app已经收费了，所以这里出一期破解教程 如果不想跟着破解，点击这里直接跳转下载我破解好的就行点我跳转下载 正文[破解开始]##第一步:搜索getSvipStatus()I选择第1个结果点进去下面看图片教程↓【最后一张附带效果图】 本教程需用到的赋值代码如下↓第一个：const-string v0,”2088-09-13” 第二个：const&#x2F;4 v0, 0x3 下载夸克:夸克下载百度网盘:百度网盘下载 提取码:5o5f 七牛云：七牛云]]></content>
-      <categories>
-        <category>安卓应用</category>
-      </categories>
-      <tags>
-        <tag>安卓应用</tag>
-        <tag>实用推荐</tag>
-        <tag>app</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>李跳跳复活版！</title>
     <url>/2024/03/16/ltt/</url>
     <content><![CDATA[李跳跳复活版！简介 说起手机跳过广告，之前也是给大家分享过一些的，其中最受欢迎的当属李跳跳，只是它后面很多规则都失效了，导致它虽然可以打开，但是还是无法使用！ 去年，广告跳过界的“明星应用”——李跳跳，因大厂的律师函而一度暂停运营。这让很多依赖它们跳过广告的用户感到惋惜。不过，好消息是，虽然老的应用暂时休息了，但新的去广告力量已经崛起！比如我们之前介绍过的开屏跳过，它的功能和李跳跳如出一辙。 对于这类的软件，大家都是不可缺少的，今天就来给大家分享一个最新的规则导入方法，让它能够再次陪伴大家左右！ 2024全新李跳跳去广告规则合集 涵盖广泛：这次的规则合集包括了超过3000条规则，几乎涵盖了你日常使用的所有APP。 适配多样：不管是哪种形式的开屏广告，这个合集都能帮你轻松跳过。 简单易用：只需几步操作，就能将这些规则导入到李跳跳中，让你的APP启动更加清爽。 适用平台：安卓 李跳跳最新规则导入方法这里是给大家准备了两份规则，加起来共3000多条，基本上大部分APP都适用！使用方法也很简单，大家先将软件和规则一同下载到本地，然后用HTML查看器或者WPS Office打开，将所有的规则全选并复制下来！ 打开李跳跳应用，点击“更多”。 在右上角找到“···”，点击后选择“导入规则”。 在弹出的输入框里，长按粘贴你复制的规则代码即可。 文件下载李跳跳325条规则.txt 李跳跳881条规则.txt 李跳跳879条规则.txt 外番值得注意的是，现在的李跳跳是一个完全离线的APP，不联网也能使用，有了这个全新的规则合集，你的日常使用绝对没问题！ 李跳跳的水果摊 在小镇的一角，靠近熙熙攘攘的市场，有一个小小的水果摊。摊主是一个名叫李跳跳的小女孩，她年纪虽小，却已经懂得了生活的艰辛与美好。她的眼睛像两颗明亮的星星，闪烁着希望的光芒。她的笑容像春天的阳光，温暖而灿烂。 李跳跳的水果摊虽然不大，但摆放得井井有条，各种水果琳琅满目，色彩斑斓。红通通的苹果，黄澄澄的香蕉，绿油油的西瓜，还有紫莹莹的葡萄……每一种水果都像是大自然的馈赠，散发着诱人的香气。 李跳跳对待每一位顾客都热情周到，她总是笑眯眯地询问顾客的需求，然后麻利地挑选出最新鲜、最美味的水果。她的双手在水果摊上飞快地移动，就像是在弹奏一曲美妙的乐章。顾客们都喜欢她，喜欢她的水果，更喜欢她的笑容和热情。 虽然李跳跳每天都很忙碌，但她从不觉得辛苦。她喜欢看着顾客们满意地离开，喜欢听着他们夸赞她的水果。她觉得，这就是她想要的生活，简单而充实。 然而，生活并不总是一帆风顺。有时候，天气不好，水果的销量就会受到影响；有时候，一些挑剔的顾客会让她感到头疼。但李跳跳从不气馁，她总是相信，只要她努力，一切都会好起来。 果然，在她的坚持和努力下，水果摊的生意越来越好。越来越多的人知道了李跳跳和她的水果摊，他们被她的热情和坚持所打动，成为了她的忠实顾客。 李跳跳用她的双手和笑容，创造了一个属于她自己的小世界。在这个世界里，充满了水果的香气和人们的笑声。她感到无比幸福和满足，因为她知道，这就是她想要的生活。]]></content>
@@ -432,18 +432,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Office-2025激活</title>
-    <url>/2024/11/23/office-ltsc/</url>
-    <content><![CDATA[起源在我发现我的WPS用不了之后,打算更新OFFice来使用,但是我万万没想到,竟然卡在激活上面了,故出一期新版的激活教程 激活方法Office LTSC 2024 激活方法同样可以使用之前博客《无需激活码，一条安全命令轻松激活 Windows 10&#x2F;11 系统》来激活，这里简单做演示，关于该方法的详细信息可以到原文查看。 使用KMS激活脚本 使用管理员身份，打开 Powershell，在 Powershell 中输入： irm https://massgrave.dev/get | iex KMS激活 图 1 稍等片刻，会弹出一个对话框，如下图，输入 4 KMS激活 图 2 激活 Office LTSC 2024，输入 2 KMS激活 图 3 稍等片刻，就可以看到激活成功 KMS激活 图 4 KMS激活 图 5 注意事项 此激活方法使用第三方脚本，虽然是开源脚本，使用人数众多，也难免存在风险。 建议在使用前备份重要数据。 如果条件允许，推荐购买正版许可。]]></content>
-      <categories>
-        <category>技术教学</category>
-      </categories>
-      <tags>
-        <tag>激活</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ODE多功能工具箱</title>
     <url>/2024/09/07/ode/</url>
     <content><![CDATA[简介在我下载某学习资料的时候啊,百度网盘真的是不给力啊! 这个下载速度实在是,太慢了,实在是受不了. 但是有身为一个资深的白嫖党,这我肯定不能啊,所以我稍微动用了一下技术,这好了,成功让我拿到了百度网盘的解析链接. 只不过作者的服务器太小了,让后资金也不足,哎,可惜了!但还是能用! 软件介绍一款由窝长大佬开发并长期维护的某度网盘解析下载工具，超级良心的一款难得的下载工具，很少有这种好工具了，之前的版本失效了，不过也能用，不限速拉满，主要看你个人带宽哈，而最近窝长大大，又宣布更新了，经过了大佬的再次整活，此款多功能助手再度复活！！！这么说吧，即使开了某会员，也未必有这么快！！！ 此次更新的主要几个点： 1、高速下载恢复了，优化的越来越好了，看个人网速，依然能够体验到不错的下载速度，怎么说都好，相比某度的几K每秒，强太多了有木有~ 2、打包下载功能暂时被搁置，目前只能一个一个下载资源，不过完全不影响使用，作者也会在接下来的版本，继续优化。 3、可能会遇到小众资源以K速下载，只是小众而已下载速度受限，但大部分资源仍然可以高速下载。 软件使用我使用了一下,这个下载效果也是很不错的. 只需要粘贴分享的链接即可食用 就像这样子: 这个也是很不错的,但是目前打包功能已经用不了了,因为作者的服务器不行了,哎! 看看下载的效果: 最后再看一下,是否能流畅播放: 下载链接这个也是非常不错的,良心推荐 既不想让跟多人用,因为作者服务器不信,我怕崩了,又怕需要这个工具的人又看不到,哎! 123网盘：https://www.123pan.com/s/qEbeVv-C9y63.html 123网盘,owo,https://www.123pan.com/s/qEbeVv-C9y63.htmlhttps://mingcy.cn/123%E7%BD%91%E7%9B%98,owo,https:/www.123pan.com/s/qEbeVv-C9y63.html 迅雷网盘：https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa# 迅雷网盘,owo,https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#https://mingcy.cn/%E8%BF%85%E9%9B%B7%E7%BD%91%E7%9B%98,owo,https:/pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#]]></content>
@@ -454,6 +442,18 @@
         <tag>电脑软件</tag>
         <tag>工具</tag>
         <tag>百度网盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Office-2025激活</title>
+    <url>/2024/11/23/office-ltsc/</url>
+    <content><![CDATA[起源在我发现我的WPS用不了之后,打算更新OFFice来使用,但是我万万没想到,竟然卡在激活上面了,故出一期新版的激活教程 激活方法Office LTSC 2024 激活方法同样可以使用之前博客《无需激活码，一条安全命令轻松激活 Windows 10&#x2F;11 系统》来激活，这里简单做演示，关于该方法的详细信息可以到原文查看。 使用KMS激活脚本 使用管理员身份，打开 Powershell，在 Powershell 中输入： irm https://massgrave.dev/get | iex KMS激活 图 1 稍等片刻，会弹出一个对话框，如下图，输入 4 KMS激活 图 2 激活 Office LTSC 2024，输入 2 KMS激活 图 3 稍等片刻，就可以看到激活成功 KMS激活 图 4 KMS激活 图 5 注意事项 此激活方法使用第三方脚本，虽然是开源脚本，使用人数众多，也难免存在风险。 建议在使用前备份重要数据。 如果条件允许，推荐购买正版许可。]]></content>
+      <categories>
+        <category>技术教学</category>
+      </categories>
+      <tags>
+        <tag>激活</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -482,19 +482,6 @@
       </tags>
   </entry>
   <entry>
-    <title>QQ主题全部免费使用？</title>
-    <url>/2024/03/02/qqth/</url>
-    <content><![CDATA[😀 这里写文章的前言： 原理只不过是使用免费的主题，之后替换成付费的主题就行，主题而已，其他人有看不到，自己喜欢就行了 前言适配最新版QQNT版本，bilibili有教程，这里放置链接，建议一起配合使用 看视频请点我 1.替换教程 QQ主题文件替换|QQ非(会员|SVIP)自定义主题教学#手机美化 #数码科技 #南枝QQ主题 #qq主题美化 #QQ主题文件替换 教学_哔哩哔哩_bilibili 2.锁定教程 关于QQ主题文件替换的情况补充_哔哩哔哩_bilibili 3.提取教程 [1]QQ免抓包使用付费主题_哔哩哔哩_bilibili 步骤： 找到QQ系统级data数据目录（即Mt管理器提取安装包时的数据目录1）→找到QQ主题缓存文件夹→随便应用主题，将此主题作为准备替换的主题→删除此主题二级&#x2F;三级文件夹包括压缩包里面的文件，将下载的文件移动过去→停止运行QQ→应用成功 重新打开即可 教程1.OP管理器注入QQ先用op框架&#x2F;MT管理器对QQ安装包注入提供文件管理器。并重新安装注入好的QQ 点击开始注入，等待注入完成就可以安装QQ了 登录QQ这里不多说，登陆上就行了~ Mt管理使用本地储存打开Mt管理，先点左上角三条杠，再点右边的三个点，添加本地存储，选择QQ添加进去。 &lt;! 如果你有root，可以跳过这一步 -→ 你把QQ系统级的data数据目录添加了储存器，这一部可以让你快速找到目录。 找到QQ的文件夹点击使用此文件夹，之后会在本地出现QQ的挂载 查找QQ主题路径根目录和内部储存下面会有你刚刚添加的QQ目录（储存器），点进去，点data，然后找到结尾是810的文件夹，点进去。root用户在mt管理器→提取安装包→QQ→数据目录1里面找文件夹这里就是你QQ主题的缓存路径。 ROOT路径 “&#x2F;data&#x2F;user&#x2F;0&#x2F;com.tencent.mobileqq&#x2F;app_theme_810”非ROOT路径 “&#x2F;storage&#x2F;你的QQ储存器&#x2F;data&#x2F;app_theme_810” 这一步主要是替换的目录，有关键的作用 回到QQ使用一个免费的主题 ⚠️注意：使用前点击分享，之后复制链接，在ID的后面是主题的id名字，方便替换 正文—开始修改文件 箭头为免费主题的id，不同主题的id不同，请注意分辨 我们分别在右边准备提取的主题 左右都打开数字文件夹，一边是QQ正在使用的主题，里面是一个数字文件夹和一个压缩包。我们要做的是，删除原来文件夹子文件夹内的内容和压缩包的内容，在每个文件(夹)名字不变的情况下，把需要的主题资源移动过去。 结束QQ，让后重新打开就会奇迹的发现，自己的主题变成免费的了~ 展示]]></content>
-      <categories>
-        <category>实用软件</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>安卓应用</tag>
-        <tag>实用推荐</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>获取QQ空间工具</title>
     <url>/2024/10/14/qq-histort/</url>
     <content><![CDATA[简介一款名为恢复QQ空间内容小具”的软件，可以帮助用户查看和同步QQ空间的留言和相册。该软件支持Mac和Windows系统，并提供Python的flag库进行开发。用户可以通过扫码登录和导出功能来保存和管理自己的空间内容。视频还展示了软件的操作流程和导出后的文件结构。总体而言，该工具为用户提供了方便快捷的QQ空间管理和备份功能 开源QQ-history,Github,https://github.com/LibraHp/GetQzonehistory?tab=readme-ov-filehttps://mingcy.cn/QQ-history,Github,https:/github.com/LibraHp/GetQzonehistory?tab=readme-ov-file 功能介绍✨ 功能亮点维码登录：只需扫描二维码，即可快速登录你的QQ空间，安全便捷！历史内容查看：轻松浏览你和好友的历史动态，记录那些美好的瞬间。用户信息展示：显示你的QQ头像、昵称等信息，让你在使用时拥有更好的体验多种列表选顶：查看说说、留言、好友、转发、图片等多种内容，一应俱全获取内容：提取并查看QQ空间中的所有历史内容，包括发布的说说、图片等说说列表：查看你从最早到最新发布的所有说说内容及时间。留言列表：查看好友给你QQ空间留下的所有留言。好友列表：获取并查看QQ空间中的好友信息。转发列表：查看你曾经转发的所有内容。互动分析：基于好友互动的频率，展示与你互动最多的好友排行榜。开放源代码：完全免费且开源，欢迎大家参与贡献和讨论！ 🚀使用指南打开程序后，使用手机QQ扫描二维码登录。登录成功后，你将进入主界面，可以选择查看不同的内容。在左侧则标签页中选择想要查看的内容列表，享受你的QQ空间回忆之旅！ 目录结构project/├── resource/ # 资源目录│ ├── config/ # 配置目录，文件保存位置配置│ │ └── config.ini│ ├── result/ # 导出结果的目录，格式为“你的qq.xlsx”│ │ ├── ...│ │ └── ...│ ├── temp/ # 缓存目录│ │ ├── ...│ │ └── ...│ ├── user/ # 用户信息│ │ ├── ...│ │ └── ...├── util/ # 单元工具目录│ ├── ConfigUtil.py # 读取配置│ ├── GetAllMomentsUtil.py # 获取未删除的所有说说│ ├── LoginUtil.py # 登录相关│ ├── RequestUtil.py # 请求数据相关│ └── ToolsUtil.py # 工具├── main.py # 主程序入口├── fetch_all_message.py # 主程序入口├── README.md # 项目说明文件├── requirements.txt # 依赖项列表└── LICENSE # 许可证文件 软件展示 软件下载github,download,https://github.com/LibraHp/GetQzonehistory/releases/tag/gui-v1.0.2https://mingcy.cn/github,download,https:/github.com/LibraHp/GetQzonehistory/releases/tag/gui-v1.0.2 夸克,download,https://pan.quark.cn/s/3a5ddbde14e2https://mingcy.cn/%E5%A4%B8%E5%85%8B,download,https:/pan.quark.cn/s/3a5ddbde14e2]]></content>
@@ -509,16 +496,16 @@
       </tags>
   </entry>
   <entry>
-    <title>神奇应用!什么都能搜!</title>
-    <url>/2024/06/23/sqyy/</url>
-    <content><![CDATA[💡 分享一款收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类的神器应用。 简介一款全新上线的安卓应用分享平台，收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类，用户可以在平台上搜索到自己想要的任何应用，直接一键高速下载。 一款集合了众多应用资源的软件，挑选优质应用，所有推荐的软件经过精心筛选，还有社区广场，进行资源交流，享受简洁易懂的服务和功能模块，包括搜索、分类浏览、收藏等。 软件使用下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。 下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。 打开应用页面，可以看见软件内的全部分类，有影S播放、音y播放、漫画、文字等娱乐分类，还有下载、存储、搜索等工具分类，一共有30多种，非常丰富。 还有游戏的专属页面，这里全是游戏资源，有休闲益智、飞行射击、塔防游戏、冒险解密、经营策略、角色扮演等十八种，各种游戏都有。 打开广场页面，这里有多种交流板块，我们可以在这里分享软件、资源交流，有什么资源要找的，或者有什么好资源可以分享的，都可以在这里交流。 下载链接蓝奏云：https://www.lanzouw.com/izwpg22c1w8d 神奇应用.apk - 蓝奏云]]></content>
+    <title>QQ主题全部免费使用？</title>
+    <url>/2024/03/02/qqth/</url>
+    <content><![CDATA[😀 这里写文章的前言： 原理只不过是使用免费的主题，之后替换成付费的主题就行，主题而已，其他人有看不到，自己喜欢就行了 前言适配最新版QQNT版本，bilibili有教程，这里放置链接，建议一起配合使用 看视频请点我 1.替换教程 QQ主题文件替换|QQ非(会员|SVIP)自定义主题教学#手机美化 #数码科技 #南枝QQ主题 #qq主题美化 #QQ主题文件替换 教学_哔哩哔哩_bilibili 2.锁定教程 关于QQ主题文件替换的情况补充_哔哩哔哩_bilibili 3.提取教程 [1]QQ免抓包使用付费主题_哔哩哔哩_bilibili 步骤： 找到QQ系统级data数据目录（即Mt管理器提取安装包时的数据目录1）→找到QQ主题缓存文件夹→随便应用主题，将此主题作为准备替换的主题→删除此主题二级&#x2F;三级文件夹包括压缩包里面的文件，将下载的文件移动过去→停止运行QQ→应用成功 重新打开即可 教程1.OP管理器注入QQ先用op框架&#x2F;MT管理器对QQ安装包注入提供文件管理器。并重新安装注入好的QQ 点击开始注入，等待注入完成就可以安装QQ了 登录QQ这里不多说，登陆上就行了~ Mt管理使用本地储存打开Mt管理，先点左上角三条杠，再点右边的三个点，添加本地存储，选择QQ添加进去。 &lt;! 如果你有root，可以跳过这一步 -→ 你把QQ系统级的data数据目录添加了储存器，这一部可以让你快速找到目录。 找到QQ的文件夹点击使用此文件夹，之后会在本地出现QQ的挂载 查找QQ主题路径根目录和内部储存下面会有你刚刚添加的QQ目录（储存器），点进去，点data，然后找到结尾是810的文件夹，点进去。root用户在mt管理器→提取安装包→QQ→数据目录1里面找文件夹这里就是你QQ主题的缓存路径。 ROOT路径 “&#x2F;data&#x2F;user&#x2F;0&#x2F;com.tencent.mobileqq&#x2F;app_theme_810”非ROOT路径 “&#x2F;storage&#x2F;你的QQ储存器&#x2F;data&#x2F;app_theme_810” 这一步主要是替换的目录，有关键的作用 回到QQ使用一个免费的主题 ⚠️注意：使用前点击分享，之后复制链接，在ID的后面是主题的id名字，方便替换 正文—开始修改文件 箭头为免费主题的id，不同主题的id不同，请注意分辨 我们分别在右边准备提取的主题 左右都打开数字文件夹，一边是QQ正在使用的主题，里面是一个数字文件夹和一个压缩包。我们要做的是，删除原来文件夹子文件夹内的内容和压缩包的内容，在每个文件(夹)名字不变的情况下，把需要的主题资源移动过去。 结束QQ，让后重新打开就会奇迹的发现，自己的主题变成免费的了~ 展示]]></content>
       <categories>
-        <category>安卓应用</category>
+        <category>实用软件</category>
       </categories>
       <tags>
         <tag>工具</tag>
         <tag>安卓应用</tag>
-        <tag>app</tag>
+        <tag>实用推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -534,21 +521,9 @@
       </tags>
   </entry>
   <entry>
-    <title>三班时间碎片</title>
-    <url>/2025/01/16/three/</url>
-    <content><![CDATA[茗起接到了老师的信息,说是要我剪一个长达三分钟的视频,用于家长会!特此此处转为高二三班同学展示! 下载网盘1 网盘2]]></content>
-      <categories>
-        <category>实际生活</category>
-      </categories>
-      <tags>
-        <tag>班级</tag>
-        <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>绝版安卓工具箱？能有多强？</title>
-    <url>/2024/06/17/tools-box/</url>
-    <content><![CDATA[😀 这里写文章的前言： 这里收录了我自己用的非常好用的工具箱。如果你有推荐的，可以在最下面留言哦！ 宇宙工具箱工具特色：具有超多的收录的工具，不仅而此，还有广大网友自己上传的网址！ 软件大小：46.2M 更新频率：很快 软件价格：28.8R(非常划算) https://www.notion.so 远航工具箱软件特色：功能俱全，而且软件简洁，高效，打开即用，可食用性极强！ 软件大小：61.8M 软件价格：免费 七点工具箱软件特色：玩网络的用户强烈推荐，有专门的隔空闪传，隔空投屏等.. 软件大小：30.79M 软件价格：5.8月(不过免费版够用) 微箱软件特色：这个工具啊，真的太厉害了，专门收录你在网上又搜不到的，藏着许许多多的私人网址，小众，很喜欢。 软件大小：7.59M 软件价格：免费 软件下载：合集如下： 工具箱官方版下载丨最新版下载丨绿色版下载丨APP下载-123云盘 七彩云存储]]></content>
+    <title>神奇应用!什么都能搜!</title>
+    <url>/2024/06/23/sqyy/</url>
+    <content><![CDATA[💡 分享一款收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类的神器应用。 简介一款全新上线的安卓应用分享平台，收录了海量的应用资源，含有播放、漫画、工具、资源等三十多种应用分类，用户可以在平台上搜索到自己想要的任何应用，直接一键高速下载。 一款集合了众多应用资源的软件，挑选优质应用，所有推荐的软件经过精心筛选，还有社区广场，进行资源交流，享受简洁易懂的服务和功能模块，包括搜索、分类浏览、收藏等。 软件使用下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。 下载安装之后，需要注册一下账号登录，登录之后才可以进行社区交流、应用投稿等功能。软件内的应用全部免费下载。 打开应用页面，可以看见软件内的全部分类，有影S播放、音y播放、漫画、文字等娱乐分类，还有下载、存储、搜索等工具分类，一共有30多种，非常丰富。 还有游戏的专属页面，这里全是游戏资源，有休闲益智、飞行射击、塔防游戏、冒险解密、经营策略、角色扮演等十八种，各种游戏都有。 打开广场页面，这里有多种交流板块，我们可以在这里分享软件、资源交流，有什么资源要找的，或者有什么好资源可以分享的，都可以在这里交流。 下载链接蓝奏云：https://www.lanzouw.com/izwpg22c1w8d 神奇应用.apk - 蓝奏云]]></content>
       <categories>
         <category>安卓应用</category>
       </categories>
@@ -570,6 +545,31 @@
         <tag>works</tag>
         <tag>壁纸</tag>
         <tag>随机图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三班时间碎片</title>
+    <url>/2025/01/16/three/</url>
+    <content><![CDATA[茗起接到了老师的信息,说是要我剪一个长达三分钟的视频,用于家长会!特此此处转为高二三班同学展示! 下载网盘 网盘1 网盘2]]></content>
+      <categories>
+        <category>实际生活</category>
+      </categories>
+      <tags>
+        <tag>班级</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>绝版安卓工具箱？能有多强？</title>
+    <url>/2024/06/17/tools-box/</url>
+    <content><![CDATA[😀 这里写文章的前言： 这里收录了我自己用的非常好用的工具箱。如果你有推荐的，可以在最下面留言哦！ 宇宙工具箱工具特色：具有超多的收录的工具，不仅而此，还有广大网友自己上传的网址！ 软件大小：46.2M 更新频率：很快 软件价格：28.8R(非常划算) https://www.notion.so 远航工具箱软件特色：功能俱全，而且软件简洁，高效，打开即用，可食用性极强！ 软件大小：61.8M 软件价格：免费 七点工具箱软件特色：玩网络的用户强烈推荐，有专门的隔空闪传，隔空投屏等.. 软件大小：30.79M 软件价格：5.8月(不过免费版够用) 微箱软件特色：这个工具啊，真的太厉害了，专门收录你在网上又搜不到的，藏着许许多多的私人网址，小众，很喜欢。 软件大小：7.59M 软件价格：免费 软件下载：合集如下： 工具箱官方版下载丨最新版下载丨绿色版下载丨APP下载-123云盘 七彩云存储]]></content>
+      <categories>
+        <category>安卓应用</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>安卓应用</tag>
+        <tag>app</tag>
       </tags>
   </entry>
   <entry>
@@ -611,19 +611,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Free窗口音乐</title>
-    <url>/2024/10/01/win-musicfree/</url>
-    <content><![CDATA[一、软件介绍MusicFree是一款开源、免费、可定制化的本地音乐播放器。 二、配置方法MusicFree 安卓版 配置方法 点击左上角按钮 点击【插件设置】 点击右下角加号 点击【从网络安装插件】 输入插件 URL 即可（插件链接以 .json 或 .js 结尾） 复制url https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json MusicFree PC版 配置方法 点击主界面左侧【插件管理】 点击顶部【从网络安装】 输入插件 URL 即可（插件链接以 .json 或 .js 结尾） 复制url https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json 效果展示: 下载官网: musicfree.upup.fun,musicfree,https://musicfree.upup.fun/https://mingcy.cn/musicfree.upup.fun,musicfree,https:/musicfree.upup.fun/ GIthub: github,OvO,https://github.com/maotoumao/MusicFreehttps://mingcy.cn/github,OvO,https:/github.com/maotoumao/MusicFree]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>工具</tag>
-        <tag>音乐</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>win-文件查重</title>
     <url>/2024/06/24/win-chachong/</url>
     <content><![CDATA[😀 这里写文章的前言： 我们电脑上的文件，复制来粘贴去，自己肯定不知道那里可以删，可以保留的，那么，下面这款软件将会查出你重复的文件，你可以进行删除与保留。 简介4DDiG Duplicate File Deleter是一款电脑重复文件查找的软件，软件是绿色单文件版，双击打开后会提示你升级，大家不要升级！ 完全免费！ 大小：36.19MB 应用软件打开后是英文版，在右上角设置成简体中文即可。 设置后的软件界面是下面这样，点击选择查找的盘符，软件就开始搜索你电脑中的重复文件。 说真的，电脑重复文件我推荐过好多款，但是像这款界面这么简洁，功能操作这么简单的还真的不少。 查找后分了图片、文档、视频、音频和其他这几类，需要删除哪个选择即可。 你也可以自动选择，软件会自动帮你选出文件，选择后点右下角的【移除】即可。 有不少重复文件查找的软件，但是功能太强大，操作就变成非常复杂，而这款重复文件查找软件操作就简单多了！ 下载两款小工具阿里云：https://www.alipan.com/s/UxzeVC2gmHR 阿里云盘分享 123盘：https://www.123pan.com/s/pUVeVv-ciqKA.html 两款软件官方版下载丨最新版下载丨绿色版下载丨APP下载-123云盘]]></content>
@@ -636,15 +623,16 @@
       </tags>
   </entry>
   <entry>
-    <title>资源管理器一键修改了！</title>
-    <url>/2024/07/24/win11-win10/</url>
-    <content><![CDATA[🏡 分享提升win11的资源管理器，第一种方法按住F11，第二种改文件。 Windows 11 中使用 Win10的文件资源管理器！速度立马起飞Windows 11的文件资源管理器功能丰富,但性能略逊于Windows 10版本。新版本增加了选项卡、现代UI和预览窗格等功能,但也导致运行速度变慢。因此,一些用户更偏好旧版本的简洁和快速,甚至怀念经典的Ribbon界面。 好消息是,有一种方法可以永久恢复Windows 10的文件资源管理器。只需在注册表编辑器中进行一次简单调整即可实现。如果你也想回到熟悉的旧版界面,这个解决方案值得一试。 这个方法适用于当前所有版本的 Windows 11，包括最新的 24H2版 1.在 Windows 11 中恢复旧文件资源管理器首先打开记事本并粘贴以下文本代码： Windows Registry Editor Version 5.00[HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0&#125;]@=&quot;CLSID_ItemsViewAdapter&quot;[HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0&#125;\InProcServer32]@=&quot;C:\\Windows\\System32\\Windows.UI.FileExplorer.dll_&quot;&quot;ThreadingModel&quot;=&quot;Apartment&quot;[HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;6480100b-5a83-4d1e-9f69-8ae5a88e9a33&#125;]@=&quot;File Explorer Xaml Island View Adapter&quot;[HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;6480100b-5a83-4d1e-9f69-8ae5a88e9a33&#125;\InProcServer32]@=&quot;C:\\Windows\\System32\\Windows.UI.FileExplorer.dll_&quot;&quot;ThreadingModel&quot;=&quot;Apartment&quot;[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar\ShellBrowser]&quot;ITBar7Layout&quot;=hex:13,00,00,00,00,00,00,00,00,00,00,00,20,00,00,00,10,00,01,00,\ 00,00,00,00,01,00,00,00,01,07,00,00,5e,01,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 现在，单击文件 &gt; 保存，然后从“保存类型”下拉菜单中选择所有项目。为文件指定任何你喜欢的名称，但不要忘记在末尾添加 .reg。例如，“file.reg” 打开新创建的文件并确认注册表中的更改，然后重新启动计算机，就可以回到 Windows 10 的资源管理器了！ 说实话，错误更少，性能更好。 如果你需要 在 Windows 11 中关闭windows 10的文件资源管理器那么方法是一样的，打开记事本并将以下文本粘贴到其中： Windows Registry Editor Version 5.00 [-HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0&#125;] [-HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;6480100b-5a83-4d1e-9f69-8ae5a88e9a33&#125;] 单击文件 &gt; 保存，选择所有项目并以 .reg 扩展名保存文件。打开文件，确认注册表中的更改并重新启动计算机。Windows 11 中的标准文件资源管理器就会恢复回来。]]></content>
+    <title>Free窗口音乐</title>
+    <url>/2024/10/01/win-musicfree/</url>
+    <content><![CDATA[一、软件介绍MusicFree是一款开源、免费、可定制化的本地音乐播放器。 二、配置方法MusicFree 安卓版 配置方法 点击左上角按钮 点击【插件设置】 点击右下角加号 点击【从网络安装插件】 输入插件 URL 即可（插件链接以 .json 或 .js 结尾） 复制url https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json MusicFree PC版 配置方法 点击主界面左侧【插件管理】 点击顶部【从网络安装】 输入插件 URL 即可（插件链接以 .json 或 .js 结尾） 复制url https://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json 效果展示: 下载官网: musicfree.upup.fun,musicfree,https://musicfree.upup.fun/https://mingcy.cn/musicfree.upup.fun,musicfree,https:/musicfree.upup.fun/ GIthub: github,OvO,https://github.com/maotoumao/MusicFreehttps://mingcy.cn/github,OvO,https:/github.com/maotoumao/MusicFree]]></content>
       <categories>
-        <category>技术分享</category>
+        <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>系统优化</tag>
-        <tag>指令</tag>
+        <tag>电脑软件</tag>
+        <tag>工具</tag>
+        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -661,14 +649,15 @@
       </tags>
   </entry>
   <entry>
-    <title>网易云音乐脚本</title>
-    <url>/2024/11/20/wyy--2/</url>
-    <content><![CDATA[起源闲来无事,想看看有没有什么新文件更新了,这不被我发现的!此为转载篇!!! 网易云音乐脚本点击此处安装 (请确保浏览器已经安装了TamperMonkey) 功能 云盘快传 无需文件快速上传云盘歌曲,三分钟解锁周杰伦。 歌曲下载 不消耗vip下载次数,不是ncm加密文件。 请将 TamperMonkey 插件设置中的 下载模式 设置为 浏览器 API 并将 /.(mp3|flac|lrc)$/ 添加进文件扩展名白名单 以保证能正常下载。 歌曲转存云盘 用网易云自身音源将歌曲快速上传到云盘，不需要完整的文件下载和上传过程。 高音质试听： 解除网页端只能听标准音质的限制。 在鼠标右键菜单中可进行优先试听音质的设置。 歌单页加载全部歌曲 评论区显示IP属地、使用指定的IP地址发送评论 歌单歌曲排序 将歌单内歌曲按发行时间、红心数、评论数进行排序。 限免vip歌曲下载与上传 对客户端内普通用户可免费试听的vip歌曲进行下载与上传。 云盘匹配纠错 云盘歌曲匹配歌词、封面和评论。 云盘音质提升 寻找网易云的音质比云盘文件更好的歌曲，以进行替换。只有上传成功时才删除原来低音质文件。 需要是黑胶会员以获取高音质音源。 本地文件上传云盘 可先编辑需要在云盘显示的歌手,专辑信息再上传。 云盘导入导出 云盘歌曲导入另一账号。和云盘快传相同原理。 使用说明脚本安装完成后，登陆网易云音乐网页端。在右上角用户头像的 我的主页 中，使用云盘相关功能。在单曲、专辑、歌单（并非我的音乐的歌单，而是 我的主页 的歌单）页面使用下载、转存云盘功能。 问题说明 云盘快传:不保证内容的准确性、完整性。部分音质为算法升频。 上传失败时，浏览器控制台(F12)有输出具体错误内容。大多数时候重试一次就好了。 脚本不支持ViolentMonkey插件安装，使用ViolentMonkey会导致上传报错、获取不到超清母带、用不了SVIP的6T空间等问题。 截图 参考网易云音乐API来自Binaryify&#x2F;NeteaseCloudMusicApi 咪咕音乐下载脚本在咪咕音乐专辑详情页添加下载链接 可无需登录下载至臻(24Bit) 安装 (请确保浏览器已经安装了TamperMonkey)]]></content>
+    <title>资源管理器一键修改了！</title>
+    <url>/2024/07/24/win11-win10/</url>
+    <content><![CDATA[🏡 分享提升win11的资源管理器，第一种方法按住F11，第二种改文件。 Windows 11 中使用 Win10的文件资源管理器！速度立马起飞Windows 11的文件资源管理器功能丰富,但性能略逊于Windows 10版本。新版本增加了选项卡、现代UI和预览窗格等功能,但也导致运行速度变慢。因此,一些用户更偏好旧版本的简洁和快速,甚至怀念经典的Ribbon界面。 好消息是,有一种方法可以永久恢复Windows 10的文件资源管理器。只需在注册表编辑器中进行一次简单调整即可实现。如果你也想回到熟悉的旧版界面,这个解决方案值得一试。 这个方法适用于当前所有版本的 Windows 11，包括最新的 24H2版 1.在 Windows 11 中恢复旧文件资源管理器首先打开记事本并粘贴以下文本代码： Windows Registry Editor Version 5.00[HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0&#125;]@=&quot;CLSID_ItemsViewAdapter&quot;[HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0&#125;\InProcServer32]@=&quot;C:\\Windows\\System32\\Windows.UI.FileExplorer.dll_&quot;&quot;ThreadingModel&quot;=&quot;Apartment&quot;[HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;6480100b-5a83-4d1e-9f69-8ae5a88e9a33&#125;]@=&quot;File Explorer Xaml Island View Adapter&quot;[HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;6480100b-5a83-4d1e-9f69-8ae5a88e9a33&#125;\InProcServer32]@=&quot;C:\\Windows\\System32\\Windows.UI.FileExplorer.dll_&quot;&quot;ThreadingModel&quot;=&quot;Apartment&quot;[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar\ShellBrowser]&quot;ITBar7Layout&quot;=hex:13,00,00,00,00,00,00,00,00,00,00,00,20,00,00,00,10,00,01,00,\ 00,00,00,00,01,00,00,00,01,07,00,00,5e,01,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\ 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 现在，单击文件 &gt; 保存，然后从“保存类型”下拉菜单中选择所有项目。为文件指定任何你喜欢的名称，但不要忘记在末尾添加 .reg。例如，“file.reg” 打开新创建的文件并确认注册表中的更改，然后重新启动计算机，就可以回到 Windows 10 的资源管理器了！ 说实话，错误更少，性能更好。 如果你需要 在 Windows 11 中关闭windows 10的文件资源管理器那么方法是一样的，打开记事本并将以下文本粘贴到其中： Windows Registry Editor Version 5.00 [-HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0&#125;] [-HKEY_CURRENT_USER\Software\Classes\CLSID\&#123;6480100b-5a83-4d1e-9f69-8ae5a88e9a33&#125;] 单击文件 &gt; 保存，选择所有项目并以 .reg 扩展名保存文件。打开文件，确认注册表中的更改并重新启动计算机。Windows 11 中的标准文件资源管理器就会恢复回来。]]></content>
       <categories>
-        <category>技术教学</category>
+        <category>技术分享</category>
       </categories>
       <tags>
-        <tag>脚本</tag>
+        <tag>系统优化</tag>
+        <tag>指令</tag>
       </tags>
   </entry>
   <entry>
@@ -685,16 +674,14 @@
       </tags>
   </entry>
   <entry>
-    <title>系统优化工具,太强了!</title>
-    <url>/2024/07/23/xtyh/</url>
-    <content><![CDATA[😀 这里写文章的前言： **《系统优化》**电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。 📝 主旨内容《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用， 🤗 软件使用软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。 他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。 如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。 扫描结束后，会提示有多少项要修复，点击修复问题即可。 在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。 总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。 🫰下载360安全云盘 - 用户空间]]></content>
+    <title>网易云音乐脚本</title>
+    <url>/2024/11/20/wyy--2/</url>
+    <content><![CDATA[起源闲来无事,想看看有没有什么新文件更新了,这不被我发现的!此为转载篇!!! 网易云音乐脚本点击此处安装 (请确保浏览器已经安装了TamperMonkey) 功能 云盘快传 无需文件快速上传云盘歌曲,三分钟解锁周杰伦。 歌曲下载 不消耗vip下载次数,不是ncm加密文件。 请将 TamperMonkey 插件设置中的 下载模式 设置为 浏览器 API 并将 /.(mp3|flac|lrc)$/ 添加进文件扩展名白名单 以保证能正常下载。 歌曲转存云盘 用网易云自身音源将歌曲快速上传到云盘，不需要完整的文件下载和上传过程。 高音质试听： 解除网页端只能听标准音质的限制。 在鼠标右键菜单中可进行优先试听音质的设置。 歌单页加载全部歌曲 评论区显示IP属地、使用指定的IP地址发送评论 歌单歌曲排序 将歌单内歌曲按发行时间、红心数、评论数进行排序。 限免vip歌曲下载与上传 对客户端内普通用户可免费试听的vip歌曲进行下载与上传。 云盘匹配纠错 云盘歌曲匹配歌词、封面和评论。 云盘音质提升 寻找网易云的音质比云盘文件更好的歌曲，以进行替换。只有上传成功时才删除原来低音质文件。 需要是黑胶会员以获取高音质音源。 本地文件上传云盘 可先编辑需要在云盘显示的歌手,专辑信息再上传。 云盘导入导出 云盘歌曲导入另一账号。和云盘快传相同原理。 使用说明脚本安装完成后，登陆网易云音乐网页端。在右上角用户头像的 我的主页 中，使用云盘相关功能。在单曲、专辑、歌单（并非我的音乐的歌单，而是 我的主页 的歌单）页面使用下载、转存云盘功能。 问题说明 云盘快传:不保证内容的准确性、完整性。部分音质为算法升频。 上传失败时，浏览器控制台(F12)有输出具体错误内容。大多数时候重试一次就好了。 脚本不支持ViolentMonkey插件安装，使用ViolentMonkey会导致上传报错、获取不到超清母带、用不了SVIP的6T空间等问题。 截图 参考网易云音乐API来自Binaryify&#x2F;NeteaseCloudMusicApi 咪咕音乐下载脚本在咪咕音乐专辑详情页添加下载链接 可无需登录下载至臻(24Bit) 安装 (请确保浏览器已经安装了TamperMonkey)]]></content>
       <categories>
-        <category>硬核科技</category>
+        <category>技术教学</category>
       </categories>
       <tags>
-        <tag>电脑软件</tag>
-        <tag>系统优化</tag>
-        <tag>推荐</tag>
+        <tag>脚本</tag>
       </tags>
   </entry>
   <entry>
@@ -707,6 +694,19 @@
       <tags>
         <tag>安卓应用</tag>
         <tag>实用推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统优化工具,太强了!</title>
+    <url>/2024/07/23/xtyh/</url>
+    <content><![CDATA[😀 这里写文章的前言： **《系统优化》**电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。 📝 主旨内容《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用， 🤗 软件使用软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。 他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。 如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。 扫描结束后，会提示有多少项要修复，点击修复问题即可。 在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。 总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。 🫰下载360安全云盘 - 用户空间]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>系统优化</tag>
+        <tag>推荐</tag>
       </tags>
   </entry>
   <entry>
