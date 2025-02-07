@@ -1,0 +1,880 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/mingcy.png">
+  <link rel="icon" href="/img/mingcy.png">
+  
+    <link rel="canonical" href="https://mingcy.cn/2024/10/27/tvbox/"/>
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="茗辰原">
+  <meta name="keywords" content="编程,科技,技术,分享,心理,爱好">
+  
+    <meta name="description" content="TV版本安装TVBOX安装完以后什么都无法观看-需要配置地址 TVBOX配置地址首先打开右上角的设置按钮 选中配置地址 获取存储权限-提示获取成功 然后用手机或者电脑扫描二维码或者打开以上地址填入数据源地址即可 TVBOX使用如果失效了可以自定义数据源(推荐T4聚合) 也可以配置其他参数-自行摸索 接口链接TVBox各路大佬配置（排名不分先后）： （1）唐三：https:&#x2F;&#x2F;hutool.ml&#x2F;t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TVBOX 配置两端通用">
+<meta property="og:url" content="https://mingcy.cn/2024/10/27/tvbox/index.html">
+<meta property="og:site_name" content="茗辰原">
+<meta property="og:description" content="TV版本安装TVBOX安装完以后什么都无法观看-需要配置地址 TVBOX配置地址首先打开右上角的设置按钮 选中配置地址 获取存储权限-提示获取成功 然后用手机或者电脑扫描二维码或者打开以上地址填入数据源地址即可 TVBOX使用如果失效了可以自定义数据源(推荐T4聚合) 也可以配置其他参数-自行摸索 接口链接TVBox各路大佬配置（排名不分先后）： （1）唐三：https:&#x2F;&#x2F;hutool.ml&#x2F;t">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://view.lixingyong.com/images/2024/10/27/wallhaven-qzy187.webp">
+<meta property="article:published_time" content="2024-10-27T04:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-07T12:56:39.227Z">
+<meta property="article:author" content="茗辰原">
+<meta property="article:tag" content="电脑软件">
+<meta property="article:tag" content="安卓应用">
+<meta property="article:tag" content="推荐">
+<meta property="article:tag" content="影视">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://view.lixingyong.com/images/2024/10/27/wallhaven-qzy187.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>TVBOX 配置两端通用 - 茗辰原</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="https://mingcy.cn/css/custom.css">
+<link rel="stylesheet" href="/custom/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"mingcy.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":"https://cloud.umami.is/script.js","website_id":"86be4560-edbf-468b-9897-813f94dfe6c3","domains":"mingcy.cn","start_time":"2024-01-20T00:00:00.000Z","token":"9D5rqSfZAhwFUYcRIgjW1nzqExKVACFo","api_server":"https://cloud.umami.is/"}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        let umami = document.createElement('script');
+        umami.async = true;
+        umami.src = "https://cloud.umami.is/script.js";
+        umami.setAttribute("data-website-id", "86be4560-edbf-468b-9897-813f94dfe6c3");
+        umami.setAttribute("data-domains", "mingcy.cn");
+        document.head.appendChild(umami);
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="茗辰原" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong class="navbar-title">MingCY</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('http://view.lixingyong.com/images/2024/10/27/wallhaven-qzy187.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="TVBOX 配置两端通用"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-10-27 12:00" pubdate>
+          2024年10月27日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          868 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          8 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+    
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">TVBOX 配置两端通用</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="TV版本"><a href="#TV版本" class="headerlink" title="TV版本"></a>TV版本</h1><h2 id="安装TVBOX"><a href="#安装TVBOX" class="headerlink" title="安装TVBOX"></a>安装TVBOX</h2><p>安装完以后什么都无法观看-需要配置地址<br><img src="/2024/10/27/tvbox/1.webp" srcset="/img/loading.gif" lazyload></p>
+<h2 id="TVBOX配置地址"><a href="#TVBOX配置地址" class="headerlink" title="TVBOX配置地址"></a>TVBOX配置地址</h2><p>首先打开右上角的设置按钮</p>
+<p>选中配置地址<br><img src="/2024/10/27/tvbox/3.webp" srcset="/img/loading.gif" lazyload></p>
+<p>获取存储权限-提示获取成功<br><img src="/2024/10/27/tvbox/4.webp" srcset="/img/loading.gif" lazyload></p>
+<p>然后用手机或者电脑扫描二维码或者打开以上地址填入数据源地址即可</p>
+<h2 id="TVBOX使用"><a href="#TVBOX使用" class="headerlink" title="TVBOX使用"></a>TVBOX使用</h2><p>如果失效了可以自定义数据源(推荐T4聚合)<br><img src="/2024/10/27/tvbox/5.webp" srcset="/img/loading.gif" lazyload></p>
+<p>也可以配置其他参数-自行摸索</p>
+<h2 id="接口链接"><a href="#接口链接" class="headerlink" title="接口链接"></a>接口链接</h2><p>TVBox各路大佬配置（排名不分先后）：</p>
+<p>（1）唐三：<a target="_blank" rel="noopener" href="https://hutool.ml/tang">https://hutool.ml/tang</a></p>
+<p>（2）Fongmi：<a target="_blank" rel="noopener" href="https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json">https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json</a></p>
+<p>（3）俊于：<a target="_blank" rel="noopener" href="http://home.jundie.top:81/top98.json">http://home.jundie.top:81/top98.json</a></p>
+<p>（4）饭太硬：http:&#x2F;&#x2F;饭太硬.ga&#x2F;x&#x2F;o.json</p>
+<p>（5）霜辉月明py：<a target="_blank" rel="noopener" href="https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json">https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json</a></p>
+<p>（6）小雅dr：<a target="_blank" rel="noopener" href="http://drpy.site/js1">http://drpy.site/js1</a></p>
+<p>（7）菜妮丝：<a target="_blank" rel="noopener" href="https://tvbox.cainisi.cf/">https://tvbox.cainisi.cf</a></p>
+<p>（8）神器：https:&#x2F;&#x2F;神器每日推送.tk&#x2F;pz.json</p>
+<p>（9）巧技：<a target="_blank" rel="noopener" href="http://pandown.pro/tvbox/tvbox.json">http://pandown.pro/tvbox/tvbox.json</a></p>
+<p>（10）刚刚：http:&#x2F;&#x2F;刚刚.live&#x2F;猫</p>
+<p>（11）吾爱有三：<a target="_blank" rel="noopener" href="http://52bsj.vip:98/0805">http://52bsj.vip:98/0805</a></p>
+<p>（12）潇洒：<a target="_blank" rel="noopener" href="https://download.kstore.space/download/2863/01.txt">https://download.kstore.space/download/2863/01.txt</a></p>
+<p>（13）佰欣园：<a target="_blank" rel="noopener" href="https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt">https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt</a></p>
+<p>（14）胖虎：<a target="_blank" rel="noopener" href="https://notabug.org/imbig66/tv-spider-man/raw/master/%E9%85%8D%E7%BD%AE/0801.json">https://notabug.org/imbig66/tv-spider-man/raw/master/配置/0801.json</a></p>
+<p>（15）云星日记：<a target="_blank" rel="noopener" href="https://maoyingshi.cc/tiaoshizhushou/1.txt">https://maoyingshi.cc/tiaoshizhushou/1.txt</a></p>
+<p>（16）Yoursmile7：<a target="_blank" rel="noopener" href="https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json">https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json</a></p>
+<p>（17）BOX：<a target="_blank" rel="noopener" href="http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM=:0">http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0</a></p>
+<p>（18）哔哩学习：<a target="_blank" rel="noopener" href="http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4=:0">http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0</a></p>
+<p>（19）UndCover：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json">https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json</a></p>
+<p>（20）木极：<a target="_blank" rel="noopener" href="https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt">https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt</a></p>
+<p>（21）Ray：<a target="_blank" rel="noopener" href="https://dxawi.github.io/0/0.json">https://dxawi.github.io/0/0.json</a></p>
+<p>（22）甜蜜：<a target="_blank" rel="noopener" href="https://kebedd69.github.io/TVbox-interface/py%E7%94%9C%E8%9C%9C.json">https://kebedd69.github.io/TVbox-interface/py甜蜜.json</a></p>
+<p>（23）52bsj：<a target="_blank" rel="noopener" href="http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM=:0">http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0</a></p>
+<p>（24）肥猫：http:&#x2F;&#x2F;我不是.肥猫.love:63</p>
+<h1 id="PC版本"><a href="#PC版本" class="headerlink" title="PC版本"></a>PC版本</h1><h2 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h2><p>ZyPlayer v3.3.1 中文版 免费全网影视播放器</p>
+<p><strong>GitHub原文地址</strong>：</p>
+<a href="GITHUB,github,ovo,https://github.com/Hiram-Wong/ZyPlayer" title target></a>
+
+<p><strong>使用方法：</strong><br>安装软件后，依次点开设置 -&gt; 基础配置 -&gt; 其他 -&gt; 数据管理 -&gt; 一键配置 -&gt; 软件接口然后填入<strong>订阅地址</strong>，就能正常使用了。</p>
+<p><strong>专用接口源:</strong></p>
+<blockquote>
+<p>接口分享：<a target="_blank" rel="noopener" href="http://xiaoguozitv.cn/catys/zyplay.json">http://xiaoguozitv.cn/catys/zyplay.json</a></p>
+<p>订阅地址：<a target="_blank" rel="noopener" href="https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json">https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json</a></p>
+<p>订阅地址：<a target="_blank" rel="noopener" href="https://raw.kgithub.com/cddehsy/zyjs/main/zy.json">https://raw.kgithub.com/cddehsy/zyjs/main/zy.json</a></p>
+</blockquote>
+<p><strong>以上地址选第一个即可，遇到失效了就换！</strong></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142446y8y6kys6dzpsl6ko.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_003.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142455zu6ze27ii2zru1z5.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_004.jpg"></p>
+<p><strong>| 软件介绍：</strong></p>
+<p><strong>ZY Player开源播放神器复活，更强了</strong></p>
+<p>用过 ZY Player 的都知道，这是一个免费开放源的播放器软件，兼容各种资源网接口，支持看视频、直播，而且这款软件已经存在了好几年了，只能说很强。</p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142753vkdat8lud1x4adu2.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_005.jpg"></p>
+<p>新版本颜值更高，而且功能都有很大的提升，不仅更强，而且整体界面也改版了。</p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142829d498lq8dv1ly8l8d.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_006.jpg"></p>
+<p>ZyPlayer跟之前的一样，专注于资源网接口，同样可以选择不同的接口源，点击左上角就可以切换接口源。</p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142901ob03bzo3gnnu03n6.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_007.jpg"></p>
+<p>而且不同源站，同样支持选择分类，分类也做得非常详细，当然还有很多细节值得体验。</p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142950gx6pcpqv5el5uvzc.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_008.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/142956dw07ds9dni7rmw7k.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_009.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143003sfe89shs5szs37m5.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_010.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143015bysasx47paxbqa0c.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_011.jpg"></p>
+<p>基于 vue 全家桶 + tdesign + electron 开发；主题色：薄荷绿。</p>
+<p><strong>已有功能</strong></p>
+<ul>
+<li>全平台支持 Windows、Mac、Linux</li>
+<li>适配黑暗模式</li>
+<li>支持资源站 cms（json 接口）</li>
+<li>支持 IPTV（m3u、genre）及电子节目单</li>
+<li>支持主流视频平台解析（解析页面有个小彩蛋，可在代码里自行探索）</li>
+<li>老板键，一键隐藏</li>
+<li>播放器软解</li>
+<li>…</li>
+</ul>
+<p><strong>|</strong> <strong>部分功能详细截图：</strong></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143042j6qq226lej5qzt9j.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_012.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143056tejo53b313b6p5b6.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_013.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143112d1s8fvzab141j41i.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_014.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143125sb7jpmasjq77ztts.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_015.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143139rc6qxm4cxp6xlbyq.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_016.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143153fo9x4a9jkraia9v4.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_017.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143206as4bzb82jzk70jww.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_018.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143217c318rnm19gl2sgsw.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_019.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143228ynzbo2rsyopbmrz2.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_020.jpg"></p>
+<p><img src="https://bbs.pcbeta.com/data/attachment/forum/202401/05/143244rqzagtvihvqzg33d.jpg" srcset="/img/loading.gif" lazyload alt="DM_20240105142311_021.jpg"></p>
+<h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><p>夸克:</p>
+<a href="%E5%A4%B8%E5%85%8B,%E7%BD%91%E7%9B%98,%E8%BD%AC%E5%AD%98,https://pan.quark.cn/s/4e43e04ec7be" title target></a>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90/" class="category-chain-item">影视资源</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/" class="print-no-link">#电脑软件</a>
+      
+        <a href="/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/" class="print-no-link">#安卓应用</a>
+      
+        <a href="/tags/%E6%8E%A8%E8%8D%90/" class="print-no-link">#推荐</a>
+      
+        <a href="/tags/%E5%BD%B1%E8%A7%86/" class="print-no-link">#影视</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>TVBOX 配置两端通用</div>
+      <div>https://mingcy.cn/2024/10/27/tvbox/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>茗辰原</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年10月27日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年2月7日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/10/27/ai-tlp/" title="震惊!AI塔罗牌">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">震惊!AI塔罗牌</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/26/suijip/" title="使用works制作随机图!">
+                        <span class="hidden-mobile">使用works制作随机图!</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo.mingcy.cn","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <script type="text/javascript" color="255,255,255" pointColor="252,228,236" opacity="1.0" zIndex="-1" count="110" src="/custom/js/canvas-nest.js"></script>
+        </div>
+      </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  <div>
+    <span id="timeDate">正在载入天数...</span>
+    <span id="times">载入时分秒...</span>
+    <script>
+    var now = new Date();
+    function createtime(){
+        var grt= new Date("01/26/2024 22:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if(String(mnum).length ==1 ){
+                  mnum = "0" + mnum;
+        }
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if(String(snum).length ==1 ){
+                  snum = "0" + snum;
+        }
+        document.getElementById("timeDate").innerHTML = "🚀已持续航行&nbsp"+dnum+"&nbsp天";  
+        document.getElementById("times").innerHTML = hnum + "&nbsp时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+    }
+    setInterval("createtime()",250);
+    </script>
+  </div>
+  
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="https://mingcy.cn/custom/fanghonh.js"></script>
+<script src="https://static.kevinchu.top/blog/assets/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
