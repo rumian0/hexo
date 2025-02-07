@@ -154,19 +154,6 @@
       </tags>
   </entry>
   <entry>
-    <title>取bilibili直连</title>
-    <url>/2024/06/22/biibili-zhilian/</url>
-    <content><![CDATA[😀 这里写文章的前言： 我们在刷bilibili的时候，可能会遇到一些想要分享的视频之类的。 可是我们调用bilibili官方的api，有广告，不支持最大画质，额…实在是难办。 所以今天我给你们带来了bilibili的直连，这个api可以直接播放视频，无需复杂的过程，那么现在开始教程。 APIapi如下： HTMLhttps://bili.api.scc.lol/?bv=bvid&amp;qn=80 参数说明 参数 说明 是否必须 bv 视频的bv号 是 qn 视频清晰度 否（默认为80） 视频清晰度 qn 对应清晰度 16 360P 流畅 32 480P 清晰 64 720P 高清 80 1080P 高清 使用用途可以作为不会过期的b站视频直链使用。 例如在网页中插入： JSX&lt;video controls&gt; &lt;source src=&quot;https://bili.api.scc.lol/?bv=BV1A54y1x7Dj&amp;qn=80&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt; 效果 gotoplayer("[https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80](https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80)"); 上方为北京大学的宣传片，原地址如下：https://www.bilibili.com/video/BV1Tm4215773/]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>建站</tag>
-        <tag>实用推荐</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爱奇艺免费了？</title>
     <url>/2024/04/14/aqi/</url>
     <content><![CDATA[😀 爱奇艺前言：话说我们平时一定会追剧或看电影对吧？但想什么主流的视频平台都有个充会员功能，但是吧，我们兜比脸还干净，这时候该怎么愉快的追剧呢？请看下文！ 方法总结 下载爱奇艺视频qsv格式文件再进行解密 使用解析网站进行解析 使用获取内部m3u8的方式解析 使用别的影视网址平替 方法一：qsv格式文件，进行解密注：不建议使用 下载文件这个不用多说吧，点击爱奇艺的下载按钮就行了！ 网址转换 如图所示，可以进行QSV的转换，但是要么速度慢要么收费，不建议使用 上方网址：https://www.media.io/zh/convert/qsv-to-mp4.html 方法二：解析网站我们都知道啊，每个播放视频都是从后天服务器传输视频给你的，但是后天数据都是加密的，我们只需要替换掉就可以，简简单单啦！ 注：建议使用电脑 打开网站爱奇艺： 爱奇艺视频,视频,视频网站,高清视频,电影,电视剧,动漫,综艺,音乐 复制网址 看到了吧，上方的网址复制 如果你仔细看就会发现，我的视频上面有一个绿色的小三角，合适我内置的插件，可以获取到内置的播放地址，后面再说！ 在打开解析网址 立即享受，看就完了 类似的网站还有很多，这里来源于网络，请自测（不自动更新） 酉灿：https://vip.superso.top/ 夜雨聆风：https://vip.yeyulingfeng.com/ 理想智能云：http://movie.imyjs.cn/ Agoni：https://www.agoni.top/video/index.html 方法三：获取m3u8播放链接 这里使用猫爪，抓取ts格式文件，让后每一个ts就是一个小分段，每个视频都由许多ts组成，要不然视频一次性加载太慢了，1个小时多，分为多个ts就可以边看别加载，不会卡顿 点击我的小三角就会看到url，这里就是当前视频的播放源，让后使用m3u8播放器进行播放就可以了 一样的，复制粘贴即可 这里推荐的网址m3u8播放网址 https://anym3u8player.com/cn/ http://tool.liumingye.cn/m3u8/ http://tool.pfan.cn/m3u8 https://www.zhanid.com/tool/m3u8.html 影视平台(推荐指数🤩🤩🤩🤩🤩🤩)首推：猫影 作为我第一大影视集合，有这超多的资源，丰富的网址，任你选择 想看什么就直接搜什么，之后就会为你选出最佳的影视平台，跳转到别的网址去观看，播放速度秒了！ 想看什么直接搜！ BY：茗辰原]]></content>
@@ -176,6 +163,19 @@
       <tags>
         <tag>电脑软件</tag>
         <tag>工具</tag>
+        <tag>实用推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>取bilibili直连</title>
+    <url>/2024/06/22/biibili-zhilian/</url>
+    <content><![CDATA[😀 这里写文章的前言： 我们在刷bilibili的时候，可能会遇到一些想要分享的视频之类的。 可是我们调用bilibili官方的api，有广告，不支持最大画质，额…实在是难办。 所以今天我给你们带来了bilibili的直连，这个api可以直接播放视频，无需复杂的过程，那么现在开始教程。 APIapi如下： HTMLhttps://bili.api.scc.lol/?bv=bvid&amp;qn=80 参数说明 参数 说明 是否必须 bv 视频的bv号 是 qn 视频清晰度 否（默认为80） 视频清晰度 qn 对应清晰度 16 360P 流畅 32 480P 清晰 64 720P 高清 80 1080P 高清 使用用途可以作为不会过期的b站视频直链使用。 例如在网页中插入： JSX&lt;video controls&gt; &lt;source src=&quot;https://bili.api.scc.lol/?bv=BV1A54y1x7Dj&amp;qn=80&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt; 效果 gotoplayer("[https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80](https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80)"); 上方为北京大学的宣传片，原地址如下：https://www.bilibili.com/video/BV1Tm4215773/]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>建站</tag>
         <tag>实用推荐</tag>
       </tags>
   </entry>
@@ -245,7 +245,7 @@
   <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#x69;&#110;&#x66;&#111;&#x40;&#x66;&#x72;&#101;&#x65;&#110;&#111;&#x6d;&#x2e;&#99;&#111;&#109;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
+    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#x69;&#x6e;&#102;&#111;&#x40;&#x66;&#x72;&#x65;&#101;&#110;&#x6f;&#x6d;&#x2e;&#99;&#x6f;&#109;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
       <categories>
         <category>网站建站</category>
       </categories>
