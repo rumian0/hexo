@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C语言扫雷</title>
+    <url>/2024/04/10/C-saolei/</url>
+    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下CSHARP#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>123云盘-下载工具</title>
     <url>/2024/09/30/123-liuliang/</url>
     <content><![CDATA[方法一123云盘 下载工具123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。 功能特点 登录：使用用户名和密码登录 123Pan 账号。 列出文件：显示当前目录下的所有文件和文件夹。 下载文件：通过模拟安卓客户端协议下载文件，绕过流量限制。 上传文件：将本地文件上传到 123Pan。 分享文件：生成文件分享链接。 删除文件：删除指定的文件或文件夹。 创建文件夹：在当前目录下创建新文件夹。 使用方法环境准备 确保已安装 Python 3.x。 安装所需的 Python 库： UNDEFINEDpip install -r requirements.txt 配置文件在首次运行脚本时，会自动生成一个 123pan.txt 文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。 运行脚本SQL可以直接下载release的可执行文件运行或运行python脚本。脚本运行： 克隆或下载本项目代码到本地。 打开终端或命令提示符，进入项目目录。 运行脚本： 使用安卓客户端协议 UNDEFINEDpython android.py UNDEFINED使用web协议python web.py 123云盘 下载工具GitHub地址地址： 方法二今天推荐的是一个数字网盘脚本，可以解除限制，完全免费使用！ 该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要先安装Tampermonkey插件，Tampermonkey插件可以在文末关键字获取。 安装完油猴插件后，再安装脚本，方法是打开Greasy Fork中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】 再点【安装】即可完成脚本安装。 脚本使用测试： 安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后没用脚本时，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。 脚本使用测试： 安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后没用脚本时，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。 下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用1DM接管速度可达15M&#x2F;S，跑满你的带宽！ 这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！]]></content>
@@ -11,18 +23,6 @@
         <tag>电脑软件</tag>
         <tag>123网盘</tag>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言扫雷</title>
-    <url>/2024/04/10/C-saolei/</url>
-    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下CSHARP#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>编程语言</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -154,19 +154,6 @@
       </tags>
   </entry>
   <entry>
-    <title>爱奇艺免费了？</title>
-    <url>/2024/04/14/aqi/</url>
-    <content><![CDATA[😀 爱奇艺前言：话说我们平时一定会追剧或看电影对吧？但想什么主流的视频平台都有个充会员功能，但是吧，我们兜比脸还干净，这时候该怎么愉快的追剧呢？请看下文！ 方法总结 下载爱奇艺视频qsv格式文件再进行解密 使用解析网站进行解析 使用获取内部m3u8的方式解析 使用别的影视网址平替 方法一：qsv格式文件，进行解密注：不建议使用 下载文件这个不用多说吧，点击爱奇艺的下载按钮就行了！ 网址转换 如图所示，可以进行QSV的转换，但是要么速度慢要么收费，不建议使用 上方网址：https://www.media.io/zh/convert/qsv-to-mp4.html 方法二：解析网站我们都知道啊，每个播放视频都是从后天服务器传输视频给你的，但是后天数据都是加密的，我们只需要替换掉就可以，简简单单啦！ 注：建议使用电脑 打开网站爱奇艺： 爱奇艺视频,视频,视频网站,高清视频,电影,电视剧,动漫,综艺,音乐 复制网址 看到了吧，上方的网址复制 如果你仔细看就会发现，我的视频上面有一个绿色的小三角，合适我内置的插件，可以获取到内置的播放地址，后面再说！ 在打开解析网址 立即享受，看就完了 类似的网站还有很多，这里来源于网络，请自测（不自动更新） 酉灿：https://vip.superso.top/ 夜雨聆风：https://vip.yeyulingfeng.com/ 理想智能云：http://movie.imyjs.cn/ Agoni：https://www.agoni.top/video/index.html 方法三：获取m3u8播放链接 这里使用猫爪，抓取ts格式文件，让后每一个ts就是一个小分段，每个视频都由许多ts组成，要不然视频一次性加载太慢了，1个小时多，分为多个ts就可以边看别加载，不会卡顿 点击我的小三角就会看到url，这里就是当前视频的播放源，让后使用m3u8播放器进行播放就可以了 一样的，复制粘贴即可 这里推荐的网址m3u8播放网址 https://anym3u8player.com/cn/ http://tool.liumingye.cn/m3u8/ http://tool.pfan.cn/m3u8 https://www.zhanid.com/tool/m3u8.html 影视平台(推荐指数🤩🤩🤩🤩🤩🤩)首推：猫影 作为我第一大影视集合，有这超多的资源，丰富的网址，任你选择 想看什么就直接搜什么，之后就会为你选出最佳的影视平台，跳转到别的网址去观看，播放速度秒了！ 想看什么直接搜！ BY：茗辰原]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>工具</tag>
-        <tag>实用推荐</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>取bilibili直连</title>
     <url>/2024/06/22/biibili-zhilian/</url>
     <content><![CDATA[😀 这里写文章的前言： 我们在刷bilibili的时候，可能会遇到一些想要分享的视频之类的。 可是我们调用bilibili官方的api，有广告，不支持最大画质，额…实在是难办。 所以今天我给你们带来了bilibili的直连，这个api可以直接播放视频，无需复杂的过程，那么现在开始教程。 APIapi如下： HTMLhttps://bili.api.scc.lol/?bv=bvid&amp;qn=80 参数说明 参数 说明 是否必须 bv 视频的bv号 是 qn 视频清晰度 否（默认为80） 视频清晰度 qn 对应清晰度 16 360P 流畅 32 480P 清晰 64 720P 高清 80 1080P 高清 使用用途可以作为不会过期的b站视频直链使用。 例如在网页中插入： JSX&lt;video controls&gt; &lt;source src=&quot;https://bili.api.scc.lol/?bv=BV1A54y1x7Dj&amp;qn=80&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt; 效果 gotoplayer("[https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80](https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80)"); 上方为北京大学的宣传片，原地址如下：https://www.bilibili.com/video/BV1Tm4215773/]]></content>
@@ -180,16 +167,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Cloudflare上有趣的项目</title>
-    <url>/2024/08/31/cf-words/</url>
-    <content><![CDATA[开端我在逛我的朋友圈的时候,发现清羽飞扬的小站发布了他总结的Cloudflare项目,一键部署,看起来真的很不错,就自己动手操作了一下. 主要有的项目有: 在线笔记 在线论坛 文件中转站 部署在线笔记这是一个基于 Cloudflare Worker、KV 和 Github Actions 实现，可以一键私有化部署的无成本在线云笔记项目，你可以记录文字，与朋友们分享，或者跨设备同步。下面是项目地址： 可以持久化保存笔记，并且支持设置密码，可以用于临时文字传输。 部署项目首先，fork仓库，然后再在变量中设置环境变量，如下三个变量，后面两个随便填写字符串即可。 YAMLCLOUDFLARE_API_TOKEN # 之前申请到的 Cloudflare API令牌SCN_SALT # 随便填（安全用途）SCN_SECRET # 随便填（安全用途） 然后在github action中，运行Deploy cloud-notepad，等待运行成功，则项目成功部署，点击进入cloudflare workers界面，查看或另绑定域名，即可正常访问。 效果如下: 链接如下: 在线论坛项目地址如下: 这是想打造一个校园论坛了,只不过,这个配置还需探索,自定义的很少,不知道如何添加分类,和背景主题等 部署项目 fork仓库到你的账户下 添加环境变量： CLOUDFLARE_ACCOUNT_ID CLOUDFLARE_API_TOKEN CLOUDFLARE_PROJECT_NAME前两个不用说，第三个为项目名称，比如我填写的是：locnode，不要带符号。 在你fork到的仓库里面运行action进行部署。 简单使用项目支持多用户，会自动创建D1数据库存储信息，你可以通过修改数据库来指定管理员等身份： 展示: 文件中转站项目部署项目地址: 其实部署起来非常简单，因为项目是分为前后端的，所以我们需要分别配置前后端： 添加环境变量CF_API_TOKEN 修改wrangler.toml文件中的内容，主要修改两个KV的ID和账户ID，请提前在cloudflare中创建好对应KV： TOMLname= &quot;pastebin-worker&quot;compatibility_date = &quot;2024-08-31&quot;account_id= &quot;36d7b2c5fa77292ef996f68e964478bd&quot;main = &quot;src/index.ts&quot;workers_dev = falsevars = &#123; ENVIRONMENT = &quot;production&quot; &#125;route = &#123; pattern = &quot;paste.liyy.us.kg&quot;, custom_domain = true &#125;kv_namespaces = [ &#123; binding = &quot;PB&quot;, id = &quot;86bca3e920024adb9e70cd7c5da6ceed&quot; &#125;, &#123; binding = &quot;PBIMGS&quot;, id =&quot;e3f5af1a0c584fcd841081d41a0c014d&quot; &#125;][site]bucket = &quot;./static/dist&quot; 修改**&#x2F;static&#x2F;.env**文件，修改为你准备部署的地址，比如本站： YAMLVITE_API_URL= https://paste.liyy.us.kg 点击github action并进行部署，最终，项目即可成功部署。 报错目前部署失败,不知道哪一步出错,看下有没有大佬可以指点一下]]></content>
+    <title>爱奇艺免费了？</title>
+    <url>/2024/04/14/aqi/</url>
+    <content><![CDATA[😀 爱奇艺前言：话说我们平时一定会追剧或看电影对吧？但想什么主流的视频平台都有个充会员功能，但是吧，我们兜比脸还干净，这时候该怎么愉快的追剧呢？请看下文！ 方法总结 下载爱奇艺视频qsv格式文件再进行解密 使用解析网站进行解析 使用获取内部m3u8的方式解析 使用别的影视网址平替 方法一：qsv格式文件，进行解密注：不建议使用 下载文件这个不用多说吧，点击爱奇艺的下载按钮就行了！ 网址转换 如图所示，可以进行QSV的转换，但是要么速度慢要么收费，不建议使用 上方网址：https://www.media.io/zh/convert/qsv-to-mp4.html 方法二：解析网站我们都知道啊，每个播放视频都是从后天服务器传输视频给你的，但是后天数据都是加密的，我们只需要替换掉就可以，简简单单啦！ 注：建议使用电脑 打开网站爱奇艺： 爱奇艺视频,视频,视频网站,高清视频,电影,电视剧,动漫,综艺,音乐 复制网址 看到了吧，上方的网址复制 如果你仔细看就会发现，我的视频上面有一个绿色的小三角，合适我内置的插件，可以获取到内置的播放地址，后面再说！ 在打开解析网址 立即享受，看就完了 类似的网站还有很多，这里来源于网络，请自测（不自动更新） 酉灿：https://vip.superso.top/ 夜雨聆风：https://vip.yeyulingfeng.com/ 理想智能云：http://movie.imyjs.cn/ Agoni：https://www.agoni.top/video/index.html 方法三：获取m3u8播放链接 这里使用猫爪，抓取ts格式文件，让后每一个ts就是一个小分段，每个视频都由许多ts组成，要不然视频一次性加载太慢了，1个小时多，分为多个ts就可以边看别加载，不会卡顿 点击我的小三角就会看到url，这里就是当前视频的播放源，让后使用m3u8播放器进行播放就可以了 一样的，复制粘贴即可 这里推荐的网址m3u8播放网址 https://anym3u8player.com/cn/ http://tool.liumingye.cn/m3u8/ http://tool.pfan.cn/m3u8 https://www.zhanid.com/tool/m3u8.html 影视平台(推荐指数🤩🤩🤩🤩🤩🤩)首推：猫影 作为我第一大影视集合，有这超多的资源，丰富的网址，任你选择 想看什么就直接搜什么，之后就会为你选出最佳的影视平台，跳转到别的网址去观看，播放速度秒了！ 想看什么直接搜！ BY：茗辰原]]></content>
       <categories>
-        <category>技术分享</category>
+        <category>硬核科技</category>
       </categories>
       <tags>
-        <tag>Cloudflare</tag>
-        <tag>部署</tag>
-        <tag>分享</tag>
+        <tag>电脑软件</tag>
+        <tag>工具</tag>
+        <tag>实用推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -203,6 +190,19 @@
         <tag>电脑软件</tag>
         <tag>实用推荐</tag>
         <tag>班级</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cloudflare上有趣的项目</title>
+    <url>/2024/08/31/cf-words/</url>
+    <content><![CDATA[开端我在逛我的朋友圈的时候,发现清羽飞扬的小站发布了他总结的Cloudflare项目,一键部署,看起来真的很不错,就自己动手操作了一下. 主要有的项目有: 在线笔记 在线论坛 文件中转站 部署在线笔记这是一个基于 Cloudflare Worker、KV 和 Github Actions 实现，可以一键私有化部署的无成本在线云笔记项目，你可以记录文字，与朋友们分享，或者跨设备同步。下面是项目地址： 可以持久化保存笔记，并且支持设置密码，可以用于临时文字传输。 部署项目首先，fork仓库，然后再在变量中设置环境变量，如下三个变量，后面两个随便填写字符串即可。 YAMLCLOUDFLARE_API_TOKEN # 之前申请到的 Cloudflare API令牌SCN_SALT # 随便填（安全用途）SCN_SECRET # 随便填（安全用途） 然后在github action中，运行Deploy cloud-notepad，等待运行成功，则项目成功部署，点击进入cloudflare workers界面，查看或另绑定域名，即可正常访问。 效果如下: 链接如下: 在线论坛项目地址如下: 这是想打造一个校园论坛了,只不过,这个配置还需探索,自定义的很少,不知道如何添加分类,和背景主题等 部署项目 fork仓库到你的账户下 添加环境变量： CLOUDFLARE_ACCOUNT_ID CLOUDFLARE_API_TOKEN CLOUDFLARE_PROJECT_NAME前两个不用说，第三个为项目名称，比如我填写的是：locnode，不要带符号。 在你fork到的仓库里面运行action进行部署。 简单使用项目支持多用户，会自动创建D1数据库存储信息，你可以通过修改数据库来指定管理员等身份： 展示: 文件中转站项目部署项目地址: 其实部署起来非常简单，因为项目是分为前后端的，所以我们需要分别配置前后端： 添加环境变量CF_API_TOKEN 修改wrangler.toml文件中的内容，主要修改两个KV的ID和账户ID，请提前在cloudflare中创建好对应KV： TOMLname= &quot;pastebin-worker&quot;compatibility_date = &quot;2024-08-31&quot;account_id= &quot;36d7b2c5fa77292ef996f68e964478bd&quot;main = &quot;src/index.ts&quot;workers_dev = falsevars = &#123; ENVIRONMENT = &quot;production&quot; &#125;route = &#123; pattern = &quot;paste.liyy.us.kg&quot;, custom_domain = true &#125;kv_namespaces = [ &#123; binding = &quot;PB&quot;, id = &quot;86bca3e920024adb9e70cd7c5da6ceed&quot; &#125;, &#123; binding = &quot;PBIMGS&quot;, id =&quot;e3f5af1a0c584fcd841081d41a0c014d&quot; &#125;][site]bucket = &quot;./static/dist&quot; 修改**&#x2F;static&#x2F;.env**文件，修改为你准备部署的地址，比如本站： YAMLVITE_API_URL= https://paste.liyy.us.kg 点击github action并进行部署，最终，项目即可成功部署。 报错目前部署失败,不知道哪一步出错,看下有没有大佬可以指点一下]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>Cloudflare</tag>
+        <tag>部署</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -245,7 +245,7 @@
   <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#105;&#x6e;&#x66;&#111;&#x40;&#x66;&#x72;&#x65;&#101;&#x6e;&#x6f;&#109;&#46;&#99;&#111;&#109;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
+    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#105;&#x6e;&#x66;&#111;&#x40;&#x66;&#x72;&#x65;&#x65;&#110;&#111;&#109;&#46;&#x63;&#x6f;&#109;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
       <categories>
         <category>网站建站</category>
       </categories>
@@ -268,6 +268,18 @@
       </tags>
   </entry>
   <entry>
+    <title>glary系统优化</title>
+    <url>/2024/07/23/glary/</url>
+    <content><![CDATA[😀 这里写文章的前言： 《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。 📝 主旨内容《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用， 🤗 软件使用软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。 他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。 如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。 扫描结束后，会提示有多少项要修复，点击修复问题即可。 在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。 总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。 🫰下载360安全云盘 - 用户空间]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>系统优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GKD跳过广告</title>
     <url>/2024/01/25/gkd/</url>
     <content><![CDATA[😀 这里写文章的前言： 相信大家的手机里面有各种各样的软件，许多软件为了恰饭，添加了开屏广告，这让我们很不爽，不仅影响时间，还大大消减了，使用这个软件的兴趣，常见的开屏软件：快手，抖音，小红书等 引言相信大家的手机里面有各种各样的软件，许多软件为了恰饭，添加了开屏广告，这让我们很不爽，不仅影响时间，还大大消减了，使用这个软件的兴趣，常见的开屏软件：某手，某音，某红书等 介绍GKD（又称搞快点，详情请戳 作者项目地址）是一款免费开源简洁多规则的自动跳过广告的软件。简而言之，基于预设的定时更新订阅规则+快照功能，实现识别并自动点击跳过任何开屏广告及点击关闭应用内部任何弹窗广告，如关闭某些APP开屏和内含推荐广告位（主流的基本上已支持）。比起寻找无广告还不保证长期有效的APP来说，此屏蔽跳过的方法要更直接。毕竟第三方又闭源的软件因众所周知的缘故纷纷停更了，国外付费的那款贵得劝退，太简单的又无法满足，所以爬了个而非单单是个开关的软件，当然配合已经绝版的某足兆足兆自定义规则使用更佳。 软件特性： 支持在线规则实时更新订阅 目前git仓库已经收录支持至少九百多个app（国产居多）以及2000条以上规则（后续还会持续增长），方便掌握动态 兼容android14及harmony OS 4.0 使用说明：首次使用需要给予无障碍和悬浮窗权限（具体自搜），所提供的默认规则支持在线更新订阅，基本常用主流熟知的APP对应都有不同的规则开关可自主选择。具体请戳：规则更新动态。自动点击记录事件可在软件主页中翻查。若想不被频繁误杀、说无效的又或者是得到更准确的跳过识别，可在高级模式中开启shi授权（具体请自搜）。另外，源码本身开源，比闭源的开明多了，可自行抓包软件行为查看更具体的动作权限便知（本帖不展开赘述，具体自搜），担心就勿下勿用，其余功能请自行体验。 截屏展示 点击记录：（可自动跳过小程序、评论区推荐等广告或活动更新弹窗） 下载链接不多说，直接上链接下载地址： 蓝奏云：提取码hm0w 自行复制，技术有限不会点击复制 更新内容 v1.6.4更新内容：（2024-01-04）修复quickFind标识文字错误导致查询变慢优化某些场景下的查询规则 v1.6.2更新内容：（2023-12-28）修复无障碍获取无障碍属性为空导致的崩溃修复获取无障碍节点错误导致的崩溃新增全局规则新增规则分类&#x2F;批量开启关闭新增常驻通知栏开关允许匹配不在安装列表的应用 新增截屏快照,可以在用户截屏时保存快照 优化规则触发逻辑及速度。优化快照文件生成的速度 优化连接到审查工具的方式优化申请权限流程 优化界面布局 每次打开界面时自动清除缓存 优化 shizuku 错误提示 修复某些设备出现通知提示音修复点击记录名称显示错误 修复订阅自动检测更新不生效。 v1.5.4更新内容：（2023-11-24） 订阅界面搜索优化&#x2F;id搜索 ActivityId 概率复用错误优化activityId更新逻辑 v1.5.3更新内容：（2023-11-23） 优化和修复： 某些机型上规则不执行 通知栏快照丢失 activityId v1.5.2更新内容：（2023-11-22） 降低一半 apk 文件大小 规则 group actionMaximum&#x2F;actionCd失效 主线程阻塞导致界面卡顿 修复某些机型上规则概率执行缓慢的问题 v1.5.1更新内容：（2023-11-18） 路由动画卡顿 上一版更新内容： 优化和修复 状态栏显示优化(沉浸式状态栏)点击记录显示优化（没有名称的规则将标识索引和密钥） 订阅列表显示优化（订阅菜单项可以查看订阅详情） 删除无用资源、删除 32 位支持、减少apk 大小 内存占用优化，减少 内存占用性能&#x2F;耗电优化，优化规则执行逻辑，同时提升规则触发速度 优化activityId识别逻辑规则支持长按、共享cd&#x2F;次数 优化创建文件夹逻辑 优化存储数据逻辑 其它修复和优化]]></content>
@@ -279,18 +291,6 @@
         <tag>安卓应用</tag>
         <tag>广告</tag>
         <tag>app,</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>glary系统优化</title>
-    <url>/2024/07/23/glary/</url>
-    <content><![CDATA[😀 这里写文章的前言： 《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。 📝 主旨内容《系统优化》电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用， 🤗 软件使用软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。 他把系统分分7大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。 如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。 扫描结束后，会提示有多少项要修复，点击修复问题即可。 在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。 总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。 🫰下载360安全云盘 - 用户空间]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>系统优化</tag>
       </tags>
   </entry>
   <entry>
@@ -455,18 +455,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Escrcpy--手机投屏到电脑工具！</title>
-    <url>/2025/02/06/phone_toupin/</url>
-    <content><![CDATA[软件介绍： 今天介绍的这款手机投屏到电脑的软件叫：Escrcpy ，是一款开源免费的软件，软件干净简洁，无广告零套路。 投屏类的软件一定要两台设备都在同一局域网内 ，不在同一局域网不支持同屏。 软件分为有线投屏和无线投屏，不过不管是有线还是无级，都要确保已打开【开发者选项】和【USB调试】。 无线连接： 如果是无线的，需要填写手机端的IP地址、端口和配对码，这些数据在手机的“无线调试”处有显示。 配置好了以后填入软件中即可，当设备名称后面有“WIFI”字样时表明无线配对成功了。 有线连接 有线连接就比较简单了，手机使用数据线连接电脑后，在电脑中就能查看到手机设备。点击【开始镜像】即能手机投屏到电脑中。 主要功能 Escrcpy这款软件支持多手机投屏，有多设备连接、启动APP、屏幕旋转、开关屏幕等等功能。点击下面卡片👇，支持软妹：****多设备连接，通过有线或者无线连接到Escrcpy后，可以同时在电脑端里显示多部手机设备的连接，便于我们操作。 启动APP： 在电脑端有个【启动APP】的功能，点击这里，然后选择自己需要启动的APP，即能启动手机里的APP软件。 下面是启动的动图： 屏幕旋转： 手机端的打开APP基本都是竖屏的，如果软件自带能横屏还好，如果无法横屏，那么只能用软件来实现。 而Escrcpy就自带了旋转屏幕的功能，选择横屏，则手机端立马就横屏使用。 电源：点击电源按钮，可以开启屏幕和息屏操作。 其他功能： 除了上面介绍的功能之外，软件还有音量控制、截取屏幕、安装APP、文件管理等等实用功能。 其中的文件管理功能 就是可以上传和下载手机端的资源，挺方便的！ 其他的大家自己去体验，软件就介绍到这里啦！ 下载]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>什么竟然还有这样的神器？</title>
     <url>/2024/05/12/qianhe-tools/</url>
     <content><![CDATA[前言给大家搞到了一款非常不错的在线工具箱网站，废话不多说，直接安排！！！ 也是好久没更新Windows 程序了好吧，这次必须整活！！ 千盒工具这是一款非常不错的在线工具箱网站，该网站不需要注册登录，打开即可直接使用，网站内包含了非常多实用的在线工具，全部都是免费的，没有任何的套路，不论大家从事任何行业，都强烈建议各位小伙伴们点赞收藏，后续肯定会用到的哦！ 网站主界面如下图所示，左侧是工具分类，右侧是工具列表，目前包含了搜索工具、图片工具、示拼工具、文本工具、办公工具、导航工具、数字工具、单位换算工具以及开发工具等，覆盖了多个行业，所有工具统统免费，非常良心！ 所有工具点击进入即可打开使用，如下图所示，这里我就随便打开一个图片文字识别工具，我们只需要上传需要识别的图片，然后点击立即识别按钮即可，识别速度快，准确率高，使用非常方便！ 由于该网站包含的工具较多，在这里就不挨个给大家演示了，很多工具都是非常实用的，比如示拼格式转换、图片格式转换、二维码解析、图片压缩、单位换算等等，大家可以自行访问使用哦！ 以上就是给大家介绍的 非常不错的网站。 网页链接：https://1000tool.com/ https://1000tool.com/]]></content>
@@ -480,11 +468,11 @@
       </tags>
   </entry>
   <entry>
-    <title>寒假起航!老家畅游!</title>
-    <url>/2025/01/18/qihang/</url>
-    <content><![CDATA[茗起最近要回老家了,这个博文不知道能不能更新了,特意写一篇文章来告知朋友们! 这个文章中,将会有我寒假的计划,有关自己的事情,我相信只要自己坚持自律就一定能看到不一样 的自己! 茗述这个时间我有许多要做的事情,具体请看下方!进度条! 学习c++并达到任务进度80% 学习HTML+pug+vue 坚持每日打开纸条练习自己的写作能力 坚持句子控锻炼自己的诗感- 每天写日记到一本日记-这里从现在开始还没有完成的任务! 一个月的练字任务- 每日两篇英语阅读- 锻炼自己的身体- 每日跟着各大up主学习,英语,数学,语文,物理…- 每日积累科普知识到我的科普本- 记录自己的美好生活!- 暂时只想起来折磨多,后面应该会补充!]]></content>
+    <title>Escrcpy--手机投屏到电脑工具！</title>
+    <url>/2025/02/06/phone_toupin/</url>
+    <content><![CDATA[软件介绍： 今天介绍的这款手机投屏到电脑的软件叫：Escrcpy ，是一款开源免费的软件，软件干净简洁，无广告零套路。 投屏类的软件一定要两台设备都在同一局域网内 ，不在同一局域网不支持同屏。 软件分为有线投屏和无线投屏，不过不管是有线还是无级，都要确保已打开【开发者选项】和【USB调试】。 无线连接： 如果是无线的，需要填写手机端的IP地址、端口和配对码，这些数据在手机的“无线调试”处有显示。 配置好了以后填入软件中即可，当设备名称后面有“WIFI”字样时表明无线配对成功了。 有线连接 有线连接就比较简单了，手机使用数据线连接电脑后，在电脑中就能查看到手机设备。点击【开始镜像】即能手机投屏到电脑中。 主要功能 Escrcpy这款软件支持多手机投屏，有多设备连接、启动APP、屏幕旋转、开关屏幕等等功能。点击下面卡片👇，支持软妹：****多设备连接，通过有线或者无线连接到Escrcpy后，可以同时在电脑端里显示多部手机设备的连接，便于我们操作。 启动APP： 在电脑端有个【启动APP】的功能，点击这里，然后选择自己需要启动的APP，即能启动手机里的APP软件。 下面是启动的动图： 屏幕旋转： 手机端的打开APP基本都是竖屏的，如果软件自带能横屏还好，如果无法横屏，那么只能用软件来实现。 而Escrcpy就自带了旋转屏幕的功能，选择横屏，则手机端立马就横屏使用。 电源：点击电源按钮，可以开启屏幕和息屏操作。 其他功能： 除了上面介绍的功能之外，软件还有音量控制、截取屏幕、安装APP、文件管理等等实用功能。 其中的文件管理功能 就是可以上传和下载手机端的资源，挺方便的！ 其他的大家自己去体验，软件就介绍到这里啦！ 下载]]></content>
       <categories>
-        <category>生活方面</category>
+        <category>技术教程</category>
       </categories>
       <tags>
         <tag>生活</tag>
@@ -503,6 +491,18 @@
         <tag>实用推荐</tag>
         <tag>QQ空间</tag>
         <tag>开源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>寒假起航!老家畅游!</title>
+    <url>/2025/01/18/qihang/</url>
+    <content><![CDATA[茗起最近要回老家了,这个博文不知道能不能更新了,特意写一篇文章来告知朋友们! 这个文章中,将会有我寒假的计划,有关自己的事情,我相信只要自己坚持自律就一定能看到不一样 的自己! 茗述这个时间我有许多要做的事情,具体请看下方!进度条! 学习c++并达到任务进度80% 学习HTML+pug+vue 坚持每日打开纸条练习自己的写作能力 坚持句子控锻炼自己的诗感- 每天写日记到一本日记-这里从现在开始还没有完成的任务! 一个月的练字任务- 每日两篇英语阅读- 锻炼自己的身体- 每日跟着各大up主学习,英语,数学,语文,物理…- 每日积累科普知识到我的科普本- 记录自己的美好生活!- 暂时只想起来折磨多,后面应该会补充!]]></content>
+      <categories>
+        <category>生活方面</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -544,6 +544,19 @@
       </tags>
   </entry>
   <entry>
+    <title>绝版安卓工具箱？能有多强？</title>
+    <url>/2024/06/17/tools-box/</url>
+    <content><![CDATA[😀 这里写文章的前言： 这里收录了我自己用的非常好用的工具箱。如果你有推荐的，可以在最下面留言哦！ 宇宙工具箱工具特色：具有超多的收录的工具，不仅而此，还有广大网友自己上传的网址！ 软件大小：46.2M 更新频率：很快 软件价格：28.8R(非常划算) https://www.notion.so 远航工具箱软件特色：功能俱全，而且软件简洁，高效，打开即用，可食用性极强！ 软件大小：61.8M 软件价格：免费 七点工具箱软件特色：玩网络的用户强烈推荐，有专门的隔空闪传，隔空投屏等.. 软件大小：30.79M 软件价格：5.8月(不过免费版够用) 微箱软件特色：这个工具啊，真的太厉害了，专门收录你在网上又搜不到的，藏着许许多多的私人网址，小众，很喜欢。 软件大小：7.59M 软件价格：免费 软件下载：合集如下： 工具箱官方版下载丨最新版下载丨绿色版下载丨APP下载-123云盘 七彩云存储]]></content>
+      <categories>
+        <category>安卓应用</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>安卓应用</tag>
+        <tag>app</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用works制作随机图!</title>
     <url>/2024/10/26/suijip/</url>
     <content><![CDATA[随机图的轮子其实网上有不少了，但基本都需要一台服务器，或者用别人提供的服务。 但其实托管图片获取直链还是比较简单的，所以想着用 Cloudflare Workers 在直链中随机选一个，来搭建一个私人的随机图片服务。 你需要 一个 Cloudflare 账号 一堆图片直链 图片直链不少图床都提供直链服务，比如 sm.ms（免费版单文件上限 5MB，速度很快），或者 img.vim-cn.com（单文件上限 50MB，国内速度一般）。 或者，如果你对这些公共的服务不太放心的话，一个 GitHub Repo 也是不错的选择。 总之，只需要一个直链，方法很多，自己灵活选择。 部署 Workers方法不多说，网上一大堆，下面直接贴代码。 JAVASCRIPTaddEventListener(&#x27;fetch&#x27;, event =&gt; &#123; event.respondWith(handleRequest(event.request))&#125;)async function handleRequest(request) &#123; var background_urls = [ &#x27;https://w.wallhaven.cc/full/ey/wallhaven-eymzjk.jpg&#x27;, &#x27;https://w.wallhaven.cc/full/j8/wallhaven-j8rk95.png&#x27; ] var index = Math.floor((Math.random()*background_urls.length)); res = await fetch(background_urls[index]) return new Response(res.body, &#123; headers: &#123; &#x27;content-type&#x27;: &#x27;image/jpeg&#x27; &#125;, &#125;)&#125;JAVASCRIPT background_urls 是一个保存直链的数组，将所有你想随机的图片加入进去即可。 P.S. 没有学过 Javascript，临时拼凑而成，希望有大佬可以优化地更好。 我的随机图:]]></content>
@@ -555,19 +568,6 @@
         <tag>works</tag>
         <tag>壁纸</tag>
         <tag>随机图</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>绝版安卓工具箱？能有多强？</title>
-    <url>/2024/06/17/tools-box/</url>
-    <content><![CDATA[😀 这里写文章的前言： 这里收录了我自己用的非常好用的工具箱。如果你有推荐的，可以在最下面留言哦！ 宇宙工具箱工具特色：具有超多的收录的工具，不仅而此，还有广大网友自己上传的网址！ 软件大小：46.2M 更新频率：很快 软件价格：28.8R(非常划算) https://www.notion.so 远航工具箱软件特色：功能俱全，而且软件简洁，高效，打开即用，可食用性极强！ 软件大小：61.8M 软件价格：免费 七点工具箱软件特色：玩网络的用户强烈推荐，有专门的隔空闪传，隔空投屏等.. 软件大小：30.79M 软件价格：5.8月(不过免费版够用) 微箱软件特色：这个工具啊，真的太厉害了，专门收录你在网上又搜不到的，藏着许许多多的私人网址，小众，很喜欢。 软件大小：7.59M 软件价格：免费 软件下载：合集如下： 工具箱官方版下载丨最新版下载丨绿色版下载丨APP下载-123云盘 七彩云存储]]></content>
-      <categories>
-        <category>安卓应用</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>安卓应用</tag>
-        <tag>app</tag>
       </tags>
   </entry>
   <entry>
@@ -672,17 +672,6 @@
       </tags>
   </entry>
   <entry>
-    <title>网易云音乐脚本</title>
-    <url>/2024/11/20/wyy--2/</url>
-    <content><![CDATA[起源闲来无事,想看看有没有什么新文件更新了,这不被我发现的!此为转载篇!!! 网易云音乐脚本点击此处安装 (请确保浏览器已经安装了TamperMonkey) 功能 云盘快传 无需文件快速上传云盘歌曲,三分钟解锁周杰伦。 歌曲下载 不消耗vip下载次数,不是ncm加密文件。 请将 TamperMonkey 插件设置中的 下载模式 设置为 浏览器 API 并将 /.(mp3|flac|lrc)$/ 添加进文件扩展名白名单 以保证能正常下载。 歌曲转存云盘 用网易云自身音源将歌曲快速上传到云盘，不需要完整的文件下载和上传过程。 高音质试听： 解除网页端只能听标准音质的限制。 在鼠标右键菜单中可进行优先试听音质的设置。 歌单页加载全部歌曲 评论区显示IP属地、使用指定的IP地址发送评论 歌单歌曲排序 将歌单内歌曲按发行时间、红心数、评论数进行排序。 限免vip歌曲下载与上传 对客户端内普通用户可免费试听的vip歌曲进行下载与上传。 云盘匹配纠错 云盘歌曲匹配歌词、封面和评论。 云盘音质提升 寻找网易云的音质比云盘文件更好的歌曲，以进行替换。只有上传成功时才删除原来低音质文件。 需要是黑胶会员以获取高音质音源。 本地文件上传云盘 可先编辑需要在云盘显示的歌手,专辑信息再上传。 云盘导入导出 云盘歌曲导入另一账号。和云盘快传相同原理。 使用说明脚本安装完成后，登陆网易云音乐网页端。在右上角用户头像的 我的主页 中，使用云盘相关功能。在单曲、专辑、歌单（并非我的音乐的歌单，而是 我的主页 的歌单）页面使用下载、转存云盘功能。 问题说明 云盘快传:不保证内容的准确性、完整性。部分音质为算法升频。 上传失败时，浏览器控制台(F12)有输出具体错误内容。大多数时候重试一次就好了。 脚本不支持ViolentMonkey插件安装，使用ViolentMonkey会导致上传报错、获取不到超清母带、用不了SVIP的6T空间等问题。 截图 参考网易云音乐API来自Binaryify&#x2F;NeteaseCloudMusicApi 咪咕音乐下载脚本在咪咕音乐专辑详情页添加下载链接 可无需登录下载至臻(24Bit) 安装 (请确保浏览器已经安装了TamperMonkey)]]></content>
-      <categories>
-        <category>技术教学</category>
-      </categories>
-      <tags>
-        <tag>脚本</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>网易云永久黑胶？</title>
     <url>/2024/03/16/wyy/</url>
     <content><![CDATA[😀 这里写文章的前言： 资源来自于网络，实测无毒，请放心使用 前言ok啊，网易云就不多介绍了，大家都知道哈哈！ 解锁主要功能： 本地黑胶 解锁主题 解锁音质 解锁界面 解锁灰色 自动签到打卡 美化功能 等等等… 展示 下载不多说，直盘下载，直接点击下载即可！ https://cloud.06dn.com/s/EB2MSp]]></content>
@@ -695,17 +684,14 @@
       </tags>
   </entry>
   <entry>
-    <title>王者宇宙服</title>
-    <url>/2025/02/08/wzry/</url>
-    <content><![CDATA[茗起不得不说,喜欢玩王者的是真的多! 但是这个皮肤不买了不知道手感如何,买了又觉得太亏了! 这个版本已经解锁全部皮肤,包括了最近新出的蛇年新皮肤,并且除去王者占用的内存,剩下的占用的内存极少! 这还不值得你冲吗!! 正常版与宇宙服共存,丝毫不怕! 陈诉用到的软件真的非常少! 第一步打开[多元空间] 第二步,点击右下角的加号,添加上方两个应用第三步,打开王者荣耀(极简模式更新即可,要不了15分钟)第四步,更新之后打开上述的王者工具箱&lt;video src:”https://mingcy.cn/2025/02/08/wzry/1.mp4”&gt; 之后的请看图!图下有注释!!! 点击静音按钮! 之后王者小工具点击首页 下载请多多支持哦!! 宇宙服:https://pan.quark.cn/s/cadb3d3bd562 「王者荣耀自定义房间」:https://pan.quark.cn/s/ee0b1ad3623a 「王者荣耀自定义国标」:https://pan.quark.cn/s/fdf296708bda]]></content>
+    <title>网易云音乐脚本</title>
+    <url>/2024/11/20/wyy--2/</url>
+    <content><![CDATA[起源闲来无事,想看看有没有什么新文件更新了,这不被我发现的!此为转载篇!!! 网易云音乐脚本点击此处安装 (请确保浏览器已经安装了TamperMonkey) 功能 云盘快传 无需文件快速上传云盘歌曲,三分钟解锁周杰伦。 歌曲下载 不消耗vip下载次数,不是ncm加密文件。 请将 TamperMonkey 插件设置中的 下载模式 设置为 浏览器 API 并将 /.(mp3|flac|lrc)$/ 添加进文件扩展名白名单 以保证能正常下载。 歌曲转存云盘 用网易云自身音源将歌曲快速上传到云盘，不需要完整的文件下载和上传过程。 高音质试听： 解除网页端只能听标准音质的限制。 在鼠标右键菜单中可进行优先试听音质的设置。 歌单页加载全部歌曲 评论区显示IP属地、使用指定的IP地址发送评论 歌单歌曲排序 将歌单内歌曲按发行时间、红心数、评论数进行排序。 限免vip歌曲下载与上传 对客户端内普通用户可免费试听的vip歌曲进行下载与上传。 云盘匹配纠错 云盘歌曲匹配歌词、封面和评论。 云盘音质提升 寻找网易云的音质比云盘文件更好的歌曲，以进行替换。只有上传成功时才删除原来低音质文件。 需要是黑胶会员以获取高音质音源。 本地文件上传云盘 可先编辑需要在云盘显示的歌手,专辑信息再上传。 云盘导入导出 云盘歌曲导入另一账号。和云盘快传相同原理。 使用说明脚本安装完成后，登陆网易云音乐网页端。在右上角用户头像的 我的主页 中，使用云盘相关功能。在单曲、专辑、歌单（并非我的音乐的歌单，而是 我的主页 的歌单）页面使用下载、转存云盘功能。 问题说明 云盘快传:不保证内容的准确性、完整性。部分音质为算法升频。 上传失败时，浏览器控制台(F12)有输出具体错误内容。大多数时候重试一次就好了。 脚本不支持ViolentMonkey插件安装，使用ViolentMonkey会导致上传报错、获取不到超清母带、用不了SVIP的6T空间等问题。 截图 参考网易云音乐API来自Binaryify&#x2F;NeteaseCloudMusicApi 咪咕音乐下载脚本在咪咕音乐专辑详情页添加下载链接 可无需登录下载至臻(24Bit) 安装 (请确保浏览器已经安装了TamperMonkey)]]></content>
       <categories>
-        <category>技术分享</category>
+        <category>技术教学</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>安卓应用</tag>
-        <tag>实用推荐</tag>
-        <tag>游戏</tag>
+        <tag>脚本</tag>
       </tags>
   </entry>
   <entry>
@@ -731,6 +717,20 @@
       <tags>
         <tag>班级</tag>
         <tag>调查</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>王者宇宙服</title>
+    <url>/2025/02/08/wzry/</url>
+    <content><![CDATA[茗起不得不说,喜欢玩王者的是真的多! 但是这个皮肤不买了不知道手感如何,买了又觉得太亏了! 这个版本已经解锁全部皮肤,包括了最近新出的蛇年新皮肤,并且除去王者占用的内存,剩下的占用的内存极少! 这还不值得你冲吗!! 正常版与宇宙服共存,丝毫不怕! 陈诉用到的软件真的非常少! 第一步打开[多元空间] 第二步,点击右下角的加号,添加上方两个应用第三步,打开王者荣耀(极简模式更新即可,要不了15分钟)第四步,更新之后打开上述的王者工具箱&lt;video src:”https://mingcy.cn/2025/02/08/wzry/1.mp4”&gt; 之后的请看图!图下有注释!!! 点击静音按钮! 之后王者小工具点击首页 下载请多多支持哦!! 宇宙服:https://pan.quark.cn/s/cadb3d3bd562 「王者荣耀自定义房间」:https://pan.quark.cn/s/ee0b1ad3623a 「王者荣耀自定义国标」:https://pan.quark.cn/s/fdf296708bda]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>安卓应用</tag>
+        <tag>实用推荐</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
 </search>
