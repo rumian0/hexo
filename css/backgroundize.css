@@ -1,1 +1,0 @@
-:root{--mobile-bg-image:url('https://webp.mingcy.cn');--desktop-bg-image-normal:url('https://webp.mingcy.cn');--desktop-bg-image-night:url('https://webp.mingcy.cn')}#web_bg{background-image:var(--desktop-bg-image-normal);position:fixed;width:100%;height:100%;z-index:-1;background-size:cover;transition:all .5s}
