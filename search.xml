@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C语言扫雷</title>
+    <url>/2024/04/10/C-saolei/</url>
+    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下CSHARP#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>123云盘-下载工具</title>
     <url>/2024/09/30/123-liuliang/</url>
     <content><![CDATA[方法一123云盘 下载工具123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。 功能特点 登录：使用用户名和密码登录 123Pan 账号。 列出文件：显示当前目录下的所有文件和文件夹。 下载文件：通过模拟安卓客户端协议下载文件，绕过流量限制。 上传文件：将本地文件上传到 123Pan。 分享文件：生成文件分享链接。 删除文件：删除指定的文件或文件夹。 创建文件夹：在当前目录下创建新文件夹。 使用方法环境准备 确保已安装 Python 3.x。 安装所需的 Python 库： UNDEFINEDpip install -r requirements.txt 配置文件在首次运行脚本时，会自动生成一个 123pan.txt 文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。 运行脚本SQL可以直接下载release的可执行文件运行或运行python脚本。脚本运行： 克隆或下载本项目代码到本地。 打开终端或命令提示符，进入项目目录。 运行脚本： 使用安卓客户端协议 UNDEFINEDpython android.py UNDEFINED使用web协议python web.py 123云盘 下载工具GitHub地址地址： 方法二今天推荐的是一个数字网盘脚本，可以解除限制，完全免费使用！ 该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要先安装Tampermonkey插件，Tampermonkey插件可以在文末关键字获取。 安装完油猴插件后，再安装脚本，方法是打开Greasy Fork中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】 再点【安装】即可完成脚本安装。 脚本使用测试： 安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后没用脚本时，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。 脚本使用测试： 安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后没用脚本时，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。 下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用1DM接管速度可达15M&#x2F;S，跑满你的带宽！ 这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！]]></content>
@@ -11,18 +23,6 @@
         <tag>电脑软件</tag>
         <tag>123网盘</tag>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言扫雷</title>
-    <url>/2024/04/10/C-saolei/</url>
-    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下CSHARP#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>编程语言</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -39,6 +39,18 @@
       </tags>
   </entry>
   <entry>
+    <title>PDF24工具箱</title>
+    <url>/2024/03/23/PDF24/</url>
+    <content><![CDATA[AI概括 PDF全称为Portable Document Format，是一种常用的文档格式。对于合并、拆分或转换PDF等基本需求，不必下载复杂工具或付费。开源爱好者阿云推荐了PDF24，这是一个由德国开发者制作的免费、多功能PDF处理软件，拥有47个PDF处理功能。PDF24的操作简便，支持星标常用功能，并且是本地离线应用，更安全可靠。软件还提供了网页版，方便在线使用。对于处理敏感文件，建议使用软件的离线版本。 介绍众所周知，PDF全称为 Portable Document Format，意思是便携式文档格式，以后若有人问起来，你可别说 I don’t know。 同时 PDF 也是我们日常办公、科研学习中最常见的文件格式之一，相信大家在处理这种文件的过程中都会遇到各种各样的问题吧？ 比如我们只是简单的合并、拆分或转换格式，也不希望因为这些小需求而去下载很复杂的工具，或者为它付费吧。 作为一名开源爱好者，阿云找来了一款免费全能且易用的 PDF神级处理工具-PDF24，一位德国老哥开发的工具包。 你能想到的和PDF有关的需求，基本上都有。 PDF24 Creator（电脑）PDF 24是一款PDF编辑工具，软件由德国牧羊人齐格勒开发，距今有18年的历史了，而且一直免费，这就很是难得了！ 这款工具老早前就介绍了它的网页版，网页版是免费的，网址文末获取关键词可一键获取！而今天阿云给大家带来的是绿色便携版。 软件使用非常简单，双击”pdf24.exe”即可运行软件。 一般情况下可能不会弹出界面，但在电脑右下角能够看到图标，从而打开PDF24 工具箱。 打开PDF24工具箱，里面包含了PDF合并、压缩、编辑、转换为PDF等共计47个功能，可以说是应有尽有。 如果遇到常用的功能，还可以直接星标收藏变成“我的最爱”，以便下次直接找到。 可以毫不谦虚地说，市面上没有哪一款免费的PDF工具能与之抗衡，如果有，请当我没说过这句话。 而且PDF24工具箱包含的所有工具均为本地离线运行操作的，方便快捷，无需担心安全问题。 以PDF压缩为例，只需要把文件拖拽至窗口或者直接添加，鼠标放到文件上还可以直接预览、查看文件大小和页数。 接着只需要在左下角设置需要压缩后的DPI分辨率、图片品质和文件颜色，最后点击“压缩”即可。 别的不说，压缩率和压缩后的清晰度还是非常可以的。 好了，由于篇幅有限关于软件功能的介绍就到这里了，当然网页版也是同样的功能，浏览器能联网就能用。 如果经常处理一些涉密文件，阿云还是建议你下载到本地使用，毕竟离线处理，安全可靠。 下载链接①[Windows] 多功能免费实用的 PDF24工具箱 v11.17.0 版本： 官网所有版本：https://creator.pdf24.org/listVersions.php 123云盘分流：https://www.123pan.com/s/OgT7Vv-hPFc.html 在线中文版：https://tools.pdf24.org/zh/]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown 基本语法</title>
     <url>/2024/01/22/Markdown/</url>
     <content><![CDATA[Markdown 基本语法介绍Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出HTML、PDF 以及本身的 .md格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。 在线体验一下 Markdown在线编辑器 Markdown 标题语法要创建标题，请在单词或短语前面添加井号 (#) 。#的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 ( ) (例如：### My Header)。Markdown语法 HTML 预览效果# Heading level 1&lt;h1&gt;Heading level 1&lt;/h1&gt;Heading level 1## Heading level 2&lt;h2&gt;Heading level 2&lt;/h2&gt;Heading level 2### Heading level 3&lt;h3&gt;Heading level 3&lt;/h3&gt;Heading level 3#### Heading level 4&lt;h4&gt;Heading level 4&lt;/h4&gt;Heading level 4##### Heading level 5&lt;h5&gt;Heading level 5&lt;/h5&gt;Heading level 5###### Heading level 6&lt;h6&gt;Heading level 6&lt;/h6&gt;Heading level 6最佳实践不同的 Markdown 应用程序处理 #和标题之间的空格方式并不一致。为了兼容考虑，请用一个空格在 #和标题之间进行分隔。 ✅ Do this ❌ Don’t do this# Here’s a Heading #Here’s a Heading Markdown 强调语法粗体（Bold）要加粗文本，请在单词或短语的前后各添加两个星号（asterisks）或下划线（underscores）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（asterisks）。 Markdown语法 HTML 预览效果 I just love bold text. I just love bold text. I just love bold text. I just love bold text. I just love bold text. I just love bold text. Loveisbold Loveisbold Loveisbold 粗体（Bold）用法最佳实践Markdown应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号（asterisks）。 ✅ Do this ❌ Don’t do this Loveisbold Love__is__bold 斜体（Italic）要用斜体显示文本，请在单词或短语前后添加一个星号（asterisk）或下划线（underscore）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。 粗体（Bold）和斜体（Italic）要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。 Markdown 分隔线语法 要创建分隔线，请在单独一行上使用三个或多个星号(***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。 &#96;&#96;&#96;other 分隔线（Horizontal Rule）用法最佳实践为了兼容性，请在分隔线的前后均添加空白行。 ✅&nbsp; Do this ❌&nbsp; Don't do this Try to put a blank line before... --- ...and after a horizontal rule. Without blank lines, this would be a heading. --- Don't do this! Markdown 链接语法链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。超链接Markdown语法代码：超链接显示名对应的HTML代码：超链接显示名 OTHER这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt;)。例子：茗辰原博客：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;) 渲染效果如下: 茗辰原博客：茗辰原博客 ### 给链接增加 Title链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔 LESS这是一个链接 [Markdown语法](&lt;https://markdown.com.cn&gt; &quot;最好的markdown教程&quot;)。例子：[茗辰原博客](&lt;https://mcy.cloudns.org&gt;&quot;茗辰原，一个与众不同的异世界，等待你的探索与发现。&quot;) 渲染效果如下: 这是一个博客 茗辰原博客。 网址和Email地址使用尖括号可以很方便地把URL或者email地址变成可点击的链接。 ANGELSCRIPT&lt;https://mcy.cloudns.org/&gt;&lt;mcy070329@qq.com&gt; 渲染效果如下: https://mcy.cloudns.org/ mcy070329@qq.com #Markdown 图片语法 要添加图像，请使用感叹号 (!),然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。 ROUTEROS插入图片Markdown语法代码：![图片alt](图片链接 &quot;图片title&quot;)。对应的HTML代码：&lt;img src=&quot;图片链接&quot; alt=&quot;&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&gt;&quot;title=&quot;mcy&quot;&gt; AWK![这是图片](&lt;https://i.miji.bid/2024/01/21/7c3fc69882826586bda6a94671dbfded.th.png&quot;茗辰原头像&quot;&gt;)]]></content>
@@ -49,18 +61,6 @@
         <tag>工具</tag>
         <tag>Markdown</tag>
         <tag>写作</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PDF24工具箱</title>
-    <url>/2024/03/23/PDF24/</url>
-    <content><![CDATA[AI概括 PDF全称为Portable Document Format，是一种常用的文档格式。对于合并、拆分或转换PDF等基本需求，不必下载复杂工具或付费。开源爱好者阿云推荐了PDF24，这是一个由德国开发者制作的免费、多功能PDF处理软件，拥有47个PDF处理功能。PDF24的操作简便，支持星标常用功能，并且是本地离线应用，更安全可靠。软件还提供了网页版，方便在线使用。对于处理敏感文件，建议使用软件的离线版本。 介绍众所周知，PDF全称为 Portable Document Format，意思是便携式文档格式，以后若有人问起来，你可别说 I don’t know。 同时 PDF 也是我们日常办公、科研学习中最常见的文件格式之一，相信大家在处理这种文件的过程中都会遇到各种各样的问题吧？ 比如我们只是简单的合并、拆分或转换格式，也不希望因为这些小需求而去下载很复杂的工具，或者为它付费吧。 作为一名开源爱好者，阿云找来了一款免费全能且易用的 PDF神级处理工具-PDF24，一位德国老哥开发的工具包。 你能想到的和PDF有关的需求，基本上都有。 PDF24 Creator（电脑）PDF 24是一款PDF编辑工具，软件由德国牧羊人齐格勒开发，距今有18年的历史了，而且一直免费，这就很是难得了！ 这款工具老早前就介绍了它的网页版，网页版是免费的，网址文末获取关键词可一键获取！而今天阿云给大家带来的是绿色便携版。 软件使用非常简单，双击”pdf24.exe”即可运行软件。 一般情况下可能不会弹出界面，但在电脑右下角能够看到图标，从而打开PDF24 工具箱。 打开PDF24工具箱，里面包含了PDF合并、压缩、编辑、转换为PDF等共计47个功能，可以说是应有尽有。 如果遇到常用的功能，还可以直接星标收藏变成“我的最爱”，以便下次直接找到。 可以毫不谦虚地说，市面上没有哪一款免费的PDF工具能与之抗衡，如果有，请当我没说过这句话。 而且PDF24工具箱包含的所有工具均为本地离线运行操作的，方便快捷，无需担心安全问题。 以PDF压缩为例，只需要把文件拖拽至窗口或者直接添加，鼠标放到文件上还可以直接预览、查看文件大小和页数。 接着只需要在左下角设置需要压缩后的DPI分辨率、图片品质和文件颜色，最后点击“压缩”即可。 别的不说，压缩率和压缩后的清晰度还是非常可以的。 好了，由于篇幅有限关于软件功能的介绍就到这里了，当然网页版也是同样的功能，浏览器能联网就能用。 如果经常处理一些涉密文件，阿云还是建议你下载到本地使用，毕竟离线处理，安全可靠。 下载链接①[Windows] 多功能免费实用的 PDF24工具箱 v11.17.0 版本： 官网所有版本：https://creator.pdf24.org/listVersions.php 123云盘分流：https://www.123pan.com/s/OgT7Vv-hPFc.html 在线中文版：https://tools.pdf24.org/zh/]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -115,19 +115,6 @@
       </tags>
   </entry>
   <entry>
-    <title>震惊!AI塔罗牌</title>
-    <url>/2024/10/27/ai-tlp/</url>
-    <content><![CDATA[起源本来是想给好兄弟测一下塔罗牌的! 但是我怎么也没想到,我尽然看到了AI塔罗牌!! 而且还是三端通用的,我滴天,这意味着什么?? AI都已经到这种地步了吗??而且超级有仪式感!! 废话补多少,我们一起来看看吧!! 网页端 安卓端因为这个软件有限制,所以请大家下载软件的时候,实用我的注册码!! 下载网页:Quin: https://askquin.ai/cn/ 塔罗耳语: https://tarotap.com/zh 不知道的AI: https://tarotnova.ai/ 安卓https://play.google.com/store/apps/details?id=ai.askquin ioshttps://apps.apple.com/app/id6480106163]]></content>
-      <categories>
-        <category>实用推荐</category>
-      </categories>
-      <tags>
-        <tag>安卓应用</tag>
-        <tag>塔罗牌</tag>
-        <tag>网页精选</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安卓必备啊！语音起飞！</title>
     <url>/2024/07/23/an-yuyin/</url>
     <content><![CDATA[😀 这里写文章的前言： 两款手机文字转语音工具，MulyiTTS，T2S。 第一款：MultiTTSMultiTTS是一款可离线的文本转tts语音工具，软件完全免费，语音风格多样，支持普通话、粤语、东北话、台湾腔、四川语音、英语、日语等等。 软件安装完成以后是空空如也，需要自行下载语音包导入，点击右上角的三个点，选择【导入数据】 这里导入的是压缩包，压缩包文末有给大家提供多个，大家自己选择一个导入即可。不过这里的压缩包越大拥有的语音风格也就越多。 导入的时间有点点长，大家耐心。导入成功后就可以选择各种语音风格了。我选择了一个比较小的语音包，所以导入的只有搜狗TTS、MscTTS和BDeTTS三种 但是里面已经包括了很多的语音包了，软萌音、御姐音、温柔淑女、清朗男声、小佩、小媛等等语音包。 进入到设置里，可以调节语速、音高，也可以在首选引擎里选择MultiTTS。 设置好后，再选择语音风格，这样你手机里的语音引擎就是这款MultiTTS了。 但是安了以后要怎么用呢？最典型的用法是手机“阅读”这款APP了，在朗读设置里选择MultiTTS就可以了。 在MultiTTS里设置了哪个主播，在阅读APP里朗读就是哪个主播的声音！ 相比软件自带和系统自带的朗读主播来说，MultiTTS的语音更加流畅也更加自然！ 第二款：T2S除了应用在上面的这款阅读APP外，还可以用这款T2S进行文本转语音。 软件非常干净简洁，打开也是空空如也，点击右下角的设置按钮，进入到设置中，选择【朗读引擎】 然后选择上面的MultiTTS引擎，再在设置中调节好语速和语调。 然后把需要转换的文本粘贴到软件中，点击右下角的播放按钮可以试听播放语音，点击右上角的三点，然后选择【导出为音频文件】 导出时可选择音频格式和比特率，然后选择输出的路径即可导出音频。 需要注意的是在MultiTTS这款软件中可以设置多个语音风格，我在测试时发现我选择多个语音后，上面的每段文字就用不同的语音风格，所以为了统一，大家可以在MultiTTS中只选择一个主播。 其他的大家自己去体验，软件就介绍到这里啦！]]></content>
@@ -167,42 +154,16 @@
       </tags>
   </entry>
   <entry>
-    <title>取bilibili直连</title>
-    <url>/2024/06/22/biibili-zhilian/</url>
-    <content><![CDATA[😀 这里写文章的前言： 我们在刷bilibili的时候，可能会遇到一些想要分享的视频之类的。 可是我们调用bilibili官方的api，有广告，不支持最大画质，额…实在是难办。 所以今天我给你们带来了bilibili的直连，这个api可以直接播放视频，无需复杂的过程，那么现在开始教程。 APIapi如下： HTMLhttps://bili.api.scc.lol/?bv=bvid&amp;qn=80 参数说明 参数 说明 是否必须 bv 视频的bv号 是 qn 视频清晰度 否（默认为80） 视频清晰度 qn 对应清晰度 16 360P 流畅 32 480P 清晰 64 720P 高清 80 1080P 高清 使用用途可以作为不会过期的b站视频直链使用。 例如在网页中插入： JSX&lt;video controls&gt; &lt;source src=&quot;https://bili.api.scc.lol/?bv=BV1A54y1x7Dj&amp;qn=80&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt; 效果 gotoplayer("[https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80](https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80)"); 上方为北京大学的宣传片，原地址如下：https://www.bilibili.com/video/BV1Tm4215773/]]></content>
+    <title>震惊!AI塔罗牌</title>
+    <url>/2024/10/27/ai-tlp/</url>
+    <content><![CDATA[起源本来是想给好兄弟测一下塔罗牌的! 但是我怎么也没想到,我尽然看到了AI塔罗牌!! 而且还是三端通用的,我滴天,这意味着什么?? AI都已经到这种地步了吗??而且超级有仪式感!! 废话补多少,我们一起来看看吧!! 网页端 安卓端因为这个软件有限制,所以请大家下载软件的时候,实用我的注册码!! 下载网页:Quin: https://askquin.ai/cn/ 塔罗耳语: https://tarotap.com/zh 不知道的AI: https://tarotnova.ai/ 安卓https://play.google.com/store/apps/details?id=ai.askquin ioshttps://apps.apple.com/app/id6480106163]]></content>
       <categories>
-        <category>技术分享</category>
+        <category>实用推荐</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>建站</tag>
-        <tag>实用推荐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cloudflare上有趣的项目</title>
-    <url>/2024/08/31/cf-words/</url>
-    <content><![CDATA[开端我在逛我的朋友圈的时候,发现清羽飞扬的小站发布了他总结的Cloudflare项目,一键部署,看起来真的很不错,就自己动手操作了一下. 主要有的项目有: 在线笔记 在线论坛 文件中转站 部署在线笔记这是一个基于 Cloudflare Worker、KV 和 Github Actions 实现，可以一键私有化部署的无成本在线云笔记项目，你可以记录文字，与朋友们分享，或者跨设备同步。下面是项目地址： 可以持久化保存笔记，并且支持设置密码，可以用于临时文字传输。 部署项目首先，fork仓库，然后再在变量中设置环境变量，如下三个变量，后面两个随便填写字符串即可。 YAMLCLOUDFLARE_API_TOKEN # 之前申请到的 Cloudflare API令牌SCN_SALT # 随便填（安全用途）SCN_SECRET # 随便填（安全用途） 然后在github action中，运行Deploy cloud-notepad，等待运行成功，则项目成功部署，点击进入cloudflare workers界面，查看或另绑定域名，即可正常访问。 效果如下: 链接如下: 在线论坛项目地址如下: 这是想打造一个校园论坛了,只不过,这个配置还需探索,自定义的很少,不知道如何添加分类,和背景主题等 部署项目 fork仓库到你的账户下 添加环境变量： CLOUDFLARE_ACCOUNT_ID CLOUDFLARE_API_TOKEN CLOUDFLARE_PROJECT_NAME前两个不用说，第三个为项目名称，比如我填写的是：locnode，不要带符号。 在你fork到的仓库里面运行action进行部署。 简单使用项目支持多用户，会自动创建D1数据库存储信息，你可以通过修改数据库来指定管理员等身份： 展示: 文件中转站项目部署项目地址: 其实部署起来非常简单，因为项目是分为前后端的，所以我们需要分别配置前后端： 添加环境变量CF_API_TOKEN 修改wrangler.toml文件中的内容，主要修改两个KV的ID和账户ID，请提前在cloudflare中创建好对应KV： TOMLname= &quot;pastebin-worker&quot;compatibility_date = &quot;2024-08-31&quot;account_id= &quot;36d7b2c5fa77292ef996f68e964478bd&quot;main = &quot;src/index.ts&quot;workers_dev = falsevars = &#123; ENVIRONMENT = &quot;production&quot; &#125;route = &#123; pattern = &quot;paste.liyy.us.kg&quot;, custom_domain = true &#125;kv_namespaces = [ &#123; binding = &quot;PB&quot;, id = &quot;86bca3e920024adb9e70cd7c5da6ceed&quot; &#125;, &#123; binding = &quot;PBIMGS&quot;, id =&quot;e3f5af1a0c584fcd841081d41a0c014d&quot; &#125;][site]bucket = &quot;./static/dist&quot; 修改**&#x2F;static&#x2F;.env**文件，修改为你准备部署的地址，比如本站： YAMLVITE_API_URL= https://paste.liyy.us.kg 点击github action并进行部署，最终，项目即可成功部署。 报错目前部署失败,不知道哪一步出错,看下有没有大佬可以指点一下]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>Cloudflare</tag>
-        <tag>部署</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Classlsand-班级课程表</title>
-    <url>/2024/09/08/classlasland/</url>
-    <content><![CDATA[碎碎念最近总是在想,有没有一款软件,可以提醒是否下课,让后下节课是什么! 我看见每天学习委员都经常要写课表在黑板上,而且有时候还会忘记,哎! 每次只能写右边的黑板,可能导致左边靠窗户的同学看不到黑板 所以,今天的我带来了这款软件!——Classlsand Classlsand 简介ClassIsland 是一款适用于班级多媒体屏幕的课表信息显示工具，可以在 Windows 屏幕上显示各种信息。本应用的名字灵感源于 iOS 灵动岛（Dynamic Island）功能。 功能课表显示 显示当天的课表、当前进行课程的信息 在上下课等重要时间点发出提醒，自选搭配音效、强调特效和语音增强提醒 自选课表隐藏条件、临时隐藏与鼠标穿透，不影响授课 课表编辑与管理 简洁直观的课表编辑工具 从 Excel 或其他软件导入课表 多周轮换、快速录入时间表、自定义设置 临时换课、临时启用某个课表 其它功能 自动同步软件时间、手动对齐铃声 天气、极端天气预警 通过组件（日期、时间、天气简报、倒计日等）和插件高度自定义 ClassIsland 丝滑、流畅的过渡动画 自动获取与系统配色搭配的主题色 自动软件更新 集控管理（即将发布） …… 效果展示 下载可以访问官网Github: 点击直达 上方为官方版本,无内置课表 此为我校,我班专属的课表,我都安排好了!]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>实用推荐</tag>
-        <tag>班级</tag>
+        <tag>安卓应用</tag>
+        <tag>塔罗牌</tag>
+        <tag>网页精选</tag>
       </tags>
   </entry>
   <entry>
@@ -219,6 +180,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Classlsand-班级课程表</title>
+    <url>/2024/09/08/classlasland/</url>
+    <content><![CDATA[碎碎念最近总是在想,有没有一款软件,可以提醒是否下课,让后下节课是什么! 我看见每天学习委员都经常要写课表在黑板上,而且有时候还会忘记,哎! 每次只能写右边的黑板,可能导致左边靠窗户的同学看不到黑板 所以,今天的我带来了这款软件!——Classlsand Classlsand 简介ClassIsland 是一款适用于班级多媒体屏幕的课表信息显示工具，可以在 Windows 屏幕上显示各种信息。本应用的名字灵感源于 iOS 灵动岛（Dynamic Island）功能。 功能课表显示 显示当天的课表、当前进行课程的信息 在上下课等重要时间点发出提醒，自选搭配音效、强调特效和语音增强提醒 自选课表隐藏条件、临时隐藏与鼠标穿透，不影响授课 课表编辑与管理 简洁直观的课表编辑工具 从 Excel 或其他软件导入课表 多周轮换、快速录入时间表、自定义设置 临时换课、临时启用某个课表 其它功能 自动同步软件时间、手动对齐铃声 天气、极端天气预警 通过组件（日期、时间、天气简报、倒计日等）和插件高度自定义 ClassIsland 丝滑、流畅的过渡动画 自动获取与系统配色搭配的主题色 自动软件更新 集控管理（即将发布） …… 效果展示 下载可以访问官网Github: 点击直达 上方为官方版本,无内置课表 此为我校,我班专属的课表,我都安排好了!]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>实用推荐</tag>
+        <tag>班级</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>五个人性心理实验</title>
     <url>/2024/10/02/fire-xinli/</url>
     <content><![CDATA[简介本次要要介绍五个有名的心理实验,在日常生活中,或许对你有很大的帮助. 他们分别是: 领域意识 皮格马利翁效应 你觉得人的心理可以被操控吗? 那么一个坏人学了心理学,那么他是不是很可怕? 如果你有的想法,请在最下评论区留言,感谢! 个人空间实验起源上世纪60年代,有两个科学家,他们尝试和陌生人坐的更近一些,来探测死不是有自己的领地意识. 他们找来了64个病人,拉来做这个实验. 实验如果自己与病人做的非常近,他们就会立即走 但如果自己插着腰与病人坐,有个一胳膊肘的距离,那么据观测两分钟只有36% 的人离开,那么剩下64%的人会在20分钟内离开 也就是说人与人之间是有一定的安全距离的,当你的身份不满足时,你的靠近就会让他感到恐慌,不安全. 总结亲密关系就像男女朋友,直血亲属,等,可以保持15-45cm之间的距离 朋友关系你们是朋友关系的话,不论好朋友还是正常朋友,你们之间的距离为45cm-1.2m之间 社交关系就例如刚认识朋友之类的,你们之间的距离为1.5m-3.3m之间,这是一个比较安全的社交距离,双方都会感到轻松 应用如果你跟一个异性去约会,并且你和他的距离控制在了45cm之内,并且对方没有离开,这说明什么,对方已经答应你了,可以去表白.种程度上说,你要判断你与他的关系是不是好,你不用问他,看他的身体反应,就知道你是他的什么关系! 就例如班里突然来了一个陌生人,我是不会刻意跟他靠的很近,但如果我身边有我的好朋友,我就会下意识的勾肩搭背,而这并不是我有意而为之,是我下意识的领域行为,我对我自己个人空间的一种把握,当你掌握这个技能之后,你就很轻易判断出来,对方与你是什么关系.表白也会知道啊会不会被拒绝. 皮格马利翁效应背景皮格马利翁效应，亦称为“罗森塔尔效应”或“期待效应”，源自古希腊神话中的一个故事。塞浦路斯国王皮格马利翁因对凡间女子失望，雕刻了一座象牙少女像，并深深爱上了它。他祈求爱神赋予雕像生命，最终愿望成真。这个故事传达了一个信息：期望能够创造出现实。 实验1968年，心理学家罗森塔尔和雅格布森在《课堂中的皮格马利翁》一书中，通过实验验证了这一效应。他们随机挑选了一些学生，告诉老师这些学生具有高发展潜力，但实际上这些学生是随机选出的。八个月后，这些学生的学习成绩显著提高，性格变得更外向，自信心和求知欲也更强了。 结论皮格马利翁效应表明，当我们怀着对某件事情非常强烈的期望时，我们所期望的事物就会出现。这种现象在教育、管理、个人成长等领域都有广泛的应用。它揭示了期望的力量，以及期望如何影响人们的行为和成就。 实际应用在教育领域，教师对学生的期望可以显著影响学生的学习成绩和行为表现。在企业管理中，领导者对员工的期望同样能够激发员工的潜力，提高团队的整体表现。个人也可以通过积极的自我期望来实现自我提升和目标达成。 结语皮格马利翁效应让我们相信，积极的期望和信念能够激发潜能，创造奇迹。它提醒我们，无论是对自己还是对他人，都应该持有积极的态度和期待。这样，我们就能够更好地发挥自己的潜力，实现自己的目标。]]></content>
@@ -228,6 +202,19 @@
       <tags>
         <tag>实验</tag>
         <tag>心理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免费域名整理</title>
+    <url>/2024/04/10/free-yuming/</url>
+    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#x69;&#x6e;&#102;&#x6f;&#64;&#x66;&#114;&#101;&#101;&#x6e;&#111;&#x6d;&#46;&#99;&#111;&#109;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
+      <categories>
+        <category>网站建站</category>
+      </categories>
+      <tags>
+        <tag>建站</tag>
+        <tag>实用推荐</tag>
+        <tag>精选网站</tag>
       </tags>
   </entry>
   <entry>
@@ -255,30 +242,28 @@
       </tags>
   </entry>
   <entry>
-    <title>免费域名整理</title>
-    <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#105;&#110;&#x66;&#x6f;&#x40;&#102;&#114;&#x65;&#x65;&#110;&#111;&#109;&#46;&#x63;&#x6f;&#x6d;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
+    <title>Cloudflare上有趣的项目</title>
+    <url>/2024/08/31/cf-words/</url>
+    <content><![CDATA[开端我在逛我的朋友圈的时候,发现清羽飞扬的小站发布了他总结的Cloudflare项目,一键部署,看起来真的很不错,就自己动手操作了一下. 主要有的项目有: 在线笔记 在线论坛 文件中转站 部署在线笔记这是一个基于 Cloudflare Worker、KV 和 Github Actions 实现，可以一键私有化部署的无成本在线云笔记项目，你可以记录文字，与朋友们分享，或者跨设备同步。下面是项目地址： 可以持久化保存笔记，并且支持设置密码，可以用于临时文字传输。 部署项目首先，fork仓库，然后再在变量中设置环境变量，如下三个变量，后面两个随便填写字符串即可。 YAMLCLOUDFLARE_API_TOKEN # 之前申请到的 Cloudflare API令牌SCN_SALT # 随便填（安全用途）SCN_SECRET # 随便填（安全用途） 然后在github action中，运行Deploy cloud-notepad，等待运行成功，则项目成功部署，点击进入cloudflare workers界面，查看或另绑定域名，即可正常访问。 效果如下: 链接如下: 在线论坛项目地址如下: 这是想打造一个校园论坛了,只不过,这个配置还需探索,自定义的很少,不知道如何添加分类,和背景主题等 部署项目 fork仓库到你的账户下 添加环境变量： CLOUDFLARE_ACCOUNT_ID CLOUDFLARE_API_TOKEN CLOUDFLARE_PROJECT_NAME前两个不用说，第三个为项目名称，比如我填写的是：locnode，不要带符号。 在你fork到的仓库里面运行action进行部署。 简单使用项目支持多用户，会自动创建D1数据库存储信息，你可以通过修改数据库来指定管理员等身份： 展示: 文件中转站项目部署项目地址: 其实部署起来非常简单，因为项目是分为前后端的，所以我们需要分别配置前后端： 添加环境变量CF_API_TOKEN 修改wrangler.toml文件中的内容，主要修改两个KV的ID和账户ID，请提前在cloudflare中创建好对应KV： TOMLname= &quot;pastebin-worker&quot;compatibility_date = &quot;2024-08-31&quot;account_id= &quot;36d7b2c5fa77292ef996f68e964478bd&quot;main = &quot;src/index.ts&quot;workers_dev = falsevars = &#123; ENVIRONMENT = &quot;production&quot; &#125;route = &#123; pattern = &quot;paste.liyy.us.kg&quot;, custom_domain = true &#125;kv_namespaces = [ &#123; binding = &quot;PB&quot;, id = &quot;86bca3e920024adb9e70cd7c5da6ceed&quot; &#125;, &#123; binding = &quot;PBIMGS&quot;, id =&quot;e3f5af1a0c584fcd841081d41a0c014d&quot; &#125;][site]bucket = &quot;./static/dist&quot; 修改**&#x2F;static&#x2F;.env**文件，修改为你准备部署的地址，比如本站： YAMLVITE_API_URL= https://paste.liyy.us.kg 点击github action并进行部署，最终，项目即可成功部署。 报错目前部署失败,不知道哪一步出错,看下有没有大佬可以指点一下]]></content>
       <categories>
-        <category>网站建站</category>
+        <category>技术分享</category>
       </categories>
       <tags>
-        <tag>建站</tag>
-        <tag>实用推荐</tag>
-        <tag>精选网站</tag>
+        <tag>Cloudflare</tag>
+        <tag>部署</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
-    <title>GKD跳过广告</title>
-    <url>/2024/01/25/gkd/</url>
-    <content><![CDATA[😀 这里写文章的前言： 相信大家的手机里面有各种各样的软件，许多软件为了恰饭，添加了开屏广告，这让我们很不爽，不仅影响时间，还大大消减了，使用这个软件的兴趣，常见的开屏软件：快手，抖音，小红书等 引言相信大家的手机里面有各种各样的软件，许多软件为了恰饭，添加了开屏广告，这让我们很不爽，不仅影响时间，还大大消减了，使用这个软件的兴趣，常见的开屏软件：某手，某音，某红书等 介绍GKD（又称搞快点，详情请戳 作者项目地址）是一款免费开源简洁多规则的自动跳过广告的软件。简而言之，基于预设的定时更新订阅规则+快照功能，实现识别并自动点击跳过任何开屏广告及点击关闭应用内部任何弹窗广告，如关闭某些APP开屏和内含推荐广告位（主流的基本上已支持）。比起寻找无广告还不保证长期有效的APP来说，此屏蔽跳过的方法要更直接。毕竟第三方又闭源的软件因众所周知的缘故纷纷停更了，国外付费的那款贵得劝退，太简单的又无法满足，所以爬了个而非单单是个开关的软件，当然配合已经绝版的某足兆足兆自定义规则使用更佳。 软件特性： 支持在线规则实时更新订阅 目前git仓库已经收录支持至少九百多个app（国产居多）以及2000条以上规则（后续还会持续增长），方便掌握动态 兼容android14及harmony OS 4.0 使用说明：首次使用需要给予无障碍和悬浮窗权限（具体自搜），所提供的默认规则支持在线更新订阅，基本常用主流熟知的APP对应都有不同的规则开关可自主选择。具体请戳：规则更新动态。自动点击记录事件可在软件主页中翻查。若想不被频繁误杀、说无效的又或者是得到更准确的跳过识别，可在高级模式中开启shi授权（具体请自搜）。另外，源码本身开源，比闭源的开明多了，可自行抓包软件行为查看更具体的动作权限便知（本帖不展开赘述，具体自搜），担心就勿下勿用，其余功能请自行体验。 截屏展示 点击记录：（可自动跳过小程序、评论区推荐等广告或活动更新弹窗） 下载链接不多说，直接上链接下载地址： 蓝奏云：提取码hm0w 自行复制，技术有限不会点击复制 更新内容 v1.6.4更新内容：（2024-01-04）修复quickFind标识文字错误导致查询变慢优化某些场景下的查询规则 v1.6.2更新内容：（2023-12-28）修复无障碍获取无障碍属性为空导致的崩溃修复获取无障碍节点错误导致的崩溃新增全局规则新增规则分类&#x2F;批量开启关闭新增常驻通知栏开关允许匹配不在安装列表的应用 新增截屏快照,可以在用户截屏时保存快照 优化规则触发逻辑及速度。优化快照文件生成的速度 优化连接到审查工具的方式优化申请权限流程 优化界面布局 每次打开界面时自动清除缓存 优化 shizuku 错误提示 修复某些设备出现通知提示音修复点击记录名称显示错误 修复订阅自动检测更新不生效。 v1.5.4更新内容：（2023-11-24） 订阅界面搜索优化&#x2F;id搜索 ActivityId 概率复用错误优化activityId更新逻辑 v1.5.3更新内容：（2023-11-23） 优化和修复： 某些机型上规则不执行 通知栏快照丢失 activityId v1.5.2更新内容：（2023-11-22） 降低一半 apk 文件大小 规则 group actionMaximum&#x2F;actionCd失效 主线程阻塞导致界面卡顿 修复某些机型上规则概率执行缓慢的问题 v1.5.1更新内容：（2023-11-18） 路由动画卡顿 上一版更新内容： 优化和修复 状态栏显示优化(沉浸式状态栏)点击记录显示优化（没有名称的规则将标识索引和密钥） 订阅列表显示优化（订阅菜单项可以查看订阅详情） 删除无用资源、删除 32 位支持、减少apk 大小 内存占用优化，减少 内存占用性能&#x2F;耗电优化，优化规则执行逻辑，同时提升规则触发速度 优化activityId识别逻辑规则支持长按、共享cd&#x2F;次数 优化创建文件夹逻辑 优化存储数据逻辑 其它修复和优化]]></content>
+    <title>新年快乐</title>
+    <url>/2025/01/01/happy/</url>
+    <content><![CDATA[茗起在新的一年希望大家心想事成,努力追逐,去实现自己的理想,相信自己,一定能够成功! 茗述今天主要是为了给你们看下我收到的新年的祝福,同样的祝福也送给你们,我们一起加油啊!]]></content>
       <categories>
-        <category>安卓应用</category>
+        <category>生活方面</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>安卓应用</tag>
-        <tag>广告</tag>
-        <tag>app,</tag>
+        <tag>生活</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -294,18 +279,6 @@
       </tags>
   </entry>
   <entry>
-    <title>新年快乐</title>
-    <url>/2025/01/01/happy/</url>
-    <content><![CDATA[茗起在新的一年希望大家心想事成,努力追逐,去实现自己的理想,相信自己,一定能够成功! 茗述今天主要是为了给你们看下我收到的新年的祝福,同样的祝福也送给你们,我们一起加油啊!]]></content>
-      <categories>
-        <category>生活方面</category>
-      </categories>
-      <tags>
-        <tag>分享</tag>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo-添加音乐与视频</title>
     <url>/2024/09/01/hexo-mp4/</url>
     <content><![CDATA[简述我们在实用hexo中,没有任何的添加视频与音频的按钮. 这让我很头脑,所以,这次我来分享一个方法. 教程首先插入音频aplayer 在cmd页面内，使用npm安装：npm install hexo-tag-aplayer 在markdown内添加以下代码： BASH&#123;% aplayer &quot;她的睫毛&quot; &quot;周杰伦&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot; &quot;autoplay=false&quot; %&#125; 效果如下: 或者使用下方代码: HTML&lt;video src=&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt; 视频dplayer 在cmd页面内，使用npm安装：npm install hexo-tag-dplayer 在markdown内添加以下代码： BASH&#123;% dplayer &quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot; &quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot; &quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;token=tokendemo&quot; %&#125; 效果如下: 或者使用下方代码: HTML&lt;video src=&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt;]]></content>
@@ -313,6 +286,19 @@
         <tag>hexo</tag>
         <tag>技术分享</tag>
         <tag>实用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>取bilibili直连</title>
+    <url>/2024/06/22/biibili-zhilian/</url>
+    <content><![CDATA[😀 这里写文章的前言： 我们在刷bilibili的时候，可能会遇到一些想要分享的视频之类的。 可是我们调用bilibili官方的api，有广告，不支持最大画质，额…实在是难办。 所以今天我给你们带来了bilibili的直连，这个api可以直接播放视频，无需复杂的过程，那么现在开始教程。 APIapi如下： HTMLhttps://bili.api.scc.lol/?bv=bvid&amp;qn=80 参数说明 参数 说明 是否必须 bv 视频的bv号 是 qn 视频清晰度 否（默认为80） 视频清晰度 qn 对应清晰度 16 360P 流畅 32 480P 清晰 64 720P 高清 80 1080P 高清 使用用途可以作为不会过期的b站视频直链使用。 例如在网页中插入： JSX&lt;video controls&gt; &lt;source src=&quot;https://bili.api.scc.lol/?bv=BV1A54y1x7Dj&amp;qn=80&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt; 效果 gotoplayer("[https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80](https://bili.api.scc.lol/?bv=BV1Tm4215773&qn=80)"); 上方为北京大学的宣传片，原地址如下：https://www.bilibili.com/video/BV1Tm4215773/]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>建站</tag>
+        <tag>实用推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -355,18 +341,6 @@
       </tags>
   </entry>
   <entry>
-    <title>开往的礼物(纪念款)</title>
-    <url>/2024/04/21/kw/</url>
-    <content><![CDATA[😀 这里写文章的前言： 就在昨天购买了开往的周边真的太开心了。 简介想必每个玩网络的人都知道开往吧。 开往的生日是 2020 年 3 月 12 日，取自开放的网络，是一个友链接力项目。 开往的 logo 是代表“世界”的星环 + 代表“穿梭”的列车 —— 相信你听到“开往”这个词最多的时候一定是在列车上，“由 xx 开往 xx 的列车……”。 每当有人访问加入开往的网页时，点击“开往“会随机跳转到另一个加入开往的网页。之后，再次点击网页上的”开往“或后退网页，将继续随机跳转到另一个加入开往的网页。 加入开往的网页越多，友链接力的规模越大，分享流量的规模也越大。 目前已有 1k+ 人关注开往， 1k+ 成员加入过开往。 https://img.shields.io/github/stars/travellings-link/travellings?style=social 这个看起来难道不有趣吗？ 分享就在上周洛寒兮准备了开往的周边，心想我来到开往也有3个月多之久了，喜欢开往也有3年了，一开始就被他的原理所吸引，与每一次点击之后的未知性，真的超级有趣。 那时的我看到别人网站上挂着开往的标识，太酷了啊。我想什么时候我也才能成为一份子呢？ 这不，我现在终于成为了一份子，真的很感激，很激动，文章每次都是很认真写完才会发布，就希望有更多的人看到我，能帮助到别人。 哈哈，来看我的周边！！ 这是在爱发电上买的，一挂出，我放学回来就买了，真的很爱开往~ 你看这个，谁能不爱呢？ 茗辰原 の 异世界，也是你的一世界！在这里可以畅所欲谈，哈哈，期待与你的下一次相遇~]]></content>
-      <categories>
-        <category>心情随笔</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-        <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>李跳跳复活版！</title>
     <url>/2024/03/16/ltt/</url>
     <content><![CDATA[李跳跳复活版！简介 说起手机跳过广告，之前也是给大家分享过一些的，其中最受欢迎的当属李跳跳，只是它后面很多规则都失效了，导致它虽然可以打开，但是还是无法使用！ 去年，广告跳过界的“明星应用”——李跳跳，因大厂的律师函而一度暂停运营。这让很多依赖它们跳过广告的用户感到惋惜。不过，好消息是，虽然老的应用暂时休息了，但新的去广告力量已经崛起！比如我们之前介绍过的开屏跳过，它的功能和李跳跳如出一辙。 对于这类的软件，大家都是不可缺少的，今天就来给大家分享一个最新的规则导入方法，让它能够再次陪伴大家左右！ 2024全新李跳跳去广告规则合集 涵盖广泛：这次的规则合集包括了超过3000条规则，几乎涵盖了你日常使用的所有APP。 适配多样：不管是哪种形式的开屏广告，这个合集都能帮你轻松跳过。 简单易用：只需几步操作，就能将这些规则导入到李跳跳中，让你的APP启动更加清爽。 适用平台：安卓 李跳跳最新规则导入方法这里是给大家准备了两份规则，加起来共3000多条，基本上大部分APP都适用！使用方法也很简单，大家先将软件和规则一同下载到本地，然后用HTML查看器或者WPS Office打开，将所有的规则全选并复制下来！ 打开李跳跳应用，点击“更多”。 在右上角找到“···”，点击后选择“导入规则”。 在弹出的输入框里，长按粘贴你复制的规则代码即可。 文件下载李跳跳325条规则.txt 李跳跳881条规则.txt 李跳跳879条规则.txt 外番值得注意的是，现在的李跳跳是一个完全离线的APP，不联网也能使用，有了这个全新的规则合集，你的日常使用绝对没问题！ 李跳跳的水果摊 在小镇的一角，靠近熙熙攘攘的市场，有一个小小的水果摊。摊主是一个名叫李跳跳的小女孩，她年纪虽小，却已经懂得了生活的艰辛与美好。她的眼睛像两颗明亮的星星，闪烁着希望的光芒。她的笑容像春天的阳光，温暖而灿烂。 李跳跳的水果摊虽然不大，但摆放得井井有条，各种水果琳琅满目，色彩斑斓。红通通的苹果，黄澄澄的香蕉，绿油油的西瓜，还有紫莹莹的葡萄……每一种水果都像是大自然的馈赠，散发着诱人的香气。 李跳跳对待每一位顾客都热情周到，她总是笑眯眯地询问顾客的需求，然后麻利地挑选出最新鲜、最美味的水果。她的双手在水果摊上飞快地移动，就像是在弹奏一曲美妙的乐章。顾客们都喜欢她，喜欢她的水果，更喜欢她的笑容和热情。 虽然李跳跳每天都很忙碌，但她从不觉得辛苦。她喜欢看着顾客们满意地离开，喜欢听着他们夸赞她的水果。她觉得，这就是她想要的生活，简单而充实。 然而，生活并不总是一帆风顺。有时候，天气不好，水果的销量就会受到影响；有时候，一些挑剔的顾客会让她感到头疼。但李跳跳从不气馁，她总是相信，只要她努力，一切都会好起来。 果然，在她的坚持和努力下，水果摊的生意越来越好。越来越多的人知道了李跳跳和她的水果摊，他们被她的热情和坚持所打动，成为了她的忠实顾客。 李跳跳用她的双手和笑容，创造了一个属于她自己的小世界。在这个世界里，充满了水果的香气和人们的笑声。她感到无比幸福和满足，因为她知道，这就是她想要的生活。]]></content>
@@ -405,16 +379,17 @@
       </tags>
   </entry>
   <entry>
-    <title>强迫性思维😣</title>
-    <url>/2024/12/28/obsessive-thinking/</url>
-    <content><![CDATA[茗起你说放假了我刷个视频怎么了,这一刷不要紧,给我整出个强迫性思维症(简称强迫症)我起初说我绝对没有,但当我看了详细的表现之后,我发现!什么玩意!我咋全占了?我还以为之前看完恐怖片,就无时无刻感觉有异形生物,或者丧失什么的,全都是因为我胆子小的问题,如今看来好像不是了…… 强迫性思维😣你是否有过这样的经历，脑海中总会反复出现一些念头，怎么赶也赶不走，让你焦虑又困扰？这可能就是强迫性思维在作祟啦。今天就来和大家深入聊聊这个常见却又容易被忽视的心理现象。 一、介绍强迫性思维可不是什么小烦恼，它实实在在地影响着人们的生活。简单来说，强迫性思维就是患者的脑海里会不停地冒出一些自己无法控制的念头，这些念头就像 “牛皮糖” 一样，黏上了就甩不掉。它可不光折腾人的心理，还会在社交场合、日常生活里搞出不少 “幺蛾子”，让人苦不堪言，生活质量大打折扣。 二、强迫性思维的特征重复性：简直像个复读机一样，相同的念头一遍又一遍地在脑袋里循环播放，患者想摆脱却无能为力，刚把这个想法按下，没过一会儿它又冒出来了。控制感缺失：**那种无力感，就好比风筝断了线，患者完全掌控不了这些念头何时出现、何时消失，只能眼睁睁看着它们 “兴风作浪”。焦虑与困扰：一旦这些念头来袭，焦虑情绪立刻如影随形，心里像揣了只小兔子，七上八下的，给患者带来极大的精神折磨。时间消耗：为了应对这些恼人的念头，患者常常大把大把地浪费时间，本来可以用来享受生活、学习进步的时光，都耗费在和它们的 “斗争” 中了。 就像我,每次我的家长开车带我出去,我就会觉得可能发生车祸;如果站在高处往下看,我就会想我会不会掉下去,是头先着地还是身体,会不会吓到人,吃糖的时候会不会突然出来史莱姆…有没有你在洗头的时候,眼睛是睁不开的,但这时候脑袋就突然浮现出,恐怖片里的画面,让你将你噶了?如果你非要睁开眼睛,洗发水又会进入你的眼睛,非常痛苦!而且你还驱散不掉,当你拼命的想要转移注意力,却发现怎么也转移不掉,他就是会出现!这种情况非常影响心情,心情一下就变得非常复杂!很那说清…… 三、强迫性思维的表现强迫性怀疑：出门总担心门没锁好，电器没关好，一遍又一遍地回去检查，有时候明明已经确认过多次，可心里就是不踏实，非得反复核实。强迫性洗涤：手稍微碰了点东西，就觉得脏得不行，反复洗手，洗得皮肤发红、起皮也停不下来；看到个物件，也要里里外外擦好几遍，试图洗掉内心的不安。强迫性计数：走路要数步数，爬楼梯要数台阶，非得数到一个自认为 “完美” 的数字，仿佛只有这样才能获得心理上的慰藉，找到平衡感。强迫性仪式行为：每天起床必须按照固定的顺序穿衣服、洗漱，稍微打乱一点顺序就浑身不自在，焦虑爆棚，只有完成这套仪式，才能稍微缓解内心的焦虑。 以上我非常有抵触,要知道我们学校住宿需要经常锁门,让后我每次走之前都要专门把钥匙带上,好多次都是,我明明已经把钥匙戴上了,但是我刚走出大门口,又回去看了看不在,我拿走了才放心,有人问,为什么不检查自己的口袋?你说的对,但我当时记得是没带!所以我口袋里就不可能出现!在宿舍我每天必须先洗漱才能叠被子,而在家必须先洗脸才刷牙!就是步骤相反的? 四、治疗与管理认知行为治疗（CBT）：这可是个 “思维改造神器”。在治疗过程中，治疗师会引导患者仔细剖析日常出现的强迫思维情境，比如患者总是害怕犯错而反复检查文件，治疗师就会和患者一起追溯这种恐惧的根源，可能源于小时候一次因小失误被严厉批评的经历。然后帮助患者认识到当下反复检查的行为其实是过度反应，逐步训练患者用理性思维去取代这种不合理的害怕犯错的思维，像是告诉自己 “我已经认真做过了，出现小失误也不会有灾难性后果”，从而让大脑重回正轨。暴露与反应阻止（ERP）：听起来有点 “残忍”，但却很有效。把患者直接丢进引发强迫性思维的情境里，就像对于有强迫性洗涤症状的患者，让他们去接触一些自认为 “脏” 的日常物品，刚开始肯定害怕、焦虑，心都提到嗓子眼了，但要求患者在此时一定不能去洗手或清洁，强忍着焦虑感待在这个情境中，随着不断地适应，慢慢就发现不立刻清洁也没什么大不了，对这些情境的恐惧就会逐渐消散，焦虑感也就随之减少啦。药物治疗：别怕，有些抗抑郁药和抗焦虑药就像是 “心灵创可贴”。像选择性 5 - 羟色胺再摄取抑制剂（SSRI）这一类药物，它能调节大脑中的神经递质水平，就好比给混乱的神经信号 “交通” 重新梳理秩序，让紧绷的神经松弛下来，缓解强迫症状带来的焦虑、抑郁等不良情绪，为康复助力。不过药物的使用务必在专业医生的指导下进行哦。自我管理：自己动手，丰衣足食！放松训练做起来，找个安静舒适的地方坐下或躺下，闭上眼睛，慢慢地深呼吸，将注意力集中在呼吸的感觉上，感受腹部的起伏，让身心的紧绷感随着每一次呼气慢慢散去；冥想也很有帮助，专注于当下的念头，不做评判地观察它们，当杂念出现又飘走，不被其牵着走，减轻强迫性思维的影响。还可以试试正念练习，比如吃饭的时候就专注于食物的口感、味道，走路时感受脚步与地面接触的感觉，让自己扎根于当下，摆脱强迫思维的纠缠。 五、结论总而言之，强迫性思维虽然讨厌，但它绝不是什么 “不治之症”。只要我们及时发现，积极采取治疗和管理措施，患者完全能够夺回生活的主导权，重新拥抱高质量的生活🌈。我现在才发现,所以我现在准备接受心理和精神治疗,这个实在是太烦了!]]></content>
+    <title>GKD跳过广告</title>
+    <url>/2024/01/25/gkd/</url>
+    <content><![CDATA[😀 这里写文章的前言： 相信大家的手机里面有各种各样的软件，许多软件为了恰饭，添加了开屏广告，这让我们很不爽，不仅影响时间，还大大消减了，使用这个软件的兴趣，常见的开屏软件：快手，抖音，小红书等 引言相信大家的手机里面有各种各样的软件，许多软件为了恰饭，添加了开屏广告，这让我们很不爽，不仅影响时间，还大大消减了，使用这个软件的兴趣，常见的开屏软件：某手，某音，某红书等 介绍GKD（又称搞快点，详情请戳 作者项目地址）是一款免费开源简洁多规则的自动跳过广告的软件。简而言之，基于预设的定时更新订阅规则+快照功能，实现识别并自动点击跳过任何开屏广告及点击关闭应用内部任何弹窗广告，如关闭某些APP开屏和内含推荐广告位（主流的基本上已支持）。比起寻找无广告还不保证长期有效的APP来说，此屏蔽跳过的方法要更直接。毕竟第三方又闭源的软件因众所周知的缘故纷纷停更了，国外付费的那款贵得劝退，太简单的又无法满足，所以爬了个而非单单是个开关的软件，当然配合已经绝版的某足兆足兆自定义规则使用更佳。 软件特性： 支持在线规则实时更新订阅 目前git仓库已经收录支持至少九百多个app（国产居多）以及2000条以上规则（后续还会持续增长），方便掌握动态 兼容android14及harmony OS 4.0 使用说明：首次使用需要给予无障碍和悬浮窗权限（具体自搜），所提供的默认规则支持在线更新订阅，基本常用主流熟知的APP对应都有不同的规则开关可自主选择。具体请戳：规则更新动态。自动点击记录事件可在软件主页中翻查。若想不被频繁误杀、说无效的又或者是得到更准确的跳过识别，可在高级模式中开启shi授权（具体请自搜）。另外，源码本身开源，比闭源的开明多了，可自行抓包软件行为查看更具体的动作权限便知（本帖不展开赘述，具体自搜），担心就勿下勿用，其余功能请自行体验。 截屏展示 点击记录：（可自动跳过小程序、评论区推荐等广告或活动更新弹窗） 下载链接不多说，直接上链接下载地址： 蓝奏云：提取码hm0w 自行复制，技术有限不会点击复制 更新内容 v1.6.4更新内容：（2024-01-04）修复quickFind标识文字错误导致查询变慢优化某些场景下的查询规则 v1.6.2更新内容：（2023-12-28）修复无障碍获取无障碍属性为空导致的崩溃修复获取无障碍节点错误导致的崩溃新增全局规则新增规则分类&#x2F;批量开启关闭新增常驻通知栏开关允许匹配不在安装列表的应用 新增截屏快照,可以在用户截屏时保存快照 优化规则触发逻辑及速度。优化快照文件生成的速度 优化连接到审查工具的方式优化申请权限流程 优化界面布局 每次打开界面时自动清除缓存 优化 shizuku 错误提示 修复某些设备出现通知提示音修复点击记录名称显示错误 修复订阅自动检测更新不生效。 v1.5.4更新内容：（2023-11-24） 订阅界面搜索优化&#x2F;id搜索 ActivityId 概率复用错误优化activityId更新逻辑 v1.5.3更新内容：（2023-11-23） 优化和修复： 某些机型上规则不执行 通知栏快照丢失 activityId v1.5.2更新内容：（2023-11-22） 降低一半 apk 文件大小 规则 group actionMaximum&#x2F;actionCd失效 主线程阻塞导致界面卡顿 修复某些机型上规则概率执行缓慢的问题 v1.5.1更新内容：（2023-11-18） 路由动画卡顿 上一版更新内容： 优化和修复 状态栏显示优化(沉浸式状态栏)点击记录显示优化（没有名称的规则将标识索引和密钥） 订阅列表显示优化（订阅菜单项可以查看订阅详情） 删除无用资源、删除 32 位支持、减少apk 大小 内存占用优化，减少 内存占用性能&#x2F;耗电优化，优化规则执行逻辑，同时提升规则触发速度 优化activityId识别逻辑规则支持长按、共享cd&#x2F;次数 优化创建文件夹逻辑 优化存储数据逻辑 其它修复和优化]]></content>
       <categories>
-        <category>生活方面</category>
+        <category>安卓应用</category>
       </categories>
       <tags>
-        <tag>心理</tag>
-        <tag>生活</tag>
-        <tag>记录</tag>
+        <tag>工具</tag>
+        <tag>安卓应用</tag>
+        <tag>广告</tag>
+        <tag>app,</tag>
       </tags>
   </entry>
   <entry>
@@ -431,15 +406,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Office-2025激活</title>
-    <url>/2024/11/23/office-ltsc/</url>
-    <content><![CDATA[起源在我发现我的WPS用不了之后,打算更新OFFice来使用,但是我万万没想到,竟然卡在激活上面了,故出一期新版的激活教程 激活方法Office LTSC 2024 激活方法同样可以使用之前博客《无需激活码，一条安全命令轻松激活 Windows 10&#x2F;11 系统》来激活，这里简单做演示，关于该方法的详细信息可以到原文查看。 使用KMS激活脚本 使用管理员身份，打开 Powershell，在 Powershell 中输入： LIVECODESERVERirm https://massgrave.dev/get | iex KMS激活 图 1 稍等片刻，会弹出一个对话框，如下图，输入 4 KMS激活 图 2 激活 Office LTSC 2024，输入 2 KMS激活 图 3 稍等片刻，就可以看到激活成功 KMS激活 图 4 KMS激活 图 5 注意事项 此激活方法使用第三方脚本，虽然是开源脚本，使用人数众多，也难免存在风险。 建议在使用前备份重要数据。 如果条件允许，推荐购买正版许可。]]></content>
+    <title>强迫性思维😣</title>
+    <url>/2024/12/28/obsessive-thinking/</url>
+    <content><![CDATA[茗起你说放假了我刷个视频怎么了,这一刷不要紧,给我整出个强迫性思维症(简称强迫症)我起初说我绝对没有,但当我看了详细的表现之后,我发现!什么玩意!我咋全占了?我还以为之前看完恐怖片,就无时无刻感觉有异形生物,或者丧失什么的,全都是因为我胆子小的问题,如今看来好像不是了…… 强迫性思维😣你是否有过这样的经历，脑海中总会反复出现一些念头，怎么赶也赶不走，让你焦虑又困扰？这可能就是强迫性思维在作祟啦。今天就来和大家深入聊聊这个常见却又容易被忽视的心理现象。 一、介绍强迫性思维可不是什么小烦恼，它实实在在地影响着人们的生活。简单来说，强迫性思维就是患者的脑海里会不停地冒出一些自己无法控制的念头，这些念头就像 “牛皮糖” 一样，黏上了就甩不掉。它可不光折腾人的心理，还会在社交场合、日常生活里搞出不少 “幺蛾子”，让人苦不堪言，生活质量大打折扣。 二、强迫性思维的特征重复性：简直像个复读机一样，相同的念头一遍又一遍地在脑袋里循环播放，患者想摆脱却无能为力，刚把这个想法按下，没过一会儿它又冒出来了。控制感缺失：**那种无力感，就好比风筝断了线，患者完全掌控不了这些念头何时出现、何时消失，只能眼睁睁看着它们 “兴风作浪”。焦虑与困扰：一旦这些念头来袭，焦虑情绪立刻如影随形，心里像揣了只小兔子，七上八下的，给患者带来极大的精神折磨。时间消耗：为了应对这些恼人的念头，患者常常大把大把地浪费时间，本来可以用来享受生活、学习进步的时光，都耗费在和它们的 “斗争” 中了。 就像我,每次我的家长开车带我出去,我就会觉得可能发生车祸;如果站在高处往下看,我就会想我会不会掉下去,是头先着地还是身体,会不会吓到人,吃糖的时候会不会突然出来史莱姆…有没有你在洗头的时候,眼睛是睁不开的,但这时候脑袋就突然浮现出,恐怖片里的画面,让你将你噶了?如果你非要睁开眼睛,洗发水又会进入你的眼睛,非常痛苦!而且你还驱散不掉,当你拼命的想要转移注意力,却发现怎么也转移不掉,他就是会出现!这种情况非常影响心情,心情一下就变得非常复杂!很那说清…… 三、强迫性思维的表现强迫性怀疑：出门总担心门没锁好，电器没关好，一遍又一遍地回去检查，有时候明明已经确认过多次，可心里就是不踏实，非得反复核实。强迫性洗涤：手稍微碰了点东西，就觉得脏得不行，反复洗手，洗得皮肤发红、起皮也停不下来；看到个物件，也要里里外外擦好几遍，试图洗掉内心的不安。强迫性计数：走路要数步数，爬楼梯要数台阶，非得数到一个自认为 “完美” 的数字，仿佛只有这样才能获得心理上的慰藉，找到平衡感。强迫性仪式行为：每天起床必须按照固定的顺序穿衣服、洗漱，稍微打乱一点顺序就浑身不自在，焦虑爆棚，只有完成这套仪式，才能稍微缓解内心的焦虑。 以上我非常有抵触,要知道我们学校住宿需要经常锁门,让后我每次走之前都要专门把钥匙带上,好多次都是,我明明已经把钥匙戴上了,但是我刚走出大门口,又回去看了看不在,我拿走了才放心,有人问,为什么不检查自己的口袋?你说的对,但我当时记得是没带!所以我口袋里就不可能出现!在宿舍我每天必须先洗漱才能叠被子,而在家必须先洗脸才刷牙!就是步骤相反的? 四、治疗与管理认知行为治疗（CBT）：这可是个 “思维改造神器”。在治疗过程中，治疗师会引导患者仔细剖析日常出现的强迫思维情境，比如患者总是害怕犯错而反复检查文件，治疗师就会和患者一起追溯这种恐惧的根源，可能源于小时候一次因小失误被严厉批评的经历。然后帮助患者认识到当下反复检查的行为其实是过度反应，逐步训练患者用理性思维去取代这种不合理的害怕犯错的思维，像是告诉自己 “我已经认真做过了，出现小失误也不会有灾难性后果”，从而让大脑重回正轨。暴露与反应阻止（ERP）：听起来有点 “残忍”，但却很有效。把患者直接丢进引发强迫性思维的情境里，就像对于有强迫性洗涤症状的患者，让他们去接触一些自认为 “脏” 的日常物品，刚开始肯定害怕、焦虑，心都提到嗓子眼了，但要求患者在此时一定不能去洗手或清洁，强忍着焦虑感待在这个情境中，随着不断地适应，慢慢就发现不立刻清洁也没什么大不了，对这些情境的恐惧就会逐渐消散，焦虑感也就随之减少啦。药物治疗：别怕，有些抗抑郁药和抗焦虑药就像是 “心灵创可贴”。像选择性 5 - 羟色胺再摄取抑制剂（SSRI）这一类药物，它能调节大脑中的神经递质水平，就好比给混乱的神经信号 “交通” 重新梳理秩序，让紧绷的神经松弛下来，缓解强迫症状带来的焦虑、抑郁等不良情绪，为康复助力。不过药物的使用务必在专业医生的指导下进行哦。自我管理：自己动手，丰衣足食！放松训练做起来，找个安静舒适的地方坐下或躺下，闭上眼睛，慢慢地深呼吸，将注意力集中在呼吸的感觉上，感受腹部的起伏，让身心的紧绷感随着每一次呼气慢慢散去；冥想也很有帮助，专注于当下的念头，不做评判地观察它们，当杂念出现又飘走，不被其牵着走，减轻强迫性思维的影响。还可以试试正念练习，比如吃饭的时候就专注于食物的口感、味道，走路时感受脚步与地面接触的感觉，让自己扎根于当下，摆脱强迫思维的纠缠。 五、结论总而言之，强迫性思维虽然讨厌，但它绝不是什么 “不治之症”。只要我们及时发现，积极采取治疗和管理措施，患者完全能够夺回生活的主导权，重新拥抱高质量的生活🌈。我现在才发现,所以我现在准备接受心理和精神治疗,这个实在是太烦了!]]></content>
       <categories>
-        <category>技术教学</category>
+        <category>生活方面</category>
       </categories>
       <tags>
-        <tag>激活</tag>
-        <tag>教程</tag>
+        <tag>心理</tag>
+        <tag>生活</tag>
+        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -492,6 +468,18 @@
       </tags>
   </entry>
   <entry>
+    <title>开往的礼物(纪念款)</title>
+    <url>/2024/04/21/kw/</url>
+    <content><![CDATA[😀 这里写文章的前言： 就在昨天购买了开往的周边真的太开心了。 简介想必每个玩网络的人都知道开往吧。 开往的生日是 2020 年 3 月 12 日，取自开放的网络，是一个友链接力项目。 开往的 logo 是代表“世界”的星环 + 代表“穿梭”的列车 —— 相信你听到“开往”这个词最多的时候一定是在列车上，“由 xx 开往 xx 的列车……”。 每当有人访问加入开往的网页时，点击“开往“会随机跳转到另一个加入开往的网页。之后，再次点击网页上的”开往“或后退网页，将继续随机跳转到另一个加入开往的网页。 加入开往的网页越多，友链接力的规模越大，分享流量的规模也越大。 目前已有 1k+ 人关注开往， 1k+ 成员加入过开往。 https://img.shields.io/github/stars/travellings-link/travellings?style=social 这个看起来难道不有趣吗？ 分享就在上周洛寒兮准备了开往的周边，心想我来到开往也有3个月多之久了，喜欢开往也有3年了，一开始就被他的原理所吸引，与每一次点击之后的未知性，真的超级有趣。 那时的我看到别人网站上挂着开往的标识，太酷了啊。我想什么时候我也才能成为一份子呢？ 这不，我现在终于成为了一份子，真的很感激，很激动，文章每次都是很认真写完才会发布，就希望有更多的人看到我，能帮助到别人。 哈哈，来看我的周边！！ 这是在爱发电上买的，一挂出，我放学回来就买了，真的很爱开往~ 你看这个，谁能不爱呢？ 茗辰原 の 异世界，也是你的一世界！在这里可以畅所欲谈，哈哈，期待与你的下一次相遇~]]></content>
+      <categories>
+        <category>心情随笔</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>获取QQ空间工具</title>
     <url>/2024/10/14/qq-histort/</url>
     <content><![CDATA[简介一款名为恢复QQ空间内容小具”的软件，可以帮助用户查看和同步QQ空间的留言和相册。该软件支持Mac和Windows系统，并提供Python的flag库进行开发。用户可以通过扫码登录和导出功能来保存和管理自己的空间内容。视频还展示了软件的操作流程和导出后的文件结构。总体而言，该工具为用户提供了方便快捷的QQ空间管理和备份功能 开源 功能介绍✨ 功能亮点维码登录：只需扫描二维码，即可快速登录你的QQ空间，安全便捷！历史内容查看：轻松浏览你和好友的历史动态，记录那些美好的瞬间。用户信息展示：显示你的QQ头像、昵称等信息，让你在使用时拥有更好的体验多种列表选顶：查看说说、留言、好友、转发、图片等多种内容，一应俱全获取内容：提取并查看QQ空间中的所有历史内容，包括发布的说说、图片等说说列表：查看你从最早到最新发布的所有说说内容及时间。留言列表：查看好友给你QQ空间留下的所有留言。好友列表：获取并查看QQ空间中的好友信息。转发列表：查看你曾经转发的所有内容。互动分析：基于好友互动的频率，展示与你互动最多的好友排行榜。开放源代码：完全免费且开源，欢迎大家参与贡献和讨论！ 🚀使用指南打开程序后，使用手机QQ扫描二维码登录。登录成功后，你将进入主界面，可以选择查看不同的内容。在左侧则标签页中选择想要查看的内容列表，享受你的QQ空间回忆之旅！ 目录结构NIXproject/├── resource/ # 资源目录│ ├── config/ # 配置目录，文件保存位置配置│ │ └── config.ini│ ├── result/ # 导出结果的目录，格式为“你的qq.xlsx”│ │ ├── ...│ │ └── ...│ ├── temp/ # 缓存目录│ │ ├── ...│ │ └── ...│ ├── user/ # 用户信息│ │ ├── ...│ │ └── ...├── util/ # 单元工具目录│ ├── ConfigUtil.py # 读取配置│ ├── GetAllMomentsUtil.py # 获取未删除的所有说说│ ├── LoginUtil.py # 登录相关│ ├── RequestUtil.py # 请求数据相关│ └── ToolsUtil.py # 工具├── main.py # 主程序入口├── fetch_all_message.py # 主程序入口├── README.md # 项目说明文件├── requirements.txt # 依赖项列表└── LICENSE # 许可证文件 软件展示 软件下载]]></content>
@@ -516,18 +504,6 @@
         <tag>工具</tag>
         <tag>安卓应用</tag>
         <tag>实用推荐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>奋进青年奖状!</title>
-    <url>/2024/12/21/riji12-09/</url>
-    <content><![CDATA[茗起这期文章想做很久了,最近实在是太忙了,所以没有时间做,如今抽出来了一些时间,等着做不如早点做!这是我在国家微信公众号上参加的活动,只需要答题就可以获得.原本这个东西是给大学生们,积累学分用的,我当时没看到,后来看了政府文件才知道的.不过这个东西的确非常的帅!现在举行的时保护环境的一个奖状,如果有人想要的话,请看末尾,扫码参加活动! 茗叙奖状如下:非常的帅!! 还有一个勋章!! 如何参加活动?扫描我的二维码]]></content>
-      <categories>
-        <category>生活方面</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -609,6 +585,18 @@
       </tags>
   </entry>
   <entry>
+    <title>奋进青年奖状!</title>
+    <url>/2024/12/21/riji12-09/</url>
+    <content><![CDATA[茗起这期文章想做很久了,最近实在是太忙了,所以没有时间做,如今抽出来了一些时间,等着做不如早点做!这是我在国家微信公众号上参加的活动,只需要答题就可以获得.原本这个东西是给大学生们,积累学分用的,我当时没看到,后来看了政府文件才知道的.不过这个东西的确非常的帅!现在举行的时保护环境的一个奖状,如果有人想要的话,请看末尾,扫码参加活动! 茗叙奖状如下:非常的帅!! 还有一个勋章!! 如何参加活动?扫描我的二维码]]></content>
+      <categories>
+        <category>生活方面</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>win-文件查重</title>
     <url>/2024/06/24/win-chachong/</url>
     <content><![CDATA[😀 这里写文章的前言： 我们电脑上的文件，复制来粘贴去，自己肯定不知道那里可以删，可以保留的，那么，下面这款软件将会查出你重复的文件，你可以进行删除与保留。 简介4DDiG Duplicate File Deleter是一款电脑重复文件查找的软件，软件是绿色单文件版，双击打开后会提示你升级，大家不要升级！ 完全免费！ 大小：36.19MB 应用软件打开后是英文版，在右上角设置成简体中文即可。 设置后的软件界面是下面这样，点击选择查找的盘符，软件就开始搜索你电脑中的重复文件。 说真的，电脑重复文件我推荐过好多款，但是像这款界面这么简洁，功能操作这么简单的还真的不少。 查找后分了图片、文档、视频、音频和其他这几类，需要删除哪个选择即可。 你也可以自动选择，软件会自动帮你选出文件，选择后点右下角的【移除】即可。 有不少重复文件查找的软件，但是功能太强大，操作就变成非常复杂，而这款重复文件查找软件操作就简单多了！ 下载两款小工具阿里云：https://www.alipan.com/s/UxzeVC2gmHR 阿里云盘分享 123盘：https://www.123pan.com/s/pUVeVv-ciqKA.html 两款软件官方版下载丨最新版下载丨绿色版下载丨APP下载-123云盘]]></content>
@@ -631,19 +619,6 @@
         <tag>电脑软件</tag>
         <tag>工具</tag>
         <tag>音乐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>wyy代理启动!直接SVIP</title>
-    <url>/2024/10/02/win-wyydaili/</url>
-    <content><![CDATA[QtUnblockNeteaseMusic【软件版本】v1.5.3【测试机型】Windows【软件大小】24.07M【软件介绍】一款解锁解锁某抑云中无法播放的音乐工具，基于UnblockNeteaseMusic，软件提供了一种自建代理节点的方式让不可用的歌曲包含多个听歌源。【使用教程】第一部下载好压缩包并解压 第二部点开解压出来的文件夹双击点开，找到QtUnblockNeteaseMusic.exe文件右键以管理员身份运行 第三部运行后选择上边的高级按钮一安装证书，按照步骤安装即可 第四部将工具内的端口什么啥的全部删除再去点击应用 第五部打开网易云一设置一工具，找到http代理选择自定义代理，下边选择http代理，服务器填127.0.0.1，端口填8080，之后点击测试显示可用就可以了 最后关闭重新打开网易云会发现那些需要会员的歌曲前边没有会员标识了选择会员歌曲也能完整播放 注:想要听会员歌曲必须后台运行QtUnblockNeteaseMusic.exe这个工具，也可以直接在高级一高级选项一开机自启 亲测可用哦 下载链接]]></content>
-      <categories>
-        <category>实用推荐</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>音乐</tag>
-        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -672,14 +647,16 @@
       </tags>
   </entry>
   <entry>
-    <title>网易云音乐脚本</title>
-    <url>/2024/11/20/wyy--2/</url>
-    <content><![CDATA[起源闲来无事,想看看有没有什么新文件更新了,这不被我发现的!此为转载篇!!! 网易云音乐脚本点击此处安装 (请确保浏览器已经安装了TamperMonkey) 功能 云盘快传 无需文件快速上传云盘歌曲,三分钟解锁周杰伦。 歌曲下载 不消耗vip下载次数,不是ncm加密文件。 请将 TamperMonkey 插件设置中的 下载模式 设置为 浏览器 API 并将 /.(mp3|flac|lrc)$/ 添加进文件扩展名白名单 以保证能正常下载。 歌曲转存云盘 用网易云自身音源将歌曲快速上传到云盘，不需要完整的文件下载和上传过程。 高音质试听： 解除网页端只能听标准音质的限制。 在鼠标右键菜单中可进行优先试听音质的设置。 歌单页加载全部歌曲 评论区显示IP属地、使用指定的IP地址发送评论 歌单歌曲排序 将歌单内歌曲按发行时间、红心数、评论数进行排序。 限免vip歌曲下载与上传 对客户端内普通用户可免费试听的vip歌曲进行下载与上传。 云盘匹配纠错 云盘歌曲匹配歌词、封面和评论。 云盘音质提升 寻找网易云的音质比云盘文件更好的歌曲，以进行替换。只有上传成功时才删除原来低音质文件。 需要是黑胶会员以获取高音质音源。 本地文件上传云盘 可先编辑需要在云盘显示的歌手,专辑信息再上传。 云盘导入导出 云盘歌曲导入另一账号。和云盘快传相同原理。 使用说明脚本安装完成后，登陆网易云音乐网页端。在右上角用户头像的 我的主页 中，使用云盘相关功能。在单曲、专辑、歌单（并非我的音乐的歌单，而是 我的主页 的歌单）页面使用下载、转存云盘功能。 问题说明 云盘快传:不保证内容的准确性、完整性。部分音质为算法升频。 上传失败时，浏览器控制台(F12)有输出具体错误内容。大多数时候重试一次就好了。 脚本不支持ViolentMonkey插件安装，使用ViolentMonkey会导致上传报错、获取不到超清母带、用不了SVIP的6T空间等问题。 截图 参考网易云音乐API来自Binaryify&#x2F;NeteaseCloudMusicApi 咪咕音乐下载脚本在咪咕音乐专辑详情页添加下载链接 可无需登录下载至臻(24Bit) 安装 (请确保浏览器已经安装了TamperMonkey)]]></content>
+    <title>wyy代理启动!直接SVIP</title>
+    <url>/2024/10/02/win-wyydaili/</url>
+    <content><![CDATA[QtUnblockNeteaseMusic【软件版本】v1.5.3【测试机型】Windows【软件大小】24.07M【软件介绍】一款解锁解锁某抑云中无法播放的音乐工具，基于UnblockNeteaseMusic，软件提供了一种自建代理节点的方式让不可用的歌曲包含多个听歌源。【使用教程】第一部下载好压缩包并解压 第二部点开解压出来的文件夹双击点开，找到QtUnblockNeteaseMusic.exe文件右键以管理员身份运行 第三部运行后选择上边的高级按钮一安装证书，按照步骤安装即可 第四部将工具内的端口什么啥的全部删除再去点击应用 第五部打开网易云一设置一工具，找到http代理选择自定义代理，下边选择http代理，服务器填127.0.0.1，端口填8080，之后点击测试显示可用就可以了 最后关闭重新打开网易云会发现那些需要会员的歌曲前边没有会员标识了选择会员歌曲也能完整播放 注:想要听会员歌曲必须后台运行QtUnblockNeteaseMusic.exe这个工具，也可以直接在高级一高级选项一开机自启 亲测可用哦 下载链接]]></content>
       <categories>
-        <category>技术教学</category>
+        <category>实用推荐</category>
       </categories>
       <tags>
-        <tag>脚本</tag>
+        <tag>电脑软件</tag>
+        <tag>音乐</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
@@ -695,17 +672,14 @@
       </tags>
   </entry>
   <entry>
-    <title>王者宇宙服</title>
-    <url>/2025/02/08/wzry/</url>
-    <content><![CDATA[茗起不得不说,喜欢玩王者的是真的多! 但是这个皮肤不买了不知道手感如何,买了又觉得太亏了! 这个版本已经解锁全部皮肤,包括了最近新出的蛇年新皮肤,并且除去王者占用的内存,剩下的占用的内存极少! 这还不值得你冲吗!! 正常版与宇宙服共存,丝毫不怕! 陈诉用到的软件真的非常少! 第一步打开[多元空间] 第二步,点击右下角的加号,添加上方两个应用第三步,打开王者荣耀(极简模式更新即可,要不了15分钟)第四步,更新之后打开上述的王者工具箱&lt;video src:”https://mingcy.cn/2025/02/08/wzry/1.mp4”&gt; 之后的请看图!图下有注释!!! 点击静音按钮! 之后王者小工具点击首页 下载请多多支持哦!! 宇宙服:https://pan.quark.cn/s/cadb3d3bd562 「王者荣耀自定义房间」:https://pan.quark.cn/s/ee0b1ad3623a 「王者荣耀自定义国标」:https://pan.quark.cn/s/fdf296708bda]]></content>
+    <title>网易云音乐脚本</title>
+    <url>/2024/11/20/wyy--2/</url>
+    <content><![CDATA[起源闲来无事,想看看有没有什么新文件更新了,这不被我发现的!此为转载篇!!! 网易云音乐脚本点击此处安装 (请确保浏览器已经安装了TamperMonkey) 功能 云盘快传 无需文件快速上传云盘歌曲,三分钟解锁周杰伦。 歌曲下载 不消耗vip下载次数,不是ncm加密文件。 请将 TamperMonkey 插件设置中的 下载模式 设置为 浏览器 API 并将 /.(mp3|flac|lrc)$/ 添加进文件扩展名白名单 以保证能正常下载。 歌曲转存云盘 用网易云自身音源将歌曲快速上传到云盘，不需要完整的文件下载和上传过程。 高音质试听： 解除网页端只能听标准音质的限制。 在鼠标右键菜单中可进行优先试听音质的设置。 歌单页加载全部歌曲 评论区显示IP属地、使用指定的IP地址发送评论 歌单歌曲排序 将歌单内歌曲按发行时间、红心数、评论数进行排序。 限免vip歌曲下载与上传 对客户端内普通用户可免费试听的vip歌曲进行下载与上传。 云盘匹配纠错 云盘歌曲匹配歌词、封面和评论。 云盘音质提升 寻找网易云的音质比云盘文件更好的歌曲，以进行替换。只有上传成功时才删除原来低音质文件。 需要是黑胶会员以获取高音质音源。 本地文件上传云盘 可先编辑需要在云盘显示的歌手,专辑信息再上传。 云盘导入导出 云盘歌曲导入另一账号。和云盘快传相同原理。 使用说明脚本安装完成后，登陆网易云音乐网页端。在右上角用户头像的 我的主页 中，使用云盘相关功能。在单曲、专辑、歌单（并非我的音乐的歌单，而是 我的主页 的歌单）页面使用下载、转存云盘功能。 问题说明 云盘快传:不保证内容的准确性、完整性。部分音质为算法升频。 上传失败时，浏览器控制台(F12)有输出具体错误内容。大多数时候重试一次就好了。 脚本不支持ViolentMonkey插件安装，使用ViolentMonkey会导致上传报错、获取不到超清母带、用不了SVIP的6T空间等问题。 截图 参考网易云音乐API来自Binaryify&#x2F;NeteaseCloudMusicApi 咪咕音乐下载脚本在咪咕音乐专辑详情页添加下载链接 可无需登录下载至臻(24Bit) 安装 (请确保浏览器已经安装了TamperMonkey)]]></content>
       <categories>
-        <category>技术分享</category>
+        <category>技术教学</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>安卓应用</tag>
-        <tag>实用推荐</tag>
-        <tag>游戏</tag>
+        <tag>脚本</tag>
       </tags>
   </entry>
   <entry>
@@ -719,6 +693,32 @@
         <tag>电脑软件</tag>
         <tag>系统优化</tag>
         <tag>推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>王者宇宙服</title>
+    <url>/2025/02/08/wzry/</url>
+    <content><![CDATA[茗起不得不说,喜欢玩王者的是真的多! 但是这个皮肤不买了不知道手感如何,买了又觉得太亏了! 这个版本已经解锁全部皮肤,包括了最近新出的蛇年新皮肤,并且除去王者占用的内存,剩下的占用的内存极少! 这还不值得你冲吗!! 正常版与宇宙服共存,丝毫不怕! 陈诉用到的软件真的非常少! 第一步打开[多元空间] 第二步,点击右下角的加号,添加上方两个应用第三步,打开王者荣耀(极简模式更新即可,要不了15分钟)第四步,更新之后打开上述的王者工具箱 之后的请看图!图下有注释!!! 点击静音按钮! 之后王者小工具点击首页 下载请多多支持哦!! 宇宙服:https://pan.quark.cn/s/cadb3d3bd562 「王者荣耀自定义房间」:https://pan.quark.cn/s/ee0b1ad3623a 「王者荣耀自定义国标」:https://pan.quark.cn/s/fdf296708bda]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>安卓应用</tag>
+        <tag>实用推荐</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Office-2025激活</title>
+    <url>/2024/11/23/office-ltsc/</url>
+    <content><![CDATA[起源在我发现我的WPS用不了之后,打算更新OFFice来使用,但是我万万没想到,竟然卡在激活上面了,故出一期新版的激活教程 激活方法Office LTSC 2024 激活方法同样可以使用之前博客《无需激活码，一条安全命令轻松激活 Windows 10&#x2F;11 系统》来激活，这里简单做演示，关于该方法的详细信息可以到原文查看。 使用KMS激活脚本 使用管理员身份，打开 Powershell，在 Powershell 中输入： LIVECODESERVERirm https://massgrave.dev/get | iex KMS激活 图 1 稍等片刻，会弹出一个对话框，如下图，输入 4 KMS激活 图 2 激活 Office LTSC 2024，输入 2 KMS激活 图 3 稍等片刻，就可以看到激活成功 KMS激活 图 4 KMS激活 图 5 注意事项 此激活方法使用第三方脚本，虽然是开源脚本，使用人数众多，也难免存在风险。 建议在使用前备份重要数据。 如果条件允许，推荐购买正版许可。]]></content>
+      <categories>
+        <category>技术教学</category>
+      </categories>
+      <tags>
+        <tag>激活</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
