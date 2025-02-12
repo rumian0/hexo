@@ -6,7 +6,7 @@
   <link href="https://mingcy.cn/atom.xml" rel="self"/>
   
   <link href="https://mingcy.cn/"/>
-  <updated>2025-02-09T11:27:44.844Z</updated>
+  <updated>2025-02-12T08:41:48.286Z</updated>
   <id>https://mingcy.cn/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>快速睡眠,解决困倦</title>
+    <link href="https://mingcy.cn/2025/02/12/sleep/"/>
+    <id>https://mingcy.cn/2025/02/12/sleep/</id>
+    <published>2025-02-11T16:00:00.000Z</published>
+    <updated>2025-02-12T08:41:48.286Z</updated>
+    
+    
+    <summary type="html">这篇主要是给我父亲写的,他经常睡不着</summary>
+    
+    
+    
+    <category term="生活方面" scheme="https://mingcy.cn/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E9%9D%A2/"/>
+    
+    
+    <category term="生活" scheme="https://mingcy.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="实用" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>王者宇宙服</title>
     <link href="https://mingcy.cn/2025/02/08/wzry/"/>
     <id>https://mingcy.cn/2025/02/08/wzry/</id>
     <published>2025-02-07T16:00:00.000Z</published>
-    <updated>2025-02-09T11:27:44.844Z</updated>
+    <updated>2025-02-12T08:41:18.677Z</updated>
     
     
     <summary type="html">不得不说,全皮肤太爽了!</summary>
@@ -520,35 +541,6 @@
     <category term="工具" scheme="https://mingcy.cn/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="音乐" scheme="https://mingcy.cn/tags/%E9%9F%B3%E4%B9%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解锁全网安卓音乐</title>
-    <link href="https://mingcy.cn/2024/10/01/app-allmusic/"/>
-    <id>https://mingcy.cn/2024/10/01/app-allmusic/</id>
-    <published>2024-10-01T10:23:00.000Z</published>
-    <updated>2025-02-07T12:56:27.980Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="安卓应用" scheme="https://mingcy.cn/categories/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/"/>
-    
-    
-    <category term="工具" scheme="https://mingcy.cn/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="音乐" scheme="https://mingcy.cn/tags/%E9%9F%B3%E4%B9%90/"/>
-    
-    <category term="安卓软件" scheme="https://mingcy.cn/tags/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
