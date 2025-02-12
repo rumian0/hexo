@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C语言扫雷</title>
+    <url>/2024/04/10/C-saolei/</url>
+    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下CSHARP#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>123云盘-下载工具</title>
     <url>/2024/09/30/123-liuliang/</url>
     <content><![CDATA[方法一123云盘 下载工具123云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。 功能特点 登录：使用用户名和密码登录 123Pan 账号。 列出文件：显示当前目录下的所有文件和文件夹。 下载文件：通过模拟安卓客户端协议下载文件，绕过流量限制。 上传文件：将本地文件上传到 123Pan。 分享文件：生成文件分享链接。 删除文件：删除指定的文件或文件夹。 创建文件夹：在当前目录下创建新文件夹。 使用方法环境准备 确保已安装 Python 3.x。 安装所需的 Python 库： UNDEFINEDpip install -r requirements.txt 配置文件在首次运行脚本时，会自动生成一个 123pan.txt 文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。 运行脚本SQL可以直接下载release的可执行文件运行或运行python脚本。脚本运行： 克隆或下载本项目代码到本地。 打开终端或命令提示符，进入项目目录。 运行脚本： 使用安卓客户端协议 UNDEFINEDpython android.py UNDEFINED使用web协议python web.py 123云盘 下载工具GitHub地址地址： 方法二今天推荐的是一个数字网盘脚本，可以解除限制，完全免费使用！ 该作者在GitHub上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要先安装Tampermonkey插件，Tampermonkey插件可以在文末关键字获取。 安装完油猴插件后，再安装脚本，方法是打开Greasy Fork中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】 再点【安装】即可完成脚本安装。 脚本使用测试： 安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后没用脚本时，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。 脚本使用测试： 安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后没用脚本时，其提示今日自用下载流量已超出1GB上限，需要付费才可下载。 下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用1DM接管速度可达15M&#x2F;S，跑满你的带宽！ 这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！]]></content>
@@ -11,18 +23,6 @@
         <tag>电脑软件</tag>
         <tag>123网盘</tag>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言扫雷</title>
-    <url>/2024/04/10/C-saolei/</url>
-    <content><![CDATA[前言选自：PandaX Blog：https://pandax.wiki/15/ 代码设计要求 Main 函数中不能出现具体实现的操作，必须通过调用函数实现各种操作。 程序中必须通过结构体来储存必要信息。 要有一定的代码规范。 程序实现要求 打开程序后，首先进入主界面，主界面至少需要有 “开始游戏” 与 “退出游戏 “功能，其中，选择开始游戏后则开始扫雷游戏，选择退出游戏后则程序结束。 开始扫雷后，每次输入两个数字，视为点击 XY 坐标上的格子，其中，当数字超过接线范围后，应输出 “坐标不对” 等报错信息。 首次输入 XY 坐标时，必须保证不会踩到雷。 当输入的 XY 坐标是雷的坐标时，应显示游戏失败，并且结束游戏 (但是程序不结束)。 当输入的 XY 坐标不是雷的坐标的时候，显示此时周围 8 格存在的雷的数量。 当输入的 XY 坐标不是雷且此时该坐标周围雷的数量为 0 时，显示上下左右的格子，若上下左右格子周围的雷数也为 0，则继续显示其上下左右格子，直到当前格子周围雷数不为 0 则停止。 当输入的 XY 坐标不是雷且该格子已经被显示，应输出 “坐标已显示 “等报错信息。 当所有非雷的格子都被点完后，应显示游戏胜利，并且结束游戏。 游戏结束后程序不能直接结束，要有 “再次尝试” 和 “退出游戏” 的功能。 所有的输入选项位置要有报错的能力。 部分效果图 代码如下CSHARP#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt;#define M 9//行数#define N 9//列数#define B 10//炸弹数 #define MS M + 2#define NS N + 2struct list &#123; int boom, click;//boom 随机生成的雷 0不是雷1是雷 char display;&#125;;struct list pri[MS][NS];int o = 0;//用于判断是否结束int win = 0;//打印菜单void menu(void) &#123; printf(&quot;1.开始游戏\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;void menu2(void) &#123; printf(&quot;1.再次尝试\n&quot;); printf(&quot;2.退出游戏\n&quot;); printf(&quot;请选择\n&quot;);&#125;//随机生成雷void random() &#123; int m, n; srand(time(NULL)); for (int i = 0; i &lt; B; i++) &#123; int m = rand() % M + 1; int n = rand() % N + 1; //printf(&quot;%d %d\n&quot;, m, n); //打印随机出现的雷，方便调试使用 if (pri[m][n].boom == 1) i -= 1; else if (pri[m][n].boom == 0) &#123; pri[m][n].boom = 1; &#125; &#125;&#125;//棋盘初始化void renew() &#123; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; pri[i + 1][j + 1].display = &#x27;*&#x27;; &#125; &#125; for (int i = 0; i &lt; M + 2; i++) &#123; for (int j = 0; j &lt; N + 2; j++) &#123; pri[i][j].boom = 0; pri[i][j].click = 0; &#125; &#125; for (int i = 0; i &lt;= M + 2; i++) &#123; pri[0][i].click = 1; pri[M + 1][i].click = 1; pri[i][0].click = 1; pri[i][N + 1].click = 1; &#125;&#125;//打印棋盘void print() &#123; //打印第一行的数字 printf(&quot; &quot;); for (int i = 0; i &lt; M; i++) &#123; printf(&quot;%d &quot;, i + 1); &#125; printf(&quot;\n&quot;); //打印下面的 for (int i = 0; i &lt; N; i++) &#123; printf(&quot;%d&quot;, i + 1); for (int j = 0; j &lt; M; j++) &#123; printf(&quot; %c&quot;, pri[i + 1][j + 1].display); &#125; printf(&quot;\n&quot;); &#125;&#125;//判断周围雷数void scan(int m, int n) &#123; int num = pri[m - 1][n - 1].boom + pri[m - 1][n].boom + pri[m - 1][n + 1].boom + pri[m][n - 1].boom + pri[m][n + 1].boom + pri[m + 1][n - 1].boom + pri[m + 1][n].boom + pri[m + 1][n + 1].boom; if (num != 0) &#123; pri[m][n].display = num + &#x27;0&#x27;; &#125; else if (num == 0) &#123; pri[m][n].display = &#x27; &#x27;; if (m &gt; 0 &amp;&amp; m &lt;= M + 1 &amp;&amp; n &gt; 0 &amp;&amp; n &lt;= N + 1) &#123; if (pri[m - 1][n - 1].click == 0) &#123; pri[m - 1][n - 1].click = 1; scan(m - 1, n - 1); &#125; if (pri[m - 1][n].click == 0) &#123; pri[m - 1][n].click = 1; scan(m - 1, n); &#125; if (pri[m - 1][n + 1].click == 0) &#123; pri[m - 1][n + 1].click = 1; scan(m - 1, n + 1); &#125; if (pri[m][n - 1].click == 0) &#123; pri[m][n - 1].click = 1; scan(m, n - 1); &#125; if (pri[m][n + 1].click == 0) &#123; pri[m][n + 1].click = 1; scan(m, n + 1); &#125; if (pri[m + 1][n - 1].click == 0) &#123; pri[m + 1][n - 1].click = 1; scan(m + 1, n - 1); &#125; if (pri[m + 1][n].click == 0) &#123; pri[m + 1][n].click = 1; scan(m + 1, n); &#125; if (pri[m + 1][n + 1].click == 0) &#123; pri[m + 1][n + 1].click = 1; scan(m + 1, n + 1); &#125; &#125; &#125;&#125;//判断胜负void win_or_not() &#123; win = 0; for (int i = 0; i &lt; M; i++) &#123; for (int j = 0; j &lt; N; j++) &#123; if (pri[i + 1][j + 1].click == 1) win += 1; &#125; &#125; if (win == (M * N - B)) &#123; printf(&quot;恭喜您扫雷成功\n&quot;); o = 1; &#125;&#125;//用户输入void input(int* c) &#123; int x, y; int p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); while (p == 0 || p == 1) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n&quot;); p = scanf(&quot;%d %d&quot;, &amp;x, &amp;y); &#125; rewind(stdin); //判断第一次踩雷 if (*c == 1) &#123; *c += 1; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; renew(); random(); scan(x, y); &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125; //剩下的次数 else &#123; if (x &lt;= M &amp;&amp; y &lt;= N) &#123; if (pri[x][y].click == 1) &#123; printf(&quot;此位置已经被排除\n&quot;); &#125; else if (pri[x][y].boom == 0) &#123; pri[x][y].click = 1; scan(x, y); &#125; else if (pri[x][y].boom == 1) &#123; printf(&quot;你踩到雷了\n&quot;); o = 1; &#125; &#125; else &#123; printf(&quot;输入有误，请重新输入\n&quot;); &#125; &#125;&#125;void game() &#123; int c = 1;//判断是否是第一次 renew(); print(); random(); do &#123; input(&amp;c); print(); win_or_not(); &#125; while (o == 0);&#125;int main() &#123; int option = 0; int i; for (i = 1;; i++) &#123; o = 0; if (i == 1) menu(); else menu2(); while (scanf(&quot;%d&quot;, &amp;option) == 0) &#123; rewind(stdin); printf(&quot;输入错误，请重新输入\n\n&quot;); if (i == 1) menu(); else menu2(); &#125; rewind(stdin); if (option == 1) game(); else if (option == 2) &#123; printf(&quot;退出游戏\n&quot;); break; &#125; else &#123; printf(&quot;输入有误，请重新输入\n\n&quot;); i -= 1; &#125; &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>编程语言</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -245,7 +245,7 @@
   <entry>
     <title>免费域名整理</title>
     <url>/2024/04/10/free-yuming/</url>
-    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#x69;&#x6e;&#102;&#x6f;&#64;&#102;&#114;&#101;&#x65;&#x6e;&#111;&#x6d;&#46;&#x63;&#x6f;&#x6d;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
+    <content><![CDATA[免费域名整理自从顶级免费域名freenom没有以后，现在已经没有可以一直使用的顶级免费域名了，就算有也是提供第一年免费，之前在freenom已pending状态的域名可以选择发送邮件到&#x69;&#110;&#x66;&#111;&#64;&#x66;&#x72;&#x65;&#x65;&#110;&#x6f;&#x6d;&#x2e;&#99;&#x6f;&#109;说明情况后可以改为收费状态并已付费10年。 以下整理了一些可以用的免费二级域名： https://xiaoa.me/go/aHR0cHM6Ly9uaWMuZXUub3Jn 可以申请到eu.org的免费二级域名，需要审核，但是审核就比较随缘了，稳定性高，从1996年一直提供免费域名，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9uaWMudWE 可以申请到pp.ua的免费二级域名，需要绑定信用卡才能申请，无法隐藏whios信息，稳定性高，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG5zLmFmcmFpZC5vcmcv 可以申请到mooo.com&#x2F;688.org&#x2F;us.to等很多免费二级域名，不可使用CF解析，其中mooo.com&#x2F;688.org已被污染，建议找未污染后缀 https://xiaoa.me/go/aHR0cHM6Ly9mcmVlZG9tYWluLm9uZS8 可以申请到work.gd&#x2F;run.place等免费二级域名 https://xiaoa.me/go/aHR0cHM6Ly93d3cuY2xvdWRucy5uZXQ 可以申请到cloudns.**等免费二级域名，现在不可使用CF解析了 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZWx1dGlvbnMuY29t 可以申请到rr.nu等免费二级域名，不可使用CF解析，不提供免费解析 https://xiaoa.me/go/aHR0cHM6Ly9ub3cuY2M 可以申请到now.cc免费二级域名，香港，现在暂停注册，等待开放 https://xiaoa.me/go/aHR0cHM6Ly9zZWN1cmUubm9tLnphLw 可以申请到nom.za免费二级域名，需审核审，可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuYXpvdGUub3JnLw 可以申请到fr.nf等免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuM2RvbWFpbnMubmV0 可以申请到coms.hk&#x2F;nets.hk&#x2F;orgs.hk等免费二级域名，需要香港IP才能申请到，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cuc2l0ZS5hYw 可以申请到3d.tc&#x2F;app.tc等免费二级域名，不可以使用CF解析，不提供解析 https://xiaoa.me/go/aHR0cHM6Ly9oei5jeg 可以申请到fr.ht&#x2F;ze.tc免费二级域名，限IP申请，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubm9pcC5jb20v 可以申请到ddns.net&#x2F;ddns.me免费二级域名，只能注注册一个，不可以使用CF解析 https://xiaoa.me/go/aHR0cHM6Ly93d3cubDUzLm5ldA 可以申请到onflashdrive.app二级域名，选2&#x2F;1年收费，使用优惠码open3k2y&#x2F;newuser可免费，可以使用CF解析，另一个后缀未知（20230402更新） 以上信息会不定期整理修改！]]></content>
       <categories>
         <category>网站建站</category>
       </categories>
@@ -306,6 +306,16 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo-添加音乐与视频</title>
+    <url>/2024/09/01/hexo-mp4/</url>
+    <content><![CDATA[简述我们在实用hexo中,没有任何的添加视频与音频的按钮. 这让我很头脑,所以,这次我来分享一个方法. 教程首先插入音频aplayer 在cmd页面内，使用npm安装：npm install hexo-tag-aplayer 在markdown内添加以下代码： BASH&#123;% aplayer &quot;她的睫毛&quot; &quot;周杰伦&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot; &quot;autoplay=false&quot; %&#125; 效果如下: 或者使用下方代码: HTML&lt;video src=&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt; 视频dplayer 在cmd页面内，使用npm安装：npm install hexo-tag-dplayer 在markdown内添加以下代码： BASH&#123;% dplayer &quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot; &quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot; &quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;token=tokendemo&quot; %&#125; 效果如下: 或者使用下方代码: HTML&lt;video src=&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt;]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>技术分享</tag>
+        <tag>实用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>幻休</title>
     <url>/2024/02/21/huan/</url>
     <content><![CDATA[介绍幻休是一款助眠、 冥想、放松与缓解压力的健康应用，可引导您以一-种放松且自然的方式.安然入睡，改善您的睡眠。 解释因为正版的app已经收费了，所以这里出一期破解教程 如果不想跟着破解，点击这里直接跳转下载我破解好的就行点我跳转下载 正文[破解开始]##第一步:搜索getSvipStatus()I选择第1个结果点进去下面看图片教程↓【最后一张附带效果图】 本教程需用到的赋值代码如下↓第一个：const-string v0,”2088-09-13” 第二个：const&#x2F;4 v0, 0x3 下载夸克:夸克下载百度网盘:百度网盘下载 提取码:5o5f 七牛云：七牛云]]></content>
@@ -316,16 +326,6 @@
         <tag>安卓应用</tag>
         <tag>实用推荐</tag>
         <tag>app</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-添加音乐与视频</title>
-    <url>/2024/09/01/hexo-mp4/</url>
-    <content><![CDATA[简述我们在实用hexo中,没有任何的添加视频与音频的按钮. 这让我很头脑,所以,这次我来分享一个方法. 教程首先插入音频aplayer 在cmd页面内，使用npm安装：npm install hexo-tag-aplayer 在markdown内添加以下代码： BASH&#123;% aplayer &quot;她的睫毛&quot; &quot;周杰伦&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3&quot; &quot;http://home.ustc.edu.cn/~mmmwhy/jay.jpg&quot; &quot;autoplay=false&quot; %&#125; 效果如下: 或者使用下方代码: HTML&lt;video src=&quot;https://music.163.com/song/media/outer/url?id=1490104654.mp3&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt; 视频dplayer 在cmd页面内，使用npm安装：npm install hexo-tag-dplayer 在markdown内添加以下代码： BASH&#123;% dplayer &quot;url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4&quot; &quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot; &quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;token=tokendemo&quot; %&#125; 效果如下: 或者使用下方代码: HTML&lt;video src=&quot;https://bili.api.scc.lol/?bv=BV1xw4m1k7er&amp;qn=80&quot; position= &quot;absolute&quot; width=&quot;100%&quot; height=&quot;100%&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt;]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>技术分享</tag>
-        <tag>实用</tag>
       </tags>
   </entry>
   <entry>
@@ -342,6 +342,18 @@
       </tags>
   </entry>
   <entry>
+    <title>开往的礼物(纪念款)</title>
+    <url>/2024/04/21/kw/</url>
+    <content><![CDATA[😀 这里写文章的前言： 就在昨天购买了开往的周边真的太开心了。 简介想必每个玩网络的人都知道开往吧。 开往的生日是 2020 年 3 月 12 日，取自开放的网络，是一个友链接力项目。 开往的 logo 是代表“世界”的星环 + 代表“穿梭”的列车 —— 相信你听到“开往”这个词最多的时候一定是在列车上，“由 xx 开往 xx 的列车……”。 每当有人访问加入开往的网页时，点击“开往“会随机跳转到另一个加入开往的网页。之后，再次点击网页上的”开往“或后退网页，将继续随机跳转到另一个加入开往的网页。 加入开往的网页越多，友链接力的规模越大，分享流量的规模也越大。 目前已有 1k+ 人关注开往， 1k+ 成员加入过开往。 https://img.shields.io/github/stars/travellings-link/travellings?style=social 这个看起来难道不有趣吗？ 分享就在上周洛寒兮准备了开往的周边，心想我来到开往也有3个月多之久了，喜欢开往也有3年了，一开始就被他的原理所吸引，与每一次点击之后的未知性，真的超级有趣。 那时的我看到别人网站上挂着开往的标识，太酷了啊。我想什么时候我也才能成为一份子呢？ 这不，我现在终于成为了一份子，真的很感激，很激动，文章每次都是很认真写完才会发布，就希望有更多的人看到我，能帮助到别人。 哈哈，来看我的周边！！ 这是在爱发电上买的，一挂出，我放学回来就买了，真的很爱开往~ 你看这个，谁能不爱呢？ 茗辰原 の 异世界，也是你的一世界！在这里可以畅所欲谈，哈哈，期待与你的下一次相遇~]]></content>
+      <categories>
+        <category>心情随笔</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机的基础知识</title>
     <url>/2024/04/30/jsj-know/</url>
     <content><![CDATA[😆 前言：我们都有过玩计算机的时光，但是计算机已经出世折磨久了，你知道的基础知识又有多少呢？来更我一些学习学习吧! 前言计算机的基础知识主要包括以下几个方面： 1️⃣.计算机系统组成：计算机是由硬件、软件和网络三大部分组成的。硬件包括CPU、内存、存储设备、输入输出设备等；软件包括操作系统、应用程序等；网络则包括互联网、局域网等。 2️⃣.计算机操作系统：操作系统是管理计算机硬件与软件资源的程序，它是计算机系统的灵魂。常见的操作系统有Windows、macOS、Linux等。 3️⃣.计算机编程语言：编程语言是用来编写计算机程序的语言。常见的编程语言有C、C++、Java、Python等。 4️⃣.计算机网络：计算机网络是计算机之间相互通信、共享资源的系统。包括互联网、局域网、广域网等类型。 5️⃣.数据结构与算法：数据结构是指数据在计算机中的组织方式，算法是指解决特定问题的步骤。掌握常用的数据结构和算法对于编写高效程序非常重要。 6️⃣.数据库：数据库是组织、存储和管理数据的仓库。常见的数据库有关系型数据库（如MySQL、Oracle等）和非关系型数据库（如MongoDB、Redis等）。 7️⃣.信息安全：信息安全涉及计算机系统和数据的保密性、完整性和可用性。包括加密算法、身份认证、访问控制等技术。 这些知识点构成了计算机科学的基础，学习并掌握这些知识对于成为一名合格的计算机专业人员非常重要。 SO，我们主要围绕这几块的知识进行介绍和讲解。 计算机系统组成计算机系统的组成：硬件、软件和网络 硬件： CPU（中央处理器）：计算机的大脑，负责解释和执行程序指令，以及进行数据运算。 内存（随机存取存储器）：提供临时的存储空间，以供CPU快速访问处理中的数据和指令。 存储设备：包括硬盘驱动器（HDD）、固态驱动器（SSD）等，用于长期存储大量的数据和程序。 输入输出设备：如键盘、鼠标、显示器、打印机等，允许用户与计算机交互，并将计算机处理的结果展示给用户。 软件： 操作系统（OS）：管理计算机的硬件资源，并提供用户与硬件之间的接口。 应用程序：为用户提供具体的任务处理能力，包括文字处理软件、图像编辑软件、数据库管理系统等。 开发工具和系统软件：支持软件的创建、维护和更新，如编译器、调试器、驱动程序等。 网络： 互联网：全球性的网络，由数以亿计的计算机和网络设备通过各种有线和无线的方式连接而成。 局域网（LAN）：在较小地理范围内建立的网络，如办公室、学校或家庭网络。 这三大部分相互协作，构成了现代计算机系统的基础，使得信息能够在全球范围内传播和共享。了解这些组成部分的工作原理和相互关系，对于深入理解和有效使用计算机系统至关重要。 引用 “这个世界如此多彩，就像计算机硬件的世界一样，每个组件都是如此重要，就像一幅艺术品的每个细节。💻✨” “CPU是计算机的大脑，它默默地计算着我们的梦想，让我们的想法变为现实。💡❤️” “内存就像是计算机的记忆，它为我们保存着宝贵的瞬间，就像一本回忆的相册。📸🌈” “存储设备是我们的数字宝库，它们承载着我们的故事，就像无尽的书籍和电影库。📚🎥” “键盘是文字的舞台，鼠标是创意的指挥棒，显示器是我们创造世界的窗口。🎭🌟” “操作系统像一位无所不能的导演，将硬件和软件的演员们组织起来，呈现出精彩的表演。🎬🌟” “应用程序是我们的魔法工具箱，它们让我们能够实现无数的愿望，从创作到娱乐，应有尽有。✨🔧” “互联网连接着全球的心，让我们能够分享、学习和相互交流，就像一座无边的智慧宝库。🌍💡” “局域网是人与人之间的桥梁，让我们在小范围内连接起来，分享快乐和知识。🌐🤝” 计算机操作系统当谈到计算机操作系统时，除了常见的Windows、macOS和Linux，还有其他一些重要的操作系统，例如： Unix：Unix是一个多用户、多任务的操作系统，具有良好的稳定性和可靠性。它是许多其他操作系统的基础，包括Linux和macOS。🌐🔒 Android：Android是为移动设备设计的操作系统，由Google开发。它是目前最流行的移动操作系统之一，运行在众多智能手机、平板电脑和其他便携设备上。📱🤖 iOS：iOS是由Apple开发的移动操作系统，专门为iPhone、iPad和iPod Touch等设备设计。它提供了丰富的应用程序生态系统和用户友好的界面。🍎📱 Windows Server：Windows Server是微软公司针对服务器环境开发的操作系统。它提供了一系列的服务器管理工具和功能，用于支持企业级应用程序和网络服务。💻🏢 FreeBSD：FreeBSD是基于Unix的自由开源操作系统，具有高度的可靠性、稳定性和性能。它被广泛用于服务器和嵌入式系统。🐧🔒 Chrome OS：Chrome OS是由Google开发的基于Linux内核的操作系统，主要用于Chromebook笔记本电脑。它专注于云计算和Web应用程序，具有快速启动和简洁的界面。7. Solaris：Solaris是由Oracle开发的商业Unix操作系统，主要用于企业级服务器和工作站。它具有高度的可扩展性和安全性。☀️🔒 这些操作系统在不同的领域和应用中发挥着重要的作用。它们提供了对硬件资源的管理、用户界面的提供、应用程序的运行以及数据和文件的管理等功能。通过了解不同的操作系统，我们可以更好地理解计算机系统的多样性和复杂性。💻✨ 计算机编程语言当谈到计算机编程语言时，有许多常见的编程语言可供选择，每种语言都有其独特的特点和应用领域。以下是一些常见的编程语言及其对应的表情： C语言：C语言是一种通用的高级编程语言，它具有高效性和灵活性，被广泛用于系统级编程和嵌入式系统开发。🔧🐱 C++语言：C++语言是C语言的扩展，增加了面向对象编程的特性。它被广泛应用于游戏开发、图形界面和大规模系统开发等领域。💻🔧🐱 Java语言：Java语言是一种跨平台的编程语言，被广泛用于企业级应用程序开发、移动应用程序和大型系统的构建。☕️🌍 Python语言：Python语言是一种易于学习和使用的高级编程语言，具有清晰简洁的语法和丰富的库支持。它被广泛用于数据分析、人工智能、Web开发等领域。🐍🔧🌐 JavaScript语言：JavaScript语言是一种用于Web开发的脚本语言，它可以在网页上实现交互性和动态性。它是前端开发的重要组成部分。🌐💡 Ruby语言：Ruby语言是一种简洁优雅的编程语言，注重开发人员的幸福感。它被广泛用于Web开发和快速原型设计。💎🔧💻 Go语言：Go语言是由Google开发的一种现代编程语言，具有高效的并发性和简单的语法。它适用于网络服务和分布式系统的开发。🔧🐹 易语言：是一个专为中文编写的一门语言，简单的语法，中国人清晰易懂的语法，专为编写软件等领域而生，现在这门语言已用于更广的舞台。 💗 🫰 这些编程语言各有特点，适用于不同的应用场景。根据你的需求和兴趣，选择适合的编程语言进行学习和开发将有助于你在计算机编程领域取得成功。💻✨ 计算机网络计算机网络是一种将多台计算机连接起来，使它们能够相互通信和共享资源的系统。它是现代信息技术的基础，支持了互联网的发展以及各种在线服务和应用的实现。计算机网络可以分为以下几种类型： 互联网（Internet）：互联网是全球最大的计算机网络，连接了全球的计算机和网络设备。它采用TCP&#x2F;IP协议族作为通信协议，为人们提供了访问各种资源和服务的途径，如电子邮件、网页浏览、在线视频和社交媒体等。🌐🌍 局域网（LAN）：局域网是在有限的地理范围内连接计算机和设备的网络，例如家庭、办公室或校园。它通常使用以太网技术，并提供高速数据传输和资源共享，支持内部通信和协作。💻🏢🏫 广域网（WAN）：广域网是连接不同地理位置的计算机和局域网的网络。它可以覆盖较大的地理范围，通过公共或专用的通信线路实现远程通信和数据传输。广域网常用于企业之间、分支机构之间以及地理范围更广的组织间的连接。🌍🔁 无线局域网（WLAN）：无线局域网是使用无线通信技术实现的局域网，允许设备通过无线信号进行通信和连接。常见的无线局域网标准包括Wi-Fi，它使得用户可以在范围内自由移动，并无线访问网络和资源。📶💻🔁 城域网（MAN）：城域网是覆盖城市范围的计算机网络，连接了多个局域网和广域网。它通常由政府、学术机构和企业组织共同建设和管理，用于提供城市范围的高速通信和互联互通。🏙️🔁 计算机网络通过使用不同的通信协议和技术，如TCP&#x2F;IP、Ethernet、无线技术等，实现了数据的传输和交换。它们提供了可靠的数据传输、资源共享、远程访问和协作等功能，对于现代社会的信息交流和经济发展起到了重要的推动作用。通过理解计算机网络的原理和技术，我们可以更好地使用和管理网络资源，保障网络安全和性能。🌐🔒💻 数据结构与算法数据结构是一种组织和存储数据的方式，它涉及到数据元素之间的关系、操作和存储方式。常见的数据结构包括数组、链表、栈、队列、树、图等。不同的数据结构适用于不同的应用场景，可以提供高效的数据访问和操作方式。 算法是一组解决特定问题的有序步骤或方法。它描述了在给定输入下，通过一系列操作来产生输出的过程。算法可以用来解决各种计算问题，如排序、搜索、图遍历、最短路径等。良好的算法设计可以提高程序的效率和性能。 掌握常用的数据结构和算法对于编写高效的程序和解决复杂的问题至关重要。以下是一些常见的数据结构和算法： 数据结构： 数组（Array）：一组按顺序存储的元素集合。 链表（Linked List）：通过节点和指针连接的数据元素集合。 栈（Stack）：一种遵循后进先出（LIFO）原则的数据结构。 队列（Queue）：一种遵循先进先出（FIFO）原则的数据结构。 树（Tree）：一种层次结构的数据结构，包括二叉树、二叉搜索树等。 图（Graph）：由节点和边组成的网络结构。 算法： 排序算法：如冒泡排序、插入排序、快速排序、归并排序等。 搜索算法：如线性搜索、二分搜索、广度优先搜索、深度优先搜索等。 图算法：如最短路径算法（Dijkstra算法、Floyd-Warshall算法）、最小生成树算法（Prim算法、Kruskal算法）等。 动态规划算法：用于解决具有重叠子问题性质的问题，如背包问题、最长公共子序列等。 通过学习和应用数据结构和算法，开发人员可以优化程序的时间复杂度和空间复杂度，提高代码的效率和可维护性。同时，深入理解数据结构和算法的原理，可以帮助开发人员在解决各种问题时选择合适的数据结构和算法，提高问题解决能力。💻📚✨ 当涉及到数据结构和算法时，有许多概念和技术可以进一步探索。以下是一些进阶主题，可以帮助你深入了解数据结构和算法的更多内容： 高级数据结构： 堆（Heap）：一种可以快速找到最大或最小元素的数据结构，常用于优先队列和堆排序。 散列表（Hash Table）：使用散列函数将键映射到值的数据结构，实现高效的插入、查找和删除操作。 树堆（Treap）：结合了二叉搜索树和堆的特性的数据结构，可以在O(log n)时间内实现插入、删除和查询。 B树（B-Tree）和B+树（B+ Tree）：用于在磁盘或其他辅助存储设备上组织和管理大量数据的数据结构。 算法设计技巧： 分治法（Divide and Conquer）：将问题划分为更小的子问题，并将子问题的解合并为原始问题的解。 贪心算法（Greedy Algorithm）：每一步都做出局部最优选择，以期望达到全局最优解。 动态规划（Dynamic Programming）：将问题划分为重叠子问题，并使用记忆化或自底向上的方式求解子问题，以得到最优解。 回溯法（Backtracking）：通过尝试所有可能的解决方案，逐步构建解决方案的方法，可以用于解决组合、排列和搜索问题。 算法复杂度分析： 时间复杂度：描述算法执行所需的时间随输入规模增长而增加的速度。 空间复杂度：描述算法在执行过程中所需的额外空间随输入规模增长而增加的速度。 最坏情况复杂度：描述算法在最坏情况下所需的时间或空间。 平均情况复杂度：描述算法在平均情况下所需的时间或空间。 最好情况复杂度：描述算法在最好情况下所需的时间或空间。 算法优化和优化技巧： 空间换时间：通过使用额外的存储空间来加速算法的执行。 迭代优化：将递归算法转换为迭代算法，减少函数调用开销。 剪枝策略：通过排除无效的搜索空间来减少算法的计算量。 并行计算：利用多个处理单元或线程同时执行任务，以提高算法的执行速度。 这些主题只是数据结构和算法领域中的一小部分。深入学习和实践这些概念和技术，可以帮助你成为更高效、更有创造力的程序员，并在解决问题时提供更优雅的解决方案。同时，通过阅读相关书籍、参与算法竞赛和实践编码，你可以不断提升自己在数据结构和算法方面的能力。💻📚✨ 数据库数据库是指为了方便组织、存储和管理数据而设计的系统。它是一个可持久化存储数据的仓库，可以对数据进行增删改查等操作。数据库管理系统（DBMS）是用于管理数据库的软件，它提供了一组操作和工具来创建、访问、维护和控制数据库。 常见的数据库类型包括： 关系型数据库（RDBMS）： 关系型数据库使用表格（表）来组织数据，表由行（记录）和列（字段）组成。每个表代表一个实体或概念，而行则表示该实体的具体实例。关系型数据库使用结构化查询语言（SQL）来定义和操作数据。常见的关系型数据库包括MySQL、Oracle、Microsoft SQL Server和PostgreSQL等。 非关系型数据库（NoSQL数据库）： 非关系型数据库不使用表格结构，而是使用其他数据模型来组织数据，如键值对、文档、列族和图等。非关系型数据库通常具有更高的可伸缩性和灵活性，适用于大规模分布式系统和需要快速存储和检索非结构化数据的场景。常见的非关系型数据库包括MongoDB、Redis、Cassandra和Elasticsearch等。 数据库具有以下特点和优势： 数据持久化：数据库可以将数据持久地存储在磁盘或其他存储介质中，确保数据不会丢失。 数据共享和集中管理：多个用户和应用程序可以共享数据库中的数据，实现数据的集中管理和一致性。 数据一致性和完整性：数据库提供事务和约束来维护数据的一致性和完整性。 数据安全性：数据库提供了访问控制和权限管理机制，保护数据的安全性和机密性。 数据查询和分析：数据库支持复杂的查询和分析操作，可以提取有用的信息和洞察力。 数据的高可用性和扩展性：数据库可以配置为具有高可用性和水平扩展能力，以适应不同的业务需求。 在开发应用程序时，选择适合的数据库类型和设计良好的数据库结构是非常重要的。根据应用程序的需求和数据特性，可以选择关系型数据库或非关系型数据库，并设计合适的数据模型和查询方案，以实现高效的数据存储和检索。同时，掌握数据库管理和优化技巧，可以提高数据库性能和数据访问效率。 信息安全在信息安全领域，确保计算机系统和数据的保密性、完整性和可用性是至关重要的。以下是对您提出的一些相关技术的解释： 加密算法：加密算法用于将敏感信息转换为不可读的形式，以防止未经授权的访问。它使用密钥来对数据进行加密，并且只有拥有正确密钥的人才能解密和访问原始数据。常见的加密算法包括对称加密算法（如AES）和非对称加密算法（如RSA）。 身份认证：身份认证是确认用户身份的过程。它基于用户提供的凭据（如用户名和密码）或使用其他身份验证方法（如指纹识别、面部识别或智能卡）来验证用户的身份。身份认证可以防止未经授权的用户访问系统和数据。 访问控制：访问控制是通过授权和权限管理来限制对系统和数据的访问。它确保只有经过授权的用户可以获取特定资源或执行特定操作。访问控制可以基于角色（如管理员、用户、访客）或基于属性（如用户所属部门或级别）进行配置。 防火墙：防火墙是一种网络安全设备，用于监控和控制进出网络的网络流量。它可以根据预定义的安全策略过滤网络流量，阻止未经授权的访问和恶意活动。 漏洞管理和漏洞扫描：漏洞管理是指对系统和应用程序进行持续的漏洞扫描和修复，以减少潜在的安全漏洞。漏洞扫描工具可以自动扫描系统以发现已知的漏洞，并提供修复建议。 传输层安全性（TLS）：传输层安全性是一种协议，用于在网络通信中提供加密和数据完整性保护。TLS通常在Web浏览器和服务器之间的通信中使用，以确保敏感信息（如登录凭据和信用卡信息）在传输过程中的安全。 威胁情报：威胁情报是关于潜在威胁和攻击者行为的信息。它包括有关已知的恶意软件、漏洞和攻击技术的信息。威胁情报可以帮助组织了解当前的安全威胁，并采取适当的防御措施。 安全审计和日志管理：安全审计和日志管理是记录和监控系统活动的过程。通过收集、分析和监视日志数据，可以检测潜在的安全事件和异常行为，并进行安全审计和调查。 双因素认证：双因素认证是一种身份验证方法，要求用户提供两个或多个不同类型的凭据来验证其身份。例如，使用用户名&#x2F;密码组合进行身份验证后，还需要提供一个动态生成的验证码或指纹扫描等。 社会工程学：社会工程学是指利用心理学和人类行为来欺骗和操纵人员，以获取未经授权的访问或敏感信息。社会工程学攻击可以通过钓鱼邮件、电话欺骗或伪装成信任的个体来实施。 脆弱性评估和渗透测试：脆弱性评估是识别系统和应用程序中存在的安全漏洞和弱点的过程。渗透测试是模拟真实攻击者的行为，以测试系统的安全性，并发现可能的漏洞和攻击路径。 安全策略和标准：安全策略是组织内制定的指导方针和规则，用于确保信息安全。安全标准是具体的技术规范，指定了安全配置和控制的要求。 应急响应和恢复：应急响应是在发生安全事件或攻击时采取的紧急措施，以减少损害并迅速恢复正常操作。恢复过程涉及修复受损系统、重新建立安全配置和确保业务连续性。 安全意识培训和教育：安全意识培训是向员工提供关于安全威胁、最佳实践和行为准则的教育。通过提高员工对安全的认识和知识水平，可以减少人为安全漏洞的风险。 数据保护和隐私：数据保护措施旨在保护敏感数据的机密性和完整性，以防止未经授权的访问、泄露和篡改。隐私保护涉及确保个人数据的合法收集、使用和存储，符合相关的隐私法规和政策。 安全管理和合规性：安全管理涉及制定和实施安全政策、流程和控制，并进行风险评估和安全审计。合规性是确保组织符合适用的法律法规、行业标准和合同要求。 安全信息和事件管理（SIEM）：SIEM是一种综合性的安全管理解决方案，用于收集、分析和报告来自各种安全设备和日志源的信息。它可以帮助组织实时监控和应对安全事件。 云安全：云安全是保护云计算环境中的数据和资源免受威胁和攻击的措施。它涉及对云服务的访问控制、加密、身份认证和安全配置的管理。 综上所述，信息安全是一个广泛而复杂的领域，包含许多技术、实践和概念。保护计算机系统和数据的安全性需要综合性的方法，包括技术控制、策略制定、培训教育和合规性管理。]]></content>
@@ -352,18 +364,6 @@
         <tag>计算机</tag>
         <tag>实用推荐</tag>
         <tag>推荐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开往的礼物(纪念款)</title>
-    <url>/2024/04/21/kw/</url>
-    <content><![CDATA[😀 这里写文章的前言： 就在昨天购买了开往的周边真的太开心了。 简介想必每个玩网络的人都知道开往吧。 开往的生日是 2020 年 3 月 12 日，取自开放的网络，是一个友链接力项目。 开往的 logo 是代表“世界”的星环 + 代表“穿梭”的列车 —— 相信你听到“开往”这个词最多的时候一定是在列车上，“由 xx 开往 xx 的列车……”。 每当有人访问加入开往的网页时，点击“开往“会随机跳转到另一个加入开往的网页。之后，再次点击网页上的”开往“或后退网页，将继续随机跳转到另一个加入开往的网页。 加入开往的网页越多，友链接力的规模越大，分享流量的规模也越大。 目前已有 1k+ 人关注开往， 1k+ 成员加入过开往。 https://img.shields.io/github/stars/travellings-link/travellings?style=social 这个看起来难道不有趣吗？ 分享就在上周洛寒兮准备了开往的周边，心想我来到开往也有3个月多之久了，喜欢开往也有3年了，一开始就被他的原理所吸引，与每一次点击之后的未知性，真的超级有趣。 那时的我看到别人网站上挂着开往的标识，太酷了啊。我想什么时候我也才能成为一份子呢？ 这不，我现在终于成为了一份子，真的很感激，很激动，文章每次都是很认真写完才会发布，就希望有更多的人看到我，能帮助到别人。 哈哈，来看我的周边！！ 这是在爱发电上买的，一挂出，我放学回来就买了，真的很爱开往~ 你看这个，谁能不爱呢？ 茗辰原 の 异世界，也是你的一世界！在这里可以畅所欲谈，哈哈，期待与你的下一次相遇~]]></content>
-      <categories>
-        <category>心情随笔</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -379,19 +379,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mp3tag封面替换，信息修改！</title>
-    <url>/2025/01/03/mp3tag/</url>
-    <content><![CDATA[Mp3tag - Download 😀 这里写文章的前言： Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以编辑的信息，视频封面等 软件介绍 封面如此，可以替换的信息在左侧。 软件使用点击这个按钮，即可打开想修改的文件目录 在右边选择视频，双击即可播放，单击即可修改。 这里，右键，即可选择想修改的视频封面，也就是缩略图 修改完成后，点击此处，即可保存更改。 下载官网：https://www.mp3tag.de/en/download.html Mp3tag - Download]]></content>
-      <categories>
-        <category>硬核科技</category>
-      </categories>
-      <tags>
-        <tag>电脑软件</tag>
-        <tag>信息修改</tag>
-        <tag>视频</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一挑四！全网SVIP无损音乐，随便下！</title>
     <url>/2024/05/12/music_download/</url>
     <content><![CDATA[前言免费的音乐工具我遇见过很多款！ 任何事物都有正反两面， 在这个被版权垄断的音乐时代，虽然不开通VIP只能试听30秒，但如果你铁了心不想要浪费钱，还是可以找到让你能够免费听歌的工具。 像歌词适配、落雪音乐这些个免费时代的先驱者，都曾受到过无数的好评，虽然现在已经被迫离我们而去，但是新的推动者一直在路上。 安利这是一款不知何时上线的免费音乐工具，目前版本仅为1.0.8。初见这款App的界面UI着实是让我惊讶一番，一点不比某些大厂的App差。 歌曲推荐功能性上十分的丰富，不仅有每日推荐、排行榜、歌单、MV，甚至还有根据你的曲风喜爱专属的个性电台。 界面上虽然有广告，但是也只仅限于阿五打上马赛克的这一小块区域，完全不影响使用。 与以往分享的App不同的是，虽然这款内置的音乐源仅为两个，但我们可以后期增加音乐源的数量。 添加自定义源的话，会有更多的搜索。 如果这两个并不能满足你，我们可以在个人中心中点击导入源，把阿五提供了两个公开整合源链接粘贴进去添加更多的音乐源。 第一张图倒数第二行 让后导入下面为你准备好的源，直接点击下载就完成！！ HTMLhttps://gitlab.com/acoolbook/musicfree/-/raw/main/music.jsonhttps://gitee.com/maotoumao/MusicFreePlugins/raw/master/plugins.json复制上面任意一个链接到音悦软件内“我的-导入源”进行导入，推荐第一个。 下载音悦及整合源（安卓）123盘：https://www.123pan.com/s/Q5O0Vv-Hj4J3.html蓝奏云：https://liuawu.lanzn.com/b009g3wwva 密码:6666 注：转载微信公众号：刘阿五，如有侵犯，立马删除]]></content>
@@ -402,6 +389,19 @@
         <tag>安卓应用</tag>
         <tag>实用推荐</tag>
         <tag>app</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mp3tag封面替换，信息修改！</title>
+    <url>/2025/01/03/mp3tag/</url>
+    <content><![CDATA[Mp3tag - Download 😀 这里写文章的前言： Mp3tag是款，视频，音频，信息替换软件，可以编辑任何可以编辑的信息，视频封面等 软件介绍 封面如此，可以替换的信息在左侧。 软件使用点击这个按钮，即可打开想修改的文件目录 在右边选择视频，双击即可播放，单击即可修改。 这里，右键，即可选择想修改的视频封面，也就是缩略图 修改完成后，点击此处，即可保存更改。 下载官网：https://www.mp3tag.de/en/download.html Mp3tag - Download]]></content>
+      <categories>
+        <category>硬核科技</category>
+      </categories>
+      <tags>
+        <tag>电脑软件</tag>
+        <tag>信息修改</tag>
+        <tag>视频</tag>
       </tags>
   </entry>
   <entry>
@@ -467,6 +467,18 @@
       </tags>
   </entry>
   <entry>
+    <title>寒假起航!老家畅游!</title>
+    <url>/2025/01/18/qihang/</url>
+    <content><![CDATA[茗起最近要回老家了,这个博文不知道能不能更新了,特意写一篇文章来告知朋友们! 这个文章中,将会有我寒假的计划,有关自己的事情,我相信只要自己坚持自律就一定能看到不一样 的自己! 茗述这个时间我有许多要做的事情,具体请看下方!进度条! 学习c++并达到任务进度80% 学习HTML+pug+vue 坚持每日打开纸条练习自己的写作能力 坚持句子控锻炼自己的诗感- 每天写日记到一本日记-这里从现在开始还没有完成的任务! 一个月的练字任务- 每日两篇英语阅读- 锻炼自己的身体- 每日跟着各大up主学习,英语,数学,语文,物理…- 每日积累科普知识到我的科普本- 记录自己的美好生活!- 暂时只想起来折磨多,后面应该会补充!]]></content>
+      <categories>
+        <category>生活方面</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>什么竟然还有这样的神器？</title>
     <url>/2024/05/12/qianhe-tools/</url>
     <content><![CDATA[前言给大家搞到了一款非常不错的在线工具箱网站，废话不多说，直接安排！！！ 也是好久没更新Windows 程序了好吧，这次必须整活！！ 千盒工具这是一款非常不错的在线工具箱网站，该网站不需要注册登录，打开即可直接使用，网站内包含了非常多实用的在线工具，全部都是免费的，没有任何的套路，不论大家从事任何行业，都强烈建议各位小伙伴们点赞收藏，后续肯定会用到的哦！ 网站主界面如下图所示，左侧是工具分类，右侧是工具列表，目前包含了搜索工具、图片工具、示拼工具、文本工具、办公工具、导航工具、数字工具、单位换算工具以及开发工具等，覆盖了多个行业，所有工具统统免费，非常良心！ 所有工具点击进入即可打开使用，如下图所示，这里我就随便打开一个图片文字识别工具，我们只需要上传需要识别的图片，然后点击立即识别按钮即可，识别速度快，准确率高，使用非常方便！ 由于该网站包含的工具较多，在这里就不挨个给大家演示了，很多工具都是非常实用的，比如示拼格式转换、图片格式转换、二维码解析、图片压缩、单位换算等等，大家可以自行访问使用哦！ 以上就是给大家介绍的 非常不错的网站。 网页链接：https://1000tool.com/ https://1000tool.com/]]></content>
@@ -477,18 +489,6 @@
         <tag>电脑软件</tag>
         <tag>工具</tag>
         <tag>实用推荐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>寒假起航!老家畅游!</title>
-    <url>/2025/01/18/qihang/</url>
-    <content><![CDATA[茗起最近要回老家了,这个博文不知道能不能更新了,特意写一篇文章来告知朋友们! 这个文章中,将会有我寒假的计划,有关自己的事情,我相信只要自己坚持自律就一定能看到不一样 的自己! 茗述这个时间我有许多要做的事情,具体请看下方!进度条! 学习c++并达到任务进度80% 学习HTML+pug+vue 坚持每日打开纸条练习自己的写作能力 坚持句子控锻炼自己的诗感- 每天写日记到一本日记-这里从现在开始还没有完成的任务! 一个月的练字任务- 每日两篇英语阅读- 锻炼自己的身体- 每日跟着各大up主学习,英语,数学,语文,物理…- 每日积累科普知识到我的科普本- 记录自己的美好生活!- 暂时只想起来折磨多,后面应该会补充!]]></content>
-      <categories>
-        <category>生活方面</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -583,6 +583,18 @@
       </tags>
   </entry>
   <entry>
+    <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
+    <url>/2024/07/17/wcn-rs/</url>
+    <content><![CDATA[😀 这里写文章的前言： 这篇文章摘抄于微信公众号！ 刷脸支付、刷脸打卡、刷脸门禁……如今人脸识别的应用越来越普及，很多人几乎每天都会刷脸，甚至在部分健身馆、游泳馆的更衣室也装上了人脸识别设备。 而你以为识别的只是一张脸，殊不知可能上半身全照进去了！ 这两天，#建议大家人脸识别要穿上衣服#的话题登上热搜。不穿衣服进行人脸识别被后台审核人员看光光？网友在相关词条下对隐私泄露表示担忧。 博主@知名青年小新 发视频提醒，大家使用App人脸识别功能时一定要穿衣服。视频内容显示： 如果你经常在洗澡或者是上厕所的时候，进行人脸认证或者查看银行卡余额，你以为手机只会扫描到你的脸部吗？实际上后台的审核人员是能看到你整个上半身的。特别是当你没有穿衣服做各种刷脸认证的时候，简直不敢想。并且，这些视频是要一直保存在网络上的。 人脸识别泄露隐私的问题早有争论。 此前，教育博主@法小岛 发微博表示，摄像头采集的不仅仅是被识别者人脸部分，后台还会有审核人员看到…… 在该博主评论区，有网友介绍，实际上就是用前置摄像头拍一张照片，只是图形界面只给你显示人脸部分。所以锁屏、解锁或者支付宝人脸支付等自动识别的都是机器判断。但是需要人工审核的就得注意点了，像银行二级账户开户人脸识别，证券App开户这种就是要人工审核的。 另一数码博主@长安数码君 也称，有从事后台审核的朋友对他说，在审核工作时：“经常会看到很多人在洗澡的时候、在和“另一半抱在一起的时候”、在没穿衣服的时候、在进行各种奇奇怪怪动作的时候进行人脸识别。” 该博主还放了一张用户看到的图片和人脸识别后台所显示图片的对比图，更加清晰详尽地展示了人脸识别后台的“真相”。 早在2019年，新浪新闻还报道了一则因人脸识别而破解的命案。报道称，一男子杀害女友后，借用女友的身份在网上申请小额贷款。但贷款APP要求人脸识别、对着屏幕眨眼睛，该男子只好放弃。 而此举却引起了网贷App工作人员的注意，转入人工审核时发现异常，在7秒的“活体识别”的视频中，当事人无任何反应、脖子上也有勒痕、面部有淤青。工作人员怀疑申请人被害，赶紧报了警。 可见，需要人脸动态识别（比如眨眼、摇头等）的APP，的确有人工审核。 并且，人脸识别其实调用的是手机的前置摄像头，而摄像头的取景并非仅仅是头部，而是涵盖了摄像头视野覆盖的所有区域。 也即是说，大家在进行人脸识别的时候，不论人脸框内还是框外，只要是在摄像头范围内的画面，全部都会被拍到。 小米手机也曾表示，人脸验证时，其实整个上半身都会被应用获取。 得知此事后，网友纷纷表示“社死”。 有网友称，自己经常在洗澡的时候解锁；还有人表示，会在蹲厕所时进行人脸识别。 而除了感到社死外，有不少网友认为这件事“很严重”“感到隐私被侵犯”。人脸识别系统后台人工审核时，平台为什么不提醒用户是可以看到摄像头全景的？ 据2021年8月1日起施行的《最高人民法院关于审理使用人脸识别技术处理个人信息相关民事案件适用法律若干问题的规定》明确规定，信息处理者处理人脸信息未公开处理人脸信息的规则或者未明示处理的目的、方式、范围，人民法院应当认定属于侵害自然人人格权益的行为。 所以，若App未明示人脸识别范围，或已涉及侵害用户权益。 不过，大家也不必过于惊慌。 曾有专业人士介绍，现在提供人脸识别技术的头部企业和大企业采用的都是隐私计算技术，只会向客户提供脱敏特征码用于比对，不会将图像送到后台。 一般而言，大公司、银行、政府、公安等在人脸识别的应用上会更规范。对于网络上盛传的后台人工审核时能看到图片的情况，有专家表示这种操作是“不合规”的。 此外，很多网友担心后台会存储自己的照片信息。 对此，某手机厂商曾表示，面容ID数据不会离开设备，也永远不会备份到iCloud或其他任意位置。 更早前，腾讯游戏针对“人脸识别”等一系列问题作出解答，称人脸识别会严格遵照主管部门规定，最大限度保障用户隐私安全。用于验证的用户身份信息不会被记录、存储，或用于除公安权威数据平台数据源验证以外的任何其他用途。相关数据均通过加密处理，在与公安权威数据平台数据源比对的验证过程中，全程均为机器识别，没有人工参与。 实际上，业内人士表示一般的企业都不会在后台存储用户的原始图像。单从存储和传输等方面的成本上看，对公司而言，把原始图像送往后台也是不合算的做法。 而如果一些企业需要通过大量的人像数据来进行AI和机器学习的训练，有存储用户原始图像的需求，那么他们往往只会存储头部的图像。因为过于复杂的背景和其他的图像信息会对机器学习的算法进行干扰，反而会造成人脸识别算法的不准确。 需要注意的是，相关法规明确，使用人脸识别技术，不应过度索取个人信息。 2023年8月，国家网信办公开发布《人脸识别技术应用安全管理规定（试行）（征求意见稿）》（以下简称“征求意见稿”）提到，使用人脸识别技术必须遵循“最少使用”和“最小存储”。 其中，“最少使用”，即只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，方可使用人脸识别技术处理人脸信息。实现相同目的或者达到同等业务要求，存在其他非生物特征识别技术方案的，应当优先选择非生物特征识别技术方案； “最小存储”，即除法定条件或者取得个人单独同意外，人脸识别技术使用者不得保存人脸原始图像、图片、视频，经过匿名化处理的人脸信息除外。使用人脸识别技术处理人脸信息应当尽量避免采集与提供服务无关的人脸信息，无法避免的，应当及时删除或者进行匿名化处理。 尽管法律法规对企业有制约作用，但无法保证整个流程中无人违规，因此建议大家首先选择知名企业App，非正规App则不要使用人脸识别功能。同时，在进行人脸识别时，注意个人隐私保护，务必衣着整齐。 另外，由于人脸识别技术不同，市面上的设备种类繁多，广大用户往往无法确知敏感信息在前端的获取情况，在后端又能否真正实现加密保护或依法删除，希望有关部门能依据职责、形成合力，加强对人脸识别技术使用的监督检查，指导督促人脸识别技术使用者履行各项法定义务，及时发现安全隐患并督促限期整改，避免敏感个人信息安全风险失控蔓延。 来源：电脑报，编辑：cc]]></content>
+      <categories>
+        <category>探究所以</category>
+      </categories>
+      <tags>
+        <tag>思考</tag>
+        <tag>探究所以</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TVBOX 配置两端通用</title>
     <url>/2024/10/27/tvbox/</url>
     <content><![CDATA[TV版本安装TVBOX安装完以后什么都无法观看-需要配置地址 TVBOX配置地址首先打开右上角的设置按钮 选中配置地址 获取存储权限-提示获取成功 然后用手机或者电脑扫描二维码或者打开以上地址填入数据源地址即可 TVBOX使用如果失效了可以自定义数据源(推荐T4聚合) 也可以配置其他参数-自行摸索 接口链接TVBox各路大佬配置（排名不分先后）： （1）唐三：https://hutool.ml/tang （2）Fongmi：https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json （3）俊于：http://home.jundie.top:81/top98.json （4）饭太硬：http:&#x2F;&#x2F;饭太硬.ga&#x2F;x&#x2F;o.json （5）霜辉月明py：https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json （6）小雅dr：http://drpy.site/js1 （7）菜妮丝：https://tvbox.cainisi.cf （8）神器：https:&#x2F;&#x2F;神器每日推送.tk&#x2F;pz.json （9）巧技：http://pandown.pro/tvbox/tvbox.json （10）刚刚：http:&#x2F;&#x2F;刚刚.live&#x2F;猫 （11）吾爱有三：http://52bsj.vip:98/0805 （12）潇洒：https://download.kstore.space/download/2863/01.txt （13）佰欣园：https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt （14）胖虎：https://notabug.org/imbig66/tv-spider-man/raw/master/配置/0801.json （15）云星日记：https://maoyingshi.cc/tiaoshizhushou/1.txt （16）Yoursmile7：https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json （17）BOX：http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0 （18）哔哩学习：http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0 （19）UndCover：https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json （20）木极：https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt （21）Ray：https://dxawi.github.io/0/0.json （22）甜蜜：https://kebedd69.github.io/TVbox-interface/py甜蜜.json （23）52bsj：http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0 （24）肥猫：http:&#x2F;&#x2F;我不是.肥猫.love:63 PC版本软件介绍ZyPlayer v3.3.1 中文版 免费全网影视播放器 GitHub原文地址： 使用方法：安装软件后，依次点开设置 -&gt; 基础配置 -&gt; 其他 -&gt; 数据管理 -&gt; 一键配置 -&gt; 软件接口然后填入订阅地址，就能正常使用了。 专用接口源: 接口分享：http://xiaoguozitv.cn/catys/zyplay.json 订阅地址：https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json 订阅地址：https://raw.kgithub.com/cddehsy/zyjs/main/zy.json 以上地址选第一个即可，遇到失效了就换！ | 软件介绍： ZY Player开源播放神器复活，更强了 用过 ZY Player 的都知道，这是一个免费开放源的播放器软件，兼容各种资源网接口，支持看视频、直播，而且这款软件已经存在了好几年了，只能说很强。 新版本颜值更高，而且功能都有很大的提升，不仅更强，而且整体界面也改版了。 ZyPlayer跟之前的一样，专注于资源网接口，同样可以选择不同的接口源，点击左上角就可以切换接口源。 而且不同源站，同样支持选择分类，分类也做得非常详细，当然还有很多细节值得体验。 基于 vue 全家桶 + tdesign + electron 开发；主题色：薄荷绿。 已有功能 全平台支持 Windows、Mac、Linux 适配黑暗模式 支持资源站 cms（json 接口） 支持 IPTV（m3u、genre）及电子节目单 支持主流视频平台解析（解析页面有个小彩蛋，可在代码里自行探索） 老板键，一键隐藏 播放器软解 … | 部分功能详细截图： 软件下载夸克:]]></content>
@@ -594,18 +606,6 @@
         <tag>安卓应用</tag>
         <tag>推荐</tag>
         <tag>影视</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>“未穿衣人脸识别被后台看光”上热搜，App为何不设提示？</title>
-    <url>/2024/07/17/wcn-rs/</url>
-    <content><![CDATA[😀 这里写文章的前言： 这篇文章摘抄于微信公众号！ 刷脸支付、刷脸打卡、刷脸门禁……如今人脸识别的应用越来越普及，很多人几乎每天都会刷脸，甚至在部分健身馆、游泳馆的更衣室也装上了人脸识别设备。 而你以为识别的只是一张脸，殊不知可能上半身全照进去了！ 这两天，#建议大家人脸识别要穿上衣服#的话题登上热搜。不穿衣服进行人脸识别被后台审核人员看光光？网友在相关词条下对隐私泄露表示担忧。 博主@知名青年小新 发视频提醒，大家使用App人脸识别功能时一定要穿衣服。视频内容显示： 如果你经常在洗澡或者是上厕所的时候，进行人脸认证或者查看银行卡余额，你以为手机只会扫描到你的脸部吗？实际上后台的审核人员是能看到你整个上半身的。特别是当你没有穿衣服做各种刷脸认证的时候，简直不敢想。并且，这些视频是要一直保存在网络上的。 人脸识别泄露隐私的问题早有争论。 此前，教育博主@法小岛 发微博表示，摄像头采集的不仅仅是被识别者人脸部分，后台还会有审核人员看到…… 在该博主评论区，有网友介绍，实际上就是用前置摄像头拍一张照片，只是图形界面只给你显示人脸部分。所以锁屏、解锁或者支付宝人脸支付等自动识别的都是机器判断。但是需要人工审核的就得注意点了，像银行二级账户开户人脸识别，证券App开户这种就是要人工审核的。 另一数码博主@长安数码君 也称，有从事后台审核的朋友对他说，在审核工作时：“经常会看到很多人在洗澡的时候、在和“另一半抱在一起的时候”、在没穿衣服的时候、在进行各种奇奇怪怪动作的时候进行人脸识别。” 该博主还放了一张用户看到的图片和人脸识别后台所显示图片的对比图，更加清晰详尽地展示了人脸识别后台的“真相”。 早在2019年，新浪新闻还报道了一则因人脸识别而破解的命案。报道称，一男子杀害女友后，借用女友的身份在网上申请小额贷款。但贷款APP要求人脸识别、对着屏幕眨眼睛，该男子只好放弃。 而此举却引起了网贷App工作人员的注意，转入人工审核时发现异常，在7秒的“活体识别”的视频中，当事人无任何反应、脖子上也有勒痕、面部有淤青。工作人员怀疑申请人被害，赶紧报了警。 可见，需要人脸动态识别（比如眨眼、摇头等）的APP，的确有人工审核。 并且，人脸识别其实调用的是手机的前置摄像头，而摄像头的取景并非仅仅是头部，而是涵盖了摄像头视野覆盖的所有区域。 也即是说，大家在进行人脸识别的时候，不论人脸框内还是框外，只要是在摄像头范围内的画面，全部都会被拍到。 小米手机也曾表示，人脸验证时，其实整个上半身都会被应用获取。 得知此事后，网友纷纷表示“社死”。 有网友称，自己经常在洗澡的时候解锁；还有人表示，会在蹲厕所时进行人脸识别。 而除了感到社死外，有不少网友认为这件事“很严重”“感到隐私被侵犯”。人脸识别系统后台人工审核时，平台为什么不提醒用户是可以看到摄像头全景的？ 据2021年8月1日起施行的《最高人民法院关于审理使用人脸识别技术处理个人信息相关民事案件适用法律若干问题的规定》明确规定，信息处理者处理人脸信息未公开处理人脸信息的规则或者未明示处理的目的、方式、范围，人民法院应当认定属于侵害自然人人格权益的行为。 所以，若App未明示人脸识别范围，或已涉及侵害用户权益。 不过，大家也不必过于惊慌。 曾有专业人士介绍，现在提供人脸识别技术的头部企业和大企业采用的都是隐私计算技术，只会向客户提供脱敏特征码用于比对，不会将图像送到后台。 一般而言，大公司、银行、政府、公安等在人脸识别的应用上会更规范。对于网络上盛传的后台人工审核时能看到图片的情况，有专家表示这种操作是“不合规”的。 此外，很多网友担心后台会存储自己的照片信息。 对此，某手机厂商曾表示，面容ID数据不会离开设备，也永远不会备份到iCloud或其他任意位置。 更早前，腾讯游戏针对“人脸识别”等一系列问题作出解答，称人脸识别会严格遵照主管部门规定，最大限度保障用户隐私安全。用于验证的用户身份信息不会被记录、存储，或用于除公安权威数据平台数据源验证以外的任何其他用途。相关数据均通过加密处理，在与公安权威数据平台数据源比对的验证过程中，全程均为机器识别，没有人工参与。 实际上，业内人士表示一般的企业都不会在后台存储用户的原始图像。单从存储和传输等方面的成本上看，对公司而言，把原始图像送往后台也是不合算的做法。 而如果一些企业需要通过大量的人像数据来进行AI和机器学习的训练，有存储用户原始图像的需求，那么他们往往只会存储头部的图像。因为过于复杂的背景和其他的图像信息会对机器学习的算法进行干扰，反而会造成人脸识别算法的不准确。 需要注意的是，相关法规明确，使用人脸识别技术，不应过度索取个人信息。 2023年8月，国家网信办公开发布《人脸识别技术应用安全管理规定（试行）（征求意见稿）》（以下简称“征求意见稿”）提到，使用人脸识别技术必须遵循“最少使用”和“最小存储”。 其中，“最少使用”，即只有在具有特定的目的和充分的必要性，并采取严格保护措施的情形下，方可使用人脸识别技术处理人脸信息。实现相同目的或者达到同等业务要求，存在其他非生物特征识别技术方案的，应当优先选择非生物特征识别技术方案； “最小存储”，即除法定条件或者取得个人单独同意外，人脸识别技术使用者不得保存人脸原始图像、图片、视频，经过匿名化处理的人脸信息除外。使用人脸识别技术处理人脸信息应当尽量避免采集与提供服务无关的人脸信息，无法避免的，应当及时删除或者进行匿名化处理。 尽管法律法规对企业有制约作用，但无法保证整个流程中无人违规，因此建议大家首先选择知名企业App，非正规App则不要使用人脸识别功能。同时，在进行人脸识别时，注意个人隐私保护，务必衣着整齐。 另外，由于人脸识别技术不同，市面上的设备种类繁多，广大用户往往无法确知敏感信息在前端的获取情况，在后端又能否真正实现加密保护或依法删除，希望有关部门能依据职责、形成合力，加强对人脸识别技术使用的监督检查，指导督促人脸识别技术使用者履行各项法定义务，及时发现安全隐患并督促限期整改，避免敏感个人信息安全风险失控蔓延。 来源：电脑报，编辑：cc]]></content>
-      <categories>
-        <category>探究所以</category>
-      </categories>
-      <tags>
-        <tag>思考</tag>
-        <tag>探究所以</tag>
       </tags>
   </entry>
   <entry>
