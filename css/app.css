@@ -1620,7 +1620,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Mulish', 'Noto Serif SC', 'Noto Serif JP', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Mulish', 'ZCOOL KuaiLe', 'ZCOOL KuaiLe', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 1.25rem 0 0.9375rem;
@@ -1631,7 +1631,7 @@ h3.title,
 h4.title,
 h5.title,
 h6.title {
-  font-family: 'Mulish', 'Noto Serif JP', 'Noto Serif SC', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Mulish', 'ZCOOL KuaiLe', 'ZCOOL KuaiLe', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 a {
   border: none;
@@ -3284,7 +3284,7 @@ use.stop-animation {
   padding: 0 2rem;
 }
 .md {
-  font-family: 'Zhi Mang Xing', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'ZCOOL KuaiLe', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -3353,7 +3353,7 @@ use.stop-animation {
 .post header .meta {
   text-align: center;
   border-top: 0.0625rem dashed var(--grey-9-a1);
-  font-family: 'Zhi Mang Xing', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'ZCOOL KuaiLe', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .post .meta {
   color: var(--grey-5);
@@ -3657,7 +3657,7 @@ use.stop-animation {
 .article .md .anchor::before,
 .article .md .anchor::after {
   content: "H";
-  font-family: 'Zhi Mang Xing', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'ZCOOL KuaiLe', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
   left: -1.875rem;
   top: 1rem;
   width: 1.25rem;
@@ -5734,7 +5734,7 @@ code,
 }
 .links .item .title {
   margin: 0.5rem 0;
-  font-family: 'Mulish', 'Noto Serif JP', 'Noto Serif SC', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Mulish', 'ZCOOL KuaiLe', 'ZCOOL KuaiLe', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   color: var(--bg-color);
   border: none;
