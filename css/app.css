@@ -2993,6 +2993,12 @@ use.stop-animation {
 .social .item.youtube i {
   color: outub;
 }
+.social .item.instagram::before {
+  background-color: nstagra;
+}
+.social .item.instagram i {
+  color: nstagra;
+}
 .social .item:focus i,
 .social .item:hover i {
   color: var(--grey-0);
