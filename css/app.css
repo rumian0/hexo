@@ -6276,6 +6276,50 @@ span.label {
 .audio.playing .cover .disc {
   animation-play-state: running;
 }
+#runtime-area {
+  text-align: center; /* 内容居中 */
+  margin: 1rem 0;
+}
+#runtime {
+  background: linear-gradient(90deg, #f00, #fa0, #ff0, #0f0, #00f, #a0f, #f00);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow-scroll 2s linear infinite; /* 动画持续时间和循环 */
+}
+@-moz-keyframes rainbow-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+@-webkit-keyframes rainbow-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+@-o-keyframes rainbow-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+@keyframes rainbow-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
 .md span:not(.katex),
 .md p,
 .md pre,
