@@ -2,13 +2,13 @@
 <rss version="2.0">
     <channel>
         <title>茗辰原</title>
-        <subtitle>一位17岁的少年的编程史...</subtitle>
+        <subtitle>茶香四溢,编程世界</subtitle>
         <icon>https://mingcy.cn/assets/favicon.ico</icon>
         <link>https://mingcy.cn</link>
         <author>
           <name>茗辰原</name>
         </author>
-        <description>一位17岁的少年的编程史...</description>
+        <description>茶香四溢,编程世界.</description>
         <language>zh-CN</language>
         <pubDate>Sat, 22 Mar 2025 17:00:00 +0800</pubDate>
         <lastBuildDate>Sat, 22 Mar 2025 17:00:00 +0800</lastBuildDate>
