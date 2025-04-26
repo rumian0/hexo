@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>茗辰原 • Posts by &#34;影视&#34; tag</title>
+        <link>https://mingcy.cn</link>
+        <description>茶香四溢,编程世界.</description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 27 Oct 2024 12:00:00 +0800</pubDate>
+        <lastBuildDate>Sun, 27 Oct 2024 12:00:00 +0800</lastBuildDate>
+        <category>电脑软件</category>
+        <category>123网盘</category>
+        <category>工具</category>
+        <category>C++</category>
+        <category>编程语言</category>
+        <category>ChatGPT</category>
+        <category>Openai</category>
+        <category>建站</category>
+        <category>网站建站</category>
+        <category>计算机</category>
+        <category>安卓应用</category>
+        <category>广告</category>
+        <category>塔罗牌</category>
+        <category>网页精选</category>
+        <category>Ai</category>
+        <category>文字语音</category>
+        <category>安卓软件</category>
+        <category>音乐</category>
+        <category>实用推荐</category>
+        <category>Cloudflare</category>
+        <category>部署</category>
+        <category>分享</category>
+        <category>班级</category>
+        <category>实验</category>
+        <category>心理</category>
+        <category>锻炼</category>
+        <category>生活</category>
+        <category>精选网站</category>
+        <category>app,</category>
+        <category>系统优化</category>
+        <category>hexo</category>
+        <category>技术分享</category>
+        <category>实用</category>
+        <category>app</category>
+        <category>科幻科普</category>
+        <category>推荐</category>
+        <category>记录</category>
+        <category>亲情</category>
+        <category>妈妈</category>
+        <category>百度网盘</category>
+        <category>激活</category>
+        <category>教程</category>
+        <category>QQ空间</category>
+        <category>开源</category>
+        <category>works</category>
+        <category>壁纸</category>
+        <category>随机图</category>
+        <category>影视</category>
+        <category>指令</category>
+        <category>吾爱破解</category>
+        <category>调查</category>
+        <category>人物</category>
+        <category>积累</category>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/10/27/tvbox/</guid>
+            <title>TVBOX 配置两端通用</title>
+            <link>https://mingcy.cn/2024/10/27/tvbox/</link>
+            <category>电脑软件</category>
+            <category>安卓应用</category>
+            <category>推荐</category>
+            <category>影视</category>
+            <pubDate>Sun, 27 Oct 2024 12:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;tv版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tv版本&#34;&gt;#&lt;/a&gt; TV 版本&lt;/h1&gt;
+&lt;h2 id=&#34;安装tvbox&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装tvbox&#34;&gt;#&lt;/a&gt; 安装 TVBOX&lt;/h2&gt;
+&lt;p&gt;安装完以后什么都无法观看 - 需要配置地址&lt;br&gt;
+ &lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/1.webp&#34; class&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tvbox配置地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tvbox配置地址&#34;&gt;#&lt;/a&gt; TVBOX 配置地址&lt;/h2&gt;
+&lt;p&gt;首先打开右上角的设置按钮&lt;/p&gt;
+&lt;p&gt;选中配置地址&lt;br&gt;
+ &lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/3.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;获取存储权限 - 提示获取成功&lt;br&gt;
+ &lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/4.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;然后用手机或者电脑扫描二维码或者打开以上地址填入数据源地址即可&lt;/p&gt;
+&lt;h2 id=&#34;tvbox使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tvbox使用&#34;&gt;#&lt;/a&gt; TVBOX 使用&lt;/h2&gt;
+&lt;p&gt;如果失效了可以自定义数据源 (推荐 T4 聚合)&lt;br&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/5.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;也可以配置其他参数 - 自行摸索&lt;/p&gt;
+&lt;h2 id=&#34;接口链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#接口链接&#34;&gt;#&lt;/a&gt; 接口链接&lt;/h2&gt;
+&lt;p&gt;TVBox 各路大佬配置（排名不分先后）：&lt;/p&gt;
+&lt;p&gt;（1）唐三：&lt;a href=&#34;https://hutool.ml/tang&#34;&gt;https://hutool.ml/tang&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（2）Fongmi：&lt;a href=&#34;https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json&#34;&gt;https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（3）俊于：&lt;a href=&#34;http://home.jundie.top:81/top98.json&#34;&gt;http://home.jundie.top:81/top98.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（4）饭太硬：&lt;a href=&#34;http://xn--sss604efuw.ga/x/o.json&#34;&gt;http:// 饭太硬.ga/x/o.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（5）霜辉月明 py：&lt;a href=&#34;https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json&#34;&gt;https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（6）小雅 dr：&lt;a href=&#34;http://drpy.site/js1&#34;&gt;http://drpy.site/js1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（7）菜妮丝：&lt;a href=&#34;https://tvbox.cainisi.cf&#34;&gt;https://tvbox.cainisi.cf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（8）神器：&lt;a href=&#34;https://xn--m7r412advb92j21st65a.tk/pz.json&#34;&gt;https:// 神器每日推送.tk/pz.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（9）巧技：&lt;a href=&#34;http://pandown.pro/tvbox/tvbox.json&#34;&gt;http://pandown.pro/tvbox/tvbox.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（10）刚刚：&lt;a href=&#34;http://xn--4bra.live/%E7%8C%AB&#34;&gt;http:// 刚刚.live/ 猫&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（11）吾爱有三：&lt;a href=&#34;http://52bsj.vip:98/0805&#34;&gt;http://52bsj.vip:98/0805&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（12）潇洒：&lt;a href=&#34;https://download.kstore.space/download/2863/01.txt&#34;&gt;https://download.kstore.space/download/2863/01.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（13）佰欣园：&lt;a href=&#34;https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt&#34;&gt;https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（14）胖虎：&lt;a href=&#34;https://notabug.org/imbig66/tv-spider-man/raw/master/%E9%85%8D%E7%BD%AE/0801.json&#34;&gt;https://notabug.org/imbig66/tv-spider-man/raw/master/ 配置 / 0801.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（15）云星日记：&lt;a href=&#34;https://maoyingshi.cc/tiaoshizhushou/1.txt&#34;&gt;https://maoyingshi.cc/tiaoshizhushou/1.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（16）Yoursmile7：&lt;a href=&#34;https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json&#34;&gt;https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（17）BOX：&lt;a href=&#34;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&#34;&gt;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（18）哔哩学习：&lt;a href=&#34;http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0&#34;&gt;http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（19）UndCover：&lt;a href=&#34;https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json&#34;&gt;https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（20）木极：&lt;a href=&#34;https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt&#34;&gt;https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（21）Ray：&lt;a href=&#34;https://dxawi.github.io/0/0.json&#34;&gt;https://dxawi.github.io/0/0.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（22）甜蜜：&lt;a href=&#34;https://kebedd69.github.io/TVbox-interface/py%E7%94%9C%E8%9C%9C.json&#34;&gt;https://kebedd69.github.io/TVbox-interface/py 甜蜜.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（23）52bsj：&lt;a href=&#34;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&#34;&gt;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（24）肥猫：&lt;a href=&#34;http://xn--ihqu10cn4c.xn--z7x900a.love:63&#34;&gt;http:// 我不是。肥猫.love:63&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;pc版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pc版本&#34;&gt;#&lt;/a&gt; PC 版本&lt;/h1&gt;
+&lt;h2 id=&#34;软件介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件介绍&#34;&gt;#&lt;/a&gt; 软件介绍&lt;/h2&gt;
+&lt;p&gt;ZyPlayer v3.3.1 中文版 免费全网影视播放器&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 原文地址&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;GITHUB,github,ovo,https://github.com/Hiram-Wong/ZyPlayer&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用方法：&lt;/strong&gt;&lt;br&gt;
+安装软件后，依次点开设置 -&amp;gt; 基础配置 -&amp;gt; 其他 -&amp;gt; 数据管理 -&amp;gt; 一键配置 -&amp;gt; 软件接口然后填入&lt;strong&gt;订阅地址&lt;/strong&gt;，就能正常使用了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;专用接口源:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;接口分享：&lt;a href=&#34;http://xiaoguozitv.cn/catys/zyplay.json&#34;&gt;http://xiaoguozitv.cn/catys/zyplay.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;订阅地址：&lt;a href=&#34;https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json&#34;&gt;https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;订阅地址：&lt;a href=&#34;https://raw.kgithub.com/cddehsy/zyjs/main/zy.json&#34;&gt;https://raw.kgithub.com/cddehsy/zyjs/main/zy.json&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;以上地址选第一个即可，遇到失效了就换！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142446y8y6kys6dzpsl6ko.jpg&#34; alt=&#34;DM_20240105142311_003.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142455zu6ze27ii2zru1z5.jpg&#34; alt=&#34;DM_20240105142311_004.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;| 软件介绍：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ZY Player 开源播放神器复活，更强了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;用过 ZY Player 的都知道，这是一个免费开放源的播放器软件，兼容各种资源网接口，支持看视频、直播，而且这款软件已经存在了好几年了，只能说很强。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142753vkdat8lud1x4adu2.jpg&#34; alt=&#34;DM_20240105142311_005.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;新版本颜值更高，而且功能都有很大的提升，不仅更强，而且整体界面也改版了。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142829d498lq8dv1ly8l8d.jpg&#34; alt=&#34;DM_20240105142311_006.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ZyPlayer 跟之前的一样，专注于资源网接口，同样可以选择不同的接口源，点击左上角就可以切换接口源。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142901ob03bzo3gnnu03n6.jpg&#34; alt=&#34;DM_20240105142311_007.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;而且不同源站，同样支持选择分类，分类也做得非常详细，当然还有很多细节值得体验。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142950gx6pcpqv5el5uvzc.jpg&#34; alt=&#34;DM_20240105142311_008.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142956dw07ds9dni7rmw7k.jpg&#34; alt=&#34;DM_20240105142311_009.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143003sfe89shs5szs37m5.jpg&#34; alt=&#34;DM_20240105142311_010.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143015bysasx47paxbqa0c.jpg&#34; alt=&#34;DM_20240105142311_011.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;基于 vue 全家桶 + tdesign + electron 开发；主题色：薄荷绿。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;已有功能&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;全平台支持 Windows、Mac、Linux&lt;/li&gt;
+&lt;li&gt;适配黑暗模式&lt;/li&gt;
+&lt;li&gt;支持资源站 cms（json 接口）&lt;/li&gt;
+&lt;li&gt;支持 IPTV（m3u、genre）及电子节目单&lt;/li&gt;
+&lt;li&gt;支持主流视频平台解析（解析页面有个小彩蛋，可在代码里自行探索）&lt;/li&gt;
+&lt;li&gt;老板键，一键隐藏&lt;/li&gt;
+&lt;li&gt;播放器软解&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;|&lt;/strong&gt; &lt;strong&gt;部分功能详细截图：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143042j6qq226lej5qzt9j.jpg&#34; alt=&#34;DM_20240105142311_012.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143056tejo53b313b6p5b6.jpg&#34; alt=&#34;DM_20240105142311_013.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143112d1s8fvzab141j41i.jpg&#34; alt=&#34;DM_20240105142311_014.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143125sb7jpmasjq77ztts.jpg&#34; alt=&#34;DM_20240105142311_015.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143139rc6qxm4cxp6xlbyq.jpg&#34; alt=&#34;DM_20240105142311_016.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143153fo9x4a9jkraia9v4.jpg&#34; alt=&#34;DM_20240105142311_017.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143206as4bzb82jzk70jww.jpg&#34; alt=&#34;DM_20240105142311_018.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143217c318rnm19gl2sgsw.jpg&#34; alt=&#34;DM_20240105142311_019.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143228ynzbo2rsyopbmrz2.jpg&#34; alt=&#34;DM_20240105142311_020.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143244rqzagtvihvqzg33d.jpg&#34; alt=&#34;DM_20240105142311_021.jpg&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;软件下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件下载&#34;&gt;#&lt;/a&gt; 软件下载&lt;/h1&gt;
+&lt;p&gt;夸克:&lt;br&gt;
+&lt;a href=&#34;%E5%A4%B8%E5%85%8B,%E7%BD%91%E7%9B%98,%E8%BD%AC%E5%AD%98,https://pan.quark.cn/s/4e43e04ec7be&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>茗辰原 • Posts by &#34;app,&#34; tag</title>
+        <link>https://mingcy.cn</link>
+        <description>茶香四溢,编程世界.</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 25 Jan 2024 00:00:00 +0800</pubDate>
+        <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0800</lastBuildDate>
+        <category>电脑软件</category>
+        <category>123网盘</category>
+        <category>工具</category>
+        <category>C++</category>
+        <category>编程语言</category>
+        <category>ChatGPT</category>
+        <category>Openai</category>
+        <category>建站</category>
+        <category>网站建站</category>
+        <category>计算机</category>
+        <category>安卓应用</category>
+        <category>广告</category>
+        <category>塔罗牌</category>
+        <category>网页精选</category>
+        <category>Ai</category>
+        <category>文字语音</category>
+        <category>安卓软件</category>
+        <category>音乐</category>
+        <category>实用推荐</category>
+        <category>Cloudflare</category>
+        <category>部署</category>
+        <category>分享</category>
+        <category>班级</category>
+        <category>实验</category>
+        <category>心理</category>
+        <category>锻炼</category>
+        <category>生活</category>
+        <category>精选网站</category>
+        <category>app,</category>
+        <category>系统优化</category>
+        <category>hexo</category>
+        <category>技术分享</category>
+        <category>实用</category>
+        <category>app</category>
+        <category>科幻科普</category>
+        <category>推荐</category>
+        <category>记录</category>
+        <category>亲情</category>
+        <category>妈妈</category>
+        <category>百度网盘</category>
+        <category>激活</category>
+        <category>教程</category>
+        <category>QQ空间</category>
+        <category>开源</category>
+        <category>works</category>
+        <category>壁纸</category>
+        <category>随机图</category>
+        <category>影视</category>
+        <category>指令</category>
+        <category>吾爱破解</category>
+        <category>调查</category>
+        <category>人物</category>
+        <category>积累</category>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/01/25/gkd/</guid>
+            <title>GKD跳过广告</title>
+            <link>https://mingcy.cn/2024/01/25/gkd/</link>
+            <category>工具</category>
+            <category>安卓应用</category>
+            <category>广告</category>
+            <category>app,</category>
+            <pubDate>Thu, 25 Jan 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&amp;lt;aside&amp;gt;&lt;br&gt;
+😀 这里写文章的前言：&lt;br&gt;
+相信大家的手机里面有各种各样的软件，许多软件为了恰饭，添加了开屏广告，这让我们很不爽，不仅影响时间，还大大消减了，使用这个软件的兴趣，常见的开屏软件：快手，抖音，小红书等&lt;br&gt;
+ &amp;lt;/aside&amp;gt;&lt;/p&gt;
+&lt;h1 id=&#34;引言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#引言&#34;&gt;#&lt;/a&gt; 引言&lt;/h1&gt;
+&lt;p&gt;相信大家的手机里面有各种各样的软件，许多软件为了恰饭，添加了开屏广告，这让我们很不爽，不仅影响时间，还大大消减了，使用这个软件的兴趣，常见的开屏软件：某手，某音，某红书等&lt;/p&gt;
+&lt;h1 id=&#34;介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h1&gt;
+&lt;p&gt;GKD（又称搞快点，详情请戳  作者&lt;a href=&#34;https://github.com/gkd-kit/gkd&#34;&gt;项目地址&lt;/a&gt;）是一款免费开源简洁多规则的自动跳过广告的软件。简而言之，基于预设的定时更新订阅规则 + 快照功能，实现识别并自动点击跳过任何开屏广告及点击关闭应用内部任何弹窗广告，如关闭某些 APP 开屏和内含推荐广告位（主流的基本上已支持）。比起寻找无广告还不保证长期有效的 APP 来说，此屏蔽跳过的方法要更直接。&lt;br&gt;
+毕竟第三方又闭源的软件因众所周知的缘故纷纷停更了，国外付费的那款贵得劝退，太简单的又无法满足，所以爬了个而非单单是个开关的软件，当然配合已经绝版的某足兆足兆自定义规则使用更佳。&lt;/p&gt;
+&lt;h2 id=&#34;软件特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件特性&#34;&gt;#&lt;/a&gt; 软件特性：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;支持在线规则实时更新订阅&lt;/li&gt;
+&lt;li&gt;目前 git 仓库已经收录支持至少九百多个 app（国产居多）以及 2000 条以上规则（后续还会持续增长），方便掌握动态&lt;/li&gt;
+&lt;li&gt;兼容 android14 及 harmony OS 4.0&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使用说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用说明&#34;&gt;#&lt;/a&gt; 使用说明：&lt;/h2&gt;
+&lt;p&gt;首次使用需要给予无障碍和悬浮窗权限（具体自搜），所提供的默认规则支持在线更新订阅，基本常用主流熟知的 APP 对应都有不同的规则开关可自主选择。具体请戳：规则更新动态。自动点击记录事件可在软件主页中翻查。&lt;br&gt;
+若想不被频繁误杀、说无效的又或者是得到更准确的跳过识别，可在高级模式中开启 shi 授权（具体请自搜）。&lt;br&gt;
+另外，源码本身开源，比闭源的开明多了，可自行抓包软件行为查看更具体的动作权限便知（本帖不展开赘述，具体自搜），担心就勿下勿用，其余功能请自行体验。&lt;/p&gt;
+&lt;h2 id=&#34;截屏展示&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#截屏展示&#34;&gt;#&lt;/a&gt; 截屏展示&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/01/25/gkd/013132gqzqqejqjuqcwtqs.jpg&#34; class title=&#34;013132gqzqqejqjuqcwtqs.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/gkd/013135vqqmaqq9wb645965.jpg&#34; alt=&#34;013135vqqmaqq9wb645965.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/01/25/gkd/013137gq6z1l6qiiqwz12q.jpg&#34; class title=&#34;013137gq6z1l6qiiqwz12q.jpg&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;点击记录：（可自动跳过小程序、评论区推荐等广告或活动更新弹窗）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/01/25/gkd/013140bywm0rpwjyulb5gj.jpg&#34; class title=&#34;013140bywm0rpwjyulb5gj.jpg&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;下载链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载链接&#34;&gt;#&lt;/a&gt; 下载链接&lt;/h1&gt;
+&lt;p&gt;不多说，直接上链接&lt;br&gt;
+下载地址：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;蓝奏云：&lt;a href=&#34;https://wwzr.lanzout.com/b048pqdsf&#34;&gt;提取码 hm0w&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;自行复制，技术有限不会点击复制&lt;/p&gt;
+&lt;h1 id=&#34;更新内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#更新内容&#34;&gt;#&lt;/a&gt; 更新内容&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;v1.6.4 更新内容：（2024-01-04）&lt;br&gt;
+修复 quickFind 标识文字错误导致查询变慢&lt;br&gt;
+优化某些场景下的查询规则&lt;/p&gt;
+&lt;p&gt;v1.6.2 更新内容：（2023-12-28）&lt;br&gt;
+修复无障碍获取无障碍属性为空导致的崩溃&lt;br&gt;
+修复获取无障碍节点错误导致的崩溃&lt;br&gt;
+新增全局规则&lt;br&gt;
+新增规则分类 / 批量开启关闭&lt;br&gt;
+新增常驻通知栏开关&lt;br&gt;
+允许匹配不在安装列表的应用 新增截屏快照，可以在用户截屏时保存快照 优化规则触发逻辑及速度。优化快照文件生成的速度 优化连接到审查工具的方式&lt;br&gt;
+优化申请权限流程 优化界面布局 每次打开界面时自动清除缓存 优化 shizuku 错误提示 修复某些设备出现通知提示音&lt;br&gt;
+修复点击记录名称显示错误 修复订阅自动检测更新不生效。&lt;/p&gt;
+&lt;p&gt;v1.5.4 更新内容：（2023-11-24） 订阅界面搜索优化 /id 搜索 ActivityId 概率复用错误&lt;br&gt;
+优化 activityId 更新逻辑&lt;/p&gt;
+&lt;p&gt;v1.5.3 更新内容：（2023-11-23） 优化和修复： 某些机型上规则不执行 通知栏快照丢失 activityId&lt;/p&gt;
+&lt;p&gt;v1.5.2 更新内容：（2023-11-22） 降低一半 apk 文件大小 规则 group actionMaximum/actionCd&lt;br&gt;
+ 失效 主线程阻塞导致界面卡顿 修复某些机型上规则概率执行缓慢的问题&lt;/p&gt;
+&lt;p&gt;v1.5.1 更新内容：（2023-11-18） 路由动画卡顿 上一版更新内容： 优化和修复 状态栏显示优化 (沉浸式状态栏)&lt;br&gt;
+ 点击记录显示优化（没有名称的规则将标识索引和密钥） 订阅列表显示优化（订阅菜单项可以查看订阅详情） 删除无用资源、删除 32 位支持、减少&lt;br&gt;
+ apk 大小 内存占用优化，减少 内存占用性能 / 耗电优化，优化规则执行逻辑，同时提升规则触发速度 优化 activityId 识别逻辑&lt;br&gt;
+规则支持长按、共享 cd / 次数 优化创建文件夹逻辑 优化存储数据逻辑 其它修复和优化&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

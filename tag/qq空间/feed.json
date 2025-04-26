@@ -1,0 +1,21 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "茗辰原 • All posts by \"qq空间\" tag",
+    "description": "茶香四溢,编程世界.",
+    "home_page_url": "https://mingcy.cn",
+    "items": [
+        {
+            "id": "https://mingcy.cn/2024/10/14/qq-histort/",
+            "url": "https://mingcy.cn/2024/10/14/qq-histort/",
+            "title": "获取QQ空间工具",
+            "date_published": "2024-10-13T17:40:00.000Z",
+            "content_html": "<h1 id=\"简介\"><a class=\"anchor\" href=\"#简介\">#</a> 简介</h1>\n<p>一款名为恢复 QQ 空间内容小具” 的软件，可以帮助用户<strong>查看</strong>和<strong>同步 QQ 空间的留言和相册</strong>。该软件支持 Mac 和<br>\n Windows 系统，并提供 Python 的 flag 库进行开发。用户可以通过<strong>扫码登录</strong>和<strong>导出功能</strong>来保存和管理自己的空间内容。视频还展示了软件的操作流程和导出后的文件结构。总体而言，该工具为用户提供了方便快捷的 QQ 空间管理和备份功能</p>\n<h2 id=\"开源\"><a class=\"anchor\" href=\"#开源\">#</a> 开源</h2>\n<p><a href=\"QQ-history,Github,https://github.com/LibraHp/GetQzonehistory?tab=readme-ov-file\" title target></a></p>\n<h1 id=\"功能介绍\"><a class=\"anchor\" href=\"#功能介绍\">#</a> 功能介绍</h1>\n<p>✨ 功能亮点<br>\n维码登录：只需扫描二维码，即可快速登录你的 QQ 空间，安全便捷！历史内容查看：轻松浏览你和好友的历史动态，记录那些美好的瞬间。<br>\n用户信息展示：显示你的 QQ 头像、昵称等信息，让你在使用时拥有更好的体验<br>\n多种列表选顶：查看说说、留言、好友、转发、图片等多种内容，一应俱全获取内容：提取并查看 QQ 空间中的所有历史内容，包括发布的说说、图片等<br>\n说说列表：查看你从最早到最新发布的所有说说内容及时间。留言列表：查看好友给你 QQ 空间留下的所有留言。<br>\n好友列表：获取并查看 QQ 空间中的好友信息。转发列表：查看你曾经转发的所有内容。<br>\n互动分析：基于好友互动的频率，展示与你互动最多的好友排行榜。<br>\n开放源代码：完全免费且开源，欢迎大家参与贡献和讨论！</p>\n<p>🚀使用指南<br>\n打开程序后，使用手机 QQ 扫描二维码登录。<br>\n登录成功后，你将进入主界面，可以选择查看不同的内容。<br>\n在左侧则标签页中选择想要查看的内容列表，享受你的 QQ 空间回忆之旅！</p>\n<h2 id=\"目录结构\"><a class=\"anchor\" href=\"#目录结构\">#</a> 目录结构</h2>\n<pre><code>project/\n├── resource/                # 资源目录\n│   ├── config/              # 配置目录，文件保存位置配置\n│   │   └── config.ini\n│   ├── result/              # 导出结果的目录，格式为“你的qq.xlsx”\n│   │   ├── ...\n│   │   └── ...\n│   ├── temp/                # 缓存目录\n│   │   ├── ...\n│   │   └── ...\n│   ├── user/                # 用户信息\n│   │   ├── ...\n│   │   └── ...\n├── util/                    # 单元工具目录\n│   ├── ConfigUtil.py        # 读取配置\n│   ├── GetAllMomentsUtil.py # 获取未删除的所有说说\n│   ├── LoginUtil.py         # 登录相关\n│   ├── RequestUtil.py       # 请求数据相关\n│   └── ToolsUtil.py         # 工具\n├── main.py                  # 主程序入口\n├── fetch_all_message.py     # 主程序入口\n├── README.md                # 项目说明文件\n├── requirements.txt         # 依赖项列表\n└── LICENSE                  # 许可证文件\n</code></pre>\n<h1 id=\"软件展示\"><a class=\"anchor\" href=\"#软件展示\">#</a> 软件展示</h1>\n<p><img loading=\"lazy\" data-src=\"/2024/10/14/qq-histort/1.webp\" class></p>\n<p><img loading=\"lazy\" data-src=\"/2024/10/14/qq-histort/2.webp\" class></p>\n<p><img loading=\"lazy\" data-src=\"/2024/10/14/qq-histort/3.webp\" class></p>\n<p><img loading=\"lazy\" data-src=\"/2024/10/14/qq-histort/4.webp\" class></p>\n<p><img loading=\"lazy\" data-src=\"/2024/10/14/qq-histort/5.webp\" class></p>\n<p><img loading=\"lazy\" data-src=\"/2024/10/14/qq-histort/6.webp\" class></p>\n<h1 id=\"软件下载\"><a class=\"anchor\" href=\"#软件下载\">#</a> 软件下载</h1>\n<p><a href=\"github,download,https://github.com/LibraHp/GetQzonehistory/releases/tag/gui-v1.0.2\" title target></a></p>\n<p><a href=\"%E5%A4%B8%E5%85%8B,download,https://pan.quark.cn/s/3a5ddbde14e2\" title target></a></p>\n",
+            "tags": [
+                "电脑软件",
+                "实用推荐",
+                "QQ空间",
+                "开源"
+            ]
+        }
+    ]
+}

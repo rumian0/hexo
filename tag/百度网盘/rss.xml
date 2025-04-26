@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>茗辰原 • Posts by &#34;百度网盘&#34; tag</title>
+        <link>https://mingcy.cn</link>
+        <description>茶香四溢,编程世界.</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 07 Sep 2024 00:00:00 +0800</pubDate>
+        <lastBuildDate>Sat, 07 Sep 2024 00:00:00 +0800</lastBuildDate>
+        <category>电脑软件</category>
+        <category>123网盘</category>
+        <category>工具</category>
+        <category>C++</category>
+        <category>编程语言</category>
+        <category>ChatGPT</category>
+        <category>Openai</category>
+        <category>建站</category>
+        <category>网站建站</category>
+        <category>计算机</category>
+        <category>安卓应用</category>
+        <category>广告</category>
+        <category>塔罗牌</category>
+        <category>网页精选</category>
+        <category>Ai</category>
+        <category>文字语音</category>
+        <category>安卓软件</category>
+        <category>音乐</category>
+        <category>实用推荐</category>
+        <category>Cloudflare</category>
+        <category>部署</category>
+        <category>分享</category>
+        <category>班级</category>
+        <category>实验</category>
+        <category>心理</category>
+        <category>锻炼</category>
+        <category>生活</category>
+        <category>精选网站</category>
+        <category>app,</category>
+        <category>系统优化</category>
+        <category>hexo</category>
+        <category>技术分享</category>
+        <category>实用</category>
+        <category>app</category>
+        <category>科幻科普</category>
+        <category>推荐</category>
+        <category>记录</category>
+        <category>亲情</category>
+        <category>妈妈</category>
+        <category>百度网盘</category>
+        <category>激活</category>
+        <category>教程</category>
+        <category>QQ空间</category>
+        <category>开源</category>
+        <category>works</category>
+        <category>壁纸</category>
+        <category>随机图</category>
+        <category>影视</category>
+        <category>指令</category>
+        <category>吾爱破解</category>
+        <category>调查</category>
+        <category>人物</category>
+        <category>积累</category>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/09/07/ode/</guid>
+            <title>ODE多功能工具箱</title>
+            <link>https://mingcy.cn/2024/09/07/ode/</link>
+            <category>电脑软件</category>
+            <category>工具</category>
+            <category>百度网盘</category>
+            <pubDate>Sat, 07 Sep 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简介&#34;&gt;#&lt;/a&gt; 简介&lt;/h1&gt;
+&lt;p&gt;在我下载某学习资料的时候啊，百度网盘真的是不给力啊！&lt;/p&gt;
+&lt;p&gt;这个下载速度实在是，太慢了，实在是受不了.&lt;/p&gt;
+&lt;p&gt;但是有身为一个资深的白嫖党，这我肯定不能啊，所以我稍微动用了一下技术，这好了，成功让我拿到了百度网盘的解析链接.&lt;/p&gt;
+&lt;p&gt;只不过作者的服务器太小了，让后资金也不足，哎，可惜了！但还是能用！&lt;/p&gt;
+&lt;h1 id=&#34;软件介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件介绍&#34;&gt;#&lt;/a&gt; 软件介绍&lt;/h1&gt;
+&lt;p&gt;一款由窝长大佬开发并长期维护的某度网盘解析下载工具，超级良心的一款难得的下载工具，很少有这种好工具了，之前的版本失效了，不过也能用，不限速拉满，主要看你个人带宽哈，而最近窝长大大，又宣布更新了，经过了大佬的再次整活，此款多功能助手再度复活！！！这么说吧，即使开了某会员，也未必有这么快！！！&lt;/p&gt;
+&lt;p&gt;此次更新的主要几个点：&lt;/p&gt;
+&lt;p&gt;1、高速下载恢复了，优化的越来越好了，看个人网速，依然能够体验到不错的下载速度，怎么说都好，相比某度的几 K 每秒，强太多了有木有～&lt;/p&gt;
+&lt;p&gt;2、打包下载功能暂时被搁置，目前只能一个一个下载资源，不过完全不影响使用，作者也会在接下来的版本，继续优化。&lt;/p&gt;
+&lt;p&gt;3、可能会遇到小众资源以 K 速下载，只是小众而已下载速度受限，但大部分资源仍然可以高速下载。&lt;/p&gt;
+&lt;h1 id=&#34;软件使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件使用&#34;&gt;#&lt;/a&gt; 软件使用&lt;/h1&gt;
+&lt;p&gt;我使用了一下，这个下载效果也是很不错的.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/07/ode/1.png&#34; class title=&#34;下载展示&#34;&gt;&lt;/p&gt;
+&lt;p&gt;只需要&lt;strong&gt;粘贴分享的链接&lt;/strong&gt;即可 &lt;code&gt;食用&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;就像这样子:&lt;br&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/07/ode/2.png&#34; class title=&#34;分享链接&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这个也是很不错的，但是目前打包功能已经用不了了，因为作者的服务器不行了，哎！&lt;/p&gt;
+&lt;p&gt;看看下载的效果:&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/07/ode/3.png&#34; class title=&#34;下载的视频&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最后再看一下，是否能 &lt;code&gt;流畅播放&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/07/ode/4.png&#34; class title=&#34;播放&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;下载链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载链接&#34;&gt;#&lt;/a&gt; 下载链接&lt;/h1&gt;
+&lt;p&gt;这个也是非常不错的，良心推荐&lt;/p&gt;
+&lt;p&gt;既不想让跟多人用，因为作者服务器不信，我怕崩了，又怕需要这个工具的人又看不到，哎！&lt;/p&gt;
+&lt;p&gt;123 网盘：&lt;a href=&#34;https://www.123pan.com/s/qEbeVv-C9y63.html&#34;&gt;https://www.123pan.com/s/qEbeVv-C9y63.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;123%E7%BD%91%E7%9B%98,owo,https://www.123pan.com/s/qEbeVv-C9y63.html&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;迅雷网盘：&lt;a href=&#34;https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#&#34;&gt;https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;%E8%BF%85%E9%9B%B7%E7%BD%91%E7%9B%98,owo,https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

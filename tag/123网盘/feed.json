@@ -1,0 +1,20 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "茗辰原 • All posts by \"123网盘\" tag",
+    "description": "茶香四溢,编程世界.",
+    "home_page_url": "https://mingcy.cn",
+    "items": [
+        {
+            "id": "https://mingcy.cn/2024/09/30/123-liuliang/",
+            "url": "https://mingcy.cn/2024/09/30/123-liuliang/",
+            "title": "123云盘-下载工具",
+            "date_published": "2024-09-29T16:00:00.000Z",
+            "content_html": "<h1 id=\"方法一\"><a class=\"anchor\" href=\"#方法一\">#</a> 方法一</h1>\n<h2 id=\"123云盘-下载工具\"><a class=\"anchor\" href=\"#123云盘-下载工具\">#</a> 123 云盘 下载工具</h2>\n<p>123 云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。</p>\n<h2 id=\"功能特点\"><a class=\"anchor\" href=\"#功能特点\">#</a> 功能特点</h2>\n<ul>\n<li><strong>登录</strong>：使用用户名和密码登录 123Pan 账号。</li>\n<li><strong>列出文件</strong>：显示当前目录下的所有文件和文件夹。</li>\n<li><strong>下载文件</strong>：通过模拟安卓客户端协议下载文件，绕过流量限制。</li>\n<li><strong>上传文件</strong>：将本地文件上传到 123Pan。</li>\n<li><strong>分享文件</strong>：生成文件分享链接。</li>\n<li><strong>删除文件</strong>：删除指定的文件或文件夹。</li>\n<li><strong>创建文件夹</strong>：在当前目录下创建新文件夹。</li>\n</ul>\n<h2 id=\"使用方法\"><a class=\"anchor\" href=\"#使用方法\">#</a> 使用方法</h2>\n<h3 id=\"环境准备\"><a class=\"anchor\" href=\"#环境准备\">#</a> 环境准备</h3>\n<ol>\n<li>\n<p>确保已安装 Python 3.x。</p>\n</li>\n<li>\n<p>安装所需的 Python 库：</p>\n<pre><code class=\"language-undefined\">pip install -r requirements.txt\n</code></pre>\n</li>\n</ol>\n<h3 id=\"配置文件\"><a class=\"anchor\" href=\"#配置文件\">#</a> 配置文件</h3>\n<p>在首次运行脚本时，会自动生成一个  <code>123pan.txt</code>  文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。</p>\n<h3 id=\"运行脚本\"><a class=\"anchor\" href=\"#运行脚本\">#</a> 运行脚本</h3>\n<figure class=\"highlight sql\"><figcaption data-lang=\"SQL\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>可以直接下载<span class=\"token keyword\">release</span>的可执行文件运行或运行python脚本。</pre></td></tr><tr><td data-num=\"2\"></td><td><pre>脚本运行：</pre></td></tr></table></figure><ol>\n<li>\n<p>克隆或下载本项目代码到本地。</p>\n</li>\n<li>\n<p>打开终端或命令提示符，进入项目目录。</p>\n</li>\n<li>\n<p>运行脚本：</p>\n<p>使用安卓客户端协议</p>\n<pre><code class=\"language-undefined\">python android.py\n</code></pre>\n</li>\n</ol>\n<pre><code class=\"language-undefined\">使用web协议\npython web.py\n</code></pre>\n<h2 id=\"123云盘-下载工具github地址\"><a class=\"anchor\" href=\"#123云盘-下载工具github地址\">#</a> 123 云盘 下载工具 GitHub 地址</h2>\n<p>地址：</p>\n<p><a href=\"123pan,GitHub,https://github.com/Bao-qing/123pan\" title target></a></p>\n<h1 id=\"方法二\"><a class=\"anchor\" href=\"#方法二\">#</a> 方法二</h1>\n<p>今天推荐的是一个<strong>数字网盘</strong>脚本，可以解除限制，完全免费使用！</p>\n<p>该作者在 GitHub 上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要<strong>先安装 Tampermonkey 插件</strong>，Tampermonkey 插件可以在文末关键字获取。</p>\n<p>安装完油猴插件后，<strong>再安装脚本</strong>，方法是打开 Greasy Fork 中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】</p>\n<p><img loading=\"lazy\" data-src=\"/123-liuliang/1.webp\" alt=\"点击安装此脚本\"></p>\n<p>再点【安装】即可完成脚本安装。</p>\n<p><img loading=\"lazy\" data-src=\"/123-liuliang/2.webp\" alt=\"点击安装此脚本\"></p>\n<p><strong>脚本使用测试：</strong></p>\n<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出 1GB 上限，需要付费才可下载。</p>\n<p><strong>脚本使用测试：</strong></p>\n<p>安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后<strong>没用脚本时</strong>，其提示今日自用下载流量已超出 1GB 上限，需要付费才可下载。</p>\n<p><img loading=\"lazy\" data-src=\"/2024/09/30/123-liuliang/3.webp\" class title=\"测试\"></p>\n<p>下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用 1DM 接管速度可达 15M/S，跑满你的带宽！</p>\n<p><img loading=\"lazy\" data-src=\"/2024/09/30/123-liuliang/4.webp\" class title=\"点击下载\"></p>\n<p>这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！</p>\n",
+            "tags": [
+                "电脑软件",
+                "123网盘",
+                "工具"
+            ]
+        }
+    ]
+}

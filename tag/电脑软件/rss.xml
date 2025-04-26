@@ -1,0 +1,731 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>茗辰原 • Posts by &#34;电脑软件&#34; tag</title>
+        <link>https://mingcy.cn</link>
+        <description>茶香四溢,编程世界.</description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 27 Oct 2024 12:00:00 +0800</pubDate>
+        <lastBuildDate>Sun, 27 Oct 2024 12:00:00 +0800</lastBuildDate>
+        <category>电脑软件</category>
+        <category>123网盘</category>
+        <category>工具</category>
+        <category>C++</category>
+        <category>编程语言</category>
+        <category>ChatGPT</category>
+        <category>Openai</category>
+        <category>建站</category>
+        <category>网站建站</category>
+        <category>计算机</category>
+        <category>安卓应用</category>
+        <category>广告</category>
+        <category>塔罗牌</category>
+        <category>网页精选</category>
+        <category>Ai</category>
+        <category>文字语音</category>
+        <category>安卓软件</category>
+        <category>音乐</category>
+        <category>实用推荐</category>
+        <category>Cloudflare</category>
+        <category>部署</category>
+        <category>分享</category>
+        <category>班级</category>
+        <category>实验</category>
+        <category>心理</category>
+        <category>锻炼</category>
+        <category>生活</category>
+        <category>精选网站</category>
+        <category>app,</category>
+        <category>系统优化</category>
+        <category>hexo</category>
+        <category>技术分享</category>
+        <category>实用</category>
+        <category>app</category>
+        <category>科幻科普</category>
+        <category>推荐</category>
+        <category>记录</category>
+        <category>亲情</category>
+        <category>妈妈</category>
+        <category>百度网盘</category>
+        <category>激活</category>
+        <category>教程</category>
+        <category>QQ空间</category>
+        <category>开源</category>
+        <category>works</category>
+        <category>壁纸</category>
+        <category>随机图</category>
+        <category>影视</category>
+        <category>指令</category>
+        <category>吾爱破解</category>
+        <category>调查</category>
+        <category>人物</category>
+        <category>积累</category>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/10/27/tvbox/</guid>
+            <title>TVBOX 配置两端通用</title>
+            <link>https://mingcy.cn/2024/10/27/tvbox/</link>
+            <category>电脑软件</category>
+            <category>安卓应用</category>
+            <category>推荐</category>
+            <category>影视</category>
+            <pubDate>Sun, 27 Oct 2024 12:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;tv版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tv版本&#34;&gt;#&lt;/a&gt; TV 版本&lt;/h1&gt;
+&lt;h2 id=&#34;安装tvbox&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装tvbox&#34;&gt;#&lt;/a&gt; 安装 TVBOX&lt;/h2&gt;
+&lt;p&gt;安装完以后什么都无法观看 - 需要配置地址&lt;br&gt;
+ &lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/1.webp&#34; class&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tvbox配置地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tvbox配置地址&#34;&gt;#&lt;/a&gt; TVBOX 配置地址&lt;/h2&gt;
+&lt;p&gt;首先打开右上角的设置按钮&lt;/p&gt;
+&lt;p&gt;选中配置地址&lt;br&gt;
+ &lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/3.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;获取存储权限 - 提示获取成功&lt;br&gt;
+ &lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/4.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;然后用手机或者电脑扫描二维码或者打开以上地址填入数据源地址即可&lt;/p&gt;
+&lt;h2 id=&#34;tvbox使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tvbox使用&#34;&gt;#&lt;/a&gt; TVBOX 使用&lt;/h2&gt;
+&lt;p&gt;如果失效了可以自定义数据源 (推荐 T4 聚合)&lt;br&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/5.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;也可以配置其他参数 - 自行摸索&lt;/p&gt;
+&lt;h2 id=&#34;接口链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#接口链接&#34;&gt;#&lt;/a&gt; 接口链接&lt;/h2&gt;
+&lt;p&gt;TVBox 各路大佬配置（排名不分先后）：&lt;/p&gt;
+&lt;p&gt;（1）唐三：&lt;a href=&#34;https://hutool.ml/tang&#34;&gt;https://hutool.ml/tang&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（2）Fongmi：&lt;a href=&#34;https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json&#34;&gt;https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（3）俊于：&lt;a href=&#34;http://home.jundie.top:81/top98.json&#34;&gt;http://home.jundie.top:81/top98.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（4）饭太硬：&lt;a href=&#34;http://xn--sss604efuw.ga/x/o.json&#34;&gt;http:// 饭太硬.ga/x/o.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（5）霜辉月明 py：&lt;a href=&#34;https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json&#34;&gt;https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（6）小雅 dr：&lt;a href=&#34;http://drpy.site/js1&#34;&gt;http://drpy.site/js1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（7）菜妮丝：&lt;a href=&#34;https://tvbox.cainisi.cf&#34;&gt;https://tvbox.cainisi.cf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（8）神器：&lt;a href=&#34;https://xn--m7r412advb92j21st65a.tk/pz.json&#34;&gt;https:// 神器每日推送.tk/pz.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（9）巧技：&lt;a href=&#34;http://pandown.pro/tvbox/tvbox.json&#34;&gt;http://pandown.pro/tvbox/tvbox.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（10）刚刚：&lt;a href=&#34;http://xn--4bra.live/%E7%8C%AB&#34;&gt;http:// 刚刚.live/ 猫&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（11）吾爱有三：&lt;a href=&#34;http://52bsj.vip:98/0805&#34;&gt;http://52bsj.vip:98/0805&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（12）潇洒：&lt;a href=&#34;https://download.kstore.space/download/2863/01.txt&#34;&gt;https://download.kstore.space/download/2863/01.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（13）佰欣园：&lt;a href=&#34;https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt&#34;&gt;https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（14）胖虎：&lt;a href=&#34;https://notabug.org/imbig66/tv-spider-man/raw/master/%E9%85%8D%E7%BD%AE/0801.json&#34;&gt;https://notabug.org/imbig66/tv-spider-man/raw/master/ 配置 / 0801.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（15）云星日记：&lt;a href=&#34;https://maoyingshi.cc/tiaoshizhushou/1.txt&#34;&gt;https://maoyingshi.cc/tiaoshizhushou/1.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（16）Yoursmile7：&lt;a href=&#34;https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json&#34;&gt;https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（17）BOX：&lt;a href=&#34;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&#34;&gt;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（18）哔哩学习：&lt;a href=&#34;http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0&#34;&gt;http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（19）UndCover：&lt;a href=&#34;https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json&#34;&gt;https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（20）木极：&lt;a href=&#34;https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt&#34;&gt;https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（21）Ray：&lt;a href=&#34;https://dxawi.github.io/0/0.json&#34;&gt;https://dxawi.github.io/0/0.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（22）甜蜜：&lt;a href=&#34;https://kebedd69.github.io/TVbox-interface/py%E7%94%9C%E8%9C%9C.json&#34;&gt;https://kebedd69.github.io/TVbox-interface/py 甜蜜.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（23）52bsj：&lt;a href=&#34;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&#34;&gt;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（24）肥猫：&lt;a href=&#34;http://xn--ihqu10cn4c.xn--z7x900a.love:63&#34;&gt;http:// 我不是。肥猫.love:63&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;pc版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pc版本&#34;&gt;#&lt;/a&gt; PC 版本&lt;/h1&gt;
+&lt;h2 id=&#34;软件介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件介绍&#34;&gt;#&lt;/a&gt; 软件介绍&lt;/h2&gt;
+&lt;p&gt;ZyPlayer v3.3.1 中文版 免费全网影视播放器&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 原文地址&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;GITHUB,github,ovo,https://github.com/Hiram-Wong/ZyPlayer&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用方法：&lt;/strong&gt;&lt;br&gt;
+安装软件后，依次点开设置 -&amp;gt; 基础配置 -&amp;gt; 其他 -&amp;gt; 数据管理 -&amp;gt; 一键配置 -&amp;gt; 软件接口然后填入&lt;strong&gt;订阅地址&lt;/strong&gt;，就能正常使用了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;专用接口源:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;接口分享：&lt;a href=&#34;http://xiaoguozitv.cn/catys/zyplay.json&#34;&gt;http://xiaoguozitv.cn/catys/zyplay.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;订阅地址：&lt;a href=&#34;https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json&#34;&gt;https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;订阅地址：&lt;a href=&#34;https://raw.kgithub.com/cddehsy/zyjs/main/zy.json&#34;&gt;https://raw.kgithub.com/cddehsy/zyjs/main/zy.json&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;以上地址选第一个即可，遇到失效了就换！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142446y8y6kys6dzpsl6ko.jpg&#34; alt=&#34;DM_20240105142311_003.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142455zu6ze27ii2zru1z5.jpg&#34; alt=&#34;DM_20240105142311_004.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;| 软件介绍：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ZY Player 开源播放神器复活，更强了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;用过 ZY Player 的都知道，这是一个免费开放源的播放器软件，兼容各种资源网接口，支持看视频、直播，而且这款软件已经存在了好几年了，只能说很强。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142753vkdat8lud1x4adu2.jpg&#34; alt=&#34;DM_20240105142311_005.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;新版本颜值更高，而且功能都有很大的提升，不仅更强，而且整体界面也改版了。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142829d498lq8dv1ly8l8d.jpg&#34; alt=&#34;DM_20240105142311_006.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ZyPlayer 跟之前的一样，专注于资源网接口，同样可以选择不同的接口源，点击左上角就可以切换接口源。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142901ob03bzo3gnnu03n6.jpg&#34; alt=&#34;DM_20240105142311_007.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;而且不同源站，同样支持选择分类，分类也做得非常详细，当然还有很多细节值得体验。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142950gx6pcpqv5el5uvzc.jpg&#34; alt=&#34;DM_20240105142311_008.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142956dw07ds9dni7rmw7k.jpg&#34; alt=&#34;DM_20240105142311_009.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143003sfe89shs5szs37m5.jpg&#34; alt=&#34;DM_20240105142311_010.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143015bysasx47paxbqa0c.jpg&#34; alt=&#34;DM_20240105142311_011.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;基于 vue 全家桶 + tdesign + electron 开发；主题色：薄荷绿。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;已有功能&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;全平台支持 Windows、Mac、Linux&lt;/li&gt;
+&lt;li&gt;适配黑暗模式&lt;/li&gt;
+&lt;li&gt;支持资源站 cms（json 接口）&lt;/li&gt;
+&lt;li&gt;支持 IPTV（m3u、genre）及电子节目单&lt;/li&gt;
+&lt;li&gt;支持主流视频平台解析（解析页面有个小彩蛋，可在代码里自行探索）&lt;/li&gt;
+&lt;li&gt;老板键，一键隐藏&lt;/li&gt;
+&lt;li&gt;播放器软解&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;|&lt;/strong&gt; &lt;strong&gt;部分功能详细截图：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143042j6qq226lej5qzt9j.jpg&#34; alt=&#34;DM_20240105142311_012.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143056tejo53b313b6p5b6.jpg&#34; alt=&#34;DM_20240105142311_013.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143112d1s8fvzab141j41i.jpg&#34; alt=&#34;DM_20240105142311_014.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143125sb7jpmasjq77ztts.jpg&#34; alt=&#34;DM_20240105142311_015.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143139rc6qxm4cxp6xlbyq.jpg&#34; alt=&#34;DM_20240105142311_016.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143153fo9x4a9jkraia9v4.jpg&#34; alt=&#34;DM_20240105142311_017.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143206as4bzb82jzk70jww.jpg&#34; alt=&#34;DM_20240105142311_018.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143217c318rnm19gl2sgsw.jpg&#34; alt=&#34;DM_20240105142311_019.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143228ynzbo2rsyopbmrz2.jpg&#34; alt=&#34;DM_20240105142311_020.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143244rqzagtvihvqzg33d.jpg&#34; alt=&#34;DM_20240105142311_021.jpg&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;软件下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件下载&#34;&gt;#&lt;/a&gt; 软件下载&lt;/h1&gt;
+&lt;p&gt;夸克:&lt;br&gt;
+&lt;a href=&#34;%E5%A4%B8%E5%85%8B,%E7%BD%91%E7%9B%98,%E8%BD%AC%E5%AD%98,https://pan.quark.cn/s/4e43e04ec7be&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/10/14/qq-histort/</guid>
+            <title>获取QQ空间工具</title>
+            <link>https://mingcy.cn/2024/10/14/qq-histort/</link>
+            <category>电脑软件</category>
+            <category>实用推荐</category>
+            <category>QQ空间</category>
+            <category>开源</category>
+            <pubDate>Mon, 14 Oct 2024 01:40:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简介&#34;&gt;#&lt;/a&gt; 简介&lt;/h1&gt;
+&lt;p&gt;一款名为恢复 QQ 空间内容小具” 的软件，可以帮助用户&lt;strong&gt;查看&lt;/strong&gt;和&lt;strong&gt;同步 QQ 空间的留言和相册&lt;/strong&gt;。该软件支持 Mac 和&lt;br&gt;
+ Windows 系统，并提供 Python 的 flag 库进行开发。用户可以通过&lt;strong&gt;扫码登录&lt;/strong&gt;和&lt;strong&gt;导出功能&lt;/strong&gt;来保存和管理自己的空间内容。视频还展示了软件的操作流程和导出后的文件结构。总体而言，该工具为用户提供了方便快捷的 QQ 空间管理和备份功能&lt;/p&gt;
+&lt;h2 id=&#34;开源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开源&#34;&gt;#&lt;/a&gt; 开源&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;QQ-history,Github,https://github.com/LibraHp/GetQzonehistory?tab=readme-ov-file&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;功能介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#功能介绍&#34;&gt;#&lt;/a&gt; 功能介绍&lt;/h1&gt;
+&lt;p&gt;✨ 功能亮点&lt;br&gt;
+维码登录：只需扫描二维码，即可快速登录你的 QQ 空间，安全便捷！历史内容查看：轻松浏览你和好友的历史动态，记录那些美好的瞬间。&lt;br&gt;
+用户信息展示：显示你的 QQ 头像、昵称等信息，让你在使用时拥有更好的体验&lt;br&gt;
+多种列表选顶：查看说说、留言、好友、转发、图片等多种内容，一应俱全获取内容：提取并查看 QQ 空间中的所有历史内容，包括发布的说说、图片等&lt;br&gt;
+说说列表：查看你从最早到最新发布的所有说说内容及时间。留言列表：查看好友给你 QQ 空间留下的所有留言。&lt;br&gt;
+好友列表：获取并查看 QQ 空间中的好友信息。转发列表：查看你曾经转发的所有内容。&lt;br&gt;
+互动分析：基于好友互动的频率，展示与你互动最多的好友排行榜。&lt;br&gt;
+开放源代码：完全免费且开源，欢迎大家参与贡献和讨论！&lt;/p&gt;
+&lt;p&gt;🚀使用指南&lt;br&gt;
+打开程序后，使用手机 QQ 扫描二维码登录。&lt;br&gt;
+登录成功后，你将进入主界面，可以选择查看不同的内容。&lt;br&gt;
+在左侧则标签页中选择想要查看的内容列表，享受你的 QQ 空间回忆之旅！&lt;/p&gt;
+&lt;h2 id=&#34;目录结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#目录结构&#34;&gt;#&lt;/a&gt; 目录结构&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;project/
+├── resource/                # 资源目录
+│   ├── config/              # 配置目录，文件保存位置配置
+│   │   └── config.ini
+│   ├── result/              # 导出结果的目录，格式为“你的qq.xlsx”
+│   │   ├── ...
+│   │   └── ...
+│   ├── temp/                # 缓存目录
+│   │   ├── ...
+│   │   └── ...
+│   ├── user/                # 用户信息
+│   │   ├── ...
+│   │   └── ...
+├── util/                    # 单元工具目录
+│   ├── ConfigUtil.py        # 读取配置
+│   ├── GetAllMomentsUtil.py # 获取未删除的所有说说
+│   ├── LoginUtil.py         # 登录相关
+│   ├── RequestUtil.py       # 请求数据相关
+│   └── ToolsUtil.py         # 工具
+├── main.py                  # 主程序入口
+├── fetch_all_message.py     # 主程序入口
+├── README.md                # 项目说明文件
+├── requirements.txt         # 依赖项列表
+└── LICENSE                  # 许可证文件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;软件展示&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件展示&#34;&gt;#&lt;/a&gt; 软件展示&lt;/h1&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/1.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/2.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/3.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/4.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/5.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/6.webp&#34; class&gt;&lt;/p&gt;
+&lt;h1 id=&#34;软件下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件下载&#34;&gt;#&lt;/a&gt; 软件下载&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;github,download,https://github.com/LibraHp/GetQzonehistory/releases/tag/gui-v1.0.2&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;%E5%A4%B8%E5%85%8B,download,https://pan.quark.cn/s/3a5ddbde14e2&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/09/30/123-liuliang/</guid>
+            <title>123云盘-下载工具</title>
+            <link>https://mingcy.cn/2024/09/30/123-liuliang/</link>
+            <category>电脑软件</category>
+            <category>123网盘</category>
+            <category>工具</category>
+            <pubDate>Mon, 30 Sep 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;方法一&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法一&#34;&gt;#&lt;/a&gt; 方法一&lt;/h1&gt;
+&lt;h2 id=&#34;123云盘-下载工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#123云盘-下载工具&#34;&gt;#&lt;/a&gt; 123 云盘 下载工具&lt;/h2&gt;
+&lt;p&gt;123 云盘 下载工具是一个使用 Python 编写的脚本，通过模拟安卓客户端协议来绕过 123Pan 的下载流量限制。该工具可以帮助用户在 Windows 系统上方便地下载 123Pan 上的文件，并提供了多种操作功能，如列出文件、下载文件、上传文件、分享文件等。&lt;/p&gt;
+&lt;h2 id=&#34;功能特点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#功能特点&#34;&gt;#&lt;/a&gt; 功能特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;登录&lt;/strong&gt;：使用用户名和密码登录 123Pan 账号。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;列出文件&lt;/strong&gt;：显示当前目录下的所有文件和文件夹。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;下载文件&lt;/strong&gt;：通过模拟安卓客户端协议下载文件，绕过流量限制。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;上传文件&lt;/strong&gt;：将本地文件上传到 123Pan。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分享文件&lt;/strong&gt;：生成文件分享链接。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;删除文件&lt;/strong&gt;：删除指定的文件或文件夹。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;创建文件夹&lt;/strong&gt;：在当前目录下创建新文件夹。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用方法&#34;&gt;#&lt;/a&gt; 使用方法&lt;/h2&gt;
+&lt;h3 id=&#34;环境准备&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#环境准备&#34;&gt;#&lt;/a&gt; 环境准备&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;确保已安装 Python 3.x。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装所需的 Python 库：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-undefined&#34;&gt;pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;配置文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置文件&#34;&gt;#&lt;/a&gt; 配置文件&lt;/h3&gt;
+&lt;p&gt;在首次运行脚本时，会自动生成一个  &lt;code&gt;123pan.txt&lt;/code&gt;  文件，用于保存用户的登录信息。请确保该文件与脚本在同一目录下。&lt;/p&gt;
+&lt;h3 id=&#34;运行脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#运行脚本&#34;&gt;#&lt;/a&gt; 运行脚本&lt;/h3&gt;
+&lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption data-lang=&#34;SQL&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;可以直接下载&lt;span class=&#34;token keyword&#34;&gt;release&lt;/span&gt;的可执行文件运行或运行python脚本。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;脚本运行：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;克隆或下载本项目代码到本地。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开终端或命令提示符，进入项目目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运行脚本：&lt;/p&gt;
+&lt;p&gt;使用安卓客户端协议&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-undefined&#34;&gt;python android.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-undefined&#34;&gt;使用web协议
+python web.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;123云盘-下载工具github地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#123云盘-下载工具github地址&#34;&gt;#&lt;/a&gt; 123 云盘 下载工具 GitHub 地址&lt;/h2&gt;
+&lt;p&gt;地址：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;123pan,GitHub,https://github.com/Bao-qing/123pan&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;方法二&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法二&#34;&gt;#&lt;/a&gt; 方法二&lt;/h1&gt;
+&lt;p&gt;今天推荐的是一个&lt;strong&gt;数字网盘&lt;/strong&gt;脚本，可以解除限制，完全免费使用！&lt;/p&gt;
+&lt;p&gt;该作者在 GitHub 上有开源的软件，但是软件我今天测试不好使，只有脚本可用。想用脚本一定要&lt;strong&gt;先安装 Tampermonkey 插件&lt;/strong&gt;，Tampermonkey 插件可以在文末关键字获取。&lt;/p&gt;
+&lt;p&gt;安装完油猴插件后，&lt;strong&gt;再安装脚本&lt;/strong&gt;，方法是打开 Greasy Fork 中的脚本地址，这个脚本地址在文末也同样有给大家提供。打开以后点【安装此脚本】&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/123-liuliang/1.webp&#34; alt=&#34;点击安装此脚本&#34;&gt;&lt;/p&gt;
+&lt;p&gt;再点【安装】即可完成脚本安装。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/123-liuliang/2.webp&#34; alt=&#34;点击安装此脚本&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;脚本使用测试：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后&lt;strong&gt;没用脚本时&lt;/strong&gt;，其提示今日自用下载流量已超出 1GB 上限，需要付费才可下载。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;脚本使用测试：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;安装完脚本，你再打开数字网盘的下载链接，看看我自己分享的地址，登录后&lt;strong&gt;没用脚本时&lt;/strong&gt;，其提示今日自用下载流量已超出 1GB 上限，需要付费才可下载。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/30/123-liuliang/3.webp&#34; class title=&#34;测试&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下面是我使用了脚本以后，点击【浏览器下载】后，浏览器可以高速下载，如果用 1DM 接管速度可达 15M/S，跑满你的带宽！&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/30/123-liuliang/4.webp&#34; class title=&#34;点击下载&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这个脚本绕过了限制，可直接浏览器下载，非常方便，有需要的小伙伴及时收藏！&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/09/08/classlasland/</guid>
+            <title>Classlsand-班级课程表</title>
+            <link>https://mingcy.cn/2024/09/08/classlasland/</link>
+            <category>电脑软件</category>
+            <category>实用推荐</category>
+            <category>班级</category>
+            <pubDate>Sun, 08 Sep 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;碎碎念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#碎碎念&#34;&gt;#&lt;/a&gt; 碎碎念&lt;/h1&gt;
+&lt;p&gt;最近总是在想，有没有一款软件，可以提醒&lt;strong&gt;是否下课&lt;/strong&gt;，让后&lt;strong&gt;下节课是什么&lt;/strong&gt;！&lt;/p&gt;
+&lt;p&gt;我看见每天&lt;strong&gt;学习委员&lt;/strong&gt;都经常要&lt;strong&gt;写课表&lt;/strong&gt;在黑板上，而且有时候&lt;strong&gt;还会忘记&lt;/strong&gt;，哎！&lt;/p&gt;
+&lt;p&gt;每次只能&lt;strong&gt;写右边的黑板，&lt;strong&gt; 可能导致&lt;/strong&gt;左边&lt;/strong&gt;靠窗户的同学看不到黑板&lt;/p&gt;
+&lt;p&gt;所以，今天的我带来了这款软件！------ &lt;code&gt;Classlsand&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;classlsand-简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#classlsand-简介&#34;&gt;#&lt;/a&gt; Classlsand 简介&lt;/h1&gt;
+&lt;p&gt;ClassIsland 是一款适用于班级多媒体屏幕的课表信息显示工具，可以在 Windows 屏幕上显示各种信息。&lt;br&gt;
+本应用的名字灵感源于 iOS 灵动岛（Dynamic Island）功能。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;ClassIsland,GitHub,https://github.com/ClassIsland/ClassIsland?tab=readme-ov-file&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#功能&#34;&gt;#&lt;/a&gt; 功能&lt;/h2&gt;
+&lt;h3 id=&#34;课表显示&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#课表显示&#34;&gt;#&lt;/a&gt; 课表显示&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;显示当天的课表、当前进行课程的信息&lt;/li&gt;
+&lt;li&gt;在上下课等重要时间点发出&lt;a href=&#34;https://docs.classisland.tech/zh-cn/latest/app/notifications/&#34;&gt;提醒&lt;/a&gt;，自选搭配音效、强调特效和语音&lt;a href=&#34;https://docs.classisland.tech/zh-cn/latest/app/notifications/#%E5%BC%BA%E8%B0%83%E6%8F%90%E9%86%92&#34;&gt;增强提醒&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;自选课表隐藏条件、临时隐藏与鼠标穿透，不影响授课&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;课表编辑与管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#课表编辑与管理&#34;&gt;#&lt;/a&gt; 课表编辑与管理&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;简洁直观的&lt;a href=&#34;https://docs.classisland.tech/zh-cn/latest/app/classplan/&#34;&gt;课表编辑工具&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;从 Excel 或其他软件&lt;a href=&#34;https://docs.classisland.tech/zh-cn/latest/app/profile-settings-page/#%E4%BB%8E%E8%A1%A8%E6%A0%BC%E5%AF%BC%E5%85%A5&#34;&gt;导入课表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;多周轮换、快速录入时间表、自定义设置&lt;/li&gt;
+&lt;li&gt;临时换课、临时启用某个课表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;其它功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其它功能&#34;&gt;#&lt;/a&gt; 其它功能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;自动同步软件时间、手动对齐铃声&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.classisland.tech/zh-cn/latest/app/advanced/#%E5%A4%A9%E6%B0%94&#34;&gt;天气&lt;/a&gt;、极端天气预警&lt;/li&gt;
+&lt;li&gt;通过&lt;a href=&#34;https://docs.classisland.tech/zh-cn/latest/app/basic/#%E7%BB%84%E4%BB%B6&#34;&gt;组件&lt;/a&gt;（日期、时间、天气简报、倒计日等）和&lt;a href=&#34;https://docs.classisland.tech/zh-cn/latest/app/basic/#%E7%BB%84%E4%BB%B6&#34;&gt;插件&lt;/a&gt;高度自定义 ClassIsland&lt;/li&gt;
+&lt;li&gt;丝滑、流畅的过渡动画&lt;/li&gt;
+&lt;li&gt;自动获取与系统配色搭配的主题色&lt;/li&gt;
+&lt;li&gt;自动软件更新&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.classisland.tech/zh-cn/latest/management/&#34;&gt;集控管理&lt;/a&gt;&lt;em&gt;（即将发布）&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;效果展示&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#效果展示&#34;&gt;#&lt;/a&gt; 效果展示&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/08/classlasland/show.webp&#34; class title=&#34;桌面效果&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/08/classlasland/ClassIsland.gif&#34; class title=&#34;上课提醒&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/08/classlasland/1.webp&#34; class title=&#34;下课提醒&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/08/classlasland/3.webp&#34; class title=&#34;课表界面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/08/classlasland/7.webp&#34; class title=&#34;设置课表&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/08/classlasland/6.webp&#34; class title=&#34;组件设置&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/08/classlasland/5.webp&#34; class title=&#34;主题设置&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/08/classlasland/4.webp&#34; class title=&#34;基础设置&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h1&gt;
+&lt;p&gt;可以访问官网 Github: &lt;a href=&#34;https://github.com/ClassIsland/ClassIsland?tab=readme-ov-file&#34;&gt;点击直达&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;123%E7%BD%91%E7%9B%98,oWo,https://www.123pan.com/s/pUVeVv-ZZ6KA&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上方为官方版本，无内置课表&lt;/p&gt;
+&lt;p&gt;此为我校，我班专属的课表，我都安排好了！&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;%E8%8C%97%E8%BE%B0%E5%8E%9F%E7%BD%91%E7%9B%98,oWo,https://cloud.06dn.com/s/2nV8HX&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/09/07/ode/</guid>
+            <title>ODE多功能工具箱</title>
+            <link>https://mingcy.cn/2024/09/07/ode/</link>
+            <category>电脑软件</category>
+            <category>工具</category>
+            <category>百度网盘</category>
+            <pubDate>Sat, 07 Sep 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简介&#34;&gt;#&lt;/a&gt; 简介&lt;/h1&gt;
+&lt;p&gt;在我下载某学习资料的时候啊，百度网盘真的是不给力啊！&lt;/p&gt;
+&lt;p&gt;这个下载速度实在是，太慢了，实在是受不了.&lt;/p&gt;
+&lt;p&gt;但是有身为一个资深的白嫖党，这我肯定不能啊，所以我稍微动用了一下技术，这好了，成功让我拿到了百度网盘的解析链接.&lt;/p&gt;
+&lt;p&gt;只不过作者的服务器太小了，让后资金也不足，哎，可惜了！但还是能用！&lt;/p&gt;
+&lt;h1 id=&#34;软件介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件介绍&#34;&gt;#&lt;/a&gt; 软件介绍&lt;/h1&gt;
+&lt;p&gt;一款由窝长大佬开发并长期维护的某度网盘解析下载工具，超级良心的一款难得的下载工具，很少有这种好工具了，之前的版本失效了，不过也能用，不限速拉满，主要看你个人带宽哈，而最近窝长大大，又宣布更新了，经过了大佬的再次整活，此款多功能助手再度复活！！！这么说吧，即使开了某会员，也未必有这么快！！！&lt;/p&gt;
+&lt;p&gt;此次更新的主要几个点：&lt;/p&gt;
+&lt;p&gt;1、高速下载恢复了，优化的越来越好了，看个人网速，依然能够体验到不错的下载速度，怎么说都好，相比某度的几 K 每秒，强太多了有木有～&lt;/p&gt;
+&lt;p&gt;2、打包下载功能暂时被搁置，目前只能一个一个下载资源，不过完全不影响使用，作者也会在接下来的版本，继续优化。&lt;/p&gt;
+&lt;p&gt;3、可能会遇到小众资源以 K 速下载，只是小众而已下载速度受限，但大部分资源仍然可以高速下载。&lt;/p&gt;
+&lt;h1 id=&#34;软件使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件使用&#34;&gt;#&lt;/a&gt; 软件使用&lt;/h1&gt;
+&lt;p&gt;我使用了一下，这个下载效果也是很不错的.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/07/ode/1.png&#34; class title=&#34;下载展示&#34;&gt;&lt;/p&gt;
+&lt;p&gt;只需要&lt;strong&gt;粘贴分享的链接&lt;/strong&gt;即可 &lt;code&gt;食用&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;就像这样子:&lt;br&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/07/ode/2.png&#34; class title=&#34;分享链接&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这个也是很不错的，但是目前打包功能已经用不了了，因为作者的服务器不行了，哎！&lt;/p&gt;
+&lt;p&gt;看看下载的效果:&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/07/ode/3.png&#34; class title=&#34;下载的视频&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最后再看一下，是否能 &lt;code&gt;流畅播放&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/09/07/ode/4.png&#34; class title=&#34;播放&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;下载链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载链接&#34;&gt;#&lt;/a&gt; 下载链接&lt;/h1&gt;
+&lt;p&gt;这个也是非常不错的，良心推荐&lt;/p&gt;
+&lt;p&gt;既不想让跟多人用，因为作者服务器不信，我怕崩了，又怕需要这个工具的人又看不到，哎！&lt;/p&gt;
+&lt;p&gt;123 网盘：&lt;a href=&#34;https://www.123pan.com/s/qEbeVv-C9y63.html&#34;&gt;https://www.123pan.com/s/qEbeVv-C9y63.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;123%E7%BD%91%E7%9B%98,owo,https://www.123pan.com/s/qEbeVv-C9y63.html&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;迅雷网盘：&lt;a href=&#34;https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#&#34;&gt;https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;%E8%BF%85%E9%9B%B7%E7%BD%91%E7%9B%98,owo,https://pan.xunlei.com/s/VNziDdKZRWob6A-GyMcp0OV6A1?pwd=xiwa#&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/08/03/wu-muose/</guid>
+            <title>吾爱破解！鼠标录制酷！</title>
+            <link>https://mingcy.cn/2024/08/03/wu-muose/</link>
+            <category>电脑软件</category>
+            <category>工具</category>
+            <category>吾爱破解</category>
+            <pubDate>Sat, 03 Aug 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&amp;lt;aside&amp;gt;&lt;br&gt;
+😀 这里写文章的前言：&lt;br&gt;
+&lt;strong&gt;TinyTask&lt;/strong&gt; 是一款国外的软件，它是一款&lt;strong&gt;鼠标键盘操作录制软件&lt;/strong&gt;，软件由吾爱大佬 @风之暇想 在 2019 年汉化，距今已经有 5 年的时间了。&lt;br&gt;
+&amp;lt;/aside&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TinyTask 介绍&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TinyTask&lt;/strong&gt; 是一款国外的软件，它是一款&lt;strong&gt;鼠标键盘操作录制软件&lt;/strong&gt;，软件由吾爱大佬 @风之暇想 在 2019 年汉化，距今已经有 5 年的时间了。&lt;/p&gt;
+&lt;p&gt;虽然说 5 年前还没有 Win11，但是我在 Win11 下测试，其依旧可用！软件是绿色版，压缩包&lt;strong&gt;只有 33K&lt;/strong&gt;，解压后也才 119K，非常非常小。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;软件打开后干净简洁，只打开、保存、录制、播放、编辑、设置这几个按钮。&lt;/p&gt;
+&lt;p&gt;鼠标键盘录制工具在使用前一定要先进入到设置里面去&lt;strong&gt;设置快捷方式&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;在设置热键的时候，一定&lt;strong&gt;不要跟其他的热键冲突&lt;/strong&gt;，否则会按了就变成了其他的功能了。&lt;/p&gt;
+&lt;p&gt;比如我这里设置了 “F8”，那么录制和暂停都是 “F8” 了。然后我们就可以愉快的使用了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;点击下面，支持软妹：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;** 录制鼠标动作：** 我在一个编辑平台的图片是有限制的，好像最多上传 100 张，次数达到了，我就不得不删除，所以用这款软件可以录制鼠标动作，然后让其自动帮我删除。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;** 录制键盘动作：** 除了录制鼠标动作之外，软件还可以录制键盘动作，看下面的我录制好了鼠标输入动作以后，只要点【播放】按钮即可播放刚录制的动作。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;** 保存动作：** 如果你想要把你录制好的动作进行保存，那么点【保存】按钮，那么下次只要选择【打开】即可。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;** 播放次数设置：** 如果你想要重复的鼠标键盘操作，可以在设置里设置【循环播放】和【设置循环播放次数】&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;有播放次数时，在软件的左上角会显示现在已经&lt;strong&gt;重复的次数&lt;/strong&gt;，这样让我们更加直观了解进度。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;其实鼠标录制的软件我推荐过，比如寒星鼠标点击器，但寒星只能录制鼠标动作，不能录制键盘动作，像这种既能录制鼠标，又能录制键盘的，还是挺不错的。&lt;/p&gt;
+&lt;p&gt;其他的大家自己去体验，软件就介绍到这里啦！&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/07/23/glary/</guid>
+            <title>glary系统优化</title>
+            <link>https://mingcy.cn/2024/07/23/glary/</link>
+            <category>电脑软件</category>
+            <category>系统优化</category>
+            <pubDate>Tue, 23 Jul 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&amp;lt;aside&amp;gt;&lt;br&gt;
+😀 这里写文章的前言：&lt;/p&gt;
+&lt;p&gt;**《系统优化》** 电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用。&lt;/p&gt;
+&lt;p&gt;&amp;lt;/aside&amp;gt;&lt;/p&gt;
+&lt;h1 id=&#34;主旨内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#主旨内容&#34;&gt;#&lt;/a&gt; 📝 主旨内容&lt;/h1&gt;
+&lt;p&gt;**《系统优化》** 电脑用久了，就得清理一下，清理电脑系统垃圾是很多朋友都想做而确不会做的事情，不知道怎么清理，不知道该清理哪 里，这个工具可以方便的管理电脑中的垃圾、优化系统，一次性优化、清理，非常好用，&lt;/p&gt;
+&lt;h1 id=&#34;软件使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件使用&#34;&gt;#&lt;/a&gt; 🤗 软件使用&lt;/h1&gt;
+&lt;p&gt;软件下载后解压，双击打开软件即可运行，软件不用安装，打开就可以用了，界面如下，很干净，看起来很清爽。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/23/glary/DM_20240723202515_001.webp&#34; class title=&#34;DM_20240723202515_001.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;他把系统分分 7 大类，可以很清晰的看到我们要清理什么，清理的详细内容是什么，做到放心清理，小白也能操作。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/23/glary/DM_20240723202519_001.gif&#34; class title=&#34;DM_20240723202519_001.gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果真的不懂怎么选，就直接点击一键优化即可，它对我们的磁盘、注册表、无效的快捷方式等都可以一键处理。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/23/glary/DM_20240723202517_001.gif&#34; class title=&#34;DM_20240723202517_001.gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;扫描结束后，会提示有多少项要修复，点击修复问题即可。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/23/glary/DM_20240723202520_001.webp&#34; class title=&#34;DM_20240723202520_001.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在软件的底部，还有着相当丰富的功能，可以点击查看一下，比如清理电脑中的垃圾。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/23/glary/DM_20240723202523_001.webp&#34; class title=&#34;DM_20240723202523_001.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;总结：软件功能很强，需要给电脑清理优化的朋友，这个软件可以试一下。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 🫰下载&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.yunpan.com/surl_y9sdXPPPCfI&#34;&gt;360 安全云盘 - 用户空间&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/07/16/pdf-repalr/</guid>
+            <title>pdf修复工具</title>
+            <link>https://mingcy.cn/2024/07/16/pdf-repalr/</link>
+            <category>电脑软件</category>
+            <category>工具</category>
+            <pubDate>Tue, 16 Jul 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简介&#34;&gt;#&lt;/a&gt; 简介&lt;/h1&gt;
+&lt;p&gt;分享两款 Word 修复和 PDF 修复工具。&lt;/p&gt;
+&lt;p&gt;首先声明：我没有损坏的 Word 和 PDF，所以不知道效果如果，大家有损坏的可以测试测试。&lt;/p&gt;
+&lt;h1 id=&#34;pdf修复工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pdf修复工具&#34;&gt;#&lt;/a&gt; &lt;strong&gt;PDF 修复工具&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;PDF 修复工具是一款安装版的软件，软件安装完成以后，把 Crack 文件夹下面的文件覆盖到软件所在的目录下，然后再次打开即可正常了。&lt;/p&gt;
+&lt;p&gt;选择好文件后，点下一步。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/16/pdf-repalr/640_(1).webp&#34; class title=&#34;640 (1).webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后自己命名一下修复后的文件名字。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/16/pdf-repalr/640_(2).webp&#34; class title=&#34;640 (2).webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;再选择输出的 PDF 版本，最后点完成即可。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/16/pdf-repalr/640_(3).webp&#34; class title=&#34;640 (3).webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;软件挺简单，但是修复效果如何暂时不得而知！&lt;/p&gt;
+&lt;h1 id=&#34;word修复工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#word修复工具&#34;&gt;#&lt;/a&gt; &lt;strong&gt;Word 修复工具&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;我们经常会遇到 Word 打开时提示已经损坏的情况，这时候大家应该怎么操作呢？就我吧，直接就放弃了。不过今天之后，我会尝试用 Word 修复工具进行修复！&lt;/p&gt;
+&lt;p&gt;软件是安装版，全程英文，大家可以无脑进行安装&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;安装完成以后，把补丁覆盖到安美目录下打开，即可无限制使用了！&lt;/p&gt;
+&lt;p&gt;但是这个 Word 我测试直接用补丁可用，只是打开是英文版，选择需要修复的 Word 即可开始修复了。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;最后软件就开始修复了。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;挺简单的工具修复工具。&lt;/p&gt;
+&lt;p&gt;目前我没看过好用的修复工具，这款的效果如何不得而知，但是如果真有 Word 和 PDF 损坏的情况，我们可以尝试修复，死马当活马医嘛！&lt;/p&gt;
+&lt;p&gt;另外有类似的工具也可以给我介绍，我也想找其他更好用的！&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/07/03/dyd/</guid>
+            <title>短视频视频批量下载!</title>
+            <link>https://mingcy.cn/2024/07/03/dyd/</link>
+            <category>电脑软件</category>
+            <category>工具</category>
+            <category>实用推荐</category>
+            <pubDate>Wed, 03 Jul 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&amp;lt;aside&amp;gt;&lt;br&gt;
+😀 这里写文章的前言：&lt;br&gt;
+特别喜欢快手的 &lt;code&gt;昔昔&lt;/code&gt; ，真的天可爱了，早都想把她的视频下载下来，让后分享给我的伙伴们看。刚好让我找到了批量下载工具。&lt;/p&gt;
+&lt;p&gt;&amp;lt;/aside&amp;gt;&lt;/p&gt;
+&lt;h1 id=&#34;介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h1&gt;
+&lt;p&gt;**《DyD》** 是一款多功能视频图文下载器，支持某 d、某 k、某红书平台，并以批量的形式，快速下载某博主主页所有视频，不仅无水印，而且画质较高，是一个不错的自媒体必备工具。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/03/dyd/Snipaste_2024-07-03_22-05-40.webp&#34; class title=&#34;Snipaste_2024-07-03_22-05-40.webp&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;使用体验&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用体验&#34;&gt;#&lt;/a&gt; 使用体验&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里我选择快手的视频进行下载&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/03/dyd/Snipaste_2024-07-03_22-07-51.webp&#34; class title=&#34;Snipaste_2024-07-03_22-07-51.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之后使用网页版，找到喜欢的博主&lt;/p&gt;
+&lt;p&gt;这里就拿 &lt;code&gt;九月&lt;/code&gt; 举例子&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为什么不拿昔昔举例子？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;答：因为我已经下载过了 🥰   九月我也非常喜欢。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/03/dyd/Snipaste_2024-07-03_22-09-44.webp&#34; class title=&#34;Snipaste_2024-07-03_22-09-44.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;复制他的链接&lt;/strong&gt;：&lt;a href=&#34;https://www.kuaishou.com/profile/3x8yqtps4anqe2y&#34;&gt; &lt;code&gt;https://www.kuaishou.com/profile/3x8yqtps4anqe2y&lt;/code&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;让后 &lt;code&gt;粘贴&lt;/code&gt; 到上面，点击上方下载&lt;/p&gt;
+&lt;p&gt;在这之后你需要登录网页版快手，如果不登录，则只能下载 20 个视频。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/03/dyd/Snipaste_2024-07-03_22-12-46.webp&#34; class title=&#34;Snipaste_2024-07-03_22-12-46.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;注：如果碰到上方 &lt;code&gt;白屏&lt;/code&gt; ， &lt;code&gt;正常&lt;/code&gt; ， &lt;code&gt;重新点击下载&lt;/code&gt; 即可！！&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/03/dyd/Snipaste_2024-07-03_22-14-59.webp&#34; class title=&#34;Snipaste_2024-07-03_22-14-59.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如此他将会自动捕捉视频，你需要做的，就是拖动进度条，拖到最底下，就可以下载全部视频啦～～&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/03/dyd/Snipaste_2024-07-03_22-16-13.webp&#34; class title=&#34;Snipaste_2024-07-03_22-16-13.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击全部开始就可以等待下载啦～&lt;/p&gt;
+&lt;p&gt;之后我们打开下载的目录文件， &lt;code&gt;泰裤辣&lt;/code&gt; ～～&lt;/p&gt;
+&lt;p&gt;给你们下载可爱的&lt;strong&gt;昔昔～&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/07/03/dyd/Snipaste_2024-07-03_22-18-23.webp&#34; class title=&#34;Snipaste_2024-07-03_22-18-23.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;总共 167 个视频，太可爱了，声音也超级好听！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注：以上软件全部来源于网络，而且下载的视频仅供自己，不传播且会标注来源。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h1&gt;
+&lt;p&gt;123 盘：&lt;a href=&#34;https://www.123pan.com/s/pUVeVv-1jqKA.html&#34;&gt;https://www.123pan.com/s/pUVeVv-1jqKA.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;七彩云：&lt;a href=&#34;https://cloud.06dn.com/s/jKg4C4&#34;&gt;https://cloud.06dn.com/s/jKg4C4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;夸克盘：&lt;a href=&#34;https://pan.quark.cn/s/e8e1178082f7&#34;&gt;https://pan.quark.cn/s/e8e1178082f7&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/06/24/win-chachong/</guid>
+            <title>win-文件查重</title>
+            <link>https://mingcy.cn/2024/06/24/win-chachong/</link>
+            <category>电脑软件</category>
+            <category>工具</category>
+            <pubDate>Mon, 24 Jun 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&amp;lt;aside&amp;gt;&lt;br&gt;
+😀 这里写文章的前言：&lt;/p&gt;
+&lt;p&gt;我们电脑上的文件，复制来粘贴去，自己肯定不知道那里可以删，可以保留的，那么，下面这款软件将会查出你重复的文件，你可以进行删除与保留。&lt;/p&gt;
+&lt;p&gt;&amp;lt;/aside&amp;gt;&lt;/p&gt;
+&lt;h1 id=&#34;简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简介&#34;&gt;#&lt;/a&gt; 简介&lt;/h1&gt;
+&lt;p&gt;4DDiG Duplicate File Deleter 是一款电脑重复文件查找的软件，软件是绿色单文件版，双击打开后会提示你升级，大家不要升级！&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;完全免费！ 大小：36.19MB&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;应用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#应用&#34;&gt;#&lt;/a&gt; 应用&lt;/h1&gt;
+&lt;p&gt;软件打开后是英文版，在右上角设置成简体中文即可。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/06/24/win-chachong/640_(10).webp&#34; class title=&#34;640 (10).webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置后的软件界面是下面这样，点击选择查找的盘符，软件就开始搜索你电脑中的重复文件。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/06/24/win-chachong/640_(11).webp&#34; class title=&#34;640 (11).webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;说真的，电脑重复文件我推荐过好多款，但是像这款界面这么简洁，功能操作这么简单的还真的不少。&lt;/p&gt;
+&lt;p&gt;查找后分了 &lt;code&gt;图片、文档、视频、音频和其他&lt;/code&gt; 这几类，需要删除哪个选择即可。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/06/24/win-chachong/640_(12).webp&#34; class title=&#34;640 (12).webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;你也可以自动选择，软件会自动帮你选出文件，选择后点右下角的【 &lt;code&gt;移除&lt;/code&gt; 】即可。&lt;/p&gt;
+&lt;p&gt;有不少重复文件查找的软件，但是功能太强大，操作就变成非常复杂，而这款重复文件查找软件操作就简单多了！&lt;/p&gt;
+&lt;h1 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h1&gt;
+&lt;p&gt;两款小工具&lt;br&gt;
+阿里云：&lt;a href=&#34;https://www.alipan.com/s/UxzeVC2gmHR&#34;&gt;https://www.alipan.com/s/UxzeVC2gmHR&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.alipan.com/s/UxzeVC2gmHR&#34;&gt;阿里云盘分享&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;123 盘：&lt;a href=&#34;https://www.123pan.com/s/pUVeVv-ciqKA.html&#34;&gt;https://www.123pan.com/s/pUVeVv-ciqKA.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.123pan.com/s/pUVeVv-ciqKA.html&#34;&gt;两款软件官方版下载丨最新版下载丨绿色版下载丨 APP 下载 - 123 云盘&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/05/12/qianhe-tools/</guid>
+            <title>什么竟然还有这样的神器？</title>
+            <link>https://mingcy.cn/2024/05/12/qianhe-tools/</link>
+            <category>电脑软件</category>
+            <category>工具</category>
+            <category>实用推荐</category>
+            <pubDate>Sun, 12 May 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h1&gt;
+&lt;p&gt;给大家搞到了一款非常不错的在线工具箱网站，废话不多说，&lt;strong&gt;直接安排&lt;/strong&gt;！！！&lt;/p&gt;
+&lt;p&gt;也是好久没更新 Windows 程序了好吧，这次必须整活！！&lt;/p&gt;
+&lt;h1 id=&#34;千盒工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#千盒工具&#34;&gt;#&lt;/a&gt; 千盒工具&lt;/h1&gt;
+&lt;p&gt;这是一款非常不错的在线工具箱网站，该网站&lt;strong&gt;不需要注册登录&lt;/strong&gt;，打开即可直接使用，网站内包含了非常多实用的在线工具，&lt;strong&gt;全部都是免费的&lt;/strong&gt;，没有任何的套路，不论大家从事任何行业，都强烈建议各位小伙伴们&lt;strong&gt;点赞收藏&lt;/strong&gt;，后续肯定会用到的哦！&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/05/12/qianhe-tools/04ebc029-63ee-42a0-ba29-006c2fb39629.png&#34; class title=&#34;640.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;网站主界面&lt;strong&gt;如下图所示&lt;/strong&gt;，左侧是工具分类，右侧是工具列表，&lt;strong&gt;目前包含了&lt;/strong&gt;搜索工具、图片工具、示拼工具、文本工具、办公工具、导航工具、数字工具、单位换算工具以及开发工具等，覆盖了多个行业，&lt;strong&gt;所有工具统统免费&lt;/strong&gt;，非常良心！&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/05/12/qianhe-tools/640_(1).webp&#34; class title=&#34;640(1).webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;所有工具&lt;strong&gt;点击进入&lt;/strong&gt;即可打开使用，如下图所示，这里我就&lt;strong&gt;随便打开&lt;/strong&gt;一个图片文字识别工具，我们只&lt;strong&gt;需要上传&lt;/strong&gt;需要识别的图片，然后&lt;strong&gt;点击立即识别&lt;/strong&gt;按钮即可，识别速度快，准确率高，使用非常方便！&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/05/12/qianhe-tools/640_(2).webp&#34; class title=&#34;640(2).webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;由于该网站&lt;strong&gt;包含的工具较多&lt;/strong&gt;，在这里就不挨个给大家演示了，很多工具都是非常实用的，比如示拼格式转换、&lt;strong&gt;图片格式转换&lt;/strong&gt;、二维码解析、&lt;strong&gt;图片压缩&lt;/strong&gt;、单位换算等等，大家可以自行访问使用哦！&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/05/12/qianhe-tools/640_(3).webp&#34; class title=&#34;640(3).webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;以上就是给大家介绍的 &lt;strong&gt;非常不错的网站。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;网页&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#网页&#34;&gt;#&lt;/a&gt; 网页&lt;/h1&gt;
+&lt;p&gt;链接：&lt;a href=&#34;https://1000tool.com/&#34;&gt;https://1000tool.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://1000tool.com/&#34;&gt;https://1000tool.com/&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/04/14/aqi/</guid>
+            <title>爱奇艺免费了？</title>
+            <link>https://mingcy.cn/2024/04/14/aqi/</link>
+            <category>电脑软件</category>
+            <category>工具</category>
+            <category>实用推荐</category>
+            <pubDate>Sun, 14 Apr 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&amp;lt;aside&amp;gt;&lt;br&gt;
+😀 爱奇艺前言：话说我们平时一定会追剧或看电影对吧？但想什么主流的视频平台都有个充会员功能，但是吧，我们兜比脸还干净，这时候该怎么愉快的追剧呢？请看下文！&lt;/p&gt;
+&lt;p&gt;&amp;lt;/aside&amp;gt;&lt;/p&gt;
+&lt;h1 id=&#34;方法总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法总结&#34;&gt;#&lt;/a&gt; 方法总结&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;下载爱奇艺视频 qsv 格式文件再进行解密&lt;/li&gt;
+&lt;li&gt;使用解析网站进行解析&lt;/li&gt;
+&lt;li&gt;使用获取内部 m3u8 的方式解析&lt;/li&gt;
+&lt;li&gt;使用别的影视网址平替&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;方法一qsv格式文件进行解密&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法一qsv格式文件进行解密&#34;&gt;#&lt;/a&gt; 方法一：qsv 格式文件，进行解密&lt;/h1&gt;
+&lt;p&gt;注：不建议使用&lt;/p&gt;
+&lt;h2 id=&#34;下载文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载文件&#34;&gt;#&lt;/a&gt; 下载文件&lt;/h2&gt;
+&lt;p&gt;这个不用多说吧，点击爱奇艺的下载按钮就行了！&lt;/p&gt;
+&lt;h2 id=&#34;网址转换&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#网址转换&#34;&gt;#&lt;/a&gt; 网址转换&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/04/14/aqi/img1.png&#34; class title=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如图所示，可以进行 QSV 的转换，但是要么速度慢要么收费，不建议使用&lt;/p&gt;
+&lt;p&gt;上方网址：&lt;a href=&#34;https://www.media.io/zh/convert/qsv-to-mp4.html&#34;&gt;https://www.media.io/zh/convert/qsv-to-mp4.html&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;方法二解析网站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法二解析网站&#34;&gt;#&lt;/a&gt; 方法二：解析网站&lt;/h1&gt;
+&lt;p&gt;我们都知道啊，每个播放视频都是从后天服务器传输视频给你的，但是后天数据都是加密的，我们只需要替换掉就可以，简简单单啦！&lt;/p&gt;
+&lt;p&gt;注：建议使用电脑&lt;/p&gt;
+&lt;h2 id=&#34;打开网站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#打开网站&#34;&gt;#&lt;/a&gt; 打开网站&lt;/h2&gt;
+&lt;p&gt;爱奇艺：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.iqiyi.com/&#34;&gt;爱奇艺视频，视频，视频网站，高清视频，电影，电视剧，动漫，综艺，音乐&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;复制网址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#复制网址&#34;&gt;#&lt;/a&gt; 复制网址&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/04/14/aqi/img2.png&#34; class title=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;看到了吧，上方的网址复制&lt;/p&gt;
+&lt;p&gt;如果你仔细看就会发现，我的视频上面有一个绿色的小三角，合适我内置的插件，可以获取到内置的播放地址，后面再说！&lt;/p&gt;
+&lt;h2 id=&#34;在打开解析网址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在打开解析网址&#34;&gt;#&lt;/a&gt; 在打开解析网址&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/04/14/aqi/img3.png&#34; class title=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;立即享受看就完了&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#立即享受看就完了&#34;&gt;#&lt;/a&gt; 立即享受，看就完了&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/04/14/aqi/img4.png&#34; class title=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;类似的网站还有很多，这里来源于网络，请自测（不自动更新）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;酉灿：&lt;/strong&gt;&lt;a href=&#34;https://vip.superso.top/&#34;&gt;https://vip.superso.top/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;夜雨聆风：&lt;a href=&#34;https://vip.yeyulingfeng.com/&#34;&gt;https://vip.yeyulingfeng.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;理想智能云：&lt;a href=&#34;http://movie.imyjs.cn/&#34;&gt;http://movie.imyjs.cn/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Agoni：&lt;a href=&#34;https://www.agoni.top/video/index.html&#34;&gt;https://www.agoni.top/video/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;方法三获取m3u8播放链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法三获取m3u8播放链接&#34;&gt;#&lt;/a&gt; 方法三：获取 m3u8 播放链接&lt;/h1&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/04/14/aqi/img5.png&#34; class title=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里使用猫爪，抓取 ts 格式文件，让后每一个 ts 就是一个小分段，每个视频都由许多 ts 组成，要不然视频一次性加载太慢了，1 个小时多，分为多个 ts 就可以边看别加载，不会卡顿&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/04/14/aqi/img6.png&#34; class title=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击我的小三角就会看到 url，这里就是当前视频的播放源，让后使用 m3u8 播放器进行播放就可以了&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/04/14/aqi/img7.png&#34; class title=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;一样的，复制粘贴即可&lt;/p&gt;
+&lt;p&gt;这里推荐的网址 m3u8 播放网址&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://anym3u8player.com/cn/&#34;&gt;https://anym3u8player.com/cn/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tool.liumingye.cn/m3u8/&#34;&gt;http://tool.liumingye.cn/m3u8/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tool.pfan.cn/m3u8&#34;&gt;http://tool.pfan.cn/m3u8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zhanid.com/tool/m3u8.html&#34;&gt;https://www.zhanid.com/tool/m3u8.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;影视平台推荐指数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#影视平台推荐指数&#34;&gt;#&lt;/a&gt; 影视平台 (推荐指数🤩🤩🤩🤩🤩🤩)&lt;/h1&gt;
+&lt;h2 id=&#34;首推猫影&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#首推猫影&#34;&gt;#&lt;/a&gt; 首推：&lt;a href=&#34;https://ymck.pro/&#34;&gt;猫影&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/04/14/aqi/img8.png&#34; class title=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作为我第一大影视集合，有这超多的资源，丰富的网址，任你选择&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/04/14/aqi/img9.png&#34; class title=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;想看什么就直接搜什么，之后就会为你选出最佳的影视平台，跳转到别的网址去观看，播放速度秒了！&lt;/p&gt;
+&lt;p&gt;想看什么直接搜！&lt;/p&gt;
+&lt;p&gt;BY：茗辰原&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/03/23/PDF24/</guid>
+            <title>PDF24工具箱</title>
+            <link>https://mingcy.cn/2024/03/23/PDF24/</link>
+            <category>电脑软件</category>
+            <category>工具</category>
+            <pubDate>Sat, 23 Mar 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;AI 概括&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PDF 全称为 Portable Document Format，是一种常用的文档格式。对于合并、拆分或转换 PDF 等基本需求，不必下载复杂工具或付费。开源爱好者阿云推荐了 PDF24，这是一个由德国开发者制作的免费、多功能 PDF 处理软件，拥有 47 个 PDF 处理功能。PDF24 的操作简便，支持星标常用功能，并且是本地离线应用，更安全可靠。软件还提供了网页版，方便在线使用。对于处理敏感文件，建议使用软件的离线版本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h1&gt;
+&lt;p&gt;众所周知，PDF 全称为 Portable Document Format，意思是便携式文档格式，以后若有人问起来，你可别说 I don&#39;t know。&lt;/p&gt;
+&lt;p&gt;同时 PDF 也是我们日常办公、科研学习中最常见的文件格式之一，相信大家在处理这种文件的过程中都会遇到各种各样的问题吧？&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/03/23/PDF24/Untitled.png&#34; class title=&#34;Untitled&#34;&gt;&lt;/p&gt;
+&lt;p&gt;比如我们只是简单的合并、拆分或转换格式，也不希望因为这些小需求而去下载很复杂的工具，或者为它付费吧。&lt;/p&gt;
+&lt;p&gt;作为一名开源爱好者，阿云找来了一款免费全能且易用的 PDF 神级处理工具 - PDF24，一位德国老哥开发的工具包。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/03/23/PDF24/Untitled1.png&#34; class title=&#34;Untitled&#34;&gt;&lt;/p&gt;
+&lt;p&gt;你能想到的和 PDF 有关的需求，基本上都有。&lt;/p&gt;
+&lt;h1 id=&#34;pdf24-creator电脑&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pdf24-creator电脑&#34;&gt;#&lt;/a&gt; PDF24 Creator（电脑）&lt;/h1&gt;
+&lt;p&gt;PDF 24 是一款 PDF 编辑工具，软件由德国牧羊人齐格勒开发，距今有 18 年的历史了，而且一直免费，这就很是难得了！&lt;/p&gt;
+&lt;p&gt;这款工具老早前就介绍了它的网页版，网页版是免费的，网址文末获取关键词可一键获取！而今天阿云给大家带来的是绿色便携版。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/03/23/PDF24/Untitled2.png&#34; class title=&#34;Untitled&#34;&gt;&lt;/p&gt;
+&lt;p&gt;软件使用非常简单，双击 &amp;quot;pdf24.exe&amp;quot; 即可运行软件。&lt;/p&gt;
+&lt;p&gt;一般情况下可能不会弹出界面，但在电脑右下角能够看到图标，从而打开 PDF24 工具箱。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/03/23/PDF24/Untitled3.png&#34; class title=&#34;Untitled&#34;&gt;&lt;/p&gt;
+&lt;p&gt;打开 PDF24 工具箱，里面包含了 PDF 合并、压缩、编辑、转换为 PDF 等共计 47 个功能，可以说是应有尽有。&lt;/p&gt;
+&lt;p&gt;如果遇到常用的功能，还可以直接星标收藏变成 “我的最爱”，以便下次直接找到。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/03/23/PDF24/Untitled4.png&#34; class title=&#34;Untitled&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以毫不谦虚地说，市面上没有哪一款免费的 PDF 工具能与之抗衡，如果有，请当我没说过这句话。&lt;/p&gt;
+&lt;p&gt;而且 PDF24 工具箱包含的所有工具均为本地离线运行操作的，方便快捷，无需担心安全问题。&lt;/p&gt;
+&lt;p&gt;以 PDF 压缩为例，只需要把文件拖拽至窗口或者直接添加，鼠标放到文件上还可以直接预览、查看文件大小和页数。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/03/23/PDF24/Untitled5.png&#34; class title=&#34;Untitled&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接着只需要在左下角设置需要压缩后的 DPI 分辨率、图片品质和文件颜色，最后点击 “压缩” 即可。&lt;/p&gt;
+&lt;p&gt;别的不说，压缩率和压缩后的清晰度还是非常可以的。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/03/23/PDF24/Untitled6.png&#34; class title=&#34;Untitled&#34;&gt;&lt;/p&gt;
+&lt;p&gt;好了，由于篇幅有限关于软件功能的介绍就到这里了，当然网页版也是同样的功能，浏览器能联网就能用。&lt;/p&gt;
+&lt;p&gt;如果经常处理一些涉密文件，阿云还是建议你下载到本地使用，毕竟离线处理，安全可靠。&lt;/p&gt;
+&lt;h1 id=&#34;下载链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载链接&#34;&gt;#&lt;/a&gt; 下载链接&lt;/h1&gt;
+&lt;p&gt;①[Windows] 多功能免费实用的 PDF24 工具箱 v11.17.0 版本：&lt;/p&gt;
+&lt;p&gt;官网所有版本：&lt;a href=&#34;https://creator.pdf24.org/listVersions.php&#34;&gt;https://creator.pdf24.org/listVersions.php&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;123 云盘分流：&lt;a href=&#34;https://www.123pan.com/s/OgT7Vv-hPFc.html&#34;&gt;https://www.123pan.com/s/OgT7Vv-hPFc.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在线中文版：&lt;a href=&#34;https://tools.pdf24.org/zh/&#34;&gt;https://tools.pdf24.org/zh/&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>茗辰原 • Posts by &#34;开源&#34; tag</title>
+        <link>https://mingcy.cn</link>
+        <description>茶香四溢,编程世界.</description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 14 Oct 2024 01:40:00 +0800</pubDate>
+        <lastBuildDate>Mon, 14 Oct 2024 01:40:00 +0800</lastBuildDate>
+        <category>电脑软件</category>
+        <category>123网盘</category>
+        <category>工具</category>
+        <category>C++</category>
+        <category>编程语言</category>
+        <category>ChatGPT</category>
+        <category>Openai</category>
+        <category>建站</category>
+        <category>网站建站</category>
+        <category>计算机</category>
+        <category>安卓应用</category>
+        <category>广告</category>
+        <category>塔罗牌</category>
+        <category>网页精选</category>
+        <category>Ai</category>
+        <category>文字语音</category>
+        <category>安卓软件</category>
+        <category>音乐</category>
+        <category>实用推荐</category>
+        <category>Cloudflare</category>
+        <category>部署</category>
+        <category>分享</category>
+        <category>班级</category>
+        <category>实验</category>
+        <category>心理</category>
+        <category>锻炼</category>
+        <category>生活</category>
+        <category>精选网站</category>
+        <category>app,</category>
+        <category>系统优化</category>
+        <category>hexo</category>
+        <category>技术分享</category>
+        <category>实用</category>
+        <category>app</category>
+        <category>科幻科普</category>
+        <category>推荐</category>
+        <category>记录</category>
+        <category>亲情</category>
+        <category>妈妈</category>
+        <category>百度网盘</category>
+        <category>激活</category>
+        <category>教程</category>
+        <category>QQ空间</category>
+        <category>开源</category>
+        <category>works</category>
+        <category>壁纸</category>
+        <category>随机图</category>
+        <category>影视</category>
+        <category>指令</category>
+        <category>吾爱破解</category>
+        <category>调查</category>
+        <category>人物</category>
+        <category>积累</category>
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2024/10/14/qq-histort/</guid>
+            <title>获取QQ空间工具</title>
+            <link>https://mingcy.cn/2024/10/14/qq-histort/</link>
+            <category>电脑软件</category>
+            <category>实用推荐</category>
+            <category>QQ空间</category>
+            <category>开源</category>
+            <pubDate>Mon, 14 Oct 2024 01:40:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简介&#34;&gt;#&lt;/a&gt; 简介&lt;/h1&gt;
+&lt;p&gt;一款名为恢复 QQ 空间内容小具” 的软件，可以帮助用户&lt;strong&gt;查看&lt;/strong&gt;和&lt;strong&gt;同步 QQ 空间的留言和相册&lt;/strong&gt;。该软件支持 Mac 和&lt;br&gt;
+ Windows 系统，并提供 Python 的 flag 库进行开发。用户可以通过&lt;strong&gt;扫码登录&lt;/strong&gt;和&lt;strong&gt;导出功能&lt;/strong&gt;来保存和管理自己的空间内容。视频还展示了软件的操作流程和导出后的文件结构。总体而言，该工具为用户提供了方便快捷的 QQ 空间管理和备份功能&lt;/p&gt;
+&lt;h2 id=&#34;开源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开源&#34;&gt;#&lt;/a&gt; 开源&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;QQ-history,Github,https://github.com/LibraHp/GetQzonehistory?tab=readme-ov-file&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;功能介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#功能介绍&#34;&gt;#&lt;/a&gt; 功能介绍&lt;/h1&gt;
+&lt;p&gt;✨ 功能亮点&lt;br&gt;
+维码登录：只需扫描二维码，即可快速登录你的 QQ 空间，安全便捷！历史内容查看：轻松浏览你和好友的历史动态，记录那些美好的瞬间。&lt;br&gt;
+用户信息展示：显示你的 QQ 头像、昵称等信息，让你在使用时拥有更好的体验&lt;br&gt;
+多种列表选顶：查看说说、留言、好友、转发、图片等多种内容，一应俱全获取内容：提取并查看 QQ 空间中的所有历史内容，包括发布的说说、图片等&lt;br&gt;
+说说列表：查看你从最早到最新发布的所有说说内容及时间。留言列表：查看好友给你 QQ 空间留下的所有留言。&lt;br&gt;
+好友列表：获取并查看 QQ 空间中的好友信息。转发列表：查看你曾经转发的所有内容。&lt;br&gt;
+互动分析：基于好友互动的频率，展示与你互动最多的好友排行榜。&lt;br&gt;
+开放源代码：完全免费且开源，欢迎大家参与贡献和讨论！&lt;/p&gt;
+&lt;p&gt;🚀使用指南&lt;br&gt;
+打开程序后，使用手机 QQ 扫描二维码登录。&lt;br&gt;
+登录成功后，你将进入主界面，可以选择查看不同的内容。&lt;br&gt;
+在左侧则标签页中选择想要查看的内容列表，享受你的 QQ 空间回忆之旅！&lt;/p&gt;
+&lt;h2 id=&#34;目录结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#目录结构&#34;&gt;#&lt;/a&gt; 目录结构&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;project/
+├── resource/                # 资源目录
+│   ├── config/              # 配置目录，文件保存位置配置
+│   │   └── config.ini
+│   ├── result/              # 导出结果的目录，格式为“你的qq.xlsx”
+│   │   ├── ...
+│   │   └── ...
+│   ├── temp/                # 缓存目录
+│   │   ├── ...
+│   │   └── ...
+│   ├── user/                # 用户信息
+│   │   ├── ...
+│   │   └── ...
+├── util/                    # 单元工具目录
+│   ├── ConfigUtil.py        # 读取配置
+│   ├── GetAllMomentsUtil.py # 获取未删除的所有说说
+│   ├── LoginUtil.py         # 登录相关
+│   ├── RequestUtil.py       # 请求数据相关
+│   └── ToolsUtil.py         # 工具
+├── main.py                  # 主程序入口
+├── fetch_all_message.py     # 主程序入口
+├── README.md                # 项目说明文件
+├── requirements.txt         # 依赖项列表
+└── LICENSE                  # 许可证文件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;软件展示&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件展示&#34;&gt;#&lt;/a&gt; 软件展示&lt;/h1&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/1.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/2.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/3.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/4.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/5.webp&#34; class&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/14/qq-histort/6.webp&#34; class&gt;&lt;/p&gt;
+&lt;h1 id=&#34;软件下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件下载&#34;&gt;#&lt;/a&gt; 软件下载&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;github,download,https://github.com/LibraHp/GetQzonehistory/releases/tag/gui-v1.0.2&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;%E5%A4%B8%E5%85%8B,download,https://pan.quark.cn/s/3a5ddbde14e2&#34; title target&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
