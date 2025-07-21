@@ -10,14 +10,152 @@
         </author>
         <description>茶香四溢,编程世界.</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 02 Jun 2025 00:00:00 +0800</pubDate>
-        <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0800</lastBuildDate>
+        <pubDate>Mon, 21 Jul 2025 00:00:00 +0800</pubDate>
+        <lastBuildDate>Mon, 21 Jul 2025 00:00:00 +0800</lastBuildDate>
         <category term="编程" />
         <category term="科技" />
         <category term="技术" />
         <category term="分享" />
         <category term="心理" />
         <category term="爱好" />
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2025/07/21/LibreTV/</guid>
+            <title>LibreTV利用CF搭建</title>
+            <link>https://mingcy.cn/2025/07/21/LibreTV/</link>
+            <category term="技术分享" scheme="https://mingcy.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" />
+            <category term="实用推荐" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/" />
+            <category term="Cloudflare" scheme="https://mingcy.cn/tags/Cloudflare/" />
+            <category term="影视" scheme="https://mingcy.cn/tags/%E5%BD%B1%E8%A7%86/" />
+            <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/" />
+            <pubDate>Mon, 21 Jul 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;茗叙&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茗叙&#34;&gt;#&lt;/a&gt; 茗叙&lt;/h1&gt;
+&lt;p&gt;这段时间消失了快一个月了，简直要命！&lt;/p&gt;
+&lt;p&gt;放假之后就报考了驾校就开始 练车，前几天天天刷题，最终也是合格，现在科目二练习，倒车入库时练习的最快的！坡位定点也是轻轻松松，每天练车两个小时，这大太阳！我真的服了！每天出门就两个小时，这都能把我晒黑了，哎怎么办呢，又得一个冬天熬白了，呜呜呜！&lt;/p&gt;
+&lt;p&gt;这几月就是在赚钱，也不是去打工，就是自己搞一点网赚，也是有了一点点收益还不错，我自己平时就自己做菜用而已，也没什么花钱的地方，主要我的 &lt;code&gt;女性朋友&lt;/code&gt; ，她在米东区实习，在医院，谁能想实习竟然没有工资，每天都不知道能不能吃饱，每天就吃点泡面，真的挺担心她的，可惜我们相隔挺远的。前天她还说她变了，我还以为她说我们关系疏远了，谁知她说她 &lt;code&gt;有点消瘦&lt;/code&gt; 了，也确实又回到了高压的环境工作，谁都有一点疲劳吧，再加上又没有休息好，确实有一点！请求各位能否资助她一点点用来吃饭，我自己挣的钱她是不想收，说这是我的钱要收好，每次都劝了好久才收下，但我这钱也不够她吃一周的，她还要工作八个月，到时候我上学就确实没人资助她，也挺可怜的.(&lt;strong&gt;最下方点击赞助就行！&lt;/strong&gt;) 感谢各位了！&lt;/p&gt;
+&lt;p&gt;好了我们聊正事！&lt;/p&gt;
+&lt;p&gt;这是一期影视资源的网站搭建，内置了 api 接口可以直接收看影视！&lt;/p&gt;
+&lt;h1 id=&#34;茗述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茗述&#34;&gt;#&lt;/a&gt; 茗述&lt;/h1&gt;
+&lt;h2 id=&#34;1首先我们要准备账号&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1首先我们要准备账号&#34;&gt;#&lt;/a&gt; 1. 首先我们要准备账号&lt;/h2&gt;
+&lt;p&gt;一个&lt;a href=&#34;https://github.com&#34;&gt; Github&lt;/a&gt; 账号&lt;/p&gt;
+&lt;p&gt;一个&lt;a href=&#34;https://cloudflare.com&#34;&gt; Cloudflare&lt;/a&gt; 账号&lt;/p&gt;
+&lt;p&gt;首先 fork 下面的项目&lt;/p&gt;
+&lt;p&gt;LibreTV:**&lt;a href=&#34;https://github.com/LibreSpark/LibreTV&#34;&gt;https://github.com/LibreSpark/LibreTV&lt;/a&gt; **&lt;/p&gt;
+&lt;p&gt;或者这里有一键式部署:&lt;/p&gt;
+&lt;p&gt;选择以下任一平台，点击一键部署按钮，即可快速创建自己的 LibreTV 实例：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLibreSpark%2FLibreTV&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/1.webp&#34; alt=&#34;Deploy with Vercel&#34;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/LibreSpark/LibreTV&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/2.webp&#34; alt=&#34;Deploy to Netlify&#34;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://render.com/deploy?repo=https://github.com/LibreSpark/LibreTV&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/3.webp&#34; alt=&#34;Deploy to Render&#34;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://edgeone.ai/pages/new?repository-url=https://github.com/LibreSpark/LibreTV&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/4.webp&#34; alt=&#34;使用 EdgeOne Pages 部署&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下面是官方配的教程，这里只放我的图，只用 cloudflare 演示&lt;/p&gt;
+&lt;h2 id=&#34;详细部署指南&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#详细部署指南&#34;&gt;#&lt;/a&gt; 详细部署指南&lt;/h2&gt;
+&lt;h3 id=&#34;cloudflare-pages&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cloudflare-pages&#34;&gt;#&lt;/a&gt; Cloudflare Pages&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Fork 或克隆本仓库到您的 GitHub 账户&lt;/li&gt;
+&lt;li&gt;登录 &lt;a href=&#34;https://dash.cloudflare.com/&#34;&gt;Cloudflare Dashboard&lt;/a&gt;，进入 Pages 服务&lt;/li&gt;
+&lt;li&gt;点击 &amp;quot;创建项目&amp;quot;，连接您的 GitHub 仓库&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/image-20250721200004012.png&#34; alt=&#34;image-20250721200004012&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/image-20250721200032775.png&#34; alt=&#34;image-20250721200032775&#34;&gt;&lt;/li&gt;
+&lt;li&gt;使用以下设置：
+&lt;ul&gt;
+&lt;li&gt;构建命令：留空（无需构建）&lt;/li&gt;
+&lt;li&gt;输出目录：留空（默认为根目录）&lt;/li&gt;
+&lt;li&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/07/21/LibreTV/image-20250721200058801.png&#34; class title=&#34;image-20250721200058801&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;⚠️ 重要：在 &amp;quot;设置&amp;quot; &amp;gt; &amp;quot;环境变量&amp;quot; 中添加  &lt;code&gt;PASSWORD&lt;/code&gt;  变量&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可选：在 &amp;quot;Settings&amp;quot; &amp;gt; &amp;quot;Environment Variables&amp;quot; 中添加  &lt;code&gt;ADMINPASSWORD&lt;/code&gt;  变量&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &amp;quot;保存并部署&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如下展示: &lt;a href=&#34;http://tv.mingcy.cn&#34;&gt;tv.mingcy.cn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/07/21/LibreTV/image-20250721200629334.png&#34; class title=&#34;image-20250721200629334&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;vercel&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vercel&#34;&gt;#&lt;/a&gt; Vercel&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Fork 或克隆本仓库到您的 GitHub/GitLab 账户&lt;/li&gt;
+&lt;li&gt;登录 &lt;a href=&#34;https://vercel.com/&#34;&gt;Vercel&lt;/a&gt;，点击 &amp;quot;New Project&amp;quot;&lt;/li&gt;
+&lt;li&gt;导入您的仓库，使用默认设置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;⚠️ 重要：在 &amp;quot;Settings&amp;quot; &amp;gt; &amp;quot;Environment Variables&amp;quot; 中添加  &lt;code&gt;PASSWORD&lt;/code&gt;  变量&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可选：在 &amp;quot;Settings&amp;quot; &amp;gt; &amp;quot;Environment Variables&amp;quot; 中添加  &lt;code&gt;ADMINPASSWORD&lt;/code&gt;  变量&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &amp;quot;Deploy&amp;quot;&lt;/li&gt;
+&lt;li&gt;可选：在 &amp;quot;Settings&amp;quot; &amp;gt; &amp;quot;Environment Variables&amp;quot; 中配置密码保护和设置按钮密码保护&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;render&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#render&#34;&gt;#&lt;/a&gt; Render&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Fork 或克隆本仓库到您的 GitHub 账户&lt;/li&gt;
+&lt;li&gt;登录 &lt;a href=&#34;https://render.com/&#34;&gt;Render&lt;/a&gt;，点击 &amp;quot;New Web Service&amp;quot;&lt;/li&gt;
+&lt;li&gt;选择您的仓库，Render 会自动检测到  &lt;code&gt;render.yaml&lt;/code&gt;  配置文件&lt;/li&gt;
+&lt;li&gt;保持默认设置（无需设置环境变量，默认不启用密码保护）&lt;/li&gt;
+&lt;li&gt;点击 &amp;quot;Create Web Service&amp;quot;，等待部署完成&lt;/li&gt;
+&lt;li&gt;部署成功后即可访问您的 LibreTV 实例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如需启用密码保护，可在 Render 控制台的环境变量中手动添加  &lt;code&gt;PASSWORD&lt;/code&gt;  和 / 或  &lt;code&gt;ADMINPASSWORD&lt;/code&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;docker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#docker&#34;&gt;#&lt;/a&gt; Docker&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;docker run -d \
+  --name libretv \
+  --restart unless-stopped \
+  -p 8899:8080 \
+  -e PASSWORD=your_password \
+  -e ADMINPASSWORD=your_adminpassword \
+  bestzwei/libretv:latest
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;docker-compose&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#docker-compose&#34;&gt;#&lt;/a&gt; Docker Compose&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;docker-compose.yml&lt;/code&gt;  文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;services:
+  libretv:
+    image: bestzwei/libretv:latest
+    container_name: libretv
+    ports:
+      - &amp;quot;8899:8080&amp;quot; # 将内部 8080 端口映射到主机的 8899 端口
+    environment:
+      - PASSWORD=$&amp;#123;PASSWORD:-your_password&amp;#125; # 可将 your_password 修改为你想要的密码，默认为 your_password
+      - ADMINPASSWORD=$&amp;#123;PASSWORD:-your_adminpassword&amp;#125; # 可将 your_adminpassword 修改为你想要的密码，默认为 your_adminpassword
+    restart: unless-stopped
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动 LibreTV：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker compose up -d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;访问  &lt;code&gt;http://localhost:8899&lt;/code&gt;  即可使用。&lt;/p&gt;
+&lt;h3 id=&#34;本地开发环境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#本地开发环境&#34;&gt;#&lt;/a&gt; 本地开发环境&lt;/h3&gt;
+&lt;p&gt;项目包含后端代理功能，需要支持服务器端功能的环境：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 首先，通过复制示例来设置 .env 文件（可选）
+cp .env.example .env
+
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;访问  &lt;code&gt;http://localhost:8080&lt;/code&gt;  即可使用（端口可在.env 文件中通过 PORT 变量修改）。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ 注意：使用简单静态服务器（如  &lt;code&gt;python -m http.server&lt;/code&gt;  或  &lt;code&gt;npx http-server&lt;/code&gt; ）时，视频代理功能将不可用，视频无法正常播放。完整功能测试请使用 Node.js 开发服务器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;自定义配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自定义配置&#34;&gt;#&lt;/a&gt; 🔧 自定义配置&lt;/h2&gt;
+&lt;h3 id=&#34;密码保护&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#密码保护&#34;&gt;#&lt;/a&gt; 密码保护&lt;/h3&gt;
+&lt;p&gt;要为您的 LibreTV 实例添加密码保护，可以在部署平台上设置环境变量：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;环境变量名&lt;/strong&gt;:  &lt;code&gt;PASSWORD&lt;/code&gt;  &lt;strong&gt;值&lt;/strong&gt;：您想设置的密码&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;环境变量名&lt;/strong&gt;:  &lt;code&gt;ADMINPASSWORD&lt;/code&gt;  &lt;strong&gt;值&lt;/strong&gt;：您想设置的密码&lt;/p&gt;
+&lt;p&gt;各平台设置方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare Pages&lt;/strong&gt;: Dashboard &amp;gt; 您的项目 &amp;gt; 设置 &amp;gt; 环境变量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vercel&lt;/strong&gt;: Dashboard &amp;gt; 您的项目 &amp;gt; Settings &amp;gt; Environment Variables&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Netlify&lt;/strong&gt;: Dashboard &amp;gt; 您的项目 &amp;gt; Site settings &amp;gt; Build &amp;amp; deploy &amp;gt; Environment&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt;: 修改  &lt;code&gt;docker run&lt;/code&gt;  中  &lt;code&gt;your_password&lt;/code&gt;  为你的密码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt;: 修改  &lt;code&gt;docker-compose.yml&lt;/code&gt;  中的  &lt;code&gt;your_password&lt;/code&gt;  为你的密码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;本地开发&lt;/strong&gt;: SET PASSWORD=your_password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;api兼容性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#api兼容性&#34;&gt;#&lt;/a&gt; API 兼容性&lt;/h3&gt;
+&lt;p&gt;LibreTV 支持标准的苹果 CMS V10 API 格式。添加自定义 API 时需遵循以下格式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;搜索接口:  &lt;code&gt;https://example.com/api.php/provide/vod/?ac=videolist&amp;amp;wd=关键词&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;详情接口:  &lt;code&gt;https://example.com/api.php/provide/vod/?ac=detail&amp;amp;ids=视频ID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;添加 CMS 源&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在设置面板中选择 &amp;quot;自定义接口&amp;quot;&lt;/li&gt;
+&lt;li&gt;接口地址:  &lt;code&gt;https://example.com/api.php/provide/vod&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://mingcy.cn/2025/06/02/blob/</guid>
             <title>BLOB图床使用Vercel搭建</title>
@@ -534,9 +672,9 @@ SLS 和 SLES 强力清洁产品&lt;br&gt;
             <title>只要插入一根铁丝就能免费看电视</title>
             <link>https://mingcy.cn/2025/02/16/tvpojie/</link>
             <category term="实用技巧" scheme="https://mingcy.cn/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" />
+            <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/" />
             <category term="生活" scheme="https://mingcy.cn/tags/%E7%94%9F%E6%B4%BB/" />
             <category term="实用" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8/" />
-            <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/" />
             <pubDate>Sun, 16 Feb 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;茗起揭秘铁丝免费看电视背后的门道&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茗起揭秘铁丝免费看电视背后的门道&#34;&gt;#&lt;/a&gt; 茗起：揭秘 “铁丝免费看电视” 背后的门道&lt;/h1&gt;
 &lt;p&gt;在信息传播迅速的当下，各种新奇的话题总能瞬间抓住网友们的眼球。最近，“只要插入一根铁丝就能免费看电视” 这样一则看似神奇的话题，便在网络上引起了广泛的关注与热议。大家纷纷好奇，一根简单的铁丝真的能有如此大的魔力，让我们免费收看电视节目吗？&lt;/p&gt;
@@ -1111,8 +1249,8 @@ SLS 和 SLES 强力清洁产品&lt;br&gt;
             <title>Office-2025激活</title>
             <link>https://mingcy.cn/2024/11/23/office-ltsc/</link>
             <category term="技术教学" scheme="https://mingcy.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E5%AD%A6/" />
-            <category term="激活" scheme="https://mingcy.cn/tags/%E6%BF%80%E6%B4%BB/" />
             <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="激活" scheme="https://mingcy.cn/tags/%E6%BF%80%E6%B4%BB/" />
             <pubDate>Sat, 23 Nov 2024 10:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;起源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#起源&#34;&gt;#&lt;/a&gt; 起源&lt;/h2&gt;
 &lt;p&gt;在我发现我的 WPS 用不了之后，打算更新 OFFice 来使用，但是我万万没想到，竟然卡在激活上面了，故出一期新版的激活教程&lt;/p&gt;
@@ -1186,114 +1324,6 @@ SLS 和 SLES 强力清洁产品&lt;br&gt;
 &lt;p&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=ai.askquin&#34;&gt;https://play.google.com/store/apps/details?id=ai.askquin&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ios&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ios&#34;&gt;#&lt;/a&gt; ios&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://apps.apple.com/app/id6480106163&#34;&gt;https://apps.apple.com/app/id6480106163&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://mingcy.cn/2024/10/27/tvbox/</guid>
-            <title>TVBOX 配置两端通用</title>
-            <link>https://mingcy.cn/2024/10/27/tvbox/</link>
-            <category term="影视资源" scheme="https://mingcy.cn/categories/%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90/" />
-            <category term="电脑软件" scheme="https://mingcy.cn/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/" />
-            <category term="安卓应用" scheme="https://mingcy.cn/tags/%E5%AE%89%E5%8D%93%E5%BA%94%E7%94%A8/" />
-            <category term="推荐" scheme="https://mingcy.cn/tags/%E6%8E%A8%E8%8D%90/" />
-            <category term="影视" scheme="https://mingcy.cn/tags/%E5%BD%B1%E8%A7%86/" />
-            <pubDate>Sun, 27 Oct 2024 12:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;tv版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tv版本&#34;&gt;#&lt;/a&gt; TV 版本&lt;/h1&gt;
-&lt;h2 id=&#34;安装tvbox&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装tvbox&#34;&gt;#&lt;/a&gt; 安装 TVBOX&lt;/h2&gt;
-&lt;p&gt;安装完以后什么都无法观看 - 需要配置地址&lt;br&gt;
- &lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/1.webp&#34; class&gt;&lt;/p&gt;
-&lt;h2 id=&#34;tvbox配置地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tvbox配置地址&#34;&gt;#&lt;/a&gt; TVBOX 配置地址&lt;/h2&gt;
-&lt;p&gt;首先打开右上角的设置按钮&lt;/p&gt;
-&lt;p&gt;选中配置地址&lt;br&gt;
- &lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/3.webp&#34; class&gt;&lt;/p&gt;
-&lt;p&gt;获取存储权限 - 提示获取成功&lt;br&gt;
- &lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/4.webp&#34; class&gt;&lt;/p&gt;
-&lt;p&gt;然后用手机或者电脑扫描二维码或者打开以上地址填入数据源地址即可&lt;/p&gt;
-&lt;h2 id=&#34;tvbox使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tvbox使用&#34;&gt;#&lt;/a&gt; TVBOX 使用&lt;/h2&gt;
-&lt;p&gt;如果失效了可以自定义数据源 (推荐 T4 聚合)&lt;br&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;/2024/10/27/tvbox/5.webp&#34; class&gt;&lt;/p&gt;
-&lt;p&gt;也可以配置其他参数 - 自行摸索&lt;/p&gt;
-&lt;h2 id=&#34;接口链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#接口链接&#34;&gt;#&lt;/a&gt; 接口链接&lt;/h2&gt;
-&lt;p&gt;TVBox 各路大佬配置（排名不分先后）：&lt;/p&gt;
-&lt;p&gt;（1）唐三：&lt;a href=&#34;https://hutool.ml/tang&#34;&gt;https://hutool.ml/tang&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（2）Fongmi：&lt;a href=&#34;https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json&#34;&gt;https://raw.fastgit.org/FongMi/CatVodSpider/main/json/config.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（3）俊于：&lt;a href=&#34;http://home.jundie.top:81/top98.json&#34;&gt;http://home.jundie.top:81/top98.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（4）饭太硬：&lt;a href=&#34;http://xn--sss604efuw.ga/x/o.json&#34;&gt;http:// 饭太硬.ga/x/o.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（5）霜辉月明 py：&lt;a href=&#34;https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json&#34;&gt;https://ghproxy.com/raw.githubusercontent.com/lm317379829/PyramidStore/pyramid/py.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（6）小雅 dr：&lt;a href=&#34;http://drpy.site/js1&#34;&gt;http://drpy.site/js1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（7）菜妮丝：&lt;a href=&#34;https://tvbox.cainisi.cf&#34;&gt;https://tvbox.cainisi.cf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（8）神器：&lt;a href=&#34;https://xn--m7r412advb92j21st65a.tk/pz.json&#34;&gt;https:// 神器每日推送.tk/pz.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（9）巧技：&lt;a href=&#34;http://pandown.pro/tvbox/tvbox.json&#34;&gt;http://pandown.pro/tvbox/tvbox.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（10）刚刚：&lt;a href=&#34;http://xn--4bra.live/%E7%8C%AB&#34;&gt;http:// 刚刚.live/ 猫&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（11）吾爱有三：&lt;a href=&#34;http://52bsj.vip:98/0805&#34;&gt;http://52bsj.vip:98/0805&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（12）潇洒：&lt;a href=&#34;https://download.kstore.space/download/2863/01.txt&#34;&gt;https://download.kstore.space/download/2863/01.txt&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（13）佰欣园：&lt;a href=&#34;https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt&#34;&gt;https://ghproxy.com/https://raw.githubusercontent.com/chengxueli818913/maoTV/main/44.txt&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（14）胖虎：&lt;a href=&#34;https://notabug.org/imbig66/tv-spider-man/raw/master/%E9%85%8D%E7%BD%AE/0801.json&#34;&gt;https://notabug.org/imbig66/tv-spider-man/raw/master/ 配置 / 0801.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（15）云星日记：&lt;a href=&#34;https://maoyingshi.cc/tiaoshizhushou/1.txt&#34;&gt;https://maoyingshi.cc/tiaoshizhushou/1.txt&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（16）Yoursmile7：&lt;a href=&#34;https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json&#34;&gt;https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（17）BOX：&lt;a href=&#34;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&#34;&gt;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（18）哔哩学习：&lt;a href=&#34;http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0&#34;&gt;http://52bsj.vip:81/api/v3/file/get/41063/bili.json?sign=TxuApYZt6bNl9TzI7vObItW34UnATQ4RQxABAEwHst4%3D%3A0&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（19）UndCover：&lt;a href=&#34;https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json&#34;&gt;https://raw.githubusercontent.com/UndCover/PyramidStore/main/py.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（20）木极：&lt;a href=&#34;https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt&#34;&gt;https://pan.tenire.com/down.php/2664dabf44e1b55919f481903a178cba.txt&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（21）Ray：&lt;a href=&#34;https://dxawi.github.io/0/0.json&#34;&gt;https://dxawi.github.io/0/0.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（22）甜蜜：&lt;a href=&#34;https://kebedd69.github.io/TVbox-interface/py%E7%94%9C%E8%9C%9C.json&#34;&gt;https://kebedd69.github.io/TVbox-interface/py 甜蜜.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（23）52bsj：&lt;a href=&#34;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&#34;&gt;http://52bsj.vip:81/api/v3/file/get/29899/box2.json?sign=3cVyKZQr3lFAwdB3HK-A7h33e0MnmG6lLB9oWlvSNnM%3D%3A0&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（24）肥猫：&lt;a href=&#34;http://xn--ihqu10cn4c.xn--z7x900a.love:63&#34;&gt;http:// 我不是。肥猫.love:63&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;pc版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pc版本&#34;&gt;#&lt;/a&gt; PC 版本&lt;/h1&gt;
-&lt;h2 id=&#34;软件介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件介绍&#34;&gt;#&lt;/a&gt; 软件介绍&lt;/h2&gt;
-&lt;p&gt;ZyPlayer v3.3.1 中文版 免费全网影视播放器&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;GitHub 原文地址&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;div class=&#34;tag link&#34;&gt;&lt;a class=&#34;link-card&#34; title href&gt;&lt;div class=&#34;left&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/image/mcy.png&#34;&gt;&lt;/div&gt;&lt;div class=&#34;right&#34;&gt;&lt;p class=&#34;text&#34;&gt;&lt;/p&gt;&lt;p class=&#34;url&#34;&gt;&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;使用方法：&lt;/strong&gt;&lt;br&gt;
-安装软件后，依次点开设置 -&amp;gt; 基础配置 -&amp;gt; 其他 -&amp;gt; 数据管理 -&amp;gt; 一键配置 -&amp;gt; 软件接口然后填入&lt;strong&gt;订阅地址&lt;/strong&gt;，就能正常使用了。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;专用接口源:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;接口分享：&lt;a href=&#34;http://xiaoguozitv.cn/catys/zyplay.json&#34;&gt;http://xiaoguozitv.cn/catys/zyplay.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;订阅地址：&lt;a href=&#34;https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json&#34;&gt;https://jsd.cdn.zzko.cn/gh/ls125781003/dmtg@master/zy.json&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;订阅地址：&lt;a href=&#34;https://raw.kgithub.com/cddehsy/zyjs/main/zy.json&#34;&gt;https://raw.kgithub.com/cddehsy/zyjs/main/zy.json&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;以上地址选第一个即可，遇到失效了就换！&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142446y8y6kys6dzpsl6ko.jpg&#34; alt=&#34;DM_20240105142311_003.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142455zu6ze27ii2zru1z5.jpg&#34; alt=&#34;DM_20240105142311_004.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;| 软件介绍：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;ZY Player 开源播放神器复活，更强了&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;用过 ZY Player 的都知道，这是一个免费开放源的播放器软件，兼容各种资源网接口，支持看视频、直播，而且这款软件已经存在了好几年了，只能说很强。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142753vkdat8lud1x4adu2.jpg&#34; alt=&#34;DM_20240105142311_005.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;新版本颜值更高，而且功能都有很大的提升，不仅更强，而且整体界面也改版了。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142829d498lq8dv1ly8l8d.jpg&#34; alt=&#34;DM_20240105142311_006.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;ZyPlayer 跟之前的一样，专注于资源网接口，同样可以选择不同的接口源，点击左上角就可以切换接口源。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142901ob03bzo3gnnu03n6.jpg&#34; alt=&#34;DM_20240105142311_007.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;而且不同源站，同样支持选择分类，分类也做得非常详细，当然还有很多细节值得体验。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142950gx6pcpqv5el5uvzc.jpg&#34; alt=&#34;DM_20240105142311_008.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/142956dw07ds9dni7rmw7k.jpg&#34; alt=&#34;DM_20240105142311_009.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143003sfe89shs5szs37m5.jpg&#34; alt=&#34;DM_20240105142311_010.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143015bysasx47paxbqa0c.jpg&#34; alt=&#34;DM_20240105142311_011.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;基于 vue 全家桶 + tdesign + electron 开发；主题色：薄荷绿。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;已有功能&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;全平台支持 Windows、Mac、Linux&lt;/li&gt;
-&lt;li&gt;适配黑暗模式&lt;/li&gt;
-&lt;li&gt;支持资源站 cms（json 接口）&lt;/li&gt;
-&lt;li&gt;支持 IPTV（m3u、genre）及电子节目单&lt;/li&gt;
-&lt;li&gt;支持主流视频平台解析（解析页面有个小彩蛋，可在代码里自行探索）&lt;/li&gt;
-&lt;li&gt;老板键，一键隐藏&lt;/li&gt;
-&lt;li&gt;播放器软解&lt;/li&gt;
-&lt;li&gt;…&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;|&lt;/strong&gt; &lt;strong&gt;部分功能详细截图：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143042j6qq226lej5qzt9j.jpg&#34; alt=&#34;DM_20240105142311_012.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143056tejo53b313b6p5b6.jpg&#34; alt=&#34;DM_20240105142311_013.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143112d1s8fvzab141j41i.jpg&#34; alt=&#34;DM_20240105142311_014.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143125sb7jpmasjq77ztts.jpg&#34; alt=&#34;DM_20240105142311_015.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143139rc6qxm4cxp6xlbyq.jpg&#34; alt=&#34;DM_20240105142311_016.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143153fo9x4a9jkraia9v4.jpg&#34; alt=&#34;DM_20240105142311_017.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143206as4bzb82jzk70jww.jpg&#34; alt=&#34;DM_20240105142311_018.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143217c318rnm19gl2sgsw.jpg&#34; alt=&#34;DM_20240105142311_019.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143228ynzbo2rsyopbmrz2.jpg&#34; alt=&#34;DM_20240105142311_020.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://bbs.pcbeta.com/data/attachment/forum/202401/05/143244rqzagtvihvqzg33d.jpg&#34; alt=&#34;DM_20240105142311_021.jpg&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;软件下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件下载&#34;&gt;#&lt;/a&gt; 软件下载&lt;/h1&gt;
-&lt;p&gt;夸克:&lt;br&gt;
-&lt;div class=&#34;tag link&#34;&gt;&lt;a class=&#34;link-card&#34; title href&gt;&lt;div class=&#34;left&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/image/mcy.png&#34;&gt;&lt;/div&gt;&lt;div class=&#34;right&#34;&gt;&lt;p class=&#34;text&#34;&gt;&lt;/p&gt;&lt;p class=&#34;url&#34;&gt;&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
