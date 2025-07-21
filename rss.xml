@@ -42,10 +42,10 @@
 &lt;p&gt;LibreTV:**&lt;a href=&#34;https://github.com/LibreSpark/LibreTV&#34;&gt;https://github.com/LibreSpark/LibreTV&lt;/a&gt; **&lt;/p&gt;
 &lt;p&gt;或者这里有一键式部署:&lt;/p&gt;
 &lt;p&gt;选择以下任一平台，点击一键部署按钮，即可快速创建自己的 LibreTV 实例：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLibreSpark%2FLibreTV&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/1.webp&#34; alt=&#34;Deploy with Vercel&#34;&gt;&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/LibreSpark/LibreTV&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/2.webp&#34; alt=&#34;Deploy to Netlify&#34;&gt;&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://render.com/deploy?repo=https://github.com/LibreSpark/LibreTV&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/3.webp&#34; alt=&#34;Deploy to Render&#34;&gt;&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://edgeone.ai/pages/new?repository-url=https://github.com/LibreSpark/LibreTV&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;LibreTV/4.webp&#34; alt=&#34;使用 EdgeOne Pages 部署&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLibreSpark%2FLibreTV&#34;&gt;Deploy with Vercel&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/LibreSpark/LibreTV&#34;&gt;Deploy to Netlify&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://render.com/deploy?repo=https://github.com/LibreSpark/LibreTV&#34;&gt;Deploy to Render&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://edgeone.ai/pages/new?repository-url=https://github.com/LibreSpark/LibreTV&#34;&gt; 使用 EdgeOne Pages 部署&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下面是官方配的教程，这里只放我的图，只用 cloudflare 演示&lt;/p&gt;
 &lt;h2 id=&#34;详细部署指南&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#详细部署指南&#34;&gt;#&lt;/a&gt; 详细部署指南&lt;/h2&gt;
 &lt;h3 id=&#34;cloudflare-pages&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cloudflare-pages&#34;&gt;#&lt;/a&gt; Cloudflare Pages&lt;/h3&gt;
