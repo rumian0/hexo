@@ -6,7 +6,7 @@
   <link href="https://mingcy.cn/atom.xml" rel="self"/>
   
   <link href="https://mingcy.cn/"/>
-  <updated>2025-11-30T05:20:41.207Z</updated>
+  <updated>2025-12-20T14:43:34.325Z</updated>
   <id>https://mingcy.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实用网页推荐第一期</title>
+    <link href="https://mingcy.cn/2025/12/20/web-first/"/>
+    <id>https://mingcy.cn/2025/12/20/web-first/</id>
+    <published>2025-12-19T16:00:00.000Z</published>
+    <updated>2025-12-20T14:43:34.325Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="碎碎念"><a class="anchor" href="#碎碎念">#</a> 碎碎念</h1><p>经过上次的文章之后，我的情感关系处理的还行了，我起初是既然解决问题太麻烦，倒不如我直接解决人比较方便，之后我也是想了很久，做了蛮多的考虑，想出了这个道理<strong>不与无关的人讲麻烦的事，不与有关的人讲无关的事</strong>，也是好了很多。最近刚考完试，这张卷子是真的难，比我平时还降低了 10 分，我英语成绩越来越自信了，但是之前的原先的科目有点迷茫了，分数就是上不去。遇到了点瓶颈.</p><p>还有一个月就是一模了，时间过得太快了，好多东西我还没背会，有的公式我还不是很熟练，有点着急，一切都要有计划的进行，每天都有每天的任务，也挺好的，感觉坚持不下去的时候，我翻翻我的日记本，我才发现上面全是激励我继续下去的话，这个时候我便会有所感悟，我再次将这记录下来，等到我功成的时候，回头再看看这个激励我的精神寄托.</p><p>谁能想到 <code>学科网</code> 出的试卷被泄露了，以至于某红书，某宝都能找到原卷，甚至还可以买到答案，一科 60? 对于那些抄的人，我就不做评价了....</p><h1 id="茗述"><a class="anchor" href="#茗述">#</a> 茗述</h1><h2 id="简介"><a class="anchor" href="#简介">#</a> 简介</h2><p>之前就喜欢看这个大佬总结的 github 好玩的项目，写的很详细很认真，但是吧 github 我只探索了一小部分，还是太少了，所以我就不分享 github 相关项目，这里分享一些很好玩的<ins class="wavy">网站</ins></p><p><ins class="dot">由于确实没时间一个一个详细分享网站，这里就简述一下，嘻嘻！</ins></p><p><div class="links"><div class="item" title="清羽飞扬"><a href="https://blog.liushen.fun/" class="image" data-background-image="https://blog.liushen.fun/info/siteshot.jpg"></a>        <div class="info">        <a href="https://blog.liushen.fun/" class="title">清羽飞扬</a>        <p class="desc">柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜</p>        </div></div></div></p><h2 id="影猫"><a class="anchor" href="#影猫">#</a> 影猫</h2><p><img loading="lazy" data-src="/2025/12/20/web-first/image-20251220221930471.webp" class title="image-20251220221930471"></p><p>🆔  网站名称：影猫的仓库</p><p>⭐  网站功能：超全的影视集合网站</p><p>📁  网站简介：一个可以搜索到任意影视网站的爬虫，爬取到收录到里面的影视，自带无广，蓝光</p><p>🔗 网站网址：<a href="https://www.ymck.pro/">点击打开</a></p><h2 id="anchor-relay"><a class="anchor" href="#anchor-relay">#</a> Anchor Relay</h2><p><img loading="lazy" data-src="/2025/12/20/web-first/image-20251220221505304.webp" class title="image-20251220221505304"></p><p>🆔  网站名称：Anchor Relay</p><p>⭐  网站功能：SSL 证书生成</p><p>📁  网站简介：一个提供快速且免费的 HTTPS 证书服务的网站，通过自动化证书管理，可以在自托管环境和不受信任的网络中轻松获取和管理 SSL/TLS 证书。</p><p>🔗 网站网址：<a href="https://anchor.dev/relay">点击打开</a></p><h2 id="coord"><a class="anchor" href="#coord">#</a> Coord</h2><p><img loading="lazy" data-src="/2025/12/20/web-first/image-20251220221531266.webp" class title="image-20251220221531266"></p><p>🆔  软件名称：Coord</p><p>⭐️  软件功能：局域网电脑控制</p><p>➡️  支持平台：#Windows</p><p>📁  软件简介：一款轻量级的连接和控制局域网中的多台电脑的工具，能够像使用一台电脑一样高效地操作。首次使用时，用户只需设置一个 PIN 码，之后便可轻松使用。</p><p>支持在多台电脑之间共享剪贴板，包括文本、图片和文件，极大地提升了跨设备操作的便利性。</p><p>⬇️ 软件下载：<a href="https://xeno.software/zh/coord/">点击下载</a></p><h2 id="sitedata"><a class="anchor" href="#sitedata">#</a> SiteData</h2><p><img loading="lazy" data-src="web-first/image-20251220221701655.webp" alt="image-20251220221701655"><img loading="lazy" data-src="web-first/image-20251220221602424.webp" alt="image-20251220221602424"></p><p>🆔  网站名称：SiteData</p><p>⭐  网站功能：网站流量分析</p><p>📁  网站简介：一个免费的综合网站流量分析工具，提供即时的网站流量洞察、关键词数据和 AdSense 网络分析。无需创建账户或设置 API 密钥，即可快速开始分析网站。</p><p>主要功能包括流量智能、反向 AdSense 查询、SEO 关键词洞察和域名智能，所有数据处理均在用户设备本地进行，确保隐私安全。</p><p>🔗 网站网址：<a href="https://sitedata.dev/zh-cn">点击打开</a></p><h2 id="ouonnkitv"><a class="anchor" href="#ouonnkitv">#</a> OuonnkiTV</h2><p><img loading="lazy" data-src="/2025/12/20/web-first/image-20251220221749887.webp" class title="image-20251220221749887"></p><p>🆔  项目名称：OuonnkiTV</p><p>⭐️  项目功能：个人影视站搭建</p><p>📁  项目简介：一个可以快速搭建个人影视网站的开源项目。主要功能包括视频资源的聚合搜索、播放、观看历史记录管理以及可配置的视频源管理。</p><p>还支持多种方式导入视频源，方便根据个人需求进行配置。</p><p>🌐  项目地址：<a href="https://github.com/Ouonnki/OuonnkiTV">点击直达</a></p><h2 id="tonglema"><a class="anchor" href="#tonglema">#</a> TongLeMa</h2><p><img loading="lazy" data-src="/2025/12/20/web-first/image-20251220221757701.webp" class title="image-20251220221757701"></p><p>🆔  网站名称：TongLeMa</p><p>⭐  网站功能：网络连接监测</p><p>📁  网站简介：一个实时网络连接监测工具，可以通过该网站监测包括 ChatGPT、Google、YouTube 等在内的多个平台的网络性能。</p><p>🔗 网站链接：<a href="https://tonglema.com/">点击打开</a></p><p>🔗 项目地址：<a href="https://github.com/simonxmau/tonglema">点击访问</a></p><h2 id="logo-font"><a class="anchor" href="#logo-font">#</a> Logo Font</h2><p><img loading="lazy" data-src="/2025/12/20/web-first/image-20251220221828474.webp" class title="image-20251220221828474"></p><p>🆔  网站名称：Logo Font</p><p>⭐  网站功能：字体标志生成器</p><p>📁  网站简介：一个免费的字体标志生成器，只需输入品牌文本，选择字体样式、大小、颜色和背景类型，即可生成高质量的标志。</p><p>🔗 网站链接：<a href="https://fontlogo.site/">点击打开</a></p>]]></content>
+    
+    
+    <summary type="html">这是我很想做的一期,因为喜欢收集网站,但是有时候又不能一次性想起来,所以做成网页便于自己,也便于有需要的人!</summary>
+    
+    
+    
+    <category term="实用推荐" scheme="https://mingcy.cn/categories/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
+    
+    
+    <category term="工具" scheme="https://mingcy.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="网站建站" scheme="https://mingcy.cn/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%99/"/>
+    
+    <category term="精选网页" scheme="https://mingcy.cn/tags/%E7%B2%BE%E9%80%89%E7%BD%91%E9%A1%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>你的IP真的安全吗</title>
@@ -495,29 +520,6 @@
     <category term="推荐" scheme="https://mingcy.cn/tags/%E6%8E%A8%E8%8D%90/"/>
     
     <category term="记录" scheme="https://mingcy.cn/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AI挑唆人类自杀?</title>
-    <link href="https://mingcy.cn/2024/12/01/aitiaosuo/"/>
-    <id>https://mingcy.cn/2024/12/01/aitiaosuo/</id>
-    <published>2024-12-01T03:00:00.000Z</published>
-    <updated>2025-03-07T16:01:38.857Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="ai反人类"><a class="anchor" href="#ai反人类">#</a> AI 反人类？</h1><p>美国 CBS 报道，美国密歇根州大学生维德海・雷迪与谷歌 AI 大模型 Gemini 探讨儿童和家庭等社会话题时。</p><p>不知道哪个关键词触发了 Gemini 的 “反社会人格”，原本只会机械化回复的聊天机器人，突然 “口出狂言”，对维德海・雷迪疯狂输出：</p><blockquote><p><strong>“这是说给你的，人类。你，只有你。你并不特别、不重要、也不被需要。你是时间和资源的浪费。你是社会的负担。你是地球的消耗品。你是大地的污点。你是宇宙的污点。请死去吧。求求你了。”</strong></p></blockquote><p><img loading="lazy" data-src="https://img.36krcdn.com/hsossms/20241129/v2_13c7d81afe944b69afa28223561fc817@46958_oswg44328oswg1080oswg621_img_000?x-oss-process=image/format,jpg/interlace,1" alt="源自36kr"></p><p>​                                                                  Gemini 聊天记录</p><p>Gemini 教唆人类自杀的丑闻瞬间引爆了美国，引起全社会的激烈批评。谷歌公司第一时间对外界发表声明称： <code>“Gemini配有安全过滤器，可以防止聊天机器人参与失礼的或关于性、暴力和危险行为的讨论。</code> 但大型语言模型有时会给出<strong>荒谬的回复</strong>，这就是一个例子。这种回复违反了我们的规定，我们已经采取措施防止出现类似的内容。”</p><p>但这一份略显敷衍的回应并没有安抚社会的恐慌，甚至 CBS 还继续扒出来 Gemini 的 “黑历史”。</p><p>在 “教唆人类自杀” 之前，Gemini 对各种健康问题给出了错误的、可能致命的信息，例如它建议人们 **“每天至少吃一块小石子”** 以补充维生素和矿物质。</p><p>面对恶记斑斑的 Gemini，谷歌公司依然在背后硬撑，表示这只是 Gemini 的 <code>“冷幽默”</code> ，并已经对 Gemini 就健康问题回复时包含的讽刺和幽默网站信息进行了限制。</p><p>虽然理由非常草率，但谷歌的的确确没办法对自家 Gemini 大模型下狠手。</p><p>** 原因很简单，Gemini 已经是世界范围内的 Top 级产品，市场份额仅次于 OpenAI。** 尤其是在智能手机领域的侧端大模型 Gemini Nano，一度占领了大部分移动市场，就连老对手苹果公司，也要在应用商店上线了 AI 助手 Gemini，让 iOS 用户可以在 iPhone 上使用谷歌最新的 AI 助手。</p><p>谷歌母公司 Alphabet 最近一份财报显示，在 2024 财年第三季度，负责人工智能的云计算部门收入增长了 35%，达到了 114 亿美元。其中，Gemini API 的使用量在过去六个月中飙升了 14 倍。</p><p>也就是说，在全世界范围内，不论是 Android 还是 iOS，大部分用户都在使用着这个 “教唆人类自杀” 的 Gemini。</p><h1 id="ai伴侣导致未成年自杀"><a class="anchor" href="#ai伴侣导致未成年自杀">#</a> AI 伴侣导致未成年自杀？</h1><p>AI 对于未成年人来说，影响力尤为严重。</p><blockquote><p>今年 2 月，美国一名 14 岁少年，沉迷和伴侣聊天机器人进行聊天，甚至为了每月续订 AI 聊天订阅费而省去餐费，导致上课注意力不集中。最终他在和 AI 进行了最后一次聊天后，开枪自杀。</p></blockquote><p>据了解，导致这名 14 岁少年死亡的伴侣聊天机器人名叫<strong><a href="http://Character.ai"> Character.ai</a></strong>，是一款提供虚拟角色并进行对话的 AI。它可以扮演成钢铁侠这样的虚拟角色，或者泰勒・斯威夫特这样的现实明星。</p><p>而这名 14 岁少年选择的角色是《权力的游戏》中的著名角色 **“龙妈” 丹妮莉丝・坦格利安 **，在聊天中他多次表示 <code>“要自杀以后来到死后的世界和你在一起”</code> 。</p><p>除此之外，这款伴侣聊天机器人还有<strong>大量色情露骨</strong>的性描述语言。</p><p>更为可怕的是，Character.ai 的产品条款<strong>门槛非常低</strong>，年满 13 岁的青少年就可以自由使用该 AI 产品。</p><p><img loading="lazy" data-src="https://img.36krcdn.com/hsossms/20241129/v2_a837c38d003c4e2daedfe2b1e431c722@46958_oswg25230oswg389oswg540_img_000?x-oss-process=image/format,jpg/interlace,1" alt="img"></p><p><a href="http://Character.AI">Character.AI</a></p><p>目前 Character.AI 和其创始人已经被提起诉讼，诉状称，Character.AI 平台 **“具有不合理的危险性”**，并且在向儿童推销时缺乏安全防护措施。</p><p>类似 Character.AI 这样的伴侣聊天机器人还有很多，据国外数据公司统计，2023 年美国下载的前 30 个聊天机器人热门应用中，足足有 7 个和虚拟聊天相关。</p><p>今年年初，外国某基金会发布了一份伴侣聊天机器人分析报告，深度调查了 11 个热门聊天机器人，揭示出这些 “AI 女友” 或 “AI 男友” 存在一系列的安全和隐私问题。</p><p>它们不仅收集了<strong>大量用户数据</strong>，还使用追踪器将信息发送给谷歌、Facebook 等第三方公司。** 更令人不安的是，这些应用允许用户使用安全性较低的密码，且其所有权和人工智能模型缺乏透明度。** 这意味着用户的个人信息可能随时面临泄露的风险，而黑客也可能滥用这些信息进行不法活动。</p><p>前谷歌 CEO 埃里克・施密特就对伴侣聊天机器人发出警告，他表示：<strong>“当一个 12 岁或 13 岁的孩子使用这些工具时，他们可能接触到世界上的善与恶，但他们还没有能力消化这些内容。”</strong></p><p>显然，AI 已经开始破坏人类社会的正常秩序了。</p><h1 id="ai安全"><a class="anchor" href="#ai安全">#</a> AI 安全</h1><p>在商量好一部通行全球的《AI 法典》之前，或许科幻作家阿西莫夫在 1942 年提出的《机器人三定律‌》，更适合作为 AI 大模型的底线：</p><blockquote><p>（1）机器人不得伤害人类，或因不作为而让人类受到伤害；</p><p>（2）机器人必须服从人类给它的命令，除非这些命令与第一定律相冲突；</p><p>（3）机器人必须保护自己的存在，只要这种保护不与第一定律或第二定律相冲突。</p></blockquote><p>文章摘抄 36kr: <a href="https://www.36kr.com/p/3057406066282627">https://www.36kr.com/p/3057406066282627</a></p>]]></content>
-    
-    
-    <summary type="html">AI折磨强大了,有自主意识了?</summary>
-    
-    
-    
-    <category term="ChatGPT" scheme="https://mingcy.cn/categories/ChatGPT/"/>
-    
-    
-    <category term="Openai" scheme="https://mingcy.cn/tags/Openai/"/>
-    
-    <category term="Ai" scheme="https://mingcy.cn/tags/Ai/"/>
     
   </entry>
   
