@@ -7,6 +7,19 @@
     "home_page_url": "https://mingcy.cn",
     "items": [
         {
+            "id": "https://mingcy.cn/2026/01/03/ai-phone/",
+            "url": "https://mingcy.cn/2026/01/03/ai-phone/",
+            "title": "AI控制手机",
+            "date_published": "2026-01-03T05:36:00.000Z",
+            "content_html": "<h1 id=\"碎碎念\"><a class=\"anchor\" href=\"#碎碎念\">#</a> 碎碎念</h1>\n<blockquote>\n<p>最近还好，过年啦！这是过年的第一篇文章，没有时间写博客的 2025 的总结，但写了日记的总结，这一年真的发生了很多有意思的事情，遇到了很多有意思的人....</p>\n<p>12-30 号我做了一个新年倒计时，我的想法是 &quot;2025 年有太多糟糕的情绪，出现在我们的身边，所以这些坏情绪环绕在我们的周围，也就环绕在 10-1 的数字周围，大家一起跟我喊出倒计时，让这些坏情绪在年末终结，之后数到 0 的时候，一束烟花从底下升起，最后在空中绽放开来，发出很响亮的爆鸣声，最后在这情况下 2026 就跳出来，代表着去年的坏情绪都已经消失了，一起来迎接 2026, 祝大家在 202 天天开心！&quot;</p>\n<p>本来想的挺好的，但是吧效果没有做出了，也比较遗憾吧，毕竟我的技术也就这样，莫关系，在班级元旦，我演了最后一个小品 &lt;扶不扶&gt; 我是里面的老奶奶，大家都说我是 MVP, 开头是真的摔，哈哈哈。不瞒你说，我一直都有一个演员的梦想。这也算 是圆满了，这一天很开心！</p>\n<p>跨年这一天，我没有出去，毕竟吃了去年的亏，人太多了，再说了，人家都是跟女朋友出去，我嘛我连个对象都没有算了算了，我兄弟的对象，都是我亲眼看着起来的，还挺甜的！</p>\n<p>1-2 号，我去医院做了个近视手术的检查，检查结果说我这个可以做全飞秒，切口只有 4nm, 打算寒假的时候就去做，检查花了 691.  不敢想象拿强光照着你的眼睛，直直的打着你，让后让你看正前方，上方，左上，右上，左边，左下..... 给我眼睛照的不停地流泪，我说我哭的时候都没这么多......</p>\n</blockquote>\n<p>2026 让我们一起努力变好！<img loading=\"lazy\" data-src=\"/2026/01/03/ai-phone/wx.webp\" class title=\"wx\"></p>\n<h1 id=\"茗述\"><a class=\"anchor\" href=\"#茗述\">#</a> 茗述</h1>\n<h2 id=\"简述\"><a class=\"anchor\" href=\"#简述\">#</a> 简述</h2>\n<p>先看看<ins class=\"wavy\">豆包手机</ins></p>\n<blockquote>\n<p>2025.12.1  豆包手机发布</p>\n<p>2025.12.2~9  某信，某宝 打压限制</p>\n<p>2025.12.10  <strong><em>* 智谱开源：*</em>*<em>Open-AutoGLM*</em></strong><img loading=\"lazy\" data-src=\"/2026/01/03/ai-phone/640.webp\" class title=\"图片\"></p>\n</blockquote>\n<p>这个开源项目太顶了，<ins class=\"wavy\"><strong>不到一周就 1.3 万的 Star 了。</strong></ins></p>\n<p>基于这个开源框架，就能让 AI 可以<strong>像人眼一样看手机屏幕</strong>，然后像人手一样去点击。</p>\n<p>你给它一个任务，比如：</p>\n<blockquote>\n<p><em>帮我总结下<strong>长春</strong>的景点，到高德地图上收藏一下这几个景点，特别是具体看看博物馆门票价格，再去 12306 上订一张上午十点从北京去长春的高铁票，把相关信息整理好给我。</em></p>\n</blockquote>\n<p><img loading=\"lazy\" data-src=\"/2026/01/03/ai-phone/image-20260103140654915.webp\" class title=\"image-20260103140654915\"></p>\n<p>AutoGLM 会先把手机屏幕截个图，模型会分析截图，通过视觉定位找到当前要点击哪个按钮或者做啥操作。</p>\n<p>并通过  <code>ADB（Android Debug Bridge）</code> 工具，直接向手机发送点击、滑动、输入文字的指令。</p>\n<p>最终这样 ++<strong> 一步步模拟人看手机、操纵手机的行为，完成你给的任务。</strong>++</p>\n<p><img loading=\"lazy\" data-src=\"/2026/01/03/ai-phone/640-17674204631235.webp\" class title=\"图片\"></p>\n<h2 id=\"开源地址\"><a class=\"anchor\" href=\"#开源地址\">#</a> 开源地址</h2>\n<blockquote>\n<p>开源地址：https:<em><a href=\"//github.com/zai-org/Open-AutoGLM\">//github.com/zai-org/Open-AutoGLM</a></em></p>\n</blockquote>\n<p>而且这个开源<strong>可以本地部署</strong>，而且如果你有显卡，大约需要 <ins>24GB+ 显存</ins>，你可以把这个 Agent 跑在本地。</p>\n<p>隐私数据，比如聊天记录、支付画面啥的不上传到云端也能自动化的你的安卓手机了。</p>\n<p><strong>如何使用</strong></p>\n<p>你可以使用<a href=\"https://console.anthropic.com/\"> Claude Code</a>，配置 GLM Coding Plan 后，输入以下提示词，快速部署本项目。</p>\n<figure class=\"highlight markdown\"><figcaption data-lang=\"markdown\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>访问文档，为我安装 AutoGLM ：https://raw.githubusercontent.com/zai-org/Open-AutoGLM/refs/heads/main/README.md</pre></td></tr></table></figure>",
+            "tags": [
+                "实用推荐",
+                "实用推荐",
+                "Ai",
+                "开源"
+            ]
+        },
+        {
             "id": "https://mingcy.cn/2025/12/20/web-first/",
             "url": "https://mingcy.cn/2025/12/20/web-first/",
             "title": "实用网页推荐第一期",
@@ -242,18 +255,6 @@
                 "生活方面",
                 "心理",
                 "生活",
-                "记录"
-            ]
-        },
-        {
-            "id": "https://mingcy.cn/2024/12/21/riji12-09/",
-            "url": "https://mingcy.cn/2024/12/21/riji12-09/",
-            "title": "奋进青年奖状!",
-            "date_published": "2024-12-21T06:00:00.000Z",
-            "content_html": "<h1 id=\"茗起\"><a class=\"anchor\" href=\"#茗起\">#</a> 茗起</h1>\n<p>这期文章想做很久了，最近实在是太忙了，所以没有时间做，如今抽出来了一些时间，等着做不如早点做！<br>\n 这是我在国家微信公众号上参加的活动，只需要答题就可以获得.<br>\n 原本这个东西是给大学生们，积累学分用的，我当时没看到，后来看了政府文件才知道的.<br>\n 不过这个东西的确非常的帅！<br>\n 现在举行的时保护环境的一个奖状，如果有人想要的话，请看末尾，扫码参加活动！</p>\n<h1 id=\"茗叙\"><a class=\"anchor\" href=\"#茗叙\">#</a> 茗叙</h1>\n<p>奖状如下：非常的帅！！<br>\n<img loading=\"lazy\" data-src=\"1.webp\" alt=\"奖状\"></p>\n<p>还有一个勋章！！</p>\n<p><img loading=\"lazy\" data-src=\"2.webp\" alt=\"奖状\"></p>\n<p><img loading=\"lazy\" data-src=\"3.webp\" alt=\"奖状\"></p>\n<p>\n<video src=\"/2024/12/21/riji12-09/4.mp4\" position=\"absolute\" width=\"100%\" height=\"100%\" controls=\"controls\"></video>\n</p>\n<h1 id=\"如何参加活动\"><a class=\"anchor\" href=\"#如何参加活动\">#</a> 如何参加活动？</h1>\n<p>扫描我的二维码</p>\n<p><img loading=\"lazy\" data-src=\"6.webp\" alt=\"参加活动\"></p>\n<p><img loading=\"lazy\" data-src=\"5.webp\" alt=\"参加活动\"></p>\n",
-            "tags": [
-                "生活方面",
-                "推荐",
                 "记录"
             ]
         }
