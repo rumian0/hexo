@@ -6,7 +6,7 @@
   <link href="https://mingcy.cn/atom.xml" rel="self"/>
   
   <link href="https://mingcy.cn/"/>
-  <updated>2026-02-03T12:41:22.630Z</updated>
+  <updated>2026-02-04T13:29:48.085Z</updated>
   <id>https://mingcy.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://mingcy.cn/2026/02/02/Taulscale/"/>
     <id>https://mingcy.cn/2026/02/02/Taulscale/</id>
     <published>2026-02-02T13:10:00.000Z</published>
-    <updated>2026-02-03T12:41:22.630Z</updated>
+    <updated>2026-02-04T13:29:48.085Z</updated>
     
     <content type="html"><![CDATA[<h1 id="碎碎念"><a class="anchor" href="#碎碎念">#</a> 碎碎念</h1><blockquote><p>怎么说呢，也是一模完了，今天是开始补课，又是 10 天体验卡，不过还是走读，因为宿舍要装修，具体安排是每天早上 10 点上学，下午 6.30 放学，我就说白了，这更小学有什么区别，也很不错，哈哈哈！</p></blockquote><h1 id="茗述"><a class="anchor" href="#茗述">#</a> 茗述</h1><h2 id="介绍"><a class="anchor" href="#介绍">#</a> 介绍</h2><p>软件名称:<strong>TailScale</strong> + 内网穿透</p><p>用于 P2P 点对点的远程控制，无提示，只需要<ins class="wavy">安装，登录</ins>，并且无需公网 IP, 完全免费，多设备互联，无限速.....</p><blockquote><p>🙌提示：只使用该软件建立公网环境，需要登录统一账号，如果需要实现远程控制，请自备 SSH</p></blockquote><p>网站官网:<a href="https://tailscale.com/">https://tailscale.com/</a></p><p><img loading="lazy" data-src="/2026/02/02/Taulscale/image-20260202212432470.webp" class title="image-20260202212432470"></p><h2 id="安装"><a class="anchor" href="#安装">#</a> 安装</h2><p>链接:<a href="https://tailscale.com/download/">https://tailscale.com/download/</a></p><p><img loading="lazy" data-src="/2026/02/02/Taulscale/image-20260202212706451.webp" class title="image-20260202212706451"></p><p><img loading="lazy" data-src="/2026/02/02/Taulscale/image-20260202212813506.webp" class title="image-20260202212813506"></p><p>PC 的安装包也仅仅只有 <code>1.33MB</code></p><h2 id="登录"><a class="anchor" href="#登录">#</a> 登录</h2><p>选择一个不需要魔法的账号登录即可，这里使用<strong> GItHub</strong></p><p><img loading="lazy" data-src="/2026/02/02/Taulscale/Screenshot_2026-02-02-21-30-35-359_tv.danmaku.bilj.webp" class title="Screenshot_2026-02-02-21-30-35-359_tv.danmaku.bilj"></p><p><img loading="lazy" data-src="/2026/02/02/Taulscale/Screenshot_2026-02-02-21-29-48-842_tv.danmaku.bilj.webp" class title="image-20260202214005277"></p><p><img loading="lazy" data-src="/2026/02/02/Taulscale/Screenshot_2026-02-02-21-29-55-081_tv.danmaku.bilj.webp" class title="Screenshot_2026-02-02-21-29-55-081_tv.danmaku.bilj"></p><p><img loading="lazy" data-src="/2026/02/02/Taulscale/Screenshot_2026-02-02-21-29-32-448_tv.danmaku.bilj.webp" class title="Screenshot_2026-02-02-21-29-32-448_tv.danmaku.bilj"></p><h2 id="展示"><a class="anchor" href="#展示">#</a> 展示</h2><p>效果吗.... 就是这个效果，由于我不常用 SSH, 我才发现我没这个软件，咳咳后面补上！</p>]]></content>
     
