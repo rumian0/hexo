@@ -136,11 +136,11 @@
     <category term="实用推荐" scheme="https://mingcy.cn/categories/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
     
     
-    <category term="实用推荐" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
-    
     <category term="Ai" scheme="https://mingcy.cn/tags/Ai/"/>
     
     <category term="开源" scheme="https://mingcy.cn/tags/%E5%BC%80%E6%BA%90/"/>
+    
+    <category term="实用推荐" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
@@ -234,11 +234,11 @@
     <category term="技术分享" scheme="https://mingcy.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
     
+    <category term="Ai" scheme="https://mingcy.cn/tags/Ai/"/>
+    
     <category term="实用推荐" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/"/>
     
     <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="Ai" scheme="https://mingcy.cn/tags/Ai/"/>
     
   </entry>
   
@@ -486,9 +486,9 @@
     <category term="实用技巧" scheme="https://mingcy.cn/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     
     
-    <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="实用" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8/"/>
+    
+    <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="生活" scheme="https://mingcy.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
