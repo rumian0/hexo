@@ -10,14 +10,85 @@
         </author>
         <description>茶香四溢,编程世界.</description>
         <language>zh-CN</language>
-        <pubDate>Thu, 19 Feb 2026 00:00:00 +0800</pubDate>
-        <lastBuildDate>Thu, 19 Feb 2026 00:00:00 +0800</lastBuildDate>
+        <pubDate>Sat, 28 Feb 2026 00:00:00 +0800</pubDate>
+        <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0800</lastBuildDate>
         <category term="编程" />
         <category term="科技" />
         <category term="技术" />
         <category term="分享" />
         <category term="心理" />
         <category term="爱好" />
+        <item>
+            <guid isPermalink="true">https://mingcy.cn/2026/02/28/cloudflate-R2/</guid>
+            <title>基于Cloudflare R2搭建免费云盘</title>
+            <link>https://mingcy.cn/2026/02/28/cloudflate-R2/</link>
+            <category term="技术教程" scheme="https://mingcy.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" />
+            <category term="工具" scheme="https://mingcy.cn/tags/%E5%B7%A5%E5%85%B7/" />
+            <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="网盘" scheme="https://mingcy.cn/tags/%E7%BD%91%E7%9B%98/" />
+            <pubDate>Sat, 28 Feb 2026 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;碎碎念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#碎碎念&#34;&gt;#&lt;/a&gt; 碎碎念&lt;/h1&gt;
+&lt;p&gt;也是明天就开学了，其实感觉开学也挺好的，忙起来就没这么多烦心事了，最近情感上也是受挫了，双方都有错吧，以前听情歌我是没有任何反应的，直到这一次，不争气的眼泪就落下来了。有他的时候也是为自己生活，只是又回到自己生活而已，总觉得差点什么，但我不好说了，破碎的镜子，碎掉了就是碎掉了，想要修复还是会有裂纹的...&lt;/p&gt;
+&lt;h1 id=&#34;茗述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茗述&#34;&gt;#&lt;/a&gt; 茗述&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;之前分享一个 Cloudflare 网盘项目，不太稳定，已经删库了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EdgeStash&lt;/strong&gt; 是一个功能强大、易于部署的私有云盘解决方案，完全构建在 Cloudflare 的全球网络之上。它利用 &lt;strong&gt;Cloudflare Workers&lt;/strong&gt;、&lt;strong&gt;R2 存储&lt;/strong&gt; 和 &lt;strong&gt;KV 存储&lt;/strong&gt;，为您提供一个安全、快速且低成本的个人或团队文件存储与分享平台。&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640.webp&#34; class title=&#34;图片&#34;&gt;EdgeStash&lt;strong&gt; 支持带密码分享文件、在线预览 docx 或 pdf 文档、后台管理授权用户、查看分享文件浏览 / 下载量！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a href=&#34;https://github.com/hhy-2021/EdgeStash&#34;&gt;https://github.com/hhy-2021/EdgeStash&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：R2 的免费额度有 10G，且需要绑卡，因此这个云盘我只推荐个人或团体内部使用。&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-17722731293291.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;部署教程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#部署教程&#34;&gt;#&lt;/a&gt; 部署教程&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建 KV 空间，名字任意 &lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-17722731293302.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建 R2 存储，名字任意 &lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-17722731293303.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建 Workers 应用程序 &lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-17722731293304.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击从 hello world 开始，完成创建 &lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-17722731293305.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;复制 GitHub 项目中 &lt;code&gt;worker.js&lt;/code&gt;  的内容 地址：&lt;a href=&#34;https://github.com/hhy-2021/EdgeStash/blob/main/worker.js&#34;&gt;https://github.com/hhy-2021/EdgeStash/blob/main/worker.js&lt;/a&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-17722731293306.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;回到 workers，点击编辑代码，全部替换，点击部署 &lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-17722731293317.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;返回 Worker 概览页面，点击 &lt;strong&gt;设置&lt;/strong&gt; -&amp;gt; &lt;strong&gt;变量和机密&lt;/strong&gt;。&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-17722731293318.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;配置 KV 绑定&lt;/strong&gt;：&lt;/li&gt;
+&lt;li&gt;变量名称： &lt;code&gt;KV_STORE&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;KV 命名空间：选择第 1 步创建的命名空间。&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-17722731293319.webp&#34; class title=&#34;图片&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配置 R2 绑定&lt;/strong&gt;：&lt;/li&gt;
+&lt;li&gt;变量名称： &lt;code&gt;R2_BUCKET&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;R2 存储桶：选择您在第 2 步创建的存储桶。&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-177227312933110.webp&#34; class title=&#34;图片&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配置环境变量&lt;/strong&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ADMIN_PASSWORD&lt;/code&gt; ：设置您的管理员登录密码。&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-177227312933211.webp&#34; class title=&#34;图片&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;访问&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#访问&#34;&gt;#&lt;/a&gt; 访问&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;此时可以直接访问了 &lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-177227312933212.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;也可绑定自定义域名，更加方便 &lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/02/28/cloudflate-R2/640-177227312933213.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;已知的小 bug&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;管理员登录时如果点击 &lt;code&gt;登录&lt;/code&gt; 按钮无反应，切换到 &lt;code&gt;用户登录&lt;/code&gt; ，把 &lt;code&gt;用户登录&lt;/code&gt; 的 &lt;code&gt;邮箱&lt;/code&gt; &lt;strong&gt;输入框内容清空&lt;/strong&gt;，然后重新进行管理员登录即可～&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://mingcy.cn/2026/02/19/eyes/</guid>
             <title>关于我的近视手术</title>
@@ -1221,55 +1292,6 @@ SLS 和 SLES 强力清洁产品&lt;br&gt;
 &lt;h1 id=&#34;视频&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#视频&#34;&gt;#&lt;/a&gt; 视频&lt;/h1&gt;
 &lt;p&gt;
 &lt;video src=&#34;https://mingcy.cn/2025/02/12/sleep/极速入睡.mp4&#34; position=&#34;absolute&#34; width=&#34;100%&#34; height=&#34;100%&#34; controls=&#34;controls&#34;&gt;&lt;/video&gt;
-&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://mingcy.cn/2025/02/06/phone_toupin/</guid>
-            <title>Escrcpy--手机投屏到电脑工具！</title>
-            <link>https://mingcy.cn/2025/02/06/phone_toupin/</link>
-            <category term="技术教程" scheme="https://mingcy.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" />
-            <category term="生活" scheme="https://mingcy.cn/tags/%E7%94%9F%E6%B4%BB/" />
-            <category term="记录" scheme="https://mingcy.cn/tags/%E8%AE%B0%E5%BD%95/" />
-            <pubDate>Thu, 06 Feb 2025 09:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;&lt;strong&gt;软件介绍：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;今天介绍的这款手机投屏到电脑的软件叫：&lt;strong&gt;Escrcpy&lt;/strong&gt; ，是一款开源免费的软件，软件干净简洁，无广告零套路。&lt;/p&gt;
-&lt;p&gt;&amp;lt;video width=&amp;quot;640&amp;quot; height=&amp;quot;360&amp;quot; controls&amp;gt;&lt;br&gt;
-&amp;lt;source src=&amp;quot;&lt;a href=&#34;https://mingcy.cn/2025/02/06/phone_toupin/1.git&#34;&gt;https://mingcy.cn/2025/02/06/phone_toupin/1.git&lt;/a&gt;&amp;quot; type=&amp;quot;video/mp4&amp;quot;&amp;gt;&lt;br&gt;
-&amp;lt;/video&amp;gt;&lt;/p&gt;
-&lt;p&gt;投屏类的软件一定要&lt;strong&gt;两台设备都在同一局域网内&lt;/strong&gt; ，不在同一局域网不支持同屏。&lt;/p&gt;
-&lt;p&gt;软件分为有线投屏和无线投屏，不过不管是有线还是无级，都要确保已打开【开发者选项】和【USB 调试】。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/2.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/3.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;无线连接：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;如果是无线的，需要填写手机端的 IP 地址、端口和配对码，这些数据在手机的 “无线调试” 处有显示。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/4.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/5.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;配置好了以后填入软件中即可，当设备名称后面有 “WIFI” 字样时表明无线配对成功了。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/6.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;有线连接&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;有线连接就比较简单了，手机使用数据线连接电脑后，在电脑中就能查看到手机设备。点击【开始镜像】即能手机投屏到电脑中。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/7.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;主要功能&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Escrcpy 这款软件支持多手机投屏，有多设备连接、启动 APP、屏幕旋转、开关屏幕等等功能。** 点击下面卡片👇，支持软妹：**&lt;strong&gt; 多设备连接&lt;/strong&gt;，通过有线或者无线连接到 Escrcpy 后，可以同时在电脑端里显示多部手机设备的连接，便于我们操作。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/8.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;启动 APP：&lt;/strong&gt; 在电脑端有个【启动 APP】的功能，点击这里，然后选择自己需要启动的 APP，即能启动手机里的 APP 软件。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/9.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;下面是启动的动图：&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/10.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;屏幕旋转：&lt;/strong&gt; 手机端的打开 APP 基本都是竖屏的，如果软件自带能横屏还好，如果无法横屏，那么只能用软件来实现。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/11.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;而 Escrcpy 就自带了旋转屏幕的功能，选择横屏，则手机端立马就横屏使用。&lt;/p&gt;
-&lt;p&gt;** 电源：** 点击电源按钮，可以开启屏幕和息屏操作。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/12.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;其他功能：&lt;/strong&gt; 除了上面介绍的功能之外，软件还有音量控制、截取屏幕、安装 APP、文件管理等等实用功能。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/13.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;其中的&lt;strong&gt;文件管理功能&lt;/strong&gt; 就是可以上传和下载手机端的资源，挺方便的！&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/02/06/phone_toupin/14.webp&#34; class title=&#34;图片&#34;&gt;&lt;/p&gt;
-&lt;p&gt;其他的大家自己去体验，软件就介绍到这里啦！&lt;/p&gt;
-&lt;h2 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h2&gt;
-&lt;p&gt;&lt;br&gt;
-&lt;br&gt;
 &lt;/p&gt;
  ]]></description>
         </item>

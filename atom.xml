@@ -6,7 +6,7 @@
   <link href="https://mingcy.cn/atom.xml" rel="self"/>
   
   <link href="https://mingcy.cn/"/>
-  <updated>2026-02-19T09:20:33.231Z</updated>
+  <updated>2026-02-28T10:10:08.473Z</updated>
   <id>https://mingcy.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于Cloudflare R2搭建免费云盘</title>
+    <link href="https://mingcy.cn/2026/02/28/cloudflate-R2/"/>
+    <id>https://mingcy.cn/2026/02/28/cloudflate-R2/</id>
+    <published>2026-02-27T16:00:00.000Z</published>
+    <updated>2026-02-28T10:10:08.473Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="碎碎念"><a class="anchor" href="#碎碎念">#</a> 碎碎念</h1><p>也是明天就开学了，其实感觉开学也挺好的，忙起来就没这么多烦心事了，最近情感上也是受挫了，双方都有错吧，以前听情歌我是没有任何反应的，直到这一次，不争气的眼泪就落下来了。有他的时候也是为自己生活，只是又回到自己生活而已，总觉得差点什么，但我不好说了，破碎的镜子，碎掉了就是碎掉了，想要修复还是会有裂纹的...</p><h1 id="茗述"><a class="anchor" href="#茗述">#</a> 茗述</h1><p><strong>之前分享一个 Cloudflare 网盘项目，不太稳定，已经删库了</strong></p><p><strong>EdgeStash</strong> 是一个功能强大、易于部署的私有云盘解决方案，完全构建在 Cloudflare 的全球网络之上。它利用 <strong>Cloudflare Workers</strong>、<strong>R2 存储</strong> 和 <strong>KV 存储</strong>，为您提供一个安全、快速且低成本的个人或团队文件存储与分享平台。<img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640.webp" class title="图片">EdgeStash<strong> 支持带密码分享文件、在线预览 docx 或 pdf 文档、后台管理授权用户、查看分享文件浏览 / 下载量！</strong></p><p>项目地址：<a href="https://github.com/hhy-2021/EdgeStash">https://github.com/hhy-2021/EdgeStash</a></p><blockquote><p>注意：R2 的免费额度有 10G，且需要绑卡，因此这个云盘我只推荐个人或团体内部使用。<img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-17722731293291.webp" class title="图片"></p></blockquote><h3 id="部署教程"><a class="anchor" href="#部署教程">#</a> 部署教程</h3><ol><li><p>创建 KV 空间，名字任意 <img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-17722731293302.webp" class title="图片"></p></li><li><p>创建 R2 存储，名字任意 <img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-17722731293303.webp" class title="图片"></p></li><li><p>创建 Workers 应用程序 <img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-17722731293304.webp" class title="图片"></p></li><li><p>点击从 hello world 开始，完成创建 <img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-17722731293305.webp" class title="图片"></p></li><li><p>复制 GitHub 项目中 <code>worker.js</code>  的内容 地址：<a href="https://github.com/hhy-2021/EdgeStash/blob/main/worker.js">https://github.com/hhy-2021/EdgeStash/blob/main/worker.js</a><img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-17722731293306.webp" class title="图片"></p></li><li><p>回到 workers，点击编辑代码，全部替换，点击部署 <img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-17722731293317.webp" class title="图片"></p></li><li><p>返回 Worker 概览页面，点击 <strong>设置</strong> -&gt; <strong>变量和机密</strong>。<img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-17722731293318.webp" class title="图片"></p></li><li><ul><li><strong>配置 KV 绑定</strong>：</li><li>变量名称： <code>KV_STORE</code></li><li>KV 命名空间：选择第 1 步创建的命名空间。<img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-17722731293319.webp" class title="图片"></li><li><strong>配置 R2 绑定</strong>：</li><li>变量名称： <code>R2_BUCKET</code></li><li>R2 存储桶：选择您在第 2 步创建的存储桶。<img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-177227312933110.webp" class title="图片"></li><li><strong>配置环境变量</strong>：</li><li><code>ADMIN_PASSWORD</code> ：设置您的管理员登录密码。<img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-177227312933211.webp" class title="图片"></li></ul></li></ol><h3 id="访问"><a class="anchor" href="#访问">#</a> 访问</h3><ol><li><p>此时可以直接访问了 <img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-177227312933212.webp" class title="图片"></p></li><li><p>也可绑定自定义域名，更加方便 <img loading="lazy" data-src="/2026/02/28/cloudflate-R2/640-177227312933213.webp" class title="图片"></p></li><li><p>已知的小 bug</p><blockquote><p>管理员登录时如果点击 <code>登录</code> 按钮无反应，切换到 <code>用户登录</code> ，把 <code>用户登录</code> 的 <code>邮箱</code> <strong>输入框内容清空</strong>，然后重新进行管理员登录即可～</p></blockquote></li></ol>]]></content>
+    
+    
+    <summary type="html">基于Cloudflare R2搭建免费云盘，支持带密码分享、查看下载量、管理用户等功能</summary>
+    
+    
+    
+    <category term="技术教程" scheme="https://mingcy.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="工具" scheme="https://mingcy.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="网盘" scheme="https://mingcy.cn/tags/%E7%BD%91%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>关于我的近视手术</title>
@@ -489,29 +514,6 @@
     <category term="实用" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8/"/>
     
     <category term="生活" scheme="https://mingcy.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Escrcpy--手机投屏到电脑工具！</title>
-    <link href="https://mingcy.cn/2025/02/06/phone_toupin/"/>
-    <id>https://mingcy.cn/2025/02/06/phone_toupin/</id>
-    <published>2025-02-06T01:00:00.000Z</published>
-    <updated>2025-03-07T16:01:40.192Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>软件介绍：</strong></p><p>今天介绍的这款手机投屏到电脑的软件叫：<strong>Escrcpy</strong> ，是一款开源免费的软件，软件干净简洁，无广告零套路。</p><p>&lt;video width=&quot;640&quot; height=&quot;360&quot; controls&gt;<br>&lt;source src=&quot;<a href="https://mingcy.cn/2025/02/06/phone_toupin/1.git">https://mingcy.cn/2025/02/06/phone_toupin/1.git</a>&quot; type=&quot;video/mp4&quot;&gt;<br>&lt;/video&gt;</p><p>投屏类的软件一定要<strong>两台设备都在同一局域网内</strong> ，不在同一局域网不支持同屏。</p><p>软件分为有线投屏和无线投屏，不过不管是有线还是无级，都要确保已打开【开发者选项】和【USB 调试】。</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/2.webp" class title="图片"></p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/3.webp" class title="图片"></p><p><strong>无线连接：</strong></p><p>如果是无线的，需要填写手机端的 IP 地址、端口和配对码，这些数据在手机的 “无线调试” 处有显示。</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/4.webp" class title="图片"></p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/5.webp" class title="图片"></p><p>配置好了以后填入软件中即可，当设备名称后面有 “WIFI” 字样时表明无线配对成功了。</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/6.webp" class title="图片"></p><p><strong>有线连接</strong></p><p>有线连接就比较简单了，手机使用数据线连接电脑后，在电脑中就能查看到手机设备。点击【开始镜像】即能手机投屏到电脑中。</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/7.webp" class title="图片"></p><p><strong>主要功能</strong></p><p>Escrcpy 这款软件支持多手机投屏，有多设备连接、启动 APP、屏幕旋转、开关屏幕等等功能。** 点击下面卡片👇，支持软妹：**<strong> 多设备连接</strong>，通过有线或者无线连接到 Escrcpy 后，可以同时在电脑端里显示多部手机设备的连接，便于我们操作。</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/8.webp" class title="图片"></p><p><strong>启动 APP：</strong> 在电脑端有个【启动 APP】的功能，点击这里，然后选择自己需要启动的 APP，即能启动手机里的 APP 软件。</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/9.webp" class title="图片"></p><p>下面是启动的动图：</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/10.webp" class title="图片"></p><p><strong>屏幕旋转：</strong> 手机端的打开 APP 基本都是竖屏的，如果软件自带能横屏还好，如果无法横屏，那么只能用软件来实现。</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/11.webp" class title="图片"></p><p>而 Escrcpy 就自带了旋转屏幕的功能，选择横屏，则手机端立马就横屏使用。</p><p>** 电源：** 点击电源按钮，可以开启屏幕和息屏操作。</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/12.webp" class title="图片"></p><p><strong>其他功能：</strong> 除了上面介绍的功能之外，软件还有音量控制、截取屏幕、安装 APP、文件管理等等实用功能。</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/13.webp" class title="图片"></p><p>其中的<strong>文件管理功能</strong> 就是可以上传和下载手机端的资源，挺方便的！</p><p><img loading="lazy" data-src="/2025/02/06/phone_toupin/14.webp" class title="图片"></p><p>其他的大家自己去体验，软件就介绍到这里啦！</p><h2 id="下载"><a class="anchor" href="#下载">#</a> 下载</h2><p><br><br></p>]]></content>
-    
-    
-    <summary type="html">Escrcpy--手机投屏到电脑工具！</summary>
-    
-    
-    
-    <category term="技术教程" scheme="https://mingcy.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="生活" scheme="https://mingcy.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-    <category term="记录" scheme="https://mingcy.cn/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
