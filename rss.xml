@@ -18,6 +18,8 @@
         <category term="分享" />
         <category term="心理" />
         <category term="爱好" />
+        <category term="生活" />
+        <category term="家庭" />
         <item>
             <guid isPermalink="true">https://mingcy.cn/2026/05/23/webrtc/</guid>
             <title>开了VPN但真实IP被WebRTC泄露</title>
