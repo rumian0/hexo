@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>随机弹出祝福</title>
+  <style>
+    html,body{
+      margin:0;
+      padding:0;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      background:#fff0f6;
+      font-family:'Segoe UI',sans-serif;
+    }
+    .control-panel{
+      position:fixed;
+      top:20px;
+      right:20px;
+      width:260px;
+      padding:18px 20px 14px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.92);
+      box-shadow:0 15px 40px rgba(0,0,0,0.18);
+      border:1px solid rgba(255,255,255,0.7);
+      backdrop-filter:blur(8px);
+      font-size:13px;
+      color:#2d2f38;
+      z-index:1000;
+      transition:opacity .25s ease, transform .25s ease;
+      opacity:0;
+      transform:translateY(-12px);
+      pointer-events:none;
+    }
+    .control-panel.visible{
+      opacity:1;
+      transform:translateY(0);
+      pointer-events:auto;
+    }
+    .panel-toggle{
+      position:fixed;
+      top:20px;
+      right:20px;
+      width:45px;
+      height:45px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      background-color:rgb(172, 160, 240);
+      border-radius:10px;
+      cursor:pointer;
+      border:none;
+      box-shadow:0 0 0 2px rgb(212,209,255),0 12px 25px rgba(0,0,0,0.2);
+      z-index:1001;
+      transition:transform .2s ease;
+    }
+    .panel-toggle:active{
+      transform:scale(0.95);
+    }
+    .panel-toggle .bar{
+      width:50%;
+      height:2px;
+      background-color:rgb(229,229,229);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      border-radius:2px;
+    }
+    .panel-toggle .bar::before{
+      content:"";
+      width:2px;
+      height:2px;
+      background-color:rgb(126,117,255);
+      position:absolute;
+      border-radius:50%;
+      border:2px solid #fff;
+      transition:all .3s;
+      box-shadow:0 0 5px #fff;
+    }
+    .panel-toggle .bar1::before{
+      transform:translateX(-4px);
+    }
+    .panel-toggle .bar2::before{
+      transform:translateX(4px);
+    }
+    .panel-toggle:hover .bar1::before{
+      transform:translateX(4px);
+    }
+    .panel-toggle:hover .bar2::before{
+      transform:translateX(-4px);
+    }
+    .devtools-warning{
+      position:fixed;
+      inset:0;
+      background:rgba(14,16,28,0.92);
+      color:#fff;
+      font-size:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px;
+      z-index:2000;
+      backdrop-filter:blur(6px);
+    }
+    .panel-disabled .control-panel,
+    .panel-disabled .panel-toggle{
+      display:none !important;
+    }
+    .control-panel h2{
+      margin:0 0 12px;
+      font-size:15px;
+      letter-spacing:1px;
+      color:#4a4f63;
+    }
+    .control-group{
+      margin-bottom:14px;
+    }
+    .control-group label{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:6px;
+      font-weight:600;
+      color:#3f4454;
+    }
+    .control-group input[type="range"]{
+      width:100%;
+      accent-color:#ff7c9a;
+    }
+    .control-value{
+      font-size:12px;
+      color:#6a6f82;
+    }
+    .msg{
+      position:absolute;
+      width:280px;
+      border-radius:28px;
+      color:#2b3442;
+      font-size:18px;
+      font-weight:600;
+      transform:scale(0) rotate(0deg);
+      opacity:0;
+      animation: pop 1.2s forwards;
+      box-shadow:0 18px 35px rgba(0,0,0,0.18);
+      background:linear-gradient(180deg,var(--panel-top,#fdfdfd),var(--panel-bottom,#f1f1f1));
+      border:1px solid rgba(255,255,255,0.7);
+    }
+    .msg-header{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:26px 26px 0 0;
+      background:var(--header-bg,#e4e4e4);
+      font-size:14px;
+      font-weight:600;
+      letter-spacing:1px;
+      color:#59606f;
+    }
+    .msg-dots{
+      display:flex;
+      gap:6px;
+    }
+    .msg-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      box-shadow:inset 0 1px 2px rgba(0,0,0,0.25);
+    }
+    .msg-dot.red{background:#ff5f57;}
+    .msg-dot.yellow{background:#fdbc40;}
+    .msg-dot.green{background:#28c840;}
+    .msg-body{
+      padding:22px 28px 26px;
+      border-radius:0 0 26px 26px;
+      background:linear-gradient(180deg,var(--body-top,#ffffff),var(--body-bottom,#f8f8f8));
+      color:#1f232b;
+      font-size:20px;
+      line-height:1.35;
+    }
+    @media (max-width: 700px){
+      .control-panel{
+        width:calc(100vw - 40px);
+        right:20px;
+      }
+      .msg{
+        width:min(210px, calc(100vw - 28px));
+        border-radius:18px;
+        font-size:15px;
+      }
+      .msg-header{
+        padding:8px 12px;
+        border-radius:16px 16px 0 0;
+        font-size:11px;
+      }
+      .msg-dot{
+        width:7px;
+        height:7px;
+      }
+      .msg-body{
+        padding:14px 16px 16px;
+        border-radius:0 0 16px 16px;
+        font-size:16px;
+        line-height:1.3;
+      }
+    }
+    @keyframes pop{
+      0%{transform:scale(0) rotate(0deg);opacity:0;}
+      40%{transform:scale(1.2) rotate(var(--angle));opacity:1;}
+      100%{transform:scale(1) rotate(var(--angle));opacity:1;}
+    }
+    @keyframes fadeOut{
+      0%{transform:scale(1) rotate(var(--angle));opacity:1;}
+      100%{transform:scale(0.8) rotate(var(--angle));opacity:0;}
+    }
+    /* 已删除心形元素的CSS样式 */
+  </style>
+</head>
+<body>
+  <button class="panel-toggle setting-btn" aria-label="打开控制面板">
+    <span class="bar bar1"></span>
+    <span class="bar bar2"></span>
+    <span class="bar bar1"></span>
+  </button>
+  <div class="control-panel" id="controlPanel">
+    <h2>弹出控制</h2>
+    <div class="control-group">
+      <label for="freqControl">弹出频率 <span class="control-value" id="freqValue">600ms</span></label>
+      <input type="range" id="freqControl" min="200" max="2000" step="100" value="600" />
+    </div>
+    <div class="control-group">
+      <label for="popControl">弹出时长 <span class="control-value" id="popValue">1200ms</span></label>
+      <input type="range" id="popControl" min="300" max="2000" step="100" value="1200" />
+    </div>
+    <div class="control-group">
+      <label for="stayControl">消失时长 <span class="control-value" id="stayValue">3000ms</span></label>
+      <input type="range" id="stayControl" min="800" max="6000" step="200" value="3000" />
+    </div>
+    <div class="control-group">
+      <label for="fadeControl">淡出动画时长 <span class="control-value" id="fadeValue">800ms</span></label>
+      <input type="range" id="fadeControl" min="200" max="2000" step="100" value="800" />
+    </div>
+  </div>
+  <script>
+    const messages = [
+      '愿你天天开心，笑容如花常开不败！','好运连连，所有小确幸都不期而遇。','事事顺利，所有努力终将闪光。','笑口常开，幸福围绕你身旁。','心想事成，未来如你所愿般美好。','前程似锦，繁花似梦人生灿烂。','幸福安康，岁月温柔且从容。','天天开心，好运常伴你身边。','万事如意，一切尽在掌握中。','甜甜蜜蜜，生活像糖一样甜。','福气满满，笑意盈盈。','好运爆棚，喜事连连不间断。','梦想成真，心中的花都盛开。','生活明朗，未来可期。','平安喜乐，事事顺遂。','一切顺利，好运藏不住。','健康长乐，身体倍儿棒！','所愿皆成，人生无憾。','花开富贵，福寿安康。','青春常驻，美丽常在。','喜事连连，福气滚滚。','财源滚滚，好运不请自来。','岁岁平安，天天开心。','心态阳光，笑对生活。','幸福常伴，温暖如初。','开心每一天，快乐永不止步。','一切美好，都如期而至。','笑容灿烂，温暖人心。','顺心如意，前程似锦。','好运常在，生活闪闪发光！','心有阳光，处处明媚。','幸福来敲门，好运不请自来。','春风得意，万事顺遂。','好运环绕，心想事成。','爱与喜悦常伴左右。','生活甜如蜜，笑容灿若花。','幸福多一点，烦恼少一点。','万般皆好，只盼平安常在。','祝你一切安好，岁岁皆欢。','好运常在，幸福加倍！',
+      '平安喜乐常伴','万事顺意无忧','健康岁岁长安','财运滚滚而来','前程繁花似锦','喜乐皆随你愿','日子温柔闪亮','好运常伴左右','岁岁平安喜乐','事事顺心如意','福禄寿喜齐全','生活甜甜蜜蜜','事业蒸蒸日上','平安顺遂一生','好运如期而至','喜乐无忧常伴','健康平安顺遂','财运亨通如意','前程光明璀璨','日子红火热闹','事事皆如所愿','平安喜乐无忧','健康相伴岁岁','好运连绵不断','事业步步高升','生活顺风顺水','喜乐常伴身旁','平安一生顺遂','财运源源不断','前程一帆风顺','日子温暖有光','事事顺心遂意','平安喜乐安康','健康长久相伴','好运时时相伴','事业大展宏图','生活幸福美满','喜乐常随左右','平安如意一生','财运滚滚而来','前程似锦繁华','日子甜甜美美','事事圆满如意','平安健康喜乐','好运不离不弃','事业鹏程万里','生活喜乐无忧','平安顺遂常伴','财运亨通发达','岁岁喜乐安康'
+    ];
+
+    const palettes = [
+      {header:'#d6e8ff', panelTop:'#f4f9ff', panelBottom:'#dfeeff', bodyTop:'#fcffff', bodyBottom:'#e1efff'},
+      {header:'#e0f6e6', panelTop:'#f7fff9', panelBottom:'#def3e8', bodyTop:'#fbfff7', bodyBottom:'#e4f7e9'},
+      {header:'#ffe8d6', panelTop:'#fff9f0', panelBottom:'#ffe2c7', bodyTop:'#fff7ec', bodyBottom:'#ffe2c9'},
+      {header:'#ffe2f0', panelTop:'#fff5fb', panelBottom:'#fcd7ea', bodyTop:'#fff0f7', bodyBottom:'#ffd9eb'},
+      {header:'#f9e9da', panelTop:'#fff8f1', panelBottom:'#f7dfcb', bodyTop:'#fff4ec', bodyBottom:'#f5dcca'}
+    ];
+
+    const config = {
+      spawnInterval: 600,
+      popDuration: 1200,
+      stayDuration: 3000,
+      fadeDuration: 800
+    };
+
+    function randomPalette(){
+      return palettes[Math.floor(Math.random()*palettes.length)];
+    }
+
+    function positionMsg(msg){
+      const padding = 16;
+      const maxLeft = Math.max(0, window.innerWidth - msg.offsetWidth - padding * 2);
+      const maxTop = Math.max(0, window.innerHeight - msg.offsetHeight - padding * 2);
+      msg.style.left = (Math.random() * maxLeft + padding) + 'px';
+      msg.style.top = (Math.random() * maxTop + padding) + 'px';
+    }
+
+    function createMsg(){
+      const msg = document.createElement('div');
+      msg.className = 'msg';
+      const palette = randomPalette();
+      msg.style.setProperty('--header-bg', palette.header);
+      msg.style.setProperty('--panel-top', palette.panelTop);
+      msg.style.setProperty('--panel-bottom', palette.panelBottom);
+      msg.style.setProperty('--body-top', palette.bodyTop);
+      msg.style.setProperty('--body-bottom', palette.bodyBottom);
+      msg.style.setProperty('--angle', `${Math.random()*60-30}deg`);
+      msg.dataset.header = palette.header;
+      msg.dataset.panelTop = palette.panelTop;
+      msg.dataset.panelBottom = palette.panelBottom;
+      msg.dataset.bodyTop = palette.bodyTop;
+      msg.dataset.bodyBottom = palette.bodyBottom;
+      msg.style.animation = `pop ${config.popDuration}ms forwards`;
+
+      const header = document.createElement('div');
+      header.className = 'msg-header';
+      const dots = document.createElement('div');
+      dots.className = 'msg-dots';
+      ['red','yellow','green'].forEach(color=>{
+        const dot = document.createElement('span');
+        dot.className = `msg-dot ${color}`;
+        dots.appendChild(dot);
+      });
+      const title = document.createElement('span');
+      title.textContent = '温馨提示';
+      header.appendChild(dots);
+      header.appendChild(title);
+
+      const body = document.createElement('div');
+      body.className = 'msg-body';
+      const messageText = messages[Math.floor(Math.random()*messages.length)];
+      body.textContent = messageText;
+      msg.dataset.message = messageText;
+
+      msg.appendChild(header);
+      msg.appendChild(body);
+      document.body.appendChild(msg);
+      positionMsg(msg);
+
+      // 已删除创建心形元素的逻辑
+
+      let fadeTimeout = null;
+      let fading = false;
+
+      const scheduleFade = () => {
+        if(fading) return;
+        if(fadeTimeout) clearTimeout(fadeTimeout);
+        fadeTimeout = setTimeout(()=>{
+          fading = true;
+          msg.style.animation = `fadeOut ${config.fadeDuration}ms forwards`;
+          msg.style.animationPlayState = 'running';
+        }, config.stayDuration);
+      };
+
+      msg.addEventListener('animationend', (event) => {
+        if(event.animationName === 'pop'){
+          scheduleFade();
+        }else if(event.animationName === 'fadeOut'){
+          msg.remove();
+        }
+      });
+
+      msg.addEventListener('pointerenter', ()=>{
+        if(!fading && fadeTimeout){
+          clearTimeout(fadeTimeout);
+          fadeTimeout = null;
+        }
+        if(fading){
+          msg.style.animationPlayState = 'paused';
+        }
+      });
+
+      msg.addEventListener('pointerleave', ()=>{
+        if(!fading){
+          scheduleFade();
+        }else{
+          msg.style.animationPlayState = 'running';
+        }
+      });
+    }
+
+    let spawnTimer = null;
+
+    function spawnBatch(){
+      const count = Math.floor(Math.random()*3) + 3;
+      for(let i=0;i<count;i++) createMsg();
+    }
+
+    function startSpawner(){
+      if(spawnTimer) return;
+      spawnBatch();
+      spawnTimer = setInterval(spawnBatch, config.spawnInterval);
+    }
+
+    function stopSpawner(){
+      if(!spawnTimer) return;
+      clearInterval(spawnTimer);
+      spawnTimer = null;
+    }
+
+    document.addEventListener('visibilitychange', ()=>{
+      if(document.hidden){
+        stopSpawner();
+      }else{
+        startSpawner();
+      }
+    });
+
+    window.addEventListener('focus', startSpawner);
+    window.addEventListener('blur', stopSpawner);
+
+    function restartSpawner(){
+      stopSpawner();
+      startSpawner();
+    }
+
+    function setupDevToolsGuards(){
+      const blockedCombos = new Set(['I','J','C']);
+      document.addEventListener('keydown', (event)=>{
+        const key = event.key.toUpperCase();
+        if(event.key === 'F12' ||
+          (event.ctrlKey && event.shiftKey && blockedCombos.has(key)) ||
+          (event.ctrlKey && key === 'U')){
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      });
+
+      document.addEventListener('contextmenu', event => event.preventDefault());
+
+      const warningEl = document.createElement('div');
+      warningEl.className = 'devtools-warning';
+      warningEl.textContent = '检测到开发者工具，请关闭后继续体验。';
+
+      let warningVisible = false;
+      const checkDevTools = () => {
+        const threshold = 160;
+        const isOpen = (window.outerWidth - window.innerWidth > threshold) ||
+                       (window.outerHeight - window.innerHeight > threshold);
+        if(isOpen && !warningVisible){
+          warningVisible = true;
+          document.body.appendChild(warningEl);
+        }else if(!isOpen && warningVisible){
+          warningVisible = false;
+          warningEl.remove();
+        }
+      };
+
+      setInterval(checkDevTools, 1000);
+    }
+
+    function setupControls(){
+      const panel = document.getElementById('controlPanel');
+      const toggleBtn = document.querySelector('.panel-toggle');
+      const freqControl = document.getElementById('freqControl');
+      const popControl = document.getElementById('popControl');
+      const stayControl = document.getElementById('stayControl');
+      const fadeControl = document.getElementById('fadeControl');
+      const valueMap = {
+        freqControl: document.getElementById('freqValue'),
+        popControl: document.getElementById('popValue'),
+        stayControl: document.getElementById('stayValue'),
+        fadeControl: document.getElementById('fadeValue')
+      };
+
+      toggleBtn.addEventListener('click', ()=>{
+        const visible = panel.classList.toggle('visible');
+        toggleBtn.classList.toggle('active', visible);
+        toggleBtn.setAttribute('aria-label', visible ? '关闭控制面板' : '打开控制面板');
+      });
+
+      const bindControl = (control, key, onChange) => {
+        const update = () => {
+          const val = Number(control.value);
+          config[key] = val;
+          valueMap[control.id].textContent = `${val}ms`;
+          if(onChange) onChange();
+        };
+        control.addEventListener('input', update);
+        update();
+      };
+
+      bindControl(freqControl, 'spawnInterval', restartSpawner);
+      bindControl(popControl, 'popDuration');
+      bindControl(stayControl, 'stayDuration');
+      bindControl(fadeControl, 'fadeDuration');
+
+      const mediaQueries = [
+        window.matchMedia('(max-width: 768px)'),
+        window.matchMedia('(orientation: portrait)')
+      ];
+
+      const updateAvailability = () => {
+        const disabled = mediaQueries.some(q => q.matches);
+        document.body.classList.toggle('panel-disabled', disabled);
+        if(disabled){
+          panel.classList.remove('visible');
+          toggleBtn.classList.remove('active');
+          toggleBtn.setAttribute('aria-label','打开控制面板');
+        }
+      };
+
+      mediaQueries.forEach(q => q.addEventListener('change', updateAvailability));
+      updateAvailability();
+    }
+
+    setupDevToolsGuards();
+    setupControls();
+    startSpawner();
+  </script>
+</body>
+</html>
