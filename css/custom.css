@@ -1,0 +1,13 @@
+/* Twikoo 评论区自定义表情包行内显示修复 */
+/* 仅作用于 .tk-content 内部的 img 标签,不影响全局图片 */
+/* 覆盖 ShokaX 主题全局 img { display: block } 导致的换行问题 */
+.tk-content img {
+  display: inline !important;
+  vertical-align: middle !important;
+  max-height: 1.5em !important;
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 0.1em !important;
+  float: none !important;
+}
