@@ -1,0 +1,90 @@
+.gaokao-lantern-container {
+  position: fixed;
+  top: 90px;
+  right: 12px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+.gaokao-lantern-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: gaokao-swing 2.8s ease-in-out infinite;
+}
+.gaokao-lantern-item:nth-child(1) { animation-delay: 0s; }
+.gaokao-lantern-item:nth-child(2) { animation-delay: 0.3s; }
+.gaokao-lantern-item:nth-child(3) { animation-delay: 0.6s; }
+.gaokao-lantern-item:nth-child(4) { animation-delay: 0.9s; }
+.gaokao-lantern-item:hover { animation-duration: 0.5s; }
+.gaokao-lantern-string {
+  width: 2px;
+  height: 18px;
+  background: linear-gradient(to bottom, #f1c40f, #e67e22);
+}
+.gaokao-lantern-top {
+  width: 28px;
+  height: 7px;
+  background: linear-gradient(to bottom, #f1c40f, #e67e22);
+  border-radius: 3px;
+}
+.gaokao-lantern-body {
+  width: 72px;
+  height: 90px;
+  background: linear-gradient(to bottom, #e74c3c 0%, #c0392b 40%, #a93226 100%);
+  border-radius: 36px 36px 22px 22px;
+  border: 2.5px solid #f1c40f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(231,76,60,0.35), inset 0 0 12px rgba(0,0,0,0.12);
+  position: relative;
+  overflow: hidden;
+}
+.gaokao-lantern-body::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.gaokao-lantern-text {
+  color: #f1c40f;
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(241,196,15,0.5);
+  font-family: "楷体","KaiTi","STKaiti",serif;
+  line-height: 1;
+  user-select: none;
+}
+.gaokao-lantern-bottom {
+  width: 28px;
+  height: 7px;
+  background: linear-gradient(to top, #f1c40f, #e67e22);
+  border-radius: 3px;
+}
+.gaokao-lantern-tassel-line {
+  width: 2px;
+  height: 10px;
+  background: #e67e22;
+}
+.gaokao-lantern-tassel-knot {
+  width: 7px;
+  height: 7px;
+  background: radial-gradient(circle at 30% 30%, #f1c40f, #e67e22);
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(241,196,15,0.3);
+}
+@keyframes gaokao-swing {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+@media (max-width: 768px) {
+  .gaokao-lantern-container { transform: scale(0.6); transform-origin: top right; }
+}
