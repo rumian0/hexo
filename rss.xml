@@ -10,8 +10,8 @@
         </author>
         <description>茶香四溢,编程世界.</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 08 Jun 2026 19:22:00 +0800</pubDate>
-        <lastBuildDate>Mon, 08 Jun 2026 19:22:00 +0800</lastBuildDate>
+        <pubDate>Tue, 09 Jun 2026 09:55:00 +0800</pubDate>
+        <lastBuildDate>Tue, 09 Jun 2026 09:55:00 +0800</lastBuildDate>
         <category term="编程" />
         <category term="科技" />
         <category term="技术" />
@@ -21,9 +21,113 @@
         <category term="生活" />
         <category term="家庭" />
         <item>
+            <guid isPermalink="true">https://mingcy.cn/2026/06/09/twikoo-S3/</guid>
+            <title>Twikoo配置图床S3/R2</title>
+            <link>https://mingcy.cn/2026/06/09/twikoo-S3/</link>
+            <category term="技术教学" scheme="https://mingcy.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E5%AD%A6/" />
+            <category term="教程" scheme="https://mingcy.cn/tags/%E6%95%99%E7%A8%8B/" />
+            <category term="twikoo" scheme="https://mingcy.cn/tags/twikoo/" />
+            <category term="图床" scheme="https://mingcy.cn/tags/%E5%9B%BE%E5%BA%8A/" />
+            <pubDate>Tue, 09 Jun 2026 09:55:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;茗叙&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茗叙&#34;&gt;#&lt;/a&gt; 茗叙&lt;/h1&gt;
+&lt;p&gt;今天要出去玩，练练我的开车技巧了，哈哈哈，拿到驾照快一年了，开的还不是很熟练，之前总是没时间说要开车，现在有的是时间啦！&lt;br&gt;
+ 高考结束，也是顺利收官啦！愿我们都有一个好的前景！都要上岸啊！&lt;br&gt;
+ 终于有时间更新博客了，最近有也是才开始玩 codex, 不得不说用 ai 写代码，真的好方便的，好多 bug 他都给我解决了，我去我自个改动不动就先 bug, 有可能会让我的 shi 山代码崩溃！&lt;/p&gt;
+&lt;h1 id=&#34;茗述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茗述&#34;&gt;#&lt;/a&gt; 茗述&lt;/h1&gt;
+&lt;p&gt;在我发现 s.ee 用不了之后，便想着换一个图床，不然 twikoo 提交不了图片还有什么意义，于是我就去网上搜各种教程，但是我发现没有很详细的，有的教程还不太全，于是我打算自己写一篇文章，给那些困与没有图床的朋友们.&lt;br&gt;
+ 由于我是学生，手上没有很多的 money, 所以如果有免费就尽量用免费的，能白嫖就喜欢白嫖.&lt;/p&gt;
+&lt;h3 id=&#34;twikoo-s3参数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#twikoo-s3参数&#34;&gt;#&lt;/a&gt; twikoo S3 参数&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Twikoo 后台设置项&lt;/th&gt;
+&lt;th&gt;对应你获取到的内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;IMAGE_CDN&lt;/td&gt;
+&lt;td&gt;选择 S3 / R2 / MinIO&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;S3_REGION&lt;/td&gt;
+&lt;td&gt;可不填&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;S3_BUCKET&lt;/td&gt;
+&lt;td&gt;存储桶名称（比如 twikoo-image）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;S3_ACCESS_KEY_ID&lt;/td&gt;
+&lt;td&gt;访问密钥 ID&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;S3_SECRET_ACCESS_KEY&lt;/td&gt;
+&lt;td&gt;机密访问密钥&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;S3_ENDPOINT&lt;/td&gt;
+&lt;td&gt;终结点&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;S3_CDN_URL&lt;/td&gt;
+&lt;td&gt;自定义域名（比如 &lt;a href=&#34;https://img-twikoo.xxx.com&#34;&gt;https://img-twikoo.xxx.com&lt;/a&gt;）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;接下来我会一个一个教你怎么填写这些信息，首先你需要一个 S3 的图床搭建完成&lt;/p&gt;
+&lt;p&gt;如果你没有 S3 请点击: &lt;a href=&#34;https://mingcy.cn/2026/06/09/twikoo-S3/#S3%E5%9B%BE%E5%BA%8A&#34;&gt;https://mingcy.cn/2026/06/09/twikoo-S3/#S3 图床&lt;/a&gt;&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/image-20260609101913080.webp&#34; class title=&#34;image-20260609101913080&#34;&gt;
+&lt;p&gt;如图所示，第一个参数 &lt;code&gt;S3_REGION&lt;/code&gt; , 填写的内容为你的&lt;strong&gt;位置&lt;/strong&gt; 信息，我这里选择的是亚太地区，所以我的配置填写的:&lt;strong&gt;apac&lt;/strong&gt;&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/image-20260609102051953.webp&#34; class title=&#34;image-20260609102051953&#34;&gt;
+&lt;p&gt;&lt;code&gt;S3_BUCKET&lt;/code&gt;  : 对应着名称:twikoo-image&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/image-20260609102212261.webp&#34; class title=&#34;image-20260609102212261&#34;&gt;
+&lt;p&gt;第一步点击管理&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/image-20260609102416673.webp&#34; class title=&#34;image-20260609102416673&#34;&gt;
+&lt;p&gt;第二步设置以上内容&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/image-20260609102615485.webp&#34; class title=&#34;image-20260609102615485&#34;&gt;
+&lt;p&gt;以上三条信息按照 顺序依次填写即可&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;S3_ACCESS_KEY_ID&lt;/th&gt;
+&lt;th&gt;访问密钥 ID&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;S3_SECRET_ACCESS_KEY&lt;/td&gt;
+&lt;td&gt;机密访问密钥&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;S3_ENDPOINT&lt;/td&gt;
+&lt;td&gt;---- 终结点&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/image-20260609102944194.webp&#34; class title=&#34;image-20260609102944194&#34;&gt;
+&lt;p&gt;&lt;code&gt;S3_CDN_URL&lt;/code&gt; , 这个信息就是你添加的域名信息，例如我对应的就是:r2.mingcy.cn&lt;/p&gt;
+&lt;h3 id=&#34;s3图床&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#s3图床&#34;&gt;#&lt;/a&gt; S3 图床&lt;/h3&gt;
+&lt;p&gt;R2 的开启需要绑定一张信用卡（银行卡？）因为我本身就绑定了一张，就不介绍了。&lt;/p&gt;
+&lt;p&gt;来到 Cloudflare 控制台的 R2 对象存储，一路开通即可。&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/image-20260609103231405.webp&#34; class title=&#34;image-20260609103231405&#34;&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/2026.04.07-Cloudflare.R2Storage.twikoo.02-17809723558375.webp&#34; class title=&#34;img&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里我推荐小型的博客，使用免费的套餐就行了，每个月 10 万次的操作，应该够了，总之我是够了！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/image-20260609103304530.webp&#34; class title=&#34;image-20260609103304530&#34;&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/image-20260609103432269.webp&#34; class title=&#34;image-20260609103432269&#34;&gt;
+&lt;p&gt;记住你填写的&lt;strong&gt;名称&lt;/strong&gt;和&lt;strong&gt;位置&lt;/strong&gt;，后续这些内容都要被用到&lt;/p&gt;
+&lt;p&gt;顺便 &lt;strong&gt;创建自定义域&lt;/strong&gt; ，来到存储桶的设置界面，点击 自定义域 右侧的 添加 按钮，添加绑定在 Cloudflare 的子域名：&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/09/twikoo-S3/2026.04.07-Cloudflare.R2Storage.twikoo.04-178097253729010.webp&#34; class title=&#34;img&#34;&gt;
+&lt;p&gt;记得你的绑定的域名，之后就可以回到上方，配置你的 twikoo 了！&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://mingcy.cn/2026/06/08/dy-tuiliu/</guid>
             <title>抖音推流助手工具</title>
             <link>https://mingcy.cn/2026/06/08/dy-tuiliu/</link>
+            <category term="实用软件" scheme="https://mingcy.cn/categories/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/" />
             <category term="工具" scheme="https://mingcy.cn/tags/%E5%B7%A5%E5%85%B7/" />
             <category term="实用" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8/" />
             <category term="抖音" scheme="https://mingcy.cn/tags/%E6%8A%96%E9%9F%B3/" />
@@ -55,15 +159,15 @@
 &lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/08/dy-tuiliu/%E6%88%AA%E5%9B%BE2026-6-6_13-06-10.webp&#34; class title=&#34;截图2026-6-6_13-06-10&#34;&gt;
 &lt;blockquote&gt;
 &lt;p&gt;自我感觉，这个刷去浏览量很不错的，效果也是真实的，这个模拟设备做的蛮不错的，都是高端旗舰机型，之后里面自带的 cookie, 也是很真是的，我的抖音数据如下:&lt;/p&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/08/dy-tuiliu/7.webp&#34; class width=&#34;7&#34;&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/08/dy-tuiliu/ll.webp&#34; class title=&#34;ty&#34;&gt;
 &lt;/blockquote&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/08/dy-tuiliu/6.webp&#34; class width=&#34;6&#34;&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/08/dy-tuiliu/ly.webp&#34; class width=&#34;6&#34;&gt;
 &lt;p&gt;在我看来都是从推荐页面来的，这个还能调节完播率，最多支持 3s&lt;/p&gt;
 &lt;h2 id=&#34;我的总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#我的总结&#34;&gt;#&lt;/a&gt; 我的总结&lt;/h2&gt;
 &lt;p&gt;其实，这个刷流量也蛮好的，可以用于前期的冷启动的数据推流阶段，这个倒是蛮不错的，倒是如果是到了后面，这个数据就不是这么重要而，前期就是看你的浏览量和用户的前三秒的完播率，但如果你的账号一般三天就可以达到 500-1000, 那么这个软件对你而言就是没有效果的，你的权重是比较高的&lt;/p&gt;
 &lt;p&gt;其次就是这个推流机制也是，现在重点不是推这个作品如何，而是在乎的是这个作者，如果这个值得他去推流，那么他的流量就是很多，得到官方的扶持，不论你的作品质量如何，而且，前期你的作品刚发布，他是会首先&lt;ins class=&#34;dot warning&#34;&gt;推给同赛道的人群，让他们来帮你辨别，这个作品的质量如何&lt;/ins&gt;，所以如果他们的浏览量和完播率很高，那么说明你的作品也不错&lt;/p&gt;
 &lt;p&gt;以下是抖音最新的推流机制&lt;/p&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/08/dy-tuiliu/9.webp&#34; class width=&#34;10&#34;&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/08/dy-tuiliu/tuone.webp&#34; class width=&#34;10&#34;&gt;
 &lt;img loading=&#34;lazy&#34; data-src=&#34;/2026/06/08/dy-tuiliu/10-17809176191618.webp&#34; class width=&#34;10&#34;&gt;
  ]]></description>
         </item>
@@ -1050,105 +1154,6 @@ npm run dev
 &lt;li&gt;在设置面板中选择 &amp;quot;自定义接口&amp;quot;&lt;/li&gt;
 &lt;li&gt;接口地址:  &lt;code&gt;https://example.com/api.php/provide/vod&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://mingcy.cn/2025/06/02/blob/</guid>
-            <title>BLOB图床使用Vercel搭建</title>
-            <link>https://mingcy.cn/2025/06/02/blob/</link>
-            <category term="技术分享" scheme="https://mingcy.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" />
-            <category term="实用推荐" scheme="https://mingcy.cn/tags/%E5%AE%9E%E7%94%A8%E6%8E%A8%E8%8D%90/" />
-            <category term="随机图" scheme="https://mingcy.cn/tags/%E9%9A%8F%E6%9C%BA%E5%9B%BE/" />
-            <category term="Vercel" scheme="https://mingcy.cn/tags/Vercel/" />
-            <pubDate>Mon, 02 Jun 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;茗起&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茗起&#34;&gt;#&lt;/a&gt; 茗起&lt;/h1&gt;
-&lt;p&gt;确实没更新了，半个月多了都，因为最近要期末考，涉及分班和数学学考，压力很大！&lt;/p&gt;
-&lt;p&gt;有没有跟我一样的，喜欢把图片放在图床，但是又担心他会泄露！担心跑路，担心访问速度，担心过期等等什么..&lt;/p&gt;
-&lt;p&gt;总的来说，就是不安全，那我能不能自我搭建一个呢，并且不要服务器！&lt;/p&gt;
-&lt;p&gt;答案是显而易见的，今天为你带来 Vercel 搭建超快轻量的 BLOB&lt;/p&gt;
-&lt;h1 id=&#34;茗述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茗述&#34;&gt;#&lt;/a&gt; 茗述&lt;/h1&gt;
-&lt;h2 id=&#34;简单介绍一下这个项目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简单介绍一下这个项目&#34;&gt;#&lt;/a&gt; 简单介绍一下这个项目&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;项目&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;数据库大小&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;读&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;写&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;请求数&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;请求时长&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;是否需要 Projects&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Hobby&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;250MB / 月&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1 亿 / 月&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1 亿 / 月&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1 亿 / 月&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1 小时 / 月&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/white_check_mark.png&#34; class title=&#34;:white_check_mark:&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;blockquote&gt;
-&lt;p&gt;是不是很简单，哈哈哈😂😂&lt;/p&gt;
-&lt;p&gt;看一下我的成品:&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/image-20250602142812182.webp&#34; class title=&#34;image-20250602142812182&#34;&gt;&lt;/p&gt;
-&lt;p&gt;** 因为只有 10GB, 故不开放我的图床了，大家自己搭建咯 **&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;做法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#做法&#34;&gt;#&lt;/a&gt; 做法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;准备一个 Vercel 账号，可以直接使用 Github 登录&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;创建存储库（点击快速创建）：&lt;a href=&#34;https://vercel.com/new/clone?demo-description=SimpleNext.js%20template%20that%20uses%20Vercel%20Blob%20for%20image%20uploads&amp;amp;demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2FW7szxXAHpF3eZ4RFT33Cb%2F4d8a64904b67980e449b487089dd7b2b%2Fopengraph-image.webp&amp;amp;demo-title=Vercel%20Blob%20Next.js%20Starter&amp;amp;demo-url=https%3A%2F%2Fblob-starter.vercel.app%2F&amp;amp;project-name=blob-starter&amp;amp;repository-name=blob-starter&amp;amp;repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fstorage%2Fblob-starter&amp;amp;stores=%5B%7B%22type%22%3A%22blob%22%7D%5D&amp;amp;teamSlug=mc-sep-vercel-team&#34;&gt;Create&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在接下来的页面中，名称自己填写，然后添加一个 Blob Store，确定即可&lt;/p&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/2761ad503761d3dcb0ee11f10ed5818592f7b02f.webp&#34; class title=&#34;该图片显示了一个创建私有 Git 仓库和添加存储的 Vercel 界面截图，其中包括仓库名称、Git 范围和 Blob 存储选项。&#34;&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;注意：每个用户只允许创建一个 Vercel Blob Storage！
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;直到出现庆祝动画，点击 &lt;strong&gt;Continue to Dashboard&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;点击 &lt;strong&gt;Settings → Environment Variables&lt;/strong&gt;，在最下方找到名为  &lt;code&gt;BLOB_READ_WRITE_TOKEN&lt;/code&gt;  的环境变量，点击复制，格式如下：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vercel_blob_rw_*************************************&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/96587f2115b71e80d9be35c9af9a19567bf0af0a_2_519x499.webp&#34; class title=&#34;该图片显示了一个应用程序的设置界面，用户可以在这里管理环境变量，包括添加、导入和查看共享环境变量。(由 AI 生成标题)&#34;&gt;
-&lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;返回 &lt;strong&gt;Settings → Functions&lt;/strong&gt;，将区域更改为 Hong Kong (East) – hkg1 或 Tokyo, Japan (Northeast) – hnd1&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;主要就是为了加速，还会香港快一点，日本，朝鲜的也能选.&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/image-20250602141449235.webp&#34; class title=&#34;要注意了,先把之前美国的地点取消勾选,才能选香港的&#34;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;打开你的 Github&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/image-20250602141723021.webp&#34; class title=&#34;点开.env.example&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;打开文件 &lt;strong&gt;.env.example&lt;/strong&gt;，将复制的内容粘贴到末尾，格式如下：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;BLOB_READ_WRITE_TOKEN=vercel_blob_rw_*******************************&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;9&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;打开 &lt;strong&gt;[Main Blob Storage] / app / page.tsx&lt;/strong&gt;，修改里面的内容为中文（建议保留原站链接），可参考我的配置&lt;/p&gt;
-&lt;figure class=&#34;highlight tsx&#34;&gt;&lt;figcaption data-lang=&#34;React TSX&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; Image &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;next/image&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; Link &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;next/link&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; ExpandingArrow &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;@/components/expanding-arrow&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; Uploader &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;@/components/uploader&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; Toaster &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;@/components/toaster&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Home&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;main&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;relative flex min-h-screen flex-col items-center justify-center&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Toaster&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token attr-name&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;https://vercel.com/templates/next.js/blob-starter&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;group mt-20 sm:mt-0 rounded-full flex space-x-1 bg-white/30 shadow-sm ring-1 ring-gray-900/5 text-gray-600 text-sm font-medium px-10 py-2 hover:shadow-lg active:shadow-sm transition-all&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;可自改内容这是一个横幅&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;ExpandingArrow&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;pt-4 pb-8 bg-gradient-to-br from-black via-[#171717] to-[#575757] bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        可自改这是大标题&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg max-w-xl mx-auto w-full&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Uploader&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;font-light text-gray-600 w-full max-w-lg text-center mt-6&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token attr-name&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;https://vercel.com/blob&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;font-medium underline underline-offset-4 hover:text-black transition-colors&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          可自改这是标题&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39; &#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        Web. Built with&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39; &#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token attr-name&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;https://nextjs.org/docs&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;font-medium underline underline-offset-4 hover:text-black transition-colors&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          Next.js App Router&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        .&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;sm:absolute sm:bottom-0 w-full px-20 py-10 flex justify-between&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;41&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;https://vercel.com&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;42&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Image&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;43&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;/vercel.svg&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;44&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;alt&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;Vercel Logo&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;45&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;width&lt;/span&gt;&lt;span class=&#34;token script language-javascript&#34;&gt;&lt;span class=&#34;token script-punctuation punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;46&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;height&lt;/span&gt;&lt;span class=&#34;token script language-javascript&#34;&gt;&lt;span class=&#34;token script-punctuation punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;47&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;priority&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;48&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token punctuation&#34;&gt;/&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;49&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;50&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;51&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token attr-name&#34;&gt;href&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;https://github.com/vercel/examples/tree/main/storage/blob-starter&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;52&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;flex items-center space-x-2&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;53&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;54&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Image&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;55&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;/github.svg&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;56&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;alt&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;GitHub Logo&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;57&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;width&lt;/span&gt;&lt;span class=&#34;token script language-javascript&#34;&gt;&lt;span class=&#34;token script-punctuation punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;58&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;height&lt;/span&gt;&lt;span class=&#34;token script language-javascript&#34;&gt;&lt;span class=&#34;token script-punctuation punctuation&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;59&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token attr-name&#34;&gt;priority&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;60&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token punctuation&#34;&gt;/&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;61&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;className&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;font-light&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;Github&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;62&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Link&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;63&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token plain-text&#34;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;64&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;65&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;66&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;保存后，系统会重新部署一次，返回 Settings → Domains，添加你的域名（确保你的域名托管商已添加记录为 A: 76.76.21.98 的记录，添加即可）。&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/image-20250602142215864.webp&#34; class title=&#34;image-20250602142215864&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;完成！&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;提示：可以在 Storage 页面查看存储库状态，例如大小、读写次数统计等。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/image-20250602142514760.webp&#34; class title=&#34;image-20250602142514760&#34;&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/image-20250602142643127.webp&#34; class title=&#34;image-20250602142643127&#34;&gt;
-&lt;h1 id=&#34;茗尾&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#茗尾&#34;&gt;#&lt;/a&gt; 茗尾&lt;/h1&gt;
-&lt;p&gt;分享到这里就结束了，另附上我的壁纸！&lt;/p&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;/2025/06/02/blob/faAbF.webp&#34; class title=&#34;茗辰原图床&#34;&gt;
  ]]></description>
         </item>
     </channel>
